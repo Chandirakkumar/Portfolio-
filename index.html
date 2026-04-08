@@ -9,8 +9,8 @@
 
 <style>
 
-/* ===== BASE ===== */
 *{margin:0;padding:0;box-sizing:border-box}
+
 body{
 font-family:'Inter',sans-serif;
 background:#0f172a;
@@ -31,26 +31,22 @@ gap:30px;
 
 .logo{
 font-weight:700;
-font-size:18px;
 background:linear-gradient(135deg,#6366f1,#22c55e);
 -webkit-background-clip:text;
 color:transparent;
 }
 
-.menu{
-display:flex;
-flex-direction:column;
-gap:15px;
-}
-
 .menu a{
 text-decoration:none;
 color:#aaa;
-padding:10px;
+padding:12px;
 border-radius:8px;
+display:block;
+cursor:pointer;
 transition:0.3s;
 }
 
+.menu a.active,
 .menu a:hover{
 background:#1e293b;
 color:#fff;
@@ -62,25 +58,18 @@ flex:1;
 padding:30px;
 }
 
-/* HEADER */
-.header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-margin-bottom:30px;
+.section{
+display:none;
 }
 
-.header h1{
-font-size:24px;
+.section.active{
+display:block;
+animation:fade 0.4s ease;
 }
 
-.btn{
-padding:10px 20px;
-border-radius:10px;
-background:linear-gradient(135deg,#6366f1,#22c55e);
-border:none;
-color:#fff;
-cursor:pointer;
+@keyframes fade{
+from{opacity:0;transform:translateY(10px)}
+to{opacity:1;transform:translateY(0)}
 }
 
 /* ===== GRID ===== */
@@ -90,7 +79,6 @@ grid-template-columns:repeat(3,1fr);
 gap:20px;
 }
 
-/* CARD */
 .card{
 background:#020617;
 padding:20px;
@@ -103,36 +91,20 @@ transform:translateY(-5px);
 box-shadow:0 10px 30px rgba(0,0,0,0.5);
 }
 
-/* PROJECT CARD */
 .project img{
 width:100%;
 border-radius:10px;
-margin-bottom:10px;
 }
 
-/* SKILLS */
-.skill{
-display:flex;
-justify-content:space-between;
-margin-bottom:10px;
-}
-
-.bar{
-height:6px;
-background:#1e293b;
+/* ===== BUTTON ===== */
+.btn{
+display:inline-block;
+padding:10px 20px;
 border-radius:10px;
-overflow:hidden;
-}
-
-.bar div{
-height:100%;
 background:linear-gradient(135deg,#6366f1,#22c55e);
-}
-
-/* ===== RESPONSIVE ===== */
-@media(max-width:900px){
-.sidebar{display:none;}
-.grid{grid-template-columns:1fr;}
+color:#fff;
+text-decoration:none;
+margin-top:10px;
 }
 
 </style>
@@ -145,85 +117,85 @@ background:linear-gradient(135deg,#6366f1,#22c55e);
 <div class="logo">Chandirakkumar</div>
 
 <div class="menu">
-<a href="#">Dashboard</a>
-<a href="#">Projects</a>
-<a href="#">Skills</a>
-<a href="#">Contact</a>
+<a class="active" onclick="showSection('dashboard', this)">Dashboard</a>
+<a onclick="showSection('projects', this)">Projects</a>
+<a onclick="showSection('skills', this)">Skills</a>
+<a onclick="showSection('contact', this)">Contact</a>
 </div>
 </div>
 
 <!-- MAIN -->
 <div class="main">
 
-<div class="header">
-<h1>Welcome Back 👋</h1>
-<a href="mailto:sv393015@gmail.com" class="btn">Hire Me</a>
-</div>
-
-<!-- GRID -->
+<!-- DASHBOARD -->
+<div id="dashboard" class="section active">
+<h2>Dashboard</h2>
 <div class="grid">
+<div class="card">100+ Modules</div>
+<div class="card">4 Clients</div>
+<div class="card">1+ Year Experience</div>
+</div>
+</div>
 
-<!-- PROJECT -->
+<!-- PROJECTS -->
+<div id="projects" class="section">
+<h2>Projects</h2>
+<div class="grid">
 <div class="card project">
-<h3>PPT Design</h3>
 <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f">
-<p>Banking training deck</p>
+<p>PPT Design</p>
 </div>
-
 <div class="card project">
-<h3>Video Editing</h3>
 <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d">
-<p>KYC Explainer</p>
+<p>Video Editing</p>
 </div>
-
 <div class="card project">
-<h3>Storyline</h3>
 <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71">
-<p>AML Simulation</p>
+<p>Storyline</p>
+</div>
+</div>
 </div>
 
 <!-- SKILLS -->
-<div class="card">
-<h3>Skills</h3>
-
-<div class="skill">
-<span>PowerPoint</span>
-<span>95%</span>
+<div id="skills" class="section">
+<h2>Skills</h2>
+<div class="grid">
+<div class="card">PowerPoint - 95%</div>
+<div class="card">Storyline - 90%</div>
+<div class="card">Premiere Pro - 85%</div>
 </div>
-<div class="bar"><div style="width:95%"></div></div>
-
-<div class="skill">
-<span>Storyline</span>
-<span>90%</span>
-</div>
-<div class="bar"><div style="width:90%"></div></div>
-
-<div class="skill">
-<span>Premiere Pro</span>
-<span>85%</span>
-</div>
-<div class="bar"><div style="width:85%"></div></div>
-
-</div>
-
-<!-- STATS -->
-<div class="card">
-<h3>Stats</h3>
-<p>100+ Modules</p>
-<p>4 Clients</p>
-<p>1+ Year Experience</p>
 </div>
 
 <!-- CONTACT -->
-<div class="card">
-<h3>Contact</h3>
+<div id="contact" class="section">
+<h2>Contact</h2>
 <p>Email: sv393015@gmail.com</p>
 <a href="mailto:sv393015@gmail.com" class="btn">Send Mail</a>
 </div>
 
 </div>
 
-</div>
+<script>
+
+function showSection(id, el){
+
+// hide all
+document.querySelectorAll('.section').forEach(sec=>{
+sec.classList.remove('active');
+});
+
+// show selected
+document.getElementById(id).classList.add('active');
+
+// active menu
+document.querySelectorAll('.menu a').forEach(link=>{
+link.classList.remove('active');
+});
+el.classList.add('active');
+
+}
+
+</script>
 
 </body>
 </html>
