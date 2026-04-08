@@ -10,7 +10,6 @@
 
 <style>
 
-/* ===== ROOT ===== */
 :root{
   --primary:#2563eb;
   --secondary:#06b6d4;
@@ -21,7 +20,6 @@
   --border:#e2e8f0;
 }
 
-/* ===== BODY ===== */
 body{
   margin:0;
   font-family:'Segoe UI',sans-serif;
@@ -29,7 +27,7 @@ body{
   color:var(--text);
 }
 
-/* ===== HEADER ===== */
+/* HEADER */
 header{
   text-align:center;
   padding:90px 20px;
@@ -51,7 +49,7 @@ header p{margin-top:10px;color:#e0f2fe;}
   font-weight:600;
 }
 
-/* ===== LAYOUT ===== */
+/* LAYOUT */
 .container{
   max-width:1150px;
   margin:auto;
@@ -64,7 +62,7 @@ header p{margin-top:10px;color:#e0f2fe;}
   gap:25px;
 }
 
-/* ===== CARD ===== */
+/* CARD */
 .card{
   background:var(--card);
   padding:25px;
@@ -72,12 +70,8 @@ header p{margin-top:10px;color:#e0f2fe;}
   box-shadow:0 6px 20px rgba(0,0,0,0.06);
   margin-bottom:20px;
   border-left:4px solid var(--primary);
-  transition:0.3s;
 }
 
-.card:hover{transform:translateY(-4px);}
-
-/* ===== HEADINGS ===== */
 h2{
   font-size:14px;
   text-transform:uppercase;
@@ -85,7 +79,7 @@ h2{
   margin-bottom:15px;
 }
 
-/* ===== SKILLS WITH REAL LOGOS ===== */
+/* SKILLS */
 .skills-grid{
   display:grid;
   grid-template-columns:repeat(2,1fr);
@@ -106,7 +100,7 @@ h2{
   width:22px;
 }
 
-/* ===== PROJECTS ===== */
+/* PROJECTS */
 .projects{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -123,12 +117,11 @@ h2{
 
 .project:hover{
   transform:scale(1.05);
-  box-shadow:0 10px 25px rgba(0,0,0,0.08);
 }
 
 .project img{
   width:100%;
-  height:140px;
+  height:160px;
   object-fit:cover;
 }
 
@@ -138,12 +131,7 @@ h2{
   font-size:14px;
 }
 
-.project a{
-  text-decoration:none;
-  color:inherit;
-}
-
-/* ===== CASE STUDY ===== */
+/* CASE */
 .case{
   padding:15px;
   border:1px solid var(--border);
@@ -151,11 +139,7 @@ h2{
   background:#f9fafb;
 }
 
-.case strong{
-  color:var(--primary);
-}
-
-/* ===== RESPONSIVE ===== */
+/* RESPONSIVE */
 @media(max-width:768px){
   .layout{grid-template-columns:1fr;}
   .projects{grid-template-columns:1fr;}
@@ -182,7 +166,7 @@ h2{
 <h2>About</h2>
 <p>
 Instructional Designer with 1+ year experience creating interactive learning.
-Delivered 100+ modules for banking clients using Storyline, PPT and LMS platforms.
+Delivered 100+ modules for banking clients.
 </p>
 </div>
 
@@ -192,23 +176,23 @@ Delivered 100+ modules for banking clients using Storyline, PPT and LMS platform
 <div class="skills-grid">
 
 <div class="skill-box">
-<img src="powerpoint.png">
+<img src="https://img.icons8.com/color/48/powerpoint.png">
 <p>PowerPoint</p>
 </div>
 
 <div class="skill-box">
-<img src="storyline.png">
-<p>Storyline 360</p>
-</div>
-
-<div class="skill-box">
-<img src="premiere.png">
+<img src="https://img.icons8.com/color/48/adobe-premiere-pro.png">
 <p>Premiere Pro</p>
 </div>
 
 <div class="skill-box">
-<img src="aftereffects.png">
+<img src="https://img.icons8.com/color/48/adobe-after-effects.png">
 <p>After Effects</p>
+</div>
+
+<div class="skill-box">
+<img src="https://img.icons8.com/color/48/training.png">
+<p>Storyline 360</p>
 </div>
 
 </div>
@@ -225,26 +209,20 @@ Delivered 100+ modules for banking clients using Storyline, PPT and LMS platform
 
 <div class="projects">
 
-<a href="#" target="_blank">
 <div class="project">
-<img src="ppt-sample.png">
+<img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71">
 <p>PPT Training Module</p>
 </div>
-</a>
 
-<a href="#" target="_blank">
 <div class="project">
-<img src="video-thumbnail.png">
-<p>Training Video</p>
+<img src="https://images.unsplash.com/photo-1587614382346-ac7a9c3c8a3c">
+<p>Video Editing Project</p>
 </div>
-</a>
 
-<a href="#" target="_blank">
 <div class="project">
-<img src="storyline-sample.png">
+<img src="https://images.unsplash.com/photo-1559028012-481c04fa702d">
 <p>Storyline Simulation</p>
 </div>
-</a>
 
 </div>
 
@@ -255,9 +233,9 @@ Delivered 100+ modules for banking clients using Storyline, PPT and LMS platform
 
 <div class="case">
 <strong>Project:</strong> Banking Training Module<br><br>
-<strong>Problem:</strong> Complex process training for employees<br><br>
-<strong>Solution:</strong> Created interactive simulation using Storyline<br><br>
-<strong>Result:</strong> Improved learner engagement and understanding
+<strong>Problem:</strong> Complex employee onboarding<br><br>
+<strong>Solution:</strong> Interactive simulation using Storyline<br><br>
+<strong>Result:</strong> Improved training efficiency and engagement
 </div>
 
 </div>
