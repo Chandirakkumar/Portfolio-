@@ -3,69 +3,108 @@
 <head>
   <title>Chandirakkumar | Portfolio</title>
 
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
-      background: #0b1120;
-      color: white;
       margin: 0;
+      background: #ffffff;
+      color: #111;
     }
 
     header {
       text-align: center;
-      padding: 80px 20px;
-      background: linear-gradient(135deg, #0ea5e9, #6366f1);
+      padding: 60px 20px;
+      border-bottom: 1px solid #eee;
     }
 
-    h1 { font-size: 36px; margin: 0; }
-    header p { margin-top: 10px; }
+    h1 {
+      margin: 0;
+      font-size: 32px;
+    }
+
+    header p {
+      color: #555;
+      margin-top: 10px;
+    }
 
     section {
-      padding: 40px 20px;
-      max-width: 1000px;
+      max-width: 900px;
       margin: auto;
+      padding: 40px 20px;
     }
 
     h2 {
+      font-size: 20px;
       margin-bottom: 20px;
-      color: #38bdf8;
+      border-left: 4px solid #2563eb;
+      padding-left: 10px;
     }
 
-    /* GRID DESIGN */
+    .about {
+      color: #444;
+      line-height: 1.6;
+    }
+
+    /* SKILLS */
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill {
+      background: #f3f4f6;
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    /* PROJECT GRID */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      gap: 20px;
+      gap: 15px;
     }
 
     .tile {
-      background: #111827;
-      border-radius: 15px;
+      border: 1px solid #eee;
+      border-radius: 10px;
       overflow: hidden;
-      text-align: center;
-      transition: 0.3s;
+      transition: 0.2s;
+      background: #fafafa;
     }
 
     .tile:hover {
-      transform: scale(1.08);
-      background: #1e293b;
+      transform: translateY(-4px);
     }
 
     .tile img, .tile video {
       width: 100%;
-      height: 140px;
+      height: 120px;
       object-fit: cover;
     }
 
     .tile p {
+      font-size: 13px;
       padding: 10px;
+      text-align: center;
+    }
+
+    /* EXPERIENCE */
+    .box {
+      background: #f9fafb;
+      padding: 15px;
+      border-radius: 10px;
       font-size: 14px;
     }
 
-    /* SIMPLE TEXT SECTION */
-    .simple {
-      line-height: 1.6;
-      color: #cbd5f5;
+    /* CONTACT */
+    .contact i {
+      margin-right: 8px;
+      color: #2563eb;
     }
 
   </style>
@@ -75,15 +114,28 @@
 
 <header>
   <h1>Chandirakkumar</h1>
-  <p>Instructional Designer | E-Learning Developer | 100+ Modules</p>
+  <p>Instructional Designer | E-Learning Developer | 100+ Modules Delivered</p>
 </header>
 
 <section>
   <h2>About</h2>
-  <p class="simple">
-    Instructional Designer with experience in Storyline, PPT, and LMS.
-    Created 100+ modules for banking and corporate training.
+  <p class="about">
+    Instructional Designer with experience in PowerPoint, Articulate Storyline 360, and LMS platforms.
+    Delivered 100+ e-learning modules for banking and corporate training.
   </p>
+</section>
+
+<section>
+  <h2>Skills</h2>
+  <div class="skills">
+    <div class="skill">PowerPoint</div>
+    <div class="skill">Storyline 360</div>
+    <div class="skill">Rise 360</div>
+    <div class="skill">Simulation Design</div>
+    <div class="skill">Premiere Pro</div>
+    <div class="skill">After Effects</div>
+    <div class="skill">LMS Management</div>
+  </div>
 </section>
 
 <section>
@@ -93,24 +145,24 @@
 
     <div class="tile">
       <img src="https://via.placeholder.com/300">
-      <p>PPT Design</p>
+      <p><i class="fa-solid fa-file-powerpoint"></i> PPT Design</p>
     </div>
 
     <div class="tile">
       <img src="https://via.placeholder.com/300">
-      <p>Storyline Module</p>
+      <p><i class="fa-solid fa-layer-group"></i> Storyline Module</p>
     </div>
 
     <div class="tile">
       <video controls>
         <source src="your-video.mp4" type="video/mp4">
       </video>
-      <p>Video Project</p>
+      <p><i class="fa-solid fa-video"></i> Video Project</p>
     </div>
 
     <div class="tile">
       <img src="https://via.placeholder.com/300">
-      <p>Simulation</p>
+      <p><i class="fa-solid fa-bullseye"></i> Simulation</p>
     </div>
 
   </div>
@@ -118,18 +170,17 @@
 </section>
 
 <section>
-  <h2>Skills</h2>
-  <p class="simple">
-    PowerPoint • Storyline 360 • Rise 360 • Premiere Pro • After Effects • LMS
-  </p>
+  <h2>Experience</h2>
+  <div class="box">
+    Worked on 100+ e-learning modules for banks including Karnataka Bank, Kotak, KVB, IIFL.
+    Specialized in simulation-based learning and LMS management.
+  </div>
 </section>
 
 <section>
   <h2>Contact</h2>
-  <p class="simple">
-    sv393015@gmail.com <br>
-    linkedin.com/in/it-tech-support
-  </p>
+  <p class="contact"><i class="fa-solid fa-envelope"></i> sv393015@gmail.com</p>
+  <p class="contact"><i class="fa-brands fa-linkedin"></i> linkedin.com/in/it-tech-support</p>
 </section>
 
 </body>
