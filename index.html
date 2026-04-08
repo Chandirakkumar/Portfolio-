@@ -72,13 +72,29 @@ from{opacity:0;transform:translateY(10px)}
 to{opacity:1;transform:translateY(0)}
 }
 
+/* ===== CONTENT BLOCK ===== */
+.section-header{
+margin-bottom:20px;
+}
+
+.section-header h2{
+font-size:24px;
+margin-bottom:8px;
+}
+
+.section-header p{
+color:#aaa;
+font-size:14px;
+}
+
 /* ===== GRID ===== */
 .grid{
 display:grid;
-grid-template-columns:repeat(3,1fr);
+grid-template-columns:repeat(2,1fr);
 gap:20px;
 }
 
+/* ===== CARD ===== */
 .card{
 background:#020617;
 padding:20px;
@@ -91,9 +107,29 @@ transform:translateY(-5px);
 box-shadow:0 10px 30px rgba(0,0,0,0.5);
 }
 
-.project img{
+/* IMAGE */
+.card img{
 width:100%;
 border-radius:10px;
+margin-bottom:10px;
+}
+
+/* ===== SKILLS BAR ===== */
+.skill{
+margin-bottom:10px;
+}
+
+.bar{
+height:6px;
+background:#1e293b;
+border-radius:10px;
+overflow:hidden;
+margin-top:5px;
+}
+
+.bar div{
+height:100%;
+background:linear-gradient(135deg,#6366f1,#22c55e);
 }
 
 /* ===== BUTTON ===== */
@@ -129,48 +165,90 @@ margin-top:10px;
 
 <!-- DASHBOARD -->
 <div id="dashboard" class="section active">
-<h2>Dashboard</h2>
+<div class="section-header">
+<h2>Dashboard Overview</h2>
+<p>Quick summary of my experience, work and expertise in instructional design.</p>
+</div>
+
 <div class="grid">
-<div class="card">100+ Modules</div>
-<div class="card">4 Clients</div>
-<div class="card">1+ Year Experience</div>
+<div class="card">
+<h3>100+ Modules</h3>
+<p>Developed high-quality e-learning modules for banking and finance sector.</p>
+</div>
+
+<div class="card">
+<h3>4+ Clients</h3>
+<p>Worked with Karnataka Bank, Kotak, KVB and IIFL.</p>
+</div>
 </div>
 </div>
 
 <!-- PROJECTS -->
 <div id="projects" class="section">
+<div class="section-header">
 <h2>Projects</h2>
+<p>Selected work showcasing my skills in PPT, Video Editing and Storyline.</p>
+</div>
+
 <div class="grid">
-<div class="card project">
+
+<div class="card">
 <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f">
-<p>PPT Design</p>
+<h3>PPT Training Design</h3>
+<p>Designed engaging training decks with structured content and visual storytelling.</p>
 </div>
-<div class="card project">
+
+<div class="card">
 <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d">
-<p>Video Editing</p>
+<h3>Video Editing</h3>
+<p>Created motion-based explainer videos for onboarding and compliance training.</p>
 </div>
-<div class="card project">
+
+<div class="card">
 <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71">
-<p>Storyline</p>
+<h3>Storyline Simulation</h3>
+<p>Built interactive branching scenarios for AML and banking training modules.</p>
 </div>
+
 </div>
 </div>
 
 <!-- SKILLS -->
 <div id="skills" class="section">
+<div class="section-header">
 <h2>Skills</h2>
-<div class="grid">
-<div class="card">PowerPoint - 95%</div>
-<div class="card">Storyline - 90%</div>
-<div class="card">Premiere Pro - 85%</div>
+<p>Core tools and technologies I use to build learning experiences.</p>
+</div>
+
+<div class="card">
+<div class="skill">PowerPoint
+<div class="bar"><div style="width:95%"></div></div>
+</div>
+
+<div class="skill">Storyline
+<div class="bar"><div style="width:90%"></div></div>
+</div>
+
+<div class="skill">Premiere Pro
+<div class="bar"><div style="width:85%"></div></div>
+</div>
+
 </div>
 </div>
 
 <!-- CONTACT -->
 <div id="contact" class="section">
+<div class="section-header">
 <h2>Contact</h2>
+<p>Let’s collaborate on projects and build impactful learning solutions.</p>
+</div>
+
+<div class="card">
 <p>Email: sv393015@gmail.com</p>
+<p>Available for freelance and full-time opportunities.</p>
 <a href="mailto:sv393015@gmail.com" class="btn">Send Mail</a>
+</div>
+
 </div>
 
 </div>
@@ -179,18 +257,16 @@ margin-top:10px;
 
 function showSection(id, el){
 
-// hide all
 document.querySelectorAll('.section').forEach(sec=>{
 sec.classList.remove('active');
 });
 
-// show selected
 document.getElementById(id).classList.add('active');
 
-// active menu
 document.querySelectorAll('.menu a').forEach(link=>{
 link.classList.remove('active');
 });
+
 el.classList.add('active');
 
 }
