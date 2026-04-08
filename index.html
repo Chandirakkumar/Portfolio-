@@ -9,7 +9,6 @@
 
 <style>
 
-/* ---------- ROOT ---------- */
 :root {
   --primary:#2563eb;
   --secondary:#06b6d4;
@@ -20,7 +19,6 @@
   --border:#e2e8f0;
 }
 
-/* ---------- BODY ---------- */
 body{
   margin:0;
   font-family:'Segoe UI',sans-serif;
@@ -28,7 +26,7 @@ body{
   color:var(--text);
 }
 
-/* ---------- HEADER ---------- */
+/* HEADER */
 header{
   text-align:center;
   padding:80px 20px;
@@ -57,7 +55,7 @@ header p{
   text-decoration:none;
 }
 
-/* ---------- LAYOUT ---------- */
+/* LAYOUT */
 .container{
   max-width:1150px;
   margin:auto;
@@ -70,7 +68,7 @@ header p{
   gap:25px;
 }
 
-/* ---------- CARD ---------- */
+/* CARD */
 .card{
   background:var(--card);
   padding:25px;
@@ -85,7 +83,7 @@ header p{
   transform:translateY(-4px);
 }
 
-/* ---------- HEADINGS ---------- */
+/* HEADINGS */
 h2{
   font-size:14px;
   text-transform:uppercase;
@@ -93,7 +91,7 @@ h2{
   margin-bottom:15px;
 }
 
-/* ---------- SKILLS ---------- */
+/* SKILLS */
 .skills span{
   display:inline-block;
   background:#e0f2fe;
@@ -103,10 +101,10 @@ h2{
   font-size:13px;
 }
 
-/* ---------- PROJECTS ---------- */
+/* PROJECT GRID (3 ITEMS) */
 .projects{
   display:grid;
-  grid-template-columns:repeat(2,1fr);
+  grid-template-columns:repeat(3,1fr);
   gap:15px;
 }
 
@@ -119,7 +117,7 @@ h2{
 }
 
 .project:hover{
-  transform:scale(1.04);
+  transform:scale(1.05);
   box-shadow:0 10px 25px rgba(0,0,0,0.08);
 }
 
@@ -136,7 +134,7 @@ h2{
   font-size:14px;
 }
 
-/* ---------- TIMELINE ---------- */
+/* TIMELINE */
 .timeline{
   border-left:2px solid var(--border);
   padding-left:15px;
@@ -150,15 +148,18 @@ h2{
   color:var(--primary);
 }
 
-/* ---------- CONTACT ---------- */
+/* CONTACT */
 .contact i{
   margin-right:8px;
   color:var(--primary);
 }
 
-/* ---------- RESPONSIVE ---------- */
+/* RESPONSIVE */
 @media(max-width:768px){
   .layout{
+    grid-template-columns:1fr;
+  }
+  .projects{
     grid-template-columns:1fr;
   }
 }
@@ -177,15 +178,15 @@ h2{
 <div class="container">
 <div class="layout">
 
-<!-- LEFT -->
+<!-- LEFT SIDE -->
 <div>
 
 <div class="card">
 <h2>About</h2>
 <p>
-Instructional Designer with 1+ year experience creating interactive e-learning content.
-Specialized in <b>PowerPoint, Storyline 360, and simulations</b>.
-Delivered 100+ modules for banking clients like Karnataka Bank, Kotak, KVB, and IIFL.
+Instructional Designer with 1+ year experience creating engaging e-learning content.
+Specialized in <b>PowerPoint, Articulate Storyline 360, and simulations</b>.
+Delivered 100+ modules for banking clients including Karnataka Bank, Kotak, KVB, and IIFL.
 </p>
 </div>
 
@@ -210,34 +211,32 @@ Delivered 100+ modules for banking clients like Karnataka Bank, Kotak, KVB, and 
 
 </div>
 
-<!-- RIGHT -->
+<!-- RIGHT SIDE -->
 <div>
 
 <div class="card">
-<h2>Projects</h2>
+<h2>Work Showcase</h2>
 
 <div class="projects">
 
+<!-- PPT -->
 <div class="project">
-<img src="https://via.placeholder.com/300">
-<p>PPT Training Module</p>
+<img src="ppt-sample.png">
+<p><i class="fa-solid fa-file-powerpoint"></i> Banking Training PPT</p>
 </div>
 
-<div class="project">
-<img src="https://via.placeholder.com/300">
-<p>Storyline Simulation</p>
-</div>
-
+<!-- VIDEO -->
 <div class="project">
 <video controls>
-<source src="your-video.mp4">
+<source src="video-sample.mp4">
 </video>
-<p>Training Video</p>
+<p><i class="fa-solid fa-video"></i> Training Video Project</p>
 </div>
 
+<!-- STORYLINE -->
 <div class="project">
-<img src="https://via.placeholder.com/300">
-<p>Banking System Guide</p>
+<img src="storyline-sample.png">
+<p><i class="fa-solid fa-layer-group"></i> Storyline Simulation</p>
 </div>
 
 </div>
@@ -250,7 +249,7 @@ Delivered 100+ modules for banking clients like Karnataka Bank, Kotak, KVB, and 
 <div>
 <strong>2024 - Present</strong><br>
 Instructional Designer<br>
-<span style="color:#64748b;">Agama Educon</span>
+<span style="color:#64748b;">Agama Educon Pvt Ltd.</span>
 </div>
 
 <div>
