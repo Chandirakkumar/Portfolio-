@@ -72,7 +72,35 @@ from{opacity:0;transform:translateY(10px)}
 to{opacity:1;transform:translateY(0)}
 }
 
-/* ===== CONTENT BLOCK ===== */
+/* ===== ABOUT CARD ===== */
+.about-card{
+display:flex;
+gap:20px;
+align-items:center;
+background:#020617;
+padding:20px;
+border-radius:15px;
+margin-bottom:25px;
+}
+
+.about-card img{
+width:100px;
+height:100px;
+border-radius:50%;
+object-fit:cover;
+border:2px solid #6366f1;
+}
+
+.about-info h2{
+margin-bottom:5px;
+}
+
+.about-info p{
+color:#aaa;
+font-size:14px;
+}
+
+/* ===== HEADER TEXT ===== */
 .section-header{
 margin-bottom:20px;
 }
@@ -107,14 +135,13 @@ transform:translateY(-5px);
 box-shadow:0 10px 30px rgba(0,0,0,0.5);
 }
 
-/* IMAGE */
 .card img{
 width:100%;
 border-radius:10px;
 margin-bottom:10px;
 }
 
-/* ===== SKILLS BAR ===== */
+/* ===== SKILL BAR ===== */
 .skill{
 margin-bottom:10px;
 }
@@ -165,49 +192,61 @@ margin-top:10px;
 
 <!-- DASHBOARD -->
 <div id="dashboard" class="section active">
+
+<!-- ABOUT ME -->
+<div class="about-card">
+<img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e">
+<div class="about-info">
+<h2>Chandirakkumar S</h2>
+<p>Instructional Designer & E-Learning Developer</p>
+<p>I create interactive learning experiences using Storyline, PPT, and video editing — focused on banking and compliance training.</p>
+</div>
+</div>
+
 <div class="section-header">
 <h2>Dashboard Overview</h2>
-<p>Quick summary of my experience, work and expertise in instructional design.</p>
+<p>Quick summary of my experience and work.</p>
 </div>
 
 <div class="grid">
 <div class="card">
 <h3>100+ Modules</h3>
-<p>Developed high-quality e-learning modules for banking and finance sector.</p>
+<p>Developed engaging e-learning modules.</p>
 </div>
 
 <div class="card">
 <h3>4+ Clients</h3>
-<p>Worked with Karnataka Bank, Kotak, KVB and IIFL.</p>
+<p>Karnataka Bank, Kotak, KVB, IIFL.</p>
 </div>
 </div>
+
 </div>
 
 <!-- PROJECTS -->
 <div id="projects" class="section">
 <div class="section-header">
 <h2>Projects</h2>
-<p>Selected work showcasing my skills in PPT, Video Editing and Storyline.</p>
+<p>My recent work samples.</p>
 </div>
 
 <div class="grid">
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f">
-<h3>PPT Training Design</h3>
-<p>Designed engaging training decks with structured content and visual storytelling.</p>
+<h3>PPT Design</h3>
+<p>Training deck design.</p>
 </div>
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d">
 <h3>Video Editing</h3>
-<p>Created motion-based explainer videos for onboarding and compliance training.</p>
+<p>Explainer videos.</p>
 </div>
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71">
-<h3>Storyline Simulation</h3>
-<p>Built interactive branching scenarios for AML and banking training modules.</p>
+<h3>Storyline</h3>
+<p>Interactive modules.</p>
 </div>
 
 </div>
@@ -217,22 +256,13 @@ margin-top:10px;
 <div id="skills" class="section">
 <div class="section-header">
 <h2>Skills</h2>
-<p>Core tools and technologies I use to build learning experiences.</p>
+<p>Tools I use.</p>
 </div>
 
 <div class="card">
-<div class="skill">PowerPoint
-<div class="bar"><div style="width:95%"></div></div>
-</div>
-
-<div class="skill">Storyline
-<div class="bar"><div style="width:90%"></div></div>
-</div>
-
-<div class="skill">Premiere Pro
-<div class="bar"><div style="width:85%"></div></div>
-</div>
-
+<div class="skill">PowerPoint<div class="bar"><div style="width:95%"></div></div></div>
+<div class="skill">Storyline<div class="bar"><div style="width:90%"></div></div></div>
+<div class="skill">Premiere Pro<div class="bar"><div style="width:85%"></div></div></div>
 </div>
 </div>
 
@@ -240,15 +270,13 @@ margin-top:10px;
 <div id="contact" class="section">
 <div class="section-header">
 <h2>Contact</h2>
-<p>Let’s collaborate on projects and build impactful learning solutions.</p>
+<p>Let’s work together.</p>
 </div>
 
 <div class="card">
 <p>Email: sv393015@gmail.com</p>
-<p>Available for freelance and full-time opportunities.</p>
 <a href="mailto:sv393015@gmail.com" class="btn">Send Mail</a>
 </div>
-
 </div>
 
 </div>
@@ -256,19 +284,11 @@ margin-top:10px;
 <script>
 
 function showSection(id, el){
-
-document.querySelectorAll('.section').forEach(sec=>{
-sec.classList.remove('active');
-});
-
+document.querySelectorAll('.section').forEach(sec=>sec.classList.remove('active'));
 document.getElementById(id).classList.add('active');
 
-document.querySelectorAll('.menu a').forEach(link=>{
-link.classList.remove('active');
-});
-
+document.querySelectorAll('.menu a').forEach(link=>link.classList.remove('active'));
 el.classList.add('active');
-
 }
 
 </script>
