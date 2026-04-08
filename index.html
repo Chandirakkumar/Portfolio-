@@ -4,158 +4,118 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Chandirakkumar | Experience Designer</title>
+<title>Chandirakkumar | Portfolio</title>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 
-/* ===== GLOBAL ===== */
-:root{
-  --bg:#0a0f1c;
-  --text:#e5e7eb;
-  --accent:#3b82f6;
-}
-
+/* ===== BASE ===== */
 body{
   margin:0;
-  font-family:Segoe UI;
-  background:var(--bg);
-  color:var(--text);
-  overflow-x:hidden;
+  font-family: 'Inter', sans-serif;
+  background:#f9fafb;
+  color:#111827;
 }
 
-/* ===== NAV ===== */
-nav{
-  position:fixed;
-  width:100%;
-  top:0;
-  display:flex;
-  justify-content:center;
-  gap:40px;
-  padding:15px;
-  backdrop-filter:blur(10px);
-  z-index:100;
-}
-
-nav a{
-  color:white;
-  cursor:pointer;
-  text-decoration:none;
-}
-
-/* ===== HERO ===== */
-.hero{
-  height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
+/* ===== HEADER ===== */
+header{
+  padding:80px 20px 40px;
   text-align:center;
 }
 
-.hero h1{
-  font-size:70px;
-  background:linear-gradient(90deg,#3b82f6,#06b6d4);
-  -webkit-background-clip:text;
-  color:transparent;
+header h1{
+  font-size:42px;
+  margin:0;
 }
 
-.hero video{
-  position:absolute;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  opacity:0.2;
-  z-index:-1;
+header p{
+  color:#6b7280;
+  margin-top:10px;
 }
 
-/* ===== SECTION ===== */
-.section{
-  padding:120px 20px;
-  max-width:1200px;
+/* ===== CONTAINER ===== */
+.container{
+  max-width:1100px;
   margin:auto;
+  padding:20px;
 }
 
-/* ===== PROJECTS ===== */
+/* ===== PROJECT GRID ===== */
 .projects{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:20px;
 }
 
+/* ===== PROJECT CARD ===== */
 .project{
   position:relative;
   overflow:hidden;
-  border-radius:14px;
+  border-radius:12px;
+  cursor:pointer;
+  background:#000;
 }
 
-.project video{
+.project img{
   width:100%;
   height:260px;
   object-fit:cover;
-  transition:0.5s;
-}
-
-/* OVERLAY */
-.overlay{
-  position:absolute;
-  inset:0;
-  background:linear-gradient(transparent,black);
-  display:flex;
-  flex-direction:column;
-  justify-content:end;
-  padding:20px;
-  opacity:0;
   transition:0.4s;
 }
 
-.project:hover video{
-  transform:scale(1.2);
+/* ===== OVERLAY ===== */
+.overlay{
+  position:absolute;
+  bottom:0;
+  width:100%;
+  padding:20px;
+  background:linear-gradient(transparent,rgba(0,0,0,0.8));
+  color:white;
+  transform:translateY(100%);
+  transition:0.4s;
+}
+
+.project:hover img{
+  transform:scale(1.08);
 }
 
 .project:hover .overlay{
-  opacity:1;
+  transform:translateY(0);
 }
 
-.overlay button{
-  margin-top:10px;
-  padding:8px;
-  background:#3b82f6;
-  border:none;
-  color:white;
+/* ===== TEXT ===== */
+.overlay h3{
+  margin:0;
 }
 
-/* ===== CASE ===== */
-.case{
-  background:#111827;
-  padding:30px;
-  border-radius:14px;
+.overlay p{
+  font-size:13px;
+  color:#cbd5e1;
 }
 
-.case h3{color:#3b82f6;}
-
-/* ===== LIGHT MODE ===== */
-.light{
-  --bg:#ffffff;
-  --text:#111;
+/* ===== ABOUT ===== */
+.about{
+  margin:60px 0;
+  max-width:700px;
 }
 
-/* ===== TOGGLE ===== */
-.toggle{
-  position:fixed;
-  right:20px;
-  top:20px;
-  padding:10px;
-  background:white;
-  color:black;
-  cursor:pointer;
+.about h2{
+  margin-bottom:10px;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  text-align:center;
+  padding:40px;
+  color:#9ca3af;
 }
 
 /* ===== RESPONSIVE ===== */
 @media(max-width:768px){
-  .projects{grid-template-columns:1fr;}
+  .projects{
+    grid-template-columns:1fr;
+  }
 }
 
 </style>
@@ -163,97 +123,57 @@ nav a{
 
 <body>
 
-<div class="toggle" onclick="toggle()">☀️</div>
+<header>
+  <h1>Chandirakkumar</h1>
+  <p>Instructional Designer • E-Learning Developer</p>
+</header>
 
-<nav>
-<a onclick="go('about')">About</a>
-<a onclick="go('projects')">Work</a>
-<a onclick="go('case')">Case Study</a>
-</nav>
+<div class="container">
 
-<!-- HERO -->
-<section class="hero">
-<video src="https://www.w3schools.com/howto/rain.mp4" autoplay muted loop></video>
-<h1>Chandirakkumar</h1>
-<p>Designing Learning Experiences</p>
-</section>
-
-<!-- ABOUT -->
-<section id="about" class="section">
-<h2>About</h2>
-<p>I design systems, not slides. 100+ modules delivered.</p>
-</section>
-
-<!-- PROJECTS -->
-<section id="projects" class="section">
+<div class="about">
+  <h2>About</h2>
+  <p>
+  I design clean, engaging learning experiences using Storyline, PPT and video.
+  Delivered 100+ modules for banking clients with focus on clarity and interaction.
+  </p>
+</div>
 
 <div class="projects">
 
+<!-- PPT -->
 <div class="project">
-<video src="https://www.w3schools.com/html/mov_bbb.mp4" autoplay muted loop></video>
+<img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71">
 <div class="overlay">
-<h3>PPT Training</h3>
-<button onclick="go('case')">View Case</button>
+<h3>Banking Training PPT</h3>
+<p>Corporate training design for financial workflows</p>
 </div>
 </div>
 
+<!-- VIDEO -->
 <div class="project">
-<video src="https://www.w3schools.com/html/movie.mp4" autoplay muted loop></video>
+<img src="https://images.unsplash.com/photo-1587614382346-ac7a9c3c8a3c">
 <div class="overlay">
-<h3>Video Project</h3>
-<button onclick="go('case')">View Case</button>
+<h3>Training Video</h3>
+<p>Edited learning video for onboarding modules</p>
 </div>
 </div>
 
+<!-- STORYLINE -->
 <div class="project">
-<video src="https://www.w3schools.com/html/mov_bbb.mp4" autoplay muted loop></video>
+<img src="https://images.unsplash.com/photo-1559028012-481c04fa702d">
 <div class="overlay">
 <h3>Storyline Simulation</h3>
-<button onclick="go('case')">View Case</button>
+<p>Interactive module for real-world scenarios</p>
 </div>
 </div>
 
 </div>
 
-</section>
-
-<!-- CASE -->
-<section id="case" class="section">
-
-<div class="case">
-<h3>Banking Simulation</h3>
-<p><b>Problem:</b> Complex onboarding</p>
-<p><b>Solution:</b> Interactive simulation</p>
-<p><b>Result:</b> Increased engagement</p>
 </div>
 
-</section>
-
-<script>
-
-/* NAV SCROLL */
-function go(id){
-  document.getElementById(id).scrollIntoView({behavior:"smooth"});
-}
-
-/* DARK MODE */
-function toggle(){
-  document.body.classList.toggle("light");
-}
-
-/* GSAP */
-gsap.from(".hero h1",{y:-80,opacity:0,duration:1});
-
-gsap.utils.toArray(".section").forEach(sec=>{
-  gsap.from(sec,{
-    scrollTrigger:sec,
-    y:100,
-    opacity:0,
-    duration:1
-  });
-});
-
-</script>
+<footer>
+© 2026 Chandirakkumar
+</footer>
 
 </body>
 </html>
