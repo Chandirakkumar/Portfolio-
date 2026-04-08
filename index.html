@@ -3,13 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Chandirakkumar | Instructional Designer</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 
-:root {
+/* ===== ROOT ===== */
+:root{
   --primary:#2563eb;
   --secondary:#06b6d4;
   --bg:#f8fafc;
@@ -19,6 +21,7 @@
   --border:#e2e8f0;
 }
 
+/* ===== BODY ===== */
 body{
   margin:0;
   font-family:'Segoe UI',sans-serif;
@@ -26,7 +29,7 @@ body{
   color:var(--text);
 }
 
-/* HEADER */
+/* ===== HEADER ===== */
 header{
   text-align:center;
   padding:80px 20px;
@@ -51,11 +54,11 @@ header p{
   background:white;
   color:var(--primary);
   border-radius:6px;
-  font-weight:600;
   text-decoration:none;
+  font-weight:600;
 }
 
-/* LAYOUT */
+/* ===== LAYOUT ===== */
 .container{
   max-width:1150px;
   margin:auto;
@@ -68,7 +71,7 @@ header p{
   gap:25px;
 }
 
-/* CARD */
+/* ===== CARD ===== */
 .card{
   background:var(--card);
   padding:25px;
@@ -83,7 +86,7 @@ header p{
   transform:translateY(-4px);
 }
 
-/* HEADINGS */
+/* ===== HEADINGS ===== */
 h2{
   font-size:14px;
   text-transform:uppercase;
@@ -91,17 +94,35 @@ h2{
   margin-bottom:15px;
 }
 
-/* SKILLS */
-.skills span{
-  display:inline-block;
-  background:#e0f2fe;
-  padding:6px 10px;
-  margin:5px;
-  border-radius:6px;
-  font-size:13px;
+/* ===== SKILLS GRID WITH ICONS ===== */
+.skills-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
 }
 
-/* 🔥 PROJECTS (FIXED LAYOUT) */
+.skill-box{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:12px;
+  border:1px solid var(--border);
+  border-radius:10px;
+  background:#f9fafb;
+  transition:0.3s;
+}
+
+.skill-box:hover{
+  background:#e0f2fe;
+  transform:translateY(-2px);
+}
+
+.skill-box i{
+  font-size:18px;
+  color:var(--primary);
+}
+
+/* ===== PROJECTS ===== */
 .projects{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -134,7 +155,7 @@ h2{
   font-size:14px;
 }
 
-/* TIMELINE */
+/* ===== TIMELINE ===== */
 .timeline{
   border-left:2px solid var(--border);
   padding-left:15px;
@@ -148,13 +169,13 @@ h2{
   color:var(--primary);
 }
 
-/* CONTACT */
+/* ===== CONTACT ===== */
 .contact i{
   margin-right:8px;
   color:var(--primary);
 }
 
-/* RESPONSIVE */
+/* ===== RESPONSIVE ===== */
 @media(max-width:768px){
   .layout{
     grid-template-columns:1fr;
@@ -178,7 +199,7 @@ h2{
 <div class="container">
 <div class="layout">
 
-<!-- LEFT -->
+<!-- LEFT SIDE -->
 <div>
 
 <div class="card">
@@ -191,16 +212,42 @@ Delivered 100+ modules for banking clients including Karnataka Bank, Kotak, KVB,
 </div>
 
 <div class="card">
-<h2>Skills</h2>
-<div class="skills">
-<span>PowerPoint</span>
-<span>Storyline 360</span>
-<span>Rise 360</span>
-<span>Simulation Design</span>
-<span>Premiere Pro</span>
-<span>After Effects</span>
-<span>LMS Management</span>
+<h2>Skills & Tools</h2>
+
+<div class="skills-grid">
+
+<div class="skill-box">
+<i class="fa-solid fa-file-powerpoint"></i>
+<p>PowerPoint</p>
 </div>
+
+<div class="skill-box">
+<i class="fa-solid fa-layer-group"></i>
+<p>Storyline 360</p>
+</div>
+
+<div class="skill-box">
+<i class="fa-solid fa-cubes"></i>
+<p>Rise 360</p>
+</div>
+
+<div class="skill-box">
+<i class="fa-solid fa-video"></i>
+<p>Premiere Pro</p>
+</div>
+
+<div class="skill-box">
+<i class="fa-solid fa-film"></i>
+<p>After Effects</p>
+</div>
+
+<div class="skill-box">
+<i class="fa-solid fa-database"></i>
+<p>LMS Management</p>
+</div>
+
+</div>
+
 </div>
 
 <div class="card">
@@ -211,7 +258,7 @@ Delivered 100+ modules for banking clients including Karnataka Bank, Kotak, KVB,
 
 </div>
 
-<!-- RIGHT -->
+<!-- RIGHT SIDE -->
 <div>
 
 <div class="card">
@@ -228,7 +275,7 @@ Delivered 100+ modules for banking clients including Karnataka Bank, Kotak, KVB,
 <video controls>
 <source src="video-sample.mp4">
 </video>
-<p><i class="fa-solid fa-video"></i> Training Video Project</p>
+<p><i class="fa-solid fa-video"></i> Training Video</p>
 </div>
 
 <div class="project">
