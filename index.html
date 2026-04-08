@@ -1,305 +1,271 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chandirakkumar S | Instructional Designer Portfolio</title>
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chandirakkumar | Instructional Designer</title>
 
-    <style>
-        :root {
-            --primary: #2563eb;
-            --primary-dark: #1d4ed8;
-            --bg: #f8fafc;
-            --card-bg: #ffffff;
-            --text-main: #1e293b;
-            --text-muted: #64748b;
-            --border: #e2e8f0;
-            --shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.07);
-            --radius: 14px;
-        }
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-        body {
-            margin: 0;
-            font-family: 'Inter', -apple-system, sans-serif;
-            background: var(--bg);
-            color: var(--text-main);
-            line-height: 1.6;
-        }
+<style>
 
-        /* --- HEADER --- */
-        header {
-            text-align: center;
-            padding: 80px 20px;
-            background: var(--card-bg);
-            border-bottom: 1px solid var(--border);
-        }
+/* ---------- ROOT ---------- */
+:root {
+  --primary:#2563eb;
+  --secondary:#06b6d4;
+  --bg:#f8fafc;
+  --card:#ffffff;
+  --text:#1e293b;
+  --muted:#64748b;
+  --border:#e2e8f0;
+}
 
-        header h1 {
-            margin: 0;
-            font-size: 36px;
-            font-weight: 800;
-            letter-spacing: -1px;
-            color: var(--primary);
-        }
+/* ---------- BODY ---------- */
+body{
+  margin:0;
+  font-family:'Segoe UI',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
 
-        header p {
-            color: var(--text-muted);
-            margin-top: 10px;
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
+/* ---------- HEADER ---------- */
+header{
+  text-align:center;
+  padding:80px 20px;
+  background:linear-gradient(135deg,var(--primary),var(--secondary));
+  color:white;
+}
 
-        /* --- LAYOUT --- */
-        .container {
-            max-width: 1140px;
-            margin: auto;
-            padding: 40px 20px;
-        }
+header h1{
+  margin:0;
+  font-size:38px;
+}
 
-        .layout {
-            display: grid;
-            grid-template-columns: 350px 1fr; /* Fixed sidebar width for better balance */
-            gap: 30px;
-        }
+header p{
+  margin-top:10px;
+  color:#e0f2fe;
+}
 
-        /* --- CARD STYLE --- */
-        .card {
-            background: var(--card-bg);
-            padding: 28px;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            margin-bottom: 25px;
-            border: 1px solid var(--border);
-            transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
+.btn{
+  display:inline-block;
+  margin-top:20px;
+  padding:10px 18px;
+  background:white;
+  color:var(--primary);
+  border-radius:6px;
+  font-weight:600;
+  text-decoration:none;
+}
 
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-        }
+/* ---------- LAYOUT ---------- */
+.container{
+  max-width:1150px;
+  margin:auto;
+  padding:40px 20px;
+}
 
-        h2 {
-            margin-bottom: 20px;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--primary);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+.layout{
+  display:grid;
+  grid-template-columns:320px 1fr;
+  gap:25px;
+}
 
-        h2::after {
-            content: "";
-            height: 1px;
-            background: var(--border);
-            flex-grow: 1;
-        }
+/* ---------- CARD ---------- */
+.card{
+  background:var(--card);
+  padding:25px;
+  border-radius:12px;
+  box-shadow:0 6px 20px rgba(0,0,0,0.06);
+  margin-bottom:20px;
+  border-left:4px solid var(--primary);
+  transition:0.3s;
+}
 
-        /* --- SIDEBAR COMPONENTS --- */
-        .about-text { font-size: 0.95rem; color: var(--text-main); }
+.card:hover{
+  transform:translateY(-4px);
+}
 
-        .skills-group {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
+/* ---------- HEADINGS ---------- */
+h2{
+  font-size:14px;
+  text-transform:uppercase;
+  color:var(--primary);
+  margin-bottom:15px;
+}
 
-        .skills-group span {
-            background: #f1f5f9;
-            color: var(--text-main);
-            padding: 6px 14px;
-            border-radius: 100px;
-            font-size: 12px;
-            font-weight: 600;
-            border: 1px solid var(--border);
-        }
+/* ---------- SKILLS ---------- */
+.skills span{
+  display:inline-block;
+  background:#e0f2fe;
+  padding:6px 10px;
+  margin:5px;
+  border-radius:6px;
+  font-size:13px;
+}
 
-        .contact-info {
-            font-size: 0.9rem;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+/* ---------- PROJECTS ---------- */
+.projects{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:15px;
+}
 
-        .contact-info i { color: var(--primary); width: 16px; }
+.project{
+  border:1px solid var(--border);
+  border-radius:10px;
+  overflow:hidden;
+  background:#fafafa;
+  transition:0.3s;
+}
 
-        /* --- PROJECT GRID --- */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-        }
+.project:hover{
+  transform:scale(1.04);
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
 
-        .project-item {
-            background: #fafafa;
-            border-radius: 10px;
-            overflow: hidden;
-            border: 1px solid var(--border);
-            transition: 0.3s;
-        }
+.project img,
+.project video{
+  width:100%;
+  height:140px;
+  object-fit:cover;
+}
 
-        .project-item:hover {
-            border-color: var(--primary);
-        }
+.project p{
+  text-align:center;
+  padding:10px;
+  font-size:14px;
+}
 
-        .media-container {
-            height: 160px;
-            background: #edf2f7;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
+/* ---------- TIMELINE ---------- */
+.timeline{
+  border-left:2px solid var(--border);
+  padding-left:15px;
+}
 
-        .media-container i { opacity: 0.2; }
+.timeline div{
+  margin-bottom:20px;
+}
 
-        .project-details {
-            padding: 15px;
-            text-align: center;
-            font-weight: 600;
-            font-size: 14px;
-        }
+.timeline strong{
+  color:var(--primary);
+}
 
-        /* --- EXPERIENCE TIMELINE --- */
-        .timeline-item {
-            padding-left: 20px;
-            border-left: 2px solid var(--border);
-            position: relative;
-            margin-bottom: 25px;
-        }
+/* ---------- CONTACT ---------- */
+.contact i{
+  margin-right:8px;
+  color:var(--primary);
+}
 
-        .timeline-item::before {
-            content: "";
-            position: absolute;
-            left: -7px;
-            top: 0;
-            width: 12px;
-            height: 12px;
-            background: var(--primary);
-            border-radius: 50%;
-        }
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:768px){
+  .layout{
+    grid-template-columns:1fr;
+  }
+}
 
-        .timeline-date {
-            font-size: 12px;
-            font-weight: 700;
-            color: var(--primary);
-        }
-
-        .timeline-title { font-weight: 700; font-size: 1.1rem; }
-        .timeline-company { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 5px; }
-
-        /* --- RESPONSIVE --- */
-        @media(max-width: 900px) {
-            .layout { grid-template-columns: 1fr; }
-            header { padding: 50px 20px; }
-        }
-
-        @media(max-width: 600px) {
-            .projects-grid { grid-template-columns: 1fr; }
-        }
-
-    </style>
+</style>
 </head>
 
 <body>
 
 <header>
-    <h1>Chandirakkumar S</h1>
-    <p>Instructional Designer & E-Learning Developer specializing in high-impact corporate training and interactive simulations.</p>
+  <h1>Chandirakkumar</h1>
+  <p>Instructional Designer | E-Learning Developer | 100+ Modules Delivered</p>
+  <a href="#" class="btn">Download Resume</a>
 </header>
 
 <div class="container">
-    <div class="layout">
+<div class="layout">
 
-        <aside>
-            <div class="card">
-                <h2><i class="fa-solid fa-user"></i> About</h2>
-                <p class="about-text">
-                    Dedicated Instructional Designer with a Bachelor of Arts in English. I transform complex information into engaging, learner-centric experiences. Over 100+ modules delivered across the banking and finance sectors.
-                </p>
-            </div>
+<!-- LEFT -->
+<div>
 
-            <div class="card">
-                <h2><i class="fa-solid fa-screwdriver-wrench"></i> Expertise</h2>
-                <div class="skills-group">
-                    <span>Articulate Storyline 360</span>
-                    <span>Rise 360</span>
-                    <span>Vyond</span>
-                    <span>Premiere Pro</span>
-                    <span>LMS Admin</span>
-                    <span>Scenario-Based Learning</span>
-                    <span>Visual Storyboarding</span>
-                </div>
-            </div>
-
-            <div class="card">
-                <h2><i class="fa-solid fa-paper-plane"></i> Contact</h2>
-                <div class="contact-info"><i class="fa-solid fa-envelope"></i> sv393015@gmail.com</div>
-                <div class="contact-info"><i class="fa-brands fa-linkedin"></i> linkedin.com/in/chandirakkumar</div>
-                <div class="contact-info"><i class="fa-solid fa-location-dot"></i> Bengaluru, India</div>
-            </div>
-        </aside>
-
-        <main>
-            <div class="card">
-                <h2><i class="fa-solid fa-briefcase"></i> Work Showcase</h2>
-                <div class="projects-grid">
-                    
-                    <div class="project-item">
-                        <div class="media-container"><i class="fa-solid fa-file-powerpoint fa-3x"></i></div>
-                        <div class="project-details">Corporate Compliance Training</div>
-                    </div>
-
-                    <div class="project-item">
-                        <div class="media-container"><i class="fa-solid fa-layer-group fa-3x"></i></div>
-                        <div class="project-details">Storyline 360 Simulation</div>
-                    </div>
-
-                    <div class="project-item">
-                        <div class="media-container"><i class="fa-solid fa-video fa-3x"></i></div>
-                        <div class="project-details">Vyond Animated Series</div>
-                    </div>
-
-                    <div class="project-item">
-                        <div class="media-container"><i class="fa-solid fa-laptop-code fa-3x"></i></div>
-                        <div class="project-details">Banking Software Guide</div>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="card">
-                <h2><i class="fa-solid fa-clock-rotate-left"></i> Experience</h2>
-                
-                <div class="timeline-item">
-                    <div class="timeline-date">Current</div>
-                    <div class="timeline-title">Instructional Designer</div>
-                    <div class="timeline-company">Agama Educon Pvt Ltd.</div>
-                    <p class="about-text">Leading the development of interactive modules for banking clients. Responsible for the full cycle from storyboarding to LMS deployment.</p>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-date">2023 - 2025</div>
-                    <div class="timeline-title">E-Learning Developer</div>
-                    <div class="timeline-company">Corporate Training Sector</div>
-                    <p class="about-text">Delivered over 100+ modules for clients like Kotak, KVB, and Karnataka Bank, focusing on high-retention learning strategies.</p>
-                </div>
-            </div>
-        </main>
-
-    </div>
+<div class="card">
+<h2>About</h2>
+<p>
+Instructional Designer with 1+ year experience creating interactive e-learning content.
+Specialized in <b>PowerPoint, Storyline 360, and simulations</b>.
+Delivered 100+ modules for banking clients like Karnataka Bank, Kotak, KVB, and IIFL.
+</p>
 </div>
 
-<footer style="text-align: center; padding: 40px; color: #94a3b8; font-size: 0.8rem;">
-    &copy; 2026 Chandirakkumar S. Built with passion and code.
-</footer>
+<div class="card">
+<h2>Skills</h2>
+<div class="skills">
+<span>PowerPoint</span>
+<span>Storyline 360</span>
+<span>Rise 360</span>
+<span>Simulation Design</span>
+<span>Premiere Pro</span>
+<span>After Effects</span>
+<span>LMS Management</span>
+</div>
+</div>
+
+<div class="card">
+<h2>Contact</h2>
+<p class="contact"><i class="fa-solid fa-envelope"></i> sv393015@gmail.com</p>
+<p class="contact"><i class="fa-brands fa-linkedin"></i> linkedin.com/in/it-tech-support</p>
+</div>
+
+</div>
+
+<!-- RIGHT -->
+<div>
+
+<div class="card">
+<h2>Projects</h2>
+
+<div class="projects">
+
+<div class="project">
+<img src="https://via.placeholder.com/300">
+<p>PPT Training Module</p>
+</div>
+
+<div class="project">
+<img src="https://via.placeholder.com/300">
+<p>Storyline Simulation</p>
+</div>
+
+<div class="project">
+<video controls>
+<source src="your-video.mp4">
+</video>
+<p>Training Video</p>
+</div>
+
+<div class="project">
+<img src="https://via.placeholder.com/300">
+<p>Banking System Guide</p>
+</div>
+
+</div>
+</div>
+
+<div class="card">
+<h2>Experience</h2>
+
+<div class="timeline">
+<div>
+<strong>2024 - Present</strong><br>
+Instructional Designer<br>
+<span style="color:#64748b;">Agama Educon</span>
+</div>
+
+<div>
+<strong>2023 - 2024</strong><br>
+E-Learning Developer<br>
+<span style="color:#64748b;">Banking Projects</span>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div>
 
 </body>
 </html>
