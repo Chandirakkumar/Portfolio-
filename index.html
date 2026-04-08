@@ -3,181 +3,136 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Chandirakkumar S | Elite Portfolio</title>
+<title>Chandirakkumar | Dashboard Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 
-/* ================= BASE ================= */
+/* ===== BASE ===== */
 *{margin:0;padding:0;box-sizing:border-box}
 body{
 font-family:'Inter',sans-serif;
-background:#05070d;
+background:#0f172a;
 color:#fff;
-overflow-x:hidden;
+display:flex;
 }
 
-/* ================= CURSOR ================= */
-.cursor{
-width:20px;
-height:20px;
-border:2px solid #6366f1;
-border-radius:50%;
-position:fixed;
-pointer-events:none;
-z-index:9999;
-transform:translate(-50%,-50%);
-transition:0.1s;
+/* ===== SIDEBAR ===== */
+.sidebar{
+width:250px;
+height:100vh;
+background:#020617;
+padding:30px;
+display:flex;
+flex-direction:column;
+gap:30px;
 }
 
-/* ================= NAV ================= */
-nav{
-position:fixed;
-width:100%;
-padding:20px 60px;
+.logo{
+font-weight:700;
+font-size:18px;
+background:linear-gradient(135deg,#6366f1,#22c55e);
+-webkit-background-clip:text;
+color:transparent;
+}
+
+.menu{
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.menu a{
+text-decoration:none;
+color:#aaa;
+padding:10px;
+border-radius:8px;
+transition:0.3s;
+}
+
+.menu a:hover{
+background:#1e293b;
+color:#fff;
+}
+
+/* ===== MAIN ===== */
+.main{
+flex:1;
+padding:30px;
+}
+
+/* HEADER */
+.header{
 display:flex;
 justify-content:space-between;
-background:rgba(0,0,0,0.4);
-backdrop-filter:blur(20px);
-z-index:1000;
-}
-
-.nav-logo{
-font-weight:700;
-background:linear-gradient(135deg,#6366f1,#22c55e);
--webkit-background-clip:text;
-color:transparent;
-}
-
-/* ================= HERO ================= */
-.hero{
-height:100vh;
-display:flex;
 align-items:center;
-justify-content:center;
-text-align:center;
-position:relative;
-overflow:hidden;
+margin-bottom:30px;
 }
 
-/* PARALLAX BACKGROUND */
-.hero::before{
-content:'';
-position:absolute;
-width:800px;
-height:800px;
-background:radial-gradient(circle,#6366f1,transparent);
-filter:blur(200px);
-z-index:-1;
-animation:move 10s infinite alternate;
-}
-
-@keyframes move{
-to{transform:translateY(100px);}
-}
-
-.hero h1{
-font-size:80px;
-line-height:1.1;
-}
-
-.hero span{
-background:linear-gradient(135deg,#6366f1,#22c55e);
--webkit-background-clip:text;
-color:transparent;
-}
-
-/* ================= PROJECTS ================= */
-section{padding:120px 80px;}
-
-.projects{
-display:flex;
-gap:40px;
-overflow-x:auto;
-scroll-snap-type:x mandatory;
-}
-
-.card{
-min-width:400px;
-background:#0f172a;
-border-radius:20px;
-overflow:hidden;
-position:relative;
-scroll-snap-align:start;
-transition:0.4s;
-transform-style:preserve-3d;
-}
-
-/* 3D HOVER */
-.card:hover{
-transform:rotateY(8deg) scale(1.05);
-}
-
-/* IMAGE */
-.card img{
-width:100%;
-height:250px;
-object-fit:cover;
-}
-
-/* VIDEO */
-.card video{
-position:absolute;
-top:0;
-width:100%;
-height:250px;
-object-fit:cover;
-opacity:0;
-transition:0.3s;
-}
-
-.card:hover video{opacity:1}
-
-/* TEXT */
-.card-content{
-padding:20px;
-}
-
-/* ================= SKILLS ================= */
-.skills{
-display:flex;
-gap:20px;
-flex-wrap:wrap;
-}
-
-.skill{
-padding:15px 25px;
-border-radius:30px;
-background:rgba(255,255,255,0.05);
-transition:0.3s;
-}
-
-.skill:hover{
-background:linear-gradient(135deg,#6366f1,#22c55e);
-transform:scale(1.1);
-}
-
-/* ================= CONTACT ================= */
-.contact{
-text-align:center;
+.header h1{
+font-size:24px;
 }
 
 .btn{
-display:inline-block;
-margin-top:30px;
-padding:15px 40px;
+padding:10px 20px;
+border-radius:10px;
 background:linear-gradient(135deg,#6366f1,#22c55e);
-border-radius:40px;
-text-decoration:none;
+border:none;
 color:#fff;
+cursor:pointer;
+}
+
+/* ===== GRID ===== */
+.grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+}
+
+/* CARD */
+.card{
+background:#020617;
+padding:20px;
+border-radius:15px;
 transition:0.3s;
 }
 
-.btn:hover{
-transform:scale(1.1);
-box-shadow:0 0 40px rgba(99,102,241,0.7);
+.card:hover{
+transform:translateY(-5px);
+box-shadow:0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* PROJECT CARD */
+.project img{
+width:100%;
+border-radius:10px;
+margin-bottom:10px;
+}
+
+/* SKILLS */
+.skill{
+display:flex;
+justify-content:space-between;
+margin-bottom:10px;
+}
+
+.bar{
+height:6px;
+background:#1e293b;
+border-radius:10px;
+overflow:hidden;
+}
+
+.bar div{
+height:100%;
+background:linear-gradient(135deg,#6366f1,#22c55e);
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+.sidebar{display:none;}
+.grid{grid-template-columns:1fr;}
 }
 
 </style>
@@ -185,95 +140,90 @@ box-shadow:0 0 40px rgba(99,102,241,0.7);
 
 <body>
 
-<div class="cursor" id="cursor"></div>
+<!-- SIDEBAR -->
+<div class="sidebar">
+<div class="logo">Chandirakkumar</div>
 
-<!-- NAV -->
-<nav>
-<div class="nav-logo">Chandirakkumar S</div>
-</nav>
-
-<!-- HERO -->
-<section class="hero">
-<div>
-<h1>Design <span>Experience</span><br>Not Slides</h1>
+<div class="menu">
+<a href="#">Dashboard</a>
+<a href="#">Projects</a>
+<a href="#">Skills</a>
+<a href="#">Contact</a>
 </div>
-</section>
+</div>
 
-<!-- PROJECTS -->
-<section>
-<h2>Projects</h2>
+<!-- MAIN -->
+<div class="main">
 
-<div class="projects">
+<div class="header">
+<h1>Welcome Back 👋</h1>
+<a href="mailto:sv393015@gmail.com" class="btn">Hire Me</a>
+</div>
 
-<div class="card">
+<!-- GRID -->
+<div class="grid">
+
+<!-- PROJECT -->
+<div class="card project">
+<h3>PPT Design</h3>
 <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f">
-<video muted loop>
-<source src="https://www.w3schools.com/html/mov_bbb.mp4">
-</video>
-<div class="card-content">PPT Design</div>
+<p>Banking training deck</p>
 </div>
 
-<div class="card">
+<div class="card project">
+<h3>Video Editing</h3>
 <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d">
-<video muted loop>
-<source src="https://www.w3schools.com/html/movie.mp4">
-</video>
-<div class="card-content">Video Editing</div>
+<p>KYC Explainer</p>
 </div>
 
-<div class="card">
+<div class="card project">
+<h3>Storyline</h3>
 <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71">
-<video muted loop>
-<source src="https://www.w3schools.com/html/mov_bbb.mp4">
-</video>
-<div class="card-content">Storyline</div>
+<p>AML Simulation</p>
 </div>
-
-</div>
-
-</section>
 
 <!-- SKILLS -->
-<section>
-<h2>Skills</h2>
+<div class="card">
+<h3>Skills</h3>
 
-<div class="skills">
-<div class="skill">PowerPoint</div>
-<div class="skill">Storyline</div>
-<div class="skill">Rise 360</div>
-<div class="skill">Premiere Pro</div>
-<div class="skill">After Effects</div>
+<div class="skill">
+<span>PowerPoint</span>
+<span>95%</span>
+</div>
+<div class="bar"><div style="width:95%"></div></div>
+
+<div class="skill">
+<span>Storyline</span>
+<span>90%</span>
+</div>
+<div class="bar"><div style="width:90%"></div></div>
+
+<div class="skill">
+<span>Premiere Pro</span>
+<span>85%</span>
+</div>
+<div class="bar"><div style="width:85%"></div></div>
+
 </div>
 
-</section>
+<!-- STATS -->
+<div class="card">
+<h3>Stats</h3>
+<p>100+ Modules</p>
+<p>4 Clients</p>
+<p>1+ Year Experience</p>
+</div>
 
 <!-- CONTACT -->
-<section class="contact">
-<h2>Let’s Work Together</h2>
-<a href="mailto:sv393015@gmail.com" class="btn">Hire Me</a>
-</section>
+<div class="card">
+<h3>Contact</h3>
+<p>Email: sv393015@gmail.com</p>
+<a href="mailto:sv393015@gmail.com" class="btn">Send Mail</a>
+</div>
 
-<script>
+</div>
 
-/* CUSTOM CURSOR */
-const cursor=document.getElementById("cursor");
-
-document.addEventListener("mousemove",(e)=>{
-cursor.style.left=e.clientX+"px";
-cursor.style.top=e.clientY+"px";
-});
-
-/* VIDEO HOVER */
-document.querySelectorAll(".card").forEach(card=>{
-const video=card.querySelector("video");
-card.addEventListener("mouseenter",()=>video.play());
-card.addEventListener("mouseleave",()=>{
-video.pause();
-video.currentTime=0;
-});
-});
-
-</script>
+</div>
 
 </body>
 </html>
