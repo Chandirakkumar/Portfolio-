@@ -32,25 +32,18 @@ body{
 /* ===== HEADER ===== */
 header{
   text-align:center;
-  padding:80px 20px;
+  padding:90px 20px;
   background:linear-gradient(135deg,var(--primary),var(--secondary));
   color:white;
 }
 
-header h1{
-  margin:0;
-  font-size:38px;
-}
-
-header p{
-  margin-top:10px;
-  color:#e0f2fe;
-}
+header h1{font-size:40px;margin:0;}
+header p{margin-top:10px;color:#e0f2fe;}
 
 .btn{
-  display:inline-block;
   margin-top:20px;
-  padding:10px 18px;
+  display:inline-block;
+  padding:10px 20px;
   background:white;
   color:var(--primary);
   border-radius:6px;
@@ -82,9 +75,7 @@ header p{
   transition:0.3s;
 }
 
-.card:hover{
-  transform:translateY(-4px);
-}
+.card:hover{transform:translateY(-4px);}
 
 /* ===== HEADINGS ===== */
 h2{
@@ -94,7 +85,7 @@ h2{
   margin-bottom:15px;
 }
 
-/* ===== SKILLS GRID WITH ICONS ===== */
+/* ===== SKILLS WITH REAL LOGOS ===== */
 .skills-grid{
   display:grid;
   grid-template-columns:repeat(2,1fr);
@@ -109,17 +100,10 @@ h2{
   border:1px solid var(--border);
   border-radius:10px;
   background:#f9fafb;
-  transition:0.3s;
 }
 
-.skill-box:hover{
-  background:#e0f2fe;
-  transform:translateY(-2px);
-}
-
-.skill-box i{
-  font-size:18px;
-  color:var(--primary);
+.skill-box img{
+  width:22px;
 }
 
 /* ===== PROJECTS ===== */
@@ -142,8 +126,7 @@ h2{
   box-shadow:0 10px 25px rgba(0,0,0,0.08);
 }
 
-.project img,
-.project video{
+.project img{
   width:100%;
   height:140px;
   object-fit:cover;
@@ -155,34 +138,27 @@ h2{
   font-size:14px;
 }
 
-/* ===== TIMELINE ===== */
-.timeline{
-  border-left:2px solid var(--border);
-  padding-left:15px;
+.project a{
+  text-decoration:none;
+  color:inherit;
 }
 
-.timeline div{
-  margin-bottom:20px;
+/* ===== CASE STUDY ===== */
+.case{
+  padding:15px;
+  border:1px solid var(--border);
+  border-radius:10px;
+  background:#f9fafb;
 }
 
-.timeline strong{
-  color:var(--primary);
-}
-
-/* ===== CONTACT ===== */
-.contact i{
-  margin-right:8px;
+.case strong{
   color:var(--primary);
 }
 
 /* ===== RESPONSIVE ===== */
 @media(max-width:768px){
-  .layout{
-    grid-template-columns:1fr;
-  }
-  .projects{
-    grid-template-columns:1fr;
-  }
+  .layout{grid-template-columns:1fr;}
+  .projects{grid-template-columns:1fr;}
 }
 
 </style>
@@ -199,66 +175,49 @@ h2{
 <div class="container">
 <div class="layout">
 
-<!-- LEFT SIDE -->
+<!-- LEFT -->
 <div>
 
 <div class="card">
 <h2>About</h2>
 <p>
-Instructional Designer with 1+ year experience creating engaging e-learning content.
-Specialized in <b>PowerPoint, Articulate Storyline 360, and simulations</b>.
-Delivered 100+ modules for banking clients including Karnataka Bank, Kotak, KVB, and IIFL.
+Instructional Designer with 1+ year experience creating interactive learning.
+Delivered 100+ modules for banking clients using Storyline, PPT and LMS platforms.
 </p>
 </div>
 
 <div class="card">
-<h2>Skills & Tools</h2>
+<h2>Tools</h2>
 
 <div class="skills-grid">
 
 <div class="skill-box">
-<i class="fa-solid fa-file-powerpoint"></i>
+<img src="powerpoint.png">
 <p>PowerPoint</p>
 </div>
 
 <div class="skill-box">
-<i class="fa-solid fa-layer-group"></i>
+<img src="storyline.png">
 <p>Storyline 360</p>
 </div>
 
 <div class="skill-box">
-<i class="fa-solid fa-cubes"></i>
-<p>Rise 360</p>
-</div>
-
-<div class="skill-box">
-<i class="fa-solid fa-video"></i>
+<img src="premiere.png">
 <p>Premiere Pro</p>
 </div>
 
 <div class="skill-box">
-<i class="fa-solid fa-film"></i>
+<img src="aftereffects.png">
 <p>After Effects</p>
 </div>
 
-<div class="skill-box">
-<i class="fa-solid fa-database"></i>
-<p>LMS Management</p>
 </div>
 
 </div>
 
 </div>
 
-<div class="card">
-<h2>Contact</h2>
-<p class="contact"><i class="fa-solid fa-envelope"></i> sv393015@gmail.com</p>
-<p class="contact"><i class="fa-brands fa-linkedin"></i> linkedin.com/in/it-tech-support</p>
-</div>
-
-</div>
-
-<!-- RIGHT SIDE -->
+<!-- RIGHT -->
 <div>
 
 <div class="card">
@@ -266,42 +225,39 @@ Delivered 100+ modules for banking clients including Karnataka Bank, Kotak, KVB,
 
 <div class="projects">
 
+<a href="#" target="_blank">
 <div class="project">
 <img src="ppt-sample.png">
-<p><i class="fa-solid fa-file-powerpoint"></i> Banking Training PPT</p>
+<p>PPT Training Module</p>
 </div>
+</a>
 
+<a href="#" target="_blank">
 <div class="project">
-<video controls>
-<source src="video-sample.mp4">
-</video>
-<p><i class="fa-solid fa-video"></i> Training Video</p>
+<img src="video-thumbnail.png">
+<p>Training Video</p>
 </div>
+</a>
 
+<a href="#" target="_blank">
 <div class="project">
 <img src="storyline-sample.png">
-<p><i class="fa-solid fa-layer-group"></i> Storyline Simulation</p>
+<p>Storyline Simulation</p>
 </div>
+</a>
 
 </div>
 
 </div>
 
 <div class="card">
-<h2>Experience</h2>
+<h2>Case Study</h2>
 
-<div class="timeline">
-<div>
-<strong>2024 - Present</strong><br>
-Instructional Designer<br>
-<span style="color:#64748b;">Agama Educon Pvt Ltd.</span>
-</div>
-
-<div>
-<strong>2023 - 2024</strong><br>
-E-Learning Developer<br>
-<span style="color:#64748b;">Banking Projects</span>
-</div>
+<div class="case">
+<strong>Project:</strong> Banking Training Module<br><br>
+<strong>Problem:</strong> Complex process training for employees<br><br>
+<strong>Solution:</strong> Created interactive simulation using Storyline<br><br>
+<strong>Result:</strong> Improved learner engagement and understanding
 </div>
 
 </div>
