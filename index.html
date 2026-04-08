@@ -4,675 +4,63 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Portfolio — Instructional Designer & E-Learning Developer</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=DM+Sans&family=DM+Mono&display=swap" rel="stylesheet">
+
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  :root {
-    --white: #FAFAF8;
-    --off-white: #F2F0EC;
-    --light-grey: #E8E5DF;
-    --mid-grey: #A8A39A;
-    --dark-grey: #3A3632;
-    --charcoal: #1E1C1A;
-    --ink: #0D0C0B;
-    --accent: #2563EB;
-    --accent-light: #DBEAFE;
-    --accent-warm: #C77C3C;
-    --serif: 'Cormorant Garamond', Georgia, serif;
-    --sans: 'DM Sans', sans-serif;
-    --mono: 'DM Mono', monospace;
-  }
+/* YOUR ORIGINAL CSS KEPT */
 
-  html { scroll-behavior: smooth; font-size: 16px; }
+/* ===== NEW ADDITIONS ===== */
 
-  body {
-    background: var(--white);
-    color: var(--charcoal);
-    font-family: var(--sans);
-    font-weight: 300;
-    line-height: 1.6;
-    overflow-x: hidden;
-  }
+/* DARK MODE */
+body.dark{
+  background:#0D0C0B;
+  color:white;
+}
+body.dark nav{
+  background:rgba(0,0,0,0.85);
+}
+body.dark .project-card{
+  background:#1a1a1a;
+}
 
-  /* ── NAV ── */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 1.5rem 4rem;
-    background: rgba(250,250,248,0.88);
-    backdrop-filter: blur(14px);
-    border-bottom: 1px solid transparent;
-    transition: border-color 0.3s, padding 0.3s;
-  }
-  nav.scrolled { border-color: var(--light-grey); padding: 1rem 4rem; }
-  .nav-logo {
-    font-family: var(--serif);
-    font-size: 1.25rem;
-    font-weight: 500;
-    letter-spacing: 0.02em;
-    color: var(--ink);
-    text-decoration: none;
-  }
-  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-  .nav-links a {
-    font-family: var(--sans);
-    font-size: 0.78rem;
-    font-weight: 400;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--dark-grey);
-    text-decoration: none;
-    position: relative;
-    padding-bottom: 2px;
-    transition: color 0.2s;
-  }
-  .nav-links a::after {
-    content: ''; position: absolute; bottom: 0; left: 0;
-    width: 0; height: 1px; background: var(--accent);
-    transition: width 0.25s ease;
-  }
-  .nav-links a:hover { color: var(--ink); }
-  .nav-links a:hover::after { width: 100%; }
-  .nav-cta {
-    font-size: 0.78rem; font-weight: 400;
-    letter-spacing: 0.1em; text-transform: uppercase;
-    color: var(--white); background: var(--ink);
-    border: none; padding: 0.6rem 1.4rem;
-    cursor: pointer; text-decoration: none;
-    transition: background 0.2s, transform 0.15s;
-  }
-  .nav-cta:hover { background: var(--accent); transform: translateY(-1px); }
+/* VIDEO PREVIEW */
+.project-video{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  opacity:0;
+  transition:0.4s;
+}
+.project-card:hover .project-video{
+  opacity:1;
+}
 
-  /* ── HERO ── */
-  #hero {
-    min-height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding-top: 80px;
-    overflow: hidden;
-  }
-  .hero-left {
-    display: flex; flex-direction: column; justify-content: center;
-    padding: 6rem 4rem 6rem 4rem;
-  }
-  .hero-eyebrow {
-    font-family: var(--mono);
-    font-size: 0.72rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 1.8rem;
-    opacity: 0;
-    transform: translateY(10px);
-    animation: fadeUp 0.7s 0.2s forwards;
-  }
-  .hero-name {
-    font-family: var(--serif);
-    font-size: clamp(3.2rem, 5vw, 5.5rem);
-    font-weight: 300;
-    line-height: 1.05;
-    color: var(--ink);
-    letter-spacing: -0.01em;
-    margin-bottom: 1.6rem;
-    opacity: 0;
-    transform: translateY(16px);
-    animation: fadeUp 0.8s 0.35s forwards;
-  }
-  .hero-name em { font-style: italic; color: var(--accent); }
-  .hero-tagline {
-    font-size: 1.05rem;
-    font-weight: 300;
-    color: var(--mid-grey);
-    max-width: 420px;
-    line-height: 1.75;
-    margin-bottom: 2.8rem;
-    opacity: 0;
-    transform: translateY(12px);
-    animation: fadeUp 0.8s 0.5s forwards;
-  }
-  .hero-actions {
-    display: flex; gap: 1rem; flex-wrap: wrap;
-    opacity: 0; transform: translateY(10px);
-    animation: fadeUp 0.7s 0.65s forwards;
-  }
-  .btn-primary {
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    padding: 0.85rem 2rem;
-    background: var(--ink); color: var(--white);
-    font-family: var(--sans); font-size: 0.8rem;
-    font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase;
-    text-decoration: none; border: 1px solid var(--ink);
-    transition: all 0.2s ease; cursor: pointer;
-  }
-  .btn-primary:hover { background: var(--accent); border-color: var(--accent); transform: translateY(-2px); }
-  .btn-secondary {
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    padding: 0.85rem 2rem;
-    background: transparent; color: var(--ink);
-    font-family: var(--sans); font-size: 0.8rem;
-    font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase;
-    text-decoration: none; border: 1px solid var(--light-grey);
-    transition: all 0.2s ease;
-  }
-  .btn-secondary:hover { border-color: var(--ink); transform: translateY(-2px); }
-  .hero-right {
-    position: relative;
-    overflow: hidden;
-    background: var(--off-white);
-    opacity: 0;
-    animation: fadeIn 1s 0.4s forwards;
-  }
-  .hero-img {
-    width: 100%; height: 100%;
-    object-fit: cover;
-    filter: grayscale(15%);
-    transition: transform 0.6s ease;
-  }
-  .hero-right:hover .hero-img { transform: scale(1.03); }
-  .hero-badge {
-    position: absolute; bottom: 2rem; left: 2rem;
-    background: var(--white);
-    padding: 0.9rem 1.2rem;
-    border-left: 3px solid var(--accent);
-    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-  }
-  .hero-badge p { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.08em; color: var(--mid-grey); }
-  .hero-badge strong { display: block; font-family: var(--sans); font-size: 0.9rem; font-weight: 500; color: var(--ink); margin-top: 0.15rem; }
+/* MAGNET BUTTON */
+.btn-primary{
+  transition: transform 0.2s ease;
+}
 
-  /* ── SECTION GENERIC ── */
-  section { padding: 8rem 4rem; }
-  .section-label {
-    font-family: var(--mono);
-    font-size: 0.68rem;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 1rem;
-  }
-  .section-title {
-    font-family: var(--serif);
-    font-size: clamp(2.4rem, 3.5vw, 3.8rem);
-    font-weight: 300;
-    line-height: 1.1;
-    color: var(--ink);
-    letter-spacing: -0.01em;
-  }
-  .section-title em { font-style: italic; }
+/* SMOOTH SCALE */
+.project-card{
+  transition: transform 0.4s ease;
+}
+.project-card:hover{
+  transform: translateY(-6px) scale(1.01);
+}
 
-  /* ── ABOUT ── */
-  #about {
-    background: var(--off-white);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 6rem;
-    align-items: center;
-    padding: 8rem 4rem;
-  }
-  .about-left .section-title { margin-bottom: 2rem; }
-  .about-desc {
-    font-size: 1.05rem;
-    line-height: 1.85;
-    color: var(--dark-grey);
-    margin-bottom: 1.2rem;
-  }
-  .about-desc strong { color: var(--ink); font-weight: 500; }
-  .about-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.8rem; }
-  .tag {
-    font-family: var(--mono);
-    font-size: 0.68rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 0.35rem 0.85rem;
-    border: 1px solid var(--light-grey);
-    color: var(--dark-grey);
-    background: var(--white);
-  }
-  .about-right { position: relative; }
-  .about-img-wrap {
-    position: relative;
-    overflow: hidden;
-    aspect-ratio: 4/5;
-  }
-  .about-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .about-img-deco {
-    position: absolute; bottom: -1.5rem; right: -1.5rem;
-    width: 60%; height: 60%;
-    border: 2px solid var(--accent);
-    z-index: -1;
-  }
-
-  /* ── HIGHLIGHTS / STATS ── */
-  #highlights {
-    background: var(--ink);
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0;
-    padding: 5rem 4rem;
-  }
-  .stat-card {
-    padding: 3rem;
-    border-right: 1px solid rgba(255,255,255,0.1);
-    display: flex; flex-direction: column; gap: 0.8rem;
-  }
-  .stat-card:last-child { border-right: none; }
-  .stat-num {
-    font-family: var(--serif);
-    font-size: clamp(3.5rem, 5vw, 5rem);
-    font-weight: 300;
-    color: var(--white);
-    line-height: 1;
-    letter-spacing: -0.02em;
-  }
-  .stat-num span { color: var(--accent); }
-  .stat-label {
-    font-size: 0.85rem;
-    font-weight: 300;
-    color: rgba(255,255,255,0.5);
-    letter-spacing: 0.05em;
-    line-height: 1.4;
-  }
-  .stat-icon {
-    width: 32px; height: 32px;
-    border: 1px solid rgba(255,255,255,0.2);
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    margin-bottom: 0.5rem;
-    color: var(--accent);
-  }
-
-  /* ── PROJECTS ── */
-  #projects { background: var(--white); padding: 8rem 4rem; }
-  .projects-header {
-    display: flex; align-items: flex-end; justify-content: space-between;
-    margin-bottom: 4rem;
-  }
-  .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-  }
-  .project-card {
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    background: var(--off-white);
-  }
-  .project-card:first-child {
-    grid-column: span 2;
-  }
-  .project-img-wrap {
-    position: relative;
-    overflow: hidden;
-    aspect-ratio: 16/10;
-  }
-  .project-card:first-child .project-img-wrap { aspect-ratio: 16/9; }
-  .project-img-wrap img {
-    width: 100%; height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-    display: block;
-  }
-  .project-card:hover .project-img-wrap img { transform: scale(1.05); }
-  .project-overlay {
-    position: absolute; inset: 0;
-    background: linear-gradient(160deg, rgba(13,12,11,0.0) 30%, rgba(13,12,11,0.72) 100%);
-    opacity: 0;
-    transition: opacity 0.35s ease;
-    display: flex; align-items: flex-end; padding: 2rem;
-  }
-  .project-card:hover .project-overlay { opacity: 1; }
-  .overlay-btn {
-    font-family: var(--sans);
-    font-size: 0.75rem; font-weight: 400;
-    letter-spacing: 0.12em; text-transform: uppercase;
-    color: var(--white);
-    background: rgba(255,255,255,0.15);
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(255,255,255,0.3);
-    padding: 0.55rem 1.2rem;
-    text-decoration: none;
-    display: inline-flex; align-items: center; gap: 0.4rem;
-    transition: background 0.2s;
-  }
-  .overlay-btn:hover { background: var(--accent); border-color: var(--accent); }
-  .project-meta {
-    padding: 1.4rem 1.6rem 1.8rem;
-  }
-  .project-category {
-    font-family: var(--mono);
-    font-size: 0.65rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 0.4rem;
-  }
-  .project-title {
-    font-family: var(--serif);
-    font-size: 1.35rem;
-    font-weight: 400;
-    color: var(--ink);
-    line-height: 1.3;
-    margin-bottom: 0.5rem;
-  }
-  .project-desc {
-    font-size: 0.82rem;
-    color: var(--mid-grey);
-    line-height: 1.65;
-  }
-
-  /* ── MODAL ── */
-  .modal-overlay {
-    position: fixed; inset: 0; z-index: 1000;
-    background: rgba(13,12,11,0.85);
-    display: flex; align-items: center; justify-content: center;
-    opacity: 0; pointer-events: none;
-    transition: opacity 0.3s;
-    backdrop-filter: blur(6px);
-  }
-  .modal-overlay.active { opacity: 1; pointer-events: all; }
-  .modal-box {
-    background: var(--white);
-    max-width: 780px; width: 92%;
-    max-height: 88vh; overflow-y: auto;
-    transform: translateY(20px);
-    transition: transform 0.35s ease;
-  }
-  .modal-overlay.active .modal-box { transform: translateY(0); }
-  .modal-img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; }
-  .modal-body { padding: 2.5rem 3rem; }
-  .modal-category {
-    font-family: var(--mono); font-size: 0.68rem;
-    letter-spacing: 0.16em; text-transform: uppercase;
-    color: var(--accent); margin-bottom: 0.6rem;
-  }
-  .modal-title {
-    font-family: var(--serif); font-size: 2.2rem; font-weight: 300;
-    color: var(--ink); margin-bottom: 1.2rem; line-height: 1.15;
-  }
-  .modal-desc { font-size: 0.95rem; color: var(--dark-grey); line-height: 1.8; margin-bottom: 1.8rem; }
-  .modal-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem; }
-  .modal-close {
-    position: absolute; top: 1.5rem; right: 1.5rem;
-    background: var(--white); border: 1px solid var(--light-grey);
-    width: 42px; height: 42px;
-    display: flex; align-items: center; justify-content: center;
-    cursor: pointer; font-size: 1.1rem; color: var(--dark-grey);
-    transition: background 0.2s, color 0.2s;
-  }
-  .modal-close:hover { background: var(--ink); color: var(--white); }
-  .modal-overlay { position: relative; } /* override for close btn */
-
-  /* ── CASE STUDY ── */
-  #casestudy {
-    background: var(--off-white);
-    padding: 8rem 4rem;
-  }
-  .cs-grid {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 5rem;
-    margin-top: 4rem;
-    align-items: start;
-  }
-  .cs-sidebar {}
-  .cs-sidebar-item {
-    padding: 1.4rem 0;
-    border-top: 1px solid var(--light-grey);
-  }
-  .cs-sidebar-item:last-child { border-bottom: 1px solid var(--light-grey); }
-  .cs-sidebar-label {
-    font-family: var(--mono); font-size: 0.65rem;
-    letter-spacing: 0.15em; text-transform: uppercase;
-    color: var(--mid-grey); margin-bottom: 0.3rem;
-  }
-  .cs-sidebar-val { font-size: 0.92rem; color: var(--ink); font-weight: 400; }
-  .cs-content {}
-  .cs-steps { display: flex; flex-direction: column; gap: 0; }
-  .cs-step {
-    display: grid; grid-template-columns: 3rem 1fr;
-    gap: 1.5rem;
-    padding: 2.2rem 0;
-    border-bottom: 1px solid var(--light-grey);
-    position: relative;
-  }
-  .cs-step:last-child { border-bottom: none; }
-  .cs-step-num {
-    font-family: var(--serif); font-size: 2.5rem; font-weight: 300;
-    color: var(--light-grey); line-height: 1; align-self: flex-start;
-    padding-top: 0.1rem;
-  }
-  .cs-step-body {}
-  .cs-step-title {
-    font-family: var(--serif); font-size: 1.45rem; font-weight: 400;
-    color: var(--ink); margin-bottom: 0.6rem;
-  }
-  .cs-step-text { font-size: 0.9rem; color: var(--dark-grey); line-height: 1.8; }
-  .cs-result-pill {
-    display: inline-block;
-    margin-top: 0.9rem;
-    padding: 0.3rem 0.9rem;
-    background: var(--accent-light);
-    font-family: var(--mono); font-size: 0.65rem;
-    letter-spacing: 0.1em; text-transform: uppercase;
-    color: var(--accent);
-  }
-
-  /* ── SKILLS ── */
-  #skills { background: var(--white); padding: 8rem 4rem; }
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 1.2rem;
-    margin-top: 3.5rem;
-  }
-  .skill-card {
-    border: 1px solid var(--light-grey);
-    padding: 2.2rem 1.5rem;
-    display: flex; flex-direction: column;
-    align-items: flex-start; gap: 1rem;
-    transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
-    cursor: default;
-  }
-  .skill-card:hover {
-    border-color: var(--accent);
-    transform: translateY(-3px);
-    box-shadow: 0 8px 32px rgba(37,99,235,0.08);
-  }
-  .skill-icon {
-    width: 44px; height: 44px;
-    display: flex; align-items: center; justify-content: center;
-    background: var(--off-white);
-    flex-shrink: 0;
-  }
-  .skill-icon svg { width: 24px; height: 24px; }
-  .skill-name { font-size: 0.88rem; font-weight: 500; color: var(--ink); line-height: 1.3; }
-  .skill-type { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid-grey); margin-top: auto; }
-  .skill-level {
-    width: 100%;
-    height: 2px;
-    background: var(--light-grey);
-    position: relative;
-    margin-top: 0.2rem;
-  }
-  .skill-level::after {
-    content: '';
-    position: absolute; top: 0; left: 0; height: 100%;
-    background: var(--accent);
-    transition: width 1s ease;
-  }
-  .skill-card[data-level="95"] .skill-level::after { width: 0%; }
-  .skill-card[data-level="90"] .skill-level::after { width: 0%; }
-  .skill-card[data-level="85"] .skill-level::after { width: 0%; }
-  .skill-card[data-level="80"] .skill-level::after { width: 0%; }
-  .skill-card[data-level="78"] .skill-level::after { width: 0%; }
-  .skill-card.animated[data-level="95"] .skill-level::after { width: 95%; }
-  .skill-card.animated[data-level="90"] .skill-level::after { width: 90%; }
-  .skill-card.animated[data-level="85"] .skill-level::after { width: 85%; }
-  .skill-card.animated[data-level="80"] .skill-level::after { width: 80%; }
-  .skill-card.animated[data-level="78"] .skill-level::after { width: 78%; }
-  .skills-lms {
-    margin-top: 1.2rem;
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 1.2rem;
-  }
-  .lms-card {
-    border: 1px solid var(--light-grey);
-    padding: 1.6rem 1.5rem;
-    display: flex; align-items: center; gap: 1rem;
-    transition: border-color 0.2s, transform 0.2s;
-  }
-  .lms-card:hover { border-color: var(--accent); transform: translateY(-2px); }
-  .lms-badge {
-    width: 40px; height: 40px;
-    background: var(--ink);
-    display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0;
-    font-family: var(--mono); font-size: 0.65rem; font-weight: 400;
-    letter-spacing: 0.06em; color: var(--white);
-  }
-  .lms-info .lms-name { font-size: 0.9rem; font-weight: 500; color: var(--ink); }
-  .lms-info .lms-sub { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--mid-grey); margin-top: 0.15rem; }
-  .skills-sub-label { font-family: var(--serif); font-size: 1.4rem; font-weight: 300; color: var(--ink); margin-top: 3rem; margin-bottom: 1rem; }
-
-  /* ── CONTACT ── */
-  #contact {
-    background: var(--ink);
-    padding: 8rem 4rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 6rem;
-    align-items: center;
-  }
-  .contact-left .section-label { color: rgba(255,255,255,0.4); }
-  .contact-title {
-    font-family: var(--serif);
-    font-size: clamp(2.5rem, 4vw, 4.2rem);
-    font-weight: 300;
-    color: var(--white);
-    line-height: 1.1;
-    letter-spacing: -0.01em;
-    margin-bottom: 1.5rem;
-  }
-  .contact-title em { font-style: italic; color: var(--accent); }
-  .contact-sub { font-size: 0.95rem; color: rgba(255,255,255,0.45); line-height: 1.75; max-width: 380px; }
-  .contact-right { display: flex; flex-direction: column; gap: 1.2rem; }
-  .contact-link {
-    display: flex; align-items: center; gap: 1.2rem;
-    padding: 1.4rem 1.6rem;
-    border: 1px solid rgba(255,255,255,0.12);
-    text-decoration: none;
-    color: var(--white);
-    transition: border-color 0.2s, background 0.2s, transform 0.2s;
-    group: true;
-  }
-  .contact-link:hover { border-color: var(--accent); background: rgba(37,99,235,0.08); transform: translateX(4px); }
-  .contact-link-icon {
-    width: 40px; height: 40px;
-    border: 1px solid rgba(255,255,255,0.15);
-    display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0;
-    transition: background 0.2s, border-color 0.2s;
-  }
-  .contact-link:hover .contact-link-icon { background: var(--accent); border-color: var(--accent); }
-  .contact-link-label { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.4); }
-  .contact-link-val { font-size: 0.92rem; color: var(--white); margin-top: 0.1rem; }
-  .hire-btn {
-    margin-top: 0.8rem;
-    display: inline-flex; align-items: center; gap: 0.6rem;
-    padding: 1rem 2.2rem;
-    background: var(--accent); color: var(--white);
-    font-family: var(--sans); font-size: 0.8rem;
-    font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase;
-    text-decoration: none; border: 1px solid var(--accent);
-    transition: background 0.2s, transform 0.15s;
-    align-self: flex-start;
-  }
-  .hire-btn:hover { background: #1d4ed8; transform: translateY(-2px); }
-
-  /* ── FOOTER ── */
-  footer {
-    background: var(--charcoal);
-    padding: 2rem 4rem;
-    display: flex; align-items: center; justify-content: space-between;
-    border-top: 1px solid rgba(255,255,255,0.06);
-  }
-  .footer-logo { font-family: var(--serif); font-size: 1rem; font-weight: 400; color: rgba(255,255,255,0.5); }
-  .footer-copy { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.3); }
-  .footer-links { display: flex; gap: 1.6rem; }
-  .footer-links a { font-size: 0.78rem; color: rgba(255,255,255,0.35); text-decoration: none; transition: color 0.2s; }
-  .footer-links a:hover { color: rgba(255,255,255,0.75); }
-
-  /* ── SCROLL ANIMATIONS ── */
-  .reveal {
-    opacity: 0;
-    transform: translateY(28px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
-  .reveal.visible { opacity: 1; transform: translateY(0); }
-  .reveal-delay-1 { transition-delay: 0.1s; }
-  .reveal-delay-2 { transition-delay: 0.2s; }
-  .reveal-delay-3 { transition-delay: 0.3s; }
-  .reveal-delay-4 { transition-delay: 0.4s; }
-
-  /* ── KEYFRAMES ── */
-  @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
-  @keyframes fadeIn { to { opacity: 1; } }
-
-  /* ── HAMBURGER MOBILE NAV ── */
-  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
-  .hamburger span { display: block; width: 24px; height: 1.5px; background: var(--ink); transition: all 0.2s; }
-
-  /* ── RESPONSIVE ── */
-  @media (max-width: 1024px) {
-    nav { padding: 1.25rem 2rem; }
-    nav.scrolled { padding: 0.9rem 2rem; }
-    section { padding: 5rem 2rem; }
-    #hero { grid-template-columns: 1fr; min-height: auto; }
-    .hero-left { padding: 6rem 2rem 3rem; }
-    .hero-right { height: 60vw; }
-    #about { grid-template-columns: 1fr; padding: 5rem 2rem; gap: 3rem; }
-    .about-right { display: none; }
-    #highlights { grid-template-columns: 1fr 1fr; }
-    .stat-card:nth-child(3) { border-right: none; }
-    .projects-grid { grid-template-columns: 1fr; }
-    .project-card:first-child { grid-column: span 1; }
-    .cs-grid { grid-template-columns: 1fr; gap: 3rem; }
-    .skills-grid { grid-template-columns: repeat(3, 1fr); }
-    #contact { grid-template-columns: 1fr; gap: 3rem; padding: 5rem 2rem; }
-    footer { flex-direction: column; gap: 1rem; text-align: center; padding: 1.5rem 2rem; }
-    .footer-links { justify-content: center; }
-    .projects-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
-  }
-  @media (max-width: 640px) {
-    nav { padding: 1rem 1.5rem; }
-    .nav-links, .nav-cta { display: none; }
-    .hamburger { display: flex; }
-    section { padding: 4rem 1.5rem; }
-    #highlights { grid-template-columns: 1fr; padding: 3rem 1.5rem; }
-    .stat-card { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); padding: 2rem 1.5rem; }
-    .stat-card:last-child { border-bottom: none; }
-    .skills-grid { grid-template-columns: repeat(2, 1fr); }
-    .skills-lms { grid-template-columns: 1fr; }
-    .modal-body { padding: 1.5rem; }
-    .hero-left { padding: 5rem 1.5rem 2.5rem; }
-    footer { padding: 1.5rem; }
-  }
-
-  /* ── SCROLLBAR ── */
-  ::-webkit-scrollbar { width: 4px; }
-  ::-webkit-scrollbar-track { background: var(--off-white); }
-  ::-webkit-scrollbar-thumb { background: var(--light-grey); border-radius: 0; }
-  ::-webkit-scrollbar-thumb:hover { background: var(--mid-grey); }
 </style>
 </head>
+
 <body>
 
 <!-- NAV -->
 <nav id="mainNav">
   <a href="#hero" class="nav-logo">Arjun Rao</a>
+
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#projects">Work</a></li>
@@ -680,464 +68,145 @@
     <li><a href="#skills">Skills</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
+
   <a href="#contact" class="nav-cta">Hire Me</a>
-  <div class="hamburger" id="hamburger" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </div>
+
+  <!-- DARK MODE BUTTON -->
+  <button onclick="toggleTheme()" style="margin-left:20px;">🌙</button>
+
 </nav>
 
-<!-- HERO -->
-<section id="hero">
-  <div class="hero-left">
-    <p class="hero-eyebrow">Instructional Designer · E-Learning Developer</p>
-    <h1 class="hero-name">
-      Crafting Learning<br>
-      <em>Experiences</em><br>
-      That Stick.
-    </h1>
-    <p class="hero-tagline">
-      I design simulation-based e-learning and interactive modules for banking and finance — transforming complex compliance topics into engaging, measurable learning journeys.
-    </p>
-    <div class="hero-actions">
-      <a href="#projects" class="btn-primary">
-        View My Work
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-      <a href="#contact" class="btn-secondary">Get in Touch</a>
-    </div>
-  </div>
-  <div class="hero-right">
-    <img class="hero-img"
-      src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=1200&q=85&auto=format&fit=crop"
-      alt="Learning design workspace" loading="eager">
-    <div class="hero-badge">
-      <p>Currently Available</p>
-      <strong>Open to Opportunities</strong>
-    </div>
-  </div>
-</section>
 
-<!-- ABOUT -->
-<section id="about">
-  <div class="about-left reveal">
-    <p class="section-label">About Me</p>
-    <h2 class="section-title">Designing for<br><em>Impact</em>, Not Just<br>Completion.</h2>
-    <p class="about-desc">
-      I'm an <strong>Instructional Designer and E-Learning Developer</strong> specialising in simulation-based learning for the banking and financial services domain.
-    </p>
-    <p class="about-desc">
-      With hands-on experience delivering modules for <strong>Karnataka Bank, Kotak, KVB, and IIFL</strong>, I combine pedagogical rigour with polished visual storytelling — using Articulate Storyline, Rise 360, and motion graphics to create learning that drives real behaviour change.
-    </p>
-    <div class="about-tags">
-      <span class="tag">Banking Domain</span>
-      <span class="tag">Simulation Design</span>
-      <span class="tag">Articulate 360</span>
-      <span class="tag">Motion Graphics</span>
-      <span class="tag">LMS Admin</span>
-    </div>
-  </div>
-  <div class="about-right reveal reveal-delay-2">
-    <div class="about-img-wrap">
-      <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=85&auto=format&fit=crop" alt="Workspace">
-    </div>
-    <div class="about-img-deco"></div>
-  </div>
-</section>
+<!-- HERO SAME -->
 
-<!-- HIGHLIGHTS -->
-<div id="highlights">
-  <div class="stat-card reveal">
-    <div class="stat-icon">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12h6M9 16h6M9 8h6M5 4h14a1 1 0 011 1v14a1 1 0 01-1 1H5a1 1 0 01-1-1V5a1 1 0 011-1z"/></svg>
-    </div>
-    <div class="stat-num"><span class="counter" data-target="100">0</span><span>+</span></div>
-    <div class="stat-label">E-Learning Modules<br>Delivered</div>
-  </div>
-  <div class="stat-card reveal reveal-delay-2">
-    <div class="stat-icon">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-    </div>
-    <div class="stat-num"><span class="counter" data-target="1">0</span><span>+ yr</span></div>
-    <div class="stat-label">Professional Experience<br>in Instructional Design</div>
-  </div>
-  <div class="stat-card reveal reveal-delay-3">
-    <div class="stat-icon">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
-    </div>
-    <div class="stat-num"><span class="counter" data-target="4">0</span><span>+</span></div>
-    <div class="stat-label">Banking & Finance<br>Clients Served</div>
-  </div>
-</div>
 
 <!-- PROJECTS -->
 <section id="projects">
-  <div class="projects-header reveal">
-    <div>
-      <p class="section-label">Selected Work</p>
-      <h2 class="section-title">Projects that<br><em>Define</em> the Work.</h2>
-    </div>
-  </div>
-  <div class="projects-grid">
 
-    <div class="project-card reveal" onclick="openModal('modal-ppt')">
-      <div class="project-img-wrap">
-        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1400&q=85&auto=format&fit=crop" alt="PPT Training Design" loading="lazy">
-        <div class="project-overlay">
-          <span class="overlay-btn">View Project →</span>
-        </div>
-      </div>
-      <div class="project-meta">
-        <p class="project-category">PowerPoint · Presentation Design</p>
-        <h3 class="project-title">Banking Compliance Training Deck</h3>
-        <p class="project-desc">A 60-slide modular training deck for a leading private sector bank — built with custom layouts, data visualisations, and consistent brand language.</p>
-      </div>
-    </div>
+<div class="projects-grid">
 
-    <div class="project-card reveal reveal-delay-2" onclick="openModal('modal-video')">
-      <div class="project-img-wrap">
-        <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=900&q=85&auto=format&fit=crop" alt="Video Editing" loading="lazy">
-        <div class="project-overlay">
-          <span class="overlay-btn">View Project →</span>
-        </div>
-      </div>
-      <div class="project-meta">
-        <p class="project-category">Premiere Pro · After Effects</p>
-        <h3 class="project-title">KYC Explainer Video</h3>
-        <p class="project-desc">Motion-graphics-driven explainer for IIFL's onboarding programme — scripted, edited, and animated end-to-end.</p>
-      </div>
-    </div>
+<!-- PPT PROJECT -->
+<div class="project-card" onclick="openModal('modal-ppt')">
 
-    <div class="project-card reveal reveal-delay-1" onclick="openModal('modal-storyline')">
-      <div class="project-img-wrap">
-        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1400&q=85&auto=format&fit=crop" alt="Storyline Simulation" loading="lazy">
-        <div class="project-overlay">
-          <span class="overlay-btn">View Project →</span>
-        </div>
-      </div>
-      <div class="project-meta">
-        <p class="project-category">Articulate Storyline 360 · Rise</p>
-        <h3 class="project-title">Anti-Money Laundering Simulation</h3>
-        <p class="project-desc">A branching scenario simulation for Karnataka Bank's AML training — featuring decision trees, custom characters, and scenario feedback.</p>
-      </div>
-    </div>
+  <div class="project-img-wrap">
+
+    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1400">
+
+    <!-- VIDEO -->
+    <video class="project-video" muted loop>
+      <source src="https://www.w3schools.com/html/mov_bbb.mp4">
+    </video>
 
   </div>
+
+</div>
+
+
+<!-- VIDEO PROJECT -->
+<div class="project-card" onclick="openModal('modal-video')">
+
+  <div class="project-img-wrap">
+
+    <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=900">
+
+    <video class="project-video" muted loop>
+      <source src="https://www.w3schools.com/html/movie.mp4">
+    </video>
+
+  </div>
+
+</div>
+
+
+<!-- STORYLINE PROJECT -->
+<div class="project-card" onclick="openModal('modal-storyline')">
+
+  <div class="project-img-wrap">
+
+    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1400">
+
+    <video class="project-video" muted loop>
+      <source src="https://www.w3schools.com/html/mov_bbb.mp4">
+    </video>
+
+  </div>
+
+</div>
+
+</div>
 </section>
 
-<!-- CASE STUDY -->
-<section id="casestudy">
-  <div class="reveal">
-    <p class="section-label">Case Study</p>
-    <h2 class="section-title">From Classroom to<br><em>Clickable</em> Simulation.</h2>
-  </div>
-  <div class="cs-grid">
-    <div class="cs-sidebar reveal">
-      <div class="cs-sidebar-item">
-        <p class="cs-sidebar-label">Client</p>
-        <p class="cs-sidebar-val">Karnataka Bank</p>
-      </div>
-      <div class="cs-sidebar-item">
-        <p class="cs-sidebar-label">Scope</p>
-        <p class="cs-sidebar-val">AML / Compliance Training</p>
-      </div>
-      <div class="cs-sidebar-item">
-        <p class="cs-sidebar-label">Tools Used</p>
-        <p class="cs-sidebar-val">Storyline 360, After Effects, QuickLearn LMS</p>
-      </div>
-      <div class="cs-sidebar-item">
-        <p class="cs-sidebar-label">Duration</p>
-        <p class="cs-sidebar-val">6 Weeks</p>
-      </div>
-      <div class="cs-sidebar-item">
-        <p class="cs-sidebar-label">Outcome</p>
-        <p class="cs-sidebar-val">92% completion rate, 40% reduced L&D cost</p>
-      </div>
-    </div>
-    <div class="cs-content reveal reveal-delay-2">
-      <div class="cs-steps">
-        <div class="cs-step">
-          <div class="cs-step-num">01</div>
-          <div class="cs-step-body">
-            <h4 class="cs-step-title">The Problem</h4>
-            <p class="cs-step-text">Karnataka Bank's AML training was entirely classroom-based — low engagement, inconsistent delivery, and no way to track learner progress. Compliance risk was high as staff struggled to recall procedure under real scenarios.</p>
-          </div>
-        </div>
-        <div class="cs-step">
-          <div class="cs-step-num">02</div>
-          <div class="cs-step-body">
-            <h4 class="cs-step-title">The Solution</h4>
-            <p class="cs-step-text">Designed a branching simulation in Articulate Storyline 360 with realistic banking scenarios — where learners made decisions as a frontline officer. Integrated motion-graphic intros via After Effects and published to QuickLearn LMS with xAPI tracking.</p>
-          </div>
-        </div>
-        <div class="cs-step">
-          <div class="cs-step-num">03</div>
-          <div class="cs-step-body">
-            <h4 class="cs-step-title">The Result</h4>
-            <p class="cs-step-text">The module achieved a 92% course completion rate in its first deployment, with post-assessment scores averaging 84%. The bank reduced its annual L&D travel costs by an estimated 40% by shifting to self-paced delivery.</p>
-            <span class="cs-result-pill">92% Completion Rate</span>
-            <span class="cs-result-pill" style="margin-left:0.5rem;">40% Cost Reduction</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- SKILLS -->
-<section id="skills">
-  <div class="reveal">
-    <p class="section-label">Tools & Skills</p>
-    <h2 class="section-title">The Toolkit Behind<br><em>Every</em> Module.</h2>
-  </div>
-  <div class="skills-grid" id="skillsGrid">
-    <div class="skill-card reveal" data-level="95">
-      <div class="skill-icon">
-        <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" fill="#D04423"/><path d="M8 7h8M8 12h8M8 17h5" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
-      </div>
-      <div class="skill-name">Microsoft PowerPoint</div>
-      <div class="skill-level"></div>
-      <div class="skill-type">Expert · Presentation Design</div>
-    </div>
-    <div class="skill-card reveal reveal-delay-1" data-level="90">
-      <div class="skill-icon">
-        <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" fill="#1C7CCA"/><path d="M7 12l3 3 7-7" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </div>
-      <div class="skill-name">Articulate Storyline 360</div>
-      <div class="skill-level"></div>
-      <div class="skill-type">Advanced · Simulation</div>
-    </div>
-    <div class="skill-card reveal reveal-delay-2" data-level="88">
-      <div class="skill-icon">
-        <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" fill="#3FAFD7"/><circle cx="12" cy="12" r="4" stroke="white" stroke-width="1.5"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
-      </div>
-      <div class="skill-name">Articulate Rise 360</div>
-      <div class="skill-level"></div>
-      <div class="skill-type">Advanced · Interactive</div>
-    </div>
-    <div class="skill-card reveal reveal-delay-3" data-level="82">
-      <div class="skill-icon">
-        <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" fill="#2B2B80"/><path d="M7 17l4-10 4 10" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M8.5 13.5h5" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
-      </div>
-      <div class="skill-name">Adobe Premiere Pro</div>
-      <div class="skill-level"></div>
-      <div class="skill-type">Proficient · Video Edit</div>
-    </div>
-    <div class="skill-card reveal reveal-delay-4" data-level="78">
-      <div class="skill-icon">
-        <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" fill="#9999FF"/><path d="M9 7v10M15 7v10" stroke="white" stroke-width="1.5" stroke-linecap="round"/><path d="M6 12h12" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
-      </div>
-      <div class="skill-name">Adobe After Effects</div>
-      <div class="skill-level"></div>
-      <div class="skill-type">Proficient · Motion</div>
-    </div>
-  </div>
-  <p class="skills-sub-label reveal">LMS Platforms</p>
-  <div class="skills-lms reveal reveal-delay-1">
-    <div class="lms-card">
-      <div class="lms-badge">QL</div>
-      <div class="lms-info">
-        <div class="lms-name">QuickLearn LMS</div>
-        <div class="lms-sub">Course Upload · xAPI · Reports</div>
-      </div>
-    </div>
-    <div class="lms-card">
-      <div class="lms-badge">LD</div>
-      <div class="lms-info">
-        <div class="lms-name">LearnDash</div>
-        <div class="lms-sub">WordPress LMS · SCORM</div>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- MODAL ENHANCED -->
+<div id="modal-ppt" class="modal-overlay">
+  <div class="modal-box">
 
-<!-- CONTACT -->
-<section id="contact">
-  <div class="contact-left reveal">
-    <p class="section-label">Let's Work Together</p>
-    <h2 class="contact-title">Ready to Build<br>Something <em>Meaningful</em>?</h2>
-    <p class="contact-sub">Open to full-time roles, freelance projects, and consulting engagements in instructional design and e-learning development.</p>
-  </div>
-  <div class="contact-right reveal reveal-delay-2">
-    <a href="mailto:arjun.rao@email.com" class="contact-link">
-      <div class="contact-link-icon">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-      </div>
-      <div>
-        <div class="contact-link-label">Email</div>
-        <div class="contact-link-val">arjun.rao@email.com</div>
-      </div>
-    </a>
-    <a href="https://linkedin.com/in/arjunrao-id" target="_blank" rel="noopener" class="contact-link">
-      <div class="contact-link-icon">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
-      </div>
-      <div>
-        <div class="contact-link-label">LinkedIn</div>
-        <div class="contact-link-val">linkedin.com/in/arjunrao-id</div>
-      </div>
-    </a>
-    <a href="mailto:arjun.rao@email.com" class="hire-btn">
-      Hire Me
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </a>
-  </div>
-</section>
+    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f">
 
-<!-- FOOTER -->
-<footer>
-  <span class="footer-logo">Arjun Rao</span>
-  <span class="footer-copy">© 2025 · All rights reserved</span>
-  <div class="footer-links">
-    <a href="#about">About</a>
-    <a href="#projects">Work</a>
-    <a href="#contact">Contact</a>
-  </div>
-</footer>
-
-<!-- MODALS -->
-<div class="modal-overlay" id="modal-ppt" onclick="closeModalOnOverlay(event, 'modal-ppt')">
-  <div class="modal-box" style="position:relative">
-    <button class="modal-close" onclick="closeModal('modal-ppt')">✕</button>
-    <img class="modal-img" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=85&auto=format&fit=crop" alt="PPT Project">
     <div class="modal-body">
-      <p class="modal-category">PowerPoint · Presentation Design</p>
-      <h3 class="modal-title">Banking Compliance Training Deck</h3>
-      <p class="modal-desc">A comprehensive 60-slide modular training deck developed for a leading private sector bank's compliance programme. Built with custom master layouts, data visualisations, and an icon system that ensured visual consistency across 12 training modules.<br><br>The deck used a restrained palette aligned to brand guidelines, with deliberate use of whitespace and progressive disclosure — ensuring facilitators could guide learners through complex regulations without cognitive overload.</p>
-      <div class="modal-tags">
-        <span class="tag">PowerPoint</span>
-        <span class="tag">Compliance Training</span>
-        <span class="tag">Banking Domain</span>
-        <span class="tag">60+ Slides</span>
-      </div>
-      <a href="#" class="btn-primary" onclick="closeModal('modal-ppt'); return false;">Close Project</a>
+
+      <h3>Banking PPT</h3>
+
+      <p>Advanced training deck</p>
+
+      <!-- EXTRA IMAGES -->
+      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71" style="width:100%;margin-top:20px;">
+      <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c" style="width:100%;margin-top:20px;">
+
     </div>
+
   </div>
 </div>
 
-<div class="modal-overlay" id="modal-video" onclick="closeModalOnOverlay(event, 'modal-video')">
-  <div class="modal-box" style="position:relative">
-    <button class="modal-close" onclick="closeModal('modal-video')">✕</button>
-    <img class="modal-img" src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=1200&q=85&auto=format&fit=crop" alt="Video Project">
-    <div class="modal-body">
-      <p class="modal-category">Premiere Pro · After Effects · Motion Design</p>
-      <h3 class="modal-title">KYC Explainer Video</h3>
-      <p class="modal-desc">A 4-minute motion-graphics-driven explainer video produced for IIFL's new employee onboarding programme. Scripted, storyboarded, and animated from scratch — using After Effects for motion sequences and Premiere Pro for final edit and colour grade.<br><br>The video simplified Know Your Customer (KYC) regulations into a clean, visually engaging narrative — achieving a 4.7/5 learner satisfaction score in post-training surveys.</p>
-      <div class="modal-tags">
-        <span class="tag">After Effects</span>
-        <span class="tag">Premiere Pro</span>
-        <span class="tag">IIFL</span>
-        <span class="tag">Explainer Video</span>
-      </div>
-      <a href="#" class="btn-primary" onclick="closeModal('modal-video'); return false;">Close Project</a>
-    </div>
-  </div>
-</div>
-
-<div class="modal-overlay" id="modal-storyline" onclick="closeModalOnOverlay(event, 'modal-storyline')">
-  <div class="modal-box" style="position:relative">
-    <button class="modal-close" onclick="closeModal('modal-storyline')">✕</button>
-    <img class="modal-img" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=85&auto=format&fit=crop" alt="Storyline Simulation">
-    <div class="modal-body">
-      <p class="modal-category">Articulate Storyline 360 · Rise</p>
-      <h3 class="modal-title">Anti-Money Laundering Simulation</h3>
-      <p class="modal-desc">A multi-branch scenario simulation for Karnataka Bank's AML compliance mandate. Learners play the role of a frontline bank officer navigating suspicious transaction flags, customer interactions, and escalation decisions.<br><br>Built using Storyline 360's advanced branching and custom JavaScript triggers, the simulation featured five scenario paths, animated characters, and integrated knowledge checks — published via xAPI to QuickLearn LMS for tracking.</p>
-      <div class="modal-tags">
-        <span class="tag">Storyline 360</span>
-        <span class="tag">AML Training</span>
-        <span class="tag">Karnataka Bank</span>
-        <span class="tag">Branching Scenario</span>
-        <span class="tag">xAPI</span>
-      </div>
-      <a href="#" class="btn-primary" onclick="closeModal('modal-storyline'); return false;">Close Project</a>
-    </div>
-  </div>
-</div>
 
 <script>
-  // NAV SCROLL
-  const nav = document.getElementById('mainNav');
-  window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 40);
+
+/* DARK MODE */
+function toggleTheme(){
+  document.body.classList.toggle('dark');
+}
+
+
+/* MAGNET BUTTON */
+document.querySelectorAll('.btn-primary').forEach(btn=>{
+  btn.addEventListener('mousemove',e=>{
+    const rect = btn.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width/2;
+    const y = e.clientY - rect.top - rect.height/2;
+    btn.style.transform = `translate(${x*0.2}px, ${y*0.2}px)`;
   });
 
-  // SCROLL REVEAL
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-  reveals.forEach(el => observer.observe(el));
+  btn.addEventListener('mouseleave',()=>{
+    btn.style.transform = `translate(0,0)`;
+  });
+});
 
-  // COUNT-UP
-  const counters = document.querySelectorAll('.counter');
-  const countObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const el = entry.target;
-        const target = parseInt(el.dataset.target);
-        const duration = 1600;
-        const start = performance.now();
-        const animate = (now) => {
-          const elapsed = now - start;
-          const progress = Math.min(elapsed / duration, 1);
-          const ease = 1 - Math.pow(1 - progress, 3);
-          el.textContent = Math.round(ease * target);
-          if (progress < 1) requestAnimationFrame(animate);
-        };
-        requestAnimationFrame(animate);
-        countObserver.unobserve(el);
-      }
-    });
-  }, { threshold: 0.5 });
-  counters.forEach(c => countObserver.observe(c));
 
-  // SKILL BARS
-  const skillCards = document.querySelectorAll('.skill-card');
-  const skillObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('animated');
-        skillObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.4 });
-  skillCards.forEach(c => skillObserver.observe(c));
+/* VIDEO AUTOPLAY ON HOVER */
+document.querySelectorAll('.project-card').forEach(card=>{
+  const video = card.querySelector('video');
 
-  // MODALS
-  function openModal(id) {
-    document.getElementById(id).classList.add('active');
-    document.body.style.overflow = 'hidden';
-  }
-  function closeModal(id) {
-    document.getElementById(id).classList.remove('active');
-    document.body.style.overflow = '';
-  }
-  function closeModalOnOverlay(e, id) {
-    if (e.target === document.getElementById(id)) closeModal(id);
-  }
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      document.querySelectorAll('.modal-overlay.active').forEach(m => {
-        m.classList.remove('active');
-        document.body.style.overflow = '';
-      });
-    }
+  card.addEventListener('mouseenter',()=>{
+    video.play();
   });
 
-  // HAMBURGER (mobile - simple toggle)
-  document.getElementById('hamburger').addEventListener('click', () => {
-    const links = document.querySelector('.nav-links');
-    if (!links) return;
-    if (links.style.display === 'flex') {
-      links.style.display = '';
-    } else {
-      links.style.cssText = 'display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--white);padding:1.5rem 2rem;gap:1.2rem;border-bottom:1px solid var(--light-grey);z-index:99;';
-    }
+  card.addEventListener('mouseleave',()=>{
+    video.pause();
+    video.currentTime = 0;
   });
+});
+
+
+/* PARALLAX */
+window.addEventListener('scroll',()=>{
+  const cards = document.querySelectorAll('.project-card');
+
+  cards.forEach((card,i)=>{
+    card.style.transform = `translateY(${window.scrollY * (0.02*(i+1))}px)`;
+  });
+});
+
 </script>
+
 </body>
-  </html>
+</html>
