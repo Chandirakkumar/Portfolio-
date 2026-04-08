@@ -43,6 +43,7 @@ z-index:100;
 .nav-logo{
 font-family:'Cormorant Garamond';
 font-size:22px;
+font-weight:600;
 }
 
 .hero{
@@ -55,11 +56,13 @@ padding:0 60px;
 
 .hero h1{
 font-size:60px;
+line-height:1.1;
 }
 
 .hero img{
 width:50%;
 border-radius:10px;
+object-fit:cover;
 }
 
 /* PROJECTS */
@@ -77,10 +80,16 @@ gap:20px;
 position:relative;
 overflow:hidden;
 cursor:pointer;
+transition:0.4s;
+}
+
+.project-card:hover{
+transform:translateY(-8px);
 }
 
 .project-card img{
 width:100%;
+display:block;
 }
 
 .project-video{
@@ -135,7 +144,7 @@ Chandirakkumar S<br>
 </h1>
 
 <p>
-Specialized in Articulate Storyline, Rise 360, PowerPoint, Video Editing & Simulation Learning.
+Instructional Designer & E-Learning Developer specializing in Articulate Storyline 360, Rise 360, PowerPoint, and Video Editing.
 </p>
 
 <div class="btn">View Work</div>
@@ -151,31 +160,28 @@ Specialized in Articulate Storyline, Rise 360, PowerPoint, Video Editing & Simul
 
 <div class="projects-grid">
 
+<!-- PPT -->
 <div class="project-card">
 <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f">
-
 <video class="project-video" muted loop>
 <source src="https://www.w3schools.com/html/mov_bbb.mp4">
 </video>
-
 </div>
 
+<!-- VIDEO -->
 <div class="project-card">
 <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d">
-
 <video class="project-video" muted loop>
 <source src="https://www.w3schools.com/html/movie.mp4">
 </video>
-
 </div>
 
+<!-- STORYLINE -->
 <div class="project-card">
 <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71">
-
 <video class="project-video" muted loop>
 <source src="https://www.w3schools.com/html/mov_bbb.mp4">
 </video>
-
 </div>
 
 </div>
@@ -188,7 +194,7 @@ Specialized in Articulate Storyline, Rise 360, PowerPoint, Video Editing & Simul
 <h2>Contact</h2>
 
 <p>Email: sv393015@gmail.com</p>
-<p>LinkedIn: linkedin.com/in/it-tech-support</p>
+<p>LinkedIn: https://www.linkedin.com/in/it-tech-support</p>
 <p>Location: Bengaluru, India</p>
 
 </section>
