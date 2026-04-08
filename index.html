@@ -1,6 +1,292 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chandirakkumar S | Learning Experience Designer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #ffffff;
+            --surface: #f9fafb;
+            --primary: #0f172a; /* Deep Navy/Black */
+            --accent: #2563eb;  /* Professional Blue */
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --radius: 16px;
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* --- Navigation --- */
+        nav {
+            padding: 1.5rem 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-logo { font-weight: 800; font-size: 1.2rem; letter-spacing: -1px; }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-muted);
+            margin-left: 2rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        .nav-links a:hover { color: var(--accent); }
+
+        /* --- Hero Section --- */
+        .hero {
+            padding: 8rem 10% 5rem;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -2px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+        }
+
+        .btn {
+            background: var(--primary);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 100px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: var(--transition);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            background: var(--accent);
+        }
+
+        /* --- Skills Bento Grid --- */
+        .section-padding { padding: 5rem 10%; }
+        .section-title {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: auto;
+            gap: 1.5rem;
+        }
+
+        .bento-item {
+            background: var(--surface);
+            padding: 2rem;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+
+        .bento-item:hover { border-color: var(--accent); background: white; }
+        .bento-item i { font-size: 2rem; color: var(--accent); margin-bottom: 1rem; }
+        .bento-item h3 { margin-bottom: 0.5rem; font-size: 1.1rem; }
+        .bento-item p { font-size: 0.9rem; color: var(--text-muted); }
+
+        .large { grid-column: span 2; }
+
+        /* --- Projects Showcase --- */
+        .projects-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 4rem;
+        }
+
+        .project-row {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .project-row:nth-child(even) { direction: rtl; }
+        .project-row:nth-child(even) .project-text { direction: ltr; }
+
+        .project-img {
+            background: #e5e7eb;
+            aspect-ratio: 16/9;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .project-img img { width: 100%; height: 100%; object-fit: cover; transition: var(--transition); }
+        .project-img:hover img { transform: scale(1.05); }
+
+        .project-text h3 { font-size: 1.8rem; margin-bottom: 1rem; }
+        .project-tags { margin-bottom: 1.5rem; }
+        .project-tags span {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: var(--accent);
+            margin-right: 1rem;
+            letter-spacing: 1px;
+        }
+
+        /* --- Footer/Contact --- */
+        footer {
+            background: var(--surface);
+            padding: 5rem 10%;
+            text-align: center;
+            border-top: 1px solid var(--border);
+        }
+
+        .social-links { margin-top: 2rem; display: flex; justify-content: center; gap: 2rem; }
+        .social-links a { color: var(--primary); font-size: 1.5rem; transition: var(--transition); }
+        .social-links a:hover { color: var(--accent); transform: scale(1.2); }
+
+        /* --- Responsive --- */
+        @media (max-width: 900px) {
+            .bento-grid { grid-template-columns: repeat(2, 1fr); }
+            .project-row { grid-template-columns: 1fr; gap: 1.5rem; }
+            .project-row:nth-child(even) { direction: ltr; }
+            .hero h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-logo">CHANDIRAKKUMAR.S</div>
+        <div class="nav-links">
+            <a href="#work">Work</a>
+            <a href="#skills">Expertise</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1>Designing learning experiences that actually <span style="color: var(--accent);">stick.</span></h1>
+        <p>Instructional Designer & E-Learning Developer specializing in high-fidelity corporate training modules using Articulate Storyline and Vyond.</p>
+        <a href="#work" class="btn">View Portfolio</a>
+    </section>
+
+    <section class="section-padding" id="skills">
+        <h2 class="section-title">Expertise</h2>
+        <div class="bento-grid">
+            <div class="bento-item large">
+                <i class="fas fa-layer-group"></i>
+                <h3>Instructional Design</h3>
+                <p>Mastering the ADDIE and SAM models to create structured, goal-oriented learning journeys for global corporate teams.</p>
+            </div>
+            <div class="bento-item">
+                <i class="fas fa-bolt"></i>
+                <h3>Storyline 360</h3>
+                <p>Advanced triggers, variables, and custom UI components.</p>
+            </div>
+            <div class="bento-item">
+                <i class="fas fa-video"></i>
+                <h3>Vyond</h3>
+                <p>High-quality 2D animated storytelling.</p>
+            </div>
+            <div class="bento-item">
+                <i class="fas fa-pen-nib"></i>
+                <h3>Storyboard</h3>
+                <p>Visualizing complex concepts before development starts.</p>
+            </div>
+            <div class="bento-item large">
+                <i class="fas fa-desktop"></i>
+                <h3>Corporate E-Learning</h3>
+                <p>Specialized in Compliance, Soft Skills, and Technical training for industry leaders like Agama Educon.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" id="work" style="background: var(--surface);">
+        <h2 class="section-title">Featured Work</h2>
+        <div class="projects-list">
+            
+            <div class="project-row">
+                <div class="project-img">
+                    <i class="fas fa-play fa-4x" style="opacity: 0.2;"></i>
+                </div>
+                <div class="project-text">
+                    <div class="project-tags"><span>Articulate 360</span> <span>Corporate Compliance</span></div>
+                    <h3>Anti-Bribery & Ethics Module</h3>
+                    <p>A gamified branching scenario training designed for high-stakes corporate environments. Features custom-built navigation and dynamic feedback loops.</p>
+                </div>
+            </div>
+
+            <div class="project-row">
+                <div class="project-img">
+                    <i class="fas fa-film fa-4x" style="opacity: 0.2;"></i>
+                </div>
+                <div class="project-text">
+                    <div class="project-tags"><span>Vyond</span> <span>Soft Skills</span></div>
+                    <h3>Communication Excellence Series</h3>
+                    <p>A series of animated videos focusing on workplace communication. Translated complex psychological concepts into easy-to-digest visual stories.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer id="contact">
+        <h2>Let's build something impactful.</h2>
+        <p style="margin: 1rem 0;">Available for freelance opportunities and corporate collaborations.</p>
+        <a href="mailto:hello@yourdomain.com" class="btn">Send an Email</a>
+        
+        <div class="social-links">
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-behance"></i></a>
+            <a href="#"><i class="fas fa-envelope"></i></a>
+        </div>
+        <p style="margin-top: 4rem; font-size: 0.8rem; color: var(--text-muted);">&copy; 2026 Chandirakkumar S. Made with Precision.</p>
+    </footer>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Chandirakkumar | Portfolio</title>
