@@ -1,187 +1,369 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Chandirakkumar | Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chandirakkumar S | Instructional Designer Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-blue: #1e40af;
+            --secondary-blue: #3b82f6;
+            --bg-light: #f8fafc;
+            --text-dark: #0f172a;
+            --text-muted: #64748b;
+            --white: #ffffff;
+            --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --transition: all 0.3s ease;
+        }
 
-  <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      background: #ffffff;
-      color: #111;
-    }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
 
-    header {
-      text-align: center;
-      padding: 60px 20px;
-      border-bottom: 1px solid #eee;
-    }
+        /* --- Header --- */
+        header {
+            background: var(--white);
+            padding: 2rem 5%;
+            border-bottom: 1px solid #e2e8f0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
 
-    h1 {
-      margin: 0;
-      font-size: 32px;
-    }
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    header p {
-      color: #555;
-      margin-top: 10px;
-    }
+        .logo h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            letter-spacing: -0.5px;
+        }
 
-    section {
-      max-width: 900px;
-      margin: auto;
-      padding: 40px 20px;
-    }
+        .logo p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
 
-    h2 {
-      font-size: 20px;
-      margin-bottom: 20px;
-      border-left: 4px solid #2563eb;
-      padding-left: 10px;
-    }
+        /* --- Main Layout --- */
+        .container {
+            max-width: 1200px;
+            margin: 3rem auto;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2.5rem;
+            padding: 0 5%;
+        }
 
-    .about {
-      color: #444;
-      line-height: 1.6;
-    }
+        section {
+            margin-bottom: 2.5rem;
+        }
 
-    /* SKILLS */
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
+        h2 {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-blue);
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
 
-    .skill {
-      background: #f3f4f6;
-      padding: 8px 12px;
-      border-radius: 8px;
-      font-size: 14px;
-    }
+        .card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            margin-bottom: 1.5rem;
+        }
 
-    /* PROJECT GRID */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      gap: 15px;
-    }
+        /* --- Left Column Styles --- */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+        }
 
-    .tile {
-      border: 1px solid #eee;
-      border-radius: 10px;
-      overflow: hidden;
-      transition: 0.2s;
-      background: #fafafa;
-    }
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
 
-    .tile:hover {
-      transform: translateY(-4px);
-    }
+        .tag {
+            background: #eff6ff;
+            color: var(--primary-blue);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid #dbeafe;
+        }
 
-    .tile img, .tile video {
-      width: 100%;
-      height: 120px;
-      object-fit: cover;
-    }
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            transition: var(--transition);
+        }
 
-    .tile p {
-      font-size: 13px;
-      padding: 10px;
-      text-align: center;
-    }
+        .contact-link:hover {
+            color: var(--secondary-blue);
+            transform: translateX(5px);
+        }
 
-    /* EXPERIENCE */
-    .box {
-      background: #f9fafb;
-      padding: 15px;
-      border-radius: 10px;
-      font-size: 14px;
-    }
+        .contact-link i {
+            width: 20px;
+            color: var(--primary-blue);
+        }
 
-    /* CONTACT */
-    .contact i {
-      margin-right: 8px;
-      color: #2563eb;
-    }
+        /* --- Right Column Styles --- */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
 
-  </style>
+        .project-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid #f1f5f9;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+        }
+
+        .project-media {
+            width: 100%;
+            height: 180px;
+            background: #e2e8f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            overflow: hidden;
+        }
+
+        .project-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .project-info {
+            padding: 1.25rem;
+            text-align: center;
+        }
+
+        .project-info h3 {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .exp-item {
+            border-left: 2px solid #dbeafe;
+            padding-left: 1.5rem;
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .exp-item::before {
+            content: '';
+            position: absolute;
+            left: -7px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--primary-blue);
+        }
+
+        .exp-date {
+            font-size: 0.85rem;
+            color: var(--secondary-blue);
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .exp-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin: 0.25rem 0;
+        }
+
+        .exp-company {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 0.75rem;
+        }
+
+        /* --- Mobile Responsive --- */
+        @media (max-width: 992px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                order: 2;
+            }
+            .main-content {
+                order: 1;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+            header {
+                text-align: center;
+            }
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
 </head>
-
 <body>
 
-<header>
-  <h1>Chandirakkumar</h1>
-  <p>Instructional Designer | E-Learning Developer | 100+ Modules Delivered</p>
-</header>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <h1>Chandirakkumar S</h1>
+                <p>Instructional Designer & E-Learning Developer</p>
+            </div>
+            <div class="header-action">
+                <a href="#contact" class="tag" style="background: var(--primary-blue); color: white; text-decoration: none;">Available for Projects</a>
+            </div>
+        </div>
+    </header>
 
-<section>
-  <h2>About</h2>
-  <p class="about">
-    Instructional Designer with experience in PowerPoint, Articulate Storyline 360, and LMS platforms.
-    Delivered 100+ e-learning modules for banking and corporate training.
-  </p>
-</section>
+    <main class="container">
+        
+        <aside class="sidebar">
+            <section class="card">
+                <h2>About Me</h2>
+                <p>Specialized in creating high-impact corporate training and digital learning experiences. I bridge the gap between complex information and learner engagement through pedagogical excellence and modern design tools.</p>
+            </section>
 
-<section>
-  <h2>Skills</h2>
-  <div class="skills">
-    <div class="skill">PowerPoint</div>
-    <div class="skill">Storyline 360</div>
-    <div class="skill">Rise 360</div>
-    <div class="skill">Simulation Design</div>
-    <div class="skill">Premiere Pro</div>
-    <div class="skill">After Effects</div>
-    <div class="skill">LMS Management</div>
-  </div>
-</section>
+            <section class="card">
+                <h2>Technical Skills</h2>
+                <div class="skill-tags">
+                    <span class="tag">Articulate Storyline 360</span>
+                    <span class="tag">Vyond (2D Animation)</span>
+                    <span class="tag">Adobe Creative Suite</span>
+                    <span class="tag">LMS Administration</span>
+                    <span class="tag">Microsoft PowerPoint</span>
+                    <span class="tag">Curriculum Development</span>
+                    <span class="tag">Instructional Design (ADDIE/SAM)</span>
+                </div>
+            </section>
 
-<section>
-  <h2>Projects</h2>
+            <section class="card" id="contact">
+                <h2>Connect</h2>
+                <a href="mailto:your.email@example.com" class="contact-link">
+                    <i class="fas fa-envelope"></i>
+                    <span>your.email@example.com</span>
+                </a>
+                <a href="#" class="contact-link">
+                    <i class="fab fa-linkedin"></i>
+                    <span>linkedin.com/in/chandirakkumar</span>
+                </a>
+                <a href="#" class="contact-link">
+                    <i class="fas fa-globe"></i>
+                    <span>Portfolio Website</span>
+                </a>
+            </section>
+        </aside>
 
-  <div class="grid">
+        <div class="main-content">
+            
+            <section>
+                <h2>Featured Projects</h2>
+                <div class="project-grid">
+                    <div class="project-card">
+                        <div class="project-media">
+                            <i class="fas fa-play-circle fa-3x"></i>
+                        </div>
+                        <div class="project-info">
+                            <h3>Corporate Compliance Training</h3>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-media">
+                            <i class="fas fa-laptop-code fa-3x"></i>
+                        </div>
+                        <div class="project-info">
+                            <h3>Interactive Gamified Onboarding</h3>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-media">
+                            <i class="fas fa-file-invoice fa-3x"></i>
+                        </div>
+                        <div class="project-info">
+                            <h3>Product Simulation Module</h3>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-media">
+                            <i class="fas fa-users fa-3x"></i>
+                        </div>
+                        <div class="project-info">
+                            <h3>Soft Skills Video Series</h3>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-    <div class="tile">
-      <img src="https://via.placeholder.com/300">
-      <p><i class="fa-solid fa-file-powerpoint"></i> PPT Design</p>
-    </div>
+            <section class="card">
+                <h2>Professional Experience</h2>
+                
+                <div class="exp-item">
+                    <div class="exp-date">Current</div>
+                    <div class="exp-title">Instructional Designer</div>
+                    <div class="exp-company">Agama Educon Pvt Ltd.</div>
+                    <p>Designing end-to-end e-learning solutions for corporate clients. Transforming raw content into engaging interactive storyboards and final Articulate modules.</p>
+                </div>
 
-    <div class="tile">
-      <img src="https://via.placeholder.com/300">
-      <p><i class="fa-solid fa-layer-group"></i> Storyline Module</p>
-    </div>
+                <div class="exp-item">
+                    <div class="exp-date">Previous Role</div>
+                    <div class="exp-title">E-Learning Developer</div>
+                    <div class="exp-company">Educational Technology Firm</div>
+                    <p>Focused on visual design and video production for educational modules using Vyond and the Adobe suite.</p>
+                </div>
+            </section>
 
-    <div class="tile">
-      <video controls>
-        <source src="your-video.mp4" type="video/mp4">
-      </video>
-      <p><i class="fa-solid fa-video"></i> Video Project</p>
-    </div>
+        </div>
+    </main>
 
-    <div class="tile">
-      <img src="https://via.placeholder.com/300">
-      <p><i class="fa-solid fa-bullseye"></i> Simulation</p>
-    </div>
-
-  </div>
-
-</section>
-
-<section>
-  <h2>Experience</h2>
-  <div class="box">
-    Worked on 100+ e-learning modules for banks including Karnataka Bank, Kotak, KVB, IIFL.
-    Specialized in simulation-based learning and LMS management.
-  </div>
-</section>
-
-<section>
-  <h2>Contact</h2>
-  <p class="contact"><i class="fa-solid fa-envelope"></i> sv393015@gmail.com</p>
-  <p class="contact"><i class="fa-brands fa-linkedin"></i> linkedin.com/in/it-tech-support</p>
-</section>
+    <footer style="text-align: center; padding: 2rem; color: var(--text-muted); font-size: 0.9rem;">
+        &copy; 2026 Chandirakkumar S. Built with HTML & CSS.
+    </footer>
 
 </body>
 </html>
