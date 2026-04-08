@@ -2,32 +2,75 @@
 <html>
 <head>
   <title>Chandirakkumar | Portfolio</title>
+
   <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
       font-family: Arial;
-      margin: 0;
-      background: #0f172a;
+      background: linear-gradient(135deg, #020617, #0f172a);
       color: white;
     }
+
     header {
-      padding: 50px;
       text-align: center;
-      background: #020617;
+      padding: 80px 20px;
+      background: radial-gradient(circle, #0ea5e9, #020617);
+      animation: fadeIn 2s ease;
     }
-    h1 { color: #38bdf8; margin-bottom: 5px; }
-    h2 { color: #38bdf8; }
-    section { padding: 40px; }
-    .container { max-width: 900px; margin: auto; }
+
+    h1 {
+      font-size: 36px;
+      color: white;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 18px;
+      color: #cbd5f5;
+    }
+
+    section {
+      max-width: 900px;
+      margin: auto;
+      padding: 40px 20px;
+      animation: fadeUp 1s ease;
+    }
+
+    h2 {
+      color: #38bdf8;
+      margin-bottom: 20px;
+    }
+
     .card {
-      background: #1e293b;
+      background: rgba(30, 41, 59, 0.6);
+      backdrop-filter: blur(10px);
       padding: 20px;
       margin: 15px 0;
-      border-radius: 10px;
+      border-radius: 12px;
+      transition: 0.3s;
     }
+
+    .card:hover {
+      transform: scale(1.03);
+      background: rgba(56, 189, 248, 0.2);
+    }
+
     .highlight {
       color: #22c55e;
       font-weight: bold;
     }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
   </style>
 </head>
 
@@ -38,16 +81,16 @@
   <p>Instructional Designer | E-Learning Developer | 100+ Modules Delivered</p>
 </header>
 
-<section class="container">
+<section>
   <h2>About Me</h2>
   <p>
     I am an Instructional Designer with 1+ year experience specializing in 
     <span class="highlight">PowerPoint design, Articulate Storyline 360, and e-learning development</span>.
-    I have created 100+ interactive modules including simulations and training content.
+    I have created 100+ interactive modules including simulations and corporate training content.
   </p>
 </section>
 
-<section class="container">
+<section>
   <h2>Key Skills</h2>
   <div class="card">✔ PowerPoint Presentation (Expert)</div>
   <div class="card">✔ Articulate Storyline 360 & Rise 360</div>
@@ -56,18 +99,24 @@
   <div class="card">✔ LMS Management (QuickLearn & LearnDash)</div>
 </section>
 
-<section class="container">
+<section>
   <h2>Projects</h2>
-  <div class="card">
-    Banking E-learning Modules (Karnataka Bank, Kotak, KVB, IIFL & more)
-  </div>
-  <div class="card">Simulation Module (Banking Process Demo)</div>
-  <div class="card">Articulate Interactive Module</div>
-  <div class="card">Video Editing Project</div>
-  <div class="card">Professional PPT Design</div>
+  <div class="card">🏦 Banking E-learning Modules (Karnataka Bank, Kotak, KVB, IIFL & more)</div>
+  <div class="card">🎯 Simulation Module (Banking Demo)</div>
+  <div class="card">🧩 Articulate Interactive Module</div>
+  <div class="card">🎬 Video Editing Project</div>
+  <div class="card">📊 Professional PPT Design</div>
 </section>
 
-<section class="container">
+<section>
+  <h2>Experience</h2>
+  <div class="card">
+    Worked on 100+ e-learning modules for leading banks including Karnataka Bank, Kotak, KVB, IIFL and more.
+    Specialized in simulation-based learning, LMS management, and interactive content development.
+  </div>
+</section>
+
+<section>
   <h2>Tools</h2>
   <div class="card">PowerPoint, Excel, Word</div>
   <div class="card">Articulate Storyline, Rise 360, Studio 360</div>
@@ -75,21 +124,10 @@
   <div class="card">Photoshop, Illustrator, Captivate</div>
 </section>
 
-<section class="container">
-  <h2>Experience</h2>
-  <div class="card">
-    1+ year experience in Instructional Design, handling LMS platforms, 
-    <div class="card">
-Worked on 100+ e-learning modules for leading banks including Karnataka Bank, Kotak, KVB, IIFL and more.
-</div>
-</div>
-  </div>
-</section>
-
-<section class="container">
+<section>
   <h2>Contact</h2>
-  <div class="card">Email: sv393015@gmail.com</div>
-  <div class="card">LinkedIn: linkedin.com/in/it-tech-support</div>
+  <div class="card">📧 sv393015@gmail.com</div>
+  <div class="card">🔗 linkedin.com/in/it-tech-support</div>
 </section>
 
 </body>
