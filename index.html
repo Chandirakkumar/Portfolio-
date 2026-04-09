@@ -124,10 +124,14 @@ gap:20px;
 
 /* ===== CARD ===== */
 .card{
-background:#020617;
-padding:20px;
-border-radius:15px;
+padding:25px;
+border-radius:18px;
 transition:0.3s;
+min-height:120px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+gap:8px;
 }
 
 .card:hover{
@@ -139,6 +143,23 @@ box-shadow:0 10px 30px rgba(0,0,0,0.5);
 width:100%;
 border-radius:10px;
 margin-bottom:10px;
+}
+
+/* ===== DASHBOARD COLORS ===== */
+.dashboard-grid .card:nth-child(1){
+background:linear-gradient(135deg,#3b82f6,#1d4ed8);
+}
+
+.dashboard-grid .card:nth-child(2){
+background:linear-gradient(135deg,#10b981,#047857);
+}
+
+.dashboard-grid .card:nth-child(3){
+background:linear-gradient(135deg,#f59e0b,#b45309);
+}
+
+.dashboard-grid .card:nth-child(4){
+background:linear-gradient(135deg,#ec4899,#be185d);
 }
 
 /* ===== SKILL BAR ===== */
@@ -175,7 +196,6 @@ margin-top:10px;
 
 <body>
 
-<!-- SIDEBAR -->
 <div class="sidebar">
 <div class="logo">Chandirakkumar</div>
 
@@ -187,14 +207,13 @@ margin-top:10px;
 </div>
 </div>
 
-<!-- MAIN -->
 <div class="main">
 
 <!-- DASHBOARD -->
 <div id="dashboard" class="section active">
 
 <div class="about-card">
-<img src="IMG_20260409_223924.jpg" alt="Chandirakkumar Profile">
+<img src="IMG_20260409_223924.jpg" alt="Profile">
 <div class="about-info">
 <h2>Chandirakkumar S</h2>
 <p>Instructional Designer & E-Learning Developer</p>
@@ -208,29 +227,27 @@ margin-top:10px;
 </div>
 
 <div class="grid dashboard-grid">
-<div class="grid dashboard-grid">
 
 <div class="card">
-<h3>100+ Modules</h3>
-<p>eLearning modules created.</p>
+<h3>📘 100+ Modules</h3>
+<p>Interactive modules built.</p>
 </div>
 
 <div class="card">
-<h3>End-to-End</h3>
-<p>Design to deployment.</p>
+<h3>⚙️ End-to-End</h3>
+<p>Design to delivery.</p>
 </div>
 
 <div class="card">
-<h3>LMS</h3>
+<h3>💻 LMS</h3>
 <p>QuickLearn & LearnDash.</p>
 </div>
 
 <div class="card">
-<h3>Clients</h3>
+<h3>🏢 Clients</h3>
 <p>Kotak, KVB, IIFL.</p>
 </div>
 
-</div>
 </div>
 
 </div>
@@ -239,27 +256,27 @@ margin-top:10px;
 <div id="projects" class="section">
 <div class="section-header">
 <h2>Projects</h2>
-<p>Demonstrating my expertise in instructional design, interactive learning, and multimedia development.</p>
+<p>My recent work.</p>
 </div>
 
 <div class="grid">
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f">
-<h3>PPT & Content Design</h3>
-<p>Created structured, visually engaging training presentations with strong instructional flow and learner-focused design.</p>
+<h3>PPT Design</h3>
+<p>Training presentations.</p>
 </div>
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d">
-<h3>Video & Motion Graphics</h3>
-<p>Produced high-quality training videos and animations using Premiere Pro and After Effects to enhance learner engagement.</p>
+<h3>Video Editing</h3>
+<p>Explainer videos.</p>
 </div>
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71">
-<h3>Storyline Development</h3>
-<p>Built advanced interactive modules with branching, assessments, multilingual support, and dynamic user controls.</p>
+<h3>Storyline</h3>
+<p>Interactive modules.</p>
 </div>
 
 </div>
@@ -269,16 +286,13 @@ margin-top:10px;
 <div id="skills" class="section">
 <div class="section-header">
 <h2>Skills</h2>
-<p>My core strengths across instructional design, tools, and technologies.</p>
+<p>Tools I use.</p>
 </div>
 
 <div class="card">
-<div class="skill">Articulate Storyline 360<div class="bar"><div style="width:90%"></div></div></div>
-<div class="skill">PowerPoint & Content Structuring<div class="bar"><div style="width:95%"></div></div></div>
-<div class="skill">Adobe Premiere Pro<div class="bar"><div style="width:85%"></div></div></div>
-<div class="skill">Adobe After Effects<div class="bar"><div style="width:80%"></div></div></div>
-<div class="skill">LMS Management (QuickLearn & LearnDash)<div class="bar"><div style="width:88%"></div></div></div>
-<div class="skill">Multilingual Development (Tamil, English, Hindi, Kannada)<div class="bar"><div style="width:90%"></div></div></div>
+<div class="skill">Storyline<div class="bar"><div style="width:90%"></div></div></div>
+<div class="skill">PowerPoint<div class="bar"><div style="width:95%"></div></div></div>
+<div class="skill">Premiere Pro<div class="bar"><div style="width:85%"></div></div></div>
 </div>
 </div>
 
@@ -286,14 +300,11 @@ margin-top:10px;
 <div id="contact" class="section">
 <div class="section-header">
 <h2>Contact</h2>
-<p>Let’s connect and build impactful digital learning experiences together.</p>
+<p>Open to instructional design opportunities.</p>
 </div>
 
 <div class="card">
-<p><strong>Name:</strong> Chandirakkumar S</p>
-<p><strong>Email:</strong> sv393015@gmail.com</p>
-<p><strong>Role:</strong> Instructional Designer</p>
-<p>I am open to opportunities where I can contribute my expertise in eLearning development, LMS management, and multimedia design to create scalable and engaging learning solutions.</p>
+<p>Email: sv393015@gmail.com</p>
 <a href="mailto:sv393015@gmail.com" class="btn">Send Mail</a>
 </div>
 </div>
@@ -301,7 +312,6 @@ margin-top:10px;
 </div>
 
 <script>
-
 function showSection(id, el){
 document.querySelectorAll('.section').forEach(sec=>sec.classList.remove('active'));
 document.getElementById(id).classList.add('active');
@@ -309,7 +319,6 @@ document.getElementById(id).classList.add('active');
 document.querySelectorAll('.menu a').forEach(link=>link.classList.remove('active'));
 el.classList.add('active');
 }
-
 </script>
 
 </body>
