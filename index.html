@@ -9,219 +9,266 @@
 
 <style>
 
-*{margin:0;padding:0;box-sizing:border-box}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
 body{
-background:linear-gradient(135deg,#020617,#0f172a,#111827);
-font-family:'Inter',sans-serif;
-background:#0b1120;
-color:#fff;
-display:flex;
+    font-family:'Inter',sans-serif;
+    background:#0B1120;
+    color:#F8FAFC;
+    display:flex;
 }
 
 /* ===== SIDEBAR ===== */
+
 .sidebar{
-position:sticky;
-top:0;
-width:250px;
-height:100vh;
-background:#08111f;
-border-right:1px solid rgba(255,255,255,.08);
-padding:30px;
-display:flex;
-flex-direction:column;
-gap:30px;
+    width:250px;
+    height:100vh;
+    background:#111827;
+    padding:30px;
+    display:flex;
+    flex-direction:column;
+    gap:30px;
+    border-right:1px solid #334155;
 }
 
 .logo{
-font-weight:700;
-background:linear-gradient(135deg,#3b82f6,#ffffff);
--webkit-background-clip:text;
-color:transparent;
+    font-size:24px;
+    font-weight:700;
+    background:linear-gradient(135deg,#60A5FA,#2563EB);
+    -webkit-background-clip:text;
+    color:transparent;
 }
 
 .menu a{
-text-decoration:none;
-color:#aaa;
-padding:12px;
-border-radius:8px;
-display:block;
-cursor:pointer;
-transition:0.3s;
+    text-decoration:none;
+    color:#94A3B8;
+    padding:12px 15px;
+    border-radius:10px;
+    display:block;
+    cursor:pointer;
+    transition:.3s;
 }
 
-.menu a.active,
-.menu a:hover{
-background:linear-gradient(135deg,#2563eb,#1d4ed8);
-color:#fff;
+.menu a:hover,
+.menu a.active{
+    background:#2563EB;
+    color:#fff;
 }
 
 /* ===== MAIN ===== */
+
 .main{
-flex:1;
-padding:30px;
+    flex:1;
+    padding:35px;
 }
 
 .section{
-display:none;
+    display:none;
 }
 
 .section.active{
-display:block;
-animation:fade 0.4s ease;
+    display:block;
+    animation:fade .4s ease;
 }
 
 @keyframes fade{
-from{opacity:0;transform:translateY(10px)}
-to{opacity:1;transform:translateY(0)}
+    from{
+        opacity:0;
+        transform:translateY(12px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
 
-/* ===== ABOUT CARD ===== */
+/* ===== ABOUT ===== */
+
 .about-card{
-display:flex;
-gap:20px;
-align-items:center;
-background:#111827;
-border:1px solid rgba(255,255,255,.08);
-padding:20px;
-border-radius:15px;
-margin-bottom:25px;
+    display:flex;
+    gap:25px;
+    align-items:center;
+    background:#1E293B;
+    border:1px solid #334155;
+    border-radius:18px;
+    padding:25px;
+    margin-bottom:30px;
 }
 
 .about-card img{
-width:100px;
-height:100px;
-border-radius:50%;
-object-fit:cover;
-border:2px solid #6366f1;
+    width:110px;
+    height:110px;
+    border-radius:50%;
+    object-fit:cover;
+    border:4px solid #3B82F6;
 }
 
 .about-info h2{
-margin-bottom:5px;
+    margin-bottom:8px;
+    font-size:28px;
 }
 
 .about-info p{
-color:#aaa;
-font-size:14px;
+    color:#CBD5E1;
+    line-height:1.7;
 }
 
-/* ===== HEADER TEXT ===== */
+/* ===== SECTION ===== */
+
 .section-header{
-margin-bottom:20px;
+    margin-bottom:22px;
 }
 
 .section-header h2{
-font-size:24px;
-margin-bottom:8px;
+    font-size:28px;
+    margin-bottom:8px;
 }
 
 .section-header p{
-color:#aaa;
-font-size:14px;
+    color:#94A3B8;
 }
 
 /* ===== GRID ===== */
+
 .grid{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:20px;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:22px;
 }
 
 /* ===== CARD ===== */
-.rgba(255,255,255,.05);
-padding:25px;
-border-radius:18px;
-transition:0.3s;
-min-height:120px;
-display:flex;
-flex-direction:column;
-justify-content:center;
-gap:8px;
-}
+
 .card{
-padding:25px;
-border-radius:18px;
-background:#111827;
-border:1px solid rgba(255,255,255,.08);
-transition:.35s;
-min-height:120px;
-display:flex;
-flex-direction:column;
-justify-content:center;
-gap:8px;
+    background:#1E293B;
+    border:1px solid #334155;
+    border-radius:18px;
+    padding:25px;
+    transition:.35s;
+    min-height:140px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    gap:10px;
 }
 
 .card:hover{
-transform:translateY(-6px);
-box-shadow:0 15px 35px rgba(37,99,235,.35);
-border-color:#3b82f6;
-}
-.card img{
-width:100%;
-border-radius:10px;
-margin-bottom:10px;
+    transform:translateY(-8px);
+    box-shadow:0 15px 35px rgba(37,99,235,.35);
+    border-color:#3B82F6;
 }
 
-/* ===== DASHBOARD COLORS ===== */
-.dashboard-grid .card{
-background:linear-gradient(135deg,#2563eb,#1e3a8a);
+.card h3{
+    color:#FFFFFF;
 }
-/* ===== SKILL SECTION FIX ===== */
+
+.card p{
+    color:#CBD5E1;
+}
+
+.card img{
+    width:100%;
+    border-radius:12px;
+    margin-bottom:10px;
+}
+
+/* ===== DASHBOARD ===== */
+
+.dashboard-grid .card{
+    background:linear-gradient(135deg,#1E3A8A,#2563EB);
+    border:none;
+}
+
+.dashboard-grid .card:hover{
+    background:linear-gradient(135deg,#2563EB,#3B82F6);
+}
+
+/* ===== SKILLS ===== */
+
 .skills-card{
-max-width:600px;
-margin:30px auto;
-padding:20px;
+    max-width:650px;
+    margin:35px auto;
 }
 
 .skill{
-margin-bottom:18px;
+    margin-bottom:18px;
+    color:#F8FAFC;
 }
 
 .bar{
-height:8px;
-background:#1e293b;
-border-radius:10px;
-overflow:hidden;
-margin-top:5px;
+    height:9px;
+    background:#334155;
+    border-radius:10px;
+    overflow:hidden;
+    margin-top:6px;
 }
 
 .bar div{
-height:100%;
-background:linear-gradient(90deg,#2563eb,#60a5fa);
+    height:100%;
+    border-radius:10px;
+    background:linear-gradient(90deg,#3B82F6,#60A5FA);
 }
 
 /* ===== BUTTON ===== */
+
 .btn{
-transition:.3s;
-display:inline-block;
-padding:10px 20px;
-border-radius:10px;
-background:linear-gradient(135deg,#2563eb,#60a5fa);
-color:#fff;
-text-decoration:none;
-margin-top:10px;
+    display:inline-block;
+    margin-top:12px;
+    margin-right:10px;
+    padding:12px 22px;
+    border-radius:10px;
+    text-decoration:none;
+    color:#fff;
+    font-weight:600;
+    background:linear-gradient(135deg,#2563EB,#1D4ED8);
+    transition:.3s;
 }
 
 .btn:hover{
-transform:translateY(-3px);
-box-shadow:0 10px 20px rgba(99,102,241,.4);
+    transform:translateY(-3px);
+    box-shadow:0 8px 20px rgba(37,99,235,.4);
 }
+
+/* ===== RESPONSIVE ===== */
+
+@media(max-width:900px){
+
+body{
+    flex-direction:column;
+}
+
+.sidebar{
+    width:100%;
+    height:auto;
+}
+
+.grid{
+    grid-template-columns:1fr;
+}
+
+.about-card{
+    flex-direction:column;
+    text-align:center;
+}
+
+}
+
 </style>
 </head>
 
 <body>
 
 <div class="sidebar">
-<div class="logo">
-<h2>Chandirakkumar</h2>
-<p>Instructional Designer</p>
-</div>
+<div class="logo">Chandirakkumar</div>
 
 <div class="menu">
-<a class="active" onclick="showSection('dashboard', this)">🏠 Dashboard</a>
-<a onclick="showSection('projects', this)">💼 Projects</a>
-<a onclick="showSection('skills', this)">🛠 Skills</a>
-<a onclick="showSection('contact', this)">📞 Contact</a>
+<a class="active" onclick="showSection('dashboard', this)">Dashboard</a>
+<a onclick="showSection('projects', this)">Projects</a>
+<a onclick="showSection('skills', this)">Skills</a>
+<a onclick="showSection('contact', this)">Contact</a>
 </div>
 </div>
 
@@ -231,84 +278,30 @@ box-shadow:0 10px 20px rgba(99,102,241,.4);
 <div id="dashboard" class="section active">
 
 <div class="about-card">
-
-<img src="IMG_20260409_223924.jpg">
-
+<img src="IMG_20260409_223924.jpg" alt="Profile">
 <div class="about-info">
-
-<h1>Chandirakkumar S</h1>
-
-<h3>Instructional Designer & eLearning Developer</h3>
-
-<p>
-Designing engaging learning experiences using Storyline 360,
-SCORM, LMS, PowerPoint and Adobe Creative Suite.
-</p>
-
-<a href="#" class="btn">📄 Download Resume</a>
-
-<a href="#projects" class="btn">🚀 View Projects</a>
-
+<h2>Chandirakkumar S</h2>
+<p>Instructional Designer & E-Learning Developer</p>
+<p>Instructional Designer with 1+ year experience in Storyline 360, LMS management, and interactive eLearning development.</p>
 </div>
-
 </div>
 
 <div class="section-header">
-<h2>Professional Dashboard</h2>
-<p>Interactive Learning • LMS • Storyline • Video Editing </p>
+<h2>Dashboard Overview</h2>
+<p>Quick overview of my work and experience.</p>
 </div>
 
 <div class="grid dashboard-grid">
-<div class="grid dashboard-grid">
-
-<div class="card">
-<h3>📘 100+</h3>
-<p>Interactive eLearning Modules</p>
-</div>
-
-<div class="card">
-<h3>💼 15+</h3>
-<p>Banking Projects</p>
-</div>
-
-<div class="card">
-<h3>🎬 50+</h3>
-<p>Training Videos Created</p>
-</div>
-
-<div class="card">
-<h3>💻 LMS</h3>
-<p>LearnDash & QuickLearn</p>
-</div>
-
-<div class="card">
-<h3>🧠 Storyline 360</h3>
-<p>Expert Interactive Development</p>
-</div>
-
-<div class="card">
-<h3>📦 SCORM</h3>
-<p>SCORM & xAPI Integration</p>
-</div>
-
-<div class="card">
-<h3>📝 Assessments</h3>
-<p>Quizzes & Knowledge Checks</p>
-</div>
-
-<div class="card">
-<h3>⚡ Rapid eLearning</h3>
-<p>Fast Course Development</p>
-</div>
-
-<div class="card">
-<h3>🎨 PPT Design</h3>
-<p>Professional Presentation Design</p>
-</div>
-
-<div class="card">
-<h3>🌍 Multilingual</h3>
-<p>Localized Course Development</p>
+<div class="card"><h3>📘 100+ Modules</h3><p>Interactive e-learning modules built</p></div>
+<div class="card"><h3>🎯 Interactive Learning</h3><p>Engaging and scenario-based content</p></div>
+<div class="card"><h3>⚙️ End-to-End Development</h3><p>Design to delivery execution</p></div>
+<div class="card"><h3>💻 LMS Deployment</h3><p>LearnDash & QuickLearn platforms</p></div>
+<div class="card"><h3>🎬 Video Production</h3><p>Editing, motion & visual storytelling</p></div>
+<div class="card"><h3>🧠 Storyline Development</h3><p>Articulate Storyline 360 projects</p></div>
+<div class="card"><h3>📝 Assessments & Quizzes</h3><p>Evaluation and knowledge checks</p></div>
+<div class="card"><h3>📦 SCORM Integration</h3><p>Packaging and LMS compatibility</p></div>
+<div class="card"><h3>⚡ Rapid E-Learning</h3><p>Quick and scalable course creation</p></div>
+<div class="card"><h3>🎨 PPT & Visual Design</h3><p>Professional presentations & layouts</p></div>
 </div>
 
 </div>
@@ -372,17 +365,8 @@ SCORM, LMS, PowerPoint and Adobe Creative Suite.
 </div>
 
 <div class="card">
-📧 Email - sv393015@gmail.com
-
-📱 Phone - 9353080994
-
-💻 GitHub - https://chandirakkumar.github.io/Portfolio-/#contact
-
-💼 LinkedIn - LinkedIn/chandru
-
-📍 Bangalore, India
-
-🟢 Available for Freelance
+<p>📧 Email: sv393015@gmail.com</p>
+<p>📱 Phone: +91 93530 80994</p>
 
 <a href="mailto:sv393015@gmail.com" class="btn">Send Mail</a>
 <a href="tel:+919353080994" class="btn">Call Me</a>
