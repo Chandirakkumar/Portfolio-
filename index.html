@@ -233,9 +233,38 @@ body{
 flex-direction:column;
 }
 
+.menu-btn{
+position:fixed;
+top:20px;
+left:20px;
+font-size:26px;
+background:#2563EB;
+color:#fff;
+border:none;
+padding:10px 15px;
+border-radius:10px;
+cursor:pointer;
+z-index:1001;
+box-shadow:0 5px 15px rgba(0,0,0,.2);
+}
+
 .sidebar{
-width:100%;
-height:auto;
+position:fixed;
+left:-260px;
+top:0;
+width:250px;
+height:100vh;
+background:#1E3A8A;
+padding:30px;
+display:flex;
+flex-direction:column;
+gap:30px;
+transition:.35s;
+z-index:1000;
+}
+
+.sidebar.show{
+left:0;
 }
 
 .grid{
@@ -254,7 +283,8 @@ text-align:center;
 
 <body>
 
-<div class="sidebar">
+<button class="menu-btn" onclick="toggleMenu()">☰</button>
+<div class="sidebar" id="sidebar">
 <div class="logo">Chandirakkumar</div>
 
 <div class="menu">
