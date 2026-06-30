@@ -225,14 +225,6 @@ transition:.3s;
 background:#1D4ED8;
 }
 
-/* ===== RESPONSIVE ===== */
-
-@media(max-width:900px){
-
-body{
-flex-direction:column;
-}
-
 .menu-btn{
 position:fixed;
 top:20px;
@@ -266,6 +258,15 @@ z-index:1000;
 .sidebar.show{
 left:0;
 }
+
+/* ===== RESPONSIVE ===== */
+
+@media(max-width:900px){
+
+body{
+flex-direction:column;
+}
+
 
 .grid{
 grid-template-columns:1fr;
@@ -400,13 +401,22 @@ text-align:center;
 
 <script>
 function showSection(id, el){
-document.querySelectorAll('.section').forEach(sec=>sec.classList.remove('active'));
+
+document.querySelectorAll('.section').forEach(sec=>{
+sec.classList.remove('active');
+});
+
 document.getElementById(id).classList.add('active');
 
-document.querySelectorAll('.menu a').forEach(link=>link.classList.remove('active'));
+document.querySelectorAll('.menu a').forEach(link=>{
+link.classList.remove('active');
+});
+
 el.classList.add('active');
 
+/* Close menu after clicking */
 document.getElementById("sidebar").classList.remove("show");
+
 }
 
 function toggleMenu(){
