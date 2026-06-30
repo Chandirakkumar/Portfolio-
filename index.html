@@ -405,6 +405,12 @@ document.getElementById(id).classList.add('active');
 
 document.querySelectorAll('.menu a').forEach(link=>link.classList.remove('active'));
 el.classList.add('active');
+
+document.getElementById("sidebar").classList.remove("show");
+}
+
+function toggleMenu(){
+document.getElementById("sidebar").classList.toggle("show");
 }
 </script>
 
