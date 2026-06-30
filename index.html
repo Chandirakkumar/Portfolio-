@@ -12,6 +12,7 @@
 *{margin:0;padding:0;box-sizing:border-box}
 
 body{
+background:linear-gradient(135deg,#020617,#0f172a,#111827);
 font-family:'Inter',sans-serif;
 background:#0f172a;
 color:#fff;
@@ -20,6 +21,8 @@ display:flex;
 
 /* ===== SIDEBAR ===== */
 .sidebar{
+position:sticky;
+top:0;
 width:250px;
 height:100vh;
 background:#020617;
@@ -124,6 +127,8 @@ gap:20px;
 
 /* ===== CARD ===== */
 .card{
+backdrop-filter:blur(10px);
+border:1px solid rgba(255,255,255,.05);
 padding:25px;
 border-radius:18px;
 transition:0.3s;
@@ -135,6 +140,9 @@ gap:8px;
 }
 
 .card:hover{
+transform:translateY(-10px) scale(1.03);
+box-shadow:0 20px 40px rgba(99,102,241,.35);
+}
 transform:translateY(-5px);
 box-shadow:0 10px 30px rgba(0,0,0,0.5);
 }
@@ -183,6 +191,7 @@ background:linear-gradient(135deg,#6366f1,#22c55e);
 
 /* ===== BUTTON ===== */
 .btn{
+transition:.3s;
 display:inline-block;
 padding:10px 20px;
 border-radius:10px;
@@ -192,6 +201,10 @@ text-decoration:none;
 margin-top:10px;
 }
 
+.btn:hover{
+transform:translateY(-3px);
+box-shadow:0 10px 20px rgba(99,102,241,.4);
+}
 </style>
 </head>
 
@@ -240,12 +253,33 @@ SCORM, LMS, PowerPoint and Adobe Creative Suite.
 </div>
 
 <div class="section-header">
-<h2>Dashboard Overview</h2>
-<p>Quick overview of my work and experience.</p>
+<h2>Professional Dashboard</h2>
+<p>Interactive Learning • LMS • Storyline • Video Editing </p>
 </div>
 
 <div class="grid dashboard-grid">
-<div class="card"><h3>📘 100+ Modules</h3><p>Interactive e-learning modules built</p></div>
+<div class="card"><h3>📘 🚀 100+
+Interactive Modules
+
+💼 15+
+Banking Projects
+
+🎬 50+
+Training Videos
+
+🧠 Storyline Expert
+
+📦 SCORM
+
+⚡ Rapid Development
+
+🏆 Quality
+
+💻 LMS
+
+🎨 PPT
+
+🌍 Multilingual</h3><p>Interactive e-learning modules built</p></div>
 <div class="card"><h3>🎯 Interactive Learning</h3><p>Engaging and scenario-based content</p></div>
 <div class="card"><h3>⚙️ End-to-End Development</h3><p>Design to delivery execution</p></div>
 <div class="card"><h3>💻 LMS Deployment</h3><p>LearnDash & QuickLearn platforms</p></div>
@@ -318,8 +352,17 @@ SCORM, LMS, PowerPoint and Adobe Creative Suite.
 </div>
 
 <div class="card">
-<p>📧 Email: sv393015@gmail.com</p>
-<p>📱 Phone: +91 93530 80994</p>
+📧 Email - sv393015@gmail.com
+
+📱 Phone - 9353080994
+
+💻 GitHub - https://chandirakkumar.github.io/Portfolio-/#contact
+
+💼 LinkedIn - LinkedIn/chandru
+
+📍 Bangalore, India
+
+🟢 Available for Freelance
 
 <a href="mailto:sv393015@gmail.com" class="btn">Send Mail</a>
 <a href="tel:+919353080994" class="btn">Call Me</a>
@@ -337,6 +380,8 @@ document.querySelectorAll('.menu a').forEach(link=>link.classList.remove('active
 el.classList.add('active');
 }
 </script>
-
+<footer style="text-align:center;padding:30px;color:#888;font-size:14px;">
+    © 2026 Chandirakkumar S | Designed & Developed by Me
+</footer>
 </body>
 </html>
