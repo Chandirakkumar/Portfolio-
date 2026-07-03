@@ -320,7 +320,151 @@ z-index:1000;
 .sidebar.show{
 left:0;
 }
+/* ===== CONTACT SECTION ===== */
 
+.contact-card{
+display:flex;
+align-items:center;
+justify-content:space-between;
+background:#fff;
+padding:25px 35px;
+border-radius:20px;
+margin-bottom:22px;
+box-shadow:0 8px 25px rgba(0,0,0,.08);
+transition:.3s;
+}
+
+.contact-card:hover{
+transform:translateY(-5px);
+box-shadow:0 15px 35px rgba(37,99,235,.15);
+}
+
+.contact-icon{
+width:90px;
+height:90px;
+background:#EEF4FF;
+border-radius:18px;
+display:flex;
+align-items:center;
+justify-content:center;
+margin-right:25px;
+}
+
+.contact-icon img{
+width:45px;
+height:45px;
+object-fit:contain;
+}
+
+.contact-details{
+flex:1;
+}
+
+.contact-details h3{
+font-size:20px;
+color:#1E293B;
+margin-bottom:8px;
+}
+
+.contact-details p{
+font-size:17px;
+color:#64748B;
+}
+
+.contact-btn{
+background:#2563EB;
+color:#fff;
+text-decoration:none;
+padding:15px 28px;
+border-radius:12px;
+font-weight:600;
+transition:.3s;
+min-width:180px;
+text-align:center;
+}
+
+.contact-btn:hover{
+background:#1D4ED8;
+}
+
+.availability{
+display:flex;
+align-items:center;
+background:#fff;
+padding:28px 35px;
+border-radius:20px;
+margin-top:35px;
+border-left:6px solid #2563EB;
+box-shadow:0 8px 25px rgba(0,0,0,.08);
+}
+
+.availability-icon{
+width:90px;
+height:90px;
+background:#EEF4FF;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+margin-right:25px;
+}
+
+.availability-icon img{
+width:48px;
+height:48px;
+object-fit:contain;
+}
+
+.availability h3{
+font-size:24px;
+margin-bottom:8px;
+color:#1E293B;
+}
+
+.availability p{
+font-size:18px;
+color:#64748B;
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.contact-card{
+flex-direction:column;
+text-align:center;
+gap:18px;
+padding:25px;
+}
+
+.contact-icon{
+margin-right:0;
+}
+
+.contact-btn{
+width:100%;
+}
+
+.availability{
+flex-direction:column;
+text-align:center;
+padding:25px;
+}
+
+.availability-icon{
+margin-right:0;
+margin-bottom:20px;
+}
+
+.availability h3{
+font-size:20px;
+}
+
+.availability p{
+font-size:16px;
+}
+
+}
 /* ===== RESPONSIVE ===== */
 
 @media(max-width:900px){
