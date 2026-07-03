@@ -185,27 +185,46 @@ border-left:5px solid #2563EB;
 
 /* ===== SKILLS ===== */
 
-.skills-card{
-max-width:650px;
-margin:35px auto;
+.skills-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:22px;
 }
 
-.skill{
+.skill-card{
+background:#fff;
+padding:28px;
+border-radius:18px;
+text-align:center;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+transition:.35s;
+border-top:5px solid #2563EB;
+}
+
+.skill-card:hover{
+transform:translateY(-8px);
+box-shadow:0 18px 35px rgba(37,99,235,.18);
+}
+
+.skill-card .icon{
+font-size:42px;
 margin-bottom:18px;
-font-weight:500;
 }
 
-.bar{
-height:9px;
-background:#E2E8F0;
-border-radius:20px;
-overflow:hidden;
-margin-top:6px;
+.skill-card h3{
+font-size:18px;
+margin-bottom:12px;
+color:#1E293B;
 }
 
-.bar div{
-height:100%;
-background:linear-gradient(90deg,#2563EB,#60A5FA);
+.skill-card span{
+display:inline-block;
+padding:7px 18px;
+border-radius:30px;
+background:#E0F2FE;
+color:#2563EB;
+font-weight:600;
+font-size:14px;
 }
 
 /* ===== BUTTON ===== */
@@ -362,73 +381,89 @@ text-align:center;
 
 <!-- SKILLS -->
 <div id="skills" class="section">
+
 <div class="section-header">
-<h2>Skills</h2>
-<p>Tools I use.</p>
+<h2>Technical Skills</h2>
+<p>Tools & Technologies I work with</p>
 </div>
 
-<div class="grid">
+<div class="grid skills-grid">
 
-<div class="card" style="text-align:center;">
-<h2>🎯</h2>
-<h3 style="line-height:1.4;">Articulate Storyline 360</h3>
+<div class="skill-card">
+<div class="icon">🎯</div>
+<h3>Articulate Storyline 360</h3>
+<span>Expert</span>
 </div>
 
-<div class="card" style="text-align:center;">
-<h2>📄</h2>
-<h3 style="line-height:1.4;">Microsoft PowerPoint</h3>
+<div class="skill-card">
+<div class="icon">🎬</div>
+<h3>Adobe Premiere Pro</h3>
+<span>Advanced</span>
 </div>
 
-<div class="card" style="text-align:center;">
-<h2>🎬</h2>
-<h3 style="line-height:1.4;">Adobe Premiere Pro</h3>
+<div class="skill-card">
+<div class="icon">🎞️</div>
+<h3>Adobe After Effects</h3>
+<span>Intermediate</span>
 </div>
 
-<div class="card" style="text-align:center;">
-<h2>🎞️</h2>
-<h3 style="line-height:1.4;">Adobe After Effects</h3>
+<div class="skill-card">
+<div class="icon">📄</div>
+<h3>Microsoft PowerPoint</h3>
+<span>Expert</span>
 </div>
 
-<div class="card" style="text-align:center;">
-<h2>🎨</h2>
-<h3 style="line-height:1.4;">Adobe Illustrator</h3>
+<div class="skill-card">
+<div class="icon">📖</div>
+<h3>Adobe Captivate</h3>
+<span>Advanced</span>
 </div>
 
-<div class="card" style="text-align:center;">
-<h2>📖</h2>
-<h3 style="line-height:1.4;">Adobe Captivate</h3>
+<div class="skill-card">
+<div class="icon">🖌️</div>
+<h3>Adobe Illustrator</h3>
+<span>Intermediate</span>
 </div>
 
-<div class="card" style="text-align:center;">
-<h2>🖼️</h2>
-<h3 style="line-height:1.4;">Adobe Photoshop</h3>
+<div class="skill-card">
+<div class="icon">🖼️</div>
+<h3>Adobe Photoshop</h3>
+<span>Intermediate</span>
 </div>
 
-<div class="card" style="text-align:center;">
-<h2>💻</h2>
-<h3 style="line-height:1.4;">LearnDash LMS</h3>
+<div class="skill-card">
+<div class="icon">💻</div>
+<h3>LearnDash LMS</h3>
+<span>Advanced</span>
 </div>
 
-<div class="card" style="text-align:center;">
-<h2>📦</h2>
-<h3 style="line-height:1.4;">QuickLearn LMS</h3>
+<div class="skill-card">
+<div class="icon">📦</div>
+<h3>QuickLearn LMS</h3>
+<span>Advanced</span>
 </div>
 
-<div class="card" style="text-align:center;">
-<h2>📋</h2>
-<h3 style="line-height:1.4;">Microsoft Word</h3>
+<div class="skill-card">
+<div class="icon">☁️</div>
+<h3>SCORM 1.2</h3>
+<span>Expert</span>
 </div>
 
-<div class="card" style="text-align:center;">
-<h2>📊</h2>
-<h3 style="line-height:1.4;">Microsoft Excel</h3>
+<div class="skill-card">
+<div class="icon">📊</div>
+<h3>Microsoft Excel</h3>
+<span>Intermediate</span>
 </div>
 
-<div class="card" style="text-align:center;">
-<h2>☁️</h2>
-<h3 style="line-height:1.4;">SCORM 1.2</h3>
+<div class="skill-card">
+<div class="icon">📝</div>
+<h3>Microsoft Word</h3>
+<span>Advanced</span>
 </div>
 
+</div>
+
+</div>
 </div>   <!-- Closes the grid -->
 </div>   <!-- Closes the Skills section -->
 
