@@ -22,7 +22,7 @@ color:#1E293B;
 display:flex;
 }
 
-/* ===== SIDEBAR ===== */
+/* ===== DESKTOP SIDEBAR (DEFAULT) ===== */
 
 .sidebar{
 width:250px;
@@ -34,6 +34,8 @@ flex-direction:column;
 gap:30px;
 position:sticky;
 top:0;
+transition: .35s ease;
+z-index:1000;
 }
 
 .logo{
@@ -50,6 +52,7 @@ border-radius:10px;
 display:block;
 transition:.3s;
 font-weight:500;
+cursor:pointer;
 }
 
 .menu a:hover,
@@ -58,7 +61,24 @@ background:#3B82F6;
 color:#FFFFFF;
 }
 
-/* ===== MAIN ===== */
+/* Hide toggle menu button on desktop screens */
+.menu-btn{
+display:none;
+position:fixed;
+top:20px;
+left:15px;
+font-size:26px;
+background:#2563EB;
+color:#fff;
+border:none;
+padding:10px 15px;
+border-radius:10px;
+cursor:pointer;
+z-index:1001;
+box-shadow:0 5px 15px rgba(0,0,0,.2);
+}
+
+/* ===== MAIN CONTENT ===== */
 
 .main{
     flex:1;
@@ -251,13 +271,13 @@ color:#1E293B;
 color:#64748B;
 }
 
-/* ===== DASHBOARD ===== */
+/* ===== DASHBOARD OVERVIEW ===== */
 
 .dashboard-grid .card{
 border-left:5px solid #2563EB;
 }
 
-/* ===== SKILLS ===== */
+/* ===== SKILLS CONTAINER ===== */
 
 .skills-container{
 display:grid;
@@ -307,7 +327,7 @@ color:#2563EB;
 margin-bottom:18px;
 }
 
-/* ===== BUTTON ===== */
+/* ===== ACTIONS & BUTTONS ===== */
 
 .btn{
 display:inline-block;
@@ -326,43 +346,20 @@ transition:.3s;
 background:#1D4ED8;
 }
 
-.menu-btn{
-position:fixed;
-top:40px;
-left:15px;
-font-size:26px;
-background:#2563EB;
-color:#fff;
-border:none;
-padding:10px 15px;
-border-radius:10px;
-cursor:pointer;
-z-index:1001;
-box-shadow:0 5px 15px rgba(0,0,0,.2);
-}
-
-.sidebar.show{
-left:0;
-}
-
-/* ===== CONTACT SECTION ===== */
+/* ===== CONTACT CARDS ===== */
 
 .contact-card{
 display:grid;
 grid-template-columns:70px 1fr;
 gap:15px;
 padding:20px;
-}
-
-.contact-btn{
-grid-column:1 / -1;
-width:100%;
-margin-top:10px;
-min-width:0;
-}
-
-.contact-details{
-text-align:left;
+background: #fff;
+border-radius: 18px;
+margin-bottom: 20px;
+border: 1px solid #E5E7EB;
+box-shadow: 0 6px 18px rgba(0,0,0,.04);
+transition: .3s;
+align-items: center;
 }
 
 .contact-card:hover{
@@ -371,30 +368,30 @@ box-shadow:0 15px 35px rgba(37,99,235,.15);
 }
 
 .contact-icon{
-width:90px;
-height:90px;
+width:70px;
+height:70px;
 background:#EEF4FF;
 border-radius:18px;
 display:flex;
 align-items:center;
 justify-content:center;
-margin-right:25px;
 }
 
 .contact-icon img{
-width:45px;
-height:45px;
+width:35px;
+height:35px;
 object-fit:contain;
 }
 
 .contact-details{
 flex:1;
+text-align:left;
 }
 
 .contact-details h3{
 font-size:20px;
 color:#1E293B;
-margin-bottom:8px;
+margin-bottom:4px;
 }
 
 .contact-details p{
@@ -406,11 +403,11 @@ color:#64748B;
 background:#2563EB;
 color:#fff;
 text-decoration:none;
-padding:15px 28px;
+padding:12px 24px;
 border-radius:12px;
 font-weight:600;
 transition:.3s;
-min-width:180px;
+min-width:140px;
 text-align:center;
 }
 
@@ -458,12 +455,36 @@ font-size:18px;
 color:#64748B;
 }
 
-/* ===== RESPONSIVE ===== */
+/* ===== TABLET & MOBILE MEDIA QUERIES ===== */
 
 @media (max-width:900px){
 
 body{
 flex-direction:column;
+}
+
+.menu-btn{
+display:block; /* Show mobile menu button */
+top: 25px;
+}
+
+.sidebar {
+position:fixed;
+left:-260px; /* Hidden out of bounds by default */
+top:0;
+width:250px;
+height:100vh;
+background:#1E3A8A;
+padding:30px;
+display:flex;
+flex-direction:column;
+gap:30px;
+transition:.35s ease;
+z-index:1000;
+}
+
+.sidebar.show{
+left:0; /* Swipes in cleanly when active */
 }
 
 .main{
@@ -520,21 +541,6 @@ display:none;
 
 @media(max-width:768px){
 
-.sidebar {
-position:fixed;
-left:-260px;
-top:0;
-width:250px;
-height:100vh;
-background:#1E3A8A;
-padding:30px;
-display:flex;
-flex-direction:column;
-gap:30px;
-transition:.35s;
-z-index:1000;
-}
-
 .skills-container{
 grid-template-columns:1fr;
 gap:20px;
@@ -563,14 +569,7 @@ gap:15px;
 }
 
 .contact-icon{
-width:70px;
-height:70px;
 margin:0;
-}
-
-.contact-icon img{
-width:35px;
-height:35px;
 }
 
 .contact-details{
@@ -876,59 +875,4 @@ Instructional Designer with 1+ year of experience in Storyline 360, LMS Manageme
         </div>
         <div class="contact-details">
             <h3>LinkedIn</h3>
-            <p>linkedin.com/in/chandru-elearning</p>
-        </div>
-        <a href="https://www.linkedin.com/in/chandru-elearning" target="_blank" rel="noopener noreferrer" class="contact-btn">View Profile</a>
-    </div>
-
-    <div class="contact-card">
-        <div class="contact-icon">
-            <img src="images/location.png">
-        </div>
-        <div class="contact-details">
-            <h3>Location</h3>
-            <p>Bengaluru, Karnataka, India</p>
-        </div>
-        <a href="https://maps.google.com/?q=Bengaluru" target="_blank" class="contact-btn">View on Map</a>
-    </div>
-
-    <div class="availability">
-        <div class="availability-icon">
-            <img src="images/available.png">
-        </div>
-        <div>
-            <h3>Available for Freelance & Full-time Opportunities</h3>
-            <p>I usually reply within 24 hours.</p>
-        </div>
-    </div>
-</div>
-
-</div>   <script>
-function showSection(id, el) {
-    document.querySelectorAll(".section").forEach(function(sec){
-        sec.classList.remove("active");
-    });
-
-    const target = document.getElementById(id);
-    if(target){
-        target.classList.add("active");
-    }
-
-    document.querySelectorAll(".menu a").forEach(function(link){
-        link.classList.remove("active");
-    });
-
-    if(el){
-        el.classList.add("active");
-    }
-
-    document.getElementById("sidebar").classList.remove("show");
-}
-
-function toggleMenu(){
-    document.getElementById("sidebar").classList.toggle("show");
-}
-</script>
-
-</body>
-</html>
+            <p>
