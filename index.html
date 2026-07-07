@@ -89,7 +89,6 @@ transform:translateY(0);
 }
 
 /* ===== ABOUT CARD ===== */
-/* ===== MODERN ABOUT CARD ===== */
 
 .about-card{
 position:relative;
@@ -260,10 +259,6 @@ border-left:5px solid #2563EB;
 
 /* ===== SKILLS ===== */
 
-/*=========================
-      SKILLS SECTION
-==========================*/
-
 .skills-container{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
@@ -312,30 +307,6 @@ color:#2563EB;
 margin-bottom:18px;
 }
 
-/* Mobile */
-
-@media(max-width:768px){
-
-.skills-container{
-grid-template-columns:1fr;
-gap:20px;
-}
-
-.skill-card{
-padding:25px 18px;
-}
-
-.skill-card img{
-width:65px;
-height:65px;
-}
-
-.skill-card h3{
-font-size:18px;
-}
-
-}
-
 /* ===== BUTTON ===== */
 
 .btn{
@@ -370,24 +341,10 @@ z-index:1001;
 box-shadow:0 5px 15px rgba(0,0,0,.2);
 }
 
-.sidebar{
-position:fixed;
-left:-260px;
-top:0;
-width:250px;
-height:100vh;
-background:#1E3A8A;
-padding:30px;
-display:flex;
-flex-direction:column;
-gap:30px;
-transition:.35s;
-z-index:1000;
-}
-
 .sidebar.show{
 left:0;
 }
+
 /* ===== CONTACT SECTION ===== */
 
 .contact-card{
@@ -501,9 +458,100 @@ font-size:18px;
 color:#64748B;
 }
 
-/* Mobile */
+/* ===== RESPONSIVE ===== */
+
+@media (max-width:900px){
+
+body{
+flex-direction:column;
+}
+
+.main{
+padding:90px 15px 25px;
+}
+
+.grid{
+grid-template-columns:1fr;
+}
+
+.about-card{
+flex-direction:column;
+align-items:center;
+text-align:center;
+padding:25px 20px;
+gap:20px;
+}
+
+.profile-image{
+width:170px;
+height:170px;
+}
+
+.about-info{
+width:100%;
+}
+
+.about-info h2{
+font-size:36px;
+line-height:1.2;
+word-break:break-word;
+}
+
+.about-info h3{
+font-size:22px;
+line-height:1.4;
+}
+
+.about-text{
+font-size:16px;
+line-height:1.7;
+}
+
+.location{
+font-size:16px;
+}
+
+.dots-left,
+.dots-right{
+display:none;
+}
+
+}
 
 @media(max-width:768px){
+
+.sidebar {
+position:fixed;
+left:-260px;
+top:0;
+width:250px;
+height:100vh;
+background:#1E3A8A;
+padding:30px;
+display:flex;
+flex-direction:column;
+gap:30px;
+transition:.35s;
+z-index:1000;
+}
+
+.skills-container{
+grid-template-columns:1fr;
+gap:20px;
+}
+
+.skill-card{
+padding:25px 18px;
+}
+
+.skill-card img{
+width:65px;
+height:65px;
+}
+
+.skill-card h3{
+font-size:18px;
+}
 
 .contact-card{
 display:flex;
@@ -568,65 +616,6 @@ font-size:15px;
 }
 
 }
-/* ===== RESPONSIVE ===== */
-
-@media (max-width:900px){
-
-body{
-flex-direction:column;
-}
-
-.main{
-padding:90px 15px 25px;
-}
-
-.grid{
-grid-template-columns:1fr;
-}
-
-.about-card{
-flex-direction:column;
-align-items:center;
-text-align:center;
-padding:25px 20px;
-gap:20px;
-}
-
-.profile-image{
-width:170px;
-height:170px;
-}
-
-.about-info{
-width:100%;
-}
-
-.about-info h2{
-font-size:36px;
-line-height:1.2;
-word-break:break-word;
-}
-
-.about-info h3{
-font-size:22px;
-line-height:1.4;
-}
-
-.about-text{
-font-size:16px;
-line-height:1.7;
-}
-
-.location{
-font-size:16px;
-}
-
-.dots-left,
-.dots-right{
-display:none;
-}
-
-}
 
 </style>
 </head>
@@ -646,8 +635,6 @@ display:none;
 </div>
 
 <div class="main">
-
-<!-- ================= DASHBOARD ================= -->
 
 <div id="dashboard" class="section active">
 <div class="about-card">
@@ -739,242 +726,185 @@ Instructional Designer with 1+ year of experience in Storyline 360, LMS Manageme
 
 </div>
 
-<!-- PROJECTS -->
 <div id="projects" class="section">
-<div class="section-header">
-<h2>Projects</h2>
-<p>My recent work.</p>
-</div>
+    <div class="section-header">
+        <h2>Projects</h2>
+        <p>My recent work.</p>
+    </div>
 
-<div class="grid">
+    <div class="grid">
+        <div class="card">
+            <img src="images/scorm-thumbnail.png" alt="SCORM">
+            <h3>Interactive SCORM eLearning</h3>
+            <p>Interactive Storyline module with custom navigation, assessments and SCORM publishing.</p>
+            <a href="https://drive.google.com/file/d/1-Jr4AcAYIeU_B9Cimcw1WLswNRgfx0MU/view?usp=sharing" target="_blank" class="btn">▶ Watch Demo</a>
+        </div>
 
-<div class="card">
-    <img src="images/scorm-thumbnail.png" alt="SCORM">
+        <div class="card">
+            <img src="images/multilanguage.jpeg" alt="Multi-language">
+            <h3>Multi-language eLearning</h3>
+            <p>Interactive Storyline course with language switching and multilingual learning support.</p>
+        </div>
 
-    <h3>Interactive SCORM eLearning</h3>
+        <div class="card">
+            <img src="images/ppt-design-1.png" alt="PowerPoint">
+            <h3>Corporate PowerPoint Design</h3>
+            <p>Professional training presentations with modern layouts, infographics and learning content.</p>
+        </div>
 
-    <p>Interactive Storyline module with custom navigation, assessments and SCORM publishing.</p>
+        <div class="card">
+            <img src="images/vfx-thumbnail.png" alt="Video Editing">
+            <h3>Video Editing & Motion Graphics</h3>
+            <p>Adobe Premiere Pro & After Effects projects with cinematic editing, VFX and motion graphics.</p>
+            <a href="https://drive.google.com/file/d/12KMOnXd8ilEKFB4JqiAr99lX8_8IBSUv/view?usp=sharing" target="_blank" class="btn">▶ Watch Video</a>
+        </div>
+    </div> 
+</div> 
 
-    <a href="https://drive.google.com/file/d/1-Jr4AcAYIeU_B9Cimcw1WLswNRgfx0MU/view?usp=sharing"
-       target="_blank"
-       class="btn">
-       ▶ Watch Demo
-    </a>
-</div>
-
-<div class="card">
-    <img src="images/multilanguage.jpeg" alt="Multi-language">
-
-    <h3>Multi-language eLearning</h3>
-
-    <p>Interactive Storyline course with language switching and multilingual learning support.</p>
-</div>
-
-<div class="card">
-    <img src="images/ppt-design-1.png" alt="PowerPoint">
-
-    <h3>Corporate PowerPoint Design</h3>
-
-    <p>Professional training presentations with modern layouts, infographics and learning content.</p>
-</div>
-
-<div class="card">
-    <img src="images/vfx-thumbnail.png" alt="Video Editing">
-
-    <h3>Video Editing & Motion Graphics</h3>
-
-    <p>Adobe Premiere Pro & After Effects projects with cinematic editing, VFX and motion graphics.</p>
-
-    <a href="https://drive.google.com/file/d/12KMOnXd8ilEKFB4JqiAr99lX8_8IBSUv/view?usp=sharing"
-       target="_blank"
-       class="btn">
-       ▶ Watch Video
-    </a>
-</div>   <!-- closes .grid -->
-</div>   <!-- closes #projects -->
-
-<!-- SKILLS -->
 <div id="skills" class="section">
-<div class="section-header">
-<h2>Technical Skills</h2>
-<p>Tools & Technologies I work with</p>
+    <div class="section-header">
+        <h2>Technical Skills</h2>
+        <p>Tools & Technologies I work with</p>
+    </div>
+
+    <div class="skills-container">
+        <div class="skill-card purple">
+            <img src="images/storyline.png" alt="Storyline">
+            <h3>Articulate Storyline 360</h3>
+            <span class="level">Expert</span>
+        </div>
+
+        <div class="skill-card blue">
+            <img src="images/premiere.png" alt="Premiere Pro">
+            <h3>Adobe Premiere Pro</h3>
+            <span class="level">Advanced</span>
+        </div>
+
+        <div class="skill-card violet">
+            <img src="images/aftereffects.png" alt="After Effects">
+            <h3>Adobe After Effects</h3>
+            <span class="level">Advanced</span>
+        </div>
+
+        <div class="skill-card orange">
+            <img src="images/powerpoint.png" alt="PowerPoint">
+            <h3>Microsoft PowerPoint</h3>
+            <span class="level">Expert</span>
+        </div>
+
+        <div class="skill-card green">
+            <img src="images/captivate.png" alt="Captivate">
+            <h3>Adobe Captivate</h3>
+            <span class="level">Advanced</span>
+        </div>
+
+        <div class="skill-card yellow">
+            <img src="images/illustrator.png" alt="Illustrator">
+            <h3>Adobe Illustrator</h3>
+            <span class="level">Intermediate</span>
+        </div>
+
+        <div class="skill-card blue">
+            <img src="images/photoshop.png" alt="Photoshop">
+            <h3>Adobe Photoshop</h3>
+            <span class="level">Intermediate</span>
+        </div>
+
+        <div class="skill-card blue">
+            <img src="images/learndash.png" alt="LearnDash">
+            <h3>LearnDash LMS</h3>
+            <span class="level">Advanced</span>
+        </div>
+
+        <div class="skill-card orange">
+            <img src="images/quicklearn.png" alt="QuickLearn">
+            <h3>QuickLearn LMS</h3>
+            <span class="level">Advanced</span>
+        </div>
+
+        <div class="skill-card blue">
+            <img src="images/scorm.png" alt="SCORM">
+            <h3>SCORM 1.2</h3>
+            <span class="level">Expert</span>
+        </div>
+
+        <div class="skill-card green">
+            <img src="images/excel.png" alt="Excel">
+            <h3>Microsoft Excel</h3>
+            <span class="level">Intermediate</span>
+        </div>
+
+        <div class="skill-card blue">
+            <img src="images/word.png" alt="Word">
+            <h3>Microsoft Word</h3>
+            <span class="level">Advanced</span>
+        </div>
+    </div>
 </div>
 
-<div class="skills-container">
-
-<div class="skill-card purple">
-<img src="images/storyline.png" alt="Storyline">
-<h3>Articulate Storyline 360</h3>
-<span class="level">Expert</span>
-</div>
-
-<div class="skill-card blue">
-<img src="images/premiere.png" alt="Premiere Pro">
-<h3>Adobe Premiere Pro</h3>
-<span class="level">Advanced</span>
-</div>
-
-<div class="skill-card violet">
-<img src="images/aftereffects.png" alt="After Effects">
-<h3>Adobe After Effects</h3>
-<span class="level">Advanced</span>
-</div>
-
-<div class="skill-card orange">
-<img src="images/powerpoint.png" alt="PowerPoint">
-<h3>Microsoft PowerPoint</h3>
-<span class="level">Expert</span>
-</div>
-
-<div class="skill-card green">
-<img src="images/captivate.png" alt="Captivate">
-<h3>Adobe Captivate</h3>
-<span class="level">Advanced</span>
-</div>
-
-<div class="skill-card yellow">
-<img src="images/illustrator.png" alt="Illustrator">
-<h3>Adobe Illustrator</h3>
-<span class="level">Intermediate</span>
-</div>
-
-<div class="skill-card blue">
-<img src="images/photoshop.png" alt="Photoshop">
-<h3>Adobe Photoshop</h3>
-<span class="level">Intermediate</span>
-</div>
-
-<div class="skill-card blue">
-<img src="images/learndash.png" alt="LearnDash">
-<h3>LearnDash LMS</h3>
-<span class="level">Advanced</span>
-</div>
-
-<div class="skill-card orange">
-<img src="images/quicklearn.png" alt="QuickLearn">
-<h3>QuickLearn LMS</h3>
-<span class="level">Advanced</span>
-</div>
-
-<div class="skill-card blue">
-<img src="images/scorm.png" alt="SCORM">
-<h3>SCORM 1.2</h3>
-<span class="level">Expert</span>
-</div>
-
-<div class="skill-card green">
-<img src="images/excel.png" alt="Excel">
-<h3>Microsoft Excel</h3>
-<span class="level">Intermediate</span>
-</div>
-
-<div class="skill-card blue">
-<img src="images/word.png" alt="Word">
-<h3>Microsoft Word</h3>
-<span class="level">Advanced</span>
-</div>
-
-</div>
-
-</div>
-
-<!-- CONTACT -->
 <div id="contact" class="section">
+    <div class="section-header">
+        <h2>Contact</h2>
+        <p>Let's connect for Instructional Design, eLearning Development,<br>and Video Editing projects.</p>
+    </div>
 
-<div class="section-header">
-<h2>Contact</h2>
-<p>Let's connect for Instructional Design, eLearning Development,<br>and Video Editing projects.</p>
+    <div class="contact-card">
+        <div class="contact-icon">
+            <img src="images/email.png">
+        </div>
+        <div class="contact-details">
+            <h3>Email</h3>
+            <p>sv393015@gmail.com</p>
+        </div>
+        <a href="mailto:sv393015@gmail.com" class="contact-btn">Send Mail</a>
+    </div>
+
+    <div class="contact-card">
+        <div class="contact-icon">
+            <img src="images/phone.png">
+        </div>
+        <div class="contact-details">
+            <h3>Phone</h3>
+            <p>+91 93530 80994</p>
+        </div>
+        <a href="tel:+919353080994" class="contact-btn">Call Me</a>
+    </div>
+
+    <div class="contact-card">
+        <div class="contact-icon">
+            <img src="images/linkedin.png">
+        </div>
+        <div class="contact-details">
+            <h3>LinkedIn</h3>
+            <p>linkedin.com/in/chandru-elearning</p>
+        </div>
+        <a href="https://www.linkedin.com/in/chandru-elearning" target="_blank" rel="noopener noreferrer" class="contact-btn">View Profile</a>
+    </div>
+
+    <div class="contact-card">
+        <div class="contact-icon">
+            <img src="images/location.png">
+        </div>
+        <div class="contact-details">
+            <h3>Location</h3>
+            <p>Bengaluru, Karnataka, India</p>
+        </div>
+        <a href="https://maps.google.com/?q=Bengaluru" target="_blank" class="contact-btn">View on Map</a>
+    </div>
+
+    <div class="availability">
+        <div class="availability-icon">
+            <img src="images/available.png">
+        </div>
+        <div>
+            <h3>Available for Freelance & Full-time Opportunities</h3>
+            <p>I usually reply within 24 hours.</p>
+        </div>
+    </div>
 </div>
 
-<div class="contact-card">
-
-<div class="contact-icon">
-<img src="images/email.png">
-</div>
-
-<div class="contact-details">
-<h3>Email</h3>
-<p>sv393015@gmail.com</p>
-</div>
-
-<a href="mailto:sv393015@gmail.com" class="contact-btn">
-Send Mail
-</a>
-
-</div>
-
-<div class="contact-card">
-
-<div class="contact-icon">
-<img src="images/phone.png">
-</div>
-
-<div class="contact-details">
-<h3>Phone</h3>
-<p>+91 93530 80994</p>
-</div>
-
-<a href="tel:+919353080994" class="contact-btn">
-Call Me
-</a>
-
-</div>
-
-<div class="contact-card">
-
-<div class="contact-icon">
-<img src="images/linkedin.png">
-</div>
-
-<div class="contact-details">
-    <h3>LinkedIn</h3>
-    <p>linkedin.com/in/chandru-elearning</p>
-</div>
-
-<a href="https://www.linkedin.com/in/chandru-elearning" target="_blank" rel="noopener noreferrer" class="contact-btn">
-    View Profile
-</a>
-
-</div>
-
-<div class="contact-card">
-
-<div class="contact-icon">
-<img src="images/location.png">
-</div>
-
-<div class="contact-details">
-<h3>Location</h3>
-<p>Bengaluru, Karnataka, India</p>
-</div>
-
-<a href="https://maps.google.com/?q=Bengaluru" target="_blank" class="contact-btn">
-View on Map
-</a>
-
-</div>
-
-<div class="availability">
-
-<div class="availability-icon">
-<img src="images/available.png">
-</div>
-
-<div>
-<h3>Available for Freelance & Full-time Opportunities</h3>
-<p>I usually reply within 24 hours.</p>
-</div>
-
-</div>
-
-</div>
-
-</div>   <!-- closes #contact -->
-</div>   <!-- closes .main -->
-
-<script>
+</div>   <script>
 function showSection(id, el) {
-
     document.querySelectorAll(".section").forEach(function(sec){
         sec.classList.remove("active");
     });
