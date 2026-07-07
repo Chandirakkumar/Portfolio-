@@ -3,906 +3,856 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chandirakkumar | Dashboard Portfolio</title>
+<title>Chandirakkumar | Creative Production Dashboard</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
 <style>
+:root {
+    --bg-main: #0B0F19;
+    --bg-side: #111827;
+    --card-bg: #1F2937;
+    --card-hover: #374151;
+    --accent: #3B82F6;
+    --accent-gradient: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
+    --text-primary: #F9FAFB;
+    --text-secondary: #9CA3AF;
+    --border-color: rgba(255, 255, 255, 0.08);
+}
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 body{
-font-family:'Inter',sans-serif;
-background:#F5F7FA;
-color:#1E293B;
-display:flex;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: var(--bg-main);
+    color: var(--text-primary);
+    display: flex;
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
-/* ===== GLOBAL SIDEBAR ===== */
-
+/* ===== MODERN NAVIGATION ===== */
 .sidebar{
-width:250px;
-height:100vh;
-background:#1E3A8A;
-padding:30px;
-display:flex;
-flex-direction:column;
-gap:30px;
-position:sticky;
-top:0;
-z-index:1000;
-transition: left 0.3s ease;
+    width: 260px;
+    height: 100vh;
+    background: var(--bg-side);
+    padding: 35px 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-right: 1px solid var(--border-color);
+    transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .logo{
-font-size:26px;
-font-weight:700;
-color:#FFFFFF;
+    font-size: 22px;
+    font-weight: 700;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.5px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
 .menu a{
-text-decoration:none;
-color:#DCE6F8;
-padding:12px 15px;
-border-radius:10px;
-display:block;
-transition:.3s;
-font-weight:500;
-cursor:pointer;
+    text-decoration: none;
+    color: var(--text-secondary);
+    padding: 14px 18px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.25s ease;
+    font-weight: 500;
+    font-size: 15px;
+    cursor: pointer;
 }
 
 .menu a:hover,
 .menu a.active{
-background:#3B82F6;
-color:#FFFFFF;
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--accent);
+    font-weight: 600;
 }
 
 .menu-btn{
-display:none; /* Hidden on Desktop */
-position:fixed;
-top:20px;
-left:15px;
-font-size:26px;
-background:#2563EB;
-color:#fff;
-border:none;
-padding:10px 15px;
-border-radius:10px;
-cursor:pointer;
-z-index:1001;
-box-shadow:0 5px 15px rgba(0,0,0,.2);
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 22px;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    cursor: pointer;
+    z-index: 1001;
+    box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+    align-items: center;
+    justify-content: center;
 }
 
-/* ===== MAIN CONTENT ===== */
-
+/* ===== MAIN MULTIMEDIA WORKSPACE ===== */
 .main{
-    flex:1;
-    width:100%;
-    max-width:1100px;
-    margin:0 auto;
-    padding:80px 30px;
+    flex: 1;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 40px;
 }
 
 .section{
-display:none;
+    display: none;
 }
 
 .section.active{
-display:block;
-animation:fade .4s ease;
+    display: block;
+    animation: slideUp 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-@keyframes fade{
-from{
-opacity:0;
-transform:translateY(10px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
+@keyframes slideUp{
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-/* ===== ABOUT CARD ===== */
-
+/* ===== PREMIUM PROFILE HERO ===== */
 .about-card{
-position:relative;
-display:flex;
-align-items:center;
-gap:40px;
-background:#ffffff;
-padding:40px;
-border-radius:24px;
-box-shadow:0 15px 35px rgba(0,0,0,.08);
-margin-bottom:40px;
-overflow:hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 45px;
+    background: linear-gradient(180deg, var(--bg-side) 0%, rgba(17, 24, 39, 0.6) 100%);
+    padding: 45px;
+    border-radius: 28px;
+    border: 1px solid var(--border-color);
+    margin-bottom: 50px;
+    overflow: hidden;
+}
+
+.about-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
+    z-index: 0;
 }
 
 .profile-image{
-position:relative;
-width:220px;
-height:220px;
-border-radius:50%;
-border:6px solid #2563EB;
-padding:8px;
-background:#fff;
-flex-shrink:0;
+    position: relative;
+    width: 180px;
+    height: 180px;
+    border-radius: 24px;
+    overflow: hidden;
+    flex-shrink: 0;
+    z-index: 1;
 }
 
 .profile-image img{
-width:100%;
-height:100%;
-border-radius:50%;
-object-fit:cover;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .profile-dot{
-position:absolute;
-bottom:10px;
-right:10px;
-width:28px;
-height:28px;
-background:#2563EB;
-border:4px solid #fff;
-border-radius:50%;
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    width: 16px;
+    height: 16px;
+    background: #10B981;
+    border: 3px solid var(--bg-side);
+    border-radius: 50%;
 }
 
 .about-info{
-flex:1;
+    flex: 1;
+    z-index: 1;
 }
 
 .about-info h2{
-font-size:42px;
-font-weight:700;
-margin-bottom:10px;
-color:#172554;
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
 }
 
 .about-info h3{
-font-size:22px;
-font-weight:600;
-margin-bottom:18px;
-color:#2563EB;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 16px;
+    color: var(--text-secondary);
+    line-height: 1.5;
 }
 
 .about-text{
-font-size:18px;
-line-height:1.8;
-color:#64748B;
-margin-bottom:18px;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+    max-width: 700px;
 }
 
 .location{
-font-size:18px;
-font-weight:600;
-color:#475569;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 6px;
 }
 
-.dots{
-position:absolute;
-width:70px;
-height:70px;
-background-image:radial-gradient(#93C5FD 2px,transparent 2px);
-background-size:15px 15px;
-}
-
-.dots-left{
-top:20px;
-left:20px;
-}
-
-.dots-right{
-bottom:20px;
-right:20px;
-}
-
-/* ===== SECTION HEADER ===== */
-
+/* ===== SECTION HEADERS ===== */
 .section-header{
-margin-bottom:30px;
-text-align:center;
+    margin-bottom: 35px;
 }
 
 .section-header h2{
-font-size:28px;
-margin-bottom:8px;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    letter-spacing: -0.3px;
 }
 
 .section-header p{
-color:#64748B;
-font-size:15px;
+    color: var(--text-secondary);
+    font-size: 15px;
 }
 
-/* ===== GRID ===== */
-
+/* ===== PRODUCTION GRID ===== */
 .grid{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:22px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
 }
 
-/* ===== CARD ===== */
-
-.card{
-background:#FFFFFF;
-padding:25px;
-border-radius:18px;
-border:1px solid #E5E7EB;
-box-shadow:0 6px 18px rgba(0,0,0,.06);
-transition:.3s;
-min-height:140px;
-display:flex;
-flex-direction:column;
-justify-content:center;
-gap:10px;
-}
-#projects .card{
-min-height:430px;
-}
-#projects .card .btn{
-margin-top:auto;
-width:100%;
-text-align:center;
-}
-.card:hover{
-transform:translateY(-6px);
-box-shadow:0 12px 28px rgba(37,99,235,.15);
+.dashboard-grid{
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
-#projects .card img{
-width:100%;
-aspect-ratio:16/9;
-object-fit:cover;
-border-radius:12px;
-display:block;
-margin-bottom:15px;
+/* ===== DASHBOARD METRIC CARDS ===== */
+.metric-card{
+    background: var(--bg-side);
+    padding: 28px;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
 }
 
-.card h3{
-color:#1E293B;
+.metric-card:hover{
+    transform: translateY(-4px);
+    border-color: rgba(59, 130, 246, 0.3);
+    background: linear-gradient(145deg, var(--bg-side) 0%, rgba(31, 41, 55, 0.4) 100%);
 }
 
-.card p{
-color:#64748B;
+.metric-card h3{
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-/* ===== DASHBOARD OVERVIEW ===== */
-
-.dashboard-grid .card{
-border-left:5px solid #2563EB;
+.metric-card p{
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.5;
 }
 
-/* ===== SKILLS CONTAINER ===== */
+/* ===== FILTERABLE PROJECTS MODULE ===== */
+.filter-wrapper {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
 
+.filter-btn {
+    background: var(--bg-side);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 14px;
+    transition: all 0.25s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+}
+
+.project-card {
+    background: var(--bg-side);
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(139, 92, 246, 0.3);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.project-thumb {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.project-body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 12px;
+}
+
+.project-body h3{
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.project-body p{
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* ===== TECHNICAL SKILLS LABELS ===== */
 .skills-container{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-gap:25px;
-margin-top:30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
 }
 
 .skill-card{
-background:#fff;
-border-radius:18px;
-padding:30px 20px;
-text-align:center;
-box-shadow:0 10px 25px rgba(0,0,0,.08);
-transition:.35s;
-border-top:4px solid #2563EB;
+    background: var(--bg-side);
+    border-radius: 18px;
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border: 1px solid var(--border-color);
+    transition: all 0.25s ease;
 }
 
-.skill-card:hover{
-transform:translateY(-8px);
-box-shadow:0 18px 40px rgba(0,0,0,.15);
+.skill-card:hover {
+    border-color: var(--accent);
+    background: rgba(31, 41, 55, 0.5);
 }
 
 .skill-card img{
-width:72px;
-height:72px;
-object-fit:contain;
-margin-bottom:18px;
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
 }
 
-.skill-card h3{
-font-size:20px;
-font-weight:700;
-color:#1E293B;
-margin-bottom:15px;
-line-height:1.4;
+.skill-details {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.skill-details h3{
+    font-size: 15px;
+    font-weight: 600;
 }
 
 .level{
-display:inline-block;
-padding:8px 18px;
-border-radius:30px;
-font-size:14px;
-font-weight:600;
-background:#EEF4FF;
-color:#2563EB;
-margin-bottom:18px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    background: rgba(59, 130, 246, 0.1);
+    padding: 4px 10px;
+    border-radius: 6px;
+    width: max-content;
 }
 
-/* ===== ACTIONS & BUTTONS ===== */
-
+/* ===== INTERACTIVE ACTION CTAs ===== */
 .btn{
-display:inline-block;
-margin-top:12px;
-margin-right:10px;
-padding:11px 22px;
-background:#2563EB;
-color:#FFFFFF;
-text-decoration:none;
-border-radius:10px;
-font-weight:600;
-transition:.3s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: auto;
+    padding: 12px 24px;
+    background: var(--accent-gradient);
+    color: #FFFFFF;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: opacity 0.2s ease;
 }
 
 .btn:hover{
-background:#1D4ED8;
+    opacity: 0.9;
 }
 
-/* ===== CONTACT CARDS ===== */
+/* ===== CONTACT MODULES ===== */
+.contact-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
 
 .contact-card{
-display:grid;
-grid-template-columns:70px 1fr;
-gap:15px;
-padding:20px;
-background: #fff;
-border-radius: 18px;
-margin-bottom: 20px;
-border: 1px solid #E5E7EB;
-box-shadow: 0 6px 18px rgba(0,0,0,.04);
-transition: .3s;
-align-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px;
+    background: var(--bg-side);
+    border-radius: 18px;
+    border: 1px solid var(--border-color);
+    transition: border 0.25s ease;
 }
 
-.contact-card:hover{
-transform:translateY(-5px);
-box-shadow:0 15px 35px rgba(37,99,235,.15);
+.contact-card:hover {
+    border-color: rgba(59, 130, 246, 0.4);
+}
+
+.contact-meta {
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
 .contact-icon{
-width:70px;
-height:70px;
-background:#EEF4FF;
-border-radius:18px;
-display:flex;
-align-items:center;
-justify-content:center;
+    width: 54px;
+    height: 54px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border-color);
 }
 
 .contact-icon img{
-width:35px;
-height:35px;
-object-fit:contain;
-}
-
-.contact-details{
-flex:1;
-text-align:left;
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
 }
 
 .contact-details h3{
-font-size:20px;
-color:#1E293B;
-margin-bottom:4px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 4px;
 }
 
 .contact-details p{
-font-size:17px;
-color:#64748B;
+    font-size: 14px;
+    color: var(--text-secondary);
 }
 
 .contact-btn{
-background:#2563EB;
-color:#fff;
-text-decoration:none;
-padding:12px 24px;
-border-radius:12px;
-font-weight:600;
-transition:.3s;
-min-width:140px;
-text-align:center;
+    background: var(--card-bg);
+    color: var(--text-primary);
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 14px;
+    border: 1px solid var(--border-color);
+    transition: all 0.2s ease;
 }
 
 .contact-btn:hover{
-background:#1D4ED8;
+    background: var(--accent);
+    border-color: var(--accent);
 }
 
 .availability{
-display:flex;
-align-items:center;
-background:#fff;
-padding:28px 35px;
-border-radius:20px;
-max-width:950px;
-margin:35px auto 0;
-border-left:6px solid #2563EB;
-box-shadow:0 8px 25px rgba(0,0,0,.08);
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    background: linear-gradient(90deg, rgba(16, 185, 129, 0.05) 0%, transparent 100%);
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    margin-top: 40px;
 }
 
 .availability-icon{
-width:90px;
-height:90px;
-background:#EEF4FF;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-margin-right:25px;
+    width: 60px;
+    height: 60px;
+    background: rgba(16, 185, 129, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
 }
 
 .availability-icon img{
-width:48px;
-height:48px;
-object-fit:contain;
+    width: 28px;
+    height: 28px;
 }
 
 .availability h3{
-font-size:24px;
-margin-bottom:8px;
-color:#1E293B;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 4px;
 }
 
 .availability p{
-font-size:18px;
-color:#64748B;
+    font-size: 14px;
+    color: var(--text-secondary);
 }
 
-/* ===== RESPONSIVE MEDIA QUERIES ===== */
-
+/* ===== RESPONSIVE ARCHITECTURE ===== */
 @media (max-width: 992px){
+    body {
+        flex-direction: column;
+    }
 
-body{
-flex-direction:column;
+    .menu-btn {
+        display: flex;
+    }
+
+    .sidebar {
+        position: fixed;
+        left: -280px;
+        top: 0;
+        height: 100vh;
+        width: 260px;
+    }
+
+    .sidebar.show {
+        left: 0;
+    }
+
+    .main {
+        padding: 100px 24px 40px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 35px 24px;
+        gap: 25px;
+    }
+
+    .contact-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .contact-meta {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .contact-btn {
+        width: 100%;
+    }
 }
-
-.menu-btn{
-display:block; /* Shows ☰ on smaller viewport widths */
-}
-
-.sidebar {
-position:fixed;
-left:-260px; /* Hidden offscreen by default on mobile */
-top:0;
-height:100vh;
-width:250px;
-}
-
-.sidebar.show{
-left:0; /* Swipes layout outward when ☰ is clicked */
-}
-
-.main{
-padding:90px 15px 25px;
-}
-
-.grid{
-grid-template-columns:1fr;
-}
-
-.about-card{
-flex-direction:column;
-align-items:center;
-text-align:center;
-padding:25px 20px;
-gap:20px;
-}
-
-.profile-image{
-width:170px;
-height:170px;
-}
-
-.about-info{
-width:100%;
-}
-
-.about-info h2{
-font-size:36px;
-line-height:1.2;
-word-break:break-word;
-}
-
-.about-info h3{
-font-size:22px;
-line-height:1.4;
-}
-
-.about-text{
-font-size:16px;
-line-height:1.7;
-}
-
-.location{
-font-size:16px;
-}
-
-.dots-left,
-.dots-right{
-display:none;
-}
-
-.skills-container{
-grid-template-columns:1fr;
-gap:20px;
-}
-
-.skill-card{
-padding:25px 18px;
-}
-
-.skill-card img{
-width:65px;
-height:65px;
-}
-
-.skill-card h3{
-font-size:18px;
-}
-
-.contact-card{
-display:flex;
-flex-direction:column;
-align-items:center;
-text-align:center;
-padding:20px;
-gap:15px;
-}
-
-.contact-icon{
-margin:0;
-}
-
-.contact-details{
-width:100%;
-text-align:center;
-}
-
-.contact-details h3{
-font-size:18px;
-}
-
-.contact-details p{
-font-size:15px;
-word-break:break-word;
-}
-
-.contact-btn{
-width:100%;
-max-width:250px;
-min-width:0;
-padding:12px 18px;
-font-size:15px;
-}
-
-.availability{
-display:flex;
-flex-direction:column;
-align-items:center;
-text-align:center;
-padding:22px;
-}
-
-.availability-icon{
-margin:0 0 18px;
-}
-
-.availability h3{
-font-size:18px;
-}
-
-.availability p{
-font-size:15px;
-}
-
-}
-
 </style>
 </head>
 
 <body>
 
 <button class="menu-btn" onclick="toggleMenu()">☰</button>
-<div class="sidebar" id="sidebar">
-<div class="logo">Chandirakkumar</div>
 
-<div class="menu">
-<a class="active" onclick="showSection('dashboard', this)">Dashboard</a>
-<a onclick="showSection('projects', this)">Projects</a>
-<a onclick="showSection('skills', this)">Skills</a>
-<a onclick="showSection('contact', this)">Contact</a>
-</div>
+<div class="sidebar" id="sidebar">
+    <div class="logo">Chandirakkumar</div>
+    <div class="menu">
+        <a class="active" onclick="showSection('dashboard', this)">Workspace</a>
+        <a onclick="showSection('projects', this)">Production Hub</a>
+        <a onclick="showSection('skills', this)">Tech Stack</a>
+        <a onclick="showSection('contact', this)">Communications</a>
+    </div>
 </div>
 
 <div class="main">
 
-<div id="dashboard" class="section active">
-<div class="about-card">
+    <div id="dashboard" class="section active">
+        <div class="about-card">
+            <div class="profile-image">
+                <img src="IMG_20260409_223924.jpg" alt="Profile">
+                <div class="profile-dot"></div>
+            </div>
+            <div class="about-info">
+                <h2>Chandirakkumar S</h2>
+                <h3>Instructional Designer | eLearning & Multimedia Developer | Visual Designer</h3>
+                <p class="about-text">
+                    Specializing in engineering modular scenario-based training pipelines, advanced Articulate Storyline variables layouts, LMS execution architectures, and core motion graphics layout engines.
+                </p>
+                <p class="location">📍 Bengaluru, Karnataka, India</p>
+            </div>
+        </div>
 
-<div class="profile-image">
-<img src="IMG_20260409_223924.jpg" alt="Profile">
-<div class="profile-dot"></div>
-</div>
+        <div class="section-header">
+            <h2>Production Statistics</h2>
+            <p>Operational summary of active learning assets and deployments.</p>
+        </div>
 
-<div class="about-info">
-
-<h2>Chandirakkumar S</h2>
-
-<h3>Instructional Designer | eLearning & Multimedia Developer | Visual Designer</h3>
-
-<p class="about-text">
-Instructional Designer with 1+ year of experience in Storyline 360, LMS Management, SCORM publishing, and interactive eLearning development.
-</p>
-
-<p class="location">
-📍 Bengaluru, Karnataka, India
-</p>
-
-</div>
-
-<div class="dots dots-left"></div>
-<div class="dots dots-right"></div>
-
-</div>
-
-<div class="section-header">
-<h2>Dashboard Overview</h2>
-<p>Quick overview of my work and experience.</p>
-</div>
-
-<div class="grid dashboard-grid">
-
-<div class="card">
-<h3>📘 100+ Modules</h3>
-<p>Interactive eLearning modules developed.</p>
-</div>
-
-<div class="card">
-<h3>🎯 Instructional Design</h3>
-<p>Scenario-based learning & learner engagement.</p>
-</div>
-
-<div class="card">
-<h3>💻 Storyline 360</h3>
-<p>Variables, triggers, animations & interactions.</p>
-</div>
-
-<div class="card">
-<h3>📦 SCORM Publishing</h3>
-<p>SCORM 1.2 packaging & LMS deployment.</p>
-</div>
-
-<div class="card">
-<h3>🎬 Video Editing</h3>
-<p>Adobe Premiere Pro & After Effects projects.</p>
-</div>
-
-<div class="card">
-<h3>🎨 PowerPoint Design</h3>
-<p>Professional training presentations.</p>
-</div>
-
-<div class="card">
-<h3>⚙ LearnDash LMS</h3>
-<p>Course creation, learner management & reporting.</p>
-</div>
-
-<div class="card">
-<h3>☁ QuickLearn LMS</h3>
-<p>Course deployment and administration.</p>
-</div>
-
-<div class="card">
-<h3>📝 Assessments</h3>
-<p>Knowledge checks, quizzes & certifications.</p>
-</div>
-
-<div class="card">
-<h3>🚀 Rapid eLearning</h3>
-<p>End-to-end course development & delivery.</p>
-</div>
-
-</div>
-
-</div>
-
-<div id="projects" class="section">
-    <div class="section-header">
-        <h2>Projects</h2>
-        <p>My recent work.</p>
+        <div class="grid dashboard-grid">
+            <div class="metric-card">
+                <h3>📘 100+ Modules</h3>
+                <p>Interactive interactive eLearning packages published.</p>
+            </div>
+            <div class="metric-card">
+                <h3>🎯 Learning Design</h3>
+                <p>Scenario structures optimized for retention pipelines.</p>
+            </div>
+            <div class="metric-card">
+                <h3>💻 Storyline 360</h3>
+                <p>Dynamic structural triggers, conditions, and logical switches.</p>
+            </div>
+            <div class="metric-card">
+                <h3>📦 SCORM Engine</h3>
+                <p>SCORM 1.2 build deployments across modern LMS instances.</p>
+            </div>
+            <div class="metric-card">
+                <h3>🎬 Post Production</h3>
+                <p>Advanced timeline compositing in Premiere and After Effects.</p>
+            </div>
+            <div class="metric-card">
+                <h3>🎨 Vector Artwork</h3>
+                <p>Corporate instructional infographic packages built explicitly for scale.</p>
+            </div>
+        </div>
     </div>
 
-    <div class="grid">
-        <div class="card">
-            <img src="images/scorm-thumbnail.png" alt="SCORM">
-            <h3>Interactive SCORM eLearning</h3>
-            <p>Interactive Storyline module with custom navigation, assessments and SCORM publishing.</p>
-            <a href="https://drive.google.com/file/d/1-Jr4AcAYIeU_B9Cimcw1WLswNRgfx0MU/view?usp=sharing" target="_blank" class="btn">▶ Watch Demo</a>
+    <div id="projects" class="section">
+        <div class="section-header">
+            <h2>Asset Repositories</h2>
+            <p>Filter through enterprise development projects by module archetype.</p>
         </div>
 
-        <div class="card">
-            <img src="images/multilanguage.jpeg" alt="Multi-language">
-            <h3>Multi-language eLearning</h3>
-            <p>Interactive Storyline course with language switching and multilingual learning support.</p>
+        <div class="filter-wrapper">
+            <button class="filter-btn active" onclick="filterProjects('all', this)">All Deployments</button>
+            <button class="filter-btn" onclick="filterProjects('elearning', this)">eLearning Modules</button>
+            <button class="filter-btn" onclick="filterProjects('multimedia', this)">Video & Graphics</button>
         </div>
 
-        <div class="card">
-            <img src="images/ppt-design-1.png" alt="PowerPoint">
-            <h3>Corporate PowerPoint Design</h3>
-            <p>Professional training presentations with modern layouts, infographics and learning content.</p>
-        </div>
+        <div class="grid">
+            <div class="project-card" data-cat="elearning">
+                <img src="images/scorm-thumbnail.png" alt="SCORM" class="project-thumb">
+                <div class="project-body">
+                    <h3>Interactive SCORM eLearning</h3>
+                    <p>Advanced Articulate Storyline structure featuring condition-locked navigation matrix arrays and programmatic tracking variables layout.</p>
+                    <a href="https://drive.google.com/file/d/1-Jr4AcAYIeU_B9Cimcw1WLswNRgfx0MU/view?usp=sharing" target="_blank" class="btn">Launch Interface</a>
+                </div>
+            </div>
 
-        <div class="card">
-            <img src="images/vfx-thumbnail.png" alt="Video Editing">
-            <h3>Video Editing & Motion Graphics</h3>
-            <p>Adobe Premiere Pro & After Effects projects with cinematic editing, VFX and motion graphics.</p>
-            <a href="https://drive.google.com/file/d/12KMOnXd8ilEKFB4JqiAr99lX8_8IBSUv/view?usp=sharing" target="_blank" class="btn">▶ Watch Video</a>
-        </div>
+            <div class="project-card" data-cat="elearning">
+                <img src="images/multilanguage.jpeg" alt="Multi-language" class="project-thumb">
+                <div class="project-body">
+                    <h3>Bilingual Toggle Architecture</h3>
+                    <p>Dual-layer content framework engineered within Storyline to enable real-time runtime language structural switching without losing execution progress.</p>
+                </div>
+            </div>
+
+            <div class="project-card" data-cat="multimedia">
+                <img src="images/ppt-design-1.png" alt="PowerPoint" class="project-thumb">
+                <div class="project-body">
+                    <h3>Corporate Narrative Systems</h3>
+                    <p>High-end corporate training layout arrays translated directly into optimized infographic vector blocks for executive onboarding paths.</p>
+                </div>
+            </div>
+
+            <div class="project-card" data-cat="multimedia">
+                <img src="images/vfx-thumbnail.png" alt="Video Editing" class="project-thumb">
+                <div class="project-body">
+                    <h3>Motion Compositing & VFX Studio</h3>
+                    <p>Post-production workspace outputs emphasizing precision keyframe timelines, fluid transitions, audio mixing tracks, and motion layouts.</p>
+                    <a href="https://drive.google.com/file/d/12KMOnXd8ilEKFB4JqiAr99lX8_8IBSUv/view?usp=sharing" target="_blank" class="btn">Stream Content</a>
+                </div>
+            </div>
+        </div> 
     </div> 
-</div> 
 
-<div id="skills" class="section">
-    <div class="section-header">
-        <h2>Technical Skills</h2>
-        <p>Tools & Technologies I work with</p>
+    <div id="skills" class="section">
+        <div class="section-header">
+            <h2>Core Infrastructure Stack</h2>
+            <p>Breakdown of authoring environments and rendering software proficiency profiles.</p>
+        </div>
+
+        <div class="skills-container">
+            <div class="skill-card">
+                <img src="images/storyline.png" alt="Storyline">
+                <div class="skill-details">
+                    <h3>Articulate Storyline 360</h3>
+                    <span class="level">Expert</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <img src="images/premiere.png" alt="Premiere Pro">
+                <div class="skill-details">
+                    <h3>Adobe Premiere Pro</h3>
+                    <span class="level">Advanced</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <img src="images/aftereffects.png" alt="After Effects">
+                <div class="skill-details">
+                    <h3>Adobe After Effects</h3>
+                    <span class="level">Advanced</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <img src="images/powerpoint.png" alt="PowerPoint">
+                <div class="skill-details">
+                    <h3>Microsoft PowerPoint</h3>
+                    <span class="level">Expert</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <img src="images/captivate.png" alt="Captivate">
+                <div class="skill-details">
+                    <h3>Adobe Captivate</h3>
+                    <span class="level">Advanced</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <img src="images/illustrator.png" alt="Illustrator">
+                <div class="skill-details">
+                    <h3>Adobe Illustrator</h3>
+                    <span class="level">Intermediate</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <img src="images/photoshop.png" alt="Photoshop">
+                <div class="skill-details">
+                    <h3>Adobe Photoshop</h3>
+                    <span class="level">Intermediate</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <img src="images/learndash.png" alt="LearnDash">
+                <div class="skill-details">
+                    <h3>LearnDash LMS</h3>
+                    <span class="level">Advanced</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <img src="images/quicklearn.png" alt="QuickLearn">
+                <div class="skill-details">
+                    <h3>QuickLearn LMS</h3>
+                    <span class="level">Advanced</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <img src="images/scorm.png" alt="SCORM">
+                <div class="skill-details">
+                    <h3>SCORM 1.2 Core</h3>
+                    <span class="level">Expert</span>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="skills-container">
-        <div class="skill-card purple">
-            <img src="images/storyline.png" alt="Storyline">
-            <h3>Articulate Storyline 360</h3>
-            <span class="level">Expert</span>
+    <div id="contact" class="section">
+        <div class="section-header">
+            <h2>Gateway Connections</h2>
+            <p>Initiate direct lines for deployment consulting, production bookings, or role openings.</p>
         </div>
 
-        <div class="skill-card blue">
-            <img src="images/premiere.png" alt="Premiere Pro">
-            <h3>Adobe Premiere Pro</h3>
-            <span class="level">Advanced</span>
+        <div class="contact-grid">
+            <div class="contact-card">
+                <div class="contact-meta">
+                    <div class="contact-icon"><img src="images/email.png"></div>
+                    <div class="contact-details">
+                        <h3>Secure Inbox</h3>
+                        <p>sv393015@gmail.com</p>
+                    </div>
+                </div>
+                <a href="mailto:sv393015@gmail.com" class="contact-btn">Send Message</a>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-meta">
+                    <div class="contact-icon"><img src="images/phone.png"></div>
+                    <div class="contact-details">
+                        <h3>Voice Terminal</h3>
+                        <p>+91 93530 80994</p>
+                    </div>
+                </div>
+                <a href="tel:+919353080994" class="contact-btn">Call Terminal</a>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-meta">
+                    <div class="contact-icon"><img src="images/linkedin.png"></div>
+                    <div class="contact-details">
+                        <h3>Professional Network ID</h3>
+                        <p>linkedin.com/in/chandru-elearning</p>
+                    </div>
+                </div>
+                <a href="https://www.linkedin.com/in/chandru-elearning" target="_blank" rel="noopener noreferrer" class="contact-btn">Sync Network</a>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-meta">
+                    <div class="contact-icon"><img src="images/location.png"></div>
+                    <div class="contact-details">
+                        <h3>HQ Location Coordinates</h3>
+                        <p>Bengaluru, Karnataka, India</p>
+                    </div>
+                </div>
+                <a href="https://maps.google.com/?q=Bengaluru" target="_blank" class="contact-btn">Map Overlay</a>
+            </div>
         </div>
 
-        <div class="skill-card violet">
-            <img src="images/aftereffects.png" alt="After Effects">
-            <h3>Adobe After Effects</h3>
-            <span class="level">Advanced</span>
-        </div>
-
-        <div class="skill-card orange">
-            <img src="images/powerpoint.png" alt="PowerPoint">
-            <h3>Microsoft PowerPoint</h3>
-            <span class="level">Expert</span>
-        </div>
-
-        <div class="skill-card green">
-            <img src="images/captivate.png" alt="Captivate">
-            <h3>Adobe Captivate</h3>
-            <span class="level">Advanced</span>
-        </div>
-
-        <div class="skill-card yellow">
-            <img src="images/illustrator.png" alt="Illustrator">
-            <h3>Adobe Illustrator</h3>
-            <span class="level">Intermediate</span>
-        </div>
-
-        <div class="skill-card blue">
-            <img src="images/photoshop.png" alt="Photoshop">
-            <h3>Adobe Photoshop</h3>
-            <span class="level">Intermediate</span>
-        </div>
-
-        <div class="skill-card blue">
-            <img src="images/learndash.png" alt="LearnDash">
-            <h3>LearnDash LMS</h3>
-            <span class="level">Advanced</span>
-        </div>
-
-        <div class="skill-card orange">
-            <img src="images/quicklearn.png" alt="QuickLearn">
-            <h3>QuickLearn LMS</h3>
-            <span class="level">Advanced</span>
-        </div>
-
-        <div class="skill-card blue">
-            <img src="images/scorm.png" alt="SCORM">
-            <h3>SCORM 1.2</h3>
-            <span class="level">Expert</span>
-        </div>
-
-        <div class="skill-card green">
-            <img src="images/excel.png" alt="Excel">
-            <h3>Microsoft Excel</h3>
-            <span class="level">Intermediate</span>
-        </div>
-
-        <div class="skill-card blue">
-            <img src="images/word.png" alt="Word">
-            <h3>Microsoft Word</h3>
-            <span class="level">Advanced</span>
+        <div class="availability">
+            <div class="availability-icon"><img src="images/available.png"></div>
+            <div>
+                <h3>Availability Engine: Pinned Active</h3>
+                <p>Open for pipeline integration contracts or corporate design roles. SLA response within 24 hours.</p>
+            </div>
         </div>
     </div>
+
 </div>
 
-<div id="contact" class="section">
-    <div class="section-header">
-        <h2>Contact</h2>
-        <p>Let's connect for Instructional Design, eLearning Development,<br>and Video Editing projects.</p>
-    </div>
-
-    <div class="contact-card">
-        <div class="contact-icon">
-            <img src="images/email.png">
-        </div>
-        <div class="contact-details">
-            <h3>Email</h3>
-            <p>sv393015@gmail.com</p>
-        </div>
-        <a href="mailto:sv393015@gmail.com" class="contact-btn">Send Mail</a>
-    </div>
-
-    <div class="contact-card">
-        <div class="contact-icon">
-            <img src="images/phone.png">
-        </div>
-        <div class="contact-details">
-            <h3>Phone</h3>
-            <p>+91 93530 80994</p>
-        </div>
-        <a href="tel:+919353080994" class="contact-btn">Call Me</a>
-    </div>
-
-    <div class="contact-card">
-        <div class="contact-icon">
-            <img src="images/linkedin.png">
-        </div>
-        <div class="contact-details">
-            <h3>LinkedIn</h3>
-            <p>linkedin.com/in/chandru-elearning</p>
-        </div>
-        <a href="https://www.linkedin.com/in/chandru-elearning" target="_blank" rel="noopener noreferrer" class="contact-btn">View Profile</a>
-    </div>
-
-    <div class="contact-card">
-        <div class="contact-icon">
-            <img src="images/location.png">
-        </div>
-        <div class="contact-details">
-            <h3>Location</h3>
-            <p>Bengaluru, Karnataka, India</p>
-        </div>
-        <a href="https://maps.google.com/?q=Bengaluru" target="_blank" class="contact-btn">View on Map</a>
-    </div>
-
-    <div class="availability">
-        <div class="availability-icon">
-            <img src="images/available.png">
-        </div>
-        <div>
-            <h3>Available for Freelance & Full-time Opportunities</h3>
-            <p>I usually reply within 24 hours.</p>
-        </div>
-    </div>
-</div>
-
-</div>   <script>
+<script>
 function showSection(id, el) {
-    // Hide all sections
     document.querySelectorAll(".section").forEach(function(sec){
         sec.classList.remove("active");
     });
 
-    // Display targeted section
     const target = document.getElementById(id);
     if(target){
         target.classList.add("active");
     }
 
-    // Reset active link styling
     document.querySelectorAll(".menu a").forEach(function(link){
         link.classList.remove("active");
     });
@@ -911,12 +861,26 @@ function showSection(id, el) {
         el.classList.add("active");
     }
 
-    // Auto-dismiss sidebar drawer when links are tapped on tablet/mobile screens
     document.getElementById("sidebar").classList.remove("show");
 }
 
 function toggleMenu(){
     document.getElementById("sidebar").classList.toggle("show");
+}
+
+function filterProjects(category, btn) {
+    // Reset active button styling
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    
+    // Process project layouts elements cards toggle
+    document.querySelectorAll('.project-card').forEach(card => {
+        if(category === 'all' || card.getAttribute('data-cat') === category) {
+            card.style.display = 'flex';
+        } else {
+            card.style.display = 'none';
+        }
+    });
 }
 </script>
 
