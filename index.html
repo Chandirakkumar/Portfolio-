@@ -1,888 +1,729 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chandirakkumar | Creative Production Dashboard</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chandirakkumar | Creative Portfolio Deck</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+  
+  <style>
+    :root {
+      --bg-main: #0B0F19;
+      --bg-card: #151B2C;
+      --bg-card-hover: #1E263F;
+      --accent-primary: #3B82F6;
+      --accent-gradient: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
+      --text-main: #F8FAFC;
+      --text-muted: #94A3B8;
+      --border-color: rgba(255, 255, 255, 0.06);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-
-<style>
-:root {
-    --bg-main: #0B0F19;
-    --bg-side: #111827;
-    --card-bg: #1F2937;
-    --card-hover: #374151;
-    --accent: #3B82F6;
-    --accent-gradient: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
-    --text-primary: #F9FAFB;
-    --text-secondary: #9CA3AF;
-    --border-color: rgba(255, 255, 255, 0.08);
-}
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-body{
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    background: var(--bg-main);
-    color: var(--text-primary);
-    display: flex;
-    min-height: 100vh;
-    overflow-x: hidden;
-}
-
-/* ===== MODERN NAVIGATION ===== */
-.sidebar{
-    width: 260px;
-    height: 100vh;
-    background: var(--bg-side);
-    padding: 35px 25px;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    border-right: 1px solid var(--border-color);
-    transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.logo{
-    font-size: 22px;
-    font-weight: 700;
-    background: var(--accent-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    letter-spacing: -0.5px;
-}
-
-.menu {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.menu a{
-    text-decoration: none;
-    color: var(--text-secondary);
-    padding: 14px 18px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    transition: all 0.25s ease;
-    font-weight: 500;
-    font-size: 15px;
-    cursor: pointer;
-}
-
-.menu a:hover,
-.menu a.active{
-    background: rgba(59, 130, 246, 0.1);
-    color: var(--accent);
-    font-weight: 600;
-}
-
-.menu-btn{
-    display: none;
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    font-size: 22px;
-    background: var(--accent);
-    color: #fff;
-    border: none;
-    width: 45px;
-    height: 45px;
-    border-radius: 12px;
-    cursor: pointer;
-    z-index: 1001;
-    box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
-    align-items: center;
-    justify-content: center;
-}
-
-/* ===== MAIN MULTIMEDIA WORKSPACE ===== */
-.main{
-    flex: 1;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 60px 40px;
-}
-
-.section{
-    display: none;
-}
-
-.section.active{
-    display: block;
-    animation: slideUp 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-@keyframes slideUp{
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* ===== PREMIUM PROFILE HERO ===== */
-.about-card{
-    position: relative;
-    display: flex;
-    align-items: center;
-    gap: 45px;
-    background: linear-gradient(180deg, var(--bg-side) 0%, rgba(17, 24, 39, 0.6) 100%);
-    padding: 45px;
-    border-radius: 28px;
-    border: 1px solid var(--border-color);
-    margin-bottom: 50px;
-    overflow: hidden;
-}
-
-.about-card::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -20%;
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
-    z-index: 0;
-}
-
-.profile-image{
-    position: relative;
-    width: 180px;
-    height: 180px;
-    border-radius: 24px;
-    overflow: hidden;
-    flex-shrink: 0;
-    z-index: 1;
-}
-
-.profile-image img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.profile-dot{
-    position: absolute;
-    bottom: 12px;
-    right: 12px;
-    width: 16px;
-    height: 16px;
-    background: #10B981;
-    border: 3px solid var(--bg-side);
-    border-radius: 50%;
-}
-
-.about-info{
-    flex: 1;
-    z-index: 1;
-}
-
-.about-info h2{
-    font-size: 36px;
-    font-weight: 700;
-    margin-bottom: 8px;
-    letter-spacing: -0.5px;
-}
-
-.about-info h3{
-    font-size: 18px;
-    font-weight: 500;
-    margin-bottom: 16px;
-    color: var(--text-secondary);
-    line-height: 1.5;
-}
-
-.about-text{
-    font-size: 16px;
-    line-height: 1.7;
-    color: var(--text-secondary);
-    margin-bottom: 20px;
-    max-width: 700px;
-}
-
-.location{
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--accent);
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-/* ===== SECTION HEADERS ===== */
-.section-header{
-    margin-bottom: 35px;
-}
-
-.section-header h2{
-    font-size: 24px;
-    font-weight: 700;
-    margin-bottom: 6px;
-    letter-spacing: -0.3px;
-}
-
-.section-header p{
-    color: var(--text-secondary);
-    font-size: 15px;
-}
-
-/* ===== PRODUCTION GRID ===== */
-.grid{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-}
-
-.dashboard-grid{
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-}
-
-/* ===== DASHBOARD METRIC CARDS ===== */
-.metric-card{
-    background: var(--bg-side);
-    padding: 28px;
-    border-radius: 20px;
-    border: 1px solid var(--border-color);
-    transition: all 0.3s ease;
-}
-
-.metric-card:hover{
-    transform: translateY(-4px);
-    border-color: rgba(59, 130, 246, 0.3);
-    background: linear-gradient(145deg, var(--bg-side) 0%, rgba(31, 41, 55, 0.4) 100%);
-}
-
-.metric-card h3{
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 8px;
-    color: var(--text-primary);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.metric-card p{
-    color: var(--text-secondary);
-    font-size: 14px;
-    line-height: 1.5;
-}
-
-/* ===== FILTERABLE PROJECTS MODULE ===== */
-.filter-wrapper {
-    display: flex;
-    gap: 12px;
-    margin-bottom: 30px;
-    flex-wrap: wrap;
-}
-
-.filter-btn {
-    background: var(--bg-side);
-    border: 1px solid var(--border-color);
-    color: var(--text-secondary);
-    padding: 10px 20px;
-    border-radius: 10px;
-    cursor: pointer;
-    font-weight: 500;
-    font-size: 14px;
-    transition: all 0.25s ease;
-}
-
-.filter-btn:hover,
-.filter-btn.active {
-    background: var(--accent);
-    color: #fff;
-    border-color: var(--accent);
-}
-
-.project-card {
-    background: var(--bg-side);
-    border-radius: 20px;
-    border: 1px solid var(--border-color);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    transition: all 0.3s ease;
-}
-
-.project-card:hover {
-    transform: translateY(-6px);
-    border-color: rgba(139, 92, 246, 0.3);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-}
-
-.project-thumb {
-    width: 100%;
-    aspect-ratio: 16/9;
-    object-fit: cover;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.project-body {
-    padding: 24px;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    gap: 12px;
-}
-
-.project-body h3{
-    font-size: 18px;
-    font-weight: 600;
-}
-
-.project-body p{
-    color: var(--text-secondary);
-    font-size: 14px;
-    line-height: 1.6;
-}
-
-/* ===== TECHNICAL SKILLS LABELS ===== */
-.skills-container{
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 20px;
-}
-
-.skill-card{
-    background: var(--bg-side);
-    border-radius: 18px;
-    padding: 24px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    border: 1px solid var(--border-color);
-    transition: all 0.25s ease;
-}
-
-.skill-card:hover {
-    border-color: var(--accent);
-    background: rgba(31, 41, 55, 0.5);
-}
-
-.skill-card img{
-    width: 48px;
-    height: 48px;
-    object-fit: contain;
-}
-
-.skill-details {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-}
-
-.skill-details h3{
-    font-size: 15px;
-    font-weight: 600;
-}
-
-.level{
-    font-size: 12px;
-    font-weight: 600;
-    color: var(--accent);
-    background: rgba(59, 130, 246, 0.1);
-    padding: 4px 10px;
-    border-radius: 6px;
-    width: max-content;
-}
-
-/* ===== INTERACTIVE ACTION CTAs ===== */
-.btn{
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    margin-top: auto;
-    padding: 12px 24px;
-    background: var(--accent-gradient);
-    color: #FFFFFF;
-    text-decoration: none;
-    border-radius: 12px;
-    font-weight: 600;
-    font-size: 14px;
-    transition: opacity 0.2s ease;
-}
-
-.btn:hover{
-    opacity: 0.9;
-}
-
-/* ===== CONTACT MODULES ===== */
-.contact-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-.contact-card{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 24px;
-    background: var(--bg-side);
-    border-radius: 18px;
-    border: 1px solid var(--border-color);
-    transition: border 0.25s ease;
-}
-
-.contact-card:hover {
-    border-color: rgba(59, 130, 246, 0.4);
-}
-
-.contact-meta {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.contact-icon{
-    width: 54px;
-    height: 54px;
-    background: rgba(255, 255, 255, 0.03);
-    border-radius: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid var(--border-color);
-}
-
-.contact-icon img{
-    width: 24px;
-    height: 24px;
-    object-fit: contain;
-}
-
-.contact-details h3{
-    font-size: 16px;
-    font-weight: 600;
-    margin-bottom: 4px;
-}
-
-.contact-details p{
-    font-size: 14px;
-    color: var(--text-secondary);
-}
-
-.contact-btn{
-    background: var(--card-bg);
-    color: var(--text-primary);
-    text-decoration: none;
-    padding: 12px 24px;
-    border-radius: 10px;
-    font-weight: 600;
-    font-size: 14px;
-    border: 1px solid var(--border-color);
-    transition: all 0.2s ease;
-}
-
-.contact-btn:hover{
-    background: var(--accent);
-    border-color: var(--accent);
-}
-
-.availability{
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    background: linear-gradient(90deg, rgba(16, 185, 129, 0.05) 0%, transparent 100%);
-    padding: 30px;
-    border-radius: 20px;
-    border: 1px solid rgba(16, 185, 129, 0.2);
-    margin-top: 40px;
-}
-
-.availability-icon{
-    width: 60px;
-    height: 60px;
-    background: rgba(16, 185, 129, 0.1);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-}
-
-.availability-icon img{
-    width: 28px;
-    height: 28px;
-}
-
-.availability h3{
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 4px;
-}
-
-.availability p{
-    font-size: 14px;
-    color: var(--text-secondary);
-}
-
-/* ===== RESPONSIVE ARCHITECTURE ===== */
-@media (max-width: 992px){
     body {
-        flex-direction: column;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--bg-main);
+      color: var(--text-main);
+      min-height: 100vh;
+      overflow-x: hidden;
+      line-height: 1.6;
     }
 
-    .menu-btn {
-        display: flex;
+    /* ===== APEX NAVIGATION BAR ===== */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(11, 15, 25, 0.75);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border-color);
     }
 
-    .sidebar {
-        position: fixed;
-        left: -280px;
-        top: 0;
-        height: 100vh;
-        width: 260px;
+    .nav-container {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 20px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    .sidebar.show {
-        left: 0;
+    .brand-logo {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
-    .main {
-        padding: 100px 24px 40px;
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.03);
+      padding: 6px;
+      border-radius: 30px;
+      border: 1px solid var(--border-color);
     }
 
-    .grid {
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      padding: 8px 20px;
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 20px;
+      transition: all 0.25s ease;
+      cursor: pointer;
+    }
+
+    nav a:hover, nav a.active {
+      color: var(--text-main);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--text-main);
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    /* ===== HERO BILLBOARD SECTION ===== */
+    .hero-billboard {
+      max-width: 1300px;
+      margin: 40px auto;
+      padding: 0 30px;
+    }
+
+    .hero-wrapper {
+      background: radial-gradient(circle at top right, rgba(59, 130, 246, 0.15), transparent 60%), var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 32px;
+      padding: 60px;
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 50px;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-wrapper::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 400px;
+      height: 400px;
+      background: #8B5CF6;
+      filter: blur(140px);
+      opacity: 0.15;
+      pointer-events: none;
+    }
+
+    .profile-frame {
+      position: relative;
+      width: 240px;
+      height: 240px;
+    }
+
+    .profile-frame img {
+      width: 100%;
+      height: 100%;
+      border-radius: 24px;
+      object-fit: cover;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .status-badge {
+      position: absolute;
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #10B981;
+      color: #FFF;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 20px;
+      letter-spacing: 1px;
+      box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3);
+      white-space: nowrap;
+    }
+
+    .hero-meta h1 {
+      font-size: 48px;
+      font-weight: 800;
+      letter-spacing: -1.5px;
+      line-height: 1.1;
+      margin-bottom: 12px;
+    }
+
+    .hero-meta h2 {
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--accent-primary);
+      margin-bottom: 24px;
+    }
+
+    .hero-meta p {
+      font-size: 17px;
+      color: var(--text-muted);
+      max-width: 700px;
+      margin-bottom: 24px;
+    }
+
+    .meta-pills {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .pill {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-color);
+      padding: 6px 16px;
+      border-radius: 30px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+
+    /* ===== WORKSPACE CONTAINER ===== */
+    main {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 30px 80px;
+    }
+
+    .view-deck {
+      display: none;
+    }
+
+    .view-deck.active {
+      display: block;
+      animation: deck-shift 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes deck-shift {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .deck-title {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+
+    .deck-subtitle {
+      color: var(--text-muted);
+      font-size: 15px;
+      margin-bottom: 35px;
+    }
+
+    /* ===== CORE DASHBOARD DECK ===== */
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .stat-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 30px;
+      position: relative;
+      transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 160px;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(59, 130, 246, 0.3);
+      background: var(--bg-card-hover);
+    }
+
+    .stat-icon-wrapper {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .stat-card h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .stat-card p {
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+
+    /* ===== SHOWCASE MEDIA CARDS ===== */
+    .showcase-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 30px;
+    }
+
+    .showcase-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 24px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .showcase-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(255, 255, 255, 0.12);
+    }
+
+    .media-vault {
+      width: 100%;
+      height: 220px;
+      overflow: hidden;
+      background: #000;
+    }
+
+    .media-vault img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.85;
+      transition: transform 0.5s ease;
+    }
+
+    .showcase-card:hover .media-vault img {
+      transform: scale(1.04);
+      opacity: 1;
+    }
+
+    .showcase-content {
+      padding: 25px;
+    }
+
+    .showcase-content h3 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .showcase-content p {
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+
+    /* ===== STRUCTURAL SKILL CHIPS ===== */
+    .skills-matrix {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .matrix-node {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 25px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      transition: all 0.25s ease;
+    }
+
+    .matrix-node:hover {
+      background: rgba(255, 255, 255, 0.02);
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .node-graphic {
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+    }
+
+    .node-info h3 {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .node-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--accent-primary);
+      background: rgba(59, 130, 246, 0.1);
+      padding: 2px 10px;
+      border-radius: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* ===== HUB CONNECT CARDS ===== */
+    .hub-layout {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 30px;
+      align-items: start;
+    }
+
+    .hub-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .hub-tile {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .hub-meta h3 {
+      font-size: 14px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+
+    .hub-meta p {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .action-anchor {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      text-decoration: none;
+      padding: 12px;
+      border-radius: 12px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+
+    .action-anchor:hover {
+      background: var(--text-main);
+      color: var(--bg-main);
+    }
+
+    .presence-panel {
+      background: linear-gradient(180deg, rgba(59, 130, 246, 0.1) 0%, transparent 100%), var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 24px;
+      padding: 40px 30px;
+      text-align: center;
+    }
+
+    .presence-panel h3 {
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .presence-panel p {
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+
+    /* ===== RESPONSIVE MATRIX OVERLAYS ===== */
+    @media (max-width: 1024px) {
+      .hero-wrapper {
         grid-template-columns: 1fr;
-    }
-
-    .about-card {
-        flex-direction: column;
+        gap: 30px;
         text-align: center;
-        padding: 35px 24px;
-        gap: 25px;
+        padding: 40px;
+      }
+      .profile-frame {
+        margin: 0 auto;
+      }
+      .meta-pills {
+        justify-content: center;
+      }
+      .hub-layout {
+        grid-template-columns: 1fr;
+      }
     }
 
-    .contact-card {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 20px;
-    }
-
-    .contact-meta {
-        flex-direction: column;
-        gap: 12px;
-    }
-
-    .contact-btn {
+    @media (max-width: 768px) {
+      .nav-container {
+        padding: 15px 20px;
+      }
+      nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
         width: 100%;
+        background: var(--bg-main);
+        padding: 20px;
+        border-bottom: 1px solid var(--border-color);
+      }
+      nav.open {
+        display: block;
+      }
+      nav ul {
+        flex-direction: column;
+        background: none;
+        border: none;
+        padding: 0;
+        gap: 10px;
+      }
+      nav a {
+        display: block;
+        text-align: center;
+      }
+      .menu-toggle {
+        display: block;
+      }
+      .hero-billboard, main {
+        padding: 0 15px 40px;
+      }
+      .hero-wrapper {
+        padding: 30px 20px;
+      }
+      .hero-meta h1 {
+        font-size: 34px;
+      }
+      .showcase-grid {
+        grid-template-columns: 1fr;
+      }
     }
-}
-</style>
+  </style>
 </head>
-
 <body>
 
-<button class="menu-btn" onclick="toggleMenu()">☰</button>
-
-<div class="sidebar" id="sidebar">
-    <div class="logo">Chandirakkumar</div>
-    <div class="menu">
-        <a class="active" onclick="showSection('dashboard', this)">Workspace</a>
-        <a onclick="showSection('projects', this)">Production Hub</a>
-        <a onclick="showSection('skills', this)">Tech Stack</a>
-        <a onclick="showSection('contact', this)">Communications</a>
+  <!-- ===== APEX NAVIGATION BAR ===== -->
+  <header>
+    <div class="nav-container">
+      <div class="brand-logo">CHANDIRAKKUMAR S</div>
+      <button class="menu-toggle" onclick="toggleDeckMenu()" aria-label="Toggle Menu">☰</button>
+      <nav id="navigation-deck">
+        <ul>
+          <li><a class="active" onclick="shiftDeck('dashboard', this)">Dashboard</a></li>
+          <li><a onclick="shiftDeck('projects', this)">Projects</a></li>
+          <li><a onclick="shiftDeck('skills', this)">Skills</a></li>
+          <li><a onclick="shiftDeck('contact', this)">Contact</a></li>
+        </ul>
+      </nav>
     </div>
-</div>
+  </header>
 
-<div class="main">
-
-    <div id="dashboard" class="section active">
-        <div class="about-card">
-            <div class="profile-image">
-                <img src="IMG_20260409_223924.jpg" alt="Profile">
-                <div class="profile-dot"></div>
-            </div>
-            <div class="about-info">
-                <h2>Chandirakkumar S</h2>
-                <h3>Instructional Designer | eLearning & Multimedia Developer | Visual Designer</h3>
-                <p class="about-text">
-                    Specializing in engineering modular scenario-based training pipelines, advanced Articulate Storyline variables layouts, LMS execution architectures, and core motion graphics layout engines.
-                </p>
-                <p class="location">📍 Bengaluru, Karnataka, India</p>
-            </div>
+  <!-- ===== HERO BILLBOARD SECTION ===== -->
+  <section class="hero-billboard">
+    <div class="hero-wrapper">
+      <div class="profile-frame">
+        <img src="IMG_20260409_223924.jpg" alt="Chandirakkumar S Profile">
+        <div class="status-badge">Available Now</div>
+      </div>
+      <div class="hero-meta">
+        <h1>Chandirakkumar S</h1>
+        <h2>Instructional Designer & Multimedia Developer</h2>
+        <p>Architecting interactive eLearning experiences, scenario-based modules, and dynamic visual narratives. Specialized in end-to-end rapid architecture and SCORM deployment.</p>
+        <div class="meta-pills">
+          <span class="pill">📍 Bengaluru, India</span>
+          <span class="pill">💼 100+ Live Modules</span>
+          <span class="pill">⚡ Storyline Expert</span>
         </div>
-
-        <div class="section-header">
-            <h2>Production Statistics</h2>
-            <p>Operational summary of active learning assets and deployments.</p>
-        </div>
-
-        <div class="grid dashboard-grid">
-            <div class="metric-card">
-                <h3>📘 100+ Modules</h3>
-                <p>Interactive interactive eLearning packages published.</p>
-            </div>
-            <div class="metric-card">
-                <h3>🎯 Learning Design</h3>
-                <p>Scenario structures optimized for retention pipelines.</p>
-            </div>
-            <div class="metric-card">
-                <h3>💻 Storyline 360</h3>
-                <p>Dynamic structural triggers, conditions, and logical switches.</p>
-            </div>
-            <div class="metric-card">
-                <h3>📦 SCORM Engine</h3>
-                <p>SCORM 1.2 build deployments across modern LMS instances.</p>
-            </div>
-            <div class="metric-card">
-                <h3>🎬 Post Production</h3>
-                <p>Advanced timeline compositing in Premiere and After Effects.</p>
-            </div>
-            <div class="metric-card">
-                <h3>🎨 Vector Artwork</h3>
-                <p>Corporate instructional infographic packages built explicitly for scale.</p>
-            </div>
-        </div>
+      </div>
     </div>
+  </section>
 
-    <div id="projects" class="section">
-        <div class="section-header">
-            <h2>Asset Repositories</h2>
-            <p>Filter through enterprise development projects by module archetype.</p>
+  <!-- ===== MAIN WORKSPACE CONTAINER ===== -->
+  <main>
+
+    <!-- METRIC OVERVIEW DECK -->
+    <div id="dashboard" class="view-deck active">
+      <h2 class="deck-title">Dashboard Matrix</h2>
+      <p class="deck-subtitle">Core functional focus metrics across production delivery workflows.</p>
+      
+      <section class="metric-grid">
+        <div class="stat-card">
+          <div class="stat-icon-wrapper">📘</div>
+          <div>
+            <h3>100+ Modules Delivered</h3>
+            <p>High-fidelity, interactive training modules deployed for complex ecosystems.</p>
+          </div>
         </div>
-
-        <div class="filter-wrapper">
-            <button class="filter-btn active" onclick="filterProjects('all', this)">All Deployments</button>
-            <button class="filter-btn" onclick="filterProjects('elearning', this)">eLearning Modules</button>
-            <button class="filter-btn" onclick="filterProjects('multimedia', this)">Video & Graphics</button>
+        <div class="stat-card">
+          <div class="stat-icon-wrapper">🎯</div>
+          <div>
+            <h3>Instructional Design</h3>
+            <p>Scenario-driven pipelines explicitly mapping user behaviors to performance goals.</p>
+          </div>
         </div>
-
-        <div class="grid">
-            <div class="project-card" data-cat="elearning">
-                <img src="images/scorm-thumbnail.png" alt="SCORM" class="project-thumb">
-                <div class="project-body">
-                    <h3>Interactive SCORM eLearning</h3>
-                    <p>Advanced Articulate Storyline structure featuring condition-locked navigation matrix arrays and programmatic tracking variables layout.</p>
-                    <a href="https://drive.google.com/file/d/1-Jr4AcAYIeU_B9Cimcw1WLswNRgfx0MU/view?usp=sharing" target="_blank" class="btn">Launch Interface</a>
-                </div>
-            </div>
-
-            <div class="project-card" data-cat="elearning">
-                <img src="images/multilanguage.jpeg" alt="Multi-language" class="project-thumb">
-                <div class="project-body">
-                    <h3>Bilingual Toggle Architecture</h3>
-                    <p>Dual-layer content framework engineered within Storyline to enable real-time runtime language structural switching without losing execution progress.</p>
-                </div>
-            </div>
-
-            <div class="project-card" data-cat="multimedia">
-                <img src="images/ppt-design-1.png" alt="PowerPoint" class="project-thumb">
-                <div class="project-body">
-                    <h3>Corporate Narrative Systems</h3>
-                    <p>High-end corporate training layout arrays translated directly into optimized infographic vector blocks for executive onboarding paths.</p>
-                </div>
-            </div>
-
-            <div class="project-card" data-cat="multimedia">
-                <img src="images/vfx-thumbnail.png" alt="Video Editing" class="project-thumb">
-                <div class="project-body">
-                    <h3>Motion Compositing & VFX Studio</h3>
-                    <p>Post-production workspace outputs emphasizing precision keyframe timelines, fluid transitions, audio mixing tracks, and motion layouts.</p>
-                    <a href="https://drive.google.com/file/d/12KMOnXd8ilEKFB4JqiAr99lX8_8IBSUv/view?usp=sharing" target="_blank" class="btn">Stream Content</a>
-                </div>
-            </div>
-        </div> 
-    </div> 
-
-    <div id="skills" class="section">
-        <div class="section-header">
-            <h2>Core Infrastructure Stack</h2>
-            <p>Breakdown of authoring environments and rendering software proficiency profiles.</p>
+        <div class="stat-card">
+          <div class="stat-icon-wrapper">💻</div>
+          <div>
+            <h3>Storyline 360 Architecture</h3>
+            <p>Complex visual arrays using granular states, variables, and logic controls.</p>
+          </div>
         </div>
-
-        <div class="skills-container">
-            <div class="skill-card">
-                <img src="images/storyline.png" alt="Storyline">
-                <div class="skill-details">
-                    <h3>Articulate Storyline 360</h3>
-                    <span class="level">Expert</span>
-                </div>
-            </div>
-            <div class="skill-card">
-                <img src="images/premiere.png" alt="Premiere Pro">
-                <div class="skill-details">
-                    <h3>Adobe Premiere Pro</h3>
-                    <span class="level">Advanced</span>
-                </div>
-            </div>
-            <div class="skill-card">
-                <img src="images/aftereffects.png" alt="After Effects">
-                <div class="skill-details">
-                    <h3>Adobe After Effects</h3>
-                    <span class="level">Advanced</span>
-                </div>
-            </div>
-            <div class="skill-card">
-                <img src="images/powerpoint.png" alt="PowerPoint">
-                <div class="skill-details">
-                    <h3>Microsoft PowerPoint</h3>
-                    <span class="level">Expert</span>
-                </div>
-            </div>
-            <div class="skill-card">
-                <img src="images/captivate.png" alt="Captivate">
-                <div class="skill-details">
-                    <h3>Adobe Captivate</h3>
-                    <span class="level">Advanced</span>
-                </div>
-            </div>
-            <div class="skill-card">
-                <img src="images/illustrator.png" alt="Illustrator">
-                <div class="skill-details">
-                    <h3>Adobe Illustrator</h3>
-                    <span class="level">Intermediate</span>
-                </div>
-            </div>
-            <div class="skill-card">
-                <img src="images/photoshop.png" alt="Photoshop">
-                <div class="skill-details">
-                    <h3>Adobe Photoshop</h3>
-                    <span class="level">Intermediate</span>
-                </div>
-            </div>
-            <div class="skill-card">
-                <img src="images/learndash.png" alt="LearnDash">
-                <div class="skill-details">
-                    <h3>LearnDash LMS</h3>
-                    <span class="level">Advanced</span>
-                </div>
-            </div>
-            <div class="skill-card">
-                <img src="images/quicklearn.png" alt="QuickLearn">
-                <div class="skill-details">
-                    <h3>QuickLearn LMS</h3>
-                    <span class="level">Advanced</span>
-                </div>
-            </div>
-            <div class="skill-card">
-                <img src="images/scorm.png" alt="SCORM">
-                <div class="skill-details">
-                    <h3>SCORM 1.2 Core</h3>
-                    <span class="level">Expert</span>
-                </div>
-            </div>
+        <div class="stat-card">
+          <div class="stat-icon-wrapper">📦</div>
+          <div>
+            <h3>SCORM Management</h3>
+            <p>Clean multi-LMS standard engineering with accurate bookmarking setups.</p>
+          </div>
         </div>
+        <div class="stat-card">
+          <div class="stat-icon-wrapper">🎬</div>
+          <div>
+            <h3>Motion Graphics</h3>
+            <p>Dynamic digital asset timelines via Adobe After Effects & Premiere Pro workflows.</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon-wrapper">⚙️</div>
+          <div>
+            <h3>LMS Administration</h3>
+            <p>Deploying, auditing, and maintaining deep learning frameworks on LearnDash and QuickLearn.</p>
+          </div>
+        </div>
+      </section>
     </div>
 
-    <div id="contact" class="section">
-        <div class="section-header">
-            <h2>Gateway Connections</h2>
-            <p>Initiate direct lines for deployment consulting, production bookings, or role openings.</p>
-        </div>
-
-        <div class="contact-grid">
-            <div class="contact-card">
-                <div class="contact-meta">
-                    <div class="contact-icon"><img src="images/email.png"></div>
-                    <div class="contact-details">
-                        <h3>Secure Inbox</h3>
-                        <p>sv393015@gmail.com</p>
-                    </div>
-                </div>
-                <a href="mailto:sv393015@gmail.com" class="contact-btn">Send Message</a>
-            </div>
-
-            <div class="contact-card">
-                <div class="contact-meta">
-                    <div class="contact-icon"><img src="images/phone.png"></div>
-                    <div class="contact-details">
-                        <h3>Voice Terminal</h3>
-                        <p>+91 93530 80994</p>
-                    </div>
-                </div>
-                <a href="tel:+919353080994" class="contact-btn">Call Terminal</a>
-            </div>
-
-            <div class="contact-card">
-                <div class="contact-meta">
-                    <div class="contact-icon"><img src="images/linkedin.png"></div>
-                    <div class="contact-details">
-                        <h3>Professional Network ID</h3>
-                        <p>linkedin.com/in/chandru-elearning</p>
-                    </div>
-                </div>
-                <a href="https://www.linkedin.com/in/chandru-elearning" target="_blank" rel="noopener noreferrer" class="contact-btn">Sync Network</a>
-            </div>
-
-            <div class="contact-card">
-                <div class="contact-meta">
-                    <div class="contact-icon"><img src="images/location.png"></div>
-                    <div class="contact-details">
-                        <h3>HQ Location Coordinates</h3>
-                        <p>Bengaluru, Karnataka, India</p>
-                    </div>
-                </div>
-                <a href="https://maps.google.com/?q=Bengaluru" target="_blank" class="contact-btn">Map Overlay</a>
-            </div>
-        </div>
-
-        <div class="availability">
-            <div class="availability-icon"><img src="images/available.png"></div>
-            <div>
-                <h3>Availability Engine: Pinned Active</h3>
-                <p>Open for pipeline integration contracts or corporate design roles. SLA response within 24 hours.</p>
-            </div>
-        </div>
+    <!-- SHOWCASE VIEW DECK -->
+    <div id="projects" class="view-deck">
+      <h2 class="deck-title">Production Vault</h2>
+      <p class="deck-subtitle">A curated index of visual development pipelines and learning environments.</p>
+      
+      <section class="showcase-grid">
+        <article class="showcase-card">
+          <div class="media-vault">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71" alt="Interactive Storyline Module Mockup">
+          </div>
+          <div class="showcase-content">
+            <h3>Advanced Interactive eLearning</h3>
+            <p>Dynamic branch systems engineered natively inside Articulate Storyline 360 to deliver realistic simulation paths.</p>
+          </div>
+        </article>
+        
+        <article class="showcase-card">
+          <div class="media-vault">
+            <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d" alt="Video Post Production Asset">
+          </div>
+          <div class="showcase-content">
+            <h3>Multimedia Explainer Frameworks</h3>
+            <p>High-impact corporate learning content structured using Adobe Post-Production pipelines.</p>
+          </div>
+        </article>
+        
+        <article class="showcase-card">
+          <div class="media-vault">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f" alt="Presentation Design Asset">
+          </div>
+          <div class="showcase-content">
+            <h3>Corporate Deck Typologies</h3>
+            <p>Clean vector structures engineered into high-end presentation assets for strategic operational alignment.</p>
+          </div>
+        </article>
+      </section>
     </div>
 
-</div>
+    <!-- TECHNICAL MATRIX DECK -->
+    <div id="skills" class="view-deck">
+      <h2 class="deck-title">Core Competencies</h2>
+      <p class="deck-subtitle">Breakdown of software proficiency and development platforms.</p>
+      
+      <section class="skills-matrix">
+        <div class="matrix-node">
+          <img src="images/storyline.png" class="node-graphic" alt="Storyline Icon" onerror="this.style.display='none'">
+          <div class="node-info">
+            <h3>Articulate Storyline 360</h3>
+            <span class="node-badge">Expert</span>
+          </div>
+        </div>
+        <div class="matrix-node">
+          <img src="images/premiere.png" class="node-graphic" alt="Premiere Icon" onerror="this.style.display='none'">
+          <div class="node-info">
+            <h3>Adobe Premiere Pro</h3>
+            <span class="node-badge">Advanced</span>
+          </div>
+        </div>
+        <div class="matrix-node">
+          <img src="images/aftereffects.png" class="node-graphic" alt="After Effects Icon" onerror="this.style.display='none'">
+          <div class="node-info">
+            <h3>Adobe After Effects</h3>
+            <span class="node-badge">Advanced</span>
+          </div>
+        </div>
+        <div class="matrix-node">
+          <img src="images/powerpoint.png" class="node-graphic" alt="PowerPoint Icon" onerror="this.style.display='none'">
+          <div class="node-info">
+            <h3>Microsoft PowerPoint</h3>
+            <span class="node-badge">Expert</span>
+          </div>
+        </div>
+        <div class="matrix-node">
+          <img src="images/captivate.png" class="node-graphic" alt="Captivate Icon" onerror="this.style.display='none'">
+          <div class="node-info">
+            <h3>Adobe Captivate</h3>
+            <span class="node-badge">Advanced</span>
+          </div>
+        </div>
+        <div class="matrix-node">
+          <img src="images/illustrator.png" class="node-graphic" alt="Illustrator Icon" onerror="this.style.display='none'">
+          <div class="node-info">
+            <h3>Adobe Illustrator</h3>
+            <span class="node-badge">Intermediate</span>
+          </div>
+        </div>
+        <div class="matrix-node">
+          <img src="images/learndash.png" class="node-graphic" alt="LearnDash Icon" onerror="this.style.display='none'">
+          <div class="node-info">
+            <h3>LearnDash LMS</h3>
+            <span class="node-badge">Advanced</span>
+          </div>
+        </div>
+        <div class="matrix-node">
+          <img src="images/scorm.png" class="node-graphic" alt="SCORM Icon" onerror="this.style.display='none'">
+          <div class="node-info">
+            <h3>SCORM 1.2 Standards</h3>
+            <span class="node-badge">Expert</span>
+          </div>
+        </div>
+      </section>
+    </div>
 
-<script>
-function showSection(id, el) {
-    document.querySelectorAll(".section").forEach(function(sec){
-        sec.classList.remove("active");
-    });
-
-    const target = document.getElementById(id);
-    if(target){
-        target.classList.add("active");
-    }
-
-    document.querySelectorAll(".menu a").forEach(function(link){
-        link.classList.remove("active");
-    });
-
-    if(el){
-        el.classList.add("active");
-    }
-
-    document.getElementById("sidebar").classList.remove("show");
-}
-
-function toggleMenu(){
-    document.getElementById("sidebar").classList.toggle("show");
-}
-
-function filterProjects(category, btn) {
-    // Reset active button styling
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    
-    // Process project layouts elements cards toggle
-    document.querySelectorAll('.project-card').forEach(card => {
-        if(category === 'all' || card.getAttribute('data-cat') === category) {
-            card.style.display = 'flex';
-        } else {
-            card.style.display = 'none';
-        }
-    });
-}
-</script>
-
-</body>
-</html>
+    <!-- COMMUNICATIONS HUB DECK -->
+    <div id="contact" class="view-deck">
+      <h2 class="deck-title">Inbound Channels</h2>
+      <p class="deck-subtitle">Initiate active deployment pipelines or request production consultations.</p>
+      
+      <div class="hub-layout">
+        <section class="hub-grid">
+          <div class="hub-tile">
+            <div class="hub-meta">
+              <h3>Secure Mail</h3>
+              <p>sv393015@gmail.com</p>
+      
