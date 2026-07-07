@@ -522,23 +522,21 @@
 </head>
 <body>
 
-  <!-- ===== APEX NAVIGATION BAR ===== -->
   <header>
     <div class="nav-container">
       <div class="brand-logo">CHANDIRAKKUMAR S</div>
-      <button class="menu-toggle" onclick="toggleDeckMenu()" aria-label="Toggle Menu">☰</button>
+      <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle Menu">☰</button>
       <nav id="navigation-deck">
         <ul>
-          <li><a class="active" onclick="shiftDeck('dashboard', this)">Dashboard</a></li>
-          <li><a onclick="shiftDeck('projects', this)">Projects</a></li>
-          <li><a onclick="shiftDeck('skills', this)">Skills</a></li>
-          <li><a onclick="shiftDeck('contact', this)">Contact</a></li>
+          <li><a class="active" onclick="showSection('dashboard', this)">Dashboard</a></li>
+          <li><a onclick="showSection('projects', this)">Projects</a></li>
+          <li><a onclick="showSection('skills', this)">Skills</a></li>
+          <li><a onclick="showSection('contact', this)">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- ===== HERO BILLBOARD SECTION ===== -->
   <section class="hero-billboard">
     <div class="hero-wrapper">
       <div class="profile-frame">
@@ -558,10 +556,8 @@
     </div>
   </section>
 
-  <!-- ===== MAIN WORKSPACE CONTAINER ===== -->
   <main>
 
-    <!-- METRIC OVERVIEW DECK -->
     <div id="dashboard" class="view-deck active">
       <h2 class="deck-title">Dashboard Matrix</h2>
       <p class="deck-subtitle">Core functional focus metrics across production delivery workflows.</p>
@@ -612,7 +608,6 @@
       </section>
     </div>
 
-    <!-- SHOWCASE VIEW DECK -->
     <div id="projects" class="view-deck">
       <h2 class="deck-title">Production Vault</h2>
       <p class="deck-subtitle">A curated index of visual development pipelines and learning environments.</p>
@@ -650,7 +645,6 @@
       </section>
     </div>
 
-    <!-- TECHNICAL MATRIX DECK -->
     <div id="skills" class="view-deck">
       <h2 class="deck-title">Core Competencies</h2>
       <p class="deck-subtitle">Breakdown of software proficiency and development platforms.</p>
@@ -715,7 +709,6 @@
       </section>
     </div>
 
-    <!-- COMMUNICATIONS HUB DECK -->
     <div id="contact" class="view-deck">
       <h2 class="deck-title">Inbound Channels</h2>
       <p class="deck-subtitle">Initiate active deployment pipelines or request production consultations.</p>
@@ -726,4 +719,12 @@
             <div class="hub-meta">
               <h3>Secure Mail</h3>
               <p>sv393015@gmail.com</p>
-      
+            </div>
+            <a href="mailto:sv393015@gmail.com" class="action-anchor">Route Mail</a>
+          </div>
+          
+          <div class="hub-tile">
+            <div class="hub-meta">
+              <h3>Direct Comms</h3>
+              <p>+91 93530 80994</p>
+    
