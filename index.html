@@ -525,13 +525,13 @@
   <header>
     <div class="nav-container">
       <div class="brand-logo">CHANDIRAKKUMAR S</div>
-      <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle Menu">☰</button>
+      <button class="menu-toggle" id="menu-trigger" aria-label="Toggle Menu">☰</button>
       <nav id="navigation-deck">
         <ul>
-          <li><a class="active" onclick="showSection('dashboard', this)">Dashboard</a></li>
-          <li><a onclick="showSection('projects', this)">Projects</a></li>
-          <li><a onclick="showSection('skills', this)">Skills</a></li>
-          <li><a onclick="showSection('contact', this)">Contact</a></li>
+          <li><a href="#" class="active" data-target="dashboard">Dashboard</a></li>
+          <li><a href="#" data-target="projects">Projects</a></li>
+          <li><a href="#" data-target="skills">Skills</a></li>
+          <li><a href="#" data-target="contact">Contact</a></li>
         </ul>
       </nav>
     </div>
@@ -727,4 +727,5 @@
             <div class="hub-meta">
               <h3>Direct Comms</h3>
               <p>+91 93530 80994</p>
-    
+            </div>
+            <a href="t
