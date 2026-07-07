@@ -216,13 +216,17 @@ border-radius:18px;
 border:1px solid #E5E7EB;
 box-shadow:0 6px 18px rgba(0,0,0,.06);
 transition:.3s;
-min-height:140px;
+min-height:430px;
 display:flex;
 flex-direction:column;
 justify-content:center;
 gap:10px;
 }
-
+.card .btn{
+margin-top:auto;
+width:100%;
+text-align:center;
+}
 .card:hover{
 transform:translateY(-6px);
 box-shadow:0 12px 28px rgba(37,99,235,.15);
@@ -230,8 +234,11 @@ box-shadow:0 12px 28px rgba(37,99,235,.15);
 
 .card img{
 width:100%;
+aspect-ratio:16/9;
+object-fit:cover;
 border-radius:12px;
-margin-bottom:10px;
+display:block;
+margin-bottom:15px;
 }
 
 .card h3{
@@ -738,24 +745,57 @@ Instructional Designer with 1+ year of experience in Storyline 360, LMS Manageme
 </div>
 
 <div class="grid">
+
 <div class="card">
-<img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f">
-<h3>PPT Design</h3>
-<p>Training presentations.</p>
+    <img src="images/scorm-thumbnail.png" alt="SCORM">
+
+    <h3>Interactive SCORM eLearning</h3>
+
+    <p>Interactive Storyline module with custom navigation, assessments, and SCORM publishing.</p>
+
+    <a href="https://drive.google.com/file/d/1-Jr4AcAYIeU_B9Cimcw1WLswNRgfx0MU/view?usp=sharing"
+       target="_blank"
+       class="btn">
+       ▶ Watch Demo
+    </a>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d">
-<h3>Video Editing</h3>
-<p>Explainer videos.</p>
+    <img src="images/features.jpeg" alt="Features">
+
+    <h3>Advanced Storyline Features</h3>
+
+    <p>Gamification, progress tracking, multilingual support, LMS compatibility and SCORM features.</p>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71">
-<h3>Storyline</h3>
-<p>Interactive modules.</p>
+    <img src="images/ppt-design-1.png" alt="PowerPoint">
+
+    <h3>Corporate PowerPoint Design</h3>
+
+    <p>Professional training presentations with modern layouts, infographics and learning content.</p>
+
+    <a href="images/ppt-design-2.png"
+       target="_blank"
+       class="btn">
+       View Gallery
+    </a>
 </div>
+
+<div class="card">
+    <img src="images/vfx-thumbnail.png" alt="Video Editing">
+
+    <h3>Video Editing & Motion Graphics</h3>
+
+    <p>Adobe Premiere Pro & After Effects projects with cinematic editing, VFX and motion graphics.</p>
+
+    <a href="https://drive.google.com/file/d/12KMOnXd8ilEKFB4JqiAr99lX8_8IBSUv/view?usp=sharing"
+       target="_blank"
+       class="btn">
+       ▶ Watch Video
+    </a>
 </div>
+
 </div>
 
 <!-- SKILLS -->
