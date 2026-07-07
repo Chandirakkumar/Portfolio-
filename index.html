@@ -22,7 +22,7 @@ color:#1E293B;
 display:flex;
 }
 
-/* ===== DESKTOP SIDEBAR (DEFAULT) ===== */
+/* ===== GLOBAL SIDEBAR ===== */
 
 .sidebar{
 width:250px;
@@ -34,8 +34,8 @@ flex-direction:column;
 gap:30px;
 position:sticky;
 top:0;
-transition: .35s ease;
 z-index:1000;
+transition: left 0.3s ease;
 }
 
 .logo{
@@ -61,9 +61,8 @@ background:#3B82F6;
 color:#FFFFFF;
 }
 
-/* Hide toggle menu button on desktop screens */
 .menu-btn{
-display:none;
+display:none; /* Hidden on Desktop */
 position:fixed;
 top:20px;
 left:15px;
@@ -455,36 +454,28 @@ font-size:18px;
 color:#64748B;
 }
 
-/* ===== TABLET & MOBILE MEDIA QUERIES ===== */
+/* ===== RESPONSIVE MEDIA QUERIES ===== */
 
-@media (max-width:900px){
+@media (max-width: 992px){
 
 body{
 flex-direction:column;
 }
 
 .menu-btn{
-display:block; /* Show mobile menu button */
-top: 25px;
+display:block; /* Shows ☰ on smaller viewport widths */
 }
 
 .sidebar {
 position:fixed;
-left:-260px; /* Hidden out of bounds by default */
+left:-260px; /* Hidden offscreen by default on mobile */
 top:0;
-width:250px;
 height:100vh;
-background:#1E3A8A;
-padding:30px;
-display:flex;
-flex-direction:column;
-gap:30px;
-transition:.35s ease;
-z-index:1000;
+width:250px;
 }
 
 .sidebar.show{
-left:0; /* Swipes in cleanly when active */
+left:0; /* Swipes layout outward when ☰ is clicked */
 }
 
 .main{
@@ -536,10 +527,6 @@ font-size:16px;
 .dots-right{
 display:none;
 }
-
-}
-
-@media(max-width:768px){
 
 .skills-container{
 grid-template-columns:1fr;
@@ -875,4 +862,63 @@ Instructional Designer with 1+ year of experience in Storyline 360, LMS Manageme
         </div>
         <div class="contact-details">
             <h3>LinkedIn</h3>
-            <p>
+            <p>linkedin.com/in/chandru-elearning</p>
+        </div>
+        <a href="https://www.linkedin.com/in/chandru-elearning" target="_blank" rel="noopener noreferrer" class="contact-btn">View Profile</a>
+    </div>
+
+    <div class="contact-card">
+        <div class="contact-icon">
+            <img src="images/location.png">
+        </div>
+        <div class="contact-details">
+            <h3>Location</h3>
+            <p>Bengaluru, Karnataka, India</p>
+        </div>
+        <a href="https://maps.google.com/?q=Bengaluru" target="_blank" class="contact-btn">View on Map</a>
+    </div>
+
+    <div class="availability">
+        <div class="availability-icon">
+            <img src="images/available.png">
+        </div>
+        <div>
+            <h3>Available for Freelance & Full-time Opportunities</h3>
+            <p>I usually reply within 24 hours.</p>
+        </div>
+    </div>
+</div>
+
+</div>   <script>
+function showSection(id, el) {
+    // Hide all sections
+    document.querySelectorAll(".section").forEach(function(sec){
+        sec.classList.remove("active");
+    });
+
+    // Display targeted section
+    const target = document.getElementById(id);
+    if(target){
+        target.classList.add("active");
+    }
+
+    // Reset active link styling
+    document.querySelectorAll(".menu a").forEach(function(link){
+        link.classList.remove("active");
+    });
+
+    if(el){
+        el.classList.add("active");
+    }
+
+    // Auto-dismiss sidebar drawer when links are tapped on tablet/mobile screens
+    document.getElementById("sidebar").classList.remove("show");
+}
+
+function toggleMenu(){
+    document.getElementById("sidebar").classList.toggle("show");
+}
+</script>
+
+</body>
+</html>
