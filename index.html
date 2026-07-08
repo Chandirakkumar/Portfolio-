@@ -4,706 +4,664 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Chandirakkumar S | Executive Portfolio Matrix Deck</title>
+  <title>Chandirakkumar S | Multimedia & Learning Architecture Portfolio</title>
   
-  <!-- ===== GLOBAL FONT AND STYLING REGISTRIES ===== -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   
   <style>
     /* ==========================================================================
-       ENTERPRISE TOKEN DESIGN SYSTEM (CSS CUSTOM PROPERTIES)
+       NEON CYBERPUNK DESIGN TOKENS
        ========================================================================== */
     :root {
-      /* --- Core Colors --- */
-      --bg-dark-900: #060911;
-      --bg-dark-800: #0b0f19;
-      --bg-dark-700: #111726;
-      --bg-dark-600: #151b2c;
-      --bg-dark-500: #1e263f;
-      --bg-dark-400: #2a3556;
+      --bg-darkest: #05070c;
+      --bg-panel: #0a0e1a;
+      --bg-card: #111728;
+      --bg-card-hover: #172037;
       
-      --accent-blue-base: #3b82f6;
-      --accent-blue-bright: #60a5fa;
-      --accent-blue-deep: #1d4ed8;
-      --accent-purple-base: #8b5cf6;
-      --accent-purple-bright: #a78bfa;
-      --accent-teal-base: #10b981;
-      --accent-orange-base: #f97316;
+      --neon-cyan: #00f2fe;
+      --neon-blue: #4facfe;
+      --neon-purple: #7f00ff;
+      --neon-pink: #ff007f;
       
-      --gradient-primary: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
-      --gradient-card-glow: radial-gradient(circle at top right, rgba(59, 130, 246, 0.16), transparent 60%);
-      --gradient-hero-glow: radial-gradient(circle at 85% 20%, rgba(139, 92, 246, 0.18) 0%, rgba(59, 130, 246, 0.05) 50%, transparent 100%);
+      --gradient-cyber: linear-gradient(135deg, var(--neon-blue) 0%, var(--neon-cyan) 100%);
+      --gradient-text: linear-gradient(135deg, #ffffff 30%, var(--neon-cyan) 100%);
       
-      --text-primary: #f8fafc;
-      --text-secondary: #e2e8f0;
+      --text-main: #f1f5f9;
       --text-muted: #94a3b8;
-      --text-dim: #64748b;
+      --text-dark: #475569;
       
-      --border-thin: 1px solid rgba(255, 255, 255, 0.06);
-      --border-medium: 1px solid rgba(255, 255, 255, 0.12);
-      
-      /* --- Spacing System --- */
-      --spacing-xs: 4px;
-      --spacing-sm: 8px;
-      --spacing-md: 16px;
-      --spacing-lg: 24px;
-      --spacing-xl: 32px;
-      --spacing-xxl: 48px;
-      --spacing-giant: 64px;
-      
-      /* --- Timing Transitions --- */
-      --transition-fast: 0.15s ease;
-      --transition-normal: 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-      --transition-slow: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-      
-      --z-index-header: 1000;
+      --border-glow: 1px solid rgba(0, 242, 254, 0.1);
+      --border-soft: 1px solid rgba(255, 255, 255, 0.05);
     }
 
     /* ==========================================================================
-       DEFENSIVE LAYOUT RESETS
+       CORE RESET & BASE RULES
        ========================================================================== */
-    *, *::before, *::after {
+    * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      outline: none;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
-    html {
-      font-size: 16px;
       scroll-behavior: smooth;
-      background-color: var(--bg-dark-900);
     }
 
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      background: var(--bg-dark-800);
-      color: var(--text-primary);
+      background-color: var(--bg-darkest);
+      color: var(--text-main);
       min-height: 100vh;
+      display: flex;
       overflow-x: hidden;
-      line-height: 1.75;
     }
 
-    a, button {
-      color: inherit;
-      text-decoration: none;
-      transition: all var(--transition-normal);
-    }
-
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    /* ==========================================================================
-       APEX NAVIGATION CONTROLLER MODULE
-       ========================================================================== */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: var(--z-index-header);
-      background: rgba(11, 15, 25, 0.8);
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
-      border-bottom: var(--border-thin);
-      width: 100%;
-    }
-
-    .nav-container {
-      max-width: 1300px;
-      margin: 0 auto;
-      padding: var(--spacing-md) var(--spacing-lg);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .brand-logo-wrapper {
-      display: flex;
-      align-items: center;
-      gap: var(--spacing-sm);
-    }
-
-    .brand-logo {
-      font-size: 22px;
-      font-weight: 800;
-      letter-spacing: -0.75px;
-      background: var(--gradient-primary);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      user-select: none;
-    }
-
-    .brand-indicator {
+    /* Custom Scrollbar for Right Side Content */
+    ::-webkit-scrollbar {
       width: 8px;
-      height: 8px;
-      background-color: var(--accent-teal-base);
-      border-radius: 50%;
-      display: inline-block;
-      box-shadow: 0 0 12px var(--accent-teal-base);
     }
-
-    nav ul {
-      display: flex;
-      align-items: center;
-      gap: var(--spacing-xs);
-      background: rgba(255, 255, 255, 0.02);
-      padding: 6px;
-      border-radius: 30px;
-      border: var(--border-thin);
+    ::-webkit-scrollbar-track {
+      background: var(--bg-darkest);
     }
-
-    nav a {
-      color: var(--text-muted);
-      padding: 8px 24px;
-      font-size: 14px;
-      font-weight: 600;
-      border-radius: 20px;
-      display: block;
+    ::-webkit-scrollbar-thumb {
+      background: var(--bg-card);
+      border-radius: 4px;
     }
-
-    nav a:hover {
-      color: var(--text-primary);
-      background: rgba(255, 255, 255, 0.05);
-    }
-
-    nav a.active {
-      color: var(--text-primary);
-      background: rgba(255, 255, 255, 0.1);
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    }
-
-    .menu-toggle {
-      display: none;
-      background: none;
-      border: none;
-      color: var(--text-primary);
-      font-size: 24px;
-      cursor: pointer;
-      width: 40px;
-      height: 40px;
-      border-radius: 8px;
-      align-items: center;
-      justify-content: center;
-      border: var(--border-thin);
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--neon-blue);
     }
 
     /* ==========================================================================
-       HERO BILLBOARD (BIOGRAPHICAL WRAPPER)
+       LEFT SIDEBAR CONTROL DECK (FIXED PERSISTENT POSITIONING)
        ========================================================================== */
-    .hero-billboard {
-      max-width: 1300px;
-      margin: var(--spacing-xl) auto;
-      padding: 0 var(--spacing-lg);
-      width: 100%;
-    }
-
-    .hero-wrapper {
-      background: var(--gradient-hero-glow), var(--bg-dark-600);
-      border: var(--border-thin);
-      border-radius: 32px;
-      padding: var(--spacing-xxl);
-      display: grid;
-      grid-template-columns: 260px 1fr;
-      gap: var(--spacing-giant);
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
-    }
-
-    .profile-frame {
-      position: relative;
-      width: 260px;
-      height: 260px;
-      border-radius: 28px;
-      background: var(--bg-dark-700);
-      padding: 6px;
-      border: var(--border-medium);
-    }
-
-    .profile-frame img {
-      width: 100%;
-      height: 100%;
-      border-radius: 22px;
-      object-fit: cover;
-    }
-
-    .status-badge {
-      position: absolute;
-      bottom: -14px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: var(--accent-teal-base);
-      color: #ffffff;
-      font-size: 11px;
-      font-weight: 800;
-      text-transform: uppercase;
-      padding: 6px 18px;
-      border-radius: 20px;
-      letter-spacing: 1.2px;
-      box-shadow: 0 8px 20px rgba(16, 185, 129, 0.4);
-      white-space: nowrap;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .status-pulse-dot {
-      width: 6px;
-      height: 6px;
-      background-color: #ffffff;
-      border-radius: 50%;
-      animation: statusPulse 2s infinite;
-    }
-
-    @keyframes statusPulse {
-      0% { transform: scale(0.9); opacity: 1; }
-      50% { transform: scale(1.4); opacity: 0.5; }
-      100% { transform: scale(0.9); opacity: 1; }
-    }
-
-    .hero-meta h1 {
-      font-size: 52px;
-      font-weight: 800;
-      letter-spacing: -1.75px;
-      line-height: 1.05;
-      margin-bottom: var(--spacing-sm);
-    }
-
-    .hero-meta h2 {
-      font-size: 22px;
-      font-weight: 500;
-      color: var(--accent-blue-base);
-      margin-bottom: var(--spacing-md);
-    }
-
-    .hero-meta p {
-      font-size: 17px;
-      color: var(--text-muted);
-      max-width: 780px;
-      margin-bottom: var(--spacing-xl);
-    }
-
-    .meta-pills {
-      display: flex;
-      gap: var(--spacing-sm);
-      flex-wrap: wrap;
-    }
-
-    .pill {
-      background: rgba(255, 255, 255, 0.03);
-      border: var(--border-thin);
-      padding: 8px 18px;
-      border-radius: 30px;
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--text-secondary);
-    }
-
-    /* ==========================================================================
-       VIEW DECK ANIMATION INFRASTRUCTURE
-       ========================================================================== */
-    main {
-      max-width: 1300px;
-      margin: 0 auto;
-      padding: 0 var(--spacing-lg) var(--spacing-giant);
-      width: 100%;
-    }
-
-    .view-deck {
-      display: none;
-      width: 100%;
-    }
-
-    .view-deck.active {
-      display: block;
-      animation: deckShift var(--transition-slow) forwards;
-    }
-
-    @keyframes deckShift {
-      from { opacity: 0; transform: translateY(24px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .deck-header-block {
-      margin-bottom: var(--spacing-xxl);
-    }
-
-    .deck-title {
-      font-size: 32px;
-      font-weight: 800;
-      letter-spacing: -0.75px;
-      margin-bottom: var(--spacing-xs);
-    }
-
-    .deck-subtitle {
-      color: var(--text-muted);
-      font-size: 16px;
-    }
-
-    /* ==========================================================================
-       METRIC ENGINE GRID (DASHBOARD GRID SYSTEMS)
-       ========================================================================== */
-    .metric-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
-      gap: var(--spacing-lg);
-      width: 100%;
-    }
-
-    .stat-card {
-      background: var(--bg-dark-600);
-      border: var(--border-thin);
-      border-radius: 24px;
-      padding: var(--spacing-xl);
-      position: relative;
-      transition: all var(--transition-normal);
+    .control-deck {
+      width: 380px;
+      height: 100vh;
+      background: var(--bg-panel);
+      border-right: var(--border-soft);
+      position: fixed;
+      top: 0;
+      left: 0;
+      padding: 50px 40px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      min-height: 200px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      z-index: 100;
+      box-shadow: 10px 0 30px rgba(0,0,0,0.5);
     }
 
-    .stat-card::before {
+    .deck-top {
+      width: 100%;
+    }
+
+    .profile-avatar-box {
+      position: relative;
+      width: 130px;
+      height: 130px;
+      border-radius: 30px;
+      margin-bottom: 30px;
+      padding: 4px;
+      background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
+    }
+
+    .profile-avatar-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 26px;
+      background: var(--bg-panel);
+    }
+
+    .live-status-dot {
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      width: 16px;
+      height: 16px;
+      background: var(--neon-cyan);
+      border: 3px solid var(--bg-panel);
+      border-radius: 50%;
+      box-shadow: 0 0 12px var(--neon-cyan);
+    }
+
+    .identity h1 {
+      font-size: 32px;
+      font-weight: 800;
+      letter-spacing: -1px;
+      line-height: 1.1;
+      margin-bottom: 10px;
+      background: var(--gradient-text);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .identity h2 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--neon-cyan);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 35px;
+    }
+
+    /* Linear Navigation Trackers */
+    .deck-nav ul {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .deck-nav a {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      transition: all 0.3s ease;
+    }
+
+    .nav-line {
+      width: 24px;
+      height: 2px;
+      background: var(--text-dark);
+      transition: all 0.3s ease;
+    }
+
+    .deck-nav a:hover, .deck-nav a.active {
+      color: var(--text-main);
+    }
+
+    .deck-nav a:hover .nav-line, .deck-nav a.active .nav-line {
+      width: 50px;
+      background: var(--neon-cyan);
+      box-shadow: 0 0 8px var(--neon-cyan);
+    }
+
+    .deck-footer p {
+      font-size: 12px;
+      color: var(--text-dark);
+      letter-spacing: 0.5px;
+    }
+
+    /* ==========================================================================
+       RIGHT SIDE SCROLLABLE WORKSPACE CONTENT PANELS
+       ========================================================================== */
+    .scroll-workspace {
+      margin-left: 380px;
+      flex: 1;
+      padding: 80px 100px;
+      max-width: 1200px;
+    }
+
+    .content-panel {
+      padding-top: 40px;
+      margin-bottom: 120px;
+    }
+
+    .panel-meta-title {
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--neon-blue);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+    }
+
+    .panel-main-title {
+      font-size: 44px;
+      font-weight: 800;
+      letter-spacing: -1.5px;
+      margin-bottom: 40px;
+    }
+
+    /* ==========================================================================
+       COMPREHENSIVE CONTENT DATA GRID STYLING
+       ========================================================================== */
+       
+    /* Intro Statement Frame */
+    .biography-frame {
+      font-size: 20px;
+      line-height: 1.7;
+      color: var(--text-muted);
+      margin-bottom: 50px;
+      max-width: 800px;
+    }
+
+    .biography-frame strong {
+      color: var(--text-main);
+    }
+
+    /* Dashboard Metric Grid Blocks */
+    .cyber-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 24px;
+    }
+
+    .cyber-card {
+      background: var(--bg-card);
+      border: var(--border-soft);
+      border-radius: 20px;
+      padding: 35px;
+      transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cyber-card::before {
       content: '';
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      border-radius: 24px;
-      background: var(--gradient-card-glow);
-      opacity: 0.5;
+      background: radial-gradient(circle at top right, rgba(0, 242, 254, 0.08), transparent 50%);
       pointer-events: none;
     }
 
-    .stat-card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(59, 130, 246, 0.3);
-      background: var(--bg-dark-500);
-      box-shadow: 0 15px 35px rgba(59, 130, 246, 0.1);
+    .cyber-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(0, 242, 254, 0.3);
+      background: var(--bg-card-hover);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.4);
     }
 
-    .stat-icon-wrapper {
-      font-size: 32px;
-      margin-bottom: var(--spacing-md);
-      background: rgba(255, 255, 255, 0.03);
-      width: 56px;
-      height: 56px;
-      border-radius: 14px;
+    .card-icon-frame {
+      font-size: 28px;
+      margin-bottom: 20px;
+      width: 50px;
+      height: 50px;
+      background: rgba(255,255,255,0.02);
+      border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
-      border: var(--border-thin);
+      border: var(--border-soft);
     }
 
-    .stat-card h3 {
-      font-size: 19px;
+    .cyber-card h3 {
+      font-size: 20px;
       font-weight: 700;
-      margin-bottom: var(--spacing-xs);
-      letter-spacing: -0.25px;
+      margin-bottom: 8px;
+      letter-spacing: -0.5px;
     }
 
-    .stat-card p {
-      color: var(--text-muted);
+    .cyber-card p {
       font-size: 14px;
+      color: var(--text-muted);
       line-height: 1.6;
     }
 
-    /* ==========================================================================
-       PRODUCTION SHOWCASE ENVIRONMENT METRICS
-       ========================================================================== */
-    .showcase-grid {
+    /* Showcase Project Layout Engine */
+    .project-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .project-row-card {
+      background: var(--bg-card);
+      border: var(--border-soft);
+      border-radius: 24px;
+      overflow: hidden;
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
-      gap: var(--spacing-xl);
+      grid-template-columns: 400px 1fr;
+      min-height: 260px;
+      transition: all 0.3s ease;
+    }
+
+    .project-row-card:hover {
+      border-color: rgba(0, 242, 254, 0.2);
+      transform: translateY(-4px);
+    }
+
+    .project-visual-wrapper {
       width: 100%;
-    }
-
-    .showcase-card {
-      background: var(--bg-dark-600);
-      border: var(--border-thin);
-      border-radius: 28px;
+      height: 100%;
+      background: #000;
       overflow: hidden;
-      transition: all var(--transition-normal);
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
     }
 
-    .showcase-card:hover {
-      transform: translateY(-8px);
-      border-color: rgba(255, 255, 255, 0.12);
-    }
-
-    .media-vault {
-      width: 100%;
-      height: 230px;
-      overflow: hidden;
-      background: #010409;
-    }
-
-    .media-vault img {
+    .project-visual-wrapper img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      opacity: 0.8;
-      transition: transform var(--transition-slow);
+      opacity: 0.7;
+      transition: transform 0.5s ease;
     }
 
-    .showcase-card:hover .media-vault img {
-      transform: scale(1.05);
-      opacity: 0.95;
+    .project-row-card:hover .project-visual-wrapper img {
+      transform: scale(1.03);
+      opacity: 0.9;
     }
 
-    .showcase-content {
-      padding: var(--spacing-xl);
+    .project-text-wrapper {
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
-    .showcase-content h3 {
-      font-size: 22px;
+    .project-text-wrapper h3 {
+      font-size: 24px;
       font-weight: 700;
-      margin-bottom: var(--spacing-xs);
+      margin-bottom: 12px;
+      letter-spacing: -0.5px;
     }
 
-    .showcase-content p {
-      color: var(--text-muted);
+    .project-text-wrapper p {
       font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.6;
     }
 
-    /* ==========================================================================
-       SKILL VECTOR NODE INFRASTRUCTURES
-       ========================================================================== */
-    .skills-matrix {
+    /* Core Competencies Matrix Blocks */
+    .matrix-flex-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: var(--spacing-lg);
-      width: 100%;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
     }
 
-    .matrix-node {
-      background: var(--bg-dark-600);
-      border: var(--border-thin);
-      border-radius: 24px;
-      padding: var(--spacing-lg) var(--spacing-xl);
+    .vector-skill-node {
+      background: var(--bg-panel);
+      border: var(--border-soft);
+      border-radius: 20px;
+      padding: 24px;
       display: flex;
       align-items: center;
-      gap: var(--spacing-lg);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      gap: 20px;
+      transition: all 0.25s ease;
     }
 
-    .node-graphic-wrapper {
-      width: 48px;
-      height: 48px;
+    .vector-skill-node:hover {
+      background: var(--bg-card);
+      border-color: rgba(255,255,255,0.1);
     }
 
-    .node-graphic-wrapper svg {
+    .vector-graphic-box {
+      width: 44px;
+      height: 44px;
+      flex-shrink: 0;
+    }
+
+    .vector-graphic-box svg {
       width: 100%;
       height: 100%;
     }
 
-    .node-info h3 {
-      font-size: 16px;
+    .vector-meta-info h4 {
+      font-size: 15px;
       font-weight: 700;
-      margin-bottom: 4px;
+      margin-bottom: 2px;
     }
 
-    .node-badge {
-      display: inline-block;
+    .vector-badge-label {
       font-size: 11px;
       font-weight: 800;
-      color: var(--accent-blue-bright);
-      background: rgba(59, 130, 246, 0.12);
-      padding: 3px 12px;
-      border-radius: 12px;
+      letter-spacing: 0.5px;
+      color: var(--neon-cyan);
       text-transform: uppercase;
-      letter-spacing: 0.75px;
     }
     
-    .node-badge.expert {
-      color: var(--accent-purple-bright);
-      background: rgba(139, 92, 246, 0.12);
+    .vector-badge-label.master {
+      color: var(--neon-purple);
     }
 
-    /* ==========================================================================
-       INBOUND HUB AND COMMUNICATIONS CORE LAYERS
-       ========================================================================== */
-    .hub-layout {
+    /* Contact Architecture Modules */
+    .comms-split {
       display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: var(--spacing-xl);
-      width: 100%;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 40px;
     }
 
-    .hub-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
-      gap: var(--spacing-lg);
-    }
-
-    .hub-tile {
-      background: var(--bg-dark-600);
-      border: var(--border-thin);
-      border-radius: 24px;
-      padding: var(--spacing-xl);
+    .comms-channel-deck {
       display: flex;
       flex-direction: column;
+      gap: 20px;
+    }
+
+    .comms-strip-card {
+      background: var(--bg-card);
+      border: var(--border-soft);
+      border-radius: 20px;
+      padding: 24px 30px;
+      display: flex;
       justify-content: space-between;
-      min-height: 170px;
+      align-items: center;
     }
 
-    .hub-meta h3 {
-      font-size: 13px;
-      color: var(--text-dim);
+    .strip-meta h4 {
+      font-size: 12px;
+      color: var(--text-dark);
       text-transform: uppercase;
-      letter-spacing: 1.2px;
-      margin-bottom: 6px;
-      font-weight: 800;
+      letter-spacing: 1px;
+      margin-bottom: 2px;
     }
 
-    .hub-meta p {
-      font-size: 17px;
+    .strip-meta p {
+      font-size: 16px;
       font-weight: 600;
     }
 
-    .action-anchor {
-      background: rgba(255, 255, 255, 0.03);
-      border: var(--border-thin);
-      padding: 12px var(--spacing-md);
-      border-radius: 14px;
-      text-align: center;
-      font-size: 14px;
+    .strip-action-btn {
+      background: rgba(255,255,255,0.03);
+      border: var(--border-soft);
+      padding: 10px 24px;
+      border-radius: 12px;
+      font-size: 13px;
       font-weight: 700;
     }
 
-    .action-anchor:hover {
-      background: var(--text-primary);
-      color: var(--bg-dark-900);
+    .strip-action-btn:hover {
+      background: var(--text-main);
+      color: var(--bg-darkest);
     }
 
-    .presence-panel {
-      background: linear-gradient(180deg, rgba(59, 130, 246, 0.08) 0%, transparent 100%), var(--bg-dark-600);
-      border: var(--border-thin);
-      border-radius: 28px;
-      padding: var(--spacing-xxl) var(--spacing-xl);
+    .panel-terminal-aside {
+      background: linear-gradient(180deg, rgba(0, 242, 254, 0.05) 0%, transparent 100%), var(--bg-card);
+      border: var(--border-glow);
+      border-radius: 24px;
+      padding: 40px;
       text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
 
-    .presence-icon-avatar {
-      width: 64px;
-      height: 64px;
-      background: rgba(59, 130, 246, 0.1);
+    .terminal-radar-hub {
+      width: 50px;
+      height: 50px;
       border-radius: 50%;
+      background: rgba(0, 242, 254, 0.1);
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 0 auto var(--spacing-lg);
-      color: var(--accent-blue-base);
-      font-size: 28px;
+      font-size: 24px;
+      color: var(--neon-cyan);
+      margin-bottom: 20px;
+      box-shadow: 0 0 20px rgba(0, 242, 254, 0.2);
+    }
+
+    .panel-terminal-aside h4 {
+      font-size: 20px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .panel-terminal-aside p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.5;
     }
 
     /* ==========================================================================
-       MEDIA ADAPTATION GRID MATRIX OVERLAYS
+       MEDIA PLATFORM RESPONSIBILITY OVERLAYS
        ========================================================================== */
-    @media (max-width: 1024px) {
-      .hero-wrapper {
-        grid-template-columns: 1fr;
-        text-align: center;
-        padding: var(--spacing-xl);
-      }
-      .profile-frame { margin: 0 auto; }
-      .meta-pills { justify-content: center; }
-      .hub-layout { grid-template-columns: 1fr; }
-    }
-
-    @media (max-width: 768px) {
-      nav {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
+    @media (max-width: 1100px) {
+      body { flex-direction: column; }
+      .control-deck {
         width: 100%;
-        background: var(--bg-dark-900);
-        padding: var(--spacing-lg);
-        border-bottom: var(--border-medium);
+        height: auto;
+        position: relative;
+        padding: 40px;
       }
-      nav.open { display: block; }
-      nav ul { flex-direction: column; gap: var(--spacing-sm); }
-      nav a { text-align: center; width: 100%; }
-      .menu-toggle { display: flex; }
-      .hero-billboard, main { padding: 0 var(--spacing-md) var(--spacing-xl); }
-      .hero-meta h1 { font-size: 36px; }
-      .showcase-grid { grid-template-columns: 1fr; }
+      .deck-nav { display: none; } /* Hide tracker lines on small screens */
+      .scroll-workspace {
+        margin-left: 0;
+        padding: 40px var(--spacing-md);
+      }
+      .project-row-card { grid-template-columns: 1fr; }
+      .project-visual-wrapper { height: 200px; }
+      .comms-split { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
-  <!-- ==========================================================================
-       GLOBAL APEX NAVIGATION CONTROL LAYER
-       ========================================================================== -->
-  <header>
-    <div class="nav-container">
-      <div class="brand-logo-wrapper">
-        <span class="brand-indicator"></span>
-        <div class="brand-logo">CHANDIRAKKUMAR S</div>
-      </div>
-      <button class="menu-toggle" id="menu-trigger" aria-label="Toggle Navigation Control Drawer">☰</button>
-      <nav id="navigation-deck">
-        <ul>
-          <li><a href="javascript:void(0)" class="active" data-target="dashboard">Dashboard</a></li>
-          <li><a href="javascript:void(0)" data-target="projects">Projects</a></li>
-          <li><a href="javascript:void(0)" data-target="skills">Skills</a></li>
-          <li><a href="javascript:void(0)" data-target="contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <!-- ==========================================================================
-       BIOGRAPHICAL HERO BILLBOARD DISPLAY LAYER
-       ========================================================================== -->
-  <section class="hero-billboard">
-    <div class="hero-wrapper">
-      <div class="profile-frame">
-        <img src="IMG_20260409_223924.jpg" alt="Chandirakkumar S Profile Asset Image">
-        <div class="status-badge">
-          <span class="status-pulse-dot"></span>Available Now
-        </div>
-      </div>
-      <div class="hero-meta">
-        <h1>Chandirakkumar S</h1>
-        <h2>Instructional Designer & Multimedia Developer</h2>
-        <p>Architecting interactive corporate learning frameworks, scenario-based modules, and fluid visual narratives. Specialized in end-to-end rapid architecture and clean packaging for global enterprise Learning Management Systems.</p>
-        <div class="meta-pills">
-          <div class="pill">📍 Bengaluru, Karnataka, India</div>
-          <div class="pill">💼 100+ Production Modules</div>
-          <div class="pill">⚡ Articulate Storyline Expert</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==========================================================================
-       PRIMARY OPERATIONS CONTAINER SPACE (VIEW SWITCH MATRIX)
-       ========================================================================== -->
-  <main>
-
-    <!-- METRIC DECK INSTANCE VIEW LAYER -->
-    <div id="dashboard" class="view-deck active">
-      <div class="deck-header-block">
-        <h2 class="deck-title">Dashboard Matrix</h2>
-        <p class="deck-subtitle">Operational core metrics mapping across active educational asset development pipelines.</p>
+  <aside class="control-deck">
+    <div class="deck-top">
+      <div class="profile-avatar-box">
+        <img src="IMG_20260409_223924.jpg" alt="Chandirakkumar S Photo Portrait">
+        <div class="live-status-dot"></div>
       </div>
       
-      <section class="metric-grid">
-        <div class="stat-card">
-          <div class="stat-icon-wrapper">📘</div>
-          <div>
-            <h3>100+ Live Modules</h3>
-            <p>High-fidelity,
+      <div class="identity">
+        <h1>Chandirakkumar S</h1>
+        <h2>Instructional Designer & Multimedia Developer</h2>
+      </div>
+
+      <nav class="deck-nav">
+        <ul>
+          <li><a href="#biography-section" class="active"><span class="nav-line"></span>Overview</a></li>
+          <li><a href="#projects-section"><span class="nav-line"></span>Production Vault</a></li>
+          <li><a href="#skills-section"><span class="nav-line"></span>Competencies</a></li>
+          <li><a href="#contact-section"><span class="nav-line"></span>Inbound Hub</a></li>
+        </ul>
+      </nav>
+    </div><div class="deck-footer">
+      <p>&copy; 2026 Architectural Deck Engine</p>
+    </div>
+  </aside>
+
+  <main class="scroll-workspace">
+
+    <section id="biography-section" class="content-panel">
+      <p class="panel-meta-title">01 // Matrix Overview</p>
+      <h2 class="panel-main-title">Dashboard Matrix</h2>
+      
+      <div class="biography-frame">
+        Instructional Designer based in <strong>Bengaluru, India</strong> with over 1 year of experience creating rich eLearning content. Specializing in advanced interactions using <strong>Articulate Storyline 360</strong>, custom corporate environments, and high-impact motion graphic assets.
+      </div>
+
+      <div class="cyber-grid">
+        <div class="cyber-card">
+          <div class="card-icon-frame">📘</div>
+          <h3>100+ Live Modules</h3>
+          <p>High-fidelity interactive training components successfully launched into live multi-LMS standard engineering infrastructures.</p>
+        </div>
+        <div class="cyber-card">
+          <div class="card-icon-frame">🎯</div>
+          <h3>Instructional Design</h3>
+          <p>Scenario-based branching models engineered explicitly to target performance diagnostics across diverse learner profiles.</p>
+        </div>
+        <div class="cyber-card">
+          <div class="card-icon-frame">💻</div>
+          <h3>Storyline Architecture</h3>
+          <p>Advanced interactions configured via logical variables, conditional triggers, custom layers, and exact tracking metrics.</p>
+        </div>
+        <div class="cyber-card">
+          <div class="card-icon-frame">📦</div>
+          <h3>SCORM Integration</h3>
+          <p>Flawless packaging and asset compression tracking bookmarks securely across large global corporate networks.</p>
+        </div>
+        <div class="cyber-card">
+          <div class="card-icon-frame">🎬</div>
+          <h3>Motion Graphics</h3>
+          <p>Constructing visual learning media sequences compiled through professional high-end non-linear editing pipelines.</p>
+        </div>
+        <div class="cyber-card">
+          <div class="card-icon-frame">🎨</div>
+          <h3>Flat Vector Design</h3>
+          <p>Modern visual style execution utilizing crisp layout structures and iconography built for speed and visual clarity.</p>
+        </div>
+        <div class="cyber-card">
+          <div class="card-icon-frame">⚙️</div>
+          <h3>LearnDash LMS</h3>
+          <p>Course pipeline configuration, testing parameters, grading logic trees, and remote system integration blocks.</p>
+        </div>
+        <div class="cyber-card">
+          <div class="card-icon-frame">☁️</div>
+          <h3>QuickLearn Setup</h3>
+          <p>Deploying remote tracking paths designed for immediate, robust validation tests across browser viewpoints.</p>
+        </div>
+        <div class="cyber-card">
+          <div class="card-icon-frame">📝</div>
+          <h3>Knowledge Audits</h3>
+          <p>Structuring dynamic assessment modules, comprehensive scenario blocks, and immediate diagnostic scoring layers.</p>
+        </div>
+        <div class="cyber-card">
+          <div class="card-icon-frame">🚀</div>
+          <h3>Rapid Production</h3>
+          <p>Transforming complex technical learning requirements into organized, functional interactives quickly and efficiently.</p>
+        </div>
+      </div></section>
+
+    <section id="projects-section" class="content-panel">
+      <p class="panel-meta-title">02 // Production Archives</p>
+      <h2 class="panel-main-title">Production Vault</h2>
+      
+      <div class="project-stack">
+        <article class="project-row-card">
+          <div class="project-visual-wrapper">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71" alt="Articulate Simulation Screen">
+          </div>
+          <div class="project-text-wrapper">
+            <h3>Advanced Interactive eLearning</h3>
+            <p>High-end simulation scenarios and branching logic built inside Storyline 360 to test decision paths and gather behavioral tracking data parameters cleanly.</p>
+          </div>
+        </article>
+
+        <article class="project-row-card">
+          <div class="project-visual-wrapper">
+            <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d" alt="Video Editing Workplace Monitor Screen">
+          </div>
+          <div class="project-text-wrapper">
+            <h3>Multimedia Explainer Frameworks</h3>
+            <p>Polished corporate educational video content and title animations crafted across dynamic timelines for immediate engagement and clarity.</p>
+          </div>
+        </article>
+
+        <article class="project-row-card">
+          <div class="project-visual-wrapper">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f" alt="Corporate Typography Slide Frameworks">
+          </div>
+          <div class="project-text-wrapper">
+            <h3>Corporate Slide Presentations</h3>
+            <p>Clean modern structural slide decks organized with deep typographical styling and visual hierarchies to optimize enterprise technical alignment.</p>
+          </div>
+        </article>
+      </div></section>
+
+    <section id="skills-section" class="content-panel">
+      <p class="panel-meta-title">03 // Proficiencies Engine</p>
+      <h2 class="panel-main-title">Core Competencies</h2>
+      
+      <div class="matrix-flex-grid">
+        <div class="vector-skill-node">
+          <div class="vector-graphic-box">
+            <svg viewBox="0 0 128 128"><rect width="128" height="128" rx="24" fill="#7c3aed"/><text x="50%" y="64%" font-family="inherit" font-weight="800" font-size="48" fill="#fff" text-anchor="middle">As</text></svg>
+          </div>
+          <div class="vector-meta-info">
+            <h4>Articulate Storyline</h4>
+            <span class="vector-badge-label master">Expert</span>
+          </div>
+        </div>
+
+        <div class="vector-skill-node">
+          <div class="vector-graphic-box">
+            <svg viewBox="0 0 128 128"><rect width="128" height="128" rx="24" fill="#00005c"/><rect x="4" y="4" width="120" height="120" rx="20" fill="none" stroke="#ea580c" stroke-width="4"/><text x="50%" y="64%" font-family="inherit" font-weight="800" font-size="44" fill="#ea580c" text-anchor="middle">Pr</text></svg>
+          </div>
+      
