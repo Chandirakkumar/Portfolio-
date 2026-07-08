@@ -1,667 +1,895 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Chandirakkumar S | Multimedia & Learning Architecture Portfolio</title>
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  
-  <style>
-    /* ==========================================================================
-       NEON CYBERPUNK DESIGN TOKENS
-       ========================================================================== */
-    :root {
-      --bg-darkest: #05070c;
-      --bg-panel: #0a0e1a;
-      --bg-card: #111728;
-      --bg-card-hover: #172037;
-      
-      --neon-cyan: #00f2fe;
-      --neon-blue: #4facfe;
-      --neon-purple: #7f00ff;
-      --neon-pink: #ff007f;
-      
-      --gradient-cyber: linear-gradient(135deg, var(--neon-blue) 0%, var(--neon-cyan) 100%);
-      --gradient-text: linear-gradient(135deg, #ffffff 30%, var(--neon-cyan) 100%);
-      
-      --text-main: #f1f5f9;
-      --text-muted: #94a3b8;
-      --text-dark: #475569;
-      
-      --border-glow: 1px solid rgba(0, 242, 254, 0.1);
-      --border-soft: 1px solid rgba(255, 255, 255, 0.05);
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chandirakkumar | Dashboard Portfolio</title>
 
-    /* ==========================================================================
-       CORE RESET & BASE RULES
-       ========================================================================== */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+<style>
 
-    body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      background-color: var(--bg-darkest);
-      color: var(--text-main);
-      min-height: 100vh;
-      display: flex;
-      overflow-x: hidden;
-    }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
-    /* Custom Scrollbar for Right Side Content */
-    ::-webkit-scrollbar {
-      width: 8px;
-    }
-    ::-webkit-scrollbar-track {
-      background: var(--bg-darkest);
-    }
-    ::-webkit-scrollbar-thumb {
-      background: var(--bg-card);
-      border-radius: 4px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background: var(--neon-blue);
-    }
+body{
+font-family:'Inter',sans-serif;
+background:#0F172A; /* Deep slate professional dark background */
+color:#E2E8F0; /* Clean readable off-white text */
+display:flex;
+}
 
-    /* ==========================================================================
-       LEFT SIDEBAR CONTROL DECK (FIXED PERSISTENT POSITIONING)
-       ========================================================================== */
-    .control-deck {
-      width: 380px;
-      height: 100vh;
-      background: var(--bg-panel);
-      border-right: var(--border-soft);
-      position: fixed;
-      top: 0;
-      left: 0;
-      padding: 50px 40px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      z-index: 100;
-      box-shadow: 10px 0 30px rgba(0,0,0,0.5);
-    }
+/* ===== GLOBAL SIDEBAR ===== */
 
-    .deck-top {
-      width: 100%;
-    }
+.sidebar{
+width:260px;
+height:100vh;
+background:#1E293B; /* Slate gray side control deck */
+padding:40px 30px;
+display:flex;
+flex-direction:column;
+gap:35px;
+position:sticky;
+top:0;
+z-index:1000;
+border-right:1px solid rgba(255, 255, 255, 0.05);
+}
 
-    .profile-avatar-box {
-      position: relative;
-      width: 130px;
-      height: 130px;
-      border-radius: 30px;
-      margin-bottom: 30px;
-      padding: 4px;
-      background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
-    }
+.logo{
+font-size:24px;
+font-weight:700;
+color:#FFFFFF;
+letter-spacing:-0.5px;
+}
 
-    .profile-avatar-box img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 26px;
-      background: var(--bg-panel);
-    }
+.menu {
+display:flex;
+flex-direction:column;
+gap:8px;
+}
 
-    .live-status-dot {
-      position: absolute;
-      top: -5px;
-      right: -5px;
-      width: 16px;
-      height: 16px;
-      background: var(--neon-cyan);
-      border: 3px solid var(--bg-panel);
-      border-radius: 50%;
-      box-shadow: 0 0 12px var(--neon-cyan);
-    }
+.menu a{
+text-decoration:none;
+color:#94A3B8; /* Balanced muted grey navigation text */
+padding:12px 18px;
+border-radius:12px;
+display:block;
+transition:.25s ease;
+font-weight:600;
+cursor:pointer;
+font-size:15px;
+}
 
-    .identity h1 {
-      font-size: 32px;
-      font-weight: 800;
-      letter-spacing: -1px;
-      line-height: 1.1;
-      margin-bottom: 10px;
-      background: var(--gradient-text);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+.menu a:hover{
+color:#FFFFFF;
+background:rgba(255, 255, 255, 0.03);
+}
 
-    .identity h2 {
-      font-size: 15px;
-      font-weight: 600;
-      color: var(--neon-cyan);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 35px;
-    }
+.menu a.active{
+background:#3B82F6; /* Vibrant active selection indigo accent */
+color:#FFFFFF;
+box-shadow:0 4px 14px rgba(59, 130, 246, 0.3);
+}
 
-    /* Linear Navigation Trackers */
-    .deck-nav ul {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
+.menu-btn{
+display:none; /* Hidden on Desktop viewports */
+position:fixed;
+top:20px;
+left:20px;
+font-size:24px;
+background:#3B82F6;
+color:#fff;
+border:none;
+padding:12px 16px;
+border-radius:12px;
+cursor:pointer;
+z-index:1001;
+box-shadow:0 8px 24px rgba(0,0,0,0.3);
+transition:.25s ease;
+}
 
-    .deck-nav a {
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      transition: all 0.3s ease;
-    }
+.menu-btn:hover{
+background:#2563EB;
+}
 
-    .nav-line {
-      width: 24px;
-      height: 2px;
-      background: var(--text-dark);
-      transition: all 0.3s ease;
-    }
+/* ===== MAIN CONTENT ===== */
 
-    .deck-nav a:hover, .deck-nav a.active {
-      color: var(--text-main);
-    }
+.main{
+    flex:1;
+    width:100%;
+    max-width:1150px;
+    margin:0 auto;
+    padding:60px 40px;
+}
 
-    .deck-nav a:hover .nav-line, .deck-nav a.active .nav-line {
-      width: 50px;
-      background: var(--neon-cyan);
-      box-shadow: 0 0 8px var(--neon-cyan);
-    }
+.section{
+display:none;
+}
 
-    .deck-footer p {
-      font-size: 12px;
-      color: var(--text-dark);
-      letter-spacing: 0.5px;
-    }
+.section.active{
+display:block;
+animation:fade .4s cubic-bezier(0.16, 1, 0.3, 1);
+}
 
-    /* ==========================================================================
-       RIGHT SIDE SCROLLABLE WORKSPACE CONTENT PANELS
-       ========================================================================== */
-    .scroll-workspace {
-      margin-left: 380px;
-      flex: 1;
-      padding: 80px 100px;
-      max-width: 1200px;
-    }
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(12px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
 
-    .content-panel {
-      padding-top: 40px;
-      margin-bottom: 120px;
-    }
+/* ===== ABOUT CARD ===== */
 
-    .panel-meta-title {
-      font-size: 14px;
-      font-weight: 800;
-      color: var(--neon-blue);
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      margin-bottom: 12px;
-    }
+.about-card{
+position:relative;
+display:flex;
+align-items:center;
+gap:40px;
+background:#1E293B; /* Premium matching container slate background */
+padding:40px;
+border-radius:24px;
+border:1px solid rgba(255, 255, 255, 0.05);
+box-shadow:0 20px 40px rgba(0,0,0,.2);
+margin-bottom:50px;
+overflow:hidden;
+}
 
-    .panel-main-title {
-      font-size: 44px;
-      font-weight: 800;
-      letter-spacing: -1.5px;
-      margin-bottom: 40px;
-    }
+.profile-image{
+position:relative;
+width:200px;
+height:200px;
+border-radius:50%;
+border:4px solid #3B82F6;
+padding:6px;
+background:#1E293B;
+flex-shrink:0;
+}
 
-    /* ==========================================================================
-       COMPREHENSIVE CONTENT DATA GRID STYLING
-       ========================================================================== */
-       
-    /* Intro Statement Frame */
-    .biography-frame {
-      font-size: 20px;
-      line-height: 1.7;
-      color: var(--text-muted);
-      margin-bottom: 50px;
-      max-width: 800px;
-    }
+.profile-image img{
+width:100%;
+height:100%;
+border-radius:50%;
+object-fit:cover;
+}
 
-    .biography-frame strong {
-      color: var(--text-main);
-    }
+.profile-dot{
+position:absolute;
+bottom:8px;
+right:8px;
+width:24px;
+height:24px;
+background:#10B981; /* High-visibility online green beacon */
+border:4px solid #1E293B;
+border-radius:50%;
+box-shadow:0 0 12px #10B981;
+}
 
-    /* Dashboard Metric Grid Blocks */
-    .cyber-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 24px;
-    }
+.about-info{
+flex:1;
+z-index:2;
+}
 
-    .cyber-card {
-      background: var(--bg-card);
-      border: var(--border-soft);
-      border-radius: 20px;
-      padding: 35px;
-      transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-      position: relative;
-      overflow: hidden;
-    }
+.about-info h2{
+font-size:38px;
+font-weight:800;
+margin-bottom:8px;
+color:#FFFFFF;
+letter-spacing:-1px;
+}
 
-    .cyber-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: radial-gradient(circle at top right, rgba(0, 242, 254, 0.08), transparent 50%);
-      pointer-events: none;
-    }
+.about-info h3{
+font-size:18px;
+font-weight:600;
+margin-bottom:18px;
+color:#60A5FA; /* High-contrast crisp light-blue subtitle text */
+letter-spacing:0.25px;
+}
 
-    .cyber-card:hover {
-      transform: translateY(-5px);
-      border-color: rgba(0, 242, 254, 0.3);
-      background: var(--bg-card-hover);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.4);
-    }
+.about-text{
+font-size:16px;
+line-height:1.75;
+color:#94A3B8;
+margin-bottom:18px;
+}
 
-    .card-icon-frame {
-      font-size: 28px;
-      margin-bottom: 20px;
-      width: 50px;
-      height: 50px;
-      background: rgba(255,255,255,0.02);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: var(--border-soft);
-    }
+.location{
+font-size:15px;
+font-weight:600;
+color:#CBD5E1;
+display:flex;
+align-items:center;
+gap:6px;
+}
 
-    .cyber-card h3 {
-      font-size: 20px;
-      font-weight: 700;
-      margin-bottom: 8px;
-      letter-spacing: -0.5px;
-    }
+.dots{
+position:absolute;
+width:80px;
+height:80px;
+background-image:radial-gradient(rgba(96, 165, 250, 0.15) 2px,transparent 2px);
+background-size:16px 16px;
+opacity:0.6;
+}
 
-    .cyber-card p {
-      font-size: 14px;
-      color: var(--text-muted);
-      line-height: 1.6;
-    }
+.dots-left{
+top:20px;
+left:20px;
+}
 
-    /* Showcase Project Layout Engine */
-    .project-stack {
-      display: flex;
-      flex-direction: column;
-      gap: 40px;
-    }
+.dots-right{
+bottom:20px;
+right:20px;
+}
 
-    .project-row-card {
-      background: var(--bg-card);
-      border: var(--border-soft);
-      border-radius: 24px;
-      overflow: hidden;
-      display: grid;
-      grid-template-columns: 400px 1fr;
-      min-height: 260px;
-      transition: all 0.3s ease;
-    }
+/* ===== SECTION HEADER ===== */
 
-    .project-row-card:hover {
-      border-color: rgba(0, 242, 254, 0.2);
-      transform: translateY(-4px);
-    }
+.section-header{
+margin-bottom:35px;
+text-align:left; /* Modern asymmetrical design formatting alignment */
+border-left:4px solid #3B82F6;
+padding-left:20px;
+}
 
-    .project-visual-wrapper {
-      width: 100%;
-      height: 100%;
-      background: #000;
-      overflow: hidden;
-    }
+.section-header h2{
+font-size:28px;
+font-weight:800;
+color:#FFFFFF;
+letter-spacing:-0.5px;
+margin-bottom:6px;
+}
 
-    .project-visual-wrapper img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0.7;
-      transition: transform 0.5s ease;
-    }
+.section-header p{
+color:#94A3B8;
+font-size:15px;
+}
 
-    .project-row-card:hover .project-visual-wrapper img {
-      transform: scale(1.03);
-      opacity: 0.9;
-    }
+/* ===== GRID ===== */
 
-    .project-text-wrapper {
-      padding: 40px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
+.grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:24px;
+}
 
-    .project-text-wrapper h3 {
-      font-size: 24px;
-      font-weight: 700;
-      margin-bottom: 12px;
-      letter-spacing: -0.5px;
-    }
+/* ===== CARD ===== */
 
-    .project-text-wrapper p {
-      font-size: 15px;
-      color: var(--text-muted);
-      line-height: 1.6;
-    }
+.card{
+background:#1E293B;
+padding:30px;
+border-radius:20px;
+border:1px solid rgba(255, 255, 255, 0.04);
+box-shadow:0 10px 25px rgba(0,0,0,.15);
+transition:.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+min-height:150px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+gap:12px;
+}
 
-    /* Core Competencies Matrix Blocks */
-    .matrix-flex-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 20px;
-    }
+#projects .card{
+min-height:450px;
+justify-content:flex-start;
+}
 
-    .vector-skill-node {
-      background: var(--bg-panel);
-      border: var(--border-soft);
-      border-radius: 20px;
-      padding: 24px;
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      transition: all 0.25s ease;
-    }
+#projects .card .btn{
+margin-top:auto;
+width:100%;
+text-align:center;
+}
 
-    .vector-skill-node:hover {
-      background: var(--bg-card);
-      border-color: rgba(255,255,255,0.1);
-    }
+.card:hover{
+transform:translateY(-4px);
+border-color:rgba(59, 130, 246, 0.3);
+box-shadow:0 16px 32px rgba(0,0,0,.3);
+}
 
-    .vector-graphic-box {
-      width: 44px;
-      height: 44px;
-      flex-shrink: 0;
-    }
+#projects .card img{
+width:100%;
+aspect-ratio:16/9;
+object-fit:cover;
+border-radius:12px;
+display:block;
+margin-bottom:10px;
+border:1px solid rgba(255, 255, 255, 0.05);
+}
 
-    .vector-graphic-box svg {
-      width: 100%;
-      height: 100%;
-    }
+.card h3{
+color:#FFFFFF;
+font-size:18px;
+font-weight:700;
+}
 
-    .vector-meta-info h4 {
-      font-size: 15px;
-      font-weight: 700;
-      margin-bottom: 2px;
-    }
+.card p{
+color:#94A3B8;
+font-size:14px;
+line-height:1.6;
+}
 
-    .vector-badge-label {
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 0.5px;
-      color: var(--neon-cyan);
-      text-transform: uppercase;
-    }
-    
-    .vector-badge-label.master {
-      color: var(--neon-purple);
-    }
+/* ===== DASHBOARD OVERVIEW ===== */
 
-    /* Contact Architecture Modules */
-    .comms-split {
-      display: grid;
-      grid-template-columns: 1.5fr 1fr;
-      gap: 40px;
-    }
+.dashboard-grid .card{
+border-left:4px solid #3B82F6;
+}
 
-    .comms-channel-deck {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
+/* ===== SKILLS CONTAINER ===== */
 
-    .comms-strip-card {
-      background: var(--bg-card);
-      border: var(--border-soft);
-      border-radius: 20px;
-      padding: 24px 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+.skills-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:24px;
+margin-top:10px;
+}
 
-    .strip-meta h4 {
-      font-size: 12px;
-      color: var(--text-dark);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 2px;
-    }
+.skill-card{
+background:#1E293B;
+border-radius:20px;
+padding:35px 20px;
+text-align:center;
+border:1px solid rgba(255, 255, 255, 0.04);
+box-shadow:0 12px 30px rgba(0,0,0,.15);
+transition:.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+border-top:4px solid #3B82F6;
+}
 
-    .strip-meta p {
-      font-size: 16px;
-      font-weight: 600;
-    }
+.skill-card:hover{
+transform:translateY(-6px);
+border-color:rgba(255,255,255,0.1);
+box-shadow:0 20px 40px rgba(0,0,0,.3);
+}
 
-    .strip-action-btn {
-      background: rgba(255,255,255,0.03);
-      border: var(--border-soft);
-      padding: 10px 24px;
-      border-radius: 12px;
-      font-size: 13px;
-      font-weight: 700;
-    }
+.skill-card img{
+width:64px;
+height:64px;
+object-fit:contain;
+margin-bottom:20px;
+filter:drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+}
 
-    .strip-action-btn:hover {
-      background: var(--text-main);
-      color: var(--bg-darkest);
-    }
+.skill-card h3{
+font-size:16px;
+font-weight:700;
+color:#FFFFFF;
+margin-bottom:15px;
+line-height:1.4;
+}
 
-    .panel-terminal-aside {
-      background: linear-gradient(180deg, rgba(0, 242, 254, 0.05) 0%, transparent 100%), var(--bg-card);
-      border: var(--border-glow);
-      border-radius: 24px;
-      padding: 40px;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
+.level{
+display:inline-block;
+padding:6px 16px;
+border-radius:30px;
+font-size:12px;
+font-weight:700;
+background:rgba(59, 130, 246, 0.1);
+color:#60A5FA;
+text-transform:uppercase;
+letter-spacing:0.5px;
+}
 
-    .terminal-radar-hub {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background: rgba(0, 242, 254, 0.1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 24px;
-      color: var(--neon-cyan);
-      margin-bottom: 20px;
-      box-shadow: 0 0 20px rgba(0, 242, 254, 0.2);
-    }
+/* ===== ACTIONS & BUTTONS ===== */
 
-    .panel-terminal-aside h4 {
-      font-size: 20px;
-      font-weight: 800;
-      margin-bottom: 8px;
-    }
+.btn{
+display:inline-block;
+padding:12px 24px;
+background:#3B82F6;
+color:#FFFFFF;
+text-decoration:none;
+border-radius:12px;
+font-weight:600;
+font-size:14px;
+transition:.2s ease;
+box-shadow:0 4px 12px rgba(59, 130, 246, 0.2);
+}
 
-    .panel-terminal-aside p {
-      font-size: 14px;
-      color: var(--text-muted);
-      line-height: 1.5;
-    }
+.btn:hover{
+background:#2563EB;
+transform:translateY(-1px);
+box-shadow:0 6px 16px rgba(59, 130, 246, 0.3);
+}
 
-    /* ==========================================================================
-       MEDIA PLATFORM RESPONSIBILITY OVERLAYS
-       ========================================================================== */
-    @media (max-width: 1100px) {
-      body { flex-direction: column; }
-      .control-deck {
-        width: 100%;
-        height: auto;
-        position: relative;
-        padding: 40px;
-      }
-      .deck-nav { display: none; } /* Hide tracker lines on small screens */
-      .scroll-workspace {
-        margin-left: 0;
-        padding: 40px var(--spacing-md);
-      }
-      .project-row-card { grid-template-columns: 1fr; }
-      .project-visual-wrapper { height: 200px; }
-      .comms-split { grid-template-columns: 1fr; }
-    }
-  </style>
+/* ===== CONTACT CARDS ===== */
+
+.contact-card{
+display:grid;
+grid-template-columns:64px 1fr auto;
+gap:20px;
+padding:24px 30px;
+background:#1E293B;
+border-radius:20px;
+margin-bottom:20px;
+border:1px solid rgba(255, 255, 255, 0.04);
+box-shadow:0 10px 25px rgba(0,0,0,.12);
+transition:.3s ease;
+align-items:center;
+}
+
+.contact-card:hover{
+transform:translateY(-3px);
+border-color:rgba(59, 130, 246, 0.2);
+box-shadow:0 16px 32px rgba(0,0,0,.25);
+}
+
+.contact-icon{
+width:64px;
+height:64px;
+background:rgba(255, 255, 255, 0.02);
+border-radius:14px;
+display:flex;
+align-items:center;
+justify-content:center;
+border:1px solid rgba(255, 255, 255, 0.05);
+}
+
+.contact-icon img{
+width:30px;
+height:30px;
+object-fit:contain;
+}
+
+.contact-details{
+flex:1;
+text-align:left;
+}
+
+.contact-details h3{
+font-size:18px;
+color:#FFFFFF;
+font-weight:700;
+margin-bottom:4px;
+}
+
+.contact-details p{
+font-size:15px;
+color:#94A3B8;
+}
+
+.contact-btn{
+background:rgba(255, 255, 255, 0.04);
+color:#FFFFFF;
+text-decoration:none;
+padding:12px 24px;
+border-radius:12px;
+font-weight:600;
+font-size:14px;
+transition:.2s ease;
+min-width:130px;
+text-align:center;
+border:1px solid rgba(255, 255, 255, 0.05);
+}
+
+.contact-btn:hover{
+background:#FFFFFF;
+color:#0F172A;
+}
+
+.availability{
+display:flex;
+align-items:center;
+background:#1E293B;
+padding:30px 40px;
+border-radius:24px;
+max-width:100%;
+margin-top:40px;
+border-left:4px solid #10B981; /* Matches live active dot styling safely */
+border:1px solid rgba(255, 255, 255, 0.04);
+border-left:4px solid #10B981;
+box-shadow:0 12px 30px rgba(0,0,0,.15);
+}
+
+.availability-icon{
+width:72px;
+height:72px;
+background:rgba(16, 185, 129, 0.08);
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+margin-right:25px;
+flex-shrink:0;
+}
+
+.availability-icon img{
+width:36px;
+height:36px;
+object-fit:contain;
+}
+
+.availability h3{
+font-size:20px;
+margin-bottom:4px;
+color:#FFFFFF;
+font-weight:700;
+}
+
+.availability p{
+font-size:15px;
+color:#94A3B8;
+}
+
+/* ===== RESPONSIVE MEDIA QUERIES ===== */
+
+@media (max-width: 992px) {
+
+body{
+flex-direction:column;
+}
+
+.menu-btn{
+display:block; /* Activated trigger node toggle overlay menu on mobile screens */
+}
+
+.sidebar {
+position:fixed;
+left:-270px;
+top:0;
+height:100vh;
+width:260px;
+box-shadow:20px 0 40px rgba(0,0,0,0.5);
+}
+
+.sidebar.show{
+left:0;
+}
+
+.main{
+padding:100px 24px 40px;
+}
+
+.grid{
+grid-template-columns:1fr;
+}
+
+.about-card{
+flex-direction:column;
+align-items:center;
+text-align:center;
+padding:40px 24px;
+gap:24px;
+}
+
+.profile-image{
+width:160px;
+height:160px;
+}
+
+.about-info h2{
+font-size:32px;
+}
+
+.dots-left,
+.dots-right{
+display:none;
+}
+
+.skills-container{
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:16px;
+}
+
+.contact-card{
+grid-template-columns:1fr;
+text-align:center;
+justify-items:center;
+padding:30px 20px;
+gap:16px;
+}
+
+.contact-details{
+text-align:center;
+}
+
+.contact-btn{
+width:100%;
+max-width:260px;
+}
+
+.availability{
+flex-direction:column;
+text-align:center;
+padding:30px 20px;
+gap:16px;
+}
+
+.availability-icon{
+margin-right:0;
+}
+
+}
+
+</style>
 </head>
+
 <body>
 
-  <aside class="control-deck">
-    <div class="deck-top">
-      <div class="profile-avatar-box">
-        <img src="IMG_20260409_223924.jpg" alt="Chandirakkumar S Photo Portrait">
-        <div class="live-status-dot"></div>
-      </div>
-      
-      <div class="identity">
-        <h1>Chandirakkumar S</h1>
-        <h2>Instructional Designer & Multimedia Developer</h2>
+<button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+<div class="sidebar" id="sidebar">
+<div class="logo">Chandirakkumar</div>
+
+<div class="menu">
+<a class="active" onclick="showSection('dashboard', this)">Dashboard</a>
+<a onclick="showSection('projects', this)">Projects</a>
+<a onclick="showSection('skills', this)">Skills</a>
+<a onclick="showSection('contact', this)">Contact</a>
+</div>
+</div>
+
+<div class="main">
+
+  <div id="dashboard" class="section active">
+    <div class="about-card">
+
+      <div class="profile-image">
+        <img src="IMG_20260409_223924.jpg" alt="Profile">
+        <div class="profile-dot"></div>
       </div>
 
-      <nav class="deck-nav">
-        <ul>
-          <li><a href="#biography-section" class="active"><span class="nav-line"></span>Overview</a></li>
-          <li><a href="#projects-section"><span class="nav-line"></span>Production Vault</a></li>
-          <li><a href="#skills-section"><span class="nav-line"></span>Competencies</a></li>
-          <li><a href="#contact-section"><span class="nav-line"></span>Inbound Hub</a></li>
-        </ul>
-      </nav>
-    </div><div class="deck-footer">
-      <p>&copy; 2026 Architectural Deck Engine</p>
+      <div class="about-info">
+        <h2>Chandirakkumar S</h2>
+        <h3>Instructional Designer | eLearning & Multimedia Developer | Visual Designer</h3>
+        <p class="about-text">
+          Instructional Designer with 1+ year of experience in Storyline 360, LMS Management, SCORM publishing, and interactive eLearning development.
+        </p>
+        <p class="location">
+          📍 Bengaluru, Karnataka, India
+        </p>
+      </div>
+
+      <div class="dots dots-left"></div>
+      <div class="dots dots-right"></div>
+
     </div>
-  </aside>
 
-  <main class="scroll-workspace">
+    <div class="section-header">
+      <h2>Dashboard Overview</h2>
+      <p>Quick overview of my work and experience.</p>
+    </div>
 
-    <section id="biography-section" class="content-panel">
-      <p class="panel-meta-title">01 // Matrix Overview</p>
-      <h2 class="panel-main-title">Dashboard Matrix</h2>
-      
-      <div class="biography-frame">
-        Instructional Designer based in <strong>Bengaluru, India</strong> with over 1 year of experience creating rich eLearning content. Specializing in advanced interactions using <strong>Articulate Storyline 360</strong>, custom corporate environments, and high-impact motion graphic assets.
+    <div class="grid dashboard-grid">
+      <div class="card">
+        <h3>📘 100+ Modules</h3>
+        <p>Interactive eLearning modules developed.</p>
       </div>
+      <div class="card">
+        <h3>🎯 Instructional Design</h3>
+        <p>Scenario-based learning & learner engagement.</p>
+      </div>
+      <div class="card">
+        <h3>💻 Storyline 360</h3>
+        <p>Variables, triggers, animations & interactions.</p>
+      </div>
+      <div class="card">
+        <h3>📦 SCORM Publishing</h3>
+        <p>SCORM 1.2 packaging & LMS deployment.</p>
+      </div>
+      <div class="card">
+        <h3>🎬 Video Editing</h3>
+        <p>Adobe Premiere Pro & After Effects projects.</p>
+      </div>
+      <div class="card">
+        <h3>🎨 PowerPoint Design</h3>
+        <p>Professional training presentations.</p>
+      </div>
+      <div class="card">
+        <h3>⚙ LearnDash LMS</h3>
+        <p>Course creation, learner management & reporting.</p>
+      </div>
+      <div class="card">
+        <h3>☁ QuickLearn LMS</h3>
+        <p>Course deployment and administration.</p>
+      </div>
+      <div class="card">
+        <h3>📝 Assessments</h3>
+        <p>Knowledge checks, quizzes & certifications.</p>
+      </div>
+      <div class="card">
+        <h3>🚀 Rapid eLearning</h3>
+        <p>End-to-end course development & delivery.</p>
+      </div>
+    </div>
+  </div>
 
-      <div class="cyber-grid">
-        <div class="cyber-card">
-          <div class="card-icon-frame">📘</div>
-          <h3>100+ Live Modules</h3>
-          <p>High-fidelity interactive training components successfully launched into live multi-LMS standard engineering infrastructures.</p>
-        </div>
-        <div class="cyber-card">
-          <div class="card-icon-frame">🎯</div>
-          <h3>Instructional Design</h3>
-          <p>Scenario-based branching models engineered explicitly to target performance diagnostics across diverse learner profiles.</p>
-        </div>
-        <div class="cyber-card">
-          <div class="card-icon-frame">💻</div>
-          <h3>Storyline Architecture</h3>
-          <p>Advanced interactions configured via logical variables, conditional triggers, custom layers, and exact tracking metrics.</p>
-        </div>
-        <div class="cyber-card">
-          <div class="card-icon-frame">📦</div>
-          <h3>SCORM Integration</h3>
-          <p>Flawless packaging and asset compression tracking bookmarks securely across large global corporate networks.</p>
-        </div>
-        <div class="cyber-card">
-          <div class="card-icon-frame">🎬</div>
-          <h3>Motion Graphics</h3>
-          <p>Constructing visual learning media sequences compiled through professional high-end non-linear editing pipelines.</p>
-        </div>
-        <div class="cyber-card">
-          <div class="card-icon-frame">🎨</div>
-          <h3>Flat Vector Design</h3>
-          <p>Modern visual style execution utilizing crisp layout structures and iconography built for speed and visual clarity.</p>
-        </div>
-        <div class="cyber-card">
-          <div class="card-icon-frame">⚙️</div>
-          <h3>LearnDash LMS</h3>
-          <p>Course pipeline configuration, testing parameters, grading logic trees, and remote system integration blocks.</p>
-        </div>
-        <div class="cyber-card">
-          <div class="card-icon-frame">☁️</div>
-          <h3>QuickLearn Setup</h3>
-          <p>Deploying remote tracking paths designed for immediate, robust validation tests across browser viewpoints.</p>
-        </div>
-        <div class="cyber-card">
-          <div class="card-icon-frame">📝</div>
-          <h3>Knowledge Audits</h3>
-          <p>Structuring dynamic assessment modules, comprehensive scenario blocks, and immediate diagnostic scoring layers.</p>
-        </div>
-        <div class="cyber-card">
-          <div class="card-icon-frame">🚀</div>
-          <h3>Rapid Production</h3>
-          <p>Transforming complex technical learning requirements into organized, functional interactives quickly and efficiently.</p>
-        </div>
-      </div></section>
+  <div id="projects" class="section">
+    <div class="section-header">
+        <h2>Projects</h2>
+        <p>My recent work.</p>
+    </div>
 
-    <section id="projects-section" class="content-panel">
-      <p class="panel-meta-title">02 // Production Archives</p>
-      <h2 class="panel-main-title">Production Vault</h2>
-      
-      <div class="project-stack">
-        <article class="project-row-card">
-          <div class="project-visual-wrapper">
-            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71" alt="Articulate Simulation Screen">
-          </div>
-          <div class="project-text-wrapper">
-            <h3>Advanced Interactive eLearning</h3>
-            <p>High-end simulation scenarios and branching logic built inside Storyline 360 to test decision paths and gather behavioral tracking data parameters cleanly.</p>
-          </div>
-        </article>
-
-        <article class="project-row-card">
-          <div class="project-visual-wrapper">
-            <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d" alt="Video Editing Workplace Monitor Screen">
-          </div>
-          <div class="project-text-wrapper">
-            <h3>Multimedia Explainer Frameworks</h3>
-            <p>Polished corporate educational video content and title animations crafted across dynamic timelines for immediate engagement and clarity.</p>
-          </div>
-        </article>
-
-        <article class="project-row-card">
-          <div class="project-visual-wrapper">
-            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f" alt="Corporate Typography Slide Frameworks">
-          </div>
-          <div class="project-text-wrapper">
-            <h3>Corporate Slide Presentations</h3>
-            <p>Clean modern structural slide decks organized with deep typographical styling and visual hierarchies to optimize enterprise technical alignment.</p>
-          </div>
-        </article>
-      </div></section>
-
-    <section id="skills-section" class="content-panel">
-      <p class="panel-meta-title">03 // Proficiencies Engine</p>
-      <h2 class="panel-main-title">Core Competencies</h2>
-      
-      <div class="matrix-flex-grid">
-        <div class="vector-skill-node">
-          <div class="vector-graphic-box">
-            <svg viewBox="0 0 128 128"><rect width="128" height="128" rx="24" fill="#7c3aed"/><text x="50%" y="64%" font-family="inherit" font-weight="800" font-size="48" fill="#fff" text-anchor="middle">As</text></svg>
-          </div>
-          <div class="vector-meta-info">
-            <h4>Articulate Storyline</h4>
-            <span class="vector-badge-label master">Expert</span>
-          </div>
+    <div class="grid">
+        <div class="card">
+            <img src="images/scorm-thumbnail.png" alt="SCORM">
+            <h3>Interactive SCORM eLearning</h3>
+            <p>Interactive Storyline module with custom navigation, assessments and SCORM publishing.</p>
+            <a href="https://drive.google.com/file/d/1-Jr4AcAYIeU_B9Cimcw1WLswNRgfx0MU/view?usp=sharing" target="_blank" class="btn">▶ Watch Demo</a>
         </div>
+        <div class="card">
+            <img src="images/multilanguage.jpeg" alt="Multi-language">
+            <h3>Multi-language eLearning</h3>
+            <p>Interactive Storyline course with language switching and multilingual learning support.</p>
+        </div>
+        <div class="card">
+            <img src="images/ppt-design-1.png" alt="PowerPoint">
+            <h3>Corporate PowerPoint Design</h3>
+            <p>Professional training presentations with modern layouts, infographics and learning content.</p>
+        </div>
+        <div class="card">
+            <img src="images/vfx-thumbnail.png" alt="Video Editing">
+            <h3>Video Editing & Motion Graphics</h3>
+            <p>Adobe Premiere Pro & After Effects projects with cinematic editing, VFX and motion graphics.</p>
+            <a href="https://drive.google.com/file/d/12KMOnXd8ilEKFB4JqiAr99lX8_8IBSUv/view?usp=sharing" target="_blank" class="btn">▶ Watch Video</a>
+        </div>
+    </div> 
+  </div> 
 
-        <div class="vector-skill-node">
-          <div class="vector-graphic-box">
-            <svg viewBox="0 0 128 128"><rect width="128" height="128" rx="24" fill="#00005c"/><rect x="4" y="4" width="120" height="120" rx="20" fill="none" stroke="#ea580c" stroke-width="4"/><text x="50%" y="64%" font-family="inherit" font-weight="800" font-size="44" fill="#ea580c" text-anchor="middle">Pr</text></svg>
-          </div>
-      
+  <div id="skills" class="section">
+    <div class="section-header">
+        <h2>Technical Skills</h2>
+        <p>Tools & Technologies I work with</p>
+    </div>
+
+    <div class="skills-container">
+        <div class="skill-card">
+            <img src="images/storyline.png" alt="Storyline">
+            <h3>Articulate Storyline 360</h3>
+            <span class="level">Expert</span>
+        </div>
+        <div class="skill-card">
+            <img src="images/premiere.png" alt="Premiere Pro">
+            <h3>Adobe Premiere Pro</h3>
+            <span class="level">Advanced</span>
+        </div>
+        <div class="skill-card">
+            <img src="images/aftereffects.png" alt="After Effects">
+            <h3>Adobe After Effects</h3>
+            <span class="level">Advanced</span>
+        </div>
+        <div class="skill-card">
+            <img src="images/powerpoint.png" alt="PowerPoint">
+            <h3>Microsoft PowerPoint</h3>
+            <span class="level">Expert</span>
+        </div>
+        <div class="skill-card">
+            <img src="images/captivate.png" alt="Captivate">
+            <h3>Adobe Captivate</h3>
+            <span class="level">Advanced</span>
+        </div>
+        <div class="skill-card">
+            <img src="images/illustrator.png" alt="Illustrator">
+            <h3>Adobe Illustrator</h3>
+            <span class="level">Intermediate</span>
+        </div>
+        <div class="skill-card">
+            <img src="images/photoshop.png" alt="Photoshop">
+            <h3>Adobe Photoshop</h3>
+            <span class="level">Intermediate</span>
+        </div>
+        <div class="skill-card">
+            <img src="images/learndash.png" alt="LearnDash">
+            <h3>LearnDash LMS</h3>
+            <span class="level">Advanced</span>
+        </div>
+        <div class="skill-card">
+            <img src="images/quicklearn.png" alt="QuickLearn">
+            <h3>QuickLearn LMS</h3>
+            <span class="level">Advanced</span>
+        </div>
+        <div class="skill-card">
+            <img src="images/scorm.png" alt="SCORM">
+            <h3>SCORM 1.2</h3>
+            <span class="level">Expert</span>
+        </div>
+        <div class="skill-card">
+            <img src="images/excel.png" alt="Excel">
+            <h3>Microsoft Excel</h3>
+            <span class="level">Intermediate</span>
+        </div>
+        <div class="skill-card">
+            <img src="images/word.png" alt="Word">
+            <h3>Microsoft Word</h3>
+            <span class="level">Advanced</span>
+        </div>
+    </div>
+  </div>
+
+  <div id="contact" class="section">
+    <div class="section-header">
+        <h2>Contact</h2>
+        <p>Let's connect for Instructional Design, eLearning Development,<br>and Video Editing projects.</p>
+    </div>
+
+    <div class="contact-card">
+        <div class="contact-icon">
+            <img src="images/email.png" alt="Email Icon">
+        </div>
+        <div class="contact-details">
+            <h3>Email</h3>
+            <p>sv393015@gmail.com</p>
+        </div>
+        <a href="mailto:sv393015@gmail.com" class="contact-btn">Send Mail</a>
+    </div>
+
+    <div class="contact-card">
+        <div class="contact-icon">
+            <img src="images/phone.png" alt="Phone Icon">
+        </div>
+        <div class="contact-details">
+            <h3>Phone</h3>
+            <p>+91 93530 80994</p>
+        </div>
+        <a href="tel:+919353080994" class="contact-btn">Call Me</a>
+    </div>
+
+    <div class="contact-card">
+        <div class="contact-icon">
+            <img src="images/linkedin.png" alt="LinkedIn Icon">
+        </div>
+        <div class="contact-details">
+            <h3>LinkedIn</h3>
+            <p>linkedin.com/in/chandru-elearning</p>
+        </div>
+        <a href="https://www.linkedin.com/in/chandru-elearning" target="_blank" rel="noopener noreferrer" class="contact-btn">View Profile</a>
+    </div>
+
+    <div class="contact-card">
+        <div class="contact-icon">
+            <img src="images/location.png" alt="Location Icon">
+        </div>
+        <div class="contact-details">
+            <h3>Location</h3>
+            <p>Bengaluru, Karnataka, India</p>
+        </div>
+        <a href="https://maps.google.com" target="_blank" class="contact-btn">View on Map</a>
+    </div>
+
+    <div class="availability">
+        <div class="availability-icon">
+            <img src="images/available.png" alt="Available Emblem">
+        </div>
+        <div>
+            <h3>Available for Freelance & Full-time Opportunities</h3>
+            <p>I usually reply within 24 hours.</p>
+        </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+function showSection(id, el) {
+    // Hide all view panels
+    document.querySelectorAll(".section").forEach(function(sec){
+        sec.classList.remove("active");
+    });
+
+    // Illuminate target section layout node
+    const target = document.getElementById(id);
+    if(target){
+        target.classList.add("active");
+    }
+
+    // Scrub active navigational highlight lines
+    document.querySelectorAll(".menu a").forEach(function(link){
+        link.classList.remove("active");
+    });
+
+    if(el){
+        el.classList.add("active");
+    }
+
+    // Force automatic collapse of layout drawer on smaller viewport screens
+    document.getElementById("sidebar").classList.remove("show");
+}
+
+function toggleMenu(){
+    document.getElementById("sidebar").classList.toggle("show");
+}
+</script>
+
+</body>
+</html>
