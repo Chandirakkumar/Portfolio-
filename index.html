@@ -4,8 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Chandirakkumar S | Executive Instructional Portfolio & Architecture Deck</title>
+  <title>Chandirakkumar S | Executive Portfolio Matrix Deck</title>
   
+  <!-- ===== GLOBAL FONT AND STYLING REGISTRIES ===== -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
@@ -15,10 +16,10 @@
        ENTERPRISE TOKEN DESIGN SYSTEM (CSS CUSTOM PROPERTIES)
        ========================================================================== */
     :root {
-      /* --- Color Palette Tokens --- */
-      --bg-dark-900: #070a13;
+      /* --- Core Colors --- */
+      --bg-dark-900: #060911;
       --bg-dark-800: #0b0f19;
-      --bg-dark-700: #121826;
+      --bg-dark-700: #111726;
       --bg-dark-600: #151b2c;
       --bg-dark-500: #1e263f;
       --bg-dark-400: #2a3556;
@@ -32,8 +33,8 @@
       --accent-orange-base: #f97316;
       
       --gradient-primary: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
-      --gradient-card-glow: radial-gradient(circle at top right, rgba(59, 130, 246, 0.15), transparent 60%);
-      --gradient-hero-glow: radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.18) 0%, rgba(59, 130, 246, 0.05) 50%, transparent 100%);
+      --gradient-card-glow: radial-gradient(circle at top right, rgba(59, 130, 246, 0.16), transparent 60%);
+      --gradient-hero-glow: radial-gradient(circle at 85% 20%, rgba(139, 92, 246, 0.18) 0%, rgba(59, 130, 246, 0.05) 50%, transparent 100%);
       
       --text-primary: #f8fafc;
       --text-secondary: #e2e8f0;
@@ -42,9 +43,8 @@
       
       --border-thin: 1px solid rgba(255, 255, 255, 0.06);
       --border-medium: 1px solid rgba(255, 255, 255, 0.12);
-      --border-accent-glow: 1px solid rgba(59, 130, 246, 0.3);
       
-      /* --- Spacing Layout Scales --- */
+      /* --- Spacing System --- */
       --spacing-xs: 4px;
       --spacing-sm: 8px;
       --spacing-md: 16px;
@@ -53,21 +53,16 @@
       --spacing-xxl: 48px;
       --spacing-giant: 64px;
       
-      /* --- Timing & Animation Mechanics --- */
+      /* --- Timing Transitions --- */
       --transition-fast: 0.15s ease;
       --transition-normal: 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
       --transition-slow: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
       
-      /* --- Layer Matrix Indexing (Z-Index) --- */
-      --z-index-base: 1;
-      --z-index-card: 10;
-      --z-index-sticky: 100;
       --z-index-header: 1000;
-      --z-index-overlay: 10000;
     }
 
     /* ==========================================================================
-       DEFENSIVE RESET & GLOBAL BASE LAYERS
+       DEFENSIVE LAYOUT RESETS
        ========================================================================== */
     *, *::before, *::after {
       margin: 0;
@@ -85,12 +80,12 @@
     }
 
     body {
-      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-family: 'Plus Jakarta Sans', sans-serif;
       background: var(--bg-dark-800);
       color: var(--text-primary);
       min-height: 100vh;
       overflow-x: hidden;
-      line-height: 1.714;
+      line-height: 1.75;
     }
 
     a, button {
@@ -105,20 +100,16 @@
       display: block;
     }
 
-    ul, ol {
-      list-style: none;
-    }
-
     /* ==========================================================================
-       APEX STICKY GLOBAL HEADER MODULE
+       APEX NAVIGATION CONTROLLER MODULE
        ========================================================================== */
     header {
       position: sticky;
       top: 0;
       z-index: var(--z-index-header);
-      background: rgba(11, 15, 25, 0.75);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
+      background: rgba(11, 15, 25, 0.8);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
       border-bottom: var(--border-thin);
       width: 100%;
     }
@@ -130,7 +121,6 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      width: 100%;
     }
 
     .brand-logo-wrapper {
@@ -155,13 +145,12 @@
       background-color: var(--accent-teal-base);
       border-radius: 50%;
       display: inline-block;
-      box-shadow: 0 0 10px var(--accent-teal-base);
+      box-shadow: 0 0 12px var(--accent-teal-base);
     }
 
     nav ul {
       display: flex;
       align-items: center;
-      list-style: none;
       gap: var(--spacing-xs);
       background: rgba(255, 255, 255, 0.02);
       padding: 6px;
@@ -171,13 +160,11 @@
 
     nav a {
       color: var(--text-muted);
-      text-decoration: none;
       padding: 8px 24px;
       font-size: 14px;
       font-weight: 600;
       border-radius: 20px;
       display: block;
-      cursor: pointer;
     }
 
     nav a:hover {
@@ -187,7 +174,7 @@
 
     nav a.active {
       color: var(--text-primary);
-      background: rgba(255, 255, 255, 0.09);
+      background: rgba(255, 255, 255, 0.1);
       box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
     }
 
@@ -207,7 +194,7 @@
     }
 
     /* ==========================================================================
-       HERO BILLBOARD (BIOGRAPHICAL MATRIX OVERLAY)
+       HERO BILLBOARD (BIOGRAPHICAL WRAPPER)
        ========================================================================== */
     .hero-billboard {
       max-width: 1300px;
@@ -245,12 +232,6 @@
       height: 100%;
       border-radius: 22px;
       object-fit: cover;
-      filter: saturate(1.05);
-      transition: transform var(--transition-slow);
-    }
-
-    .hero-wrapper:hover .profile-frame img {
-      transform: scale(1.02);
     }
 
     .status-badge {
@@ -293,7 +274,6 @@
       letter-spacing: -1.75px;
       line-height: 1.05;
       margin-bottom: var(--spacing-sm);
-      color: var(--text-primary);
     }
 
     .hero-meta h2 {
@@ -301,7 +281,6 @@
       font-weight: 500;
       color: var(--accent-blue-base);
       margin-bottom: var(--spacing-md);
-      letter-spacing: -0.25px;
     }
 
     .hero-meta p {
@@ -309,7 +288,6 @@
       color: var(--text-muted);
       max-width: 780px;
       margin-bottom: var(--spacing-xl);
-      line-height: 1.65;
     }
 
     .meta-pills {
@@ -326,13 +304,10 @@
       font-size: 13px;
       font-weight: 600;
       color: var(--text-secondary);
-      display: flex;
-      align-items: center;
-      gap: 8px;
     }
 
     /* ==========================================================================
-       CORE WORKSPACE STRUCTURAL SYSTEM (VIEW DECKS)
+       VIEW DECK ANIMATION INFRASTRUCTURE
        ========================================================================== */
     main {
       max-width: 1300px;
@@ -348,23 +323,16 @@
 
     .view-deck.active {
       display: block;
-      animation: deckShift var(--transition-slow);
+      animation: deckShift var(--transition-slow) forwards;
     }
 
     @keyframes deckShift {
-      from {
-        opacity: 0;
-        transform: translateY(24px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .deck-header-block {
       margin-bottom: var(--spacing-xxl);
-      position: relative;
     }
 
     .deck-title {
@@ -372,17 +340,15 @@
       font-weight: 800;
       letter-spacing: -0.75px;
       margin-bottom: var(--spacing-xs);
-      color: var(--text-primary);
     }
 
     .deck-subtitle {
       color: var(--text-muted);
       font-size: 16px;
-      max-width: 600px;
     }
 
     /* ==========================================================================
-       DASHBOARD DECK VIEW (METRIC GRID GRAPHICS)
+       METRIC ENGINE GRID (DASHBOARD GRID SYSTEMS)
        ========================================================================== */
     .metric-grid {
       display: grid;
@@ -401,7 +367,7 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      min-height: 190px;
+      min-height: 200px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     }
 
@@ -442,18 +408,17 @@
       font-size: 19px;
       font-weight: 700;
       margin-bottom: var(--spacing-xs);
-      color: var(--text-primary);
       letter-spacing: -0.25px;
     }
 
     .stat-card p {
       color: var(--text-muted);
       font-size: 14px;
-      line-height: 1.5;
+      line-height: 1.6;
     }
 
     /* ==========================================================================
-       PRODUCTION VAULT DECK VIEW (SHOWCASE MEDIA)
+       PRODUCTION SHOWCASE ENVIRONMENT METRICS
        ========================================================================== */
     .showcase-grid {
       display: grid;
@@ -469,14 +434,11 @@
       overflow: hidden;
       transition: all var(--transition-normal);
       box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-      display: flex;
-      flex-direction: column;
     }
 
     .showcase-card:hover {
       transform: translateY(-8px);
       border-color: rgba(255, 255, 255, 0.12);
-      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.3);
     }
 
     .media-vault {
@@ -484,7 +446,6 @@
       height: 230px;
       overflow: hidden;
       background: #010409;
-      position: relative;
     }
 
     .media-vault img {
@@ -492,7 +453,7 @@
       height: 100%;
       object-fit: cover;
       opacity: 0.8;
-      transition: transform var(--transition-slow), opacity var(--transition-normal);
+      transition: transform var(--transition-slow);
     }
 
     .showcase-card:hover .media-vault img {
@@ -502,28 +463,21 @@
 
     .showcase-content {
       padding: var(--spacing-xl);
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
     }
 
     .showcase-content h3 {
       font-size: 22px;
       font-weight: 700;
       margin-bottom: var(--spacing-xs);
-      color: var(--text-primary);
-      letter-spacing: -0.5px;
     }
 
     .showcase-content p {
       color: var(--text-muted);
       font-size: 15px;
-      line-height: 1.6;
     }
 
     /* ==========================================================================
-       COMPETENCY MATRIX DECK VIEW (SKILL ARCHITECTURES)
+       SKILL VECTOR NODE INFRASTRUCTURES
        ========================================================================== */
     .skills-matrix {
       display: grid;
@@ -540,23 +494,12 @@
       display: flex;
       align-items: center;
       gap: var(--spacing-lg);
-      transition: all var(--transition-normal);
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-    }
-
-    .matrix-node:hover {
-      background: var(--bg-dark-500);
-      border-color: rgba(255, 255, 255, 0.1);
-      transform: translateY(-4px);
     }
 
     .node-graphic-wrapper {
       width: 48px;
       height: 48px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
     }
 
     .node-graphic-wrapper svg {
@@ -564,15 +507,10 @@
       height: 100%;
     }
 
-    .node-info {
-      flex: 1;
-    }
-
     .node-info h3 {
       font-size: 16px;
       font-weight: 700;
       margin-bottom: 4px;
-      color: var(--text-primary);
     }
 
     .node-badge {
@@ -585,23 +523,20 @@
       border-radius: 12px;
       text-transform: uppercase;
       letter-spacing: 0.75px;
-      border: 1px solid rgba(59, 130, 246, 0.15);
     }
     
     .node-badge.expert {
       color: var(--accent-purple-bright);
       background: rgba(139, 92, 246, 0.12);
-      border-color: rgba(139, 92, 246, 0.15);
     }
 
     /* ==========================================================================
-       INBOUND COMMUNICATIONS HUB DECK VIEW (CONTACT LAYER)
+       INBOUND HUB AND COMMUNICATIONS CORE LAYERS
        ========================================================================== */
     .hub-layout {
       display: grid;
       grid-template-columns: 2fr 1fr;
       gap: var(--spacing-xl);
-      align-items: start;
       width: 100%;
     }
 
@@ -619,9 +554,7 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      gap: var(--spacing-lg);
       min-height: 170px;
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
     }
 
     .hub-meta h3 {
@@ -636,28 +569,21 @@
     .hub-meta p {
       font-size: 17px;
       font-weight: 600;
-      color: var(--text-primary);
-      word-break: break-all;
     }
 
     .action-anchor {
       background: rgba(255, 255, 255, 0.03);
       border: var(--border-thin);
-      color: var(--text-primary);
-      text-decoration: none;
       padding: 12px var(--spacing-md);
       border-radius: 14px;
       text-align: center;
       font-size: 14px;
       font-weight: 700;
-      display: block;
-      cursor: pointer;
     }
 
     .action-anchor:hover {
       background: var(--text-primary);
       color: var(--bg-dark-900);
-      font-weight: 700;
     }
 
     .presence-panel {
@@ -666,7 +592,6 @@
       border-radius: 28px;
       padding: var(--spacing-xxl) var(--spacing-xl);
       text-align: center;
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
     }
 
     .presence-icon-avatar {
@@ -680,52 +605,23 @@
       margin: 0 auto var(--spacing-lg);
       color: var(--accent-blue-base);
       font-size: 28px;
-      border: 1px solid rgba(59, 130, 246, 0.2);
-    }
-
-    .presence-panel h3 {
-      font-size: 24px;
-      font-weight: 800;
-      margin-bottom: var(--spacing-sm);
-      letter-spacing: -0.5px;
-    }
-
-    .presence-panel p {
-      color: var(--text-muted);
-      font-size: 14px;
-      line-height: 1.6;
     }
 
     /* ==========================================================================
-       MEDIA ADAPTATION RESPONSIVE MATRIX PLATES
+       MEDIA ADAPTATION GRID MATRIX OVERLAYS
        ========================================================================== */
     @media (max-width: 1024px) {
       .hero-wrapper {
         grid-template-columns: 1fr;
-        gap: var(--spacing-xl);
         text-align: center;
         padding: var(--spacing-xl);
       }
-      
-      .profile-frame {
-        margin: 0 auto;
-      }
-      
-      .meta-pills {
-        justify-content: center;
-      }
-      
-      .hub-layout {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-lg);
-      }
+      .profile-frame { margin: 0 auto; }
+      .meta-pills { justify-content: center; }
+      .hub-layout { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 768px) {
-      .nav-container {
-        padding: var(--spacing-md) var(--spacing-lg);
-      }
-      
       nav {
         display: none;
         position: absolute;
@@ -735,36 +631,79 @@
         background: var(--bg-dark-900);
         padding: var(--spacing-lg);
         border-bottom: var(--border-medium);
-        box-shadow: 0 20px 30px rgba(0,0,0,0.5);
       }
+      nav.open { display: block; }
+      nav ul { flex-direction: column; gap: var(--spacing-sm); }
+      nav a { text-align: center; width: 100%; }
+      .menu-toggle { display: flex; }
+      .hero-billboard, main { padding: 0 var(--spacing-md) var(--spacing-xl); }
+      .hero-meta h1 { font-size: 36px; }
+      .showcase-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       GLOBAL APEX NAVIGATION CONTROL LAYER
+       ========================================================================== -->
+  <header>
+    <div class="nav-container">
+      <div class="brand-logo-wrapper">
+        <span class="brand-indicator"></span>
+        <div class="brand-logo">CHANDIRAKKUMAR S</div>
+      </div>
+      <button class="menu-toggle" id="menu-trigger" aria-label="Toggle Navigation Control Drawer">☰</button>
+      <nav id="navigation-deck">
+        <ul>
+          <li><a href="javascript:void(0)" class="active" data-target="dashboard">Dashboard</a></li>
+          <li><a href="javascript:void(0)" data-target="projects">Projects</a></li>
+          <li><a href="javascript:void(0)" data-target="skills">Skills</a></li>
+          <li><a href="javascript:void(0)" data-target="contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       BIOGRAPHICAL HERO BILLBOARD DISPLAY LAYER
+       ========================================================================== -->
+  <section class="hero-billboard">
+    <div class="hero-wrapper">
+      <div class="profile-frame">
+        <img src="IMG_20260409_223924.jpg" alt="Chandirakkumar S Profile Asset Image">
+        <div class="status-badge">
+          <span class="status-pulse-dot"></span>Available Now
+        </div>
+      </div>
+      <div class="hero-meta">
+        <h1>Chandirakkumar S</h1>
+        <h2>Instructional Designer & Multimedia Developer</h2>
+        <p>Architecting interactive corporate learning frameworks, scenario-based modules, and fluid visual narratives. Specialized in end-to-end rapid architecture and clean packaging for global enterprise Learning Management Systems.</p>
+        <div class="meta-pills">
+          <div class="pill">📍 Bengaluru, Karnataka, India</div>
+          <div class="pill">💼 100+ Production Modules</div>
+          <div class="pill">⚡ Articulate Storyline Expert</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       PRIMARY OPERATIONS CONTAINER SPACE (VIEW SWITCH MATRIX)
+       ========================================================================== -->
+  <main>
+
+    <!-- METRIC DECK INSTANCE VIEW LAYER -->
+    <div id="dashboard" class="view-deck active">
+      <div class="deck-header-block">
+        <h2 class="deck-title">Dashboard Matrix</h2>
+        <p class="deck-subtitle">Operational core metrics mapping across active educational asset development pipelines.</p>
+      </div>
       
-      nav.open {
-        display: block;
-      }
-      
-      nav ul {
-        flex-direction: column;
-        background: none;
-        border: none;
-        padding: 0;
-        gap: var(--spacing-sm);
-      }
-      
-      nav a {
-        display: block;
-        text-align: center;
-        padding: 12px;
-        font-size: 16px;
-      }
-      
-      .menu-toggle {
-        display: flex;
-      }
-      
-      .hero-billboard, main {
-        padding: 0 var(--spacing-md) var(--spacing-xl);
-      }
-      
-      .hero-wrapper {
-        padding: 30px 20px;
-      }
+      <section class="metric-grid">
+        <div class="stat-card">
+          <div class="stat-icon-wrapper">📘</div>
+          <div>
+            <h3>100+ Live Modules</h3>
+            <p>High-fidelity,
