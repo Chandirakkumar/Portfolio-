@@ -20,12 +20,13 @@ font-family:'Inter',sans-serif;
 background:#0F172A; /* Deep slate professional dark background */
 color:#E2E8F0; /* Clean readable off-white text */
 display:flex;
+min-height:100vh;
 }
 
 /* ===== GLOBAL SIDEBAR ===== */
 
 .sidebar{
-width:260px;
+width:280px;
 height:100vh;
 background:#1E293B; /* Slate gray side control deck */
 padding:40px 30px;
@@ -274,8 +275,37 @@ gap:12px;
 }
 
 #projects .card{
-min-height:450px;
+min-height:460px;
 justify-content:flex-start;
+padding:0;
+overflow:hidden;
+}
+
+.project-thumbnail-wrapper {
+position:relative;
+width:100%;
+aspect-ratio:16/9;
+overflow:hidden;
+background:#0F172A;
+}
+
+#projects .card img{
+width:100%;
+height:100%;
+object-fit:cover;
+display:block;
+margin-bottom:0;
+border-radius:0;
+border:none;
+transition: transform 0.5s ease;
+}
+
+.project-text-content {
+padding:25px;
+display:flex;
+flex-direction:column;
+flex:1;
+gap:10px;
 }
 
 #projects .card .btn{
@@ -290,14 +320,8 @@ border-color:rgba(59, 130, 246, 0.3);
 box-shadow:0 16px 32px rgba(0,0,0,.3);
 }
 
-#projects .card img{
-width:100%;
-aspect-ratio:16/9;
-object-fit:cover;
-border-radius:12px;
-display:block;
-margin-bottom:10px;
-border:1px solid rgba(255, 255, 255, 0.05);
+.card:hover .project-thumbnail-wrapper img {
+transform:scale(1.04);
 }
 
 .card h3{
@@ -476,7 +500,6 @@ padding:30px 40px;
 border-radius:24px;
 max-width:100%;
 margin-top:40px;
-border-left:4px solid #10B981; /* Matches live active dot styling safely */
 border:1px solid rgba(255, 255, 255, 0.04);
 border-left:4px solid #10B981;
 box-shadow:0 12px 30px rgba(0,0,0,.15);
@@ -622,11 +645,12 @@ margin-right:0;
 
 <div class="main">
 
+  <!-- ===== DASHBOARD DECK SECTION ===== -->
   <div id="dashboard" class="section active">
     <div class="about-card">
 
       <div class="profile-image">
-        <img src="IMG_20260409_223924.jpg" alt="Profile">
+        <img src="IMG_20260409_223924.jpg" alt="Chandirakkumar S Profile Photo">
         <div class="profile-dot"></div>
       </div>
 
@@ -695,6 +719,7 @@ margin-right:0;
     </div>
   </div>
 
+  <!-- ===== PROJECTS DECK SECTION ===== -->
   <div id="projects" class="section">
     <div class="section-header">
         <h2>Projects</h2>
@@ -703,30 +728,47 @@ margin-right:0;
 
     <div class="grid">
         <div class="card">
-            <img src="images/scorm-thumbnail.png" alt="SCORM">
-            <h3>Interactive SCORM eLearning</h3>
-            <p>Interactive Storyline module with custom navigation, assessments and SCORM publishing.</p>
-            <a href="https://drive.google.com/file/d/1-Jr4AcAYIeU_B9Cimcw1WLswNRgfx0MU/view?usp=sharing" target="_blank" class="btn">▶ Watch Demo</a>
+            <div class="project-thumbnail-wrapper">
+                <img src="images/scorm-thumbnail.png" alt="SCORM Project Portfolio Card Image">
+            </div>
+            <div class="project-text-content">
+                <h3>Interactive SCORM eLearning</h3>
+                <p>Interactive Storyline module with custom navigation, assessments and SCORM publishing.</p>
+                <a href="https://drive.google.com/file/d/1-Jr4AcAYIeU_B9Cimcw1WLswNRgfx0MU/view?usp=sharing" target="_blank" class="btn">▶ Watch Demo</a>
+            </div>
         </div>
         <div class="card">
-            <img src="images/multilanguage.jpeg" alt="Multi-language">
-            <h3>Multi-language eLearning</h3>
-            <p>Interactive Storyline course with language switching and multilingual learning support.</p>
+            <div class="project-thumbnail-wrapper">
+                <img src="images/multilanguage.jpeg" alt="Multi-language Project Portfolio Card Image">
+            </div>
+            <div class="project-text-content">
+                <h3>Multi-language eLearning</h3>
+                <p>Interactive Storyline course with language switching and multilingual learning support.</p>
+            </div>
         </div>
         <div class="card">
-            <img src="images/ppt-design-1.png" alt="PowerPoint">
-            <h3>Corporate PowerPoint Design</h3>
-            <p>Professional training presentations with modern layouts, infographics and learning content.</p>
+            <div class="project-thumbnail-wrapper">
+                <img src="images/ppt-design-1.png" alt="PowerPoint Project Portfolio Card Image">
+            </div>
+            <div class="project-text-content">
+                <h3>Corporate PowerPoint Design</h3>
+                <p>Professional training presentations with modern layouts, infographics and learning content.</p>
+            </div>
         </div>
         <div class="card">
-            <img src="images/vfx-thumbnail.png" alt="Video Editing">
-            <h3>Video Editing & Motion Graphics</h3>
-            <p>Adobe Premiere Pro & After Effects projects with cinematic editing, VFX and motion graphics.</p>
-            <a href="https://drive.google.com/file/d/12KMOnXd8ilEKFB4JqiAr99lX8_8IBSUv/view?usp=sharing" target="_blank" class="btn">▶ Watch Video</a>
+            <div class="project-thumbnail-wrapper">
+                <img src="images/vfx-thumbnail.png" alt="Video Editing Project Portfolio Card Image">
+            </div>
+            <div class="project-text-content">
+                <h3>Video Editing & Motion Graphics</h3>
+                <p>Adobe Premiere Pro & After Effects projects with cinematic editing, VFX and motion graphics.</p>
+                <a href="https://drive.google.com/file/d/12KMOnXd8ilEKFB4JqiAr99lX8_8IBSUv/view?usp=sharing" target="_blank" class="btn">▶ Watch Video</a>
+            </div>
         </div>
     </div> 
   </div> 
 
+  <!-- ===== SKILLS DECK SECTION ===== -->
   <div id="skills" class="section">
     <div class="section-header">
         <h2>Technical Skills</h2>
@@ -735,68 +777,69 @@ margin-right:0;
 
     <div class="skills-container">
         <div class="skill-card">
-            <img src="images/storyline.png" alt="Storyline">
+            <img src="images/storyline.png" alt="Storyline Asset Icon">
             <h3>Articulate Storyline 360</h3>
             <span class="level">Expert</span>
         </div>
         <div class="skill-card">
-            <img src="images/premiere.png" alt="Premiere Pro">
+            <img src="images/premiere.png" alt="Premiere Pro Asset Icon">
             <h3>Adobe Premiere Pro</h3>
             <span class="level">Advanced</span>
         </div>
         <div class="skill-card">
-            <img src="images/aftereffects.png" alt="After Effects">
+            <img src="images/aftereffects.png" alt="After Effects Asset Icon">
             <h3>Adobe After Effects</h3>
             <span class="level">Advanced</span>
         </div>
         <div class="skill-card">
-            <img src="images/powerpoint.png" alt="PowerPoint">
+            <img src="images/powerpoint.png" alt="PowerPoint Asset Icon">
             <h3>Microsoft PowerPoint</h3>
             <span class="level">Expert</span>
         </div>
         <div class="skill-card">
-            <img src="images/captivate.png" alt="Captivate">
+            <img src="images/captivate.png" alt="Captivate Asset Icon">
             <h3>Adobe Captivate</h3>
             <span class="level">Advanced</span>
         </div>
         <div class="skill-card">
-            <img src="images/illustrator.png" alt="Illustrator">
+            <img src="images/illustrator.png" alt="Illustrator Asset Icon">
             <h3>Adobe Illustrator</h3>
             <span class="level">Intermediate</span>
         </div>
         <div class="skill-card">
-            <img src="images/photoshop.png" alt="Photoshop">
+            <img src="images/photoshop.png" alt="Photoshop Asset Icon">
             <h3>Adobe Photoshop</h3>
             <span class="level">Intermediate</span>
         </div>
         <div class="skill-card">
-            <img src="images/learndash.png" alt="LearnDash">
+            <img src="images/learndash.png" alt="LearnDash Asset Icon">
             <h3>LearnDash LMS</h3>
             <span class="level">Advanced</span>
         </div>
         <div class="skill-card">
-            <img src="images/quicklearn.png" alt="QuickLearn">
+            <img src="images/quicklearn.png" alt="QuickLearn Asset Icon">
             <h3>QuickLearn LMS</h3>
             <span class="level">Advanced</span>
         </div>
         <div class="skill-card">
-            <img src="images/scorm.png" alt="SCORM">
+            <img src="images/scorm.png" alt="SCORM Asset Icon">
             <h3>SCORM 1.2</h3>
             <span class="level">Expert</span>
         </div>
         <div class="skill-card">
-            <img src="images/excel.png" alt="Excel">
+            <img src="images/excel.png" alt="Excel Asset Icon">
             <h3>Microsoft Excel</h3>
             <span class="level">Intermediate</span>
         </div>
         <div class="skill-card">
-            <img src="images/word.png" alt="Word">
+            <img src="images/word.png" alt="Word Asset Icon">
             <h3>Microsoft Word</h3>
             <span class="level">Advanced</span>
         </div>
     </div>
   </div>
 
+  <!-- ===== CONTACT DECK SECTION ===== -->
   <div id="contact" class="section">
     <div class="section-header">
         <h2>Contact</h2>
@@ -805,7 +848,7 @@ margin-right:0;
 
     <div class="contact-card">
         <div class="contact-icon">
-            <img src="images/email.png" alt="Email Icon">
+            <img src="images/email.png" alt="Email Asset Icon">
         </div>
         <div class="contact-details">
             <h3>Email</h3>
@@ -816,7 +859,7 @@ margin-right:0;
 
     <div class="contact-card">
         <div class="contact-icon">
-            <img src="images/phone.png" alt="Phone Icon">
+            <img src="images/phone.png" alt="Phone Asset Icon">
         </div>
         <div class="contact-details">
             <h3>Phone</h3>
@@ -827,7 +870,7 @@ margin-right:0;
 
     <div class="contact-card">
         <div class="contact-icon">
-            <img src="images/linkedin.png" alt="LinkedIn Icon">
+            <img src="images/linkedin.png" alt="LinkedIn Asset Icon">
         </div>
         <div class="contact-details">
             <h3>LinkedIn</h3>
@@ -838,18 +881,18 @@ margin-right:0;
 
     <div class="contact-card">
         <div class="contact-icon">
-            <img src="images/location.png" alt="Location Icon">
+            <img src="images/location.png" alt="Location Asset Icon">
         </div>
         <div class="contact-details">
             <h3>Location</h3>
             <p>Bengaluru, Karnataka, India</p>
         </div>
-        <a href="https://maps.google.com" target="_blank" class="contact-btn">View on Map</a>
+        <a href="https://maps.google.com/?q=Bengaluru,Karnataka,India" target="_blank" class="contact-btn">View on Map</a>
     </div>
 
     <div class="availability">
         <div class="availability-icon">
-            <img src="images/available.png" alt="Available Emblem">
+            <img src="images/available.png" alt="Available Status Asset Emblem">
         </div>
         <div>
             <h3>Available for Freelance & Full-time Opportunities</h3>
@@ -868,28 +911,4 @@ function showSection(id, el) {
     });
 
     // Illuminate target section layout node
-    const target = document.getElementById(id);
-    if(target){
-        target.classList.add("active");
-    }
-
-    // Scrub active navigational highlight lines
-    document.querySelectorAll(".menu a").forEach(function(link){
-        link.classList.remove("active");
-    });
-
-    if(el){
-        el.classList.add("active");
-    }
-
-    // Force automatic collapse of layout drawer on smaller viewport screens
-    document.getElementById("sidebar").classList.remove("show");
-}
-
-function toggleMenu(){
-    document.getElementById("sidebar").classList.toggle("show");
-}
-</script>
-
-</body>
-</html>
+    const 
