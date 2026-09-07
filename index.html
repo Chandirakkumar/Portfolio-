@@ -5,11 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Chandirakkumar S | Instructional Designer & eLearning Developer</title>
 
-<!-- Fonts & Universal CDN Icons -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
 :root {
@@ -131,7 +129,7 @@ body{
 .main{
   max-width: 1150px;
   margin: 0 auto;
-  padding: 40px 24px 100px;
+  padding: 40px 24px 120px;
 }
 
 /* ===== HERO / ABOUT ===== */
@@ -239,6 +237,9 @@ body{
 .section{
   margin-bottom: 70px;
   scroll-margin-top: 85px;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .section-head{
@@ -395,7 +396,7 @@ body{
   transform: translateY(-1px);
 }
 
-/* ===== SKILLS (12 Boxes - Exactly 4 Rows x 3 Columns) ===== */
+/* ===== SKILLS (Uses Your Image Logos - Exactly 12 Cards) ===== */
 .skills-grid{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -410,6 +411,10 @@ body{
   text-align: center;
   box-shadow: var(--shadow-sm);
   transition: transform 0.25s ease, border-color 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .skill-card:hover{
@@ -418,11 +423,12 @@ body{
   box-shadow: var(--shadow-md);
 }
 
-.skill-icon{
-  font-size: 30px;
-  color: var(--primary);
+.skill-card img{
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
   margin-bottom: 12px;
-  display: inline-block;
+  display: block;
 }
 
 .skill-card h3{
@@ -444,7 +450,7 @@ body{
   color: var(--primary);
 }
 
-/* ===== CONTACT SECTION (2 Columns) ===== */
+/* ===== CONTACT SECTION ===== */
 .contact-grid{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -478,13 +484,19 @@ body{
 .contact-icon-box{
   width: 48px;
   height: 48px;
-  background: var(--primary-light);
-  color: var(--primary);
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-subtle);
   border-radius: var(--radius-sm);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.contact-icon-box img{
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
 }
 
 .contact-meta h3{
@@ -535,13 +547,17 @@ body{
   width: 50px;
   height: 50px;
   background: #ECFDF5;
-  color: var(--success);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 22px;
   flex-shrink: 0;
+}
+
+.availability-icon img{
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
 }
 
 .availability-info h3{
@@ -601,7 +617,7 @@ body{
 
 <body>
 
-<!-- STICKY TOP HEADER -->
+<!-- STICKY TOP NAV BAR -->
 <header class="top-nav">
   <div class="nav-container">
     <a href="#about" class="brand">
@@ -629,21 +645,21 @@ body{
       </div>
 
       <div class="hero-content">
-        <div class="tag-badge"><i class="fa-solid fa-sparkles"></i> Portfolio & Interactive Works</div>
+        <div class="tag-badge">✨ Portfolio & Interactive Works</div>
         <h1>Chandirakkumar S</h1>
         <div class="hero-subtitle">Instructional Designer | eLearning Developer | Visual Designer</div>
         <p class="hero-text">
           Instructional Designer with 1+ year of experience developing interactive Storyline 360 modules, LMS administration, SCORM 1.2 packaging, and multimedia-driven learner experiences.
         </p>
         <div class="hero-meta">
-          <span><i class="fa-solid fa-location-dot"></i> Bengaluru, Karnataka, India</span>
-          <span><i class="fa-solid fa-bolt"></i> Available Immediately</span>
+          <span>📍 Bengaluru, Karnataka, India</span>
+          <span>⚡ Available Immediately</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- OVERVIEW -->
+  <!-- OVERVIEW SECTION -->
   <section id="overview" class="section">
     <div class="section-head">
       <span class="section-tag">Core Highlights</span>
@@ -695,7 +711,7 @@ body{
     </div>
   </section>
 
-  <!-- PROJECTS -->
+  <!-- PROJECTS SECTION -->
   <section id="projects" class="section">
     <div class="section-head">
       <span class="section-tag">Showcase</span>
@@ -711,7 +727,7 @@ body{
         <div class="project-info">
           <h3>Interactive SCORM eLearning</h3>
           <p>Custom-built Storyline module with learner interactions, scenario navigation, and SCORM scoring.</p>
-          <a href="https://drive.google.com/file/d/1-Jr4AcAYIeU_B9Cimcw1WLswNRgfx0MU/view?usp=sharing" target="_blank" class="btn"><i class="fa-solid fa-play"></i> Watch Demo</a>
+          <a href="https://drive.google.com/file/d/1-Jr4AcAYIeU_B9Cimcw1WLswNRgfx0MU/view?usp=sharing" target="_blank" class="btn">▶ Watch Demo</a>
         </div>
       </div>
 
@@ -722,7 +738,7 @@ body{
         <div class="project-info">
           <h3>Multi-language eLearning Course</h3>
           <p>Interactive Storyline course with dynamic in-module language switching and multilingual assets.</p>
-          <a href="https://drive.google.com/file/d/1IIuKoOcBHQ35GzFYcmutqnFGDglw8n3t/view?usp=sharing" target="_blank" class="btn"><i class="fa-solid fa-play"></i> Watch Demo</a>
+          <a href="https://drive.google.com/file/d/1IIuKoOcBHQ35GzFYcmutqnFGDglw8n3t/view?usp=sharing" target="_blank" class="btn">▶ Watch Demo</a>
         </div>
       </div>
 
@@ -743,13 +759,13 @@ body{
         <div class="project-info">
           <h3>Video Editing & Motion Graphics</h3>
           <p>Adobe Premiere Pro and After Effects video production with cinematic cuts, motion design, and SFX.</p>
-          <a href="https://drive.google.com/file/d/12KMOnXd8ilEKFB4JqiAr99lX8_8IBSUv/view?usp=sharing" target="_blank" class="btn"><i class="fa-solid fa-play"></i> Watch Video</a>
+          <a href="https://drive.google.com/file/d/12KMOnXd8ilEKFB4JqiAr99lX8_8IBSUv/view?usp=sharing" target="_blank" class="btn">▶ Watch Video</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SKILLS (12 Symmetrical Cards) -->
+  <!-- SKILLS SECTION (All 12 Logos Loaded From images/) -->
   <section id="skills" class="section">
     <div class="section-head">
       <span class="section-tag">Competencies</span>
@@ -759,53 +775,56 @@ body{
 
     <div class="skills-grid">
       <div class="skill-card">
-        <div class="skill-icon"><i class="fa-solid fa-layer-group"></i></div>
+        <img src="images/storyline.png" alt="Articulate Storyline 360">
         <h3>Articulate Storyline 360</h3>
         <span class="pill-level">Expert</span>
       </div>
       <div class="skill-card">
-        <div class="skill-icon"><i class="fa-solid fa-film"></i></div>
+        <img src="images/premiere.png" alt="Adobe Premiere Pro">
         <h3>Adobe Premiere Pro</h3>
         <span class="pill-level">Advanced</span>
       </div>
       <div class="skill-card">
-        <div class="skill-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+        <img src="images/aftereffects.png" alt="Adobe After Effects">
         <h3>Adobe After Effects</h3>
         <span class="pill-level">Advanced</span>
       </div>
       <div class="skill-card">
-        <div class="skill-icon"><i class="fa-solid fa-file-powerpoint"></i></div>
+        <img src="images/powerpoint.png" alt="Microsoft PowerPoint">
         <h3>Microsoft PowerPoint</h3>
         <span class="pill-level">Expert</span>
       </div>
       <div class="skill-card">
-        <div class="skill-icon"><i class="fa-solid fa-chalkboard-user"></i></div>
+        <img src="images/captivate.png" alt="Adobe Captivate">
         <h3>Adobe Captivate</h3>
         <span class="pill-level">Advanced</span>
       </div>
       <div class="skill-card">
-        <div class="skill-icon"><i class="fa-solid fa-bezier-curve"></i></div>
+        <img src="images/illustrator.png" alt="Adobe Illustrator">
         <h3>Adobe Illustrator</h3>
         <span class="pill-level">Intermediate</span>
       </div>
       <div class="skill-card">
-        <div class="skill-icon"><i class="fa-solid fa-image"></i></div>
+        <img src="images/photoshop.png" alt="Adobe Photoshop">
         <h3>Adobe Photoshop</h3>
         <span class="pill-level">Intermediate</span>
       </div>
       <div class="skill-card">
-        <div class="skill-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+        <img src="images/learndash.png" alt="LearnDash LMS">
         <h3>LearnDash LMS</h3>
         <span class="pill-level">Advanced</span>
       </div>
       <div class="skill-card">
-        <div class="skill-icon"><i class="fa-solid fa-server"></i></div>
+        <img src="images/quicklearn.png" alt="QuickLearn LMS">
         <h3>QuickLearn LMS</h3>
         <span class="pill-level">Advanced</span>
       </div>
       <div class="skill-card">
-        <div class="skill-icon"><i class="fa-solid fa-box-archive"></i></div>
+        <img src="images/scorm.png" alt="SCORM 1.2">
         <h3>SCORM 1.2 Standards</h3>
         <span class="pill-level">Expert</span>
       </div>
-      <div class
+      <div class="skill-card">
+        <img src="images/excel.png" alt="Microsoft Excel">
+        <h3>Microsoft Excel</h3>
+        <span class="pi
