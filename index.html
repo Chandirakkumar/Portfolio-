@@ -3,14 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chandirakkumar S | Instructional Designer & eLearning Developer</title>
+<title>Chandirakkumar | Portfolio</title>
 
-<!-- Fonts & Devicons -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 <style>
+
 :root {
   --bg-main: #F8FAFC;         /* Crisp off-white canvas */
   --bg-surface: #FFFFFF;      /* Clean pure white surfaces */
@@ -26,37 +24,37 @@
   --shadow-md: 0 10px 25px -5px rgba(15, 23, 42, 0.06), 0 8px 10px -6px rgba(15, 23, 42, 0.03);
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-html {
+html{
   scroll-behavior: smooth;
 }
 
-body {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+body{
+  font-family:'Inter',sans-serif;
   background: var(--bg-main);
   color: var(--text-primary);
   line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
 }
 
 /* ===== STICKY TOP NAVBAR ===== */
-.top-nav {
+
+.top-nav{
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border-subtle);
-  padding: 14px 24px;
+  padding: 16px 24px;
 }
 
-.nav-container {
+.nav-container{
   max-width: 1150px;
   margin: 0 auto;
   display: flex;
@@ -64,7 +62,7 @@ body {
   align-items: center;
 }
 
-.logo {
+.logo{
   font-size: 20px;
   font-weight: 800;
   color: var(--text-primary);
@@ -72,17 +70,12 @@ body {
   letter-spacing: -0.5px;
 }
 
-.logo span {
-  color: var(--primary);
-}
-
-.nav-links {
+.nav-links{
   display: flex;
-  gap: 8px;
-  list-style: none;
+  gap: 12px;
 }
 
-.nav-links a {
+.nav-links a{
   text-decoration: none;
   color: var(--text-secondary);
   padding: 8px 16px;
@@ -92,493 +85,485 @@ body {
   transition: .2s ease;
 }
 
-.nav-links a:hover {
+.nav-links a:hover{
   color: var(--primary);
   background: var(--primary-light);
 }
 
 /* ===== MAIN CONTAINER ===== */
-.main {
+
+.main{
   width: 100%;
   max-width: 1150px;
   margin: 0 auto;
   padding: 40px 24px 80px;
 }
 
-.section {
+.section{
   margin-bottom: 70px;
-  scroll-margin-top: 90px;
+  scroll-margin-top: 90px; /* Aligns smoothly under sticky navbar */
 }
 
 /* ===== ABOUT HERO CARD ===== */
-.about-card {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 40px;
+
+.about-card{
+  position:relative;
+  display:flex;
+  align-items:center;
+  gap:40px;
   background: var(--bg-surface);
-  padding: 44px;
-  border-radius: 24px;
+  padding:44px;
+  border-radius:24px;
   border: 1px solid var(--border-subtle);
   box-shadow: var(--shadow-md);
-  margin-bottom: 50px;
-  overflow: hidden;
+  margin-bottom:60px;
+  overflow:hidden;
 }
 
-.profile-image {
-  position: relative;
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  border: 4px solid var(--primary-light);
-  padding: 4px;
+.profile-image{
+  position:relative;
+  width:180px;
+  height:180px;
+  border-radius:50%;
+  border:4px solid var(--primary-light);
+  padding:4px;
   background: var(--bg-surface);
   box-shadow: 0 0 0 1px var(--border-subtle);
-  flex-shrink: 0;
+  flex-shrink:0;
 }
 
-.profile-image img {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: top center;
+.profile-image img{
+  width:100%;
+  height:100%;
+  border-radius:50%;
+  object-fit:cover;
 }
 
-.profile-dot {
-  position: absolute;
-  bottom: 8px;
-  right: 8px;
-  width: 22px;
-  height: 22px;
-  background: #10B981;
-  border: 3px solid var(--bg-surface);
-  border-radius: 50%;
-  box-shadow: 0 0 8px rgba(16, 185, 129, 0.4);
+.profile-dot{
+  position:absolute;
+  bottom:6px;
+  right:6px;
+  width:22px;
+  height:22px;
+  background:#10B981;
+  border:3px solid var(--bg-surface);
+  border-radius:50%;
+  box-shadow:0 0 8px rgba(16, 185, 129, 0.35);
 }
 
-.about-info {
-  flex: 1;
-  z-index: 2;
+.about-info{
+  flex:1;
+  z-index:2;
 }
 
-.about-info h2 {
-  font-size: 34px;
-  font-weight: 800;
-  margin-bottom: 6px;
+.about-info h2{
+  font-size:36px;
+  font-weight:800;
+  margin-bottom:8px;
   color: var(--text-primary);
-  letter-spacing: -0.8px;
+  letter-spacing:-1px;
 }
 
-.about-info h3 {
-  font-size: 15px;
-  font-weight: 600;
-  margin-bottom: 14px;
+.about-info h3{
+  font-size:16px;
+  font-weight:600;
+  margin-bottom:14px;
   color: var(--primary);
-  letter-spacing: 0.2px;
+  letter-spacing:0.2px;
 }
 
-.about-text {
-  font-size: 15px;
-  line-height: 1.75;
+.about-text{
+  font-size:15px;
+  line-height:1.75;
   color: var(--text-secondary);
-  margin-bottom: 16px;
+  margin-bottom:18px;
 }
 
-.location {
-  font-size: 14px;
-  font-weight: 600;
+.location{
+  font-size:14px;
+  font-weight:600;
   color: var(--text-primary);
-  display: flex;
-  align-items: center;
-  gap: 8px;
+  display:flex;
+  align-items:center;
+  gap:6px;
 }
 
-.location img {
-  width: 18px;
-  height: 18px;
-  object-fit: contain;
+.dots{
+  position:absolute;
+  width:90px;
+  height:90px;
+  background-image:radial-gradient(var(--border-strong) 2px, transparent 2px);
+  background-size:16px 16px;
+  opacity:0.6;
 }
 
-.dots {
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  background-image: radial-gradient(var(--border-strong) 2px, transparent 2px);
-  background-size: 16px 16px;
-  opacity: 0.5;
-  pointer-events: none;
+.dots-left{
+  top:20px;
+  left:20px;
 }
 
-.dots-left { top: 20px; left: 20px; }
-.dots-right { bottom: 20px; right: 20px; }
+.dots-right{
+  bottom:20px;
+  right:20px;
+}
 
 /* ===== SECTION HEADERS ===== */
-.section-header {
-  margin-bottom: 28px;
-  border-left: 4px solid var(--primary);
-  padding-left: 18px;
+
+.section-header{
+  margin-bottom:28px;
+  border-left:4px solid var(--primary);
+  padding-left:18px;
 }
 
-.section-header h2 {
-  font-size: 26px;
-  font-weight: 800;
+.section-header h2{
+  font-size:26px;
+  font-weight:800;
   color: var(--text-primary);
-  letter-spacing: -0.5px;
-  margin-bottom: 4px;
+  letter-spacing:-0.5px;
+  margin-bottom:4px;
 }
 
-.section-header p {
+.section-header p{
   color: var(--text-secondary);
-  font-size: 15px;
+  font-size:15px;
 }
 
 /* ===== GRIDS & CARDS ===== */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:24px;
 }
 
-.card {
+.card{
   background: var(--bg-surface);
-  padding: 24px;
-  border-radius: 20px;
-  border: 1px solid var(--border-subtle);
+  padding:26px;
+  border-radius:20px;
+  border:1px solid var(--border-subtle);
   box-shadow: var(--shadow-sm);
-  transition: .25s ease;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 8px;
+  transition:.25s ease;
+  min-height:130px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:8px;
 }
 
-.card:hover {
-  transform: translateY(-3px);
+.card:hover{
+  transform:translateY(-3px);
   border-color: var(--border-strong);
   box-shadow: var(--shadow-md);
 }
 
-.dashboard-grid .card {
-  border-left: 4px solid var(--primary);
-  min-height: 110px;
+.dashboard-grid .card{
+  border-left:4px solid var(--primary);
 }
 
-#projects .card {
-  min-height: 440px;
-  justify-content: flex-start;
-  gap: 12px;
+#projects .card{
+  min-height:430px;
+  justify-content:flex-start;
+  gap:12px;
 }
 
-#projects .card .btn {
-  margin-top: auto;
-  width: 100%;
-  text-align: center;
+#projects .card .btn{
+  margin-top:auto;
+  width:100%;
+  text-align:center;
 }
 
-#projects .card img, 
-#projects .card iframe {
-  width: 100%;
-  aspect-ratio: 16/9;
-  object-fit: cover;
-  border-radius: 12px;
-  display: block;
-  margin-bottom: 8px;
-  border: 1px solid var(--border-subtle);
+#projects .card img, #projects .card iframe{
+  width:100%;
+  aspect-ratio:16/9;
+  object-fit:cover;
+  border-radius:12px;
+  display:block;
+  margin-bottom:8px;
+  border:1px solid var(--border-subtle);
   background: var(--bg-subtle);
 }
 
-.card h3 {
+.card h3{
   color: var(--text-primary);
-  font-size: 18px;
-  font-weight: 700;
+  font-size:18px;
+  font-weight:700;
 }
 
-.card p {
+.card p{
   color: var(--text-secondary);
-  font-size: 14px;
-  line-height: 1.6;
+  font-size:14px;
+  line-height:1.6;
 }
 
-/* ===== SKILLS CARDS (WITH YOUR LOGOS) ===== */
-.skills-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 20px;
+/* ===== SKILLS CARDS ===== */
+
+.skills-container{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:20px;
 }
 
-.skill-card {
+.skill-card{
   background: var(--bg-surface);
-  border-radius: 18px;
-  padding: 26px 18px;
-  text-align: center;
-  border: 1px solid var(--border-subtle);
+  border-radius:18px;
+  padding:28px 20px;
+  text-align:center;
+  border:1px solid var(--border-subtle);
   box-shadow: var(--shadow-sm);
-  transition: .25s ease;
-  border-top: 4px solid var(--primary);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  transition:.25s ease;
+  border-top:4px solid var(--primary);
 }
 
-.skill-card:hover {
-  transform: translateY(-4px);
+.skill-card:hover{
+  transform:translateY(-4px);
   box-shadow: var(--shadow-md);
   border-color: var(--border-strong);
 }
 
-.skill-card .logo-wrap {
-  width: 60px;
-  height: 60px;
-  background: var(--bg-subtle);
-  border: 1px solid var(--border-subtle);
-  border-radius: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 14px;
-  padding: 10px;
+.skill-card img{
+  width:52px;
+  height:52px;
+  object-fit:contain;
+  margin-bottom:14px;
 }
 
-.skill-card .logo-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-.skill-card h3 {
-  font-size: 15px;
-  font-weight: 700;
+.skill-card h3{
+  font-size:15px;
+  font-weight:700;
   color: var(--text-primary);
-  margin-bottom: 10px;
+  margin-bottom:12px;
 }
 
-.level {
-  display: inline-block;
-  padding: 4px 12px;
-  border-radius: 30px;
-  font-size: 11px;
-  font-weight: 700;
+.level{
+  display:inline-block;
+  padding:5px 14px;
+  border-radius:30px;
+  font-size:11px;
+  font-weight:700;
   background: var(--primary-light);
   color: var(--primary);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  text-transform:uppercase;
+  letter-spacing:0.5px;
 }
 
 /* ===== BUTTONS ===== */
-.btn {
-  display: inline-block;
-  padding: 12px 20px;
+
+.btn{
+  display:inline-block;
+  padding:12px 20px;
   background: var(--primary);
-  color: #FFFFFF;
-  text-decoration: none;
-  border-radius: 12px;
-  font-weight: 600;
-  font-size: 14px;
-  transition: .2s ease;
+  color:#FFFFFF;
+  text-decoration:none;
+  border-radius:12px;
+  font-weight:600;
+  font-size:14px;
+  transition:.2s ease;
   box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
 }
 
-.btn:hover {
+.btn:hover{
   background: var(--primary-hover);
-  transform: translateY(-1px);
+  transform:translateY(-1px);
   box-shadow: 0 6px 14px rgba(37, 99, 235, 0.3);
 }
 
 /* ===== CONTACT CARDS ===== */
-.contact-card {
-  display: grid;
-  grid-template-columns: 60px 1fr auto;
-  gap: 20px;
-  padding: 20px 24px;
+
+.contact-card{
+  display:grid;
+  grid-template-columns:60px 1fr auto;
+  gap:20px;
+  padding:22px 28px;
   background: var(--bg-surface);
-  border-radius: 18px;
-  margin-bottom: 16px;
-  border: 1px solid var(--border-subtle);
+  border-radius:18px;
+  margin-bottom:16px;
+  border:1px solid var(--border-subtle);
   box-shadow: var(--shadow-sm);
-  transition: .2s ease;
-  align-items: center;
+  transition:.2s ease;
+  align-items:center;
 }
 
-.contact-card:hover {
-  transform: translateY(-2px);
+.contact-card:hover{
+  transform:translateY(-2px);
   box-shadow: var(--shadow-md);
   border-color: var(--border-strong);
 }
 
-.contact-icon {
-  width: 60px;
-  height: 60px;
+.contact-icon{
+  width:60px;
+  height:60px;
   background: var(--bg-subtle);
-  border-radius: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid var(--border-subtle);
+  border-radius:14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border:1px solid var(--border-subtle);
 }
 
-.contact-icon img {
-  width: 28px;
-  height: 28px;
-  object-fit: contain;
+.contact-icon img{
+  width:28px;
+  height:28px;
+  object-fit:contain;
 }
 
-.contact-details h3 {
-  font-size: 17px;
+.contact-details h3{
+  font-size:17px;
   color: var(--text-primary);
-  font-weight: 700;
-  margin-bottom: 2px;
+  font-weight:700;
+  margin-bottom:2px;
 }
 
-.contact-details p {
-  font-size: 14px;
+.contact-details p{
+  font-size:14px;
   color: var(--text-secondary);
 }
 
-.contact-btn {
+.contact-btn{
   background: var(--bg-subtle);
   color: var(--text-primary);
-  text-decoration: none;
-  padding: 10px 20px;
-  border-radius: 10px;
-  font-weight: 600;
-  font-size: 14px;
-  transition: .2s ease;
-  min-width: 120px;
-  text-align: center;
-  border: 1px solid var(--border-subtle);
+  text-decoration:none;
+  padding:10px 20px;
+  border-radius:10px;
+  font-weight:600;
+  font-size:14px;
+  transition:.2s ease;
+  min-width:120px;
+  text-align:center;
+  border:1px solid var(--border-subtle);
 }
 
-.contact-btn:hover {
+.contact-btn:hover{
   background: var(--primary);
-  color: #FFFFFF;
+  color:#FFFFFF;
   border-color: var(--primary);
 }
 
-.availability {
-  display: flex;
-  align-items: center;
+.availability{
+  display:flex;
+  align-items:center;
   background: var(--bg-surface);
-  padding: 26px 32px;
-  border-radius: 20px;
-  max-width: 100%;
-  margin-top: 30px;
-  border: 1px solid var(--border-subtle);
-  border-left: 4px solid #10B981;
+  padding:28px 36px;
+  border-radius:20px;
+  max-width:100%;
+  margin-top:35px;
+  border:1px solid var(--border-subtle);
+  border-left:4px solid #10B981;
   box-shadow: var(--shadow-sm);
 }
 
-.availability-icon {
-  width: 60px;
-  height: 60px;
+.availability-icon{
+  width:64px;
+  height:64px;
   background: #ECFDF5;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 20px;
-  flex-shrink: 0;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-right:24px;
+  flex-shrink:0;
 }
 
-.availability-icon img {
-  width: 30px;
-  height: 30px;
-  object-fit: contain;
+.availability-icon img{
+  width:32px;
+  height:32px;
+  object-fit:contain;
 }
 
-.availability h3 {
-  font-size: 18px;
-  margin-bottom: 2px;
+.availability h3{
+  font-size:18px;
+  margin-bottom:2px;
   color: var(--text-primary);
-  font-weight: 700;
+  font-weight:700;
 }
 
-.availability p {
-  font-size: 14px;
+.availability p{
+  font-size:14px;
   color: var(--text-secondary);
 }
 
 /* ===== RESPONSIVE ===== */
+
 @media (max-width: 820px) {
-  .nav-links {
-    display: none;
+  .nav-links{
+    display: none; /* Keeps top header minimal on small screens */
   }
 
-  .main {
-    padding: 24px 16px 60px;
+  .main{
+    padding: 30px 16px 60px;
   }
 
-  .grid {
-    grid-template-columns: 1fr;
+  .grid{
+    grid-template-columns:1fr;
   }
 
-  .about-card {
-    flex-direction: column;
-    text-align: center;
-    padding: 35px 20px;
-    gap: 20px;
+  .about-card{
+    flex-direction:column;
+    text-align:center;
+    padding:35px 20px;
+    gap:20px;
   }
 
-  .profile-image {
-    width: 150px;
-    height: 150px;
+  .profile-image{
+    width:150px;
+    height:150px;
   }
 
-  .about-info h2 {
-    font-size: 28px;
+  .about-info h2{
+    font-size:28px;
   }
 
-  .location {
-    justify-content: center;
+  .location{
+    justify-content:center;
   }
 
   .dots-left,
-  .dots-right {
-    display: none;
+  .dots-right{
+    display:none;
   }
 
-  .skills-container {
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    gap: 14px;
+  .skills-container{
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:16px;
   }
 
-  .contact-card {
-    grid-template-columns: 1fr;
-    text-align: center;
-    justify-items: center;
-    padding: 24px 16px;
-    gap: 14px;
+  .contact-card{
+    grid-template-columns:1fr;
+    text-align:center;
+    justify-items:center;
+    padding:24px 16px;
+    gap:14px;
   }
 
-  .contact-details {
-    text-align: center;
+  .contact-details{
+    text-align:center;
   }
 
-  .contact-btn {
-    width: 100%;
-    max-width: 240px;
+  .contact-btn{
+    width:100%;
+    max-width:240px;
   }
 
-  .availability {
-    flex-direction: column;
-    text-align: center;
-    padding: 24px 16px;
-    gap: 14px;
+  .availability{
+    flex-direction:column;
+    text-align:center;
+    padding:26px 20px;
+    gap:16px;
   }
 
-  .availability-icon {
-    margin-right: 0;
+  .availability-icon{
+    margin-right:0;
   }
 }
+
 </style>
 </head>
 
 <body>
 
-<!-- STICKY TOP NAVBAR -->
+<!-- STICKY SMOOTH-SCROLL HEADER -->
 <header class="top-nav">
   <div class="nav-container">
-    <a href="#about" class="logo">Chandirakkumar<span>.S</span></a>
+    <a href="#about" class="logo">Chandirakkumar</a>
     <nav class="nav-links">
       <a href="#about">About</a>
       <a href="#overview">Overview</a>
@@ -591,23 +576,22 @@ body {
 
 <div class="main">
 
-  <!-- ABOUT HERO CARD -->
+  <!-- ABOUT HERO SECTION -->
   <section id="about" class="section">
     <div class="about-card">
       <div class="profile-image">
-        <img src="IMG_20260409_223924.jpg" alt="Chandirakkumar S" onerror="this.src='https://placehold.co/180x180/2563eb/ffffff?text=Chandru'">
-        <div class="profile-dot" title="Available for work"></div>
+        <img src="IMG_20260409_223924.jpg" alt="Profile">
+        <div class="profile-dot"></div>
       </div>
 
       <div class="about-info">
         <h2>Chandirakkumar S</h2>
         <h3>Instructional Designer | eLearning & Multimedia Developer | Visual Designer</h3>
         <p class="about-text">
-          Instructional Designer & interactive eLearning developer based in Bengaluru. Experienced in building 100+ modules with Articulate Storyline 360, multimedia production, scenario-based learning, and LMS/SCORM 1.2 deployment.
+          Instructional Designer with 1+ year of experience in Storyline 360, LMS Management, SCORM publishing, and interactive eLearning development.
         </p>
         <p class="location">
-          <img src="images/location.png" alt="Location" onerror="this.outerHTML='📍'">
-          Bengaluru, Karnataka, India
+          📍 Bengaluru, Karnataka, India
         </p>
       </div>
 
@@ -620,41 +604,49 @@ body {
   <section id="overview" class="section">
     <div class="section-header">
       <h2>Dashboard Overview</h2>
-      <p>Core metrics and key technical capabilities</p>
+      <p>Quick overview of my work and experience.</p>
     </div>
 
     <div class="grid dashboard-grid">
       <div class="card">
         <h3>📘 100+ Modules</h3>
-        <p>Interactive self-paced eLearning courses developed.</p>
+        <p>Interactive eLearning modules developed.</p>
       </div>
       <div class="card">
         <h3>🎯 Instructional Design</h3>
-        <p>Scenario-based branching & cognitive structure.</p>
+        <p>Scenario-based learning & learner engagement.</p>
       </div>
       <div class="card">
         <h3>💻 Storyline 360</h3>
-        <p>Custom triggers, conditional variables & layers.</p>
+        <p>Variables, triggers, animations & interactions.</p>
       </div>
       <div class="card">
         <h3>📦 SCORM Publishing</h3>
-        <p>SCORM 1.2 packaging, tracking & LMS verification.</p>
+        <p>SCORM 1.2 packaging & LMS deployment.</p>
       </div>
       <div class="card">
-        <h3>🎬 Video & Motion</h3>
-        <p>Premiere Pro editing & After Effects graphics.</p>
+        <h3>🎬 Video Editing</h3>
+        <p>Adobe Premiere Pro & After Effects projects.</p>
       </div>
       <div class="card">
         <h3>🎨 PowerPoint Design</h3>
-        <p>Structured corporate training decks & infographics.</p>
+        <p>Professional training presentations.</p>
       </div>
       <div class="card">
         <h3>⚙ LearnDash LMS</h3>
-        <p>Course creation, enrollment & reporting management.</p>
+        <p>Course creation, learner management & reporting.</p>
       </div>
       <div class="card">
         <h3>☁ QuickLearn LMS</h3>
-        <p>Course administration and learner deployment.</p>
+        <p>Course deployment and administration.</p>
+      </div>
+      <div class="card">
+        <h3>📝 Assessments</h3>
+        <p>Knowledge checks, quizzes & certifications.</p>
+      </div>
+      <div class="card">
+        <h3>🚀 Rapid eLearning</h3>
+        <p>End-to-end course development & delivery.</p>
       </div>
     </div>
   </section>
@@ -662,141 +654,174 @@ body {
   <!-- PROJECTS SECTION -->
   <section id="projects" class="section">
     <div class="section-header">
-      <h2>Projects & Demos</h2>
-      <p>Interactive Storyline modules, localization courses, and video productions</p>
+      <h2>Projects</h2>
+      <p>My recent work.</p>
     </div>
 
     <div class="grid">
-      <!-- Video 1 -->
       <div class="card">
-        <iframe src="https://drive.google.com/file/d/1rRtZDmiMiKexJ4jQxXIFJ_b89UR3zWo3/preview" allow="autoplay" allowfullscreen></iframe>
+        <iframe src="https://drive.google.com/file/d/1rRtZDmiMiKexJ4jQxXIFJ_b89UR3zWo3/preview" width="100%" allow="autoplay"></iframe>
         <h3>Interactive SCORM eLearning</h3>
-        <p>Self-paced module showcasing complex trigger execution, knowledge checks, and custom SCORM completion tracking.</p>
-        <a href="https://drive.google.com/file/d/1-Jr4AcAYIeU_B9Cimcw1WLswNRgfx0MU/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn">▶ Watch Demo</a>
+        <p>Interactive Storyline module with custom navigation, assessments and SCORM publishing.</p>
+        <a href="https://drive.google.com/file/d/1-Jr4AcAYIeU_B9Cimcw1WLswNRgfx0MU/view?usp=sharing" target="_blank" class="btn">▶ Watch Demo</a>
       </div>
 
-      <!-- Video 2 -->
       <div class="card">
-        <iframe src="https://drive.google.com/file/d/1IIuKoOcBHQ35GzFYcmutqnFGDglw8n3t/preview" allow="autoplay" allowfullscreen></iframe>
+        <iframe src="https://drive.google.com/file/d/1IIuKoOcBHQ35GzFYcmutqnFGDglw8n3t/preview" width="100%" allow="autoplay"></iframe>
         <h3>Multi-language eLearning</h3>
-        <p>Interactive Storyline course with language switching and localized learner assessment workflows.</p>
-        <a href="https://drive.google.com/file/d/1IIuKoOcBHQ35GzFYcmutqnFGDglw8n3t/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn">▶ Watch Demo</a>
+        <p>Interactive Storyline course with language switching and multilingual learning support.</p>
+        <a href="https://drive.google.com/file/d/1IIuKoOcBHQ35GzFYcmutqnFGDglw8n3t/view?usp=sharing" target="_blank" class="btn">▶ Watch Demo</a>
       </div>
 
-      <!-- PowerPoint Project (With fallback) -->
       <div class="card">
-        <img src="images/ppt-design-1.png" alt="Corporate PowerPoint Design" onerror="this.onerror=null; this.src='https://placehold.co/600x338/EFF6FF/2563EB?text=PowerPoint+Design+Showcase';">
+        <img src="images/ppt-design-1.png" alt="PowerPoint">
         <h3>Corporate PowerPoint Design</h3>
-        <p>Professional training presentations transformed into modern visual layouts, diagrams, and data hierarchy.</p>
-        <span class="btn" style="background: var(--bg-subtle); color: var(--text-primary); cursor: default; box-shadow: none;">Visual Deliverable</span>
+        <p>Professional training presentations with modern layouts, infographics and learning content.</p>
       </div>
 
-      <!-- Video 3 -->
       <div class="card">
-        <iframe src="https://drive.google.com/file/d/1v1ISwjEXjLI4X5jwVbi-a-JX1O14nO5p/preview" allow="autoplay" allowfullscreen></iframe>
+        <iframe src="https://drive.google.com/file/d/1v1ISwjEXjLI4X5jwVbi-a-JX1O14nO5p/preview" width="100%" allow="autoplay"></iframe>
         <h3>Video Editing & Motion Graphics</h3>
-        <p>Adobe Premiere Pro & After Effects projects with motion graphics, instructional callouts, and clean transitions.</p>
-        <a href="https://drive.google.com/file/d/12KMOnXd8ilEKFB4JqiAr99lX8_8IBSUv/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn">▶ Watch Video</a>
+        <p>Adobe Premiere Pro & After Effects projects with cinematic editing, VFX and motion graphics.</p>
+        <a href="https://drive.google.com/file/d/12KMOnXd8ilEKFB4JqiAr99lX8_8IBSUv/view?usp=sharing" target="_blank" class="btn">▶ Watch Video</a>
       </div>
     </div> 
   </section> 
 
-  <!-- SKILLS SECTION (All 12 logos prominently used) -->
+  <!-- SKILLS SECTION -->
   <section id="skills" class="section">
     <div class="section-header">
       <h2>Technical Skills</h2>
-      <p>Tools & Technologies I work with daily</p>
+      <p>Tools & Technologies I work with</p>
     </div>
 
     <div class="skills-container">
       <div class="skill-card">
-        <div class="logo-wrap">
-          <img src="images/storyline.png" alt="Storyline" onerror="this.src='https://placehold.co/48x48/EFF6FF/2563EB?text=SL'">
-        </div>
+        <img src="images/storyline.png" alt="Storyline">
         <h3>Articulate Storyline 360</h3>
         <span class="level">Expert</span>
       </div>
-
       <div class="skill-card">
-        <div class="logo-wrap">
-          <img src="images/premiere.png" alt="Premiere Pro" onerror="this.src='https://placehold.co/48x48/EFF6FF/2563EB?text=PR'">
-        </div>
+        <img src="images/premiere.png" alt="Premiere Pro">
         <h3>Adobe Premiere Pro</h3>
         <span class="level">Advanced</span>
       </div>
-
       <div class="skill-card">
-        <div class="logo-wrap">
-          <img src="images/aftereffects.png" alt="After Effects" onerror="this.src='https://placehold.co/48x48/EFF6FF/2563EB?text=AE'">
-        </div>
+        <img src="images/aftereffects.png" alt="After Effects">
         <h3>Adobe After Effects</h3>
         <span class="level">Advanced</span>
       </div>
-
       <div class="skill-card">
-        <div class="logo-wrap">
-          <img src="images/powerpoint.png" alt="PowerPoint" onerror="this.src='https://placehold.co/48x48/EFF6FF/2563EB?text=PPT'">
-        </div>
+        <img src="images/powerpoint.png" alt="PowerPoint">
         <h3>Microsoft PowerPoint</h3>
         <span class="level">Expert</span>
       </div>
-
       <div class="skill-card">
-        <div class="logo-wrap">
-          <img src="images/captivate.png" alt="Captivate" onerror="this.src='https://placehold.co/48x48/EFF6FF/2563EB?text=CP'">
-        </div>
+        <img src="images/captivate.png" alt="Captivate">
         <h3>Adobe Captivate</h3>
         <span class="level">Advanced</span>
       </div>
-
       <div class="skill-card">
-        <div class="logo-wrap">
-          <img src="images/illustrator.png" alt="Illustrator" onerror="this.src='https://placehold.co/48x48/EFF6FF/2563EB?text=AI'">
-        </div>
+        <img src="images/illustrator.png" alt="Illustrator">
         <h3>Adobe Illustrator</h3>
         <span class="level">Intermediate</span>
       </div>
-
       <div class="skill-card">
-        <div class="logo-wrap">
-          <img src="images/photoshop.png" alt="Photoshop" onerror="this.src='https://placehold.co/48x48/EFF6FF/2563EB?text=PS'">
-        </div>
+        <img src="images/photoshop.png" alt="Photoshop">
         <h3>Adobe Photoshop</h3>
         <span class="level">Intermediate</span>
       </div>
-
       <div class="skill-card">
-        <div class="logo-wrap">
-          <img src="images/learndash.png" alt="LearnDash" onerror="this.src='https://placehold.co/48x48/EFF6FF/2563EB?text=LD'">
-        </div>
+        <img src="images/learndash.png" alt="LearnDash">
         <h3>LearnDash LMS</h3>
         <span class="level">Advanced</span>
       </div>
-
       <div class="skill-card">
-        <div class="logo-wrap">
-          <img src="images/quicklearn.png" alt="QuickLearn" onerror="this.src='https://placehold.co/48x48/EFF6FF/2563EB?text=QL'">
-        </div>
+        <img src="images/quicklearn.png" alt="QuickLearn">
         <h3>QuickLearn LMS</h3>
         <span class="level">Advanced</span>
       </div>
-
       <div class="skill-card">
-        <div class="logo-wrap">
-          <img src="images/scorm.png" alt="SCORM" onerror="this.src='https://placehold.co/48x48/EFF6FF/2563EB?text=SCORM'">
-        </div>
+        <img src="images/scorm.png" alt="SCORM">
         <h3>SCORM 1.2</h3>
         <span class="level">Expert</span>
       </div>
-
       <div class="skill-card">
-        <div class="logo-wrap">
-          <img src="images/excel.png" alt="Excel" onerror="this.src='https://placehold.co/48x48/EFF6FF/2563EB?text=XLS'">
-        </div>
+        <img src="images/excel.png" alt="Excel">
         <h3>Microsoft Excel</h3>
         <span class="level">Intermediate</span>
       </div>
-
       <div class="skill-card">
-        <div class="logo-wrap">
-          <img src="images/word.png" alt="Word" onerror="this.src='https://placehold.co/48x48/EFF6FF/2563EB
+        <img src="images/word.png" alt="Word">
+        <h3>Microsoft Word</h3>
+        <span class="level">Advanced</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="section">
+    <div class="section-header">
+      <h2>Contact</h2>
+      <p>Let's connect for Instructional Design, eLearning Development,<br>and Video Editing projects.</p>
+    </div>
+
+    <div class="contact-card">
+      <div class="contact-icon">
+        <img src="images/email.png" alt="Email Icon">
+      </div>
+      <div class="contact-details">
+        <h3>Email</h3>
+        <p>sv393015@gmail.com</p>
+      </div>
+      <a href="mailto:sv393015@gmail.com" class="contact-btn">Send Mail</a>
+    </div>
+
+    <div class="contact-card">
+      <div class="contact-icon">
+        <img src="images/phone.png" alt="Phone Icon">
+      </div>
+      <div class="contact-details">
+        <h3>Phone</h3>
+        <p>+91 93530 80994</p>
+      </div>
+      <a href="tel:+919353080994" class="contact-btn">Call Me</a>
+    </div>
+
+    <div class="contact-card">
+      <div class="contact-icon">
+        <img src="images/linkedin.png" alt="LinkedIn Icon">
+      </div>
+      <div class="contact-details">
+        <h3>LinkedIn</h3>
+        <p>linkedin.com/in/chandru-elearning</p>
+      </div>
+      <a href="https://www.linkedin.com/in/chandru-elearning" target="_blank" rel="noopener noreferrer" class="contact-btn">View Profile</a>
+    </div>
+
+    <div class="contact-card">
+      <div class="contact-icon">
+        <img src="images/location.png" alt="Location Icon">
+      </div>
+      <div class="contact-details">
+        <h3>Location</h3>
+        <p>Bengaluru, Karnataka, India</p>
+      </div>
+      <a href="https://maps.google.com" target="_blank" class="contact-btn">View on Map</a>
+    </div>
+
+    <div class="availability">
+      <div class="availability-icon">
+        <img src="images/available.png" alt="Available Emblem">
+      </div>
+      <div>
+        <h3>Available for Freelance & Full-time Opportunities</h3>
+        <p>I usually reply within 24 hours.</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+</body>
+</html>
