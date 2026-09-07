@@ -5,30 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Chandirakkumar S | Instructional Designer & eLearning Developer</title>
   
-  <!-- Google Fonts & Lucide Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --primary: #2563eb;
-      --primary-dark: #1d4ed8;
-      --primary-soft: #eff6ff;
-      --slate-900: #0f172a;
-      --slate-800: #1e293b;
-      --slate-700: #334155;
-      --slate-600: #475569;
-      --slate-500: #64748b;
-      --slate-100: #f1f5f9;
-      --slate-50: #f8fafc;
-      --border-color: #e2e8f0;
-      --card-bg: #ffffff;
-      --radius: 16px;
-      --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
-      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.05);
-      --shadow-lg: 0 12px 24px -4px rgba(0,0,0,0.08), 0 4px 8px -4px rgba(0,0,0,0.04);
-      --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      --primary: #3b82f6;
+      --primary-hover: #2563eb;
+      --accent: #06b6d4;
+      --bg: #0b0f17;
+      --surface: #111827;
+      --surface-card: #162032;
+      --surface-border: #1f2d42;
+      --text: #f3f4f6;
+      --text-muted: #94a3b8;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
     }
 
     * {
@@ -38,11 +32,11 @@
     }
 
     body {
-      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-      background-color: var(--slate-50);
-      color: var(--slate-800);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
       line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
     }
 
     a {
@@ -50,38 +44,32 @@
       color: inherit;
     }
 
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
     .container {
       width: min(1200px, 92%);
       margin-inline: auto;
     }
 
-    /* Navbar */
-    .navbar {
+    /* Header */
+    header {
       position: sticky;
       top: 0;
-      background: rgba(255, 255, 255, 0.9);
+      background: rgba(11, 15, 23, 0.85);
       backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border-color);
-      z-index: 100;
+      border-bottom: 1px solid var(--surface-border);
+      z-index: 1000;
+      padding: 1rem 0;
     }
 
-    .nav-content {
+    .nav-wrapper {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem 0;
     }
 
     .brand {
       font-size: 1.25rem;
       font-weight: 800;
-      color: var(--slate-900);
-      letter-spacing: -0.02em;
+      color: #fff;
     }
 
     .brand span {
@@ -90,188 +78,340 @@
 
     .nav-links {
       display: flex;
-      gap: 1.75rem;
+      gap: 1.5rem;
       align-items: center;
       list-style: none;
     }
 
     .nav-links a {
+      font-size: 0.9rem;
       font-weight: 600;
-      font-size: 0.925rem;
-      color: var(--slate-600);
-      transition: var(--transition);
+      color: var(--text-muted);
+      transition: color 0.2s;
     }
 
     .nav-links a:hover {
-      color: var(--primary);
+      color: #fff;
     }
 
-    .nav-btn {
-      padding: 0.55rem 1.25rem;
+    .contact-btn {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #fff !important;
+      padding: 0.5rem 1.25rem;
       border-radius: 9999px;
-      background: var(--primary);
-      color: white !important;
-      font-weight: 600;
-      box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
-    }
-
-    .nav-btn:hover {
-      background: var(--primary-dark);
-      transform: translateY(-1px);
+      font-weight: 700;
     }
 
     /* Hero Section */
     .hero {
-      padding: 5rem 0 3.5rem;
-      background: linear-gradient(180deg, #ffffff 0%, var(--slate-50) 100%);
-      border-bottom: 1px solid var(--border-color);
+      padding: 4.5rem 0 3.5rem;
+      border-bottom: 1px solid var(--surface-border);
+      position: relative;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
+      grid-template-columns: 1.15fr 0.85fr;
       gap: 3.5rem;
       align-items: center;
     }
 
-    .badge-status {
+    .status-badge {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
-      padding: 0.4rem 0.9rem;
-      background: var(--primary-soft);
-      border: 1px solid #dbeafe;
-      color: var(--primary-dark);
-      font-size: 0.85rem;
-      font-weight: 600;
+      gap: 0.6rem;
+      padding: 0.35rem 0.9rem;
+      background: rgba(6, 182, 212, 0.1);
+      border: 1px solid rgba(6, 182, 212, 0.3);
+      color: var(--accent);
+      font-size: 0.825rem;
+      font-weight: 700;
       border-radius: 9999px;
-      margin-bottom: 1.25rem;
+      margin-bottom: 1.2rem;
     }
 
-    .badge-status img {
-      width: 16px;
-      height: 16px;
+    .status-badge img {
+      width: 14px;
+      height: 14px;
+      object-fit: contain;
     }
 
     .hero h1 {
-      font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+      font-size: clamp(2rem, 4vw, 3.2rem);
       line-height: 1.15;
       font-weight: 800;
-      color: var(--slate-900);
-      letter-spacing: -0.03em;
-      margin-bottom: 1rem;
+      color: #fff;
+      margin-bottom: 0.75rem;
     }
 
-    .hero-tagline {
-      font-size: 1.2rem;
-      color: var(--primary);
+    .hero-subtitle {
+      font-size: 1.1rem;
       font-weight: 600;
-      margin-bottom: 1.5rem;
+      color: var(--primary);
+      margin-bottom: 1.25rem;
     }
 
     .hero-desc {
-      font-size: 1.05rem;
-      color: var(--slate-600);
-      margin-bottom: 2rem;
+      color: var(--text-muted);
+      font-size: 1rem;
       line-height: 1.7;
+      margin-bottom: 2rem;
     }
 
     .hero-stats {
       display: flex;
       gap: 2rem;
       padding-top: 1.5rem;
-      border-top: 1px solid var(--border-color);
+      border-top: 1px solid var(--surface-border);
     }
 
     .stat h3 {
-      font-size: 2rem;
+      font-size: 1.75rem;
       font-weight: 800;
-      color: var(--slate-900);
-      line-height: 1;
+      color: #fff;
     }
 
     .stat p {
-      font-size: 0.875rem;
-      font-weight: 500;
-      color: var(--slate-500);
-      margin-top: 0.25rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
     }
 
-    .profile-card {
+    /* Profile Frame */
+    .profile-frame {
       position: relative;
-      background: white;
+      background: var(--surface);
       padding: 0.75rem;
-      border-radius: 24px;
-      box-shadow: var(--shadow-lg);
-      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--surface-border);
+      box-shadow: 0 20px 40px -15px rgba(0,0,0,0.7);
     }
 
-    .profile-img {
+    .profile-frame img.main-profile {
       width: 100%;
-      height: 440px;
+      height: 420px;
       object-fit: cover;
-      object-position: center top;
-      border-radius: 18px;
+      object-position: top center;
+      border-radius: calc(var(--radius-lg) - 6px);
     }
 
-    .location-pill {
+    .location-strip {
       position: absolute;
       bottom: 1.5rem;
       left: 1.5rem;
       right: 1.5rem;
-      background: rgba(15, 23, 42, 0.85);
-      backdrop-filter: blur(8px);
-      color: white;
-      padding: 0.75rem 1rem;
-      border-radius: 12px;
+      background: rgba(11, 15, 23, 0.9);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--surface-border);
+      color: #fff;
+      padding: 0.65rem 1rem;
+      border-radius: var(--radius-sm);
       display: flex;
       align-items: center;
       gap: 0.6rem;
-      font-size: 0.875rem;
+      font-size: 0.85rem;
       font-weight: 600;
     }
 
-    .location-pill img {
-      width: 18px;
-      height: 18px;
-      filter: brightness(0) invert(1);
+    .location-strip img {
+      width: 16px;
+      height: 16px;
+      object-fit: contain;
     }
 
-    /* Section Styling */
+    /* Section Titles */
     section {
-      padding: 5rem 0;
+      padding: 4.5rem 0;
     }
 
-    .section-header {
+    .section-title-wrap {
       text-align: center;
-      max-width: 680px;
-      margin: 0 auto 3.5rem;
+      max-width: 650px;
+      margin: 0 auto 3rem;
     }
 
-    .section-subtitle {
-      font-size: 0.85rem;
+    .section-tag {
+      font-size: 0.8rem;
       text-transform: uppercase;
       letter-spacing: 0.1em;
       font-weight: 700;
-      color: var(--primary);
-      margin-bottom: 0.5rem;
+      color: var(--accent);
       display: block;
+      margin-bottom: 0.5rem;
     }
 
     .section-title {
-      font-size: 2.1rem;
+      font-size: 2rem;
       font-weight: 800;
-      color: var(--slate-900);
-      letter-spacing: -0.02em;
-      margin-bottom: 0.75rem;
+      color: #fff;
+      margin-bottom: 0.6rem;
     }
 
     .section-desc {
-      color: var(--slate-600);
-      font-size: 1rem;
+      color: var(--text-muted);
+      font-size: 0.95rem;
     }
 
-    /* 4 Pillars */
+    /* Skill Logos Grid */
+    .skills-section {
+      background: var(--surface);
+      border-block: 1px solid var(--surface-border);
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .skill-card {
+      background: var(--surface-card);
+      border: 1px solid var(--surface-border);
+      border-radius: var(--radius-md);
+      padding: 1.5rem 1rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.85rem;
+      transition: all 0.25s ease;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--primary);
+      box-shadow: 0 10px 20px -10px rgba(59, 130, 246, 0.4);
+    }
+
+    .skill-logo-wrap {
+      width: 54px;
+      height: 54px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px;
+    }
+
+    .skill-logo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .skill-title {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    /* Video & Projects Showcase */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+      gap: 2rem;
+    }
+
+    .project-card {
+      background: var(--surface-card);
+      border: 1px solid var(--surface-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.25s ease;
+    }
+
+    .project-card:hover {
+      border-color: var(--primary);
+      box-shadow: 0 15px 30px -10px rgba(0,0,0,0.8);
+      transform: translateY(-3px);
+    }
+
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      background: #000;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .project-image-box {
+      height: 220px;
+      background: #0d131f;
+      overflow: hidden;
+    }
+
+    .project-image-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover .project-image-box img {
+      transform: scale(1.04);
+    }
+
+    .project-body {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .project-badge {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 0.4rem;
+    }
+
+    .project-body h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-body p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 1.25rem;
+      flex: 1;
+    }
+
+    .btn-project {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background: rgba(59, 130, 246, 0.15);
+      border: 1px solid rgba(59, 130, 246, 0.4);
+      color: #60a5fa;
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 0.65rem 1rem;
+      border-radius: var(--radius-sm);
+      transition: all 0.2s ease;
+    }
+
+    .btn-project:hover {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    /* Pillars */
     .pillars-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -279,283 +419,46 @@
     }
 
     .pillar-card {
-      background: white;
-      padding: 2rem;
-      border-radius: var(--radius);
-      border: 1px solid var(--border-color);
-      box-shadow: var(--shadow-sm);
-      transition: var(--transition);
+      background: var(--surface);
+      border: 1px solid var(--surface-border);
+      border-radius: var(--radius-md);
+      padding: 1.75rem;
       position: relative;
     }
 
-    .pillar-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-lg);
-      border-color: #cbd5e1;
-    }
-
-    .pillar-number {
-      display: inline-block;
-      width: 32px;
-      height: 32px;
-      border-radius: 8px;
-      background: var(--primary-soft);
+    .pillar-card span.num {
       color: var(--primary);
       font-weight: 800;
-      font-size: 0.9rem;
-      text-align: center;
-      line-height: 32px;
-      margin-bottom: 1.25rem;
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      display: block;
     }
 
     .pillar-card h3 {
-      font-size: 1.2rem;
+      color: #fff;
+      font-size: 1.15rem;
       font-weight: 700;
-      color: var(--slate-900);
-      margin-bottom: 0.75rem;
-    }
-
-    .pillar-card p {
-      font-size: 0.925rem;
-      color: var(--slate-600);
-      line-height: 1.6;
-    }
-
-    /* Workflow Strip */
-    .workflow-section {
-      background: white;
-      border-block: 1px solid var(--border-color);
-    }
-
-    .workflow-scroll {
-      display: flex;
-      gap: 1rem;
-      overflow-x: auto;
-      padding-bottom: 1.5rem;
-      scrollbar-width: thin;
-    }
-
-    .workflow-node {
-      flex: 0 0 auto;
-      background: var(--slate-50);
-      border: 1px solid var(--border-color);
-      border-radius: 12px;
-      padding: 1rem 1.25rem;
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      font-weight: 600;
-      font-size: 0.9rem;
-      color: var(--slate-700);
-    }
-
-    .workflow-node span {
-      background: var(--primary);
-      color: white;
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.75rem;
-      font-weight: 700;
-    }
-
-    /* Storyline Features Grid */
-    .features-card {
-      background: white;
-      border-radius: 20px;
-      border: 1px solid var(--border-color);
-      padding: 2.5rem;
-      box-shadow: var(--shadow-sm);
-    }
-
-    .feature-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap: 1rem;
-      margin-top: 1.5rem;
-      list-style: none;
-    }
-
-    .feature-item {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      font-size: 0.95rem;
-      color: var(--slate-700);
-      font-weight: 500;
-    }
-
-    .feature-dot {
-      width: 8px;
-      height: 8px;
-      background: var(--primary);
-      border-radius: 50%;
-      flex-shrink: 0;
-    }
-
-    /* Projects & Demos */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-      gap: 2rem;
-    }
-
-    .project-card {
-      background: white;
-      border-radius: var(--radius);
-      border: 1px solid var(--border-color);
-      overflow: hidden;
-      box-shadow: var(--shadow-sm);
-      display: flex;
-      flex-direction: column;
-      transition: var(--transition);
-    }
-
-    .project-card:hover {
-      box-shadow: var(--shadow-lg);
-      transform: translateY(-3px);
-    }
-
-    .video-wrapper {
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-      background: #000;
-    }
-
-    .video-wrapper iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-
-    .project-image-wrap {
-      height: 220px;
-      overflow: hidden;
-      background: var(--slate-100);
-    }
-
-    .project-image-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.4s ease;
-    }
-
-    .project-card:hover .project-image-wrap img {
-      transform: scale(1.03);
-    }
-
-    .project-body {
-      padding: 1.75rem;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .project-tag {
-      font-size: 0.75rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--primary);
-      margin-bottom: 0.5rem;
-    }
-
-    .project-body h3 {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--slate-900);
       margin-bottom: 0.6rem;
     }
 
-    .project-body p {
-      font-size: 0.925rem;
-      color: var(--slate-600);
-      margin-bottom: 1.5rem;
-      flex: 1;
+    .pillar-card p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      line-height: 1.6;
     }
 
-    .project-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      padding: 0.65rem 1rem;
-      border-radius: 8px;
-      background: var(--slate-900);
-      color: white;
-      font-size: 0.875rem;
-      font-weight: 600;
-      transition: var(--transition);
-    }
-
-    .project-btn:hover {
-      background: var(--primary);
-    }
-
-    /* Skills Grid */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
-      gap: 1.25rem;
-    }
-
-    .skill-card {
-      background: white;
-      border: 1px solid var(--border-color);
-      border-radius: 12px;
-      padding: 1.25rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    /* Contact Block */
+    .contact-card {
+      background: linear-gradient(180deg, var(--surface) 0%, var(--surface-card) 100%);
+      border: 1px solid var(--surface-border);
+      border-radius: var(--radius-lg);
+      padding: 3.5rem 2rem;
       text-align: center;
-      gap: 0.75rem;
-      transition: var(--transition);
-    }
-
-    .skill-card:hover {
-      border-color: var(--primary);
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-md);
-    }
-
-    .skill-logo {
-      width: 44px;
-      height: 44px;
-      object-fit: contain;
-    }
-
-    .skill-name {
-      font-size: 0.875rem;
-      font-weight: 600;
-      color: var(--slate-800);
-    }
-
-    /* Contact Section */
-    .contact-section {
-      background: white;
-      border-top: 1px solid var(--border-color);
-      padding: 5rem 0;
-    }
-
-    .contact-container {
       max-width: 800px;
-      background: var(--slate-50);
-      border: 1px solid var(--border-color);
-      border-radius: 24px;
-      padding: 3rem 2rem;
-      text-align: center;
       margin: 0 auto;
     }
 
-    .contact-links {
+    .contact-items {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
@@ -563,48 +466,46 @@
       margin-top: 2rem;
     }
 
-    .contact-badge {
+    .contact-pill {
       display: inline-flex;
       align-items: center;
       gap: 0.6rem;
-      background: white;
-      border: 1px solid var(--border-color);
+      background: var(--bg);
+      border: 1px solid var(--surface-border);
+      color: #fff;
       padding: 0.75rem 1.25rem;
-      border-radius: 12px;
+      border-radius: var(--radius-sm);
       font-size: 0.9rem;
       font-weight: 600;
-      color: var(--slate-700);
-      transition: var(--transition);
+      transition: all 0.2s;
     }
 
-    .contact-badge:hover {
-      border-color: var(--primary);
-      color: var(--primary);
-      transform: translateY(-2px);
+    .contact-pill:hover {
+      border-color: var(--accent);
+      color: var(--accent);
     }
 
-    .contact-badge img {
-      width: 20px;
-      height: 20px;
+    .contact-pill img {
+      width: 18px;
+      height: 18px;
+      object-fit: contain;
     }
 
-    /* Footer */
     footer {
-      background: var(--slate-900);
-      color: var(--slate-500);
-      text-align: center;
+      border-top: 1px solid var(--surface-border);
       padding: 2rem 0;
-      font-size: 0.875rem;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
     }
 
-    @media (max-width: 900px) {
+    @media (max-width: 860px) {
       .hero-grid {
         grid-template-columns: 1fr;
-        text-align: left;
       }
-      .profile-card {
+      .profile-frame {
         max-width: 420px;
-        margin-inline: auto;
+        margin: 0 auto;
       }
       .nav-links {
         display: none;
@@ -615,32 +516,32 @@
 <body>
 
   <!-- Navigation -->
-  <header class="navbar">
-    <div class="container nav-content">
+  <header>
+    <div class="container nav-wrapper">
       <div class="brand">Chandirakkumar<span>.S</span></div>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
-        <li><a href="#expertise">Expertise</a></li>
-        <li><a href="#projects">Projects & Demos</a></li>
-        <li><a href="#skills">Tech Stack</a></li>
-        <li><a href="#contact" class="nav-btn">Get in Touch</a></li>
+        <li><a href="#demos">Video Demos</a></li>
+        <li><a href="#tools">Tools & Tech</a></li>
+        <li><a href="#capabilities">Expertise</a></li>
+        <li><a href="#contact" class="contact-btn">Contact Me</a></li>
       </ul>
     </div>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Hero -->
   <section class="hero" id="about">
     <div class="container">
       <div class="hero-grid">
-        <div class="hero-content">
-          <div class="badge-status">
-            <img src="images/available.png" alt="Available Status" onerror="this.style.display='none'">
-            Available for Instructional Design & eLearning Projects
+        <div class="hero-text">
+          <div class="status-badge">
+            <img src="images/available.png" alt="Available Icon" onerror="this.style.display='none'">
+            Available for Instructional Design & eLearning Roles
           </div>
-          <h1>Crafting Engaging & Purposeful Digital Learning</h1>
-          <p class="hero-tagline">Instructional Designer | eLearning Developer | Visual & Multimedia Designer</p>
+          <h1>Instructional Designer & eLearning Developer</h1>
+          <p class="hero-subtitle">Specialized in Articulate Storyline 360, Multimedia & SCORM Systems</p>
           <p class="hero-desc">
-            I am Chandirakkumar S, an Instructional Designer and eLearning Developer based in Bengaluru, Karnataka. I transform complex educational and training materials into learner-centered, highly interactive, and visually refined digital experiences with 100+ modules delivered.
+            Based in Bengaluru, Karnataka. I turn complex training content into interactive, learner-centric digital courses with meaningful scenarios, conditional logic, and polished visual design.
           </p>
           <div class="hero-stats">
             <div class="stat">
@@ -648,18 +549,19 @@
               <p>eLearning Modules</p>
             </div>
             <div class="stat">
-              <h3>Storyline</h3>
-              <p>Advanced 360 Logic</p>
+              <h3>SCORM 1.2</h3>
+              <p>LMS Verified</p>
             </div>
             <div class="stat">
-              <h3>SCORM</h3>
-              <p>LMS Verified (1.2)</p>
+              <h3>End-to-End</h3>
+              <p>Design & Delivery</p>
             </div>
           </div>
         </div>
-        <div class="profile-card">
-          <img src="IMG_20260409_223924.jpg" alt="Chandirakkumar S" class="profile-img" onerror="this.src='https://placehold.co/400x500/1e293b/ffffff?text=Chandirakkumar+S'">
-          <div class="location-pill">
+
+        <div class="profile-frame">
+          <img src="IMG_20260409_223924.jpg" alt="Chandirakkumar S" class="main-profile" onerror="this.src='https://placehold.co/400x480/162032/ffffff?text=Chandirakkumar+S'">
+          <div class="location-strip">
             <img src="images/location.png" alt="Location" onerror="this.style.display='none'">
             <span>Bengaluru, Karnataka, India</span>
           </div>
@@ -668,83 +570,150 @@
     </div>
   </section>
 
-  <!-- Core Professional Identity -->
-  <section id="expertise">
+  <!-- Skills & Logos Matrix (Prominently placed with exact paths) -->
+  <section class="skills-section" id="tools">
     <div class="container">
-      <div class="section-header">
-        <span class="section-subtitle">Core Capabilities</span>
-        <h2 class="section-title">The Four Pillars of My Work</h2>
-        <p class="section-desc">I don't just assemble slides; I bring complete end-to-end expertise across the entire digital learning lifecycle.</p>
+      <div class="section-title-wrap">
+        <span class="section-tag">Technical Toolbox</span>
+        <h2 class="section-title">Authoring Tools & Technologies</h2>
+        <p class="section-desc">Production-level proficiency across the industry’s leading authoring tools, video suites, and LMS systems.</p>
       </div>
 
-      <div class="pillars-grid">
-        <div class="pillar-card">
-          <span class="pillar-number">01</span>
-          <h3>Instructional Design</h3>
-          <p>Structuring content, defining objectives, scenario-based learning, cognitive load balancing, decision branching, and assessments that measure real understanding.</p>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-logo-wrap">
+            <img src="images/storyline.png" alt="Articulate Storyline 360" onerror="this.src='https://placehold.co/48x48/1e293b/ffffff?text=SL'">
+          </div>
+          <span class="skill-title">Storyline 360</span>
         </div>
 
-        <div class="pillar-card">
-          <span class="pillar-number">02</span>
-          <h3>eLearning Development</h3>
-          <p>Advanced interactive development using Articulate Storyline 360 & Captivate: custom variables, states, conditions, layers, and intuitive navigation loops.</p>
+        <div class="skill-card">
+          <div class="skill-logo-wrap">
+            <img src="images/premiere.png" alt="Adobe Premiere Pro" onerror="this.src='https://placehold.co/48x48/1e293b/ffffff?text=PR'">
+          </div>
+          <span class="skill-title">Premiere Pro</span>
         </div>
 
-        <div class="pillar-card">
-          <span class="pillar-number">03</span>
-          <h3>Multimedia & Visuals</h3>
-          <p>Corporate slide transformations, custom vector graphics, motion graphics, and video production via Adobe Premiere Pro, After Effects, Photoshop, and Illustrator.</p>
+        <div class="skill-card">
+          <div class="skill-logo-wrap">
+            <img src="images/aftereffects.png" alt="Adobe After Effects" onerror="this.src='https://placehold.co/48x48/1e293b/ffffff?text=AE'">
+          </div>
+          <span class="skill-title">After Effects</span>
         </div>
 
-        <div class="pillar-card">
-          <span class="pillar-number">04</span>
-          <h3>SCORM & LMS Delivery</h3>
-          <p>SCORM 1.2 packaging, tracking logic, completion triggers, score reporting, course setup, and LMS testing across LearnDash and QuickLearn.</p>
+        <div class="skill-card">
+          <div class="skill-logo-wrap">
+            <img src="images/powerpoint.png" alt="Microsoft PowerPoint" onerror="this.src='https://placehold.co/48x48/1e293b/ffffff?text=PPT'">
+          </div>
+          <span class="skill-title">PowerPoint</span>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-logo-wrap">
+            <img src="images/captivate.png" alt="Adobe Captivate" onerror="this.src='https://placehold.co/48x48/1e293b/ffffff?text=CP'">
+          </div>
+          <span class="skill-title">Adobe Captivate</span>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-logo-wrap">
+            <img src="images/illustrator.png" alt="Adobe Illustrator" onerror="this.src='https://placehold.co/48x48/1e293b/ffffff?text=AI'">
+          </div>
+          <span class="skill-title">Illustrator</span>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-logo-wrap">
+            <img src="images/photoshop.png" alt="Adobe Photoshop" onerror="this.src='https://placehold.co/48x48/1e293b/ffffff?text=PS'">
+          </div>
+          <span class="skill-title">Photoshop</span>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-logo-wrap">
+            <img src="images/scorm.png" alt="SCORM 1.2" onerror="this.src='https://placehold.co/48x48/1e293b/ffffff?text=SCORM'">
+          </div>
+          <span class="skill-title">SCORM 1.2</span>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-logo-wrap">
+            <img src="images/learndash.png" alt="LearnDash LMS" onerror="this.src='https://placehold.co/48x48/1e293b/ffffff?text=LD'">
+          </div>
+          <span class="skill-title">LearnDash LMS</span>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-logo-wrap">
+            <img src="images/quicklearn.png" alt="QuickLearn LMS" onerror="this.src='https://placehold.co/48x48/1e293b/ffffff?text=QL'">
+          </div>
+          <span class="skill-title">QuickLearn LMS</span>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-logo-wrap">
+            <img src="images/word.png" alt="Microsoft Word" onerror="this.src='https://placehold.co/48x48/1e293b/ffffff?text=Word'">
+          </div>
+          <span class="skill-title">Microsoft Word</span>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-logo-wrap">
+            <img src="images/excel.png" alt="Microsoft Excel" onerror="this.src='https://placehold.co/48x48/1e293b/ffffff?text=Excel'">
+          </div>
+          <span class="skill-title">Microsoft Excel</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Complete Workflow Pipeline -->
-  <section class="workflow-section">
+  <!-- Video Projects & Visual Showcase -->
+  <section id="demos">
     <div class="container">
-      <div class="section-header" style="margin-bottom: 2rem;">
-        <span class="section-subtitle">Process</span>
-        <h2 class="section-title">End-to-End Development Workflow</h2>
+      <div class="section-title-wrap">
+        <span class="section-tag">Interactive Demos</span>
+        <h2 class="section-title">Featured Project Deliverables</h2>
+        <p class="section-desc">Interactive modules, localization courses, motion graphics, and corporate deck transformations.</p>
       </div>
-      <div class="workflow-scroll">
-        <div class="workflow-node"><span>1</span> Raw Content</div>
-        <div class="workflow-node"><span>2</span> Instructional Structure</div>
-        <div class="workflow-node"><span>3</span> Storyboarding</div>
-        <div class="workflow-node"><span>4</span> Visual Design</div>
-        <div class="workflow-node"><span>5</span> Storyline Development</div>
-        <div class="workflow-node"><span>6</span> Interactions & Logic</div>
-        <div class="workflow-node"><span>7</span> Multimedia Integration</div>
-        <div class="workflow-node"><span>8</span> Assessment Logic</div>
-        <div class="workflow-node"><span>9</span> SCORM 1.2 Packaging</div>
-        <div class="workflow-node"><span>10</span> LMS Verification</div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Storyline Specialization -->
-  <section>
-    <div class="container">
-      <div class="features-card">
-        <span class="section-subtitle">Deep Technical Proficiency</span>
-        <h2 class="section-title" style="margin-bottom: 1rem;">Articulate Storyline 360 Capabilities</h2>
-        <p class="section-desc">Practical exposure to custom mechanics that make digital courses responsive, stable, and learner-focused:</p>
+      <div class="project-grid">
+        <!-- Video 1 -->
+        <div class="project-card">
+          <div class="video-container">
+            <iframe src="https://drive.google.com/file/d/1rRtZDmiMiKexJ4jQxXIFJ_b89UR3zWo3/preview" allow="autoplay" allowfullscreen></iframe>
+          </div>
+          <div class="project-body">
+            <span class="project-badge">Articulate Storyline 360</span>
+            <h3>Interactive SCORM eLearning</h3>
+            <p>Self-paced module showcasing complex trigger execution, knowledge checks, and custom SCORM completion tracking.</p>
+            <a href="https://drive.google.com/file/d/1-Jr4AcAYIeU_B9Cimcw1WLswNRgfx0MU/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-project">
+              Watch Demo on Drive ↗
+            </a>
+          </div>
+        </div>
 
-        <ul class="feature-list">
-          <li class="feature-item"><div class="feature-dot"></div> Custom Triggers & Conditions</li>
-          <li class="feature-item"><div class="feature-dot"></div> Complex Variables & Logic</li>
-          <li class="feature-item"><div class="feature-dot"></div> States & Object Micro-interactions</li>
-          <li class="feature-item"><div class="feature-dot"></div> Scenario-Based Learning Branching</li>
-          <li class="feature-item"><div class="feature-dot"></div> Custom Navigation & Menus</li>
-          <li class="feature-item"><div class="feature-dot"></div> Knowledge Checks & Quizzes</li>
-          <li class="feature-item"><div class="feature-dot"></div> Audio & Video Integration</li>
-          <li class="feature-item"><div class="feature-dot"></div> Contextual Learner Feedback</li>
-          <li class="feature-item"><div class="feature-dot"></div> Completion & Score Logic</li>
-          <li class="feature-item"><div class="feature-dot"></div> Responsive Slide Layouts</li>
-          <li class="feature-item"><div class="feature-dot"></div> SCORM 1.2 LMS Compatibility</li>
-          <li class="feature-
+        <!-- Video 2 -->
+        <div class="project-card">
+          <div class="video-container">
+            <iframe src="https://drive.google.com/file/d/1IIuKoOcBHQ35GzFYcmutqnFGDglw8n3t/preview" allow="autoplay" allowfullscreen></iframe>
+          </div>
+          <div class="project-body">
+            <span class="project-badge">Course Localization</span>
+            <h3>Multi-language eLearning Course</h3>
+            <p>Structured course featuring multilingual navigation, audio sync, and localized learner assessment workflows.</p>
+            <a href="https://drive.google.com/file/d/1IIuKoOcBHQ35GzFYcmutqnFGDglw8n3t/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-project">
+              Watch Demo on Drive ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- Video 3 -->
+        <div class="project-card">
+          <div class="video-container">
+            <iframe src="https://drive.google.com/file/d/1v1ISwjEXjLI4X5jwVbi-a-JX1O14nO5p/preview" allow="autoplay" allowfullscreen></iframe>
+          </div>
+          <div class="project-body">
+            <span class="project-badge">Multimedia Production</span>
+            <h3>Video Editing & Motion Graphics</h3>
+            <p>Motion graphics, animated callouts, transitions, and instructional video editing designed for higher engagement.</p>
+            <a href="https://drive.google.com/file/d/12KMOnXd8ilEKFB4JqiAr99lX8_8IBSUv/view?usp=sharin
