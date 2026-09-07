@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Chandirakkumar S | Instructional Designer & eLearning Developer</title>
 
-<!-- Fonts & Universal Icons (No broken local images) -->
+<!-- Fonts & Universal CDN Icons -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -60,7 +60,7 @@ body{
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border-subtle);
@@ -91,7 +91,7 @@ body{
 }
 
 .logo{
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 800;
   color: var(--text-primary);
   letter-spacing: -0.4px;
@@ -99,13 +99,14 @@ body{
 
 .nav-links{
   display: flex;
+  align-items: center;
   gap: 6px;
 }
 
 .nav-links a{
   text-decoration: none;
   color: var(--text-secondary);
-  padding: 8px 14px;
+  padding: 7px 14px;
   border-radius: var(--radius-sm);
   font-weight: 600;
   font-size: 13.5px;
@@ -117,14 +118,23 @@ body{
   background: var(--primary-light);
 }
 
+.nav-links .nav-cta{
+  background: var(--primary);
+  color: #fff !important;
+}
+
+.nav-links .nav-cta:hover{
+  background: var(--primary-hover);
+}
+
 /* ===== MAIN CONTAINER ===== */
 .main{
   max-width: 1150px;
   margin: 0 auto;
-  padding: 40px 24px 80px;
+  padding: 40px 24px 100px;
 }
 
-/* ===== HERO/ABOUT SECTION ===== */
+/* ===== HERO / ABOUT ===== */
 .hero-card{
   background: var(--bg-surface);
   border: 1px solid var(--border-subtle);
@@ -227,7 +237,7 @@ body{
 
 /* ===== SECTIONS ===== */
 .section{
-  margin-bottom: 65px;
+  margin-bottom: 70px;
   scroll-margin-top: 85px;
 }
 
@@ -259,7 +269,7 @@ body{
   color: var(--text-muted);
 }
 
-/* ===== OVERVIEW TILES ===== */
+/* ===== OVERVIEW ===== */
 .overview-grid{
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -272,7 +282,7 @@ body{
   border-radius: var(--radius-md);
   padding: 22px 20px;
   box-shadow: var(--shadow-sm);
-  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 0.25s ease, border-color 0.25s ease;
 }
 
 .overview-card:hover{
@@ -300,7 +310,7 @@ body{
   line-height: 1.5;
 }
 
-/* ===== PROJECT CARDS ===== */
+/* ===== PROJECTS ===== */
 .projects-grid{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -385,10 +395,10 @@ body{
   transform: translateY(-1px);
 }
 
-/* ===== SKILLS GRID ===== */
+/* ===== SKILLS (12 Boxes - Exactly 4 Rows x 3 Columns) ===== */
 .skills-grid{
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 18px;
 }
 
@@ -409,7 +419,7 @@ body{
 }
 
 .skill-icon{
-  font-size: 32px;
+  font-size: 30px;
   color: var(--primary);
   margin-bottom: 12px;
   display: inline-block;
@@ -419,7 +429,7 @@ body{
   font-size: 14.5px;
   font-weight: 700;
   color: var(--text-primary);
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .pill-level{
@@ -434,11 +444,11 @@ body{
   color: var(--primary);
 }
 
-/* ===== CONTACT CARDS ===== */
-.contact-layout{
+/* ===== CONTACT SECTION (2 Columns) ===== */
+.contact-grid{
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 14px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
 }
 
 .contact-card{
@@ -447,7 +457,7 @@ body{
   justify-content: space-between;
   background: var(--bg-surface);
   border: 1px solid var(--border-subtle);
-  padding: 18px 24px;
+  padding: 20px 24px;
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
   transition: transform 0.2s ease, border-color 0.2s ease;
@@ -455,7 +465,7 @@ body{
 
 .contact-card:hover{
   transform: translateY(-2px);
-  border-color: var(--border-hover);
+  border-color: var(--primary);
   box-shadow: var(--shadow-md);
 }
 
@@ -490,7 +500,7 @@ body{
 }
 
 .contact-action{
-  padding: 9px 20px;
+  padding: 9px 18px;
   font-size: 13px;
   font-weight: 600;
   color: var(--text-primary);
@@ -499,6 +509,7 @@ body{
   border-radius: 8px;
   text-decoration: none;
   transition: all 0.2s ease;
+  white-space: nowrap;
 }
 
 .contact-action:hover{
@@ -508,7 +519,7 @@ body{
 }
 
 .availability-banner{
-  margin-top: 28px;
+  margin-top: 24px;
   background: var(--bg-surface);
   border: 1px solid var(--border-subtle);
   border-left: 4px solid var(--success);
@@ -566,23 +577,23 @@ body{
     grid-template-columns: 1fr;
   }
 
-  .contact-card{
-    flex-direction: column;
-    text-align: center;
-    gap: 14px;
+  .skills-grid{
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  .contact-left{
-    flex-direction: column;
+  .contact-grid{
+    grid-template-columns: 1fr;
   }
 
   .availability-banner{
     flex-direction: column;
     text-align: center;
   }
+}
 
-  .nav-links{
-    display: none;
+@media (max-width: 540px){
+  .skills-grid{
+    grid-template-columns: 1fr;
   }
 }
 </style>
@@ -602,7 +613,7 @@ body{
       <a href="#overview">Overview</a>
       <a href="#projects">Projects</a>
       <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
+      <a href="#contact" class="nav-cta">Contact</a>
     </nav>
   </div>
 </header>
@@ -738,7 +749,7 @@ body{
     </div>
   </section>
 
-  <!-- SKILLS -->
+  <!-- SKILLS (12 Symmetrical Cards) -->
   <section id="skills" class="section">
     <div class="section-head">
       <span class="section-tag">Competencies</span>
@@ -803,4 +814,77 @@ body{
         <span class="pill-level">Intermediate</span>
       </div>
       <div class="skill-card">
-  
+        <div class="skill-icon"><i class="fa-solid fa-file-word"></i></div>
+        <h3>Microsoft Word</h3>
+        <span class="pill-level">Advanced</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION (2 Columns) -->
+  <section id="contact" class="section">
+    <div class="section-head">
+      <span class="section-tag">Reach Out</span>
+      <h2>Contact</h2>
+      <p>Connect for instructional design projects and full-time opportunities.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="contact-left">
+          <div class="contact-icon-box"><i class="fa-solid fa-envelope"></i></div>
+          <div class="contact-meta">
+            <h3>Email</h3>
+            <p>sv393015@gmail.com</p>
+          </div>
+        </div>
+        <a href="mailto:sv393015@gmail.com" class="contact-action">Send Mail</a>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-left">
+          <div class="contact-icon-box"><i class="fa-solid fa-phone"></i></div>
+          <div class="contact-meta">
+            <h3>Phone</h3>
+            <p>+91 93530 80994</p>
+          </div>
+        </div>
+        <a href="tel:+919353080994" class="contact-action">Call</a>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-left">
+          <div class="contact-icon-box"><i class="fa-brands fa-linkedin-in"></i></div>
+          <div class="contact-meta">
+            <h3>LinkedIn</h3>
+            <p>linkedin.com/in/chandru-elearning</p>
+          </div>
+        </div>
+        <a href="https://www.linkedin.com/in/chandru-elearning" target="_blank" rel="noopener noreferrer" class="contact-action">Connect</a>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-left">
+          <div class="contact-icon-box"><i class="fa-solid fa-location-dot"></i></div>
+          <div class="contact-meta">
+            <h3>Location</h3>
+            <p>Bengaluru, Karnataka, India</p>
+          </div>
+        </div>
+        <a href="https://maps.google.com" target="_blank" class="contact-action">View Map</a>
+      </div>
+    </div>
+
+    <div class="availability-banner">
+      <div class="availability-icon"><i class="fa-solid fa-check"></i></div>
+      <div class="availability-info">
+        <h3>Available for Freelance & Full-Time Opportunities</h3>
+        <p>Ready to discuss requirements with 24-hour turnaround on emails.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+</body>
+</html>
