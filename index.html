@@ -3,170 +3,110 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chandirakkumar S | Instructional Designer</title>
+<title>Chandrakumar S | Instructional Designer</title>
 
-<!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --bg-body: #FFFFFF;
+  --bg: #FFFFFF;
   --bg-subtle: #F8FAFC;
-  --border-light: #E2E8F0;
+  --border: #E2E8F0;
   --border-card: #EDF2F7;
-  --text-dark: #0F172A;
-  --text-muted: #64748B;
+  --text-main: #0F172A;
   --text-body: #334155;
+  --text-muted: #64748B;
   --primary: #2563EB;
   --primary-hover: #1D4ED8;
   --primary-light: #EFF6FF;
   --dark-btn: #0F172A;
-  --dark-btn-hover: #1E293B;
-  --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.04);
-  --shadow-md: 0 12px 30px rgba(15, 23, 42, 0.07);
+  --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.05);
+  --shadow-md: 0 12px 28px rgba(15, 23, 42, 0.08);
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  background-color: var(--bg-body);
-  color: var(--text-dark);
-  line-height: 1.5;
-  overflow-x: hidden;
+  background: var(--bg);
+  color: var(--text-main);
+  line-height: 1.6;
 }
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
+a { text-decoration: none; color: inherit; }
 
 .container {
-  max-width: 1240px;
+  max-width: 1220px;
   margin: 0 auto;
   padding: 0 24px;
 }
 
-/* ===== STICKY TOP NAVIGATION ===== */
+/* TOP NAV */
 .top-nav {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.96);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border);
   padding: 16px 0;
 }
-
 .nav-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-
-.nav-brand {
+.brand {
   display: flex;
   align-items: center;
   gap: 12px;
 }
-
-.brand-cs-logo {
+.brand-logo {
   font-size: 32px;
   font-weight: 900;
   letter-spacing: -1.5px;
-  color: #0F172A;
   line-height: 1;
 }
-
-.brand-title-wrap h1 {
-  font-size: 15px;
-  font-weight: 800;
-  color: var(--text-dark);
-  line-height: 1.2;
-}
-
-.brand-title-wrap span {
-  font-size: 11px;
-  font-weight: 500;
-  color: var(--text-muted);
-}
-
-.nav-links-row {
+.brand-text h1 { font-size: 15px; font-weight: 800; line-height: 1.2; }
+.brand-text span { font-size: 11px; font-weight: 500; color: var(--text-muted); }
+.nav-links {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 28px;
 }
-
-.nav-link {
+.nav-links a {
   font-size: 14px;
   font-weight: 600;
   color: var(--text-muted);
-  position: relative;
-  padding: 6px 0;
-  transition: color 0.2s ease;
+  transition: .2s;
 }
-
-.nav-link:hover, .nav-link.active {
-  color: var(--text-dark);
-}
-
-.nav-link.active::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: var(--primary);
-  border-radius: 2px;
-}
-
-.btn-nav-connect {
+.nav-links a.active, .nav-links a:hover { color: var(--text-main); }
+.btn-connect-sm {
   background: var(--dark-btn);
-  color: #FFFFFF;
-  font-size: 14px;
-  font-weight: 600;
+  color: #FFF;
   padding: 10px 22px;
   border-radius: 40px;
-  display: inline-flex;
+  font-size: 13.5px;
+  font-weight: 600;
+  display: flex;
   align-items: center;
   gap: 8px;
-  transition: all 0.2s ease;
 }
 
-.btn-nav-connect:hover {
-  background: var(--dark-btn-hover);
-  transform: translateY(-1px);
+/* HERO SECTION */
+.hero {
+  padding: 40px 0 60px;
+  background: linear-gradient(180deg, #FFF 0%, #F8FAFC 100%);
+  border-bottom: 1px solid var(--border);
 }
-
-/* ===== HERO SECTION ===== */
-.hero-section {
-  position: relative;
-  padding: 45px 0 65px;
-  background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
-  border-bottom: 1px solid var(--border-light);
-  overflow: hidden;
-}
-
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.15fr 0.95fr;
-  gap: 36px;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 40px;
   align-items: center;
 }
-
-.hero-track-eyebrow {
+.eyebrow {
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 2.5px;
@@ -175,399 +115,265 @@ a {
   margin-bottom: 14px;
   display: block;
 }
-
-.hero-heading {
+.hero-title {
   font-size: 52px;
-  line-height: 1.12;
+  line-height: 1.1;
   font-weight: 900;
-  color: var(--text-dark);
   letter-spacing: -1.5px;
   margin-bottom: 18px;
 }
-
-.hero-heading .blue-accent {
-  color: var(--primary);
-}
-
-.hero-desc-text {
+.hero-title span { color: var(--primary); }
+.hero-desc {
   font-size: 15px;
-  line-height: 1.65;
   color: var(--text-body);
   max-width: 500px;
   margin-bottom: 30px;
 }
-
-.hero-cta-group {
+.hero-btns {
   display: flex;
-  align-items: center;
   gap: 16px;
   margin-bottom: 40px;
 }
-
-.btn-hero-primary {
-  background: var(--dark-btn);
-  color: #FFFFFF;
-  padding: 13px 26px;
+.btn-blue {
+  background: var(--primary);
+  color: #FFF;
+  padding: 12px 26px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-outline {
+  border: 1.5px solid var(--border);
+  background: #FFF;
+  color: var(--text-main);
+  padding: 11px 22px;
   border-radius: 8px;
   font-size: 14px;
   font-weight: 600;
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  transition: all 0.2s ease;
 }
-
-.btn-hero-primary:hover {
-  background: var(--dark-btn-hover);
-  transform: translateY(-1px);
-}
-
-.btn-hero-video {
-  background: #FFFFFF;
-  color: var(--text-dark);
-  border: 1.5px solid var(--border-light);
-  padding: 10px 22px;
-  border-radius: 8px;
-  font-size: 13px;
-  font-weight: 600;
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.btn-hero-video .play-bubble {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  border: 1.5px solid var(--primary);
-  color: var(--primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 11px;
-}
-
-.btn-hero-video:hover {
-  border-color: var(--text-dark);
-}
-
-/* Stats 4-Column Bar */
-.hero-stats-row {
+.hero-pillars {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  gap: 16px;
   padding-top: 24px;
-  border-top: 1px solid var(--border-light);
+  border-top: 1px solid var(--border);
 }
-
-.hero-stat-cell {
+.pillar-item {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
 }
+.pillar-icon { font-size: 20px; color: var(--primary); }
+.pillar-name { font-size: 12px; font-weight: 700; line-height: 1.25; }
 
-.stat-icon-top {
-  font-size: 18px;
-  color: var(--primary);
-  margin-bottom: 6px;
-}
-
-.hero-stat-num {
-  font-size: 26px;
-  font-weight: 900;
-  color: var(--text-dark);
-  line-height: 1;
-  margin-bottom: 4px;
-  letter-spacing: -0.5px;
-}
-
-.hero-stat-lbl {
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--text-muted);
-  line-height: 1.3;
-}
-
-/* Hero Right Composition */
-.hero-visual-col {
+/* HERO RIGHT VISUAL */
+.hero-visual {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  min-height: 490px;
+  min-height: 480px;
 }
-
-.hero-portrait-frame {
-  position: relative;
-  width: 330px;
-  height: 450px;
+.hero-frame {
+  width: 320px;
+  height: 440px;
   border-radius: 200px 200px 20px 20px;
   overflow: hidden;
-  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.12);
-  border: 4px solid #FFFFFF;
-  background: #CBD5E1;
+  box-shadow: var(--shadow-md);
+  border: 4px solid #FFF;
+  background: #E2E8F0;
+  position: relative;
   z-index: 2;
 }
-
-.hero-portrait-frame img {
+.hero-frame img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: top center;
-  display: block;
+  object-position: top;
 }
-
-/* Overhanging Warm Lamp */
-.overhead-lamp {
+.script-note-hero {
   position: absolute;
-  top: -15px;
-  right: 60px;
-  width: 80px;
-  height: 70px;
-  border-radius: 50% 50% 10px 10px;
-  background: #0F172A;
-  box-shadow: 0 0 50px rgba(251, 191, 36, 0.45);
-  z-index: 1;
-}
-
-/* Script Cursive Overlays */
-.script-quote-hero {
-  position: absolute;
-  top: 60px;
-  right: -5px;
+  top: 40px;
+  right: -10px;
   font-family: 'Caveat', cursive;
-  font-size: 28px;
+  font-size: 30px;
   color: #1E3A8A;
-  line-height: 1.15;
+  line-height: 1.1;
   transform: rotate(-3deg);
   z-index: 3;
 }
-
-.framed-art-wall {
+.frame-quote-wall {
   position: absolute;
-  top: 40px;
+  top: 25px;
   right: -30px;
-  width: 140px;
-  background: #FFFFFF;
-  border: 3px solid #D1B89D;
-  padding: 12px;
-  border-radius: 8px;
-  box-shadow: var(--shadow-md);
-  font-size: 11px;
+  width: 120px;
+  background: #FFF;
+  border: 3px solid #CBD5E1;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 10px;
   font-weight: 800;
-  line-height: 1.3;
-  color: #334155;
   text-align: center;
+  color: #1E293B;
+  box-shadow: var(--shadow-sm);
   z-index: 1;
-  opacity: 0.85;
 }
-
-.framed-art-wall .art-blue-bar {
-  width: 30px;
-  height: 3px;
-  background: var(--primary);
-  margin: 6px auto 0;
-  border-radius: 2px;
-}
-
-.desk-mug-item {
+.desk-mug {
   position: absolute;
   bottom: 12px;
-  left: 10px;
-  z-index: 5;
-  width: 62px;
+  left: 20px;
+  z-index: 4;
+  width: 65px;
   height: 72px;
   background: #0F172A;
   border-radius: 0 0 16px 16px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.25);
+  color: #FFF;
+  font-size: 8px;
+  font-weight: 800;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   padding: 4px;
 }
-
-.desk-mug-item span {
-  color: #FFFFFF;
-  font-size: 7.5px;
-  font-weight: 800;
-  letter-spacing: 0.5px;
-  line-height: 1.25;
-}
-
-.desk-mug-item::after {
+.desk-mug::after {
   content: '';
   position: absolute;
-  right: -13px;
-  top: 15px;
-  width: 14px;
+  right: -12px;
+  top: 14px;
+  width: 12px;
   height: 36px;
   border: 4px solid #0F172A;
   border-left: none;
   border-radius: 0 12px 12px 0;
 }
-
-.desk-laptop-screen {
+.desk-laptop {
   position: absolute;
   bottom: 0;
-  right: -30px;
-  z-index: 4;
-  width: 260px;
+  right: -20px;
+  z-index: 3;
+  width: 250px;
   background: #1E293B;
   border: 3px solid #64748B;
   border-radius: 10px 10px 0 0;
-  padding: 18px 12px;
-  color: #FFFFFF;
+  padding: 16px;
   text-align: center;
-  box-shadow: 0 12px 28px rgba(0,0,0,0.25);
-}
-
-.desk-laptop-screen .laptop-msg {
+  color: #FFF;
   font-family: 'Caveat', cursive;
   font-size: 24px;
   line-height: 1.15;
-  color: #F8FAFC;
 }
 
-.desk-book-shelf {
-  position: absolute;
-  bottom: 12px;
-  right: -75px;
-  z-index: 4;
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-}
-
-.shelf-book {
-  background: #E2E8F0;
-  padding: 4px 16px;
-  font-size: 11px;
-  font-weight: 700;
-  color: #1E293B;
-  border-radius: 4px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
-}
-
-/* ===== SECTION COMMON STYLING ===== */
-.site-section {
-  padding: 75px 0;
-  position: relative;
-}
-
-.section-label-track {
+/* SECTION TITLES */
+.section { padding: 80px 0; position: relative; }
+.section-tag {
   font-size: 11px;
   font-weight: 800;
-  letter-spacing: 2.5px;
+  letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--primary);
-  margin-bottom: 4px;
+  margin-bottom: 6px;
   display: block;
 }
-
-.section-h2 {
+.section-title {
   font-size: 32px;
   font-weight: 900;
-  color: var(--text-dark);
+  color: var(--text-main);
   letter-spacing: -0.8px;
   border-left: 4px solid var(--primary);
   padding-left: 14px;
   line-height: 1.15;
 }
-
-.section-top-split {
+.section-header-split {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  margin-bottom: 34px;
+  margin-bottom: 36px;
 }
-
-.section-lead-copy {
-  font-size: 14px;
-  color: var(--text-muted);
-  max-width: 500px;
-  line-height: 1.6;
-}
-
-.link-action-arrow {
+.view-all-link {
   font-size: 13px;
   font-weight: 700;
   color: var(--primary);
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  transition: gap 0.2s ease;
 }
 
-.link-action-arrow:hover {
-  gap: 10px;
+/* ABOUT CALLOUT CARD */
+.about-card-split {
+  display: grid;
+  grid-template-columns: 1.1fr 1.9fr;
+  gap: 32px;
+  align-items: center;
+  background: #F8FAFC;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 36px;
+}
+.about-callout-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+.callout-box {
+  background: #FFF;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px 12px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.callout-box .icon { font-size: 22px; color: var(--primary); }
+.callout-box span { font-size: 11px; font-weight: 700; color: var(--text-body); }
+.cursive-lead {
+  font-family: 'Caveat', cursive;
+  font-size: 28px;
+  color: #1E3A8A;
+  line-height: 1.1;
+  text-align: center;
 }
 
-/* ===== SECTION: FEATURED WORK (4 CARDS) ===== */
-.projects-4-grid {
+/* FEATURED PROJECTS 4-GRID */
+.projects-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
 }
-
-.proj-card {
-  background: #FFFFFF;
-  border: 1px solid var(--border-card);
+.project-card {
+  background: #FFF;
+  border: 1px solid var(--border);
   border-radius: 16px;
   padding: 16px;
   display: flex;
   flex-direction: column;
-  box-shadow: var(--shadow-sm);
-  transition: all 0.25s ease;
+  transition: all .2s ease;
 }
-
-.proj-card:hover {
+.project-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-md);
-  border-color: var(--border-light);
+  border-color: #CBD5E1;
 }
-
-.proj-top-strip {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 12px;
-}
-
-.proj-id-badge {
-  font-size: 16px;
-  font-weight: 900;
-  color: var(--primary);
-}
-
-.proj-category-pill {
-  font-size: 9px;
-  font-weight: 800;
-  letter-spacing: 0.8px;
-  text-transform: uppercase;
-  color: var(--text-muted);
-}
-
-.proj-thumb-wrap {
+.proj-media {
   position: relative;
   width: 100%;
   aspect-ratio: 16/10;
   border-radius: 10px;
   overflow: hidden;
-  background: #0B1120;
-  border: 1px solid var(--border-light);
-  margin-bottom: 16px;
+  background: #0F172A;
+  margin-bottom: 14px;
 }
-
-.proj-thumb-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.proj-play-btn {
+.proj-media img { width: 100%; height: 100%; object-fit: cover; }
+.play-overlay {
   position: absolute;
   inset: 0;
   margin: auto;
@@ -575,472 +381,326 @@ a {
   height: 44px;
   border-radius: 50%;
   background: rgba(15, 23, 42, 0.75);
-  color: #FFFFFF;
+  color: #FFF;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 15px;
   cursor: pointer;
-  transition: 0.2s ease;
-  backdrop-filter: blur(4px);
 }
-
-.proj-card:hover .proj-play-btn {
-  background: var(--primary);
-  transform: scale(1.1);
+.proj-cat {
+  font-size: 9.5px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 4px;
 }
-
-.proj-card h3 {
+.project-card h3 {
   font-size: 16px;
   font-weight: 800;
-  color: var(--text-dark);
   margin-bottom: 6px;
   line-height: 1.25;
 }
-
-.proj-card p {
+.project-card p {
   font-size: 12.5px;
   color: var(--text-muted);
-  line-height: 1.55;
-  margin-bottom: 16px;
+  line-height: 1.5;
+  margin-bottom: 14px;
   flex-grow: 1;
 }
-
-.proj-tags-flex {
+.tag-group {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
-
-.proj-tag {
-  font-size: 10.5px;
+.pill {
+  font-size: 10px;
   font-weight: 700;
-  padding: 4px 9px;
+  padding: 3px 8px;
   border-radius: 20px;
   background: var(--primary-light);
   color: var(--primary);
 }
-
-/* ===== SECTION: WHAT I DO (5 FEATURE CARDS) ===== */
-.what-i-do-grid {
-  display: grid;
-  grid-template-columns: 1.1fr 2fr;
-  gap: 32px;
+.card-link {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--primary);
+  display: inline-flex;
   align-items: center;
+  gap: 6px;
 }
 
-.feature-cards-5 {
+/* TOOLS & TECHNOLOGIES SPLIT WITH DESK STACK */
+.tools-showcase {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 40px;
+  align-items: center;
+}
+.desk-art-pane {
+  background: #F8FAFC;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 40px 30px;
+  text-align: center;
+  position: relative;
+}
+.desk-art-pane .cursive-quote {
+  font-family: 'Caveat', cursive;
+  font-size: 34px;
+  color: #1E3A8A;
+  line-height: 1.15;
+  margin-bottom: 30px;
+}
+.spine-stack {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 140px;
+}
+.spine {
+  background: #FFF;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--primary);
+  padding: 4px 10px;
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--text-main);
+  border-radius: 0 4px 4px 0;
+  box-shadow: var(--shadow-sm);
+}
+.tools-grid-15 {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 14px;
 }
-
-.feature-mini-card {
-  background: var(--bg-subtle);
-  border: 1px solid var(--border-card);
-  border-radius: 14px;
-  padding: 18px 12px;
+.tool-tile {
+  background: #FFF;
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 6px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  transition: all 0.2s ease;
-}
-
-.feature-mini-card:hover {
-  background: #FFFFFF;
-  transform: translateY(-3px);
+  gap: 8px;
   box-shadow: var(--shadow-sm);
-  border-color: var(--border-light);
+}
+.tool-tile:hover {
+  transform: translateY(-3px);
+  border-color: #CBD5E1;
+}
+.badge-sq {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 14px;
+  color: #FFF;
+}
+.bg-sl { background: #D946EF; border-radius: 50%; }
+.bg-cp { background: #059669; }
+.bg-rise { background: #0EA5E9; }
+.bg-ppt { background: #EA580C; }
+.bg-word { background: #2563EB; }
+.bg-excel { background: #16A34A; }
+.bg-ps { background: #0284C7; }
+.bg-ai { background: #EA580C; }
+.bg-pr { background: #4338CA; }
+.bg-ae { background: #3730A3; }
+.bg-ld { background: #F8FAFC; border: 1.5px solid var(--border); color: var(--primary); }
+.bg-art360 { background: #0284C7; }
+.bg-scorm { background: #6366F1; font-size: 10px; }
+.bg-html { background: #E44D26; }
+.bg-camtasia { background: #22C55E; }
+.tool-tile span {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-dark);
 }
 
-.feature-icon-bubble {
+/* PROCESS FLOW */
+.process-flex {
+  display: grid;
+  grid-template-columns: 1.4fr 0.6fr;
+  gap: 40px;
+  align-items: center;
+}
+.step-chain {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.step-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.step-circle {
   width: 44px;
   height: 44px;
-  border-radius: 12px;
+  border-radius: 50%;
+  background: var(--primary-light);
+  color: var(--primary);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 20px;
-  margin-bottom: 12px;
-  color: #FFFFFF;
+  font-size: 18px;
+  flex-shrink: 0;
 }
-
-.bg-elearn { background: #0284C7; }
-.bg-videsign { background: #0284C7; }
-.bg-vidmot { background: #DC2626; }
-.bg-assess { background: #059669; }
-.bg-lms { background: #0284C7; }
-
-.feature-mini-card h4 {
-  font-size: 12px;
-  font-weight: 800;
-  color: var(--text-dark);
-  margin-bottom: 6px;
-  line-height: 1.25;
-}
-
-.feature-mini-card p {
-  font-size: 10.5px;
-  color: var(--text-muted);
-  line-height: 1.45;
-}
-
-/* ===== SECTION: TOOLS I USE (CATEGORIZED TILES) ===== */
-.tools-section {
-  background: #FFFFFF;
-  border-top: 1px solid var(--border-light);
-  border-bottom: 1px solid var(--border-light);
-}
-
-.tools-layout-grid {
-  display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: 36px;
-  align-items: center;
-}
-
-.tools-category-deck {
-  display: grid;
-  grid-template-columns: 1.4fr 1.8fr 1.2fr 1fr;
-  gap: 16px;
-}
-
-.tool-cluster-card {
-  background: var(--bg-subtle);
-  border: 1px solid var(--border-card);
-  border-radius: 14px;
-  padding: 16px 12px;
-  display: flex;
-  flex-direction: column;
-}
-
-.tool-cluster-title {
+.step-meta span {
   font-size: 10px;
   font-weight: 800;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  margin-bottom: 14px;
-}
-
-.title-auth { color: #DB2777; }
-.title-design { color: #2563EB; }
-.title-video { color: #7C3AED; }
-.title-lms { color: #059669; }
-
-.tool-badge-row {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 8px;
-}
-
-.tool-chip-badge {
-  width: 36px;
-  height: 36px;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 800;
-  font-size: 12.5px;
-  color: #FFFFFF;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.06);
-}
-
-.tool-chip-badge.rounded {
-  border-radius: 50%;
-}
-
-.badge-sl { background: #D946EF; }
-.badge-cp { background: #059669; }
-.badge-rise { background: #0EA5E9; }
-.badge-scorm { background: #6366F1; font-size: 9px; }
-.badge-ppt { background: #EA580C; }
-.badge-word { background: #2563EB; }
-.badge-excel { background: #16A34A; }
-.badge-ps { background: #0284C7; }
-.badge-ai { background: #EA580C; }
-.badge-pr { background: #4338CA; }
-.badge-ae { background: #3730A3; }
-.badge-ld { background: #FFFFFF; border: 1.5px solid var(--border-light); color: var(--primary); }
-
-.tool-name-sub {
-  font-size: 9.5px;
-  font-weight: 700;
   color: var(--text-muted);
-  margin-top: 6px;
-  text-align: center;
-  white-space: nowrap;
+  display: block;
+}
+.step-meta strong {
+  font-size: 13px;
+  font-weight: 800;
+  display: block;
+}
+.step-meta small {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+.process-quote {
+  font-family: 'Caveat', cursive;
+  font-size: 32px;
+  color: #1E3A8A;
+  line-height: 1.15;
+  text-align: right;
 }
 
-/* ===== SECTION: MY DESIGN PROCESS ===== */
-.process-section {
-  padding: 65px 0;
-  border-bottom: 1px solid var(--border-light);
+/* BANNER: BECAUSE LEARNING CHANGES PEOPLE */
+.quote-photo-banner {
+  background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.95)),
+              url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1600&auto=format&fit=crop&q=80') center/cover;
+  color: #FFF;
+  padding: 70px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
 }
-
-.process-layout-split {
+.banner-grid {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
   gap: 40px;
   align-items: center;
 }
-
-.process-steps-chain {
+.banner-title {
+  font-size: 36px;
+  font-weight: 900;
+  line-height: 1.15;
+  margin-bottom: 14px;
+}
+.banner-desc {
+  font-size: 14px;
+  color: #CBD5E1;
+  max-width: 480px;
+}
+.banner-checks {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+.check-row {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin-top: 24px;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #F8FAFC;
+}
+.banner-cursive {
+  font-family: 'Caveat', cursive;
+  font-size: 34px;
+  color: #93C5FD;
+  line-height: 1.15;
+  text-align: center;
+  margin-top: 20px;
 }
 
-.process-step-node {
+/* CONTACT SECTION */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 40px;
+  align-items: center;
+}
+.contact-items-v {
   display: flex;
-  align-items: flex-start;
-  gap: 12px;
+  flex-direction: column;
+  gap: 14px;
+  margin: 24px 0;
 }
-
-.node-icon-circle {
-  width: 42px;
-  height: 42px;
+.contact-item-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--text-main);
+}
+.contact-icon-bubble {
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   background: var(--primary-light);
   color: var(--primary);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
-  flex-shrink: 0;
+  font-size: 15px;
 }
-
-.node-step-num {
-  font-size: 10px;
-  font-weight: 800;
-  color: var(--text-muted);
-}
-
-.node-step-title {
-  font-size: 13px;
-  font-weight: 800;
-  color: var(--text-dark);
-}
-
-.node-step-sub {
-  font-size: 11px;
-  color: var(--text-muted);
-}
-
-.process-connector-arrow {
-  color: #CBD5E1;
-  font-size: 16px;
-}
-
-.process-callout-quote {
-  font-family: 'Caveat', cursive;
-  font-size: 32px;
-  color: #1E3A8A;
-  line-height: 1.18;
-  text-align: right;
-}
-
-/* ===== SECTION: DARK WORKSPACE CONNECT ===== */
-.dark-connect-pane {
-  background: #0B132B;
-  color: #FFFFFF;
-  padding: 70px 0;
-  position: relative;
-  overflow: hidden;
-}
-
-.dark-connect-grid {
-  display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 40px;
-  align-items: center;
-}
-
-.dark-connect-pane .section-h2 {
-  color: #FFFFFF;
-  border-left-color: var(--primary);
-  font-size: 32px;
-}
-
-.dark-connect-subcopy {
-  font-size: 14px;
-  color: #94A3B8;
-  margin: 14px 0 24px;
-}
-
-.btn-white-pill {
-  background: var(--primary);
-  color: #FFFFFF;
-  font-size: 14px;
-  font-weight: 700;
-  padding: 12px 28px;
-  border-radius: 8px;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  transition: all 0.2s ease;
-}
-
-.btn-white-pill:hover {
-  background: var(--primary-hover);
-  transform: translateY(-2px);
-}
-
-.contact-rows-list {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  margin-top: 24px;
-}
-
-.contact-row-item {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 14px;
-  color: #E2E8F0;
-  transition: color 0.2s ease;
-}
-
-.contact-row-item:hover {
-  color: #FFFFFF;
-}
-
-.contact-icon-bubble {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
-}
-
-/* Workspace Desk Mockup Elements */
-.desk-workspace-visual {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 220px;
-}
-
-.desk-books-group {
-  position: absolute;
-  left: 20px;
-  bottom: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.stacked-white-book {
-  background: #F8FAFC;
-  color: #0F172A;
-  padding: 5px 18px;
-  font-size: 11px;
-  font-weight: 800;
-  border-radius: 4px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
-  border-left: 4px solid var(--primary);
-}
-
-.desk-dark-mug {
-  position: absolute;
-  right: 40px;
-  bottom: 0;
-  width: 90px;
-  height: 105px;
-  background: #020617;
-  border-radius: 0 0 24px 24px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-  border: 1px solid #1E293B;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 6px;
+.framed-contact-desk {
+  background: #FFF;
+  border: 4px solid #D1B89D;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: var(--shadow-md);
   text-align: center;
 }
-
-.desk-dark-mug span {
-  font-size: 10px;
-  font-weight: 800;
-  color: #E2E8F0;
-  line-height: 1.25;
+.framed-contact-desk h3 {
+  font-size: 24px;
+  font-weight: 900;
+  margin-bottom: 8px;
+}
+.framed-contact-desk p {
+  font-size: 13px;
+  color: var(--text-muted);
 }
 
-.desk-dark-mug::after {
-  content: '';
-  position: absolute;
-  right: -18px;
-  top: 20px;
-  width: 20px;
-  height: 50px;
-  border: 5px solid #020617;
-  border-left: none;
-  border-radius: 0 16px 16px 0;
-}
-
-.desk-mug-script {
-  position: absolute;
-  right: -15px;
-  top: 20px;
-  font-family: 'Caveat', cursive;
-  font-size: 26px;
-  color: #CBD5E1;
-  line-height: 1.1;
-  transform: rotate(5deg);
-}
-
-/* ===== FOOTER ===== */
+/* FOOTER */
 .site-footer {
-  background: #FFFFFF;
+  border-top: 1px solid var(--border);
   padding: 24px 0;
-  border-top: 1px solid var(--border-light);
+  background: #FFF;
+  font-size: 13px;
+  color: var(--text-muted);
 }
-
-.footer-content-wrap {
+.footer-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 12px;
-  color: var(--text-muted);
 }
-
-.footer-nav-menu {
+.footer-links {
   display: flex;
-  gap: 22px;
+  gap: 24px;
   font-weight: 600;
 }
-
-.footer-nav-menu a:hover {
-  color: var(--primary);
+.thankyou-tag {
+  font-family: 'Caveat', cursive;
+  font-size: 32px;
+  text-align: center;
+  color: #1E3A8A;
+  padding: 30px 0 10px;
 }
 
-.btn-top-circle {
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  border: 1px solid var(--border-light);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-dark);
-  transition: all 0.2s ease;
-}
-
-.btn-top-circle:hover {
-  background: var(--text-dark);
-  color: #FFFFFF;
-}
-
-/* ===== LIGHTBOX MODAL ===== */
+/* LIGHTBOX MODAL */
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -1052,689 +712,474 @@ a {
   justify-content: center;
   padding: 20px;
 }
-
-.modal-overlay.active {
-  display: flex;
-}
-
-.modal-content-box {
+.modal-overlay.active { display: flex; }
+.modal-box {
   background: #0F172A;
   width: 100%;
   max-width: 960px;
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-  position: relative;
-  border: 1px solid #334155;
 }
-
-.modal-top-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.modal-bar {
   padding: 14px 20px;
   background: #1E293B;
-  color: #FFFFFF;
+  color: #FFF;
+  display: flex;
+  justify-content: space-between;
 }
-
-.modal-close-btn {
-  background: transparent;
+.modal-bar button {
+  background: none;
   border: none;
   color: #94A3B8;
   font-size: 22px;
   cursor: pointer;
 }
-
-.modal-close-btn:hover {
-  color: #FFFFFF;
-}
-
-.modal-video-frame {
-  position: relative;
+.modal-frame {
   width: 100%;
   aspect-ratio: 16/9;
-  background: #000;
 }
+.modal-frame iframe { width: 100%; height: 100%; border: none; }
 
-.modal-video-frame iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
-/* ===== RESPONSIVE ===== */
+/* RESPONSIVE */
 @media (max-width: 1024px) {
-  .hero-grid, .what-i-do-grid, .tools-layout-grid, .process-layout-split, .dark-connect-grid {
+  .hero-grid, .about-card-split, .tools-showcase, .process-flex, .banner-grid, .contact-grid {
     grid-template-columns: 1fr;
-    gap: 36px;
   }
-  .projects-4-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .feature-cards-5 {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  .tools-category-deck {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  .projects-grid { grid-template-columns: repeat(2, 1fr); }
+  .tools-grid-15 { grid-template-columns: repeat(3, 1fr); }
 }
-
 @media (max-width: 768px) {
-  .nav-links-row {
-    display: none;
-  }
-  .hero-heading {
-    font-size: 38px;
-  }
-  .hero-stats-row {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-  }
-  .projects-4-grid {
-    grid-template-columns: 1fr;
-  }
-  .feature-cards-5 {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .tools-category-deck {
-    grid-template-columns: 1fr;
-  }
-  .process-steps-chain {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 18px;
-  }
-  .process-connector-arrow {
-    display: none;
-  }
-  .footer-content-wrap {
-    flex-direction: column;
-    gap: 14px;
-    text-align: center;
-  }
+  .nav-links { display: none; }
+  .hero-title { font-size: 38px; }
+  .hero-pillars { grid-template-columns: repeat(2, 1fr); }
+  .projects-grid { grid-template-columns: 1fr; }
+  .tools-grid-15 { grid-template-columns: repeat(2, 1fr); }
+  .step-chain { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .footer-inner { flex-direction: column; gap: 16px; }
 }
 </style>
 </head>
 
 <body>
 
-<!-- TOP NAVIGATION -->
+<!-- NAVIGATION -->
 <header class="top-nav">
   <div class="container nav-inner">
-    <a href="#home" class="nav-brand">
-      <div class="brand-cs-logo">CS</div>
-      <div class="brand-title-wrap">
+    <div class="brand">
+      <div class="brand-logo">CS</div>
+      <div class="brand-text">
         <h1>Chandirakkumar S</h1>
         <span>Instructional Designer</span>
       </div>
-    </a>
+    </div>
 
-    <nav class="nav-links-row">
-      <a href="#home" class="nav-link active">Home</a>
-      <a href="#about" class="nav-link">About</a>
-      <a href="#projects" class="nav-link">Projects</a>
-      <a href="#skills" class="nav-link">Skills</a>
-      <a href="#contact" class="nav-link">Contact</a>
+    <nav class="nav-links">
+      <a href="#home" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#process">Process</a>
+      <a href="#contact">Contact</a>
     </nav>
 
-    <a href="#contact" class="btn-nav-connect">
-      Let's Connect <span>&rarr;</span>
+    <a href="#contact" class="btn-connect-sm">
+      Let's Connect &rarr;
     </a>
   </div>
 </header>
 
 <!-- HERO SECTION -->
-<section id="home" class="hero-section">
+<section id="home" class="hero">
   <div class="container hero-grid">
-    
     <div>
-      <span class="hero-track-eyebrow">Instructional Design &nbsp;|&nbsp; Visual Design &nbsp;|&nbsp; Multimedia</span>
-      
-      <h1 class="hero-heading">
-        I Design<br>
-        Learning Experiences<br>
-        That <span class="blue-accent">Make a Difference.</span>
+      <span class="eyebrow">Learn &bull; Design &bull; Develop &bull; Deliver</span>
+      <h1 class="hero-title">
+        Learning Experiences for <span>Real People.</span>
       </h1>
-
-      <p class="hero-desc-text">
-        I create simple, engaging and effective eLearning experiences using Storyline 360, multimedia and visual design — to help people learn, perform and grow.
+      <p class="hero-desc">
+        I design and develop eLearning, visual, and multimedia learning experiences that inform, engage, and create measurable impact.
       </p>
 
-      <div class="hero-cta-group">
-        <a href="#projects" class="btn-hero-primary">
-          View My Work <span>&rarr;</span>
-        </a>
-
-        <button class="btn-hero-video" onclick="openPreviewModal('https://drive.google.com/file/d/1-Jr4AcAYIeU_B9Cimcw1WLswNRgfx0MU/preview')">
-          <div class="play-bubble">&#9658;</div>
-          <span>Watch My Intro (1 min)</span>
-        </button>
+      <div class="hero-btns">
+        <a href="#projects" class="btn-blue">View My Work &rarr;</a>
+        <a href="#contact" class="btn-outline">Download Resume</a>
       </div>
 
-      <!-- 4 STAT METRICS -->
-      <div class="hero-stats-row">
-        <div class="hero-stat-cell">
-          <div class="stat-icon-top">&#127891;</div>
-          <div class="hero-stat-num">1+</div>
-          <div class="hero-stat-lbl">Years of Experience</div>
+      <div class="hero-pillars">
+        <div class="pillar-item">
+          <div class="pillar-icon">&#128214;</div>
+          <div class="pillar-name">Engaging<br>Learning</div>
         </div>
-        <div class="hero-stat-cell">
-          <div class="stat-icon-top">&#128196;</div>
-          <div class="hero-stat-num">100+</div>
-          <div class="hero-stat-lbl">Modules Developed</div>
+        <div class="pillar-item">
+          <div class="pillar-icon">&#9998;</div>
+          <div class="pillar-name">Practical<br>Design</div>
         </div>
-        <div class="hero-stat-cell">
-          <div class="stat-icon-top">&#128101;</div>
-          <div class="hero-stat-num">5K+</div>
-          <div class="hero-stat-lbl">Learners Reached</div>
+        <div class="pillar-item">
+          <div class="pillar-icon">&#128202;</div>
+          <div class="pillar-name">Measurable<br>Impact</div>
         </div>
-        <div class="hero-stat-cell">
-          <div class="stat-icon-top">&#128200;</div>
-          <div class="hero-stat-num">98%</div>
-          <div class="hero-stat-lbl">Positive Feedback</div>
+        <div class="pillar-item">
+          <div class="pillar-icon">&#128101;</div>
+          <div class="pillar-name">People<br>Centric</div>
         </div>
       </div>
     </div>
 
-    <!-- HERO VISUAL COMPOSITION -->
-    <div class="hero-visual-col">
-      <div class="overhead-lamp"></div>
-
-      <!-- Cursive Note -->
-      <div class="script-quote-hero">
+    <!-- HERO RIGHT ART -->
+    <div class="hero-visual">
+      <div class="script-note-hero">
         Same<br>Passion.<br>Bigger<br>Impact.
       </div>
 
-      <!-- Framed Wall Sign -->
-      <div class="framed-art-wall">
-        GOOD<br>LEARNING<br>CREATES<br>BRIGHTER<br>TOMORROWS
-        <div class="art-blue-bar"></div>
+      <div class="frame-quote-wall">
+        GOOD LEARNING CREATES BRIGHTER TOMORROWS
       </div>
 
-      <!-- Profile Container -->
-      <div class="hero-portrait-frame">
+      <div class="hero-frame">
         <img src="IMG_20260409_223924.jpg" alt="Chandirakkumar S" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=700&auto=format&fit=crop&q=80';">
       </div>
 
-      <!-- Desk Mug -->
-      <div class="desk-mug-item">
-        <span>Better<br>Learning<br>Brighter<br>Tomorrows</span>
+      <div class="desk-mug">
+        Better<br>Learning<br>Brighter<br>Tomorrows
       </div>
 
-      <!-- Laptop Screen Back -->
-      <div class="desk-laptop-screen">
-        <div class="laptop-msg">Ideas<br>Design<br>Learning<br>Impact</div>
-      </div>
-
-      <!-- Topic Books -->
-      <div class="desk-book-shelf">
-        <div class="shelf-book">People</div>
-        <div class="shelf-book">Process</div>
-        <div class="shelf-book">Design</div>
-        <div class="shelf-book">Technology</div>
-        <div class="shelf-book">Impact</div>
+      <div class="desk-laptop">
+        Ideas<br>Design<br>Develop<br>Deliver
       </div>
     </div>
-
   </div>
 </section>
 
-<!-- SECTION: FEATURED WORK (4 CARDS) -->
-<section id="projects" class="site-section">
+<!-- ABOUT SECTION -->
+<section id="about" class="section">
   <div class="container">
-
-    <div class="section-top-split">
+    <div class="about-card-split">
       <div>
-        <span class="section-label-track">Featured Work</span>
-        <h2 class="section-h2">Real Projects. Real Learning Impact.</h2>
+        <span class="section-tag">About Me</span>
+        <h2 style="font-size: 28px; font-weight: 900; margin-bottom: 12px; line-height: 1.2;">
+          An Instructional Designer Who Loves to Create.
+        </h2>
+        <p style="font-size: 14px; color: var(--text-body); margin-bottom: 20px;">
+          I'm Chandirakkumar, an Instructional Designer with a passion for creating learning experiences that make a real difference. I enjoy blending instructional strategy, visual design, and technology to help people learn and grow.
+        </p>
+        <a href="#contact" class="view-all-link">More About Me &rarr;</a>
       </div>
 
-      <div style="display: flex; align-items: flex-end; gap: 30px;">
-        <p class="section-lead-copy">
-          A selection of my eLearning and multimedia projects designed to solve real learning needs with creativity and clarity.
-        </p>
-        <a href="#projects" class="link-action-arrow" style="white-space: nowrap;">View All Projects &rarr;</a>
+      <div style="display: flex; flex-direction: column; gap: 20px;">
+        <div class="about-callout-grid">
+          <div class="callout-box">
+            <div class="icon">&#127891;</div>
+            <span>Learning Design</span>
+          </div>
+          <div class="callout-box">
+            <div class="icon">&#127912;</div>
+            <span>Visual Comm</span>
+          </div>
+          <div class="callout-box">
+            <div class="icon">&#9874;</div>
+            <span>Problem Solving</span>
+          </div>
+          <div class="callout-box">
+            <div class="icon">&#128200;</div>
+            <span>Continuous Learning</span>
+          </div>
+        </div>
+
+        <div class="cursive-lead">
+          Learning today leads to brighter tomorrows.
+        </div>
       </div>
     </div>
+  </div>
+</section>
 
-    <!-- 4-GRID SHOWCASE -->
-    <div class="projects-4-grid">
-      
-      <!-- CARD 01 -->
-      <div class="proj-card">
-        <div class="proj-top-strip">
-          <span class="proj-id-badge">01</span>
-          <span class="proj-category-pill">E-Learning Development</span>
+<!-- FEATURED PROJECTS -->
+<section id="projects" class="section" style="padding-top: 0;">
+  <div class="container">
+    <div class="section-header-split">
+      <div>
+        <span class="section-tag">Featured Projects</span>
+        <h2 class="section-title">Turning Ideas into Learning Experiences</h2>
+      </div>
+      <a href="#projects" class="view-all-link">View All Projects &rarr;</a>
+    </div>
+
+    <div class="projects-grid">
+      <!-- PROJECT 1 -->
+      <div class="project-card">
+        <div class="proj-media">
+          <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?w=600&auto=format&fit=crop&q=80" alt="SCORM Module">
+          <div class="play-overlay" onclick="openModal('https://drive.google.com/file/d/1rRtZDmiMiKexJ4jQxXIFJ_b89UR3zWo3/preview')">&#9658;</div>
         </div>
-        <div class="proj-thumb-wrap">
-          <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?w=600&auto=format&fit=crop&q=80" alt="Ship to Shore SCORM">
-          <div class="proj-play-btn" onclick="openPreviewModal('https://drive.google.com/file/d/1rRtZDmiMiKexJ4jQxXIFJ_b89UR3zWo3/preview')">&#9658;</div>
-        </div>
+        <span class="proj-cat">e-Learning</span>
         <h3>Interactive SCORM eLearning</h3>
-        <p>An interactive Storyline 360 module with custom navigation, assessments and SCORM publishing.</p>
-        <div class="proj-tags-flex">
-          <span class="proj-tag">Storyline 360</span>
-          <span class="proj-tag">SCORM</span>
-          <span class="proj-tag">Interactive</span>
+        <p>An interactive Storyline 360 module with custom navigation, assessments, and SCORM publishing.</p>
+        <div class="tag-group">
+          <span class="pill">Storyline 360</span>
+          <span class="pill">SCORM</span>
+          <span class="pill">Interactive</span>
         </div>
-        <a href="javascript:void(0)" onclick="openPreviewModal('https://drive.google.com/file/d/1-Jr4AcAYIeU_B9Cimcw1WLswNRgfx0MU/preview')" class="link-action-arrow">
-          View Project &rarr;
-        </a>
+        <a href="javascript:void(0)" onclick="openModal('https://drive.google.com/file/d/1-Jr4AcAYIeU_B9Cimcw1WLswNRgfx0MU/preview')" class="card-link">View Project &rarr;</a>
       </div>
 
-      <!-- CARD 02 -->
-      <div class="proj-card">
-        <div class="proj-top-strip">
-          <span class="proj-id-badge">02</span>
-          <span class="proj-category-pill">Multi-Language eLearning</span>
+      <!-- PROJECT 2 -->
+      <div class="project-card">
+        <div class="proj-media">
+          <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&auto=format&fit=crop&q=80" alt="Multi-language">
+          <div class="play-overlay" onclick="openModal('https://drive.google.com/file/d/1IIuKoOcBHQ35GzFYcmutqnFGDglw8n3t/preview')">&#9658;</div>
         </div>
-        <div class="proj-thumb-wrap">
-          <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&auto=format&fit=crop&q=80" alt="Multilingual Course">
-          <div class="proj-play-btn" onclick="openPreviewModal('https://drive.google.com/file/d/1IIuKoOcBHQ35GzFYcmutqnFGDglw8n3t/preview')">&#9658;</div>
-        </div>
+        <span class="proj-cat">e-Learning</span>
         <h3>Multi-language eLearning</h3>
         <p>Interactive course with language switching and multilingual learning support.</p>
-        <div class="proj-tags-flex">
-          <span class="proj-tag">Storyline 360</span>
-          <span class="proj-tag">Multilingual</span>
-          <span class="proj-tag">Localization</span>
+        <div class="tag-group">
+          <span class="pill">Storyline 360</span>
+          <span class="pill">Multilingual</span>
+          <span class="pill">Localization</span>
         </div>
-        <a href="javascript:void(0)" onclick="openPreviewModal('https://drive.google.com/file/d/1IIuKoOcBHQ35GzFYcmutqnFGDglw8n3t/preview')" class="link-action-arrow">
-          View Project &rarr;
-        </a>
+        <a href="javascript:void(0)" onclick="openModal('https://drive.google.com/file/d/1IIuKoOcBHQ35GzFYcmutqnFGDglw8n3t/preview')" class="card-link">View Project &rarr;</a>
       </div>
 
-      <!-- CARD 03 -->
-      <div class="proj-card">
-        <div class="proj-top-strip">
-          <span class="proj-id-badge">03</span>
-          <span class="proj-category-pill">Corporate Presentation Design</span>
+      <!-- PROJECT 3 -->
+      <div class="project-card">
+        <div class="proj-media">
+          <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&auto=format&fit=crop&q=80" alt="PowerPoint">
+          <div class="play-overlay" onclick="openModal('https://drive.google.com/file/d/12KMOnXd8ilEKFB4JqiAr99lX8_8IBSUv/preview')">&#9658;</div>
         </div>
-        <div class="proj-thumb-wrap">
-          <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&auto=format&fit=crop&q=80" alt="PowerPoint Presentations">
-          <div class="proj-play-btn" onclick="openPreviewModal('https://drive.google.com/file/d/12KMOnXd8ilEKFB4JqiAr99lX8_8IBSUv/preview')">&#9658;</div>
-        </div>
+        <span class="proj-cat">Visual Design</span>
         <h3>Corporate PowerPoint Design</h3>
-        <p>Professional training presentations with modern layouts, infographics and learning content.</p>
-        <div class="proj-tags-flex">
-          <span class="proj-tag">PowerPoint</span>
-          <span class="proj-tag">Visual Design</span>
-          <span class="proj-tag">Infographics</span>
+        <p>Professional training presentations with modern layouts, infographics, and learning content.</p>
+        <div class="tag-group">
+          <span class="pill">PowerPoint</span>
+          <span class="pill">Visual Design</span>
+          <span class="pill">Infographics</span>
         </div>
-        <a href="javascript:void(0)" onclick="openPreviewModal('https://drive.google.com/file/d/12KMOnXd8ilEKFB4JqiAr99lX8_8IBSUv/preview')" class="link-action-arrow">
-          View Project &rarr;
-        </a>
+        <a href="javascript:void(0)" onclick="openModal('https://drive.google.com/file/d/12KMOnXd8ilEKFB4JqiAr99lX8_8IBSUv/preview')" class="card-link">View Project &rarr;</a>
       </div>
 
-      <!-- CARD 04 -->
-      <div class="proj-card">
-        <div class="proj-top-strip">
-          <span class="proj-id-badge">04</span>
-          <span class="proj-category-pill">Video Editing &amp; Motion Graphics</span>
+      <!-- PROJECT 4 -->
+      <div class="project-card">
+        <div class="proj-media">
+          <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=600&auto=format&fit=crop&q=80" alt="Video Editing">
+          <div class="play-overlay" onclick="openModal('https://drive.google.com/file/d/1v1ISwjEXjLI4X5jwVbi-a-JX1O14nO5p/preview')">&#9658;</div>
         </div>
-        <div class="proj-thumb-wrap">
-          <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=600&auto=format&fit=crop&q=80" alt="Video Editing Motion">
-          <div class="proj-play-btn" onclick="openPreviewModal('https://drive.google.com/file/d/1v1ISwjEXjLI4X5jwVbi-a-JX1O14nO5p/preview')">&#9658;</div>
+        <span class="proj-cat">Video & Motion</span>
+        <h3>Video Editing & Motion Graphics</h3>
+        <p>Cinematic and engaging videos using Premiere Pro and After Effects for training and communication.</p>
+        <div class="tag-group">
+          <span class="pill">Premiere Pro</span>
+          <span class="pill">After Effects</span>
+          <span class="pill">Motion</span>
         </div>
-        <h3>Video Editing &amp; Motion Graphics</h3>
-        <p>Adobe Premiere Pro &amp; After Effects projects with cinematic editing, VFX and motion graphics.</p>
-        <div class="proj-tags-flex">
-          <span class="proj-tag">Premiere Pro</span>
-          <span class="proj-tag">After Effects</span>
-          <span class="proj-tag">Video</span>
-        </div>
-        <a href="javascript:void(0)" onclick="openPreviewModal('https://drive.google.com/file/d/1v1ISwjEXjLI4X5jwVbi-a-JX1O14nO5p/preview')" class="link-action-arrow">
-          View Project &rarr;
-        </a>
+        <a href="javascript:void(0)" onclick="openModal('https://drive.google.com/file/d/1v1ISwjEXjLI4X5jwVbi-a-JX1O14nO5p/preview')" class="card-link">View Project &rarr;</a>
       </div>
-
     </div>
-
   </div>
 </section>
 
-<!-- SECTION: WHAT I DO (5 FEATURE CARDS) -->
-<section id="about" class="site-section" style="background: #F8FAFC; border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light);">
+<!-- TOOLS & TECHNOLOGIES -->
+<section id="skills" class="section" style="background: #FFF; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
   <div class="container">
-    
-    <div class="what-i-do-grid">
+    <div class="tools-showcase">
+      <div class="desk-art-pane">
+        <div class="cursive-quote">
+          Small Learning Moments<br>
+          Big Future Impact.
+        </div>
+        <div class="spine-stack">
+          <div class="spine">Learn</div>
+          <div class="spine">Design</div>
+          <div class="spine">Develop</div>
+          <div class="spine">Grow</div>
+          <div class="spine">Impact</div>
+        </div>
+      </div>
+
       <div>
-        <span class="section-label-track">What I Do</span>
-        <h2 class="section-h2" style="font-size: 28px; margin-bottom: 12px;">
-          Blending Instructional Design with Creative Design.
-        </h2>
-        <p style="font-size: 14px; color: var(--text-muted); line-height: 1.6; margin-bottom: 20px;">
-          I combine learning strategy, visual design and multimedia to create meaningful learning experiences.
+        <span class="section-tag">Tools & Technologies</span>
+        <h2 class="section-title" style="margin-bottom: 8px;">Tools I Work With</h2>
+        <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 24px;">
+          A combination of authoring, design, multimedia, and LMS tools to bring learning ideas to life.
         </p>
-        <a href="#about" class="link-action-arrow" style="border: 1px solid var(--border-light); padding: 8px 16px; border-radius: 6px; background: #FFFFFF;">
-          More About Me &rarr;
-        </a>
-      </div>
 
-      <!-- 5 CARDS -->
-      <div class="feature-cards-5">
-        
-        <div class="feature-mini-card">
-          <div class="feature-icon-bubble bg-elearn">&#128187;</div>
-          <h4>eLearning Development</h4>
-          <p>Interactive courses that engage and inspire learners.</p>
+        <div class="tools-grid-15">
+          <div class="tool-tile"><div class="badge-sq bg-sl">sl</div><span>Storyline 360</span></div>
+          <div class="tool-tile"><div class="badge-sq bg-cp">Cp</div><span>Captivate</span></div>
+          <div class="tool-tile"><div class="badge-sq bg-rise">r</div><span>Rise</span></div>
+          <div class="tool-tile"><div class="badge-sq bg-ppt">P</div><span>PowerPoint</span></div>
+          <div class="tool-tile"><div class="badge-sq bg-word">W</div><span>Word</span></div>
+
+          <div class="tool-tile"><div class="badge-sq bg-excel">X</div><span>Excel</span></div>
+          <div class="tool-tile"><div class="badge-sq bg-ps">Ps</div><span>Photoshop</span></div>
+          <div class="tool-tile"><div class="badge-sq bg-ai">Ai</div><span>Illustrator</span></div>
+          <div class="tool-tile"><div class="badge-sq bg-pr">Pr</div><span>Premiere Pro</span></div>
+          <div class="tool-tile"><div class="badge-sq bg-ae">Ae</div><span>After Effects</span></div>
+
+          <div class="tool-tile"><div class="badge-sq bg-ld">&#128202;</div><span>LearnDash</span></div>
+          <div class="tool-tile"><div class="badge-sq bg-art360">&#9678;</div><span>Articulate 360</span></div>
+          <div class="tool-tile"><div class="badge-sq bg-scorm">SCORM</div><span>SCORM</span></div>
+          <div class="tool-tile"><div class="badge-sq bg-html">HTML5</div><span>HTML5</span></div>
+          <div class="tool-tile"><div class="badge-sq bg-camtasia">C</div><span>Camtasia</span></div>
         </div>
-
-        <div class="feature-mini-card">
-          <div class="feature-icon-bubble bg-videsign">&#127912;</div>
-          <h4>Visual Design</h4>
-          <p>Presentations, infographics and learning visuals.</p>
-        </div>
-
-        <div class="feature-mini-card">
-          <div class="feature-icon-bubble bg-vidmot">&#9658;</div>
-          <h4>Video &amp; Motion</h4>
-          <p>Cinematic editing and motion graphics to simplify ideas.</p>
-        </div>
-
-        <div class="feature-mini-card">
-          <div class="feature-icon-bubble bg-assess">&#9745;</div>
-          <h4>Assessment Design</h4>
-          <p>Interactive assessments that drive learning.</p>
-        </div>
-
-        <div class="feature-mini-card">
-          <div class="feature-icon-bubble bg-lms">&#128452;</div>
-          <h4>LMS Support</h4>
-          <p>Implementation, upload and learner support.</p>
-        </div>
-
       </div>
     </div>
-
   </div>
 </section>
 
-<!-- SECTION: TOOLS I USE (CATEGORIZED TILES) -->
-<section id="skills" class="site-section tools-section">
+<!-- MY PROCESS -->
+<section id="process" class="section">
   <div class="container">
-
-    <div class="tools-layout-grid">
-      <div>
-        <span class="section-label-track">Tools I Use</span>
-        <h2 class="section-h2" style="font-size: 28px; margin-bottom: 10px;">
-          The Right Tools for Meaningful Learning.
-        </h2>
-        <p style="font-size: 13px; color: var(--text-muted); line-height: 1.55;">
-          A combination of authoring, design, multimedia and LMS tools to bring learning ideas to life.
-        </p>
-      </div>
-
-      <!-- CATEGORY TILES -->
-      <div class="tools-category-deck">
-        
-        <!-- AUTHORING -->
-        <div class="tool-cluster-card">
-          <span class="tool-cluster-title title-auth">Authoring Tools</span>
-          <div class="tool-badge-row">
-            <div>
-              <div class="tool-chip-badge rounded badge-sl">sl</div>
-              <div class="tool-name-sub">Storyline 360</div>
-            </div>
-            <div>
-              <div class="tool-chip-badge badge-cp">Cp</div>
-              <div class="tool-name-sub">Captivate</div>
-            </div>
-            <div>
-              <div class="tool-chip-badge badge-rise">r</div>
-              <div class="tool-name-sub">Rise 360</div>
-            </div>
-            <div>
-              <div class="tool-chip-badge badge-scorm">SCORM</div>
-              <div class="tool-name-sub">SCORM</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- DESIGN & OFFICE -->
-        <div class="tool-cluster-card">
-          <span class="tool-cluster-title title-design">Design &amp; Office</span>
-          <div class="tool-badge-row">
-            <div>
-              <div class="tool-chip-badge badge-ppt">P</div>
-              <div class="tool-name-sub">PowerPoint</div>
-            </div>
-            <div>
-              <div class="tool-chip-badge badge-word">W</div>
-              <div class="tool-name-sub">Word</div>
-            </div>
-            <div>
-              <div class="tool-chip-badge badge-excel">X</div>
-              <div class="tool-name-sub">Excel</div>
-            </div>
-            <div>
-              <div class="tool-chip-badge badge-ps">Ps</div>
-              <div class="tool-name-sub">Photoshop</div>
-            </div>
-            <div>
-              <div class="tool-chip-badge badge-ai">Ai</div>
-              <div class="tool-name-sub">Illustrator</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- VIDEO & MOTION -->
-        <div class="tool-cluster-card">
-          <span class="tool-cluster-title title-video">Video &amp; Motion</span>
-          <div class="tool-badge-row">
-            <div>
-              <div class="tool-chip-badge badge-pr">Pr</div>
-              <div class="tool-name-sub">Premiere Pro</div>
-            </div>
-            <div>
-              <div class="tool-chip-badge badge-ae">Ae</div>
-              <div class="tool-name-sub">After Effects</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- LMS & OTHERS -->
-        <div class="tool-cluster-card">
-          <span class="tool-cluster-title title-lms">LMS &amp; Others</span>
-          <div class="tool-badge-row">
-            <div>
-              <div class="tool-chip-badge badge-ld">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M4 19h4V9H4v10zm6 0h4V5h-4v14zm6 0h4v-7h-4v7z"/></svg>
-              </div>
-              <div class="tool-name-sub">LearnDash</div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- SECTION: MY DESIGN PROCESS -->
-<section class="site-section process-section">
-  <div class="container">
-
-    <span class="section-label-track">My Design Process</span>
-    <h2 class="section-h2" style="font-size: 28px; margin-bottom: 4px;">From Ideas to Impact.</h2>
-    <p style="font-size: 13px; color: var(--text-muted); padding-left: 18px; margin-bottom: 24px;">
+    <span class="section-tag">My Process</span>
+    <h2 class="section-title" style="margin-bottom: 8px;">From Ideas to Impact</h2>
+    <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 30px;">
       A simple, structured approach to create learning experiences that work.
     </p>
 
-    <div class="process-layout-split">
-      <div class="process-steps-chain">
-        
-        <div class="process-step-node">
-          <div class="node-icon-circle">&#128221;</div>
-          <div>
-            <div class="node-step-num">01</div>
-            <div class="node-step-title">Understand</div>
-            <div class="node-step-sub">Learning Needs</div>
-          </div>
+    <div class="process-flex">
+      <div class="step-chain">
+        <div class="step-item">
+          <div class="step-circle">&#128221;</div>
+          <div class="step-meta"><span>01</span><strong>Understand</strong><small>Learning Needs</small></div>
         </div>
+        <div style="color:#CBD5E1; font-size:18px;">&rarr;</div>
 
-        <div class="process-connector-arrow">&rarr;</div>
-
-        <div class="process-step-node">
-          <div class="node-icon-circle">&#128161;</div>
-          <div>
-            <div class="node-step-num">02</div>
-            <div class="node-step-title">Design</div>
-            <div class="node-step-sub">Engaging Solutions</div>
-          </div>
+        <div class="step-item">
+          <div class="step-circle">&#128161;</div>
+          <div class="step-meta"><span>02</span><strong>Design</strong><small>Engaging Solutions</small></div>
         </div>
+        <div style="color:#CBD5E1; font-size:18px;">&rarr;</div>
 
-        <div class="process-connector-arrow">&rarr;</div>
-
-        <div class="process-step-node">
-          <div class="node-icon-circle">&#9881;</div>
-          <div>
-            <div class="node-step-num">03</div>
-            <div class="node-step-title">Develop</div>
-            <div class="node-step-sub">Using the Right Tools</div>
-          </div>
+        <div class="step-item">
+          <div class="step-circle">&#9881;</div>
+          <div class="step-meta"><span>03</span><strong>Develop</strong><small>Using Right Tools</small></div>
         </div>
+        <div style="color:#CBD5E1; font-size:18px;">&rarr;</div>
 
-        <div class="process-connector-arrow">&rarr;</div>
-
-        <div class="process-step-node">
-          <div class="node-icon-circle">&#128200;</div>
-          <div>
-            <div class="node-step-num">04</div>
-            <div class="node-step-title">Deliver</div>
-            <div class="node-step-sub">Measurable Impact</div>
-          </div>
+        <div class="step-item">
+          <div class="step-circle">&#128200;</div>
+          <div class="step-meta"><span>04</span><strong>Deliver</strong><small>Measurable Impact</small></div>
         </div>
-
       </div>
 
-      <div class="process-callout-quote">
-        Good Design<br>Makes Learning<br>Possible.<br>Great Design<br>Makes it Last.
+      <div class="process-quote">
+        Simple Ideas.<br>Meaningful<br>Change.
       </div>
     </div>
-
   </div>
 </section>
 
-<!-- SECTION: DARK WORKSPACE CONNECT -->
-<section id="contact" class="dark-connect-pane">
-  <div class="container dark-connect-grid">
-    
+<!-- LEARNING CHANGES PEOPLE BANNER -->
+<section class="quote-photo-banner">
+  <div class="container banner-grid">
     <div>
-      <span class="section-label-track" style="color: #60A5FA;">Let's Connect</span>
-      <h2 class="section-h2">
-        Let's Create<br>Better Learning Together.
-      </h2>
-      <p class="dark-connect-subcopy">
-        I'm always open to discussing Instructional Design, eLearning development, multimedia or new ideas.
+      <h2 class="banner-title">&ldquo; Because Learning Changes People.</h2>
+      <p class="banner-desc">
+        I believe well-designed learning can build skills, create opportunities, and transform lives. That's what keeps me motivated.
+      </p>
+    </div>
+
+    <div>
+      <div class="banner-checks">
+        <div class="check-row">&#128214; Learn</div>
+        <div class="check-row">&#128101; Grow</div>
+        <div class="check-row">&#127919; Perform</div>
+        <div class="check-row">&#128200; Succeed</div>
+      </div>
+      <div class="banner-cursive">
+        Better Learning<br>Brighter Tomorrows.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section id="contact" class="section">
+  <div class="container contact-grid">
+    <div>
+      <span class="section-tag">Let's Connect</span>
+      <h2 class="section-title" style="margin-bottom: 12px;">Let's Create Better Learning Together.</h2>
+      <p style="font-size: 14px; color: var(--text-body);">
+        I'm always open to discussing new opportunities, collaborations, or ideas.
       </p>
 
-      <a href="mailto:sv393015@gmail.com" class="btn-white-pill">
-        Let's Talk <span>&rarr;</span>
-      </a>
-
-      <div class="contact-rows-list">
-        <a href="mailto:sv393015@gmail.com" class="contact-row-item">
+      <div class="contact-items-v">
+        <a href="mailto:sv393015@gmail.com" class="contact-item-row">
           <div class="contact-icon-bubble">&#9993;</div>
           <span>sv393015@gmail.com</span>
         </a>
-
-        <a href="tel:+919353080994" class="contact-row-item">
+        <a href="tel:+919353080994" class="contact-item-row">
           <div class="contact-icon-bubble">&#9742;</div>
           <span>+91 93530 80994</span>
         </a>
-
-        <a href="https://www.linkedin.com/in/chandru-elearning" target="_blank" rel="noopener noreferrer" class="contact-row-item">
+        <a href="https://www.linkedin.com/in/chandru-elearning" target="_blank" rel="noopener noreferrer" class="contact-item-row">
           <div class="contact-icon-bubble">in</div>
           <span>linkedin.com/in/chandru-elearning</span>
         </a>
-
-        <div class="contact-row-item">
+        <div class="contact-item-row">
           <div class="contact-icon-bubble">&#128205;</div>
           <span>Bengaluru, Karnataka, India</span>
         </div>
       </div>
+
+      <a href="mailto:sv393015@gmail.com" class="btn-blue">Get in Touch &rarr;</a>
     </div>
 
-    <!-- WORKSPACE DESK COMPOSITION -->
-    <div class="desk-workspace-visual">
-      <div class="desk-books-group">
-        <div class="stacked-white-book">Ideas</div>
-        <div class="stacked-white-book">Design</div>
-        <div class="stacked-white-book">Learn</div>
-        <div class="stacked-white-book">Grow</div>
-      </div>
-
-      <div class="desk-dark-mug">
-        <span>Ideas<br>People<br>Learning<br>Impact</span>
-      </div>
-
-      <div class="desk-mug-script">
-        Keep<br>Learning.<br>Keep<br>Creating.
-      </div>
+    <div class="framed-contact-desk">
+      <h3>Ideas<br>People<br>Learning<br>Impact</h3>
+      <div style="width: 40px; height: 3px; background: var(--primary); margin: 12px auto;"></div>
+      <p>Building meaningful learning experiences.</p>
     </div>
-
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer class="site-footer">
-  <div class="container footer-content-wrap">
+  <div class="container footer-inner">
     <div style="display: flex; align-items: center; gap: 8px;">
-      <strong style="font-size: 15px; color: var(--text-dark);">CS</strong>
+      <strong style="color: var(--text-main); font-size: 16px;">CS</strong>
       <span>Chandirakkumar S &bull; Instructional Designer</span>
     </div>
 
-    <nav class="footer-nav-menu">
+    <div class="footer-links">
       <a href="#home">Home</a>
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
       <a href="#skills">Skills</a>
+      <a href="#process">Process</a>
       <a href="#contact">Contact</a>
-    </nav>
-
-    <div style="display: flex; align-items: center; gap: 14px;">
-      <span>&copy; 2026 Chandirakkumar S. All rights reserved.</span>
-      <a href="#home" class="btn-top-circle" aria-label="Back to top">&uarr;</a>
     </div>
+
+    <div>&copy; 2026 Chandirakkumar S. All rights reserved.</div>
   </div>
+
+  <div class="thankyou-tag">Thank you for visiting!</div>
 </footer>
 
-<!-- INTERACTIVE DEMO PREVIEW MODAL -->
-<div id="previewModal" class="modal-overlay" onclick="handleModalBgClick(event)">
-  <div class="modal-content-box">
-    <div class="modal-top-bar">
-      <span style="font-weight: 700; font-size: 14px;">Project Interactive Preview</span>
-      <button class="modal-close-btn" onclick="closePreviewModal()">&times;</button>
+<!-- LIGHTBOX MODAL -->
+<div id="previewModal" class="modal-overlay" onclick="closeModalDirect(event)">
+  <div class="modal-box">
+    <div class="modal-bar">
+      <span>Project Interactive Demo</span>
+      <button onclick="closeModal()">&times;</button>
     </div>
-    <div class="modal-video-frame">
-      <iframe id="previewModalIframe" src="" allow="autoplay; fullscreen"></iframe>
+    <div class="modal-frame">
+      <iframe id="modalIframe" src="" allow="autoplay; fullscreen"></iframe>
     </div>
   </div>
 </div>
 
 <script>
-function openPreviewModal(url) {
-  const modal = document.getElementById('previewModal');
-  const iframe = document.getElementById('previewModalIframe');
-  iframe.src = url;
-  modal.classList.add('active');
+function openModal(url) {
+  document.getElementById('modalIframe').src = url;
+  document.getElementById('previewModal').classList.add('active');
   document.body.style.overflow = 'hidden';
 }
-
-function closePreviewModal() {
-  const modal = document.getElementById('previewModal');
-  const iframe = document.getElementById('previewModalIframe');
-  iframe.src = '';
-  modal.classList.remove('active');
+function closeModal() {
+  document.getElementById('modalIframe').src = '';
+  document.getElementById('previewModal').classList.remove('active');
   document.body.style.overflow = 'auto';
 }
-
-function handleModalBgClick(e) {
-  if (e.target.id === 'previewModal') {
-    closePreviewModal();
-  }
+function closeModalDirect(e) {
+  if (e.target.id === 'previewModal') closeModal();
 }
 </script>
 
