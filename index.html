@@ -5,30 +5,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Chandirakkumar S | Instructional Designer</title>
 
-<!-- Fonts: Inter for UI typography, Caveat for handwritten notes -->
+<!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-<!-- Font Awesome 6 Icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
 <style>
 :root {
-  --bg-main: #FFFFFF;
+  --bg-body: #FFFFFF;
   --bg-subtle: #F8FAFC;
-  --border-color: #E2E8F0;
-  --border-light: #F1F5F9;
+  --border-light: #E2E8F0;
+  --border-card: #EDF2F7;
   --text-dark: #0F172A;
   --text-muted: #64748B;
   --text-body: #334155;
-  --primary: #1D68F2;
-  --primary-hover: #1554C7;
+  --primary: #2563EB;
+  --primary-hover: #1D4ED8;
   --primary-light: #EFF6FF;
-  --dark-pill: #0B1325;
-  --dark-pill-hover: #1E293B;
-  --shadow-card: 0 4px 18px rgba(15, 23, 42, 0.05);
-  --shadow-hover: 0 16px 36px rgba(15, 23, 42, 0.1);
+  --dark-btn: #0F172A;
+  --dark-btn-hover: #1E293B;
+  --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.04);
+  --shadow-md: 0 12px 30px rgba(15, 23, 42, 0.07);
 }
 
 * {
@@ -43,11 +40,10 @@ html {
 
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  background-color: var(--bg-main);
+  background-color: var(--bg-body);
   color: var(--text-dark);
   line-height: 1.5;
   overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
 }
 
 a {
@@ -58,61 +54,55 @@ a {
 .container {
   max-width: 1240px;
   margin: 0 auto;
-  padding: 0 28px;
+  padding: 0 24px;
 }
 
-/* ===== NAVIGATION BAR ===== */
+/* ===== STICKY TOP NAVIGATION ===== */
 .top-nav {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border-color);
-  padding: 14px 0;
+  border-bottom: 1px solid var(--border-light);
+  padding: 16px 0;
 }
 
-.nav-row {
+.nav-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.brand-wrapper {
+.nav-brand {
   display: flex;
   align-items: center;
   gap: 12px;
 }
 
-.brand-cs-badge {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: #0B1325;
-  color: #FFFFFF;
-  font-weight: 800;
-  font-size: 19px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  letter-spacing: -0.5px;
+.brand-cs-logo {
+  font-size: 32px;
+  font-weight: 900;
+  letter-spacing: -1.5px;
+  color: #0F172A;
+  line-height: 1;
 }
 
-.brand-text h1 {
-  font-size: 16px;
+.brand-title-wrap h1 {
+  font-size: 15px;
   font-weight: 800;
   color: var(--text-dark);
   line-height: 1.2;
 }
 
-.brand-text span {
-  font-size: 12px;
-  color: var(--text-muted);
+.brand-title-wrap span {
+  font-size: 11px;
   font-weight: 500;
+  color: var(--text-muted);
 }
 
-.nav-links {
+.nav-links-row {
   display: flex;
   align-items: center;
   gap: 32px;
@@ -143,9 +133,9 @@ a {
 }
 
 .btn-nav-connect {
-  background: var(--dark-pill);
+  background: var(--dark-btn);
   color: #FFFFFF;
-  font-size: 13.5px;
+  font-size: 14px;
   font-weight: 600;
   padding: 10px 22px;
   border-radius: 40px;
@@ -156,184 +146,171 @@ a {
 }
 
 .btn-nav-connect:hover {
-  background: var(--dark-pill-hover);
+  background: var(--dark-btn-hover);
   transform: translateY(-1px);
 }
 
+/* ===== HERO SECTION ===== */
 .hero-section {
   position: relative;
-  padding: 50px 0 65px;
+  padding: 45px 0 65px;
   background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-light);
   overflow: hidden;
 }
 
 .hero-grid {
   display: grid;
   grid-template-columns: 1.15fr 0.95fr;
-  gap: 40px;
+  gap: 36px;
   align-items: center;
 }
 
-.hero-tracker {
-  font-size: 12px;
+.hero-track-eyebrow {
+  font-size: 11px;
   font-weight: 800;
-  letter-spacing: 2px;
+  letter-spacing: 2.5px;
   text-transform: uppercase;
   color: var(--text-muted);
   margin-bottom: 14px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.hero-tracker .sep {
-  color: var(--primary);
-  font-weight: 900;
+  display: block;
 }
 
 .hero-heading {
-  font-size: 56px;
-  line-height: 1.08;
+  font-size: 52px;
+  line-height: 1.12;
   font-weight: 900;
   color: var(--text-dark);
-  letter-spacing: -1.8px;
+  letter-spacing: -1.5px;
   margin-bottom: 18px;
 }
 
-.hero-heading .blue-highlight {
+.hero-heading .blue-accent {
   color: var(--primary);
 }
 
-.hero-bio {
-  font-size: 15.5px;
+.hero-desc-text {
+  font-size: 15px;
   line-height: 1.65;
   color: var(--text-body);
   max-width: 500px;
   margin-bottom: 30px;
 }
 
-.hero-btn-row {
+.hero-cta-group {
   display: flex;
   align-items: center;
   gap: 16px;
-  margin-bottom: 44px;
+  margin-bottom: 40px;
 }
 
-.btn-primary-blue {
-  background: var(--primary);
+.btn-hero-primary {
+  background: var(--dark-btn);
   color: #FFFFFF;
   padding: 13px 26px;
-  border-radius: 10px;
-  font-size: 14.5px;
-  font-weight: 700;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
   display: inline-flex;
   align-items: center;
-  gap: 9px;
+  gap: 8px;
   transition: all 0.2s ease;
-  box-shadow: 0 6px 18px rgba(29, 104, 242, 0.25);
 }
 
-.btn-primary-blue:hover {
-  background: var(--primary-hover);
-  transform: translateY(-2px);
+.btn-hero-primary:hover {
+  background: var(--dark-btn-hover);
+  transform: translateY(-1px);
 }
 
-.btn-watch-intro {
+.btn-hero-video {
   background: #FFFFFF;
   color: var(--text-dark);
-  border: 1.5px solid var(--border-color);
-  padding: 9px 20px 9px 12px;
-  border-radius: 40px;
-  font-size: 14px;
-  font-weight: 700;
+  border: 1.5px solid var(--border-light);
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  transition: all 0.2s ease;
   cursor: pointer;
+  transition: all 0.2s ease;
 }
 
-.btn-watch-intro:hover {
-  border-color: var(--text-dark);
-  background: #F8FAFC;
-}
-
-.play-circle-bubble {
-  width: 34px;
-  height: 34px;
+.btn-hero-video .play-bubble {
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
-  background: var(--primary-light);
+  border: 1.5px solid var(--primary);
   color: var(--primary);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 13px;
-  padding-left: 2px;
+  font-size: 11px;
 }
 
-/* Stats Counter Row */
+.btn-hero-video:hover {
+  border-color: var(--text-dark);
+}
+
+/* Stats 4-Column Bar */
 .hero-stats-row {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
+  gap: 20px;
   padding-top: 24px;
-  border-top: 1px solid var(--border-color);
+  border-top: 1px solid var(--border-light);
 }
 
-.hero-stat-card {
+.hero-stat-cell {
   display: flex;
   flex-direction: column;
-  gap: 3px;
 }
 
-.hero-stat-card .stat-icon {
-  font-size: 17px;
-  color: #1E293B;
+.stat-icon-top {
+  font-size: 18px;
+  color: var(--primary);
   margin-bottom: 6px;
 }
 
-.hero-stat-card .stat-val {
+.hero-stat-num {
   font-size: 26px;
   font-weight: 900;
   color: var(--text-dark);
   line-height: 1;
+  margin-bottom: 4px;
+  letter-spacing: -0.5px;
 }
 
-.hero-stat-card .stat-val.inf {
-  font-size: 28px;
-  color: var(--text-dark);
-}
-
-.hero-stat-card .stat-label {
-  font-size: 11.5px;
+.hero-stat-lbl {
+  font-size: 11px;
   font-weight: 600;
   color: var(--text-muted);
-  line-height: 1.25;
+  line-height: 1.3;
 }
 
 /* Hero Right Composition */
-.hero-visual-box {
+.hero-visual-col {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  min-height: 500px;
+  min-height: 490px;
 }
 
-.hero-avatar-frame {
+.hero-portrait-frame {
   position: relative;
-  width: 340px;
+  width: 330px;
   height: 450px;
-  border-radius: 200px 200px 18px 18px;
+  border-radius: 200px 200px 20px 20px;
   overflow: hidden;
-  background: #E2E8F0;
   box-shadow: 0 20px 45px rgba(15, 23, 42, 0.12);
   border: 4px solid #FFFFFF;
+  background: #CBD5E1;
   z-index: 2;
 }
 
-.hero-avatar-frame img {
+.hero-portrait-frame img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -341,130 +318,145 @@ a {
   display: block;
 }
 
-/* Wall Artwork Frame */
-.wall-framed-quote {
+/* Overhanging Warm Lamp */
+.overhead-lamp {
   position: absolute;
-  top: 40px;
-  right: -10px;
-  background: #FFFFFF;
-  border: 4px solid #1E293B;
-  padding: 14px 18px;
-  border-radius: 8px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  font-weight: 900;
-  font-size: 11.5px;
-  letter-spacing: 0.5px;
-  color: #0F172A;
-  line-height: 1.35;
-  text-align: center;
+  top: -15px;
+  right: 60px;
+  width: 80px;
+  height: 70px;
+  border-radius: 50% 50% 10px 10px;
+  background: #0F172A;
+  box-shadow: 0 0 50px rgba(251, 191, 36, 0.45);
   z-index: 1;
 }
 
-/* Handwritten Cursive Note (Same Passion. Bigger Impact.) */
-.cursive-right-tag {
+/* Script Cursive Overlays */
+.script-quote-hero {
   position: absolute;
-  top: 45px;
-  right: -55px;
+  top: 60px;
+  right: -5px;
   font-family: 'Caveat', cursive;
-  font-size: 30px;
-  color: #334155;
-  line-height: 1.1;
-  transform: rotate(5deg);
+  font-size: 28px;
+  color: #1E3A8A;
+  line-height: 1.15;
+  transform: rotate(-3deg);
   z-index: 3;
 }
 
-/* Desk Elements */
-.desk-laptop-back {
+.framed-art-wall {
   position: absolute;
-  bottom: 0;
+  top: 40px;
   right: -30px;
-  width: 270px;
-  background: #475569;
-  border: 3px solid #94A3B8;
-  border-radius: 12px 12px 0 0;
-  padding: 18px 14px 12px;
+  width: 140px;
+  background: #FFFFFF;
+  border: 3px solid #D1B89D;
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: var(--shadow-md);
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1.3;
+  color: #334155;
   text-align: center;
-  box-shadow: 0 12px 28px rgba(0,0,0,0.22);
-  z-index: 4;
+  z-index: 1;
+  opacity: 0.85;
 }
 
-.desk-laptop-back .laptop-note {
-  font-family: 'Caveat', cursive;
-  font-size: 24px;
-  line-height: 1.15;
-  color: #FFFFFF;
+.framed-art-wall .art-blue-bar {
+  width: 30px;
+  height: 3px;
+  background: var(--primary);
+  margin: 6px auto 0;
+  border-radius: 2px;
 }
 
-.desk-mug-element {
+.desk-mug-item {
   position: absolute;
   bottom: 12px;
-  left: 20px;
+  left: 10px;
+  z-index: 5;
   width: 62px;
-  height: 74px;
+  height: 72px;
   background: #0F172A;
   border-radius: 0 0 16px 16px;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.25);
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 6px;
-  z-index: 5;
+  padding: 4px;
 }
 
-.desk-mug-element .mug-txt {
-  font-family: 'Caveat', cursive;
+.desk-mug-item span {
   color: #FFFFFF;
-  font-size: 11px;
-  line-height: 1.15;
+  font-size: 7.5px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  line-height: 1.25;
 }
 
-.desk-mug-element::after {
+.desk-mug-item::after {
   content: '';
   position: absolute;
-  right: -12px;
-  top: 14px;
+  right: -13px;
+  top: 15px;
   width: 14px;
-  height: 38px;
+  height: 36px;
   border: 4px solid #0F172A;
   border-left: none;
   border-radius: 0 12px 12px 0;
 }
 
-.desk-pills-stack {
+.desk-laptop-screen {
   position: absolute;
-  bottom: 12px;
-  right: -60px;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
+  bottom: 0;
+  right: -30px;
   z-index: 4;
+  width: 260px;
+  background: #1E293B;
+  border: 3px solid #64748B;
+  border-radius: 10px 10px 0 0;
+  padding: 18px 12px;
+  color: #FFFFFF;
+  text-align: center;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.25);
 }
 
-.desk-pill-tag {
-  background: #F1F5F9;
-  border: 1px solid var(--border-color);
-  padding: 4px 14px;
+.desk-laptop-screen .laptop-msg {
+  font-family: 'Caveat', cursive;
+  font-size: 24px;
+  line-height: 1.15;
+  color: #F8FAFC;
+}
+
+.desk-book-shelf {
+  position: absolute;
+  bottom: 12px;
+  right: -75px;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.shelf-book {
+  background: #E2E8F0;
+  padding: 4px 16px;
   font-size: 11px;
   font-weight: 700;
   color: #1E293B;
   border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
 }
 
-.section-padding {
+/* ===== SECTION COMMON STYLING ===== */
+.site-section {
   padding: 75px 0;
   position: relative;
 }
 
-.section-head-flex {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  margin-bottom: 36px;
-}
-
-.eyebrow-tag {
+.section-label-track {
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 2.5px;
@@ -474,104 +466,115 @@ a {
   display: block;
 }
 
-.section-heading {
+.section-h2 {
   font-size: 32px;
   font-weight: 900;
   color: var(--text-dark);
   letter-spacing: -0.8px;
-  line-height: 1.15;
   border-left: 4px solid var(--primary);
   padding-left: 14px;
+  line-height: 1.15;
 }
 
-.section-description-text {
+.section-top-split {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 34px;
+}
+
+.section-lead-copy {
   font-size: 14px;
   color: var(--text-muted);
-  max-width: 480px;
+  max-width: 500px;
   line-height: 1.6;
 }
 
-.btn-view-all-link {
-  font-size: 13.5px;
+.link-action-arrow {
+  font-size: 13px;
   font-weight: 700;
   color: var(--primary);
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  margin-top: 6px;
   transition: gap 0.2s ease;
 }
 
-.btn-view-all-link:hover {
+.link-action-arrow:hover {
   gap: 10px;
 }
 
-/* 4-Column Projects Grid */
+/* ===== SECTION: FEATURED WORK (4 CARDS) ===== */
 .projects-4-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
 }
 
-.project-card {
+.proj-card {
   background: #FFFFFF;
-  border: 1px solid var(--border-color);
-  border-radius: 18px;
+  border: 1px solid var(--border-card);
+  border-radius: 16px;
   padding: 16px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  box-shadow: var(--shadow-card);
+  box-shadow: var(--shadow-sm);
   transition: all 0.25s ease;
-  position: relative;
-  overflow: hidden;
 }
 
-.project-card:hover {
+.proj-card:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-hover);
-  border-color: #CBD5E1;
+  box-shadow: var(--shadow-md);
+  border-color: var(--border-light);
 }
 
-.project-corner-badge {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: linear-gradient(135deg, #38BDF8 0%, #1D68F2 100%);
-  color: #FFFFFF;
+.proj-top-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.proj-id-badge {
+  font-size: 16px;
+  font-weight: 900;
+  color: var(--primary);
+}
+
+.proj-category-pill {
+  font-size: 9px;
   font-weight: 800;
-  font-size: 13px;
-  padding: 6px 16px 8px 12px;
-  border-radius: 0 0 16px 0;
-  z-index: 10;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--text-muted);
 }
 
-.project-preview-box {
+.proj-thumb-wrap {
   position: relative;
   width: 100%;
-  aspect-ratio: 16/10.5;
-  border-radius: 12px;
+  aspect-ratio: 16/10;
+  border-radius: 10px;
   overflow: hidden;
-  background: #0B1325;
-  margin-bottom: 18px;
-  border: 1px solid var(--border-color);
+  background: #0B1120;
+  border: 1px solid var(--border-light);
+  margin-bottom: 16px;
 }
 
-.project-preview-box img {
+.proj-thumb-wrap img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
 
-.play-hover-overlay {
+.proj-play-btn {
   position: absolute;
   inset: 0;
   margin: auto;
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: rgba(15, 23, 42, 0.8);
+  background: rgba(15, 23, 42, 0.75);
   color: #FFFFFF;
   display: flex;
   align-items: center;
@@ -582,440 +585,462 @@ a {
   backdrop-filter: blur(4px);
 }
 
-.project-card:hover .play-hover-overlay {
+.proj-card:hover .proj-play-btn {
   background: var(--primary);
   transform: scale(1.1);
 }
 
-.project-card h3 {
-  font-size: 16.5px;
+.proj-card h3 {
+  font-size: 16px;
   font-weight: 800;
   color: var(--text-dark);
   margin-bottom: 6px;
   line-height: 1.25;
 }
 
-.project-card p {
+.proj-card p {
   font-size: 12.5px;
   color: var(--text-muted);
   line-height: 1.55;
-  margin-bottom: 14px;
-  min-height: 56px;
+  margin-bottom: 16px;
+  flex-grow: 1;
 }
 
-.project-tags-wrap {
+.proj-tags-flex {
   display: flex;
   flex-wrap: wrap;
-  gap: 5px;
-  margin-bottom: 18px;
+  gap: 6px;
+  margin-bottom: 16px;
 }
 
 .proj-tag {
   font-size: 10.5px;
   font-weight: 700;
   padding: 4px 9px;
-  border-radius: 30px;
+  border-radius: 20px;
   background: var(--primary-light);
   color: var(--primary);
 }
 
-.card-action-circle {
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  border: 1.5px solid var(--primary);
-  color: var(--primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 13px;
-  transition: all 0.2s ease;
-  cursor: pointer;
-}
-
-.project-card:hover .card-action-circle {
-  background: var(--primary);
-  color: #FFFFFF;
-}
-
-.tools-section {
-  background: #F8FAFC;
-  border-top: 1px solid var(--border-color);
-  border-bottom: 1px solid var(--border-color);
-}
-
-.tools-headline-row {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  margin-bottom: 36px;
-}
-
-.tools-12-grid {
+/* ===== SECTION: WHAT I DO (5 FEATURE CARDS) ===== */
+.what-i-do-grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 16px;
+  grid-template-columns: 1.1fr 2fr;
+  gap: 32px;
+  align-items: center;
 }
 
-.tool-badge-card {
-  background: #FFFFFF;
-  border: 1px solid var(--border-color);
+.feature-cards-5 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+}
+
+.feature-mini-card {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-card);
   border-radius: 14px;
-  padding: 16px 8px;
+  padding: 18px 12px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.02);
   transition: all 0.2s ease;
 }
 
-.tool-badge-card:hover {
+.feature-mini-card:hover {
+  background: #FFFFFF;
   transform: translateY(-3px);
-  box-shadow: var(--shadow-card);
-  border-color: #CBD5E1;
+  box-shadow: var(--shadow-sm);
+  border-color: var(--border-light);
 }
 
-.software-icon-sq {
+.feature-icon-bubble {
   width: 44px;
   height: 44px;
-  border-radius: 10px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  margin-bottom: 12px;
+  color: #FFFFFF;
+}
+
+.bg-elearn { background: #0284C7; }
+.bg-videsign { background: #0284C7; }
+.bg-vidmot { background: #DC2626; }
+.bg-assess { background: #059669; }
+.bg-lms { background: #0284C7; }
+
+.feature-mini-card h4 {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+  line-height: 1.25;
+}
+
+.feature-mini-card p {
+  font-size: 10.5px;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
+/* ===== SECTION: TOOLS I USE (CATEGORIZED TILES) ===== */
+.tools-section {
+  background: #FFFFFF;
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.tools-layout-grid {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 36px;
+  align-items: center;
+}
+
+.tools-category-deck {
+  display: grid;
+  grid-template-columns: 1.4fr 1.8fr 1.2fr 1fr;
+  gap: 16px;
+}
+
+.tool-cluster-card {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-card);
+  border-radius: 14px;
+  padding: 16px 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.tool-cluster-title {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.title-auth { color: #DB2777; }
+.title-design { color: #2563EB; }
+.title-video { color: #7C3AED; }
+.title-lms { color: #059669; }
+
+.tool-badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.tool-chip-badge {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 800;
-  font-size: 15px;
+  font-size: 12.5px;
   color: #FFFFFF;
-  margin-bottom: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.06);
 }
 
-/* Brand Colors for Tools */
-.icon-sl { background: #E11D48; border-radius: 50%; }
-.icon-cp { background: #059669; }
-.icon-ppt { background: #EA580C; }
-.icon-word { background: #0284C7; }
-.icon-excel { background: #16A34A; }
-.icon-ps { background: #001E36; color: #38BDF8; }
-.icon-ai { background: #330000; color: #FB923C; }
-.icon-pr { background: #00005C; color: #A78BFA; }
-.icon-ae { background: #00005C; color: #C084FC; }
-.icon-ld { background: #F8FAFC; color: var(--primary); border: 1.5px solid var(--border-color); }
-.icon-rise { background: #06B6D4; }
-.icon-scorm { background: #7C3AED; }
+.tool-chip-badge.rounded {
+  border-radius: 50%;
+}
 
-.tool-badge-card .tool-title {
-  font-size: 11.5px;
+.badge-sl { background: #D946EF; }
+.badge-cp { background: #059669; }
+.badge-rise { background: #0EA5E9; }
+.badge-scorm { background: #6366F1; font-size: 9px; }
+.badge-ppt { background: #EA580C; }
+.badge-word { background: #2563EB; }
+.badge-excel { background: #16A34A; }
+.badge-ps { background: #0284C7; }
+.badge-ai { background: #EA580C; }
+.badge-pr { background: #4338CA; }
+.badge-ae { background: #3730A3; }
+.badge-ld { background: #FFFFFF; border: 1.5px solid var(--border-light); color: var(--primary); }
+
+.tool-name-sub {
+  font-size: 9.5px;
   font-weight: 700;
-  color: var(--text-dark);
-  margin-bottom: 6px;
+  color: var(--text-muted);
+  margin-top: 6px;
+  text-align: center;
   white-space: nowrap;
 }
 
-.tool-skill-pill {
-  font-size: 9.5px;
-  font-weight: 800;
-  padding: 3px 8px;
-  border-radius: 20px;
-  text-transform: capitalize;
+/* ===== SECTION: MY DESIGN PROCESS ===== */
+.process-section {
+  padding: 65px 0;
+  border-bottom: 1px solid var(--border-light);
 }
 
-.tool-skill-pill.expert { background: #EFF6FF; color: var(--primary); }
-.tool-skill-pill.advanced { background: #F0FDF4; color: #16A34A; }
-.tool-skill-pill.intermediate { background: #F8FAFC; color: #64748B; border: 1px solid #E2E8F0; }
-
-.approach-section {
-  border-bottom: 1px solid var(--border-color);
+.process-layout-split {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 40px;
+  align-items: center;
 }
 
-.approach-workflow-row {
+.process-steps-chain {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 36px;
-  position: relative;
+  margin-top: 24px;
 }
 
-.workflow-node {
+.process-step-node {
   display: flex;
-  align-items: center;
-  gap: 14px;
+  align-items: flex-start;
+  gap: 12px;
 }
 
-.workflow-bubble {
-  width: 48px;
-  height: 48px;
+.node-icon-circle {
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   background: var(--primary-light);
   color: var(--primary);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 19px;
-  flex-shrink: 0;
-  border: 1.5px solid #DBEAFE;
-}
-
-.workflow-info .step-num {
-  font-size: 11px;
-  font-weight: 800;
-  color: var(--text-muted);
-}
-
-.workflow-info .step-name {
-  font-size: 15px;
-  font-weight: 800;
-  color: var(--text-dark);
-}
-
-.workflow-info .step-desc {
-  font-size: 12px;
-  color: var(--text-muted);
-}
-
-.workflow-dashed-connector {
-  color: #94A3B8;
   font-size: 16px;
-  letter-spacing: 2px;
+  flex-shrink: 0;
 }
 
-.cursive-ideas-note {
-  font-family: 'Caveat', cursive;
-  font-size: 34px;
-  color: #1E3A8A;
-  line-height: 1.05;
-  text-align: right;
-  margin-left: 20px;
+.node-step-num {
+  font-size: 10px;
+  font-weight: 800;
+  color: var(--text-muted);
 }
 
-.panoramic-impact-strip {
-  position: relative;
-  background: linear-gradient(135deg, #0A192F 0%, #0F2B48 50%, #1B3B6F 100%);
-  color: #FFFFFF;
-  padding: 50px 0;
-  overflow: hidden;
-  border-top: 1px solid #1E293B;
-}
-
-.mountain-backdrop {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 10% 20%, rgba(29, 104, 242, 0.25) 0%, transparent 60%);
-  pointer-events: none;
-}
-
-.impact-strip-grid {
-  display: grid;
-  grid-template-columns: 280px 1fr 300px;
-  gap: 30px;
-  align-items: center;
-  position: relative;
-  z-index: 2;
-}
-
-.climber-cursive-box {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.climber-figure-icon {
-  font-size: 42px;
-  color: #93C5FD;
-}
-
-.climber-text {
-  font-family: 'Caveat', cursive;
-  font-size: 26px;
-  line-height: 1.1;
-  color: #E2E8F0;
-}
-
-.impact-metrics-4-col {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-  text-align: center;
-  border-left: 1px solid rgba(255, 255, 255, 0.15);
-  border-right: 1px solid rgba(255, 255, 255, 0.15);
-  padding: 0 20px;
-}
-
-.impact-counter-item .m-icon {
-  font-size: 20px;
-  color: #60A5FA;
-  margin-bottom: 6px;
-}
-
-.impact-counter-item .m-num {
-  font-size: 26px;
-  font-weight: 900;
-  line-height: 1;
-  margin-bottom: 4px;
-}
-
-.impact-counter-item .m-lbl {
-  font-size: 11px;
-  color: #94A3B8;
-  font-weight: 600;
-}
-
-.impact-quote-box {
-  font-family: 'Caveat', cursive;
-  font-size: 24px;
-  line-height: 1.25;
-  color: #CBD5E1;
-  text-align: right;
-  padding-left: 10px;
-}
-
-.create-section {
-  padding: 80px 0;
-  background: #FFFFFF;
-}
-
-.create-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 50px;
-  align-items: center;
-}
-
-.contact-info-list {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  margin: 24px 0 28px;
-}
-
-.contact-item-row {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  font-size: 14.5px;
-  font-weight: 600;
+.node-step-title {
+  font-size: 13px;
+  font-weight: 800;
   color: var(--text-dark);
-  transition: color 0.2s ease;
 }
 
-.contact-item-row:hover {
-  color: var(--primary);
+.node-step-sub {
+  font-size: 11px;
+  color: var(--text-muted);
 }
 
-.contact-icon-bubble {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: #F8FAFC;
-  border: 1px solid var(--border-color);
-  display: flex;
+.process-connector-arrow {
+  color: #CBD5E1;
+  font-size: 16px;
+}
+
+.process-callout-quote {
+  font-family: 'Caveat', cursive;
+  font-size: 32px;
+  color: #1E3A8A;
+  line-height: 1.18;
+  text-align: right;
+}
+
+/* ===== SECTION: DARK WORKSPACE CONNECT ===== */
+.dark-connect-pane {
+  background: #0B132B;
+  color: #FFFFFF;
+  padding: 70px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.dark-connect-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 40px;
   align-items: center;
-  justify-content: center;
-  font-size: 14px;
-  color: #1E293B;
 }
 
-.btn-lets-talk {
+.dark-connect-pane .section-h2 {
+  color: #FFFFFF;
+  border-left-color: var(--primary);
+  font-size: 32px;
+}
+
+.dark-connect-subcopy {
+  font-size: 14px;
+  color: #94A3B8;
+  margin: 14px 0 24px;
+}
+
+.btn-white-pill {
   background: var(--primary);
   color: #FFFFFF;
-  padding: 12px 28px;
-  border-radius: 8px;
   font-size: 14px;
   font-weight: 700;
+  padding: 12px 28px;
+  border-radius: 8px;
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  box-shadow: 0 6px 18px rgba(29, 104, 242, 0.25);
   transition: all 0.2s ease;
 }
 
-.btn-lets-talk:hover {
+.btn-white-pill:hover {
   background: var(--primary-hover);
   transform: translateY(-2px);
 }
 
-/* Desk Books Aesthetic on Right */
-.books-shelf-display {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 24px;
-}
-
-.potted-plant-img {
-  width: 130px;
-  height: auto;
-  border-radius: 12px;
-}
-
-.stacked-books-col {
+.contact-rows-list {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  width: 250px;
+  gap: 14px;
+  margin-top: 24px;
 }
 
-.shelf-book {
-  background: #F8FAFC;
-  border: 1px solid var(--border-color);
-  border-left: 6px solid #64748B;
-  padding: 10px 18px;
-  border-radius: 4px 8px 8px 4px;
-  font-size: 13px;
-  font-weight: 700;
-  color: #1E293B;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.04);
-}
-
-.shelf-book:nth-child(1) { border-left-color: #38BDF8; }
-.shelf-book:nth-child(2) { border-left-color: #6366F1; }
-.shelf-book:nth-child(3) { border-left-color: var(--primary); }
-.shelf-book:nth-child(4) { border-left-color: #0F172A; }
-
-.site-footer {
-  background: #FFFFFF;
-  border-top: 1px solid var(--border-color);
-  padding: 22px 0;
-}
-
-.footer-content-row {
+.contact-row-item {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  font-size: 13px;
-  color: var(--text-muted);
+  gap: 12px;
+  font-size: 14px;
+  color: #E2E8F0;
+  transition: color 0.2s ease;
 }
 
-.footer-links-list {
-  display: flex;
-  gap: 24px;
-  font-weight: 600;
+.contact-row-item:hover {
+  color: #FFFFFF;
 }
 
-.footer-links-list a:hover {
-  color: var(--primary);
-}
-
-.btn-scroll-top {
-  width: 36px;
-  height: 36px;
+.contact-icon-bubble {
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
-  border: 1px solid var(--border-color);
-  background: #FFFFFF;
-  color: var(--text-dark);
+  background: rgba(255, 255, 255, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 14px;
-  cursor: pointer;
+}
+
+/* Workspace Desk Mockup Elements */
+.desk-workspace-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 220px;
+}
+
+.desk-books-group {
+  position: absolute;
+  left: 20px;
+  bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stacked-white-book {
+  background: #F8FAFC;
+  color: #0F172A;
+  padding: 5px 18px;
+  font-size: 11px;
+  font-weight: 800;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+  border-left: 4px solid var(--primary);
+}
+
+.desk-dark-mug {
+  position: absolute;
+  right: 40px;
+  bottom: 0;
+  width: 90px;
+  height: 105px;
+  background: #020617;
+  border-radius: 0 0 24px 24px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  border: 1px solid #1E293B;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  text-align: center;
+}
+
+.desk-dark-mug span {
+  font-size: 10px;
+  font-weight: 800;
+  color: #E2E8F0;
+  line-height: 1.25;
+}
+
+.desk-dark-mug::after {
+  content: '';
+  position: absolute;
+  right: -18px;
+  top: 20px;
+  width: 20px;
+  height: 50px;
+  border: 5px solid #020617;
+  border-left: none;
+  border-radius: 0 16px 16px 0;
+}
+
+.desk-mug-script {
+  position: absolute;
+  right: -15px;
+  top: 20px;
+  font-family: 'Caveat', cursive;
+  font-size: 26px;
+  color: #CBD5E1;
+  line-height: 1.1;
+  transform: rotate(5deg);
+}
+
+/* ===== FOOTER ===== */
+.site-footer {
+  background: #FFFFFF;
+  padding: 24px 0;
+  border-top: 1px solid var(--border-light);
+}
+
+.footer-content-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.footer-nav-menu {
+  display: flex;
+  gap: 22px;
+  font-weight: 600;
+}
+
+.footer-nav-menu a:hover {
+  color: var(--primary);
+}
+
+.btn-top-circle {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-dark);
   transition: all 0.2s ease;
 }
 
-.btn-scroll-top:hover {
+.btn-top-circle:hover {
   background: var(--text-dark);
   color: #FFFFFF;
 }
 
-/* Lightbox Modal */
+/* ===== LIGHTBOX MODAL ===== */
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -1032,17 +1057,18 @@ a {
   display: flex;
 }
 
-.modal-content-card {
-  background: #0B1325;
+.modal-content-box {
+  background: #0F172A;
   width: 100%;
   max-width: 960px;
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  position: relative;
   border: 1px solid #334155;
 }
 
-.modal-header-bar {
+.modal-top-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1051,15 +1077,7 @@ a {
   color: #FFFFFF;
 }
 
-.modal-title-text {
-  font-weight: 700;
-  font-size: 14px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.modal-close-icon {
+.modal-close-btn {
   background: transparent;
   border: none;
   color: #94A3B8;
@@ -1067,7 +1085,7 @@ a {
   cursor: pointer;
 }
 
-.modal-close-icon:hover {
+.modal-close-btn:hover {
   color: #FFFFFF;
 }
 
@@ -1075,7 +1093,7 @@ a {
   position: relative;
   width: 100%;
   aspect-ratio: 16/9;
-  background: #000000;
+  background: #000;
 }
 
 .modal-video-frame iframe {
@@ -1084,48 +1102,25 @@ a {
   border: none;
 }
 
-/* Responsive adjustments */
-@media (max-width: 1080px) {
-  .hero-grid, .create-grid {
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .hero-grid, .what-i-do-grid, .tools-layout-grid, .process-layout-split, .dark-connect-grid {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 36px;
   }
   .projects-4-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  .tools-12-grid {
-    grid-template-columns: repeat(4, 1fr);
+  .feature-cards-5 {
+    grid-template-columns: repeat(3, 1fr);
   }
-  .impact-strip-grid {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-  .impact-metrics-4-col {
-    border: none;
-    padding: 20px 0;
-  }
-  .impact-quote-box {
-    text-align: center;
-  }
-  .hero-visual-box {
-    order: -1;
-  }
-  .approach-workflow-row {
-    flex-direction: column;
-    gap: 20px;
-    align-items: flex-start;
-  }
-  .workflow-dashed-connector {
-    display: none;
-  }
-  .cursive-ideas-note {
-    text-align: left;
-    margin-left: 0;
+  .tools-category-deck {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 680px) {
-  .nav-links {
+@media (max-width: 768px) {
+  .nav-links-row {
     display: none;
   }
   .hero-heading {
@@ -1133,22 +1128,28 @@ a {
   }
   .hero-stats-row {
     grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
   }
   .projects-4-grid {
     grid-template-columns: 1fr;
   }
-  .tools-12-grid {
+  .feature-cards-5 {
     grid-template-columns: repeat(2, 1fr);
   }
-  .impact-metrics-4-col {
-    grid-template-columns: repeat(2, 1fr);
+  .tools-category-deck {
+    grid-template-columns: 1fr;
   }
-  .books-shelf-display {
+  .process-steps-chain {
     flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
   }
-  .footer-content-row {
+  .process-connector-arrow {
+    display: none;
+  }
+  .footer-content-wrap {
     flex-direction: column;
-    gap: 16px;
+    gap: 14px;
     text-align: center;
   }
 }
@@ -1157,235 +1158,234 @@ a {
 
 <body>
 
+<!-- TOP NAVIGATION -->
 <header class="top-nav">
-  <div class="container nav-row">
-    <a href="#home" class="brand-wrapper">
-      <div class="brand-cs-badge">CS</div>
-      <div class="brand-text">
+  <div class="container nav-inner">
+    <a href="#home" class="nav-brand">
+      <div class="brand-cs-logo">CS</div>
+      <div class="brand-title-wrap">
         <h1>Chandirakkumar S</h1>
         <span>Instructional Designer</span>
       </div>
     </a>
 
-    <nav class="nav-links">
+    <nav class="nav-links-row">
       <a href="#home" class="nav-link active">Home</a>
       <a href="#about" class="nav-link">About</a>
-      <a href="#work" class="nav-link">Projects</a>
+      <a href="#projects" class="nav-link">Projects</a>
       <a href="#skills" class="nav-link">Skills</a>
       <a href="#contact" class="nav-link">Contact</a>
     </nav>
 
     <a href="#contact" class="btn-nav-connect">
-      Let's Connect &rarr;
+      Let's Connect <span>&rarr;</span>
     </a>
   </div>
 </header>
 
+<!-- HERO SECTION -->
 <section id="home" class="hero-section">
   <div class="container hero-grid">
     
-    <div class="hero-content-col">
-      <div class="hero-tracker">
-        IDEAS <span class="sep">|</span> DESIGN <span class="sep">|</span> LEARN <span class="sep">|</span> GROW
-      </div>
-
+    <div>
+      <span class="hero-track-eyebrow">Instructional Design &nbsp;|&nbsp; Visual Design &nbsp;|&nbsp; Multimedia</span>
+      
       <h1 class="hero-heading">
-        Turning Learning<br>
-        Into <span class="blue-highlight">Real Impact.</span>
+        I Design<br>
+        Learning Experiences<br>
+        That <span class="blue-accent">Make a Difference.</span>
       </h1>
 
-      <p class="hero-bio">
-        I design and develop simple, engaging and effective eLearning experiences using Storyline 360, multimedia and visual design — to help people learn, perform and grow.
+      <p class="hero-desc-text">
+        I create simple, engaging and effective eLearning experiences using Storyline 360, multimedia and visual design — to help people learn, perform and grow.
       </p>
 
-      <div class="hero-btn-row">
-        <a href="#work" class="btn-primary-blue">
-          View My Work &rarr;
+      <div class="hero-cta-group">
+        <a href="#projects" class="btn-hero-primary">
+          View My Work <span>&rarr;</span>
         </a>
-        <button class="btn-watch-intro" onclick="openLightbox('https://drive.google.com/file/d/1rRtZDmiMiKexJ4jQxXIFJ_b89UR3zWo3/preview', 'Watch Intro - Chandirakkumar S')">
-          <div class="play-circle-bubble">&#9658;</div>
-          <span>Watch Intro (1 min)</span>
+
+        <button class="btn-hero-video" onclick="openPreviewModal('https://drive.google.com/file/d/1-Jr4AcAYIeU_B9Cimcw1WLswNRgfx0MU/preview')">
+          <div class="play-bubble">&#9658;</div>
+          <span>Watch My Intro (1 min)</span>
         </button>
       </div>
 
-      <!-- Stats Counter Row -->
+      <!-- 4 STAT METRICS -->
       <div class="hero-stats-row">
-        <div class="hero-stat-card">
-          <i class="fa-solid fa-briefcase stat-icon"></i>
-          <span class="stat-val">1+</span>
-          <span class="stat-label">Years of Experience</span>
+        <div class="hero-stat-cell">
+          <div class="stat-icon-top">&#127891;</div>
+          <div class="hero-stat-num">1+</div>
+          <div class="hero-stat-lbl">Years of Experience</div>
         </div>
-
-        <div class="hero-stat-card">
-          <i class="fa-solid fa-layer-group stat-icon"></i>
-          <span class="stat-val">100+</span>
-          <span class="stat-label">Modules Developed</span>
+        <div class="hero-stat-cell">
+          <div class="stat-icon-top">&#128196;</div>
+          <div class="hero-stat-num">100+</div>
+          <div class="hero-stat-lbl">Modules Developed</div>
         </div>
-
-        <div class="hero-stat-card">
-          <i class="fa-solid fa-wrench stat-icon"></i>
-          <span class="stat-val">10+</span>
-          <span class="stat-label">Tools & Technologies</span>
+        <div class="hero-stat-cell">
+          <div class="stat-icon-top">&#128101;</div>
+          <div class="hero-stat-num">5K+</div>
+          <div class="hero-stat-lbl">Learners Reached</div>
         </div>
-
-        <div class="hero-stat-card">
-          <i class="fa-solid fa-infinity stat-icon"></i>
-          <span class="stat-val inf">&infin;</span>
-          <span class="stat-label">Passion for Learning</span>
+        <div class="hero-stat-cell">
+          <div class="stat-icon-top">&#128200;</div>
+          <div class="hero-stat-num">98%</div>
+          <div class="hero-stat-lbl">Positive Feedback</div>
         </div>
       </div>
     </div>
 
-    <!-- Right Hero Visual Composition -->
-    <div id="about" class="hero-visual-box">
-      <!-- Framed Quote on Wall -->
-      <div class="wall-framed-quote">
-        GOOD<br>DESIGN<br>BETTER<br>LEARNING
-      </div>
+    <!-- HERO VISUAL COMPOSITION -->
+    <div class="hero-visual-col">
+      <div class="overhead-lamp"></div>
 
-      <!-- Cursive Handwritten Annotation -->
-      <div class="cursive-right-tag">
+      <!-- Cursive Note -->
+      <div class="script-quote-hero">
         Same<br>Passion.<br>Bigger<br>Impact.
       </div>
 
-      <!-- Avatar Photo -->
-      <div class="hero-avatar-frame">
+      <!-- Framed Wall Sign -->
+      <div class="framed-art-wall">
+        GOOD<br>LEARNING<br>CREATES<br>BRIGHTER<br>TOMORROWS
+        <div class="art-blue-bar"></div>
+      </div>
+
+      <!-- Profile Container -->
+      <div class="hero-portrait-frame">
         <img src="IMG_20260409_223924.jpg" alt="Chandirakkumar S" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=700&auto=format&fit=crop&q=80';">
       </div>
 
-      <!-- Laptop with Cursive Engraving -->
-      <div class="desk-laptop-back">
-        <div class="laptop-note">
-          Design<br>
-          Develop<br>
-          Deliver<br>
-          Better Learning.
-        </div>
+      <!-- Desk Mug -->
+      <div class="desk-mug-item">
+        <span>Better<br>Learning<br>Brighter<br>Tomorrows</span>
       </div>
 
-      <!-- Coffee Mug -->
-      <div class="desk-mug-element">
-        <div class="mug-txt">Ideas<br>Today<br>Better<br>Tomorrow</div>
+      <!-- Laptop Screen Back -->
+      <div class="desk-laptop-screen">
+        <div class="laptop-msg">Ideas<br>Design<br>Learning<br>Impact</div>
       </div>
 
-      <!-- Stacked Topic Labels -->
-      <div class="desk-pills-stack">
-        <span class="desk-pill-tag">eLearning</span>
-        <span class="desk-pill-tag">Visual Design</span>
-        <span class="desk-pill-tag">Multimedia</span>
-        <span class="desk-pill-tag">Performance Support</span>
+      <!-- Topic Books -->
+      <div class="desk-book-shelf">
+        <div class="shelf-book">People</div>
+        <div class="shelf-book">Process</div>
+        <div class="shelf-book">Design</div>
+        <div class="shelf-book">Technology</div>
+        <div class="shelf-book">Impact</div>
       </div>
     </div>
 
   </div>
 </section>
 
-<section id="work" class="section-padding">
+<!-- SECTION: FEATURED WORK (4 CARDS) -->
+<section id="projects" class="site-section">
   <div class="container">
 
-    <div class="section-head-flex">
+    <div class="section-top-split">
       <div>
-        <span class="eyebrow-tag">Featured Projects</span>
-        <h2 class="section-heading">Learning Solutions That Make a Difference.</h2>
+        <span class="section-label-track">Featured Work</span>
+        <h2 class="section-h2">Real Projects. Real Learning Impact.</h2>
       </div>
 
-      <div style="text-align: right;">
-        <p class="section-description-text">
-          A showcase of my eLearning and multimedia work, designed to solve real learning needs with creativity and clarity.
+      <div style="display: flex; align-items: flex-end; gap: 30px;">
+        <p class="section-lead-copy">
+          A selection of my eLearning and multimedia projects designed to solve real learning needs with creativity and clarity.
         </p>
-        <a href="#work" class="btn-view-all-link">View All Projects &rarr;</a>
+        <a href="#projects" class="link-action-arrow" style="white-space: nowrap;">View All Projects &rarr;</a>
       </div>
     </div>
 
-    <!-- 4 Projects Grid -->
+    <!-- 4-GRID SHOWCASE -->
     <div class="projects-4-grid">
       
-      <!-- Project 01 -->
-      <div class="project-card">
-        <div class="project-corner-badge">01</div>
-        <div>
-          <div class="project-preview-box">
-            <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?w=600&auto=format&fit=crop&q=80" alt="From Ship to Shore SCORM">
-            <div class="play-hover-overlay" onclick="openLightbox('https://drive.google.com/file/d/1rRtZDmiMiKexJ4jQxXIFJ_b89UR3zWo3/preview', 'Interactive SCORM eLearning - From Ship to Shore')">&#9658;</div>
-          </div>
-          <h3>Interactive SCORM eLearning</h3>
-          <p>An interactive Storyline 360 module with custom navigation, assessments and SCORM publishing.</p>
-          <div class="project-tags-wrap">
-            <span class="proj-tag">Storyline 360</span>
-            <span class="proj-tag">SCORM</span>
-            <span class="proj-tag">Interactive</span>
-          </div>
+      <!-- CARD 01 -->
+      <div class="proj-card">
+        <div class="proj-top-strip">
+          <span class="proj-id-badge">01</span>
+          <span class="proj-category-pill">E-Learning Development</span>
         </div>
-
-        <div class="card-action-circle" onclick="openLightbox('https://drive.google.com/file/d/1-Jr4AcAYIeU_B9Cimcw1WLswNRgfx0MU/preview', 'From Ship to Shore Interactive Module')">
-          &rarr;
+        <div class="proj-thumb-wrap">
+          <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?w=600&auto=format&fit=crop&q=80" alt="Ship to Shore SCORM">
+          <div class="proj-play-btn" onclick="openPreviewModal('https://drive.google.com/file/d/1rRtZDmiMiKexJ4jQxXIFJ_b89UR3zWo3/preview')">&#9658;</div>
         </div>
+        <h3>Interactive SCORM eLearning</h3>
+        <p>An interactive Storyline 360 module with custom navigation, assessments and SCORM publishing.</p>
+        <div class="proj-tags-flex">
+          <span class="proj-tag">Storyline 360</span>
+          <span class="proj-tag">SCORM</span>
+          <span class="proj-tag">Interactive</span>
+        </div>
+        <a href="javascript:void(0)" onclick="openPreviewModal('https://drive.google.com/file/d/1-Jr4AcAYIeU_B9Cimcw1WLswNRgfx0MU/preview')" class="link-action-arrow">
+          View Project &rarr;
+        </a>
       </div>
 
-      <!-- Project 02 -->
-      <div class="project-card">
-        <div class="project-corner-badge">02</div>
-        <div>
-          <div class="project-preview-box">
-            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&auto=format&fit=crop&q=80" alt="Multi-language eLearning">
-            <div class="play-hover-overlay" onclick="openLightbox('https://drive.google.com/file/d/1IIuKoOcBHQ35GzFYcmutqnFGDglw8n3t/preview', 'Multi-language eLearning Course')">&#9658;</div>
-          </div>
-          <h3>Multi-language eLearning</h3>
-          <p>Interactive course with language switching and multilingual learning support.</p>
-          <div class="project-tags-wrap">
-            <span class="proj-tag">Storyline 360</span>
-            <span class="proj-tag">Multilingual</span>
-            <span class="proj-tag">Localization</span>
-          </div>
+      <!-- CARD 02 -->
+      <div class="proj-card">
+        <div class="proj-top-strip">
+          <span class="proj-id-badge">02</span>
+          <span class="proj-category-pill">Multi-Language eLearning</span>
         </div>
-
-        <div class="card-action-circle" onclick="openLightbox('https://drive.google.com/file/d/1IIuKoOcBHQ35GzFYcmutqnFGDglw8n3t/preview', 'Multi-language eLearning Course')">
-          &rarr;
+        <div class="proj-thumb-wrap">
+          <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&auto=format&fit=crop&q=80" alt="Multilingual Course">
+          <div class="proj-play-btn" onclick="openPreviewModal('https://drive.google.com/file/d/1IIuKoOcBHQ35GzFYcmutqnFGDglw8n3t/preview')">&#9658;</div>
         </div>
+        <h3>Multi-language eLearning</h3>
+        <p>Interactive course with language switching and multilingual learning support.</p>
+        <div class="proj-tags-flex">
+          <span class="proj-tag">Storyline 360</span>
+          <span class="proj-tag">Multilingual</span>
+          <span class="proj-tag">Localization</span>
+        </div>
+        <a href="javascript:void(0)" onclick="openPreviewModal('https://drive.google.com/file/d/1IIuKoOcBHQ35GzFYcmutqnFGDglw8n3t/preview')" class="link-action-arrow">
+          View Project &rarr;
+        </a>
       </div>
 
-      <!-- Project 03 -->
-      <div class="project-card">
-        <div class="project-corner-badge">03</div>
-        <div>
-          <div class="project-preview-box">
-            <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&auto=format&fit=crop&q=80" alt="Corporate PowerPoint Design">
-            <div class="play-hover-overlay" onclick="openLightbox('https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1200&auto=format&fit=crop&q=80', 'Corporate PowerPoint Design Deck')">&#9658;</div>
-          </div>
-          <h3>Corporate PowerPoint Design</h3>
-          <p>Professional training presentations with modern layouts, infographics and learning content.</p>
-          <div class="project-tags-wrap">
-            <span class="proj-tag">PowerPoint</span>
-            <span class="proj-tag">Visual Design</span>
-            <span class="proj-tag">Infographics</span>
-          </div>
+      <!-- CARD 03 -->
+      <div class="proj-card">
+        <div class="proj-top-strip">
+          <span class="proj-id-badge">03</span>
+          <span class="proj-category-pill">Corporate Presentation Design</span>
         </div>
-
-        <div class="card-action-circle" onclick="openLightbox('https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1200&auto=format&fit=crop&q=80', 'Corporate PowerPoint Design Deck')">
-          &rarr;
+        <div class="proj-thumb-wrap">
+          <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&auto=format&fit=crop&q=80" alt="PowerPoint Presentations">
+          <div class="proj-play-btn" onclick="openPreviewModal('https://drive.google.com/file/d/12KMOnXd8ilEKFB4JqiAr99lX8_8IBSUv/preview')">&#9658;</div>
         </div>
+        <h3>Corporate PowerPoint Design</h3>
+        <p>Professional training presentations with modern layouts, infographics and learning content.</p>
+        <div class="proj-tags-flex">
+          <span class="proj-tag">PowerPoint</span>
+          <span class="proj-tag">Visual Design</span>
+          <span class="proj-tag">Infographics</span>
+        </div>
+        <a href="javascript:void(0)" onclick="openPreviewModal('https://drive.google.com/file/d/12KMOnXd8ilEKFB4JqiAr99lX8_8IBSUv/preview')" class="link-action-arrow">
+          View Project &rarr;
+        </a>
       </div>
 
-      <!-- Project 04 -->
-      <div class="project-card">
-        <div class="project-corner-badge">04</div>
-        <div>
-          <div class="project-preview-box">
-            <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=600&auto=format&fit=crop&q=80" alt="Video Editing & Motion Graphics">
-            <div class="play-hover-overlay" onclick="openLightbox('https://drive.google.com/file/d/12KMOnXd8ilEKFB4JqiAr99lX8_8IBSUv/preview', 'Video Editing & Motion Graphics')">&#9658;</div>
-          </div>
-          <h3>Video Editing & Motion Graphics</h3>
-          <p>Adobe Premiere Pro & After Effects projects with cinematic editing, VFX and motion graphics.</p>
-          <div class="project-tags-wrap">
-            <span class="proj-tag">Premiere Pro</span>
-            <span class="proj-tag">After Effects</span>
-            <span class="proj-tag">Video</span>
-          </div>
+      <!-- CARD 04 -->
+      <div class="proj-card">
+        <div class="proj-top-strip">
+          <span class="proj-id-badge">04</span>
+          <span class="proj-category-pill">Video Editing &amp; Motion Graphics</span>
         </div>
-
-        <div class="card-action-circle" onclick="openLightbox('https://drive.google.com/file/d/12KMOnXd8ilEKFB4JqiAr99lX8_8IBSUv/preview', 'Video Editing & Motion Graphics')">
-          &rarr;
+        <div class="proj-thumb-wrap">
+          <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=600&auto=format&fit=crop&q=80" alt="Video Editing Motion">
+          <div class="proj-play-btn" onclick="openPreviewModal('https://drive.google.com/file/d/1v1ISwjEXjLI4X5jwVbi-a-JX1O14nO5p/preview')">&#9658;</div>
         </div>
+        <h3>Video Editing &amp; Motion Graphics</h3>
+        <p>Adobe Premiere Pro &amp; After Effects projects with cinematic editing, VFX and motion graphics.</p>
+        <div class="proj-tags-flex">
+          <span class="proj-tag">Premiere Pro</span>
+          <span class="proj-tag">After Effects</span>
+          <span class="proj-tag">Video</span>
+        </div>
+        <a href="javascript:void(0)" onclick="openPreviewModal('https://drive.google.com/file/d/1v1ISwjEXjLI4X5jwVbi-a-JX1O14nO5p/preview')" class="link-action-arrow">
+          View Project &rarr;
+        </a>
       </div>
 
     </div>
@@ -1393,343 +1393,349 @@ a {
   </div>
 </section>
 
-<section id="skills" class="section-padding tools-section">
+<!-- SECTION: WHAT I DO (5 FEATURE CARDS) -->
+<section id="about" class="site-section" style="background: #F8FAFC; border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light);">
   <div class="container">
-
-    <div class="tools-headline-row">
+    
+    <div class="what-i-do-grid">
       <div>
-        <span class="eyebrow-tag">Tools & Technologies</span>
-        <h2 class="section-heading">Tools I Use to Create<br>Better Learning Experiences.</h2>
+        <span class="section-label-track">What I Do</span>
+        <h2 class="section-h2" style="font-size: 28px; margin-bottom: 12px;">
+          Blending Instructional Design with Creative Design.
+        </h2>
+        <p style="font-size: 14px; color: var(--text-muted); line-height: 1.6; margin-bottom: 20px;">
+          I combine learning strategy, visual design and multimedia to create meaningful learning experiences.
+        </p>
+        <a href="#about" class="link-action-arrow" style="border: 1px solid var(--border-light); padding: 8px 16px; border-radius: 6px; background: #FFFFFF;">
+          More About Me &rarr;
+        </a>
       </div>
 
-      <div style="font-family: 'Caveat', cursive; font-size: 32px; color: #1E3A8A; line-height: 1.1; text-align: right;">
-        Right Tools.<br>
-        Creative Solutions.
-      </div>
-    </div>
-
-    <!-- 12 Tiles Grid -->
-    <div class="tools-12-grid">
-      
-      <div class="tool-badge-card">
-        <div class="software-icon-sq icon-sl">sl</div>
-        <div class="tool-title">Storyline 360</div>
-        <span class="tool-skill-pill expert">Expert</span>
-      </div>
-
-      <div class="tool-badge-card">
-        <div class="software-icon-sq icon-cp">Cp</div>
-        <div class="tool-title">Captivate</div>
-        <span class="tool-skill-pill advanced">Advanced</span>
-      </div>
-
-      <div class="tool-badge-card">
-        <div class="software-icon-sq icon-ppt">P</div>
-        <div class="tool-title">PowerPoint</div>
-        <span class="tool-skill-pill expert">Expert</span>
-      </div>
-
-      <div class="tool-badge-card">
-        <div class="software-icon-sq icon-word">W</div>
-        <div class="tool-title">Word</div>
-        <span class="tool-skill-pill advanced">Advanced</span>
-      </div>
-
-      <div class="tool-badge-card">
-        <div class="software-icon-sq icon-excel">X</div>
-        <div class="tool-title">Excel</div>
-        <span class="tool-skill-pill intermediate">Intermediate</span>
-      </div>
-
-      <div class="tool-badge-card">
-        <div class="software-icon-sq icon-ps">Ps</div>
-        <div class="tool-title">Photoshop</div>
-        <span class="tool-skill-pill intermediate">Intermediate</span>
-      </div>
-
-      <div class="tool-badge-card">
-        <div class="software-icon-sq icon-ai">Ai</div>
-        <div class="tool-title">Illustrator</div>
-        <span class="tool-skill-pill intermediate">Intermediate</span>
-      </div>
-
-      <div class="tool-badge-card">
-        <div class="software-icon-sq icon-pr">Pr</div>
-        <div class="tool-title">Premiere Pro</div>
-        <span class="tool-skill-pill advanced">Advanced</span>
-      </div>
-
-      <div class="tool-badge-card">
-        <div class="software-icon-sq icon-ae">Ae</div>
-        <div class="tool-title">After Effects</div>
-        <span class="tool-skill-pill advanced">Advanced</span>
-      </div>
-
-      <div class="tool-badge-card">
-        <div class="software-icon-sq icon-ld">
-          <i class="fa-solid fa-chart-simple"></i>
+      <!-- 5 CARDS -->
+      <div class="feature-cards-5">
+        
+        <div class="feature-mini-card">
+          <div class="feature-icon-bubble bg-elearn">&#128187;</div>
+          <h4>eLearning Development</h4>
+          <p>Interactive courses that engage and inspire learners.</p>
         </div>
-        <div class="tool-title">LearnDash</div>
-        <span class="tool-skill-pill advanced">Advanced</span>
-      </div>
 
-      <div class="tool-badge-card">
-        <div class="software-icon-sq icon-rise">r</div>
-        <div class="tool-title">Articulate Rise</div>
-        <span class="tool-skill-pill intermediate">Intermediate</span>
-      </div>
-
-      <div class="tool-badge-card">
-        <div class="software-icon-sq icon-scorm">
-          <i class="fa-solid fa-cube text-xs"></i>
+        <div class="feature-mini-card">
+          <div class="feature-icon-bubble bg-videsign">&#127912;</div>
+          <h4>Visual Design</h4>
+          <p>Presentations, infographics and learning visuals.</p>
         </div>
-        <div class="tool-title">SCORM 1.2</div>
-        <span class="tool-skill-pill expert">Expert</span>
-      </div>
 
+        <div class="feature-mini-card">
+          <div class="feature-icon-bubble bg-vidmot">&#9658;</div>
+          <h4>Video &amp; Motion</h4>
+          <p>Cinematic editing and motion graphics to simplify ideas.</p>
+        </div>
+
+        <div class="feature-mini-card">
+          <div class="feature-icon-bubble bg-assess">&#9745;</div>
+          <h4>Assessment Design</h4>
+          <p>Interactive assessments that drive learning.</p>
+        </div>
+
+        <div class="feature-mini-card">
+          <div class="feature-icon-bubble bg-lms">&#128452;</div>
+          <h4>LMS Support</h4>
+          <p>Implementation, upload and learner support.</p>
+        </div>
+
+      </div>
     </div>
 
   </div>
 </section>
 
-<section class="section-padding approach-section">
+<!-- SECTION: TOOLS I USE (CATEGORIZED TILES) -->
+<section id="skills" class="site-section tools-section">
   <div class="container">
-    
-    <span class="eyebrow-tag">My Approach</span>
-    <h2 class="section-heading">A Simple Process<br>for Meaningful Learning.</h2>
 
-    <div class="approach-workflow-row">
-      
-      <!-- Step 01 -->
-      <div class="workflow-node">
-        <div class="workflow-bubble">
-          <i class="fa-regular fa-file-lines"></i>
-        </div>
-        <div class="workflow-info">
-          <div class="step-num">01</div>
-          <div class="step-name">Understand</div>
-          <div class="step-desc">Learning Needs</div>
-        </div>
+    <div class="tools-layout-grid">
+      <div>
+        <span class="section-label-track">Tools I Use</span>
+        <h2 class="section-h2" style="font-size: 28px; margin-bottom: 10px;">
+          The Right Tools for Meaningful Learning.
+        </h2>
+        <p style="font-size: 13px; color: var(--text-muted); line-height: 1.55;">
+          A combination of authoring, design, multimedia and LMS tools to bring learning ideas to life.
+        </p>
       </div>
 
-      <div class="workflow-dashed-connector">- - - &rarr;</div>
+      <!-- CATEGORY TILES -->
+      <div class="tools-category-deck">
+        
+        <!-- AUTHORING -->
+        <div class="tool-cluster-card">
+          <span class="tool-cluster-title title-auth">Authoring Tools</span>
+          <div class="tool-badge-row">
+            <div>
+              <div class="tool-chip-badge rounded badge-sl">sl</div>
+              <div class="tool-name-sub">Storyline 360</div>
+            </div>
+            <div>
+              <div class="tool-chip-badge badge-cp">Cp</div>
+              <div class="tool-name-sub">Captivate</div>
+            </div>
+            <div>
+              <div class="tool-chip-badge badge-rise">r</div>
+              <div class="tool-name-sub">Rise 360</div>
+            </div>
+            <div>
+              <div class="tool-chip-badge badge-scorm">SCORM</div>
+              <div class="tool-name-sub">SCORM</div>
+            </div>
+          </div>
+        </div>
 
-      <!-- Step 02 -->
-      <div class="workflow-node">
-        <div class="workflow-bubble">
-          <i class="fa-regular fa-lightbulb"></i>
+        <!-- DESIGN & OFFICE -->
+        <div class="tool-cluster-card">
+          <span class="tool-cluster-title title-design">Design &amp; Office</span>
+          <div class="tool-badge-row">
+            <div>
+              <div class="tool-chip-badge badge-ppt">P</div>
+              <div class="tool-name-sub">PowerPoint</div>
+            </div>
+            <div>
+              <div class="tool-chip-badge badge-word">W</div>
+              <div class="tool-name-sub">Word</div>
+            </div>
+            <div>
+              <div class="tool-chip-badge badge-excel">X</div>
+              <div class="tool-name-sub">Excel</div>
+            </div>
+            <div>
+              <div class="tool-chip-badge badge-ps">Ps</div>
+              <div class="tool-name-sub">Photoshop</div>
+            </div>
+            <div>
+              <div class="tool-chip-badge badge-ai">Ai</div>
+              <div class="tool-name-sub">Illustrator</div>
+            </div>
+          </div>
         </div>
-        <div class="workflow-info">
-          <div class="step-num">02</div>
-          <div class="step-name">Design</div>
-          <div class="step-desc">Engaging Solutions</div>
+
+        <!-- VIDEO & MOTION -->
+        <div class="tool-cluster-card">
+          <span class="tool-cluster-title title-video">Video &amp; Motion</span>
+          <div class="tool-badge-row">
+            <div>
+              <div class="tool-chip-badge badge-pr">Pr</div>
+              <div class="tool-name-sub">Premiere Pro</div>
+            </div>
+            <div>
+              <div class="tool-chip-badge badge-ae">Ae</div>
+              <div class="tool-name-sub">After Effects</div>
+            </div>
+          </div>
         </div>
+
+        <!-- LMS & OTHERS -->
+        <div class="tool-cluster-card">
+          <span class="tool-cluster-title title-lms">LMS &amp; Others</span>
+          <div class="tool-badge-row">
+            <div>
+              <div class="tool-chip-badge badge-ld">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M4 19h4V9H4v10zm6 0h4V5h-4v14zm6 0h4v-7h-4v7z"/></svg>
+              </div>
+              <div class="tool-name-sub">LearnDash</div>
+            </div>
+          </div>
+        </div>
+
       </div>
-
-      <div class="workflow-dashed-connector">- - - &rarr;</div>
-
-      <!-- Step 03 -->
-      <div class="workflow-node">
-        <div class="workflow-bubble">
-          <i class="fa-solid fa-gear"></i>
-        </div>
-        <div class="workflow-info">
-          <div class="step-num">03</div>
-          <div class="step-name">Develop</div>
-          <div class="step-desc">Using the Right Tools</div>
-        </div>
-      </div>
-
-      <div class="workflow-dashed-connector">- - - &rarr;</div>
-
-      <!-- Step 04 -->
-      <div class="workflow-node">
-        <div class="workflow-bubble">
-          <i class="fa-solid fa-chart-line"></i>
-        </div>
-        <div class="workflow-info">
-          <div class="step-num">04</div>
-          <div class="step-name">Deliver</div>
-          <div class="step-desc">Measurable Impact</div>
-        </div>
-      </div>
-
-      <!-- Cursive Slogan -->
-      <div class="cursive-ideas-note">
-        From<br>Ideas<br>to Impact.
-      </div>
-
     </div>
 
   </div>
 </section>
 
-<section class="panoramic-impact-strip">
-  <div class="mountain-backdrop"></div>
-  <div class="container impact-strip-grid">
-    
-    <div class="climber-cursive-box">
-      <i class="fa-solid fa-person-hiking climber-figure-icon"></i>
-      <div class="climber-text">
-        Learning<br>Today<br>Leads to<br>Brighter<br>Tomorrows.
-      </div>
-    </div>
+<!-- SECTION: MY DESIGN PROCESS -->
+<section class="site-section process-section">
+  <div class="container">
 
-    <!-- 4 Impact Counters -->
-    <div class="impact-metrics-4-col">
-      <div class="impact-counter-item">
-        <div class="m-icon"><i class="fa-solid fa-trophy"></i></div>
-        <div class="m-num">100+</div>
-        <div class="m-lbl">Modules Created</div>
+    <span class="section-label-track">My Design Process</span>
+    <h2 class="section-h2" style="font-size: 28px; margin-bottom: 4px;">From Ideas to Impact.</h2>
+    <p style="font-size: 13px; color: var(--text-muted); padding-left: 18px; margin-bottom: 24px;">
+      A simple, structured approach to create learning experiences that work.
+    </p>
+
+    <div class="process-layout-split">
+      <div class="process-steps-chain">
+        
+        <div class="process-step-node">
+          <div class="node-icon-circle">&#128221;</div>
+          <div>
+            <div class="node-step-num">01</div>
+            <div class="node-step-title">Understand</div>
+            <div class="node-step-sub">Learning Needs</div>
+          </div>
+        </div>
+
+        <div class="process-connector-arrow">&rarr;</div>
+
+        <div class="process-step-node">
+          <div class="node-icon-circle">&#128161;</div>
+          <div>
+            <div class="node-step-num">02</div>
+            <div class="node-step-title">Design</div>
+            <div class="node-step-sub">Engaging Solutions</div>
+          </div>
+        </div>
+
+        <div class="process-connector-arrow">&rarr;</div>
+
+        <div class="process-step-node">
+          <div class="node-icon-circle">&#9881;</div>
+          <div>
+            <div class="node-step-num">03</div>
+            <div class="node-step-title">Develop</div>
+            <div class="node-step-sub">Using the Right Tools</div>
+          </div>
+        </div>
+
+        <div class="process-connector-arrow">&rarr;</div>
+
+        <div class="process-step-node">
+          <div class="node-icon-circle">&#128200;</div>
+          <div>
+            <div class="node-step-num">04</div>
+            <div class="node-step-title">Deliver</div>
+            <div class="node-step-sub">Measurable Impact</div>
+          </div>
+        </div>
+
       </div>
 
-      <div class="impact-counter-item">
-        <div class="m-icon"><i class="fa-solid fa-users"></i></div>
-        <div class="m-num">5000+</div>
-        <div class="m-lbl">Learners Reached</div>
+      <div class="process-callout-quote">
+        Good Design<br>Makes Learning<br>Possible.<br>Great Design<br>Makes it Last.
       </div>
-
-      <div class="impact-counter-item">
-        <div class="m-icon"><i class="fa-solid fa-chart-simple"></i></div>
-        <div class="m-num">98%</div>
-        <div class="m-lbl">Positive Feedback</div>
-      </div>
-
-      <div class="impact-counter-item">
-        <div class="m-icon"><i class="fa-solid fa-infinity"></i></div>
-        <div class="m-num">Still Learning</div>
-        <div class="m-lbl">Still Growing</div>
-      </div>
-    </div>
-
-    <!-- Quote -->
-    <div class="impact-quote-box">
-      &ldquo;Design is not just what it looks like, but how it helps people grow.&rdquo;
     </div>
 
   </div>
 </section>
 
-<section id="contact" class="create-section">
-  <div class="container create-grid">
+<!-- SECTION: DARK WORKSPACE CONNECT -->
+<section id="contact" class="dark-connect-pane">
+  <div class="container dark-connect-grid">
     
     <div>
-      <span class="eyebrow-tag">Let's Create</span>
-      <h2 class="section-heading" style="font-size: 32px;">Better Learning Together.</h2>
-      <p style="font-size: 14.5px; color: var(--text-muted); margin-top: 10px;">
+      <span class="section-label-track" style="color: #60A5FA;">Let's Connect</span>
+      <h2 class="section-h2">
+        Let's Create<br>Better Learning Together.
+      </h2>
+      <p class="dark-connect-subcopy">
         I'm always open to discussing Instructional Design, eLearning development, multimedia or new ideas.
       </p>
 
-      <div class="contact-info-list">
-        <a href="mailto:sv393015@gmail.com" class="contact-item-row">
-          <div class="contact-icon-bubble"><i class="fa-regular fa-envelope"></i></div>
+      <a href="mailto:sv393015@gmail.com" class="btn-white-pill">
+        Let's Talk <span>&rarr;</span>
+      </a>
+
+      <div class="contact-rows-list">
+        <a href="mailto:sv393015@gmail.com" class="contact-row-item">
+          <div class="contact-icon-bubble">&#9993;</div>
           <span>sv393015@gmail.com</span>
         </a>
 
-        <a href="tel:+919353080994" class="contact-item-row">
-          <div class="contact-icon-bubble"><i class="fa-solid fa-phone"></i></div>
+        <a href="tel:+919353080994" class="contact-row-item">
+          <div class="contact-icon-bubble">&#9742;</div>
           <span>+91 93530 80994</span>
         </a>
 
-        <a href="https://www.linkedin.com/in/chandru-elearning" target="_blank" rel="noopener noreferrer" class="contact-item-row">
-          <div class="contact-icon-bubble"><i class="fa-brands fa-linkedin-in"></i></div>
+        <a href="https://www.linkedin.com/in/chandru-elearning" target="_blank" rel="noopener noreferrer" class="contact-row-item">
+          <div class="contact-icon-bubble">in</div>
           <span>linkedin.com/in/chandru-elearning</span>
         </a>
 
-        <div class="contact-item-row">
-          <div class="contact-icon-bubble"><i class="fa-solid fa-location-dot"></i></div>
+        <div class="contact-row-item">
+          <div class="contact-icon-bubble">&#128205;</div>
           <span>Bengaluru, Karnataka, India</span>
         </div>
       </div>
-
-      <a href="mailto:sv393015@gmail.com" class="btn-lets-talk">
-        Let's Talk &rarr;
-      </a>
     </div>
 
-    <!-- Potted Plant and Stacked Books Shelf Graphic -->
-    <div class="books-shelf-display">
-      <img src="https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=400&auto=format&fit=crop&q=80" alt="Potted Plant" class="potted-plant-img">
+    <!-- WORKSPACE DESK COMPOSITION -->
+    <div class="desk-workspace-visual">
+      <div class="desk-books-group">
+        <div class="stacked-white-book">Ideas</div>
+        <div class="stacked-white-book">Design</div>
+        <div class="stacked-white-book">Learn</div>
+        <div class="stacked-white-book">Grow</div>
+      </div>
 
-      <div class="stacked-books-col">
-        <div class="shelf-book">People Learn</div>
-        <div class="shelf-book">Ideas Evolve</div>
-        <div class="shelf-book">Better Organisations</div>
-        <div class="shelf-book">Brighter Tomorrows</div>
+      <div class="desk-dark-mug">
+        <span>Ideas<br>People<br>Learning<br>Impact</span>
+      </div>
+
+      <div class="desk-mug-script">
+        Keep<br>Learning.<br>Keep<br>Creating.
       </div>
     </div>
 
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer class="site-footer">
-  <div class="container footer-content-row">
-    <div style="display: flex; align-items: center; gap: 10px;">
-      <strong style="color: var(--text-dark); font-size: 15px;">CS</strong>
+  <div class="container footer-content-wrap">
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <strong style="font-size: 15px; color: var(--text-dark);">CS</strong>
       <span>Chandirakkumar S &bull; Instructional Designer</span>
     </div>
 
-    <nav class="footer-links-list">
+    <nav class="footer-nav-menu">
       <a href="#home">Home</a>
       <a href="#about">About</a>
-      <a href="#work">Projects</a>
+      <a href="#projects">Projects</a>
       <a href="#skills">Skills</a>
       <a href="#contact">Contact</a>
     </nav>
 
     <div style="display: flex; align-items: center; gap: 14px;">
       <span>&copy; 2026 Chandirakkumar S. All rights reserved.</span>
-      <a href="#home" class="btn-scroll-top" aria-label="Scroll to top">&uarr;</a>
+      <a href="#home" class="btn-top-circle" aria-label="Back to top">&uarr;</a>
     </div>
   </div>
 </footer>
 
-<div id="mediaModal" class="modal-overlay" onclick="handleBackdropClick(event)">
-  <div class="modal-content-card">
-    <div class="modal-header-bar">
-      <div id="modalTitle" class="modal-title-text">
-        <i class="fa-solid fa-circle-play text-blue-400"></i> Project Interactive Preview
-      </div>
-      <button class="modal-close-icon" onclick="closeLightbox()">&times;</button>
+<!-- INTERACTIVE DEMO PREVIEW MODAL -->
+<div id="previewModal" class="modal-overlay" onclick="handleModalBgClick(event)">
+  <div class="modal-content-box">
+    <div class="modal-top-bar">
+      <span style="font-weight: 700; font-size: 14px;">Project Interactive Preview</span>
+      <button class="modal-close-btn" onclick="closePreviewModal()">&times;</button>
     </div>
     <div class="modal-video-frame">
-      <iframe id="modalIframe" src="" allow="autoplay; fullscreen"></iframe>
+      <iframe id="previewModalIframe" src="" allow="autoplay; fullscreen"></iframe>
     </div>
   </div>
 </div>
 
 <script>
-function openLightbox(url, title) {
-  const modal = document.getElementById('mediaModal');
-  const iframe = document.getElementById('modalIframe');
-  const titleEl = document.getElementById('modalTitle');
-  if (title) {
-    titleEl.innerHTML = '<i class="fa-solid fa-circle-play text-blue-400"></i> ' + title;
-  }
+function openPreviewModal(url) {
+  const modal = document.getElementById('previewModal');
+  const iframe = document.getElementById('previewModalIframe');
   iframe.src = url;
   modal.classList.add('active');
   document.body.style.overflow = 'hidden';
 }
 
-function closeLightbox() {
-  const modal = document.getElementById('mediaModal');
-  const iframe = document.getElementById('modalIframe');
+function closePreviewModal() {
+  const modal = document.getElementById('previewModal');
+  const iframe = document.getElementById('previewModalIframe');
   iframe.src = '';
   modal.classList.remove('active');
   document.body.style.overflow = 'auto';
 }
 
-function handleBackdropClick(e) {
-  if (e.target.id === 'mediaModal') {
-    closeLightbox();
+function handleModalBgClick(e) {
+  if (e.target.id === 'previewModal') {
+    closePreviewModal();
   }
 }
-
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') {
-    closeLightbox();
-  }
-});
 </script>
 
 </body>
