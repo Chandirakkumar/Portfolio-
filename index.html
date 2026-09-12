@@ -5,64 +5,43 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Chandirakkumar S | Instructional Designer</title>
 
-<!-- Fonts: Inter for UI typography, Caveat for authentic handwriting notes -->
+<!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-<!-- Font Awesome 6 Icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<!-- Devicon for verified technology vector logos -->
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<!-- Devicon & FontAwesome for verified vector logos -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
 :root {
-  --primary-purple: #7C3AED;
-  --primary-purple-hover: #6D28D9;
-  --primary-purple-dark: #5B21B6;
-  --primary-purple-light: #F5F3FF;
-  --primary-purple-border: #DDD6FE;
-  --accent-blue: #2563EB;
   --bg-main: #FFFFFF;
   --bg-subtle: #F8FAFC;
-  --bg-card-tint: #F3F0FF;
-  --border-color: #E2E8F0;
+  --border-light: #E2E8F0;
   --border-card: #EDF2F7;
   --text-dark: #0F172A;
   --text-body: #334155;
   --text-muted: #64748B;
+  --primary-purple: #7C3AED;
+  --primary-purple-dark: #6D28D9;
+  --primary-purple-light: #F5F3FF;
   --dark-btn: #0F172A;
   --dark-btn-hover: #1E293B;
-  --dark-footer: #0D111D;
   --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.05);
-  --shadow-md: 0 12px 28px rgba(124, 58, 237, 0.08);
-  --shadow-card: 0 4px 16px rgba(15, 23, 42, 0.06);
-  --shadow-hover: 0 16px 36px rgba(124, 58, 237, 0.14);
+  --shadow-md: 0 12px 28px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 20px 40px rgba(15, 23, 42, 0.12);
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  background-color: var(--bg-main);
+  background: var(--bg-main);
   color: var(--text-dark);
   line-height: 1.6;
   overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
 }
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
+a { text-decoration: none; color: inherit; }
 
 .container {
   max-width: 1220px;
@@ -70,6 +49,7 @@ a {
   padding: 0 24px;
 }
 
+/* ===== STICKY TOP NAVIGATION ===== */
 .top-nav {
   position: sticky;
   top: 0;
@@ -77,49 +57,42 @@ a {
   background: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border-color);
-  padding: 15px 0;
+  border-bottom: 1px solid var(--border-light);
+  padding: 16px 0;
 }
-
-.nav-row {
+.nav-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-
-.brand-wrapper {
+.nav-brand {
   display: flex;
   align-items: center;
   gap: 12px;
 }
-
-.brand-cs-logo {
+.brand-cs {
   font-size: 32px;
   font-weight: 900;
   letter-spacing: -1.5px;
   color: var(--primary-purple);
   line-height: 1;
 }
-
-.brand-text h1 {
-  font-size: 15.5px;
+.brand-info h1 {
+  font-size: 15px;
   font-weight: 800;
   color: var(--text-dark);
   line-height: 1.2;
 }
-
-.brand-text span {
-  font-size: 11.5px;
+.brand-info span {
+  font-size: 11px;
   font-weight: 500;
   color: var(--text-muted);
 }
-
-.nav-links {
+.nav-menu {
   display: flex;
   align-items: center;
   gap: 28px;
 }
-
 .nav-link {
   font-size: 14px;
   font-weight: 600;
@@ -128,11 +101,7 @@ a {
   padding: 6px 0;
   transition: color 0.2s ease;
 }
-
-.nav-link:hover, .nav-link.active {
-  color: var(--text-dark);
-}
-
+.nav-link:hover, .nav-link.active { color: var(--text-dark); }
 .nav-link.active::after {
   content: '';
   position: absolute;
@@ -143,7 +112,6 @@ a {
   background: var(--primary-purple);
   border-radius: 2px;
 }
-
 .btn-nav-connect {
   background: var(--dark-btn);
   color: #FFFFFF;
@@ -156,29 +124,27 @@ a {
   gap: 8px;
   transition: all 0.2s ease;
 }
-
 .btn-nav-connect:hover {
   background: var(--dark-btn-hover);
   transform: translateY(-1px);
 }
 
+/* ===== HERO SECTION ===== */
 .hero-section {
   position: relative;
-  padding: 48px 0 68px;
-  background: linear-gradient(180deg, #FFFFFF 0%, #FAFCFF 60%, #F5F3FF 100%);
-  border-bottom: 1px solid var(--border-color);
+  padding: 45px 0 65px;
+  background: linear-gradient(180deg, #FFFFFF 0%, #FAFCFF 100%);
+  border-bottom: 1px solid var(--border-light);
   overflow: hidden;
 }
-
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.14fr 0.86fr;
-  gap: 36px;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 40px;
   align-items: center;
 }
-
-.hero-tracker {
-  font-size: 11.5px;
+.hero-track-eyebrow {
+  font-size: 11px;
   font-weight: 800;
   letter-spacing: 2.5px;
   text-transform: uppercase;
@@ -186,40 +152,34 @@ a {
   margin-bottom: 14px;
   display: block;
 }
-
 .hero-heading {
   font-size: 52px;
-  line-height: 1.1;
+  line-height: 1.12;
   font-weight: 900;
   color: var(--text-dark);
-  letter-spacing: -1.6px;
+  letter-spacing: -1.5px;
   margin-bottom: 18px;
 }
-
-.hero-heading .purple-highlight {
+.hero-heading .purple-accent {
   color: var(--primary-purple);
-  position: relative;
 }
-
-.hero-bio {
-  font-size: 15.5px;
+.hero-desc-text {
+  font-size: 15px;
   line-height: 1.65;
   color: var(--text-body);
   max-width: 500px;
   margin-bottom: 30px;
 }
-
-.hero-btn-row {
+.hero-cta-group {
   display: flex;
   align-items: center;
   gap: 16px;
   margin-bottom: 40px;
 }
-
-.btn-purple-primary {
+.btn-hero-primary {
   background: var(--primary-purple);
   color: #FFFFFF;
-  padding: 13px 28px;
+  padding: 13px 26px;
   border-radius: 8px;
   font-size: 14px;
   font-weight: 700;
@@ -227,21 +187,16 @@ a {
   align-items: center;
   gap: 8px;
   transition: all 0.2s ease;
-  box-shadow: 0 6px 18px rgba(124, 58, 237, 0.35);
-  cursor: pointer;
-  border: none;
+  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.3);
 }
-
-.btn-purple-primary:hover {
-  background: var(--primary-purple-hover);
+.btn-hero-primary:hover {
+  background: var(--primary-purple-dark);
   transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(124, 58, 237, 0.45);
 }
-
-.btn-outline-resume {
+.btn-hero-outline {
   background: #FFFFFF;
   color: var(--text-dark);
-  border: 1.5px solid var(--border-color);
+  border: 1.5px solid var(--border-light);
   padding: 12px 24px;
   border-radius: 8px;
   font-size: 14px;
@@ -251,61 +206,58 @@ a {
   gap: 8px;
   transition: all 0.2s ease;
 }
-
-.btn-outline-resume:hover {
+.btn-hero-outline:hover {
   border-color: var(--primary-purple);
-  color: var(--primary-purple);
 }
 
-/* 4 Pillars below Hero CTA */
+/* 4 Hero Pillars */
 .hero-pillars-row {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 14px;
+  gap: 16px;
   padding-top: 24px;
-  border-top: 1px solid var(--border-color);
+  border-top: 1px solid var(--border-light);
 }
-
 .pillar-card {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 6px;
+  gap: 4px;
 }
-
-.pillar-icon-box {
-  font-size: 20px;
-  color: var(--text-dark);
+.pillar-icon {
+  font-size: 18px;
+  color: var(--primary-purple);
+  margin-bottom: 4px;
 }
-
-.pillar-title {
+.pillar-label {
   font-size: 12px;
   font-weight: 700;
   color: var(--text-dark);
-  line-height: 1.25;
+  line-height: 1.3;
 }
 
-.hero-visual-box {
+/* Hero Right Visual (Clean Positioning, No Overlap) */
+.hero-visual-pane {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: flex-end;
   min-height: 500px;
+  padding-right: 30px;
 }
 
-.hero-avatar-frame {
+.hero-portrait-frame {
   position: relative;
-  width: 330px;
-  height: 455px;
-  border-radius: 200px 200px 24px 24px;
+  width: 320px;
+  height: 440px;
+  border-radius: 190px 190px 24px 24px;
   overflow: hidden;
-  background: #CBD5E1;
-  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.12);
+  box-shadow: var(--shadow-lg);
   border: 4px solid #FFFFFF;
+  background: #E2E8F0;
   z-index: 2;
 }
-
-.hero-avatar-frame img {
+.hero-portrait-frame img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -313,102 +265,107 @@ a {
   display: block;
 }
 
-.script-banner-hero {
+/* Framed Wall Sign - Placed at Top Right */
+.framed-quote-wall {
   position: absolute;
-  top: 45px;
-  right: -5px;
-  font-family: 'Caveat', cursive;
-  font-size: 30px;
-  color: #312E81;
-  line-height: 1.15;
-  transform: rotate(-3deg);
-  z-index: 3;
-  pointer-events: none;
-}
-
-.wall-frame-poster {
-  position: absolute;
-  top: 30px;
-  right: -30px;
-  width: 130px;
+  top: 15px;
+  right: -25px;
+  width: 110px;
   background: #FFFFFF;
-  border: 3px solid #1E293B;
-  padding: 10px;
+  border: 2px solid #CBD5E1;
+  padding: 8px 6px;
   border-radius: 6px;
-  font-size: 10.5px;
-  font-weight: 900;
+  font-size: 8.5px;
+  font-weight: 800;
   text-align: center;
-  color: #0F172A;
+  color: #1E293B;
   box-shadow: var(--shadow-sm);
   z-index: 1;
-  line-height: 1.35;
+  line-height: 1.25;
 }
 
-.desk-mug-box {
+/* Cursive Callout - Moved Down Below the Wall Sign so they never overlap */
+.script-quote-hero {
   position: absolute;
-  bottom: 14px;
-  left: 15px;
+  top: 95px;
+  right: -35px;
+  font-family: 'Caveat', cursive;
+  font-size: 26px;
+  color: #312E81;
+  line-height: 1.1;
+  transform: rotate(-4deg);
+  z-index: 3;
+  pointer-events: none;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 2px 6px;
+  border-radius: 6px;
+}
+
+/* Desk Mug Element */
+.desk-mug-element {
+  position: absolute;
+  bottom: 20px;
+  left: 10px;
   z-index: 5;
-  width: 66px;
-  height: 74px;
+  width: 65px;
+  height: 72px;
   background: #0F172A;
   border-radius: 0 0 16px 16px;
   color: #FFFFFF;
-  font-size: 8px;
+  font-size: 7.5px;
   font-weight: 800;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   padding: 4px;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.25);
 }
-
-.desk-mug-box::after {
+.desk-mug-element::after {
   content: '';
   position: absolute;
-  right: -13px;
+  right: -12px;
   top: 14px;
-  width: 13px;
-  height: 38px;
+  width: 12px;
+  height: 36px;
   border: 4px solid #0F172A;
   border-left: none;
   border-radius: 0 12px 12px 0;
 }
 
-.desk-laptop-chalk {
+/* Laptop Front Element */
+.desk-laptop-element {
   position: absolute;
   bottom: 0;
-  right: -25px;
+  right: -15px;
   z-index: 4;
-  width: 260px;
+  width: 240px;
   background: #1E293B;
   border: 3px solid #64748B;
   border-radius: 10px 10px 0 0;
-  padding: 16px;
+  padding: 14px 10px;
   text-align: center;
   color: #FFFFFF;
   font-family: 'Caveat', cursive;
-  font-size: 24px;
+  font-size: 22px;
   line-height: 1.15;
 }
 
-.section-padding {
-  padding: 75px 0;
+/* ===== SECTION COMMON ===== */
+.site-section {
+  padding: 80px 0;
   position: relative;
 }
-
-.section-eyebrow {
+.section-tag {
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--primary-purple);
-  margin-bottom: 4px;
+  margin-bottom: 6px;
   display: block;
 }
-
-.section-heading-bar {
+.section-title {
   font-size: 32px;
   font-weight: 900;
   color: var(--text-dark);
@@ -417,95 +374,12 @@ a {
   padding-left: 14px;
   line-height: 1.15;
 }
-
-.about-banner-card {
-  display: grid;
-  grid-template-columns: 1.05fr 1.95fr;
-  gap: 36px;
-  align-items: center;
-  background: #F8FAFC;
-  border: 1px solid var(--border-color);
-  border-radius: 20px;
-  padding: 40px;
-}
-
-.about-text-lead {
-  font-size: 14.5px;
-  color: var(--text-body);
-  line-height: 1.65;
-  margin-bottom: 22px;
-}
-
-.btn-about-outline {
-  border: 1.5px solid var(--primary-purple);
-  color: var(--primary-purple);
-  font-size: 13.5px;
-  font-weight: 700;
-  padding: 9px 20px;
-  border-radius: 8px;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  transition: all 0.2s ease;
-  background: #FFFFFF;
-}
-
-.btn-about-outline:hover {
-  background: var(--primary-purple);
-  color: #FFFFFF;
-}
-
-.about-card-right {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.about-pill-container {
-  background: #F3F0FF;
-  border: 1px solid var(--primary-purple-border);
-  border-radius: 24px;
-  padding: 24px 20px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-}
-
-.about-mini-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 8px;
-}
-
-.about-mini-box i {
-  font-size: 22px;
-  color: var(--text-dark);
-}
-
-.about-mini-box span {
-  font-size: 11.5px;
-  font-weight: 700;
-  color: var(--text-dark);
-  line-height: 1.25;
-}
-
-.cursive-about-script {
-  font-family: 'Caveat', cursive;
-  font-size: 32px;
-  color: #312E81;
-  line-height: 1.15;
-  text-align: center;
-}
-
-.section-head-split {
+.section-header-split {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  margin-bottom: 34px;
+  margin-bottom: 36px;
 }
-
 .view-all-link {
   font-size: 13.5px;
   font-weight: 700;
@@ -515,35 +389,81 @@ a {
   gap: 6px;
   transition: gap 0.2s ease;
 }
+.view-all-link:hover { gap: 10px; }
 
-.view-all-link:hover {
+/* ===== ABOUT ME SECTION ===== */
+.about-card-banner {
+  display: grid;
+  grid-template-columns: 1.1fr 1.9fr;
+  gap: 36px;
+  align-items: center;
+  background: #F8FAFC;
+  border: 1px solid var(--border-light);
+  border-radius: 20px;
+  padding: 40px;
+}
+.about-features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+.about-feature-box {
+  background: #FFFFFF;
+  border: 1px solid var(--border-light);
+  border-radius: 14px;
+  padding: 20px 12px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 10px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease;
+}
+.about-feature-box:hover {
+  transform: translateY(-3px);
+  border-color: var(--primary-purple);
+}
+.about-feature-box i {
+  font-size: 22px;
+  color: var(--primary-purple);
+}
+.about-feature-box span {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1.25;
+}
+.cursive-lead-about {
+  font-family: 'Caveat', cursive;
+  font-size: 32px;
+  color: #312E81;
+  line-height: 1.15;
+  text-align: center;
 }
 
+/* ===== FEATURED PROJECTS ===== */
 .projects-4-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
 }
-
-.project-card {
+.proj-card {
   background: #FFFFFF;
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--border-light);
   border-radius: 16px;
   padding: 16px;
   display: flex;
   flex-direction: column;
-  box-shadow: var(--shadow-card);
+  box-shadow: var(--shadow-sm);
   transition: all 0.25s ease;
 }
-
-.project-card:hover {
+.proj-card:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-hover);
+  box-shadow: var(--shadow-md);
   border-color: #CBD5E1;
 }
-
-.project-thumb-frame {
+.proj-thumb-frame {
   position: relative;
   width: 100%;
   aspect-ratio: 16/10;
@@ -551,17 +471,15 @@ a {
   overflow: hidden;
   background: #0F172A;
   margin-bottom: 14px;
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--border-light);
 }
-
-.project-thumb-frame img {
+.proj-thumb-frame img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
-
-.project-play-btn {
+.proj-play-overlay {
   position: absolute;
   inset: 0;
   margin: auto;
@@ -578,13 +496,11 @@ a {
   transition: 0.2s ease;
   backdrop-filter: blur(4px);
 }
-
-.project-card:hover .project-play-btn {
+.proj-card:hover .proj-play-overlay {
   background: var(--primary-purple);
   transform: scale(1.1);
 }
-
-.project-cat-eyebrow {
+.proj-badge-cat {
   font-size: 9.5px;
   font-weight: 800;
   letter-spacing: 0.8px;
@@ -593,31 +509,27 @@ a {
   margin-bottom: 4px;
   display: block;
 }
-
-.project-card h3 {
+.proj-card h3 {
   font-size: 16px;
   font-weight: 800;
   color: var(--text-dark);
   margin-bottom: 6px;
   line-height: 1.25;
 }
-
-.project-card p {
+.proj-card p {
   font-size: 12.5px;
   color: var(--text-muted);
   line-height: 1.5;
   margin-bottom: 14px;
   flex-grow: 1;
 }
-
-.project-pill-row {
+.proj-tag-list {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
   margin-bottom: 14px;
 }
-
-.project-tag {
+.proj-tag-pill {
   font-size: 10.5px;
   font-weight: 700;
   padding: 4px 9px;
@@ -625,62 +537,48 @@ a {
   background: var(--primary-purple-light);
   color: var(--primary-purple);
 }
-
-.btn-card-action {
+.btn-view-project {
   font-size: 13px;
   font-weight: 700;
   color: var(--primary-purple);
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  cursor: pointer;
-  background: none;
-  border: none;
-  padding: 0;
 }
 
-.tools-section {
-  background: #FFFFFF;
-  border-top: 1px solid var(--border-color);
-  border-bottom: 1px solid var(--border-color);
-}
-
-.tools-layout-grid {
+/* ===== TOOLS & TECHNOLOGIES WITH VERIFIED SVG LOGOS ===== */
+.tools-showcase-grid {
   display: grid;
   grid-template-columns: 1fr 1.45fr;
   gap: 40px;
   align-items: center;
 }
-
-.desk-art-pane {
+.desk-composition-art {
   background: #F8FAFC;
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--border-light);
   border-radius: 20px;
   padding: 40px 30px;
   text-align: center;
   position: relative;
 }
-
-.desk-art-pane .cursive-quote-wall {
+.desk-composition-art .cursive-art-quote {
   font-family: 'Caveat', cursive;
   font-size: 34px;
   color: #312E81;
   line-height: 1.15;
   margin-bottom: 30px;
 }
-
-.desk-books-spine-stack {
+.desk-spines-column {
   display: inline-flex;
   flex-direction: column;
   gap: 4px;
-  width: 150px;
+  width: 145px;
 }
-
-.spine-card {
+.spine-block {
   background: #FFFFFF;
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--border-light);
   border-left: 4px solid var(--primary-purple);
-  padding: 5px 14px;
+  padding: 5px 12px;
   font-size: 11px;
   font-weight: 800;
   color: var(--text-dark);
@@ -688,16 +586,14 @@ a {
   box-shadow: var(--shadow-sm);
   text-align: left;
 }
-
-.tools-15-grid {
+.tools-grid-15 {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 14px;
 }
-
-.tool-tile {
+.tool-tile-card {
   background: #FFFFFF;
-  border: 1.5px solid var(--border-color);
+  border: 1.5px solid var(--border-light);
   border-radius: 14px;
   padding: 16px 8px;
   display: flex;
@@ -708,14 +604,13 @@ a {
   box-shadow: var(--shadow-sm);
   transition: all 0.2s ease;
 }
-
-.tool-tile:hover {
+.tool-tile-card:hover {
   transform: translateY(-4px);
   border-color: var(--primary-purple);
   box-shadow: var(--shadow-md);
 }
 
-.tool-vector-logo {
+.tool-logo-img {
   width: 44px;
   height: 44px;
   display: flex;
@@ -723,42 +618,38 @@ a {
   justify-content: center;
   flex-shrink: 0;
 }
-
-.tool-vector-logo img, .tool-vector-logo svg {
+.tool-logo-img img, .tool-logo-img svg {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
-
-.tool-tile span {
+.tool-tile-card span {
   font-size: 11.5px;
   font-weight: 700;
   color: var(--text-dark);
   line-height: 1.2;
 }
 
-.process-grid-split {
+/* ===== MY PROCESS SECTION ===== */
+.process-layout-grid {
   display: grid;
   grid-template-columns: 1.4fr 0.6fr;
   gap: 40px;
   align-items: center;
 }
-
-.process-steps-row {
+.process-step-chain {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-
-.process-node {
+.process-step-item {
   display: flex;
   align-items: center;
   gap: 12px;
 }
-
-.process-bubble {
-  width: 48px;
-  height: 48px;
+.process-step-circle {
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
   background: var(--primary-purple-light);
   color: var(--primary-purple);
@@ -767,34 +658,25 @@ a {
   justify-content: center;
   font-size: 18px;
   flex-shrink: 0;
-  border: 1px solid var(--primary-purple-border);
+  border: 1px solid #C7D2FE;
 }
-
-.node-info-text span {
+.process-step-details span {
   font-size: 10px;
   font-weight: 800;
   color: var(--text-muted);
   display: block;
 }
-
-.node-info-text strong {
+.process-step-details strong {
   font-size: 13.5px;
   font-weight: 800;
   display: block;
   color: var(--text-dark);
 }
-
-.node-info-text small {
+.process-step-details small {
   font-size: 11px;
   color: var(--text-muted);
 }
-
-.process-arrow {
-  color: #CBD5E1;
-  font-size: 18px;
-}
-
-.cursive-process-quote {
+.process-cursive-callout {
   font-family: 'Caveat', cursive;
   font-size: 34px;
   color: #312E81;
@@ -802,42 +684,38 @@ a {
   text-align: right;
 }
 
-.mountain-banner-section {
+/* ===== BANNER: WHY I DO THIS ===== */
+.banner-inspiration {
   background: linear-gradient(rgba(15, 23, 42, 0.88), rgba(15, 23, 42, 0.94)),
               url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1600&auto=format&fit=crop&q=80') center/cover;
   color: #FFFFFF;
   padding: 75px 0;
-  border-top: 1px solid var(--border-color);
-  border-bottom: 1px solid var(--border-color);
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
 }
-
-.banner-grid {
+.banner-content-grid {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
   gap: 40px;
   align-items: center;
 }
-
 .banner-title {
   font-size: 36px;
   font-weight: 900;
   line-height: 1.15;
   margin-bottom: 14px;
 }
-
 .banner-desc {
   font-size: 14.5px;
   color: #CBD5E1;
   max-width: 480px;
   margin-bottom: 24px;
 }
-
 .banner-checklist-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 18px;
 }
-
 .banner-check-item {
   display: flex;
   align-items: center;
@@ -846,26 +724,41 @@ a {
   font-weight: 700;
   color: #F8FAFC;
 }
-
 .banner-check-item i {
   color: var(--primary-purple);
   font-size: 16px;
 }
+.btn-banner-glow {
+  background: var(--primary-purple);
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 12px 26px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 16px rgba(124, 58, 237, 0.4);
+  transition: all 0.2s ease;
+}
+.btn-banner-glow:hover {
+  background: var(--primary-purple-dark);
+  transform: translateY(-2px);
+}
 
-.contact-grid {
+/* ===== CONTACT SECTION ===== */
+.contact-section-grid {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   gap: 40px;
   align-items: center;
 }
-
-.contact-info-list {
+.contact-list-vertical {
   display: flex;
   flex-direction: column;
   gap: 16px;
   margin: 26px 0;
 }
-
 .contact-row-entry {
   display: flex;
   align-items: center;
@@ -875,12 +768,10 @@ a {
   color: var(--text-dark);
   transition: color 0.2s ease;
 }
-
 .contact-row-entry:hover {
   color: var(--primary-purple);
 }
-
-.contact-circle-icon {
+.contact-circle-bubble {
   width: 36px;
   height: 36px;
   border-radius: 50%;
@@ -891,8 +782,7 @@ a {
   justify-content: center;
   font-size: 15px;
 }
-
-.framed-whiteboard-sign {
+.framed-desk-signboard {
   background: #FFFFFF;
   border: 4px solid #D1B89D;
   border-radius: 12px;
@@ -900,15 +790,13 @@ a {
   box-shadow: var(--shadow-md);
   text-align: center;
 }
-
-.framed-whiteboard-sign h3 {
+.framed-desk-signboard h3 {
   font-size: 26px;
   font-weight: 900;
   line-height: 1.25;
   color: var(--text-dark);
 }
-
-.framed-whiteboard-sign .accent-bar {
+.framed-desk-signboard .accent-bar {
   width: 44px;
   height: 3px;
   background: var(--primary-purple);
@@ -916,14 +804,14 @@ a {
   border-radius: 2px;
 }
 
-.footer-wrap {
-  background: var(--dark-footer);
+/* ===== FOOTER ===== */
+.footer-wrapper {
+  background: #0B0F19;
   color: #94A3B8;
-  padding: 45px 0 24px;
+  padding: 40px 0 20px;
   position: relative;
 }
-
-.footer-inner-row {
+.footer-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -931,53 +819,33 @@ a {
   padding-bottom: 24px;
   border-bottom: 1px solid #1E293B;
 }
-
 .footer-brand {
   display: flex;
   align-items: center;
   gap: 10px;
 }
-
 .footer-brand-logo {
   font-size: 24px;
   font-weight: 900;
   color: var(--primary-purple);
 }
-
 .footer-brand span {
   color: #FFFFFF;
   font-weight: 600;
 }
-
-.footer-nav-links {
+.footer-nav {
   display: flex;
   gap: 22px;
   font-weight: 600;
 }
-
-.footer-nav-links a:hover {
-  color: #FFFFFF;
-}
-
+.footer-nav a:hover { color: #FFFFFF; }
 .footer-social-strip {
   display: flex;
   align-items: center;
   gap: 16px;
   font-size: 16px;
 }
-
-.footer-social-strip a:hover {
-  color: var(--primary-purple);
-}
-
-.thankyou-script-footer {
-  font-family: 'Caveat', cursive;
-  font-size: 36px;
-  text-align: center;
-  color: #C7D2FE;
-  padding: 24px 0 12px;
-}
-
+.footer-social-strip a:hover { color: var(--primary-purple); }
 .footer-bottom-bar {
   display: flex;
   align-items: center;
@@ -985,8 +853,14 @@ a {
   padding-top: 20px;
   font-size: 12px;
 }
-
-.btn-scroll-top-round {
+.thankyou-calligraphy {
+  font-family: 'Caveat', cursive;
+  font-size: 34px;
+  text-align: center;
+  color: #C7D2FE;
+  padding: 24px 0 10px;
+}
+.btn-back-top-round {
   width: 36px;
   height: 36px;
   border-radius: 50%;
@@ -998,14 +872,13 @@ a {
   justify-content: center;
   font-size: 14px;
   transition: all 0.2s ease;
-  cursor: pointer;
 }
-
-.btn-scroll-top-round:hover {
+.btn-back-top-round:hover {
   background: var(--primary-purple);
   border-color: var(--primary-purple);
 }
 
+/* ===== LIGHTBOX MODAL ===== */
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -1017,119 +890,68 @@ a {
   justify-content: center;
   padding: 20px;
 }
-
-.modal-overlay.active {
-  display: flex;
-}
-
-.modal-card-box {
+.modal-overlay.active { display: flex; }
+.modal-box {
   background: #0F172A;
   width: 100%;
   max-width: 960px;
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
-  border: 1px solid #334155;
 }
-
-.modal-header-strip {
+.modal-bar {
   padding: 14px 20px;
   background: #1E293B;
   color: #FFFFFF;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  font-size: 14px;
-  font-weight: 700;
 }
-
-.modal-close-btn {
+.modal-bar button {
   background: none;
   border: none;
   color: #94A3B8;
   font-size: 22px;
   cursor: pointer;
 }
-
-.modal-close-btn:hover {
-  color: #FFFFFF;
-}
-
-.modal-video-frame {
+.modal-frame {
   width: 100%;
   aspect-ratio: 16/9;
-  background: #000;
 }
+.modal-frame iframe { width: 100%; height: 100%; border: none; }
 
-.modal-video-frame iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
+/* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
-  .hero-grid, .about-banner-card, .tools-layout-grid, .process-grid-split, .banner-grid, .contact-grid {
+  .hero-grid, .about-card-banner, .tools-showcase-grid, .process-layout-grid, .banner-content-grid, .contact-section-grid {
     grid-template-columns: 1fr;
-    gap: 40px;
   }
-  .projects-4-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .tools-15-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+  .projects-4-grid { grid-template-columns: repeat(2, 1fr); }
+  .tools-grid-15 { grid-template-columns: repeat(3, 1fr); }
 }
-
 @media (max-width: 768px) {
-  .nav-links {
-    display: none;
-  }
-  .hero-heading {
-    font-size: 38px;
-  }
-  .hero-pillars-row {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-  }
-  .about-pill-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .projects-4-grid {
-    grid-template-columns: 1fr;
-  }
-  .tools-15-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .process-steps-row {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
-  }
-  .process-arrow {
-    display: none;
-  }
-  .footer-inner-row, .footer-bottom-bar {
-    flex-direction: column;
-    gap: 16px;
-    text-align: center;
-  }
+  .nav-menu { display: none; }
+  .hero-heading { font-size: 38px; }
+  .hero-pillars-row { grid-template-columns: repeat(2, 1fr); }
+  .projects-4-grid { grid-template-columns: 1fr; }
+  .tools-grid-15 { grid-template-columns: repeat(2, 1fr); }
+  .process-step-chain { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .footer-inner, .footer-bottom-bar { flex-direction: column; gap: 16px; text-align: center; }
 }
 </style>
 </head>
 
 <body>
 
+<!-- TOP NAVIGATION -->
 <header class="top-nav">
-  <div class="container nav-row">
-    <a href="#home" class="brand-wrapper">
-      <div class="brand-cs-logo">CS</div>
-      <div class="brand-text">
+  <div class="container nav-inner">
+    <a href="#home" class="nav-brand">
+      <div class="brand-cs">CS</div>
+      <div class="brand-info">
         <h1>Chandirakkumar S</h1>
         <span>Instructional Designer</span>
       </div>
     </a>
 
-    <nav class="nav-links">
+    <nav class="nav-menu">
       <a href="#home" class="nav-link active">Home</a>
       <a href="#about" class="nav-link">About</a>
       <a href="#projects" class="nav-link">Projects</a>
@@ -1144,104 +966,116 @@ a {
   </div>
 </header>
 
+<!-- HERO SECTION -->
 <section id="home" class="hero-section">
   <div class="container hero-grid">
     <div>
-      <span class="hero-tracker">LEARN &bull; DESIGN &bull; DEVELOP &bull; DELIVER</span>
+      <span class="hero-track-eyebrow">Learn &bull; Design &bull; Develop &bull; Deliver</span>
       <h1 class="hero-heading">
-        Learning<br>Experiences<br>for <span class="purple-highlight">Real People.</span>
+        Learning Experiences for <span class="purple-accent">Real People.</span>
       </h1>
-      <p class="hero-bio">
+      <p class="hero-desc-text">
         I design and develop eLearning, visual and multimedia learning experiences that inform, engage and create measurable impact.
       </p>
 
-      <div class="hero-btn-row">
-        <a href="#projects" class="btn-purple-primary">View My Work &rarr;</a>
-        <a href="#contact" class="btn-outline-resume">
+      <div class="hero-cta-group">
+        <a href="#projects" class="btn-hero-primary">View My Work &rarr;</a>
+        <a href="#contact" class="btn-hero-outline">
           <i class="fa-solid fa-download"></i> Download Resume
         </a>
       </div>
 
       <div class="hero-pillars-row">
         <div class="pillar-card">
-          <div class="pillar-icon-box"><i class="fa-solid fa-book-open"></i></div>
-          <div class="pillar-title">Engaging<br>Learning</div>
+          <div class="pillar-icon"><i class="fa-solid fa-book-open"></i></div>
+          <div class="pillar-label">Engaging<br>Learning</div>
         </div>
         <div class="pillar-card">
-          <div class="pillar-icon-box"><i class="fa-solid fa-pen-nib"></i></div>
-          <div class="pillar-title">Practical<br>Design</div>
+          <div class="pillar-icon"><i class="fa-solid fa-pen-nib"></i></div>
+          <div class="pillar-label">Practical<br>Design</div>
         </div>
         <div class="pillar-card">
-          <div class="pillar-icon-box"><i class="fa-solid fa-chart-line"></i></div>
-          <div class="pillar-title">Measurable<br>Impact</div>
+          <div class="pillar-icon"><i class="fa-solid fa-chart-line"></i></div>
+          <div class="pillar-label">Measurable<br>Impact</div>
         </div>
         <div class="pillar-card">
-          <div class="pillar-icon-box"><i class="fa-solid fa-users"></i></div>
-          <div class="pillar-title">People<br>Centric</div>
+          <div class="pillar-icon"><i class="fa-solid fa-users"></i></div>
+          <div class="pillar-label">People<br>Centric</div>
         </div>
       </div>
     </div>
 
-    <!-- Hero Right Art Composition -->
-    <div class="hero-visual-box">
-      <div class="script-banner-hero">
-        Same<br>Passion.<br>Bigger<br>Impact.
+    <!-- HERO RIGHT VISUAL (FIXED: Profile image path + separated annotations) -->
+    <div class="hero-visual-pane">
+      
+      <!-- Top Wall Sign -->
+      <div class="framed-quote-wall">
+        GOOD PEOPLE<br>GREAT LEARNING<br>BRIGHTER<br>TOMORROWS
       </div>
 
-      <div class="wall-frame-poster">
-        GOOD<br>PEOPLE<br>GREAT<br>LEARNING<br>BRIGHTER<br>TOMORROWS
+      <!-- Cursive Signature - cleanly separated -->
+      <div class="script-quote-hero">
+        Same Passion.<br>Bigger Impact.
       </div>
 
-      <div class="hero-avatar-frame">
-        <img src="IMG_20260409_223924.png" alt="Chandirakkumar S" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=700&auto=format&fit=crop&q=80';">
+      <!-- User's Real Profile Picture -->
+      <div class="hero-portrait-frame">
+        <img 
+          src="profile image.png" 
+          alt="Chandirakkumar S" 
+          onerror="this.onerror=null; this.src='profile%20image.png'; if(!this.complete) this.src='IMG_20260409_223924.jpg';">
       </div>
 
-      <div class="desk-mug-box">
+      <!-- Desk Mug Element -->
+      <div class="desk-mug-element">
         Better<br>Learning<br>Brighter<br>Tomorrows
       </div>
 
-      <div class="desk-laptop-chalk">
+      <!-- Laptop Element -->
+      <div class="desk-laptop-element">
         Ideas<br>Design<br>Develop<br>Deliver
       </div>
+
     </div>
   </div>
 </section>
 
-<section id="about" class="section-padding">
+<!-- ABOUT ME SECTION -->
+<section id="about" class="site-section">
   <div class="container">
-    <div class="about-banner-card">
+    <div class="about-card-banner">
       <div>
-        <span class="section-eyebrow">About Me</span>
-        <h2 class="section-heading-bar" style="font-size: 28px; margin-bottom: 14px;">
-          An Instructional Designer<br>Who Loves to Create.
+        <span class="section-tag">About Me</span>
+        <h2 style="font-size: 28px; font-weight: 900; margin-bottom: 12px; line-height: 1.25;">
+          An Instructional Designer Who Loves to Create.
         </h2>
-        <p class="about-text-lead">
+        <p style="font-size: 14.5px; color: var(--text-body); margin-bottom: 22px;">
           I'm Chandirakkumar, an Instructional Designer with a passion for creating learning experiences that make a real difference. I enjoy blending instructional strategy, visual design and technology to help people learn and grow.
         </p>
-        <a href="#contact" class="btn-about-outline">More About Me &rarr;</a>
+        <a href="#contact" class="view-all-link">More About Me &rarr;</a>
       </div>
 
-      <div class="about-card-right">
-        <div class="about-pill-container">
-          <div class="about-mini-box">
+      <div style="display: flex; flex-direction: column; gap: 20px;">
+        <div class="about-features-grid">
+          <div class="about-feature-box">
             <i class="fa-solid fa-graduation-cap"></i>
-            <span>Learning<br>Design</span>
+            <span>Learning Design</span>
           </div>
-          <div class="about-mini-box">
+          <div class="about-feature-box">
             <i class="fa-solid fa-lightbulb"></i>
-            <span>Visual<br>Communication</span>
+            <span>Visual Communication</span>
           </div>
-          <div class="about-mini-box">
+          <div class="about-feature-box">
             <i class="fa-solid fa-puzzle-piece"></i>
-            <span>Problem<br>Solving</span>
+            <span>Problem Solving</span>
           </div>
-          <div class="about-mini-box">
+          <div class="about-feature-box">
             <i class="fa-solid fa-chart-simple"></i>
-            <span>Continuous<br>Learning</span>
+            <span>Continuous Learning</span>
           </div>
         </div>
 
-        <div class="cursive-about-script">
+        <div class="cursive-lead-about">
           Learning today leads to brighter tomorrows.
         </div>
       </div>
@@ -1249,118 +1083,122 @@ a {
   </div>
 </section>
 
-<section id="projects" class="section-padding" style="padding-top: 0;">
+<!-- FEATURED PROJECTS -->
+<section id="projects" class="site-section" style="padding-top: 0;">
   <div class="container">
-    <div class="section-head-split">
+    <div class="section-header-split">
       <div>
-        <span class="section-eyebrow">Featured Projects</span>
-        <h2 class="section-heading-bar">Turning Ideas into Learning Experiences</h2>
+        <span class="section-tag">Featured Projects</span>
+        <h2 class="section-title">Turning Ideas into Learning Experiences</h2>
       </div>
       <a href="#projects" class="view-all-link">View All Projects &rarr;</a>
     </div>
 
     <div class="projects-4-grid">
-      <!-- Project 01 -->
-      <div class="project-card">
-        <div class="project-thumb-frame">
-          <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?w=600&auto=format&fit=crop&q=80" alt="From Ship to Shore eLearning">
-          <div class="project-play-btn" onclick="openModal('https://drive.google.com/file/d/1rRtZDmiMiKexJ4jQxXIFJ_b89UR3zWo3/preview')">&#9658;</div>
+      <!-- PROJECT 1 -->
+      <div class="proj-card">
+        <div class="proj-thumb-frame">
+          <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?w=600&auto=format&fit=crop&q=80" alt="SCORM Module">
+          <div class="proj-play-overlay" onclick="openModal('https://drive.google.com/file/d/1rRtZDmiMiKexJ4jQxXIFJ_b89UR3zWo3/preview')">&#9658;</div>
         </div>
-        <span class="project-cat-eyebrow">e-Learning</span>
+        <span class="proj-badge-cat">e-Learning</span>
         <h3>Interactive SCORM eLearning</h3>
         <p>An interactive Storyline 360 module with custom navigation, assessments and SCORM publishing.</p>
-        <div class="project-pill-row">
-          <span class="project-tag">Storyline 360</span>
-          <span class="project-tag">SCORM</span>
-          <span class="project-tag">Interactive</span>
+        <div class="proj-tag-list">
+          <span class="proj-tag-pill">Storyline 360</span>
+          <span class="proj-tag-pill">SCORM</span>
+          <span class="proj-tag-pill">Interactive</span>
         </div>
-        <button class="btn-card-action" onclick="openModal('https://drive.google.com/file/d/1-Jr4AcAYIeU_B9Cimcw1WLswNRgfx0MU/preview')">View Project &rarr;</button>
+        <a href="javascript:void(0)" onclick="openModal('https://drive.google.com/file/d/1-Jr4AcAYIeU_B9Cimcw1WLswNRgfx0MU/preview')" class="btn-view-project">View Project &rarr;</a>
       </div>
 
-      <!-- Project 02 -->
-      <div class="project-card">
-        <div class="project-thumb-frame">
+      <!-- PROJECT 2 -->
+      <div class="proj-card">
+        <div class="proj-thumb-frame">
           <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&auto=format&fit=crop&q=80" alt="Multi-language eLearning">
-          <div class="project-play-btn" onclick="openModal('https://drive.google.com/file/d/1IIuKoOcBHQ35GzFYcmutqnFGDglw8n3t/preview')">&#9658;</div>
+          <div class="proj-play-overlay" onclick="openModal('https://drive.google.com/file/d/1IIuKoOcBHQ35GzFYcmutqnFGDglw8n3t/preview')">&#9658;</div>
         </div>
-        <span class="project-cat-eyebrow">e-Learning</span>
+        <span class="proj-badge-cat">e-Learning</span>
         <h3>Multi-language eLearning</h3>
         <p>Interactive course with language switching and multilingual learning support.</p>
-        <div class="project-pill-row">
-          <span class="project-tag">Storyline 360</span>
-          <span class="project-tag">Multilingual</span>
-          <span class="project-tag">Localization</span>
+        <div class="proj-tag-list">
+          <span class="proj-tag-pill">Storyline 360</span>
+          <span class="proj-tag-pill">Multilingual</span>
+          <span class="proj-tag-pill">Localization</span>
         </div>
-        <button class="btn-card-action" onclick="openModal('https://drive.google.com/file/d/1IIuKoOcBHQ35GzFYcmutqnFGDglw8n3t/preview')">View Project &rarr;</button>
+        <a href="javascript:void(0)" onclick="openModal('https://drive.google.com/file/d/1IIuKoOcBHQ35GzFYcmutqnFGDglw8n3t/preview')" class="btn-view-project">View Project &rarr;</a>
       </div>
 
-      <!-- Project 03 -->
-      <div class="project-card">
-        <div class="project-thumb-frame">
-          <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&auto=format&fit=crop&q=80" alt="Corporate PowerPoint Design">
-          <div class="project-play-btn" onclick="openModal('https://drive.google.com/file/d/12KMOnXd8ilEKFB4JqiAr99lX8_8IBSUv/preview')">&#9658;</div>
+      <!-- PROJECT 3 -->
+      <div class="proj-card">
+        <div class="proj-thumb-frame">
+          <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&auto=format&fit=crop&q=80" alt="PowerPoint Decks">
+          <div class="proj-play-overlay" onclick="openModal('https://drive.google.com/file/d/12KMOnXd8ilEKFB4JqiAr99lX8_8IBSUv/preview')">&#9658;</div>
         </div>
-        <span class="project-cat-eyebrow">Visual Design</span>
+        <span class="proj-badge-cat">Visual Design</span>
         <h3>Corporate PowerPoint Design</h3>
         <p>Professional training presentations with modern layouts, infographics and learning content.</p>
-        <div class="project-pill-row">
-          <span class="project-tag">PowerPoint</span>
-          <span class="project-tag">Visual Design</span>
-          <span class="project-tag">Infographics</span>
+        <div class="proj-tag-list">
+          <span class="proj-tag-pill">PowerPoint</span>
+          <span class="proj-tag-pill">Visual Design</span>
+          <span class="proj-tag-pill">Infographics</span>
         </div>
-        <button class="btn-card-action" onclick="openModal('https://drive.google.com/file/d/12KMOnXd8ilEKFB4JqiAr99lX8_8IBSUv/preview')">View Project &rarr;</button>
+        <a href="javascript:void(0)" onclick="openModal('https://drive.google.com/file/d/12KMOnXd8ilEKFB4JqiAr99lX8_8IBSUv/preview')" class="btn-view-project">View Project &rarr;</a>
       </div>
 
-      <!-- Project 04 -->
-      <div class="project-card">
-        <div class="project-thumb-frame">
-          <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=600&auto=format&fit=crop&q=80" alt="Video Editing Motion Graphics">
-          <div class="project-play-btn" onclick="openModal('https://drive.google.com/file/d/1v1ISwjEXjLI4X5jwVbi-a-JX1O14nO5p/preview')">&#9658;</div>
+      <!-- PROJECT 4 -->
+      <div class="proj-card">
+        <div class="proj-thumb-frame">
+          <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=600&auto=format&fit=crop&q=80" alt="Video Editing Motion">
+          <div class="proj-play-overlay" onclick="openModal('https://drive.google.com/file/d/1v1ISwjEXjLI4X5jwVbi-a-JX1O14nO5p/preview')">&#9658;</div>
         </div>
-        <span class="project-cat-eyebrow">Video &amp; Motion</span>
+        <span class="proj-badge-cat">Video &amp; Motion</span>
         <h3>Video Editing &amp; Motion Graphics</h3>
         <p>Cinematic and engaging videos using Premiere Pro and After Effects for learning and communication.</p>
-        <div class="project-pill-row">
-          <span class="project-tag">Premiere Pro</span>
-          <span class="project-tag">After Effects</span>
-          <span class="project-tag">Motion</span>
+        <div class="proj-tag-list">
+          <span class="proj-tag-pill">Premiere Pro</span>
+          <span class="proj-tag-pill">After Effects</span>
+          <span class="proj-tag-pill">Motion</span>
         </div>
-        <button class="btn-card-action" onclick="openModal('https://drive.google.com/file/d/1v1ISwjEXjLI4X5jwVbi-a-JX1O14nO5p/preview')">View Project &rarr;</button>
+        <a href="javascript:void(0)" onclick="openModal('https://drive.google.com/file/d/1v1ISwjEXjLI4X5jwVbi-a-JX1O14nO5p/preview')" class="btn-view-project">View Project &rarr;</a>
       </div>
     </div>
   </div>
 </section>
 
-<section id="skills" class="section-padding tools-section">
+<!-- TOOLS & TECHNOLOGIES WITH VERIFIED SVG LOGOS -->
+<section id="skills" class="site-section" style="background: #FFFFFF; border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light);">
   <div class="container">
-    <div class="tools-layout-grid">
-      <!-- Left Composition Note -->
-      <div class="desk-art-pane">
-        <div class="cursive-quote-wall">
+    <div class="tools-showcase-grid">
+      
+      <!-- Left Desk Note -->
+      <div class="desk-composition-art">
+        <div class="cursive-art-quote">
           Right Tools.<br>
           Better Learning.
         </div>
-        <div class="desk-books-spine-stack">
-          <div class="spine-card">Learn</div>
-          <div class="spine-card">Design</div>
-          <div class="spine-card">Develop</div>
-          <div class="spine-card">Grow</div>
-          <div class="spine-card">Impact</div>
+        <div class="desk-spines-column">
+          <div class="spine-block">Learn</div>
+          <div class="spine-block">Design</div>
+          <div class="spine-block">Develop</div>
+          <div class="spine-block">Grow</div>
+          <div class="spine-block">Impact</div>
         </div>
       </div>
 
-      <!-- Right 15 Software Tiles -->
+      <!-- Right 15 Tool Logos -->
       <div>
-        <span class="section-eyebrow">Tools &amp; Technologies</span>
-        <h2 class="section-heading-bar" style="margin-bottom: 8px;">Tools I Work With</h2>
+        <span class="section-tag">Tools &amp; Technologies</span>
+        <h2 class="section-title" style="margin-bottom: 8px;">Tools I Work With</h2>
         <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 24px;">
           A combination of authoring, design, multimedia and LMS tools to bring learning ideas to life.
         </p>
 
-        <div class="tools-15-grid">
+        <div class="tools-grid-15">
+          
           <!-- 1. Storyline 360 -->
-          <div class="tool-tile">
-            <div class="tool-vector-logo">
+          <div class="tool-tile-card">
+            <div class="tool-logo-img">
               <svg viewBox="0 0 100 100">
                 <circle cx="50" cy="50" r="46" fill="#E11D48"/>
                 <text x="50%" y="58%" text-anchor="middle" fill="#FFFFFF" font-family="'Inter', sans-serif" font-weight="800" font-size="34">sl</text>
@@ -1370,8 +1208,8 @@ a {
           </div>
 
           <!-- 2. Adobe Captivate -->
-          <div class="tool-tile">
-            <div class="tool-vector-logo">
+          <div class="tool-tile-card">
+            <div class="tool-logo-img">
               <svg viewBox="0 0 100 100">
                 <rect width="92" height="92" x="4" y="4" rx="20" fill="#024E38"/>
                 <text x="50%" y="62%" text-anchor="middle" fill="#34D399" font-family="'Inter', sans-serif" font-weight="900" font-size="44">Cp</text>
@@ -1381,8 +1219,8 @@ a {
           </div>
 
           <!-- 3. Articulate Rise -->
-          <div class="tool-tile">
-            <div class="tool-vector-logo">
+          <div class="tool-tile-card">
+            <div class="tool-logo-img">
               <svg viewBox="0 0 100 100">
                 <rect width="92" height="92" x="4" y="4" rx="20" fill="#0284C7"/>
                 <text x="50%" y="64%" text-anchor="middle" fill="#FFFFFF" font-family="'Inter', sans-serif" font-weight="800" font-size="46">r</text>
@@ -1392,16 +1230,16 @@ a {
           </div>
 
           <!-- 4. Microsoft PowerPoint -->
-          <div class="tool-tile">
-            <div class="tool-vector-logo">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/powerpoint/powerpoint-original.svg" alt="Microsoft PowerPoint Logo">
+          <div class="tool-tile-card">
+            <div class="tool-logo-img">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/powerpoint/powerpoint-original.svg" alt="PowerPoint Logo">
             </div>
             <span>PowerPoint</span>
           </div>
 
           <!-- 5. Microsoft Word -->
-          <div class="tool-tile">
-            <div class="tool-vector-logo">
+          <div class="tool-tile-card">
+            <div class="tool-logo-img">
               <svg viewBox="0 0 100 100">
                 <rect width="88" height="88" x="6" y="6" rx="16" fill="#185ABD"/>
                 <path d="M26 28h11l8 30 8-30h11l8 44H61l-5-28-7 28H41l-7-28-5 28H18z" fill="#FFFFFF"/>
@@ -1411,8 +1249,8 @@ a {
           </div>
 
           <!-- 6. Microsoft Excel -->
-          <div class="tool-tile">
-            <div class="tool-vector-logo">
+          <div class="tool-tile-card">
+            <div class="tool-logo-img">
               <svg viewBox="0 0 100 100">
                 <rect width="88" height="88" x="6" y="6" rx="16" fill="#107C41"/>
                 <path d="M30 28h14l11 18 11-18h14L63 50l18 22H67L55 53l-11 19H30l18-22z" fill="#FFFFFF"/>
@@ -1422,40 +1260,40 @@ a {
           </div>
 
           <!-- 7. Adobe Photoshop -->
-          <div class="tool-tile">
-            <div class="tool-vector-logo">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/photoshop/photoshop-original.svg" alt="Adobe Photoshop Logo">
+          <div class="tool-tile-card">
+            <div class="tool-logo-img">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/photoshop/photoshop-original.svg" alt="Photoshop Logo">
             </div>
             <span>Photoshop</span>
           </div>
 
           <!-- 8. Adobe Illustrator -->
-          <div class="tool-tile">
-            <div class="tool-vector-logo">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/illustrator/illustrator-plain.svg" alt="Adobe Illustrator Logo">
+          <div class="tool-tile-card">
+            <div class="tool-logo-img">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/illustrator/illustrator-plain.svg" alt="Illustrator Logo">
             </div>
             <span>Illustrator</span>
           </div>
 
           <!-- 9. Adobe Premiere Pro -->
-          <div class="tool-tile">
-            <div class="tool-vector-logo">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/premierepro/premierepro-original.svg" alt="Adobe Premiere Pro Logo">
+          <div class="tool-tile-card">
+            <div class="tool-logo-img">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/premierepro/premierepro-original.svg" alt="Premiere Pro Logo">
             </div>
             <span>Premiere Pro</span>
           </div>
 
           <!-- 10. Adobe After Effects -->
-          <div class="tool-tile">
-            <div class="tool-vector-logo">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/aftereffects/aftereffects-original.svg" alt="Adobe After Effects Logo">
+          <div class="tool-tile-card">
+            <div class="tool-logo-img">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/aftereffects/aftereffects-original.svg" alt="After Effects Logo">
             </div>
             <span>After Effects</span>
           </div>
 
           <!-- 11. LearnDash LMS -->
-          <div class="tool-tile">
-            <div class="tool-vector-logo">
+          <div class="tool-tile-card">
+            <div class="tool-logo-img">
               <svg viewBox="0 0 100 100">
                 <rect width="90" height="90" x="5" y="5" rx="20" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="2"/>
                 <rect x="22" y="48" width="14" height="28" rx="4" fill="#3B82F6"/>
@@ -1467,8 +1305,8 @@ a {
           </div>
 
           <!-- 12. Articulate 360 -->
-          <div class="tool-tile">
-            <div class="tool-vector-logo">
+          <div class="tool-tile-card">
+            <div class="tool-logo-img">
               <svg viewBox="0 0 100 100">
                 <circle cx="50" cy="50" r="38" fill="none" stroke="#0284C7" stroke-width="14"/>
                 <circle cx="50" cy="20" r="8" fill="#38BDF8"/>
@@ -1478,8 +1316,8 @@ a {
           </div>
 
           <!-- 13. Camtasia -->
-          <div class="tool-tile">
-            <div class="tool-vector-logo">
+          <div class="tool-tile-card">
+            <div class="tool-logo-img">
               <svg viewBox="0 0 100 100">
                 <rect width="88" height="88" x="6" y="6" rx="18" fill="#22C55E"/>
                 <path d="M68 34H36a6 6 0 00-6 6v20a6 6 0 006 6h32" fill="none" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round"/>
@@ -1489,8 +1327,8 @@ a {
           </div>
 
           <!-- 14. Vyond -->
-          <div class="tool-tile">
-            <div class="tool-vector-logo">
+          <div class="tool-tile-card">
+            <div class="tool-logo-img">
               <svg viewBox="0 0 100 100">
                 <rect width="88" height="88" x="6" y="6" rx="18" fill="#FFF7ED" stroke="#FED7AA" stroke-width="2"/>
                 <path d="M30 30L50 68L70 30" fill="none" stroke="#EA580C" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1500,61 +1338,64 @@ a {
           </div>
 
           <!-- 15. Figma -->
-          <div class="tool-tile">
-            <div class="tool-vector-logo">
+          <div class="tool-tile-card">
+            <div class="tool-logo-img">
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" alt="Figma Logo">
             </div>
             <span>Figma</span>
           </div>
+
         </div>
       </div>
+
     </div>
   </div>
 </section>
 
-<section id="process" class="section-padding">
+<!-- MY PROCESS -->
+<section id="process" class="site-section">
   <div class="container">
-    <span class="section-eyebrow">My Process</span>
-    <h2 class="section-heading-bar" style="margin-bottom: 8px;">From Ideas to Impact</h2>
+    <span class="section-tag">My Process</span>
+    <h2 class="section-title" style="margin-bottom: 8px;">From Ideas to Impact</h2>
     <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 30px;">
       A simple, structured approach to create learning experiences that work.
     </p>
 
-    <div class="process-grid-split">
-      <div class="process-steps-row">
-        <div class="process-node">
-          <div class="process-bubble"><i class="fa-solid fa-clipboard-list"></i></div>
-          <div class="node-info-text">
+    <div class="process-layout-grid">
+      <div class="process-step-chain">
+        <div class="process-step-item">
+          <div class="process-step-circle"><i class="fa-solid fa-clipboard-list"></i></div>
+          <div class="process-step-details">
             <span>01</span>
             <strong>Understand</strong>
             <small>Learning Needs</small>
           </div>
         </div>
-        <div class="process-arrow">&rarr;</div>
+        <div style="color:#CBD5E1; font-size:18px;">&rarr;</div>
 
-        <div class="process-node">
-          <div class="process-bubble"><i class="fa-solid fa-lightbulb"></i></div>
-          <div class="node-info-text">
+        <div class="process-step-item">
+          <div class="process-step-circle"><i class="fa-solid fa-lightbulb"></i></div>
+          <div class="process-step-details">
             <span>02</span>
             <strong>Design</strong>
             <small>Engaging Solutions</small>
           </div>
         </div>
-        <div class="process-arrow">&rarr;</div>
+        <div style="color:#CBD5E1; font-size:18px;">&rarr;</div>
 
-        <div class="process-node">
-          <div class="process-bubble"><i class="fa-solid fa-gear"></i></div>
-          <div class="node-info-text">
+        <div class="process-step-item">
+          <div class="process-step-circle"><i class="fa-solid fa-gear"></i></div>
+          <div class="process-step-details">
             <span>03</span>
             <strong>Develop</strong>
             <small>Using the Right Tools</small>
           </div>
         </div>
-        <div class="process-arrow">&rarr;</div>
+        <div style="color:#CBD5E1; font-size:18px;">&rarr;</div>
 
-        <div class="process-node">
-          <div class="process-bubble"><i class="fa-solid fa-chart-line"></i></div>
-          <div class="node-info-text">
+        <div class="process-step-item">
+          <div class="process-step-circle"><i class="fa-solid fa-chart-line"></i></div>
+          <div class="process-step-details">
             <span>04</span>
             <strong>Deliver</strong>
             <small>Measurable Impact</small>
@@ -1562,71 +1403,72 @@ a {
         </div>
       </div>
 
-      <div class="cursive-process-quote">
+      <div class="process-cursive-callout">
         Simple Ideas.<br>Meaningful<br>Change.
       </div>
     </div>
   </div>
 </section>
 
-<section class="mountain-banner-section">
-  <div class="container banner-grid">
+<!-- WHY I DO THIS BANNER -->
+<section class="banner-inspiration">
+  <div class="container banner-content-grid">
     <div>
-      <span style="font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: #DDD6FE; margin-bottom: 8px; display: block;">Why I Do This</span>
-      <h2 class="banner-title">Because Learning<br>Changes People.</h2>
+      <span style="font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: #A5B4FC; margin-bottom: 8px; display: block;">Why I Do This</span>
+      <h2 class="banner-title">Because Learning Changes People.</h2>
       <p class="banner-desc">
         I believe well-designed learning can build skills, create opportunities and transform lives. That's what keeps me motivated.
       </p>
 
-      <a href="#contact" class="btn-purple-primary">
+      <a href="#contact" class="btn-banner-glow">
         Let's Create Impact &rarr;
       </a>
     </div>
 
-    <div class="banner-checklist-grid">
-      <div class="banner-check-item"><i class="fa-solid fa-book-open"></i> Learn</div>
-      <div class="banner-check-item"><i class="fa-solid fa-users"></i> Grow</div>
-      <div class="banner-check-item"><i class="fa-solid fa-bullseye"></i> Perform</div>
-      <div class="banner-check-item"><i class="fa-solid fa-chart-line"></i> Succeed</div>
+    <div>
+      <div class="banner-checklist-grid">
+        <div class="banner-check-item"><i class="fa-solid fa-book-open"></i> Learn</div>
+        <div class="banner-check-item"><i class="fa-solid fa-users"></i> Grow</div>
+        <div class="banner-check-item"><i class="fa-solid fa-bullseye"></i> Perform</div>
+        <div class="banner-check-item"><i class="fa-solid fa-chart-line"></i> Succeed</div>
+      </div>
     </div>
   </div>
 </section>
 
-<section id="contact" class="section-padding">
-  <div class="container contact-grid">
+<!-- LET'S CONNECT SECTION -->
+<section id="contact" class="site-section">
+  <div class="container contact-section-grid">
     <div>
-      <span class="section-eyebrow">Let's Connect</span>
-      <h2 class="section-heading-bar" style="margin-bottom: 12px;">
-        Let's Create<br>Better Learning Together.
-      </h2>
-      <p style="font-size: 14.5px; color: var(--text-body); margin-bottom: 20px;">
+      <span class="section-tag">Let's Connect</span>
+      <h2 class="section-title" style="margin-bottom: 12px;">Let's Create Better Learning Together.</h2>
+      <p style="font-size: 14.5px; color: var(--text-body);">
         I'm always open to discussing new opportunities, collaborations or ideas.
       </p>
 
-      <div class="contact-info-list">
+      <div class="contact-list-vertical">
         <a href="mailto:sv393015@gmail.com" class="contact-row-entry">
-          <div class="contact-circle-icon"><i class="fa-solid fa-envelope"></i></div>
+          <div class="contact-circle-bubble"><i class="fa-solid fa-envelope"></i></div>
           <span>sv393015@gmail.com</span>
         </a>
         <a href="tel:+919353080994" class="contact-row-entry">
-          <div class="contact-circle-icon"><i class="fa-solid fa-phone"></i></div>
+          <div class="contact-circle-bubble"><i class="fa-solid fa-phone"></i></div>
           <span>+91 93530 80994</span>
         </a>
         <a href="https://www.linkedin.com/in/chandru-elearning" target="_blank" rel="noopener noreferrer" class="contact-row-entry">
-          <div class="contact-circle-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+          <div class="contact-circle-bubble"><i class="fa-brands fa-linkedin-in"></i></div>
           <span>linkedin.com/in/chandru-elearning</span>
         </a>
         <div class="contact-row-entry">
-          <div class="contact-circle-icon"><i class="fa-solid fa-location-dot"></i></div>
+          <div class="contact-circle-bubble"><i class="fa-solid fa-location-dot"></i></div>
           <span>Bengaluru, Karnataka, India</span>
         </div>
       </div>
 
-      <a href="mailto:sv393015@gmail.com" class="btn-purple-primary">Get in Touch &rarr;</a>
+      <a href="mailto:sv393015@gmail.com" class="btn-hero-primary">Get in Touch &rarr;</a>
     </div>
 
-    <!-- Desk Tablet Whiteboard Display -->
-    <div class="framed-whiteboard-sign">
+    <div class="framed-desk-signboard">
       <h3>Ideas<br>People<br>Learning<br>Impact</h3>
       <div class="accent-bar"></div>
       <p style="font-size: 13.5px; color: var(--text-muted);">Designing engaging experiences that empower.</p>
@@ -1634,15 +1476,17 @@ a {
   </div>
 </section>
 
-<footer class="footer-wrap">
+<!-- FOOTER -->
+<footer class="footer-wrapper">
   <div class="container">
-    <div class="footer-inner-row">
+    
+    <div class="footer-inner">
       <div class="footer-brand">
         <div class="footer-brand-logo">CS</div>
         <span>Chandirakkumar S &bull; Instructional Designer</span>
       </div>
 
-      <nav class="footer-nav-links">
+      <nav class="footer-nav">
         <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
@@ -1658,22 +1502,24 @@ a {
       </div>
     </div>
 
-    <div class="thankyou-script-footer">Thank you for visiting!</div>
+    <div class="thankyou-calligraphy">Thank you for visiting!</div>
 
     <div class="footer-bottom-bar">
       <div>&copy; 2026 Chandirakkumar S. All rights reserved.</div>
-      <a href="#home" class="btn-scroll-top-round" aria-label="Scroll to top">&uarr;</a>
+      <a href="#home" class="btn-back-top-round" aria-label="Back to Top">&uarr;</a>
     </div>
+
   </div>
 </footer>
 
+<!-- LIGHTBOX MODAL -->
 <div id="previewModal" class="modal-overlay" onclick="closeModalDirect(event)">
-  <div class="modal-card-box">
-    <div class="modal-header-strip">
-      <span>Project Interactive Demo</span>
-      <button class="modal-close-btn" onclick="closeModal()">&times;</button>
+  <div class="modal-box">
+    <div class="modal-bar">
+      <span style="font-weight: 700; font-size: 14px;">Project Interactive Demo</span>
+      <button onclick="closeModal()">&times;</button>
     </div>
-    <div class="modal-video-frame">
+    <div class="modal-frame">
       <iframe id="modalIframe" src="" allow="autoplay; fullscreen"></iframe>
     </div>
   </div>
@@ -1685,20 +1531,14 @@ function openModal(url) {
   document.getElementById('previewModal').classList.add('active');
   document.body.style.overflow = 'hidden';
 }
-
 function closeModal() {
   document.getElementById('modalIframe').src = '';
   document.getElementById('previewModal').classList.remove('active');
   document.body.style.overflow = 'auto';
 }
-
 function closeModalDirect(e) {
   if (e.target.id === 'previewModal') closeModal();
 }
-
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') closeModal();
-});
 </script>
 
 </body>
