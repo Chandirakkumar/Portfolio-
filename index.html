@@ -5,15 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chandirakkumar S | Instructional Designer & eLearning Developer</title>
 
-  <!-- Google Fonts: Inter for crisp typography & Caveat for natural handwritten annotations -->
+  <!-- Fonts: Inter for sharp UI & Caveat for authentic handwriting annotations -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@350;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Font Awesome Icons for high-definition symbols and branding -->
+  <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
   <script>
@@ -31,22 +31,20 @@
               200: '#BFDBFE',
               300: '#93C5FD',
               400: '#60A5FA',
-              500: '#2563EB',
-              600: '#1D4ED8',
-              700: '#1E40AF',
-              800: '#1E3A8A',
-              900: '#172554',
+              500: '#0066FF',
+              600: '#0052CC',
+              700: '#003D99',
             },
-            surface: '#FFFFFF',
+            deepNavy: '#0A1128',
+            surfaceCard: '#FFFFFF',
             slateSubtle: '#F8FAFC',
-            charcoal: '#0F172A',
-            bodyMuted: '#64748B',
+            slateMuted: '#64748B',
             borderSubtle: '#E2E8F0',
           },
           boxShadow: {
-            card: '0 4px 20px -2px rgba(15, 23, 42, 0.05), 0 2px 6px -1px rgba(15, 23, 42, 0.03)',
-            cardHover: '0 12px 30px -4px rgba(37, 99, 235, 0.12), 0 6px 14px -2px rgba(15, 23, 42, 0.05)',
-            glow: '0 0 25px rgba(37, 99, 235, 0.25)',
+            card: '0 4px 20px -2px rgba(15, 23, 42, 0.06), 0 2px 6px -1px rgba(15, 23, 42, 0.04)',
+            cardHover: '0 16px 32px -4px rgba(0, 102, 255, 0.14), 0 6px 16px -2px rgba(15, 23, 42, 0.06)',
+            featured: '0 20px 40px -10px rgba(10, 17, 40, 0.45)',
           }
         }
       }
@@ -54,801 +52,765 @@
   </script>
 
   <style>
-    /* Custom background with atmospheric soft blue glow gradients matching screenshot */
+    /* Custom background pattern and radial soft atmospheric glow */
     body {
       background-color: #F8FAFC;
       background-image: 
-        radial-gradient(at 0% 0%, rgba(219, 234, 254, 0.6) 0px, transparent 50%),
-        radial-gradient(at 100% 12%, rgba(224, 242, 254, 0.7) 0px, transparent 48%),
-        radial-gradient(at 85% 88%, rgba(238, 242, 255, 0.6) 0px, transparent 40%),
-        radial-gradient(at 15% 75%, rgba(224, 231, 255, 0.4) 0px, transparent 40%);
+        radial-gradient(at 0% 0%, rgba(219, 234, 254, 0.7) 0px, transparent 45%),
+        radial-gradient(at 100% 10%, rgba(224, 242, 254, 0.7) 0px, transparent 40%),
+        radial-gradient(at 95% 85%, rgba(239, 246, 255, 0.8) 0px, transparent 50%),
+        radial-gradient(at 5% 90%, rgba(241, 245, 249, 0.9) 0px, transparent 40%);
       background-attachment: fixed;
       font-feature-settings: "cv02", "cv03", "cv04", "cv11";
     }
 
-    /* Subtle dot grid pattern */
     .bg-dot-pattern {
       background-image: radial-gradient(#CBD5E1 1.5px, transparent 1.5px);
-      background-size: 18px 18px;
+      background-size: 16px 16px;
     }
 
-    /* Pulse animation for available badge */
-    @keyframes pulse-ring {
-      0% { transform: scale(0.95); opacity: 0.8; }
-      50% { transform: scale(1.35); opacity: 0; }
-      100% { transform: scale(0.95); opacity: 0; }
-    }
-    .status-pulse::before {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      background: #10B981;
-      animation: pulse-ring 2s infinite ease-in-out;
-    }
-
-    /* Smooth transitions */
     .btn-press:active {
       transform: scale(0.98);
     }
-
-    /* Modal Backdrop Blur */
+    
     .modal-active {
       overflow: hidden;
     }
   </style>
 </head>
-<body class="text-charcoal antialiased min-h-screen flex flex-col justify-between selection:bg-brand-500 selection:text-white">
+<body class="text-slate-900 antialiased min-h-screen flex flex-col justify-between selection:bg-brand-500 selection:text-white">
 
-  <header class="sticky top-0 z-40 bg-white/85 backdrop-blur-md border-b border-borderSubtle transition-all duration-300">
-    <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 h-18 py-3.5 flex items-center justify-between">
+  <!-- TOP STICKY NAVBAR -->
+  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-borderSubtle transition-all">
+    <div class="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       
-      <!-- Brand Logo / Avatar -->
+      <!-- Brand Logo -->
       <a href="#about" class="flex items-center gap-3 group">
-        <span class="w-4 h-4 rounded-full bg-brand-500/20 flex items-center justify-center group-hover:scale-110 transition-transform">
-          <span class="w-2 h-2 rounded-full bg-brand-500"></span>
-        </span>
-        <span class="text-xl font-extrabold tracking-tight text-slate-900 group-hover:text-brand-500 transition-colors">
-          Chandirakkumar
-        </span>
+        <div class="w-10 h-10 rounded-full border-2 border-brand-500 flex items-center justify-center font-bold text-xl text-brand-500 group-hover:scale-105 transition-transform bg-white shadow-sm">
+          C
+        </div>
+        <div>
+          <span class="text-lg font-extrabold tracking-tight text-slate-900 block leading-tight">
+            Chandirakkumar
+          </span>
+          <span class="text-xs font-semibold text-slate-500 block leading-tight">
+            Instructional Designer
+          </span>
+        </div>
       </a>
 
       <!-- Navigation Links -->
-      <nav class="hidden md:flex items-center space-x-1 lg:space-x-3 text-[14.5px] font-semibold text-slate-600">
-        <a href="#about" class="px-4 py-2 rounded-xl hover:text-brand-600 hover:bg-brand-50 transition-colors">About</a>
-        <a href="#overview" class="px-4 py-2 rounded-xl hover:text-brand-600 hover:bg-brand-50 transition-colors">Overview</a>
-        <a href="#projects" class="px-4 py-2 rounded-xl hover:text-brand-600 hover:bg-brand-50 transition-colors">Projects</a>
-        <a href="#skills" class="px-4 py-2 rounded-xl hover:text-brand-600 hover:bg-brand-50 transition-colors">Skills</a>
-        <a href="#contact" class="px-4 py-2 rounded-xl hover:text-brand-600 hover:bg-brand-50 transition-colors">Contact</a>
+      <nav class="hidden md:flex items-center space-x-2 lg:space-x-4 text-[14.5px] font-semibold text-slate-600">
+        <a href="#about" class="px-3.5 py-2 rounded-xl hover:text-brand-600 hover:bg-brand-50 transition-colors">About</a>
+        <a href="#work" class="px-3.5 py-2 rounded-xl hover:text-brand-600 hover:bg-brand-50 transition-colors">Work</a>
+        <a href="#skills" class="px-3.5 py-2 rounded-xl hover:text-brand-600 hover:bg-brand-50 transition-colors">Skills</a>
+        <a href="#contact" class="px-3.5 py-2 rounded-xl hover:text-brand-600 hover:bg-brand-50 transition-colors">Contact</a>
       </nav>
 
       <!-- CTA Button -->
-      <div class="flex items-center gap-3">
-        <a href="#contact" class="inline-flex items-center gap-2 bg-brand-500 hover:bg-brand-600 text-white text-sm font-semibold px-5 py-2.5 rounded-full shadow-md shadow-brand-500/25 hover:shadow-lg hover:shadow-brand-500/35 transition-all duration-200 btn-press">
-          <i class="fa-solid fa-paper-plane text-xs"></i>
+      <div>
+        <a href="#contact" class="inline-flex items-center gap-2 bg-brand-500 hover:bg-brand-600 text-white text-sm font-bold px-5 py-2.5 rounded-full shadow-md shadow-brand-500/25 hover:shadow-lg hover:shadow-brand-500/35 transition-all duration-200 btn-press">
           <span>Let's Connect</span>
+          <i class="fa-solid fa-arrow-right text-xs"></i>
         </a>
       </div>
     </div>
   </header>
 
-  <main class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-16 w-full">
+  <!-- MAIN CONTENT CONTAINER -->
+  <main class="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-16 w-full flex-1">
 
     <!-- HERO SECTION -->
-    <section id="about" class="relative pt-6 pb-12 lg:pt-10 lg:pb-16 overflow-hidden">
-      
-      <!-- Decorative faint dot grid top-left -->
-      <div class="absolute -top-4 -left-6 w-36 h-36 bg-dot-pattern opacity-40 pointer-events-none rounded-full"></div>
-      <div class="absolute top-10 left-36 w-16 h-16 rounded-full bg-blue-100/50 blur-xl pointer-events-none"></div>
-
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+    <section id="about" class="relative pt-4 pb-16 lg:pt-8 lg:pb-20">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
         
-        <!-- Left: Avatar with Ring & Handwritten Arrow Note -->
-        <div class="lg:col-span-4 flex flex-col items-center justify-center relative">
-          <div class="relative w-56 h-56 sm:w-64 sm:h-64 rounded-full p-2.5 bg-white shadow-xl ring-4 ring-blue-100/80 transition-transform duration-300 hover:scale-[1.01]">
-            <img 
-              src="IMG_20260409_223924.jpg" 
-              onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80';"
-              alt="Chandirakkumar S" 
-              class="w-full h-full object-cover rounded-full shadow-inner bg-slate-100"
-            >
-            <!-- Online status green badge -->
-            <div class="absolute bottom-4 right-5 w-6 h-6 bg-emerald-500 border-4 border-white rounded-full shadow-md">
-              <span class="relative flex h-full w-full">
-                <span class="status-pulse absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-              </span>
-            </div>
+        <!-- Left Hero Content (7 Cols) -->
+        <div class="lg:col-span-7 space-y-5">
+          <!-- Greeting Pill Badge -->
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-50 text-brand-600 border border-brand-100 text-xs sm:text-sm font-semibold shadow-xs">
+            <span>Welcome to my Portfolio</span>
+            <span>👋</span>
           </div>
 
-          <!-- Handwritten Slogan: "Turning Learning into Impact" with custom curved arrow SVG -->
-          <div class="relative -mt-3 sm:-mt-1 sm:left-[-35px] text-center lg:text-left flex items-start">
-            <svg class="w-12 h-14 text-slate-700 -rotate-12 transform" viewBox="0 0 50 60" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M 40 10 Q 15 25 22 45" />
-              <path d="M 14 38 L 22 46 L 28 36" />
-            </svg>
-            <span class="font-handwriting text-2xl text-slate-700 font-bold tracking-wide transform -rotate-6 pt-2 block">
-              Turning<br>Learning into<br>Impact
-            </span>
-          </div>
-        </div>
-
-        <!-- Center / Info Content -->
-        <div class="lg:col-span-5 text-center lg:text-left space-y-4">
-          <div>
-            <span class="text-brand-500 font-semibold text-lg sm:text-xl tracking-tight">Hello, I'm</span>
-            <h1 class="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 mt-1">
+          <!-- Main Title & Structured Subheaders -->
+          <div class="space-y-2">
+            <h1 class="text-4xl sm:text-5xl lg:text-[54px] font-black tracking-tight text-slate-900 leading-tight">
               Chandirakkumar S
             </h1>
-            <p class="text-brand-600 font-semibold text-base sm:text-lg mt-2 leading-snug">
-              Instructional Designer | eLearning & Multimedia Developer | Visual Designer
+            <p class="text-xs sm:text-sm font-bold tracking-[0.28em] text-slate-800 uppercase">
+              I N S T R U C T I O N A L &nbsp; D E S I G N E R
+            </p>
+            <p class="text-xs sm:text-[13px] font-bold text-slate-500 tracking-wider uppercase">
+              eLEARNING DEVELOPER &nbsp;|&nbsp; MULTIMEDIA CREATOR &nbsp;|&nbsp; VISUAL DESIGNER
             </p>
           </div>
 
-          <p class="text-slate-600 text-sm sm:text-base leading-relaxed max-w-xl">
-            Instructional Designer with 1+ year of experience in Storyline 360, LMS Management, SCORM publishing, and interactive eLearning development.
+          <!-- Bio Description -->
+          <p class="text-slate-600 text-base sm:text-lg leading-relaxed max-w-xl font-normal pt-1">
+            I turn complex information into simple, engaging and memorable learning experiences.
           </p>
 
-          <!-- Badges -->
-          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-1 pb-2">
-            <!-- Location Badge -->
-            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200 text-slate-700 text-xs sm:text-sm font-medium shadow-sm">
-              <i class="fa-solid fa-location-dot text-rose-500"></i>
-              <span>Bengaluru, Karnataka, India</span>
-            </div>
-
-            <!-- Opportunities Badge -->
-            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200 text-slate-700 text-xs sm:text-sm font-medium shadow-sm">
-              <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-              <span>Available for Opportunities</span>
-            </div>
-          </div>
-
-          <!-- Action Buttons -->
-          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
-            <a href="#projects" class="inline-flex items-center gap-2.5 bg-brand-500 hover:bg-brand-600 text-white font-bold px-6 py-3 rounded-xl shadow-lg shadow-brand-500/25 hover:shadow-brand-500/35 transition-all text-sm sm:text-base btn-press">
-              <i class="fa-solid fa-play text-xs"></i>
+          <!-- CTA Buttons -->
+          <div class="flex flex-wrap items-center gap-3 pt-2">
+            <a href="#work" class="inline-flex items-center gap-2 bg-brand-500 hover:bg-brand-600 text-white font-bold px-6 py-3 rounded-xl shadow-lg shadow-brand-500/25 hover:shadow-brand-500/35 transition-all text-sm btn-press">
               <span>View My Work</span>
+              <i class="fa-solid fa-arrow-right text-xs"></i>
             </a>
 
-            <button onclick="downloadResumeModal()" class="inline-flex items-center gap-2.5 bg-white hover:bg-slate-50 text-slate-800 border border-slate-300 font-bold px-6 py-3 rounded-xl shadow-sm hover:border-slate-400 transition-all text-sm sm:text-base btn-press">
-              <i class="fa-solid fa-download text-slate-600"></i>
+            <button onclick="downloadResumeModal()" class="inline-flex items-center gap-2 bg-white hover:bg-slate-50 text-slate-800 border border-slate-300 font-bold px-6 py-3 rounded-xl shadow-sm hover:border-slate-400 transition-all text-sm btn-press">
+              <i class="fa-solid fa-download text-brand-500 text-xs"></i>
               <span>Download Resume</span>
             </button>
           </div>
+
+          <!-- Experience Stats Counter Row -->
+          <div class="grid grid-cols-3 gap-6 pt-6 border-t border-slate-200/80 max-w-lg">
+            <div>
+              <span class="text-2xl sm:text-3xl font-black text-brand-500 block leading-tight">01+</span>
+              <span class="text-xs sm:text-sm font-medium text-slate-600 leading-tight">Years of Experience</span>
+            </div>
+            <div class="border-l border-slate-200 pl-4 sm:pl-6">
+              <span class="text-2xl sm:text-3xl font-black text-brand-500 block leading-tight">100+</span>
+              <span class="text-xs sm:text-sm font-medium text-slate-600 leading-tight">Modules Developed</span>
+            </div>
+            <div class="border-l border-slate-200 pl-4 sm:pl-6">
+              <span class="text-2xl sm:text-3xl font-black text-brand-500 block leading-tight">10+</span>
+              <span class="text-xs sm:text-sm font-medium text-slate-600 leading-tight">Tools & Technologies</span>
+            </div>
+          </div>
         </div>
 
-        <!-- Right Side: Handwritten Callout & Modern Workspace Graphic Aesthetic -->
-        <div class="lg:col-span-3 flex flex-col items-center lg:items-end justify-center relative select-none">
-          <div class="text-right space-y-1 mb-3">
-            <div class="font-handwriting text-3xl sm:text-4xl text-brand-500 font-bold leading-tight -rotate-3">
+        <!-- Right Hero Graphic Visual Workspace (5 Cols) -->
+        <div class="lg:col-span-5 relative flex justify-center items-center">
+          
+          <!-- Subtle dot-grid backdrop element -->
+          <div class="absolute -top-6 right-20 w-32 h-32 bg-dot-pattern opacity-40 pointer-events-none"></div>
+
+          <!-- Hand-drawn Cursive Slogan: "Design Develop Deliver Better Learning" -->
+          <div class="absolute -top-6 -right-2 sm:right-2 z-20 text-right pointer-events-none select-none">
+            <span class="font-handwriting text-2xl sm:text-3xl text-brand-600 font-bold leading-tight block transform -rotate-6">
               Design<br>
-              <span class="pl-4">Engage</span><br>
-              <span class="pl-8">Educate</span><br>
-              <span class="pl-12 text-brand-600">Empower</span>
-            </div>
-            <!-- Hand drawn accent squiggle -->
-            <svg class="w-28 h-6 text-brand-400 ml-auto -mt-1" viewBox="0 0 100 20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
-              <path d="M 5 15 Q 35 2 60 12 T 95 8" />
+              <span class="pl-3">Develop</span><br>
+              <span class="pl-6">Deliver</span><br>
+              <span class="pl-8 text-brand-700">Better Learning</span>
+            </span>
+            <svg class="w-20 h-5 text-brand-400 ml-auto -mt-1" viewBox="0 0 80 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <path d="M 5 15 Q 35 2 75 10" />
             </svg>
           </div>
 
-          <!-- Minimal modern workspace coffee mug card aesthetic -->
-          <div class="relative w-48 sm:w-56 rounded-2xl p-4 bg-white/70 backdrop-blur-md border border-white/80 shadow-card flex items-center gap-3">
-            <div class="w-12 h-12 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center text-amber-600 text-xl shrink-0">
-              <i class="fa-solid fa-mug-hot"></i>
+          <!-- Composite Hero Desk / Portrait Container -->
+          <div class="relative w-full max-w-md pt-8">
+            <!-- Cutout Profile Photo / Realistic Card Composition -->
+            <div class="relative rounded-3xl overflow-hidden bg-gradient-to-b from-blue-50/70 to-slate-100 p-2.5 border border-white shadow-xl">
+              <div class="relative w-full aspect-[4/4.8] rounded-2xl overflow-hidden bg-slate-200">
+                <img 
+                  src="IMG_20260409_223924.jpg" 
+                  onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=700&q=80';" 
+                  alt="Chandirakkumar S" 
+                  class="w-full h-full object-cover object-top"
+                >
+                <!-- Online Status Marker -->
+                <div class="absolute top-4 right-4 bg-emerald-500 w-3.5 h-3.5 rounded-full border-2 border-white shadow-sm"></div>
+              </div>
             </div>
-            <div class="text-left">
-              <p class="text-[10px] uppercase font-bold tracking-wider text-slate-400">Coffee & Learning</p>
-              <p class="text-xs font-bold text-slate-800 uppercase leading-tight font-mono">Good Ideas Lead To Great Learning</p>
+
+            <!-- Overlaid Potted Desk Plant & Ideas Label -->
+            <div class="absolute -bottom-4 left-4 z-20 bg-white/90 backdrop-blur-md p-3 rounded-2xl border border-white/80 shadow-card flex items-center gap-2.5">
+              <div class="w-9 h-9 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-sm font-bold">
+                <i class="fa-solid fa-leaf"></i>
+              </div>
+              <div class="text-[11px] leading-snug font-bold text-slate-800">
+                <p>Ideas • Design</p>
+                <p class="text-slate-500 font-normal">Develop • Impact</p>
+              </div>
             </div>
+
+            <!-- Overlaid Laptop & Inspiration Note -->
+            <div class="absolute -bottom-6 right-2 sm:right-6 z-20 bg-slate-900 text-white p-3.5 rounded-2xl border border-slate-700 shadow-xl max-w-[180px] hidden sm:block">
+              <p class="font-handwriting text-base text-amber-300 font-bold leading-tight">
+                Good Learning Changes People ☺
+              </p>
+              <div class="flex items-center gap-1 text-[10px] text-slate-400 mt-1">
+                <i class="fa-solid fa-laptop text-[10px]"></i> Storyline 360 & LMS
+              </div>
+            </div>
+
           </div>
         </div>
 
       </div>
     </section>
 
-    <section id="overview" class="mb-20 scroll-mt-24">
-      <!-- Section Header -->
-      <div class="mb-8 pl-4 border-l-4 border-brand-500">
-        <h2 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">Dashboard Overview</h2>
-        <p class="text-slate-500 text-sm sm:text-base font-medium mt-0.5">Quick overview of my work and experience.</p>
-      </div>
-
-      <!-- 2-Row / 5-Column Responsive Cards Grid matching image -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+    <!-- FEATURED PROJECTS SECTION (DARK BLUE IMMERSIVE SHOWCASE) -->
+    <section id="work" class="mb-20 scroll-mt-24">
+      <div class="bg-deepNavy rounded-3xl p-6 sm:p-10 text-white shadow-featured relative overflow-hidden">
         
-        <!-- Card 1 -->
-        <div class="bg-white rounded-2xl p-4 border border-borderSubtle shadow-card hover:shadow-cardHover hover:border-brand-200 transition-all duration-200 flex flex-col justify-between group">
-          <div class="flex items-start justify-between">
-            <div class="w-10 h-10 rounded-xl bg-blue-50 text-brand-500 flex items-center justify-center text-lg group-hover:scale-110 transition-transform">
-              <i class="fa-solid fa-book-open"></i>
+        <!-- Subtle Glow Effect in background -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <!-- Section Header with Ribbon & View All Link -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 pb-4 border-b border-slate-800 relative z-10">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-brand-500/20 text-brand-400 flex items-center justify-center text-lg border border-brand-500/30">
+              <i class="fa-solid fa-bookmark"></i>
             </div>
-            <i class="fa-solid fa-chevron-right text-xs text-slate-300 group-hover:text-brand-500 group-hover:translate-x-0.5 transition-all"></i>
+            <div>
+              <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white">Featured Projects</h2>
+              <p class="text-slate-400 text-xs sm:text-sm font-medium mt-0.5">
+                A few of my recent eLearning and multimedia projects.
+              </p>
+            </div>
           </div>
-          <div class="mt-3">
-            <h3 class="font-bold text-slate-900 text-sm">100+ Modules</h3>
-            <p class="text-slate-500 text-xs mt-1 leading-snug">Interactive eLearning modules developed.</p>
-          </div>
+
+          <a href="#work" class="inline-flex items-center gap-2 text-sm font-bold text-slate-300 hover:text-white transition-colors">
+            <span>View All Projects</span>
+            <i class="fa-solid fa-arrow-right text-xs"></i>
+          </a>
         </div>
 
-        <!-- Card 2 -->
-        <div class="bg-white rounded-2xl p-4 border border-borderSubtle shadow-card hover:shadow-cardHover hover:border-brand-200 transition-all duration-200 flex flex-col justify-between group">
-          <div class="flex items-start justify-between">
-            <div class="w-10 h-10 rounded-xl bg-rose-50 text-rose-500 flex items-center justify-center text-lg group-hover:scale-110 transition-transform">
-              <i class="fa-solid fa-bullseye"></i>
-            </div>
-            <i class="fa-solid fa-chevron-right text-xs text-slate-300 group-hover:text-brand-500 group-hover:translate-x-0.5 transition-all"></i>
-          </div>
-          <div class="mt-3">
-            <h3 class="font-bold text-slate-900 text-sm">Instructional Design</h3>
-            <p class="text-slate-500 text-xs mt-1 leading-snug">Scenario-based learning & learner engagement.</p>
-          </div>
-        </div>
+        <!-- 2-Column Showcase Layout -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 relative z-10">
+          
+          <!-- Left Main Featured Card (7 Cols) -->
+          <div class="lg:col-span-7 bg-slate-900/90 rounded-2xl p-5 border border-slate-800 flex flex-col justify-between hover:border-slate-700 transition-all group">
+            
+            <div>
+              <!-- Maritime Ecosystem Module Screen Mockup Container -->
+              <div 
+                onclick="openVideoModal('https://drive.google.com/file/d/1rRtZDmiMiKexJ4jQxXIFJ_b89UR3zWo3/preview', 'Interactive SCORM eLearning - From Ship to Shore')"
+                class="relative aspect-video rounded-xl overflow-hidden bg-slate-950 border border-slate-800 cursor-pointer group/screen"
+              >
+                <!-- Slide Interface Mockup Image -->
+                <div class="w-full h-full relative">
+                  <img 
+                    src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80" 
+                    alt="From Ship to Shore course interface preview" 
+                    class="w-full h-full object-cover opacity-85 group-hover/screen:scale-102 transition-transform duration-300"
+                  >
+                  
+                  <!-- Overlaid Course UI Elements matching Maritime Screen in screenshot -->
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/60 p-4 flex flex-col justify-between">
+                    <div class="flex items-center justify-between text-xs text-white/80">
+                      <span class="font-bold tracking-wider uppercase text-[10px] bg-black/40 px-2 py-0.5 rounded">From Ship to Shore</span>
+                      <div class="flex items-center gap-2 text-[10px]">
+                        <span class="bg-black/50 px-2.5 py-1 rounded text-white/80">Search for a topic... <i class="fa-solid fa-magnifying-glass ml-1"></i></span>
+                        <i class="fa-solid fa-bars text-white"></i>
+                      </div>
+                    </div>
 
-        <!-- Card 3 -->
-        <div class="bg-white rounded-2xl p-4 border border-borderSubtle shadow-card hover:shadow-cardHover hover:border-brand-200 transition-all duration-200 flex flex-col justify-between group">
-          <div class="flex items-start justify-between">
-            <div class="w-10 h-10 rounded-xl bg-sky-50 text-sky-500 flex items-center justify-center text-lg group-hover:scale-110 transition-transform">
-              <i class="fa-solid fa-desktop"></i>
-            </div>
-            <i class="fa-solid fa-chevron-right text-xs text-slate-300 group-hover:text-brand-500 group-hover:translate-x-0.5 transition-all"></i>
-          </div>
-          <div class="mt-3">
-            <h3 class="font-bold text-slate-900 text-sm">Storyline 360</h3>
-            <p class="text-slate-500 text-xs mt-1 leading-snug">Variables, triggers, animations & interactions.</p>
-          </div>
-        </div>
+                    <div class="max-w-md">
+                      <h4 class="text-xl sm:text-2xl font-black text-white leading-tight">From Ship to Shore</h4>
+                      <p class="text-xs text-slate-300 mt-0.5">Understanding the Maritime Ecosystem</p>
+                      
+                      <div class="mt-3 inline-block bg-white text-slate-950 px-3 py-1.5 rounded-lg text-xs font-bold shadow-md">
+                        Module 1: Vessel Lifestyles and Industry Overview
+                      </div>
+                    </div>
 
-        <!-- Card 4 -->
-        <div class="bg-white rounded-2xl p-4 border border-borderSubtle shadow-card hover:shadow-cardHover hover:border-brand-200 transition-all duration-200 flex flex-col justify-between group">
-          <div class="flex items-start justify-between">
-            <div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center text-lg group-hover:scale-110 transition-transform">
-              <i class="fa-solid fa-box-archive"></i>
-            </div>
-            <i class="fa-solid fa-chevron-right text-xs text-slate-300 group-hover:text-brand-500 group-hover:translate-x-0.5 transition-all"></i>
-          </div>
-          <div class="mt-3">
-            <h3 class="font-bold text-slate-900 text-sm">SCORM Publishing</h3>
-            <p class="text-slate-500 text-xs mt-1 leading-snug">SCORM 1.2 packaging & LMS deployment.</p>
-          </div>
-        </div>
+                    <!-- Play Hover Indicator -->
+                    <div class="absolute inset-0 flex items-center justify-center">
+                      <div class="w-14 h-14 rounded-full bg-brand-500/90 text-white flex items-center justify-center text-lg shadow-glow group-hover/screen:scale-115 transition-all">
+                        <i class="fa-solid fa-play ml-1"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-        <!-- Card 5 -->
-        <div class="bg-white rounded-2xl p-4 border border-borderSubtle shadow-card hover:shadow-cardHover hover:border-brand-200 transition-all duration-200 flex flex-col justify-between group">
-          <div class="flex items-start justify-between">
-            <div class="w-10 h-10 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center text-lg group-hover:scale-110 transition-transform">
-              <i class="fa-solid fa-film"></i>
-            </div>
-            <i class="fa-solid fa-chevron-right text-xs text-slate-300 group-hover:text-brand-500 group-hover:translate-x-0.5 transition-all"></i>
-          </div>
-          <div class="mt-3">
-            <h3 class="font-bold text-slate-900 text-sm">Video Editing</h3>
-            <p class="text-slate-500 text-xs mt-1 leading-snug">Adobe Premiere Pro & After Effects projects.</p>
-          </div>
-        </div>
+              <!-- Content details -->
+              <div class="mt-5">
+                <h3 class="text-xl font-bold text-white">Interactive SCORM eLearning</h3>
+                <p class="text-slate-400 text-xs sm:text-sm mt-1.5 leading-relaxed">
+                  Interactive Storyline module with custom navigation, assessments and SCORM publishing.
+                </p>
 
-        <!-- Card 6 -->
-        <div class="bg-white rounded-2xl p-4 border border-borderSubtle shadow-card hover:shadow-cardHover hover:border-brand-200 transition-all duration-200 flex flex-col justify-between group">
-          <div class="flex items-start justify-between">
-            <div class="w-10 h-10 rounded-xl bg-orange-50 text-orange-600 flex items-center justify-center text-lg group-hover:scale-110 transition-transform font-bold">
-              P
+                <!-- Tags -->
+                <div class="flex flex-wrap gap-2 mt-4">
+                  <span class="px-2.5 py-1 rounded-md text-[11px] font-semibold bg-brand-500/10 text-brand-300 border border-brand-500/20">Storyline 360</span>
+                  <span class="px-2.5 py-1 rounded-md text-[11px] font-semibold bg-brand-500/10 text-brand-300 border border-brand-500/20">SCORM</span>
+                  <span class="px-2.5 py-1 rounded-md text-[11px] font-semibold bg-brand-500/10 text-brand-300 border border-brand-500/20">Interactive Learning</span>
+                  <span class="px-2.5 py-1 rounded-md text-[11px] font-semibold bg-brand-500/10 text-brand-300 border border-brand-500/20">Assessments</span>
+                </div>
+              </div>
             </div>
-            <i class="fa-solid fa-chevron-right text-xs text-slate-300 group-hover:text-brand-500 group-hover:translate-x-0.5 transition-all"></i>
-          </div>
-          <div class="mt-3">
-            <h3 class="font-bold text-slate-900 text-sm">PowerPoint Design</h3>
-            <p class="text-slate-500 text-xs mt-1 leading-snug">Professional training presentations.</p>
-          </div>
-        </div>
 
-        <!-- Card 7 -->
-        <div class="bg-white rounded-2xl p-4 border border-borderSubtle shadow-card hover:shadow-cardHover hover:border-brand-200 transition-all duration-200 flex flex-col justify-between group">
-          <div class="flex items-start justify-between">
-            <div class="w-10 h-10 rounded-xl bg-sky-50 text-sky-600 flex items-center justify-center text-lg group-hover:scale-110 transition-transform">
-              <i class="fa-solid fa-graduation-cap"></i>
+            <!-- CTA Explore Button -->
+            <div class="mt-6 pt-4 border-t border-slate-800/80 flex justify-end">
+              <button 
+                onclick="openVideoModal('https://drive.google.com/file/d/1rRtZDmiMiKexJ4jQxXIFJ_b89UR3zWo3/preview', 'Interactive SCORM eLearning - From Ship to Shore')"
+                class="inline-flex items-center gap-2 bg-brand-500 hover:bg-brand-600 text-white text-xs sm:text-sm font-bold px-5 py-2.5 rounded-xl transition-all shadow-md btn-press"
+              >
+                <span>Explore Project</span>
+                <i class="fa-solid fa-arrow-right text-xs"></i>
+              </button>
             </div>
-            <i class="fa-solid fa-chevron-right text-xs text-slate-300 group-hover:text-brand-500 group-hover:translate-x-0.5 transition-all"></i>
-          </div>
-          <div class="mt-3">
-            <h3 class="font-bold text-slate-900 text-sm">LearnDash LMS</h3>
-            <p class="text-slate-500 text-xs mt-1 leading-snug">Course creation, learner management & reporting.</p>
-          </div>
-        </div>
 
-        <!-- Card 8 -->
-        <div class="bg-white rounded-2xl p-4 border border-borderSubtle shadow-card hover:shadow-cardHover hover:border-brand-200 transition-all duration-200 flex flex-col justify-between group">
-          <div class="flex items-start justify-between">
-            <div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center text-lg group-hover:scale-110 transition-transform">
-              <i class="fa-solid fa-gear"></i>
-            </div>
-            <i class="fa-solid fa-chevron-right text-xs text-slate-300 group-hover:text-brand-500 group-hover:translate-x-0.5 transition-all"></i>
           </div>
-          <div class="mt-3">
-            <h3 class="font-bold text-slate-900 text-sm">QuickLearn LMS</h3>
-            <p class="text-slate-500 text-xs mt-1 leading-snug">Course deployment and administration.</p>
-          </div>
-        </div>
 
-        <!-- Card 9 -->
-        <div class="bg-white rounded-2xl p-4 border border-borderSubtle shadow-card hover:shadow-cardHover hover:border-brand-200 transition-all duration-200 flex flex-col justify-between group">
-          <div class="flex items-start justify-between">
-            <div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-500 flex items-center justify-center text-lg group-hover:scale-110 transition-transform">
-              <i class="fa-solid fa-file-lines"></i>
-            </div>
-            <i class="fa-solid fa-chevron-right text-xs text-slate-300 group-hover:text-brand-500 group-hover:translate-x-0.5 transition-all"></i>
-          </div>
-          <div class="mt-3">
-            <h3 class="font-bold text-slate-900 text-sm">Assessments</h3>
-            <p class="text-slate-500 text-xs mt-1 leading-snug">Knowledge checks, quizzes & certifications.</p>
-          </div>
-        </div>
+          <!-- Right Stacked Secondary Cards (5 Cols) -->
+          <div class="lg:col-span-5 flex flex-col gap-6">
+            
+            <!-- Secondary Card 1: Multi-language eLearning -->
+            <div class="bg-slate-900/90 rounded-2xl p-4 sm:p-5 border border-slate-800 hover:border-slate-700 transition-all flex flex-col justify-between">
+              <div>
+                <!-- Top Mini Screen with external link indicator -->
+                <div 
+                  onclick="openVideoModal('https://drive.google.com/file/d/1IIuKoOcBHQ35GzFYcmutqnFGDglw8n3t/preview', 'Multi-language eLearning Course')"
+                  class="relative aspect-[16/8] rounded-xl overflow-hidden bg-slate-950 border border-slate-800 cursor-pointer group"
+                >
+                  <img 
+                    src="https://images.unsplash.com/photo-1507537297725-24a1c029d3ca?auto=format&fit=crop&w=700&q=80" 
+                    alt="Multi-language eLearning Course" 
+                    class="w-full h-full object-cover opacity-80 group-hover:scale-102 transition-transform duration-300"
+                  >
+                  <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                    <div class="w-10 h-10 rounded-full bg-brand-500/90 text-white flex items-center justify-center text-sm shadow-md">
+                      <i class="fa-solid fa-play ml-0.5"></i>
+                    </div>
+                  </div>
+                  <div class="absolute top-2 right-2 text-white/80 bg-black/50 p-1.5 rounded-md text-xs">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  </div>
+                </div>
 
-        <!-- Card 10 -->
-        <div class="bg-white rounded-2xl p-4 border border-borderSubtle shadow-card hover:shadow-cardHover hover:border-brand-200 transition-all duration-200 flex flex-col justify-between group">
-          <div class="flex items-start justify-between">
-            <div class="w-10 h-10 rounded-xl bg-pink-50 text-pink-500 flex items-center justify-center text-lg group-hover:scale-110 transition-transform">
-              <i class="fa-solid fa-rocket"></i>
+                <div class="mt-4">
+                  <h3 class="text-base sm:text-lg font-bold text-white">Multi-language eLearning</h3>
+                  <p class="text-slate-400 text-xs mt-1 leading-relaxed">
+                    Interactive Storyline course with language switching and multilingual learning support.
+                  </p>
+
+                  <div class="flex flex-wrap gap-2 mt-3">
+                    <span class="px-2.5 py-0.5 rounded text-[11px] font-semibold bg-brand-500/10 text-brand-300 border border-brand-500/20">Storyline 360</span>
+                    <span class="px-2.5 py-0.5 rounded text-[11px] font-semibold bg-brand-500/10 text-brand-300 border border-brand-500/20">Multilingual</span>
+                    <span class="px-2.5 py-0.5 rounded text-[11px] font-semibold bg-brand-500/10 text-brand-300 border border-brand-500/20">Localization</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Circular Arrow CTA -->
+              <div class="mt-4 pt-3 border-t border-slate-800/80 flex justify-end">
+                <button 
+                  onclick="openVideoModal('https://drive.google.com/file/d/1IIuKoOcBHQ35GzFYcmutqnFGDglw8n3t/preview', 'Multi-language eLearning Course')"
+                  class="w-9 h-9 rounded-full bg-brand-500 hover:bg-brand-600 text-white flex items-center justify-center text-xs transition-colors"
+                >
+                  <i class="fa-solid fa-arrow-right"></i>
+                </button>
+              </div>
             </div>
-            <i class="fa-solid fa-chevron-right text-xs text-slate-300 group-hover:text-brand-500 group-hover:translate-x-0.5 transition-all"></i>
+
+            <!-- Secondary Card 2: Corporate PowerPoint Design -->
+            <div class="bg-slate-900/90 rounded-2xl p-4 sm:p-5 border border-slate-800 hover:border-slate-700 transition-all flex flex-col justify-between">
+              <div>
+                <!-- PowerPoint Slide Deck Preview -->
+                <div 
+                  onclick="openImageModal('images/ppt-design-1.png', 'Corporate PowerPoint Presentation Design Deck')"
+                  class="relative aspect-[16/8] rounded-xl overflow-hidden bg-slate-950 border border-slate-800 cursor-pointer group"
+                >
+                  <img 
+                    src="images/ppt-design-1.png" 
+                    onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=700&q=80';"
+                    alt="Corporate PowerPoint Design" 
+                    class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-300"
+                  >
+                  <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                    <div class="w-10 h-10 rounded-full bg-brand-500/90 text-white flex items-center justify-center text-sm shadow-md">
+                      <i class="fa-solid fa-expand"></i>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mt-4">
+                  <h3 class="text-base sm:text-lg font-bold text-white">Corporate PowerPoint Design</h3>
+                  <p class="text-slate-400 text-xs mt-1 leading-relaxed">
+                    Professional training presentations with modern layouts, infographics and engaging learning content.
+                  </p>
+
+                  <div class="flex flex-wrap gap-2 mt-3">
+                    <span class="px-2.5 py-0.5 rounded text-[11px] font-semibold bg-brand-500/10 text-brand-300 border border-brand-500/20">PowerPoint</span>
+                    <span class="px-2.5 py-0.5 rounded text-[11px] font-semibold bg-brand-500/10 text-brand-300 border border-brand-500/20">Visual Design</span>
+                    <span class="px-2.5 py-0.5 rounded text-[11px] font-semibold bg-brand-500/10 text-brand-300 border border-brand-500/20">Infographics</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Circular Arrow CTA -->
+              <div class="mt-4 pt-3 border-t border-slate-800/80 flex justify-end">
+                <button 
+                  onclick="openImageModal('images/ppt-design-1.png', 'Corporate PowerPoint Presentation Design Deck')"
+                  class="w-9 h-9 rounded-full bg-brand-500 hover:bg-brand-600 text-white flex items-center justify-center text-xs transition-colors"
+                >
+                  <i class="fa-solid fa-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+
           </div>
-          <div class="mt-3">
-            <h3 class="font-bold text-slate-900 text-sm">Rapid eLearning</h3>
-            <p class="text-slate-500 text-xs mt-1 leading-snug">End-to-end course development & delivery.</p>
-          </div>
+
         </div>
 
       </div>
     </section>
 
-    <section id="projects" class="mb-20 scroll-mt-24">
-      
-      <!-- Section Header with View All Button -->
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
-        <div class="pl-4 border-l-4 border-brand-500">
-          <h2 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">Projects</h2>
-          <p class="text-slate-500 text-sm sm:text-base font-medium mt-0.5">My recent work.</p>
-        </div>
-
-        <a href="#projects" class="inline-flex items-center self-start sm:self-auto gap-2 px-4 py-2 rounded-xl border border-brand-200 text-brand-600 bg-white hover:bg-brand-50 text-sm font-semibold transition-colors shadow-sm">
-          <span>View All Projects</span>
-          <i class="fa-solid fa-arrow-right text-xs"></i>
-        </a>
-      </div>
-
-      <!-- 4 Columns Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        
-        <!-- Project 1: Interactive SCORM eLearning -->
-        <div class="bg-white rounded-2xl p-4 border border-borderSubtle shadow-card hover:shadow-cardHover transition-all duration-300 flex flex-col justify-between">
-          <div>
-            <!-- Media Preview Container with Play Button Overlay -->
-            <div class="relative w-full aspect-video rounded-xl overflow-hidden bg-slate-900 group cursor-pointer" onclick="openVideoModal('https://drive.google.com/file/d/1rRtZDmiMiKexJ4jQxXIFJ_b89UR3zWo3/preview', 'Interactive SCORM eLearning')">
-              <img 
-                src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=700&q=80" 
-                alt="Interactive SCORM eLearning preview" 
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 opacity-90"
-              >
-              <div class="absolute inset-0 bg-black/35 flex items-center justify-center">
-                <div class="w-12 h-12 rounded-full bg-black/65 backdrop-blur-sm text-white flex items-center justify-center group-hover:scale-110 group-hover:bg-brand-600 transition-all">
-                  <i class="fa-solid fa-play text-sm ml-0.5"></i>
-                </div>
-              </div>
-              <div class="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-black/60 text-[10px] text-white font-medium">Storyline 360</div>
-            </div>
-
-            <!-- Content -->
-            <div class="mt-4">
-              <h3 class="font-bold text-slate-900 text-base">Interactive SCORM eLearning</h3>
-              <p class="text-slate-500 text-xs mt-1.5 leading-relaxed">
-                Interactive Storyline module with custom navigation, assessments and SCORM publishing.
-              </p>
-            </div>
-          </div>
-
-          <!-- Bottom Button -->
-          <div class="mt-5">
-            <button onclick="openVideoModal('https://drive.google.com/file/d/1rRtZDmiMiKexJ4jQxXIFJ_b89UR3zWo3/preview', 'Interactive SCORM eLearning')" class="w-full inline-flex items-center justify-center gap-2 bg-brand-500 hover:bg-brand-600 text-white text-xs sm:text-sm font-semibold py-2.5 px-4 rounded-xl transition-colors shadow-sm btn-press">
-              <i class="fa-solid fa-play text-xs"></i>
-              <span>Watch Demo</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- Project 2: Multi-language eLearning -->
-        <div class="bg-white rounded-2xl p-4 border border-borderSubtle shadow-card hover:shadow-cardHover transition-all duration-300 flex flex-col justify-between">
-          <div>
-            <div class="relative w-full aspect-video rounded-xl overflow-hidden bg-slate-900 group cursor-pointer" onclick="openVideoModal('https://drive.google.com/file/d/1IIuKoOcBHQ35GzFYcmutqnFGDglw8n3t/preview', 'Multi-language eLearning')">
-              <img 
-                src="https://images.unsplash.com/photo-1507537297725-24a1c029d3ca?auto=format&fit=crop&w=700&q=80" 
-                alt="Multi-language eLearning preview" 
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 opacity-90"
-              >
-              <div class="absolute inset-0 bg-black/35 flex items-center justify-center">
-                <div class="w-12 h-12 rounded-full bg-black/65 backdrop-blur-sm text-white flex items-center justify-center group-hover:scale-110 group-hover:bg-brand-600 transition-all">
-                  <i class="fa-solid fa-play text-sm ml-0.5"></i>
-                </div>
-              </div>
-              <div class="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-black/60 text-[10px] text-white font-medium">Multilingual</div>
-            </div>
-
-            <div class="mt-4">
-              <h3 class="font-bold text-slate-900 text-base">Multi-language eLearning</h3>
-              <p class="text-slate-500 text-xs mt-1.5 leading-relaxed">
-                Interactive Storyline course with language switching and multilingual learning support.
-              </p>
-            </div>
-          </div>
-
-          <div class="mt-5">
-            <button onclick="openVideoModal('https://drive.google.com/file/d/1IIuKoOcBHQ35GzFYcmutqnFGDglw8n3t/preview', 'Multi-language eLearning')" class="w-full inline-flex items-center justify-center gap-2 bg-brand-500 hover:bg-brand-600 text-white text-xs sm:text-sm font-semibold py-2.5 px-4 rounded-xl transition-colors shadow-sm btn-press">
-              <i class="fa-solid fa-play text-xs"></i>
-              <span>Watch Demo</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- Project 3: Corporate PowerPoint Design -->
-        <div class="bg-white rounded-2xl p-4 border border-borderSubtle shadow-card hover:shadow-cardHover transition-all duration-300 flex flex-col justify-between">
-          <div>
-            <div class="relative w-full aspect-video rounded-xl overflow-hidden bg-slate-100 group border border-slate-200 cursor-pointer" onclick="openImageModal('images/ppt-design-1.png', 'Corporate PowerPoint Design')">
-              <img 
-                src="images/ppt-design-1.png" 
-                onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=700&q=80';"
-                alt="Corporate PowerPoint Design" 
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-              >
-              <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent flex items-end p-2.5 opacity-0 group-hover:opacity-100 transition-opacity">
-                <span class="text-white text-xs font-semibold flex items-center gap-1.5">
-                  <i class="fa-solid fa-expand text-xs"></i> View presentation slides
-                </span>
-              </div>
-              <div class="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-blue-600/90 text-[10px] text-white font-medium">Slide Decks</div>
-            </div>
-
-            <div class="mt-4">
-              <h3 class="font-bold text-slate-900 text-base">Corporate PowerPoint Design</h3>
-              <p class="text-slate-500 text-xs mt-1.5 leading-relaxed">
-                Professional training presentations with modern layouts, infographics and learning content.
-              </p>
-            </div>
-          </div>
-
-          <div class="mt-5">
-            <button onclick="openImageModal('images/ppt-design-1.png', 'Corporate PowerPoint Design')" class="w-full inline-flex items-center justify-center gap-2 bg-brand-500 hover:bg-brand-600 text-white text-xs sm:text-sm font-semibold py-2.5 px-4 rounded-xl transition-colors shadow-sm btn-press">
-              <i class="fa-solid fa-images text-xs"></i>
-              <span>View Samples</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- Project 4: Video Editing & Motion Graphics -->
-        <div class="bg-white rounded-2xl p-4 border border-borderSubtle shadow-card hover:shadow-cardHover transition-all duration-300 flex flex-col justify-between">
-          <div>
-            <div class="relative w-full aspect-video rounded-xl overflow-hidden bg-slate-900 group cursor-pointer" onclick="openVideoModal('https://drive.google.com/file/d/1v1ISwjEXjLI4X5jwVbi-a-JX1O14nO5p/preview', 'Video Editing & Motion Graphics')">
-              <img 
-                src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=700&q=80" 
-                alt="Video Editing & Motion Graphics Preview" 
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 opacity-90"
-              >
-              <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
-                <div class="w-12 h-12 rounded-full bg-black/70 backdrop-blur-sm text-white flex items-center justify-center group-hover:scale-110 group-hover:bg-brand-600 transition-all">
-                  <i class="fa-solid fa-play text-sm ml-0.5"></i>
-                </div>
-              </div>
-              <div class="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-rose-600/90 text-[10px] text-white font-medium">VFX / 2D Tracking</div>
-            </div>
-
-            <div class="mt-4">
-              <h3 class="font-bold text-slate-900 text-base">Video Editing & Motion Graphics</h3>
-              <p class="text-slate-500 text-xs mt-1.5 leading-relaxed">
-                Adobe Premiere Pro & After Effects projects with cinematic editing, VFX and motion graphics.
-              </p>
-            </div>
-          </div>
-
-          <div class="mt-5">
-            <button onclick="openVideoModal('https://drive.google.com/file/d/1v1ISwjEXjLI4X5jwVbi-a-JX1O14nO5p/preview', 'Video Editing & Motion Graphics')" class="w-full inline-flex items-center justify-center gap-2 bg-brand-500 hover:bg-brand-600 text-white text-xs sm:text-sm font-semibold py-2.5 px-4 rounded-xl transition-colors shadow-sm btn-press">
-              <i class="fa-solid fa-play text-xs"></i>
-              <span>Watch Video</span>
-            </button>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
+    <!-- MY TOOLKIT SECTION (CATEGORIZED 4 BOXES WITH PROGRESS METRICS) -->
     <section id="skills" class="mb-20 scroll-mt-24 relative">
       
-      <!-- Section Header with Handwritten Annotation matching screenshot -->
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-8 relative">
-        <div class="pl-4 border-l-4 border-brand-500">
-          <h2 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">Technical Skills</h2>
-          <p class="text-slate-500 text-sm sm:text-base font-medium mt-0.5">Tools & Technologies I work with.</p>
+      <!-- Section Header with Cursive Annotation -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-8">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center text-lg border border-brand-100">
+            <i class="fa-solid fa-wrench"></i>
+          </div>
+          <div>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">My Toolkit</h2>
+            <p class="text-slate-500 text-xs sm:text-sm font-medium mt-0.5">
+              Tools & technologies I work with to create engaging learning experiences.
+            </p>
+          </div>
         </div>
 
-        <!-- Handwritten Annotation "Tools That Power My Creativity" with curved arrow -->
+        <!-- Top Right Handwritten Callout: "Right Tools Brighter Learning" -->
         <div class="flex items-center gap-2 self-end sm:self-auto select-none mt-2 sm:mt-0">
-          <div class="text-right">
-            <span class="font-handwriting text-2xl sm:text-3xl text-slate-700 font-bold tracking-tight block -rotate-3 leading-none">
-              Tools That Power<br>My Creativity
-            </span>
-          </div>
-          <svg class="w-8 h-10 text-slate-700 -rotate-12 transform -mt-2" viewBox="0 0 40 50" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <span class="font-handwriting text-2xl sm:text-3xl text-brand-600 font-bold tracking-tight -rotate-3 block">
+            Right Tools<br>Brighter Learning
+          </span>
+          <svg class="w-8 h-10 text-brand-500 -rotate-12 transform" viewBox="0 0 40 50" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M 5 10 Q 25 15 25 35" />
             <path d="M 18 30 L 25 37 L 32 30" />
           </svg>
         </div>
       </div>
 
-      <!-- Skills Cards Grid (4 columns on desktop, 2 on tablet, 1 on mobile) matching screenshot layout -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <!-- 4 Category Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
         
-        <!-- Skill 1: Storyline 360 -->
-        <div class="bg-white rounded-2xl p-4 border border-borderSubtle shadow-card hover:shadow-cardHover hover:border-brand-200 transition-all duration-200 flex items-center gap-3.5">
-          <div class="w-12 h-12 rounded-xl bg-[#E11D48]/10 flex items-center justify-center font-bold text-[#E11D48] text-lg shrink-0">
-            sl
-          </div>
-          <div class="flex-1 min-w-0">
-            <h3 class="font-bold text-slate-900 text-sm truncate">Articulate Storyline 360</h3>
-            <span class="inline-block mt-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-50 text-blue-600 uppercase tracking-wider">
-              EXPERT
-            </span>
-          </div>
-        </div>
+        <!-- Category 1: Authoring Tools -->
+        <div class="bg-white rounded-2xl p-5 border border-borderSubtle shadow-card hover:shadow-cardHover transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-blue-50 text-brand-500 flex items-center justify-center text-base shrink-0 border border-blue-100">
+                <i class="fa-solid fa-file-pen"></i>
+              </div>
+              <div>
+                <h3 class="font-extrabold text-slate-900 text-xs uppercase tracking-wider">AUTHORING TOOLS</h3>
+                <p class="text-slate-500 text-[11px] leading-tight">Interactive and scenario-based learning development.</p>
+              </div>
+            </div>
 
-        <!-- Skill 2: Premiere Pro -->
-        <div class="bg-white rounded-2xl p-4 border border-borderSubtle shadow-card hover:shadow-cardHover hover:border-brand-200 transition-all duration-200 flex items-center gap-3.5">
-          <div class="w-12 h-12 rounded-xl bg-[#00005B] text-[#9999FF] flex items-center justify-center font-extrabold text-lg shrink-0 border border-indigo-900">
-            Pr
-          </div>
-          <div class="flex-1 min-w-0">
-            <h3 class="font-bold text-slate-900 text-sm truncate">Adobe Premiere Pro</h3>
-            <span class="inline-block mt-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-50 text-blue-600 uppercase tracking-wider">
-              ADVANCED
-            </span>
-          </div>
-        </div>
+            <!-- Software Skills with Badges & Progress Bars -->
+            <div class="mt-6 space-y-4">
+              <!-- Storyline 360 -->
+              <div class="text-center">
+                <div class="w-11 h-11 mx-auto rounded-xl bg-[#E11D48] text-white flex items-center justify-center font-bold text-base shadow-sm">
+                  sl
+                </div>
+                <p class="text-xs font-bold text-slate-800 mt-2">Storyline 360</p>
+                <div class="w-full bg-slate-100 rounded-full h-1.5 mt-1.5 overflow-hidden">
+                  <div class="bg-brand-500 h-1.5 rounded-full w-[95%]"></div>
+                </div>
+                <span class="text-[10px] font-semibold text-slate-500 mt-1 block">Expert</span>
+              </div>
 
-        <!-- Skill 3: After Effects -->
-        <div class="bg-white rounded-2xl p-4 border border-borderSubtle shadow-card hover:shadow-cardHover hover:border-brand-200 transition-all duration-200 flex items-center gap-3.5">
-          <div class="w-12 h-12 rounded-xl bg-[#00005B] text-[#D291FF] flex items-center justify-center font-extrabold text-lg shrink-0 border border-indigo-900">
-            Ae
-          </div>
-          <div class="flex-1 min-w-0">
-            <h3 class="font-bold text-slate-900 text-sm truncate">Adobe After Effects</h3>
-            <span class="inline-block mt-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-50 text-blue-600 uppercase tracking-wider">
-              ADVANCED
-            </span>
-          </div>
-        </div>
+              <!-- Adobe Captivate -->
+              <div class="text-center pt-2 border-t border-slate-100">
+                <div class="w-11 h-11 mx-auto rounded-xl bg-[#052e25] text-[#34D399] flex items-center justify-center font-bold text-base border border-emerald-900">
+                  Cp
+                </div>
+                <p class="text-xs font-bold text-slate-800 mt-2">Adobe Captivate</p>
+                <div class="w-full bg-slate-100 rounded-full h-1.5 mt-1.5 overflow-hidden">
+                  <div class="bg-brand-500 h-1.5 rounded-full w-[85%]"></div>
+                </div>
+                <span class="text-[10px] font-semibold text-slate-500 mt-1 block">Advanced</span>
+              </div>
 
-        <!-- Skill 4: PowerPoint -->
-        <div class="bg-white rounded-2xl p-4 border border-borderSubtle shadow-card hover:shadow-cardHover hover:border-brand-200 transition-all duration-200 flex items-center gap-3.5">
-          <div class="w-12 h-12 rounded-xl bg-orange-600 text-white flex items-center justify-center font-extrabold text-lg shrink-0">
-            P
-          </div>
-          <div class="flex-1 min-w-0">
-            <h3 class="font-bold text-slate-900 text-sm truncate">Microsoft PowerPoint</h3>
-            <span class="inline-block mt-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-50 text-blue-600 uppercase tracking-wider">
-              EXPERT
-            </span>
-          </div>
-        </div>
-
-        <!-- Skill 5: Adobe Captivate -->
-        <div class="bg-white rounded-2xl p-4 border border-borderSubtle shadow-card hover:shadow-cardHover hover:border-brand-200 transition-all duration-200 flex items-center gap-3.5">
-          <div class="w-12 h-12 rounded-xl bg-[#052e25] text-[#34D399] flex items-center justify-center font-extrabold text-lg shrink-0 border border-emerald-900">
-            Cp
-          </div>
-          <div class="flex-1 min-w-0">
-            <h3 class="font-bold text-slate-900 text-sm truncate">Adobe Captivate</h3>
-            <span class="inline-block mt-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-50 text-blue-600 uppercase tracking-wider">
-              ADVANCED
-            </span>
-          </div>
-        </div>
-
-        <!-- Skill 6: Adobe Illustrator -->
-        <div class="bg-white rounded-2xl p-4 border border-borderSubtle shadow-card hover:shadow-cardHover hover:border-brand-200 transition-all duration-200 flex items-center gap-3.5">
-          <div class="w-12 h-12 rounded-xl bg-[#331400] text-[#FF9A00] flex items-center justify-center font-extrabold text-lg shrink-0 border border-amber-900">
-            Ai
-          </div>
-          <div class="flex-1 min-w-0">
-            <h3 class="font-bold text-slate-900 text-sm truncate">Adobe Illustrator</h3>
-            <span class="inline-block mt-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-50 text-blue-600 uppercase tracking-wider">
-              INTERMEDIATE
-            </span>
-          </div>
-        </div>
-
-        <!-- Skill 7: Adobe Photoshop -->
-        <div class="bg-white rounded-2xl p-4 border border-borderSubtle shadow-card hover:shadow-cardHover hover:border-brand-200 transition-all duration-200 flex items-center gap-3.5">
-          <div class="w-12 h-12 rounded-xl bg-[#001E36] text-[#31A8FF] flex items-center justify-center font-extrabold text-lg shrink-0 border border-blue-900">
-            Ps
-          </div>
-          <div class="flex-1 min-w-0">
-            <h3 class="font-bold text-slate-900 text-sm truncate">Adobe Photoshop</h3>
-            <span class="inline-block mt-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-50 text-blue-600 uppercase tracking-wider">
-              INTERMEDIATE
-            </span>
-          </div>
-        </div>
-
-        <!-- Skill 8: LearnDash LMS -->
-        <div class="bg-white rounded-2xl p-4 border border-borderSubtle shadow-card hover:shadow-cardHover hover:border-brand-200 transition-all duration-200 flex items-center gap-3.5">
-          <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-brand-600 text-xl shrink-0">
-            <i class="fa-solid fa-chart-simple"></i>
-          </div>
-          <div class="flex-1 min-w-0">
-            <h3 class="font-bold text-slate-900 text-sm truncate">LearnDash LMS</h3>
-            <span class="inline-block mt-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-50 text-blue-600 uppercase tracking-wider">
-              ADVANCED
-            </span>
-          </div>
-        </div>
-
-        <!-- Skill 9: QuickLearn LMS -->
-        <div class="bg-white rounded-2xl p-4 border border-borderSubtle shadow-card hover:shadow-cardHover hover:border-brand-200 transition-all duration-200 flex items-center gap-3.5">
-          <div class="w-12 h-12 rounded-xl bg-sky-500 text-white flex flex-col items-center justify-center shrink-0 leading-none">
-            <i class="fa-solid fa-graduation-cap text-xs"></i>
-            <span class="text-[9px] font-black tracking-tighter mt-0.5">LMS</span>
-          </div>
-          <div class="flex-1 min-w-0">
-            <h3 class="font-bold text-slate-900 text-sm truncate">QuickLearn LMS</h3>
-            <span class="inline-block mt-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-50 text-blue-600 uppercase tracking-wider">
-              ADVANCED
-            </span>
-          </div>
-        </div>
-
-        <!-- Skill 10: SCORM 1.2 -->
-        <div class="bg-white rounded-2xl p-4 border border-borderSubtle shadow-card hover:shadow-cardHover hover:border-brand-200 transition-all duration-200 flex items-center gap-3.5">
-          <div class="w-12 h-12 rounded-xl bg-indigo-50 border border-indigo-100 flex flex-col items-center justify-center text-indigo-600 shrink-0">
-            <span class="text-[9px] font-black uppercase tracking-wider">LMS</span>
-            <div class="flex gap-0.5 mt-0.5 text-[7px]">
-              <i class="fa-solid fa-circle"></i>
-              <i class="fa-solid fa-circle"></i>
-              <i class="fa-solid fa-circle"></i>
+              <!-- SCORM 1.2 -->
+              <div class="text-center pt-2 border-t border-slate-100">
+                <div class="w-11 h-11 mx-auto rounded-xl bg-sky-500 text-white flex flex-col items-center justify-center font-black text-xs">
+                  <i class="fa-solid fa-graduation-cap text-[10px]"></i>
+                  <span class="text-[8px] tracking-tight">LMS</span>
+                </div>
+                <p class="text-xs font-bold text-slate-800 mt-2">SCORM 1.2</p>
+                <div class="w-full bg-slate-100 rounded-full h-1.5 mt-1.5 overflow-hidden">
+                  <div class="bg-brand-500 h-1.5 rounded-full w-[95%]"></div>
+                </div>
+                <span class="text-[10px] font-semibold text-slate-500 mt-1 block">Expert</span>
+              </div>
             </div>
           </div>
-          <div class="flex-1 min-w-0">
-            <h3 class="font-bold text-slate-900 text-sm truncate">SCORM 1.2</h3>
-            <span class="inline-block mt-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-50 text-blue-600 uppercase tracking-wider">
-              EXPERT
-            </span>
+        </div>
+
+        <!-- Category 2: LMS Platforms -->
+        <div class="bg-white rounded-2xl p-5 border border-borderSubtle shadow-card hover:shadow-cardHover transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-base shrink-0 border border-emerald-100">
+                <i class="fa-solid fa-layer-group"></i>
+              </div>
+              <div>
+                <h3 class="font-extrabold text-slate-900 text-xs uppercase tracking-wider">LMS PLATFORMS</h3>
+                <p class="text-slate-500 text-[11px] leading-tight">Course deployment and learning management.</p>
+              </div>
+            </div>
+
+            <!-- Software Skills -->
+            <div class="mt-6 space-y-4">
+              <!-- LearnDash -->
+              <div class="text-center">
+                <div class="w-11 h-11 mx-auto rounded-xl bg-blue-50 text-brand-600 flex items-center justify-center font-bold text-xl border border-blue-100">
+                  <i class="fa-solid fa-chart-simple"></i>
+                </div>
+                <p class="text-xs font-bold text-slate-800 mt-2">LearnDash</p>
+                <div class="w-full bg-slate-100 rounded-full h-1.5 mt-1.5 overflow-hidden">
+                  <div class="bg-brand-500 h-1.5 rounded-full w-[85%]"></div>
+                </div>
+                <span class="text-[10px] font-semibold text-slate-500 mt-1 block">Advanced</span>
+              </div>
+
+              <!-- QuickLearn -->
+              <div class="text-center pt-2 border-t border-slate-100">
+                <div class="w-11 h-11 mx-auto rounded-xl bg-sky-50 text-sky-600 flex items-center justify-center font-bold text-xl border border-sky-100">
+                  <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <p class="text-xs font-bold text-slate-800 mt-2">QuickLearn</p>
+                <div class="w-full bg-slate-100 rounded-full h-1.5 mt-1.5 overflow-hidden">
+                  <div class="bg-brand-500 h-1.5 rounded-full w-[85%]"></div>
+                </div>
+                <span class="text-[10px] font-semibold text-slate-500 mt-1 block">Advanced</span>
+              </div>
+            </div>
           </div>
         </div>
 
-        <!-- Skill 11: Microsoft Excel -->
-        <div class="bg-white rounded-2xl p-4 border border-borderSubtle shadow-card hover:shadow-cardHover hover:border-brand-200 transition-all duration-200 flex items-center gap-3.5">
-          <div class="w-12 h-12 rounded-xl bg-emerald-700 text-white flex items-center justify-center font-black text-lg shrink-0">
-            X
-          </div>
-          <div class="flex-1 min-w-0">
-            <h3 class="font-bold text-slate-900 text-sm truncate">Microsoft Excel</h3>
-            <span class="inline-block mt-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-50 text-blue-600 uppercase tracking-wider">
-              INTERMEDIATE
-            </span>
+        <!-- Category 3: Design & Visual -->
+        <div class="bg-white rounded-2xl p-5 border border-borderSubtle shadow-card hover:shadow-cardHover transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center text-base shrink-0 border border-amber-100">
+                <i class="fa-solid fa-palette"></i>
+              </div>
+              <div>
+                <h3 class="font-extrabold text-slate-900 text-xs uppercase tracking-wider">DESIGN & VISUAL</h3>
+                <p class="text-slate-500 text-[11px] leading-tight">Engaging visuals and graphical content.</p>
+              </div>
+            </div>
+
+            <!-- Software Skills -->
+            <div class="mt-6 space-y-4">
+              <!-- PowerPoint -->
+              <div class="text-center">
+                <div class="w-11 h-11 mx-auto rounded-xl bg-orange-600 text-white flex items-center justify-center font-extrabold text-lg shadow-sm">
+                  P
+                </div>
+                <p class="text-xs font-bold text-slate-800 mt-2">PowerPoint</p>
+                <div class="w-full bg-slate-100 rounded-full h-1.5 mt-1.5 overflow-hidden">
+                  <div class="bg-brand-500 h-1.5 rounded-full w-[95%]"></div>
+                </div>
+                <span class="text-[10px] font-semibold text-slate-500 mt-1 block">Expert</span>
+              </div>
+
+              <!-- Photoshop -->
+              <div class="text-center pt-2 border-t border-slate-100">
+                <div class="w-11 h-11 mx-auto rounded-xl bg-[#001E36] text-[#31A8FF] flex items-center justify-center font-bold text-base border border-blue-900">
+                  Ps
+                </div>
+                <p class="text-xs font-bold text-slate-800 mt-2">Photoshop</p>
+                <div class="w-full bg-slate-100 rounded-full h-1.5 mt-1.5 overflow-hidden">
+                  <div class="bg-brand-500 h-1.5 rounded-full w-[70%]"></div>
+                </div>
+                <span class="text-[10px] font-semibold text-slate-500 mt-1 block">Intermediate</span>
+              </div>
+
+              <!-- Illustrator -->
+              <div class="text-center pt-2 border-t border-slate-100">
+                <div class="w-11 h-11 mx-auto rounded-xl bg-[#331400] text-[#FF9A00] flex items-center justify-center font-bold text-base border border-amber-900">
+                  Ai
+                </div>
+                <p class="text-xs font-bold text-slate-800 mt-2">Illustrator</p>
+                <div class="w-full bg-slate-100 rounded-full h-1.5 mt-1.5 overflow-hidden">
+                  <div class="bg-brand-500 h-1.5 rounded-full w-[70%]"></div>
+                </div>
+                <span class="text-[10px] font-semibold text-slate-500 mt-1 block">Intermediate</span>
+              </div>
+            </div>
           </div>
         </div>
 
-        <!-- Skill 12: Microsoft Word -->
-        <div class="bg-white rounded-2xl p-4 border border-borderSubtle shadow-card hover:shadow-cardHover hover:border-brand-200 transition-all duration-200 flex items-center gap-3.5">
-          <div class="w-12 h-12 rounded-xl bg-blue-700 text-white flex items-center justify-center font-black text-lg shrink-0">
-            W
-          </div>
-          <div class="flex-1 min-w-0">
-            <h3 class="font-bold text-slate-900 text-sm truncate">Microsoft Word</h3>
-            <span class="inline-block mt-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-50 text-blue-600 uppercase tracking-wider">
-              ADVANCED
-            </span>
+        <!-- Category 4: Video & Motion -->
+        <div class="bg-white rounded-2xl p-5 border border-borderSubtle shadow-card hover:shadow-cardHover transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center text-base shrink-0 border border-purple-100">
+                <i class="fa-solid fa-play"></i>
+              </div>
+              <div>
+                <h3 class="font-extrabold text-slate-900 text-xs uppercase tracking-wider">VIDEO & MOTION</h3>
+                <p class="text-slate-500 text-[11px] leading-tight">Editing and motion graphics for learning videos.</p>
+              </div>
+            </div>
+
+            <!-- Software Skills -->
+            <div class="mt-6 space-y-4">
+              <!-- Premiere Pro -->
+              <div class="text-center">
+                <div class="w-11 h-11 mx-auto rounded-xl bg-[#00005B] text-[#9999FF] flex items-center justify-center font-extrabold text-base border border-indigo-900">
+                  Pr
+                </div>
+                <p class="text-xs font-bold text-slate-800 mt-2">Premiere Pro</p>
+                <div class="w-full bg-slate-100 rounded-full h-1.5 mt-1.5 overflow-hidden">
+                  <div class="bg-brand-500 h-1.5 rounded-full w-[85%]"></div>
+                </div>
+                <span class="text-[10px] font-semibold text-slate-500 mt-1 block">Advanced</span>
+              </div>
+
+              <!-- After Effects -->
+              <div class="text-center pt-2 border-t border-slate-100">
+                <div class="w-11 h-11 mx-auto rounded-xl bg-[#00005B] text-[#D291FF] flex items-center justify-center font-extrabold text-base border border-indigo-900">
+                  Ae
+                </div>
+                <p class="text-xs font-bold text-slate-800 mt-2">After Effects</p>
+                <div class="w-full bg-slate-100 rounded-full h-1.5 mt-1.5 overflow-hidden">
+                  <div class="bg-brand-500 h-1.5 rounded-full w-[85%]"></div>
+                </div>
+                <span class="text-[10px] font-semibold text-slate-500 mt-1 block">Advanced</span>
+              </div>
+            </div>
           </div>
         </div>
 
       </div>
     </section>
 
-    <section id="contact" class="mb-14 scroll-mt-24">
+    <!-- LET'S CONNECT & DESK WORKSPACE SECTION -->
+    <section id="contact" class="mb-14 scroll-mt-24 relative">
       
-      <!-- Header with Handwritten Annotation -->
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-8">
-        <div class="pl-4 border-l-4 border-brand-500">
-          <h2 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">Contact</h2>
-          <p class="text-slate-500 text-sm sm:text-base font-medium mt-0.5">
-            Let's connect for Instructional Design, eLearning Development, and Video Editing projects.
-          </p>
-        </div>
-
-        <!-- Handwritten Annotation "Let's Build Something Meaningful Together" with curved arrow -->
-        <div class="flex items-center gap-2 self-end sm:self-auto select-none mt-2 sm:mt-0">
-          <div class="text-right">
-            <span class="font-handwriting text-2xl sm:text-3xl text-slate-700 font-bold tracking-tight block -rotate-3 leading-none">
-              Let's<br>
-              Build Something<br>
-              Meaningful Together
-            </span>
-          </div>
-          <svg class="w-8 h-10 text-slate-700 rotate-6 transform" viewBox="0 0 40 50" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M 10 10 Q 25 20 20 38" />
-            <path d="M 14 32 L 20 40 L 26 33" />
-          </svg>
-        </div>
-      </div>
-
-      <!-- 4 Horizontal Contact Cards Grid matching the screenshot -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <!-- Section Outer Card with Desk Texture Background -->
+      <div class="rounded-3xl border border-slate-200/80 bg-gradient-to-b from-white to-slate-100/90 shadow-card p-6 sm:p-10 relative overflow-hidden">
         
-        <!-- Contact 1: Email -->
-        <div class="bg-white rounded-2xl p-5 border border-borderSubtle shadow-card hover:shadow-cardHover transition-all duration-200 flex flex-col justify-between">
-          <div class="flex items-start gap-3.5">
-            <div class="w-11 h-11 rounded-xl bg-blue-50 text-brand-600 flex items-center justify-center text-lg shrink-0 border border-blue-100">
+        <!-- Header & Handwritten Quote -->
+        <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-8">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-brand-500 text-white flex items-center justify-center text-lg shadow-sm">
               <i class="fa-solid fa-envelope"></i>
             </div>
-            <div class="min-w-0">
-              <h3 class="font-bold text-slate-900 text-sm">Email</h3>
-              <p class="text-slate-500 text-xs mt-0.5 truncate select-all" title="sv393015@gmail.com">sv393015@gmail.com</p>
+            <div>
+              <h2 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">Let's Connect</h2>
+              <p class="text-slate-500 text-xs sm:text-sm font-medium mt-0.5">
+                I'm always open to discussing Instructional Design, eLearning development, and new opportunities.
+              </p>
             </div>
           </div>
-          <div class="mt-5">
-            <a href="mailto:sv393015@gmail.com" class="w-full inline-flex items-center justify-center gap-2 bg-blue-50 hover:bg-brand-500 text-brand-600 hover:text-white font-semibold text-xs py-2 px-3 rounded-xl transition-colors duration-200">
-              <span>Send Mail</span>
-            </a>
+
+          <!-- Handwritten Quote: "Great Learning Builds Brighter Futures" -->
+          <div class="self-end sm:self-auto text-right select-none">
+            <p class="font-handwriting text-2xl sm:text-3xl text-brand-600 font-bold -rotate-3 leading-tight">
+              “Great Learning<br>Builds<br>Brighter Futures”
+            </p>
           </div>
         </div>
 
-        <!-- Contact 2: Phone -->
-        <div class="bg-white rounded-2xl p-5 border border-borderSubtle shadow-card hover:shadow-cardHover transition-all duration-200 flex flex-col justify-between">
-          <div class="flex items-start gap-3.5">
-            <div class="w-11 h-11 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-lg shrink-0 border border-emerald-100">
-              <i class="fa-solid fa-phone"></i>
-            </div>
-            <div class="min-w-0">
-              <h3 class="font-bold text-slate-900 text-sm">Phone</h3>
-              <p class="text-slate-500 text-xs mt-0.5 truncate select-all">+91 93530 80994</p>
-            </div>
-          </div>
-          <div class="mt-5">
-            <a href="tel:+919353080994" class="w-full inline-flex items-center justify-center gap-2 bg-blue-50 hover:bg-brand-500 text-brand-600 hover:text-white font-semibold text-xs py-2 px-3 rounded-xl transition-colors duration-200">
-              <span>Call Me</span>
-            </a>
-          </div>
-        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          
+          <!-- Contact Cards & Action Button (8 Cols) -->
+          <div class="lg:col-span-8 space-y-6">
+            
+            <!-- 4 Grid Contact Information Cards -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              
+              <!-- Email Card -->
+              <div class="bg-white rounded-2xl p-4 border border-slate-200/80 shadow-sm hover:border-brand-300 transition-colors flex items-center gap-3.5">
+                <div class="w-10 h-10 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center text-base shrink-0 border border-brand-100">
+                  <i class="fa-solid fa-envelope"></i>
+                </div>
+                <div class="min-w-0">
+                  <span class="text-xs font-bold text-slate-900 block">Email</span>
+                  <a href="mailto:sv393015@gmail.com" class="text-xs text-slate-500 hover:text-brand-600 truncate block transition-colors">
+                    sv393015@gmail.com
+                  </a>
+                </div>
+              </div>
 
-        <!-- Contact 3: LinkedIn -->
-        <div class="bg-white rounded-2xl p-5 border border-borderSubtle shadow-card hover:shadow-cardHover transition-all duration-200 flex flex-col justify-between">
-          <div class="flex items-start gap-3.5">
-            <div class="w-11 h-11 rounded-xl bg-sky-50 text-sky-600 flex items-center justify-center text-lg shrink-0 border border-sky-100">
-              <i class="fa-brands fa-linkedin-in"></i>
-            </div>
-            <div class="min-w-0">
-              <h3 class="font-bold text-slate-900 text-sm">LinkedIn</h3>
-              <p class="text-slate-500 text-xs mt-0.5 truncate" title="linkedin.com/in/chandru-elearning">linkedin.com/in/chandru-elearning</p>
-            </div>
-          </div>
-          <div class="mt-5">
-            <a href="https://www.linkedin.com/in/chandru-elearning" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-2 bg-blue-50 hover:bg-brand-500 text-brand-600 hover:text-white font-semibold text-xs py-2 px-3 rounded-xl transition-colors duration-200">
-              <span>View Profile</span>
-            </a>
-          </div>
-        </div>
+              <!-- Phone Card -->
+              <div class="bg-white rounded-2xl p-4 border border-slate-200/80 shadow-sm hover:border-brand-300 transition-colors flex items-center gap-3.5">
+                <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-base shrink-0 border border-emerald-100">
+                  <i class="fa-solid fa-phone"></i>
+                </div>
+                <div class="min-w-0">
+                  <span class="text-xs font-bold text-slate-900 block">Phone</span>
+                  <a href="tel:+919353080994" class="text-xs text-slate-500 hover:text-brand-600 truncate block transition-colors">
+                    +91 93530 80994
+                  </a>
+                </div>
+              </div>
 
-        <!-- Contact 4: Location -->
-        <div class="bg-white rounded-2xl p-5 border border-borderSubtle shadow-card hover:shadow-cardHover transition-all duration-200 flex flex-col justify-between">
-          <div class="flex items-start gap-3.5">
-            <div class="w-11 h-11 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center text-lg shrink-0 border border-blue-100">
-              <i class="fa-solid fa-location-dot"></i>
+              <!-- LinkedIn Card -->
+              <div class="bg-white rounded-2xl p-4 border border-slate-200/80 shadow-sm hover:border-brand-300 transition-colors flex items-center gap-3.5">
+                <div class="w-10 h-10 rounded-xl bg-sky-50 text-sky-600 flex items-center justify-center text-base shrink-0 border border-sky-100">
+                  <i class="fa-brands fa-linkedin-in"></i>
+                </div>
+                <div class="min-w-0">
+                  <span class="text-xs font-bold text-slate-900 block">LinkedIn</span>
+                  <a href="https://www.linkedin.com/in/chandru-elearning" target="_blank" rel="noopener noreferrer" class="text-xs text-slate-500 hover:text-brand-600 truncate block transition-colors">
+                    linkedin.com/in/chandru-elearning
+                  </a>
+                </div>
+              </div>
+
+              <!-- Location Card -->
+              <div class="bg-white rounded-2xl p-4 border border-slate-200/80 shadow-sm hover:border-brand-300 transition-colors flex items-center gap-3.5">
+                <div class="w-10 h-10 rounded-xl bg-blue-50 text-brand-600 flex items-center justify-center text-base shrink-0 border border-blue-100">
+                  <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <div class="min-w-0">
+                  <span class="text-xs font-bold text-slate-900 block">Location</span>
+                  <p class="text-xs text-slate-500 truncate">Bengaluru, Karnataka, India</p>
+                </div>
+              </div>
+
             </div>
-            <div class="min-w-0">
-              <h3 class="font-bold text-slate-900 text-sm">Location</h3>
-              <p class="text-slate-500 text-xs mt-0.5 truncate">Bengaluru, Karnataka, India</p>
+
+            <!-- Send a Message CTA Button -->
+            <div>
+              <a href="mailto:sv393015@gmail.com" class="inline-flex items-center gap-2 bg-brand-500 hover:bg-brand-600 text-white font-bold px-6 py-3 rounded-xl shadow-md shadow-brand-500/25 hover:shadow-lg transition-all text-sm btn-press">
+                <span>Send a Message</span>
+                <i class="fa-solid fa-arrow-right text-xs"></i>
+              </a>
             </div>
+
           </div>
-          <div class="mt-5">
-            <a href="https://maps.google.com/?q=Bengaluru,Karnataka,India" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-2 bg-blue-50 hover:bg-brand-500 text-brand-600 hover:text-white font-semibold text-xs py-2 px-3 rounded-xl transition-colors duration-200">
-              <span>View on Map</span>
-            </a>
+
+          <!-- Desk Workspace Visual Elements (Books + Coffee Mug) (4 Cols) -->
+          <div class="lg:col-span-4 flex flex-col items-center justify-center relative select-none">
+            
+            <div class="flex items-end gap-3">
+              <!-- Stacked Topic Books -->
+              <div class="flex flex-col gap-1.5 text-[10px] font-bold">
+                <div class="px-3 py-1 bg-white border border-slate-300/80 rounded-md shadow-xs text-slate-700">
+                  Better Content
+                </div>
+                <div class="px-3 py-1 bg-slate-200 border border-slate-300 rounded-md shadow-xs text-slate-800">
+                  Engaged Learners
+                </div>
+                <div class="px-3 py-1 bg-brand-500 text-white rounded-md shadow-xs">
+                  Real Impact
+                </div>
+              </div>
+
+              <!-- Signature Black Coffee Mug with handwritten inspiring text -->
+              <div class="w-24 h-28 rounded-2xl bg-slate-900 text-white p-3 shadow-xl border-2 border-slate-800 flex flex-col justify-between relative">
+                <!-- Mug handle -->
+                <div class="absolute -right-3 top-5 w-4 h-14 border-4 border-slate-900 rounded-r-xl"></div>
+                
+                <div class="text-center pt-2">
+                  <p class="font-handwriting text-xs text-slate-200 leading-tight">
+                    Keep<br>Creating<br>Keep<br>Learning
+                  </p>
+                  <span class="text-amber-300 text-xs font-mono">☺</span>
+                </div>
+              </div>
+            </div>
+
           </div>
+
         </div>
 
       </div>
@@ -856,20 +818,34 @@
 
   </main>
 
-  <footer class="bg-[#1D4ED8] text-white py-4 px-4 sm:px-8 border-t border-blue-600 mt-auto">
-    <div class="max-w-[1280px] mx-auto flex flex-col sm:flex-row items-center justify-between text-xs sm:text-sm font-medium gap-2">
-      <p class="text-blue-100">
+  <!-- FOOTER -->
+  <footer class="bg-white border-t border-borderSubtle py-6 px-4 sm:px-8">
+    <div class="max-w-[1240px] mx-auto flex flex-col sm:flex-row items-center justify-between text-xs font-semibold text-slate-500 gap-4">
+      
+      <!-- Brand Logo -->
+      <a href="#about" class="flex items-center gap-2 text-slate-900 font-extrabold text-sm">
+        <div class="w-6 h-6 rounded-full border border-brand-500 flex items-center justify-center text-brand-500 text-xs">
+          C
+        </div>
+        <span>Chandirakkumar S</span>
+      </a>
+
+      <!-- Quick Links -->
+      <div class="flex items-center gap-5">
+        <a href="#about" class="hover:text-brand-600 transition-colors">About</a>
+        <a href="#work" class="hover:text-brand-600 transition-colors">Work</a>
+        <a href="#skills" class="hover:text-brand-600 transition-colors">Skills</a>
+        <a href="#contact" class="hover:text-brand-600 transition-colors">Contact</a>
+      </div>
+
+      <!-- Copyright -->
+      <div>
         &copy; 2025 Chandirakkumar S. All rights reserved.
-      </p>
-      <p class="flex items-center gap-1.5 text-blue-100">
-        <span>Designed with</span>
-        <i class="fa-solid fa-heart text-rose-300 text-xs"></i>
-        <span>for Learning.</span>
-      </p>
+      </div>
     </div>
   </footer>
 
-  <!-- Video / Project Modal -->
+  <!-- INTERACTIVE MEDIA PREVIEW MODAL -->
   <div id="mediaModal" class="fixed inset-0 z-50 hidden flex items-center justify-center bg-black/75 backdrop-blur-sm p-4 transition-opacity">
     <div class="bg-white rounded-2xl overflow-hidden shadow-2xl max-w-4xl w-full flex flex-col max-h-[90vh]">
       
@@ -885,14 +861,14 @@
       </div>
 
       <!-- Modal Body (Iframe or Image) -->
-      <div class="relative bg-black flex-1 min-h-[300px] sm:min-h-[480px] flex items-center justify-center">
-        <iframe id="modalIframe" class="w-full h-full min-h-[450px] border-0 hidden" allow="autoplay; fullscreen"></iframe>
+      <div class="relative bg-black flex-1 min-h-[320px] sm:min-h-[480px] flex items-center justify-center">
+        <iframe id="modalIframe" class="w-full h-full min-h-[460px] border-0 hidden" allow="autoplay; fullscreen"></iframe>
         <img id="modalImage" class="max-h-[500px] w-auto max-w-full object-contain hidden" alt="Project Sample">
       </div>
 
       <!-- Modal Footer -->
       <div class="px-6 py-3 bg-slate-50 border-t border-slate-100 flex items-center justify-between">
-        <span class="text-xs text-slate-500">Press ESC or click outside to close</span>
+        <span class="text-xs text-slate-500">Click anywhere outside or press ESC to close</span>
         <button onclick="closeMediaModal()" class="px-4 py-1.5 bg-slate-200 hover:bg-slate-300 text-slate-700 font-semibold rounded-lg text-xs transition-colors">
           Close Preview
         </button>
@@ -900,7 +876,7 @@
     </div>
   </div>
 
-  <!-- Resume Download Modal / Toast -->
+  <!-- RESUME PREVIEW / DOWNLOAD MODAL -->
   <div id="resumeModal" class="fixed inset-0 z-50 hidden flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
     <div class="bg-white rounded-2xl p-6 shadow-2xl max-w-md w-full text-center space-y-4">
       <div class="w-14 h-14 rounded-2xl bg-brand-50 text-brand-500 flex items-center justify-center text-2xl mx-auto border border-brand-100">
@@ -927,7 +903,7 @@
   </div>
 
   <script>
-    // Project Modal Controllers
+    // Modal Controllers
     const mediaModal = document.getElementById('mediaModal');
     const modalIframe = document.getElementById('modalIframe');
     const modalImage = document.getElementById('modalImage');
@@ -965,14 +941,12 @@
       document.body.classList.remove('modal-active');
     }
 
-    // Close on outside click
     mediaModal.addEventListener('click', (e) => {
       if (e.target === mediaModal) {
         closeMediaModal();
       }
     });
 
-    // Resume Modal Controllers
     function downloadResumeModal() {
       resumeModal.classList.remove('hidden');
       document.body.classList.add('modal-active');
@@ -990,7 +964,6 @@
     });
 
     function triggerResumeDownload() {
-      // Creates a downloadable file anchor or opens print prompt
       const resumeContent = "Chandirakkumar S - Instructional Designer & eLearning Developer\nEmail: sv393015@gmail.com\nPhone: +91 93530 80994\nLocation: Bengaluru, Karnataka, India\n\nSkills: Articulate Storyline 360, Adobe Premiere Pro, After Effects, LMS Management (LearnDash, QuickLearn), SCORM 1.2, PowerPoint Presentation Design.";
       const blob = new Blob([resumeContent], { type: 'text/plain;charset=utf-8;' });
       const link = document.createElement("a");
@@ -1002,7 +975,6 @@
       closeResumeModal();
     }
 
-    // Keyboard ESC listener for modals
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         closeMediaModal();
