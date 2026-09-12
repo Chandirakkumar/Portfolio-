@@ -1,605 +1,1170 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chandirakkumar S | Instructional Designer & eLearning Developer</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chandirakkumar S | Instructional Designer</title>
 
-  <!-- Google Fonts: Inter for UI and Caveat for handwritten notes -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
+<style>
+:root {
+  --bg-main: #FFFFFF;
+  --bg-subtle: #F8FAFC;
+  --border: #E2E8F0;
+  --border-light: #F1F5F9;
+  --text-dark: #0F172A;
+  --text-muted: #64748B;
+  --text-body: #334155;
+  --primary: #2563EB;
+  --primary-light: #EFF6FF;
+  --dark-btn: #0F172A;
+  --dark-btn-hover: #1E293B;
+  --sidebar-w: 120px;
+}
 
-  <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-            handwriting: ['Caveat', 'cursive'],
-          },
-          colors: {
-            brand: {
-              50: '#EFF6FF',
-              100: '#DBEAFE',
-              200: '#BFDBFE',
-              300: '#93C5FD',
-              400: '#60A5FA',
-              500: '#2563EB',
-              600: '#1D4ED8',
-              700: '#1E40AF',
-            },
-            darkNavy: '#0F172A',
-            slateSubtle: '#F8FAFC',
-            borderSubtle: '#E2E8F0',
-            borderLight: '#EDF2F7',
-          },
-          boxShadow: {
-            card: '0 2px 10px rgba(15, 23, 42, 0.04)',
-            cardHover: '0 12px 30px rgba(15, 23, 42, 0.08)',
-            mockup: '0 20px 45px -10px rgba(15, 23, 42, 0.25)',
-          }
-        }
-      }
-    }
-  </script>
+html {
+  scroll-behavior: smooth;
+}
 
-  <style>
-    body {
-      background-color: #F8FAFC;
-      background-image: 
-        radial-gradient(at 0% 0%, rgba(219, 234, 254, 0.45) 0px, transparent 50%),
-        radial-gradient(at 100% 0%, rgba(224, 242, 254, 0.45) 0px, transparent 45%),
-        radial-gradient(at 50% 100%, rgba(241, 245, 249, 0.7) 0px, transparent 60%);
-      background-attachment: fixed;
-    }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-dark);
+  line-height: 1.5;
+  overflow-x: hidden;
+}
 
-    /* Subtle dot grid pattern */
-    .bg-dots {
-      background-image: radial-gradient(#CBD5E1 1.5px, transparent 1.5px);
-      background-size: 18px 18px;
-    }
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
-    /* 3D Laptop Mockup Base */
-    .laptop-base {
-      position: relative;
-    }
-    .laptop-base::after {
-      content: '';
-      display: block;
-      width: 114%;
-      height: 12px;
-      background: linear-gradient(180deg, #94A3B8 0%, #64748B 100%);
-      border-radius: 0 0 14px 14px;
-      margin-left: -7%;
-      margin-top: 6px;
-      box-shadow: 0 8px 16px rgba(15, 23, 42, 0.2);
-    }
-    .laptop-notch {
-      position: absolute;
-      top: -1px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 58px;
-      height: 4px;
-      background: #475569;
-      border-radius: 0 0 4px 4px;
-      z-index: 20;
-    }
+/* ===== APP LAYOUT WITH VERTICAL LEFT NAV ===== */
+.app-layout {
+  display: grid;
+  grid-template-columns: var(--sidebar-w) 1fr;
+  min-height: 100vh;
+}
 
-    /* Wooden Whiteboard Frame */
-    .wood-frame {
-      border: 8px solid #C4A482;
-      border-image: linear-gradient(135deg, #D4B996 0%, #B89773 50%, #9C7A55 100%) 8;
-      box-shadow: 0 16px 36px rgba(15, 23, 42, 0.12), inset 0 2px 8px rgba(0, 0, 0, 0.04);
-    }
+/* ===== VERTICAL SIDEBAR ===== */
+.sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  background: #FFFFFF;
+  border-right: 1px solid var(--border);
+  padding: 32px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
 
-    .btn-press:active {
-      transform: scale(0.98);
-    }
-    
-    .modal-open {
-      overflow: hidden;
-    }
-  </style>
+.brand-block {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.brand-cs {
+  font-size: 32px;
+  font-weight: 900;
+  letter-spacing: -1px;
+  color: var(--text-dark);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.brand-name {
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--text-dark);
+  line-height: 1.2;
+}
+
+.brand-title {
+  font-size: 9px;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.nav-links-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.v-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: all 0.2s ease;
+  justify-content: center;
+}
+
+.v-nav-item:hover {
+  color: var(--text-dark);
+}
+
+.v-nav-item.active {
+  background: var(--primary-light);
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.v-nav-item .nav-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--primary);
+}
+
+.sidebar-quote {
+  font-family: 'Caveat', cursive;
+  font-size: 17px;
+  color: #475569;
+  text-align: center;
+  line-height: 1.2;
+  position: relative;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  width: 100%;
+}
+
+/* ===== MAIN CONTENT AREA ===== */
+.main-wrapper {
+  overflow-x: hidden;
+}
+
+.content-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* ===== HERO SECTION ===== */
+.hero-section {
+  position: relative;
+  padding: 40px 0 60px;
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(180deg, #FFFFFF 0%, #FAFCFF 100%);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.95fr;
+  gap: 30px;
+  align-items: center;
+}
+
+.hero-tagline {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 12px;
+  display: block;
+}
+
+.hero-title {
+  font-size: 50px;
+  line-height: 1.1;
+  font-weight: 900;
+  color: var(--text-dark);
+  letter-spacing: -1.2px;
+  margin-bottom: 18px;
+}
+
+.hero-title .blue-text {
+  color: var(--primary);
+  display: block;
+}
+
+.hero-desc {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--text-body);
+  max-width: 480px;
+  margin-bottom: 28px;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 40px;
+}
+
+.btn-dark {
+  background: var(--dark-btn);
+  color: #FFFFFF;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.btn-dark:hover {
+  background: var(--dark-btn-hover);
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  background: #FFFFFF;
+  color: var(--text-dark);
+  border: 1.5px solid var(--border);
+  padding: 11px 22px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.btn-outline:hover {
+  border-color: var(--text-dark);
+}
+
+/* Stats Row */
+.stats-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  padding-top: 22px;
+  border-top: 1px solid var(--border);
+}
+
+.stat-item .stat-num {
+  font-size: 26px;
+  font-weight: 900;
+  color: var(--text-dark);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.stat-item .stat-lbl {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  line-height: 1.3;
+}
+
+/* Hero Visual Composition (Desk/Laptop/Mug) */
+.hero-visual-pane {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  min-height: 480px;
+}
+
+.hero-profile-box {
+  position: relative;
+  width: 320px;
+  height: 440px;
+  border-radius: 200px 200px 16px 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.12);
+  border: 4px solid #FFFFFF;
+  z-index: 2;
+  background: #CBD5E1;
+}
+
+.hero-profile-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.script-signature-top {
+  position: absolute;
+  top: 40px;
+  right: -10px;
+  font-family: 'Caveat', cursive;
+  font-size: 32px;
+  color: #1E3A8A;
+  line-height: 1.15;
+  transform: rotate(-4deg);
+  z-index: 3;
+}
+
+.lamp-graphic {
+  position: absolute;
+  top: -10px;
+  right: 40px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50% 50% 10px 10px;
+  background: #0F172A;
+  box-shadow: 0 0 45px rgba(251, 191, 36, 0.45);
+  z-index: 1;
+}
+
+/* Composite Elements */
+.desk-laptop-overlay {
+  position: absolute;
+  bottom: 0;
+  right: -40px;
+  z-index: 4;
+  width: 250px;
+  background: #1E293B;
+  border: 3px solid #64748B;
+  border-radius: 10px 10px 0 0;
+  padding: 16px;
+  color: #FFFFFF;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+.desk-laptop-overlay .laptop-screen-text {
+  font-family: 'Caveat', cursive;
+  font-size: 26px;
+  line-height: 1.1;
+  color: #F8FAFC;
+}
+
+.desk-mug-overlay {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  z-index: 5;
+  width: 60px;
+  height: 70px;
+  background: #0F172A;
+  border-radius: 0 0 16px 16px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4px;
+}
+
+.desk-mug-overlay span {
+  color: #FFFFFF;
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+}
+
+.desk-mug-overlay::after {
+  content: '';
+  position: absolute;
+  right: -12px;
+  top: 15px;
+  width: 14px;
+  height: 35px;
+  border: 4px solid #0F172A;
+  border-left: none;
+  border-radius: 0 12px 12px 0;
+}
+
+.desk-topic-pills {
+  position: absolute;
+  bottom: 10px;
+  right: -65px;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.topic-strip {
+  background: #E2E8F0;
+  padding: 4px 14px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #1E293B;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+/* ===== FEATURED PROJECTS SECTION ===== */
+.section-padding {
+  padding: 70px 0;
+}
+
+.section-head-split {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 36px;
+}
+
+.section-eyebrow {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 4px;
+  display: block;
+}
+
+.section-heading-lg {
+  font-size: 34px;
+  font-weight: 900;
+  color: var(--text-dark);
+  letter-spacing: -0.8px;
+  line-height: 1.15;
+  border-left: 4px solid var(--primary);
+  padding-left: 14px;
+}
+
+.section-head-desc {
+  font-size: 14px;
+  color: var(--text-muted);
+  max-width: 480px;
+  line-height: 1.6;
+}
+
+.carousel-arrows {
+  display: flex;
+  gap: 8px;
+}
+
+.carousel-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border);
+  background: #FFFFFF;
+  color: var(--text-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.carousel-btn:hover {
+  background: var(--text-dark);
+  color: #FFFFFF;
+  border-color: var(--text-dark);
+}
+
+/* Projects 3-Card Grid */
+.projects-3-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.project-box {
+  background: #FFFFFF;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.25s ease;
+}
+
+.project-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+  border-color: #CBD5E1;
+}
+
+.project-thumb-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/10;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #0F172A;
+  margin-bottom: 18px;
+  border: 1px solid var(--border);
+}
+
+.project-thumb-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.project-play-icon {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(15, 23, 42, 0.75);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  backdrop-filter: blur(4px);
+}
+
+.project-box:hover .project-play-icon {
+  background: var(--primary);
+  transform: scale(1.1);
+}
+
+.project-box h3 {
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+}
+
+.project-box p {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin-bottom: 16px;
+  flex-grow: 1;
+}
+
+.project-pill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.project-pill {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 30px;
+  background: var(--primary-light);
+  color: var(--primary);
+}
+
+.btn-view-proj {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--primary);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: gap 0.2s ease;
+}
+
+.btn-view-proj:hover {
+  gap: 10px;
+}
+
+/* ===== MY TOOLKIT SECTION ===== */
+.toolkit-section {
+  background: #F8FAFC;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.toolkit-split-grid {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 30px;
+  align-items: center;
+}
+
+.toolkit-badge-list {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 12px;
+}
+
+.tool-tile {
+  background: #FFFFFF;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  transition: transform 0.2s ease;
+}
+
+.tool-tile:hover {
+  transform: translateY(-3px);
+  border-color: #CBD5E1;
+}
+
+.tool-icon-square {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 14px;
+  color: #FFFFFF;
+  margin-bottom: 10px;
+}
+
+.bg-sl { background: #D946EF; border-radius: 50%; }
+.bg-cp { background: #059669; }
+.bg-pr { background: #00005C; }
+.bg-ae { background: #00005C; }
+.bg-ppt { background: #D24726; }
+.bg-ps { background: #001E36; }
+.bg-ai { background: #330000; }
+.bg-ld { background: #F1F5F9; color: var(--primary); border: 1px solid var(--border); }
+
+.tool-tile .tool-name {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+  white-space: nowrap;
+}
+
+.tool-pill-lvl {
+  font-size: 9px;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 10px;
+  background: #F1F5F9;
+  color: var(--text-muted);
+  text-transform: capitalize;
+}
+
+/* ===== MY APPROACH SECTION ===== */
+.approach-steps-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 30px;
+  position: relative;
+}
+
+.approach-step-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  flex: 1;
+}
+
+.approach-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--primary-light);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.approach-step-num {
+  font-size: 10px;
+  font-weight: 800;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+}
+
+.approach-step-title {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--text-dark);
+}
+
+.approach-step-sub {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.approach-arrow-divider {
+  color: #CBD5E1;
+  font-size: 18px;
+  padding: 0 10px;
+}
+
+/* ===== LET'S CONNECT (DARK DESK SECTION) ===== */
+.connect-dark-section {
+  background: #0B132B;
+  color: #FFFFFF;
+  padding: 70px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.connect-dark-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.connect-dark-section .section-heading-lg {
+  color: #FFFFFF;
+  border-left-color: var(--primary);
+  font-size: 34px;
+}
+
+.connect-desc-dark {
+  font-size: 14px;
+  color: #94A3B8;
+  line-height: 1.6;
+  margin: 16px 0 28px;
+}
+
+.connect-list-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 30px;
+}
+
+.connect-list-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  color: #E2E8F0;
+  transition: color 0.2s ease;
+}
+
+.connect-list-item:hover {
+  color: #FFFFFF;
+}
+
+.connect-circle-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.btn-white-talk {
+  background: #FFFFFF;
+  color: #0F172A;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.btn-white-talk:hover {
+  background: #F1F5F9;
+  transform: translateY(-2px);
+}
+
+.connect-cursive-quote {
+  font-family: 'Caveat', cursive;
+  font-size: 36px;
+  line-height: 1.25;
+  color: #CBD5E1;
+  text-align: center;
+  position: relative;
+}
+
+.connect-cursive-quote::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 2px;
+  background: #475569;
+  margin: 18px auto 0;
+  border-radius: 2px;
+}
+
+/* ===== FOOTER ===== */
+.site-footer {
+  background: #FFFFFF;
+  padding: 24px 0;
+  border-top: 1px solid var(--border);
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.footer-nav-links {
+  display: flex;
+  gap: 20px;
+  font-weight: 600;
+}
+
+.footer-nav-links a:hover {
+  color: var(--primary);
+}
+
+.btn-back-top {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-dark);
+  transition: all 0.2s ease;
+}
+
+.btn-back-top:hover {
+  background: var(--text-dark);
+  color: #FFFFFF;
+}
+
+/* ===== LIGHTBOX MODAL ===== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+.modal-box {
+  background: #0F172A;
+  width: 100%;
+  max-width: 960px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  position: relative;
+  border: 1px solid #334155;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  background: #1E293B;
+  color: #FFFFFF;
+}
+
+.modal-close {
+  background: transparent;
+  border: none;
+  color: #94A3B8;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  color: #FFFFFF;
+}
+
+.modal-video-box {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: #000;
+}
+
+.modal-video-box iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .app-layout {
+    grid-template-columns: 1fr;
+  }
+  .sidebar {
+    position: relative;
+    height: auto;
+    flex-direction: row;
+    padding: 16px 24px;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-links-vertical {
+    flex-direction: row;
+    width: auto;
+  }
+  .sidebar-quote {
+    display: none;
+  }
+  .content-container {
+    padding: 0 24px;
+  }
+  .hero-grid, .connect-dark-grid {
+    grid-template-columns: 1fr;
+  }
+  .projects-3-grid {
+    grid-template-columns: 1fr;
+  }
+  .toolkit-split-grid {
+    grid-template-columns: 1fr;
+  }
+  .toolkit-badge-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .approach-steps-row {
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+  }
+  .approach-arrow-divider {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-title {
+    font-size: 36px;
+  }
+  .stats-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .toolkit-badge-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .footer-inner {
+    flex-direction: column;
+    gap: 14px;
+    text-align: center;
+  }
+}
+</style>
 </head>
-<body class="text-slate-900 antialiased min-h-screen flex flex-col justify-between selection:bg-brand-500 selection:text-white">
 
-  <!-- 1. STICKY NAVIGATION BAR -->
-  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-borderSubtle transition-all">
-    <div class="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-      
-      <!-- Brand Logo & Monogram -->
-      <a href="#home" class="flex items-center gap-3.5 group">
-        <div class="w-11 h-11 rounded-full bg-darkNavy text-white flex items-center justify-center font-extrabold text-lg tracking-tight shadow-sm group-hover:scale-105 transition-transform">
-          CS
-        </div>
-        <div>
-          <span class="text-[17px] font-extrabold tracking-tight text-slate-900 block leading-tight">
-            Chandirakkumar S
-          </span>
-          <span class="text-xs font-semibold text-slate-500 block leading-tight">
-            Instructional Designer
-          </span>
-        </div>
-      </a>
+<body>
 
-      <!-- Navigation Links -->
-      <nav class="hidden md:flex items-center space-x-1 lg:space-x-4 text-[14.5px] font-semibold text-slate-600">
-        <a href="#home" class="px-3.5 py-2 text-slate-900 border-b-2 border-brand-500 font-bold">Home</a>
-        <a href="#about" class="px-3.5 py-2 hover:text-brand-600 hover:bg-slate-50 rounded-lg transition-colors">About</a>
-        <a href="#work" class="px-3.5 py-2 hover:text-brand-600 hover:bg-slate-50 rounded-lg transition-colors">Work</a>
-        <a href="#skills" class="px-3.5 py-2 hover:text-brand-600 hover:bg-slate-50 rounded-lg transition-colors">Skills</a>
-        <a href="#contact" class="px-3.5 py-2 hover:text-brand-600 hover:bg-slate-50 rounded-lg transition-colors">Contact</a>
-      </nav>
+<div class="app-layout">
 
-      <!-- CTA Button -->
-      <div>
-        <a href="#contact" class="inline-flex items-center gap-2.5 bg-darkNavy hover:bg-slate-800 text-white text-sm font-bold px-5 py-2.5 rounded-full shadow-sm hover:shadow-md transition-all duration-200 btn-press">
-          <span>Let's Connect</span>
-          <i class="fa-solid fa-arrow-right text-xs"></i>
-        </a>
-      </div>
+  <!-- VERTICAL LEFT SIDEBAR -->
+  <aside class="sidebar">
+    <div class="brand-block">
+      <div class="brand-cs">CS</div>
+      <div class="brand-name">Chandirakkumar S</div>
+      <div class="brand-title">Instructional Designer</div>
     </div>
-  </header>
 
-  <!-- MAIN PAGE CONTENT -->
-  <main class="w-full flex-1">
+    <nav class="nav-links-vertical">
+      <a href="#home" class="v-nav-item active"><span class="nav-dot"></span> Home</a>
+      <a href="#about" class="v-nav-item">About</a>
+      <a href="#work" class="v-nav-item">Work</a>
+      <a href="#skills" class="v-nav-item">Skills</a>
+      <a href="#contact" class="v-nav-item">Contact</a>
+    </nav>
+
+    <div class="sidebar-quote">
+      "Good<br>learning<br>changes<br>people."
+    </div>
+  </aside>
+
+  <!-- MAIN SCROLLABLE CONTENT -->
+  <main class="main-wrapper">
 
     <!-- HERO SECTION -->
-    <section id="home" class="relative pt-8 pb-16 lg:pt-14 lg:pb-20 border-b border-borderSubtle bg-gradient-to-b from-white via-white/80 to-slate-50/50">
-      <div class="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
-          
-          <!-- Left Column Content (7 Cols) -->
-          <div class="lg:col-span-7 space-y-6">
-            
-            <!-- Tracked Tag -->
-            <p class="text-xs sm:text-[13px] font-extrabold tracking-[0.25em] text-brand-600 uppercase">
-              T U R N I N G &nbsp; I D E A S &nbsp; I N T O
-            </p>
-
-            <!-- Headline -->
-            <h1 class="text-4xl sm:text-5xl lg:text-[56px] font-black tracking-tight text-slate-900 leading-[1.12]">
-              Meaningful<br>
-              <span class="text-brand-500">Learning</span> Experiences.
-            </h1>
-
-            <!-- Bio Description -->
-            <p class="text-slate-600 text-base sm:text-lg leading-relaxed max-w-xl font-normal">
-              Instructional Designer with 1+ year of experience in eLearning development, multimedia creation, and visual design. I design learning solutions that are simple, engaging and drive real impact.
-            </p>
-
-            <!-- Action Buttons -->
-            <div class="flex flex-wrap items-center gap-3.5 pt-1">
-              <a href="#work" class="inline-flex items-center gap-2.5 bg-brand-500 hover:bg-brand-600 text-white font-bold px-6 py-3.5 rounded-xl shadow-lg shadow-brand-500/20 hover:shadow-brand-500/30 transition-all text-sm btn-press">
-                <span>View My Work</span>
-                <i class="fa-solid fa-arrow-right text-xs"></i>
-              </a>
-
-              <button onclick="downloadResumeModal()" class="inline-flex items-center gap-2.5 bg-white hover:bg-slate-50 text-slate-800 border border-slate-300 font-bold px-6 py-3.5 rounded-xl shadow-sm hover:border-slate-400 transition-all text-sm btn-press">
-                <i class="fa-solid fa-download text-brand-500 text-xs"></i>
-                <span>Download Resume</span>
-              </button>
-            </div>
-
-            <!-- Stats Row -->
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-6 border-t border-slate-200/80">
-              <div>
-                <span class="text-3xl font-black text-slate-900 block leading-tight">1+</span>
-                <span class="text-xs font-semibold text-slate-500 leading-tight">Years of Experience</span>
-              </div>
-              <div class="sm:border-l sm:border-slate-200 sm:pl-5">
-                <span class="text-3xl font-black text-slate-900 block leading-tight">100+</span>
-                <span class="text-xs font-semibold text-slate-500 leading-tight">Modules Developed</span>
-              </div>
-              <div class="sm:border-l sm:border-slate-200 sm:pl-5">
-                <span class="text-3xl font-black text-slate-900 block leading-tight">10+</span>
-                <span class="text-xs font-semibold text-slate-500 leading-tight">Tools & Technologies</span>
-              </div>
-              <div class="sm:border-l sm:border-slate-200 sm:pl-5">
-                <span class="text-3xl font-black text-brand-500 block leading-tight">&infin;</span>
-                <span class="text-xs font-semibold text-slate-500 leading-tight">Passion for Learning</span>
-              </div>
-            </div>
-
-          </div>
-
-          <!-- Right Column Visual Graphic (5 Cols) -->
-          <div id="about" class="lg:col-span-5 relative flex justify-center items-center select-none pt-4">
-            
-            <!-- Soft Ambient Radial Glow Backdrop -->
-            <div class="absolute w-80 h-80 rounded-full bg-blue-100/70 blur-3xl -top-6 pointer-events-none"></div>
-            
-            <!-- Top Right Handwritten Slogan -->
-            <div class="absolute -top-6 -right-2 sm:right-2 z-20 text-right pointer-events-none">
-              <span class="font-handwriting text-2xl sm:text-3xl text-brand-600 font-bold leading-tight block transform -rotate-3">
-                Design.<br>
-                <span class="pl-2">Develop.</span><br>
-                <span class="pl-4">Deliver.</span><br>
-                <span class="pl-6 text-brand-700">Better Learning.</span>
-              </span>
-            </div>
-
-            <!-- Main Composition Container -->
-            <div class="relative w-full max-w-sm pt-4">
-              
-              <!-- Arched Profile Frame -->
-              <div class="relative rounded-t-[140px] rounded-b-3xl overflow-hidden bg-gradient-to-b from-blue-50/80 via-slate-100 to-slate-200 p-2 border-2 border-white shadow-cardHover">
-                <div class="relative w-full aspect-[4/5] rounded-t-[130px] rounded-b-2xl overflow-hidden bg-slate-300">
-                  <img 
-                    src="IMG_20260409_223924.jpg" 
-                    onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=700&q=80';" 
-                    alt="Chandirakkumar S" 
-                    class="w-full h-full object-cover object-top"
-                  >
-                </div>
-              </div>
-
-              <!-- Bottom Left Pull Quote Overlay -->
-              <div class="absolute -bottom-4 -left-3 sm:-left-6 z-20 bg-white/95 backdrop-blur-md p-4 rounded-2xl border border-slate-200/90 shadow-card max-w-[240px]">
-                <p class="text-xs font-bold text-slate-800 leading-snug">
-                  <span class="text-brand-500 font-black text-sm">&ldquo;</span> Good learning changes people. And people change the world.
-                </p>
-                <div class="w-8 h-1 bg-brand-500 rounded-full mt-2"></div>
-              </div>
-
-              <!-- Bottom Right Stacked Books -->
-              <div class="absolute -bottom-2 -right-2 sm:-right-4 z-20 flex flex-col gap-1 text-[11px] font-bold">
-                <div class="px-3.5 py-1 bg-white border border-slate-300/80 rounded-md shadow-sm text-slate-700">
-                  People
-                </div>
-                <div class="px-3.5 py-1 bg-slate-100 border border-slate-300 rounded-md shadow-sm text-slate-800">
-                  Process
-                </div>
-                <div class="px-3.5 py-1 bg-blue-50 border border-blue-200 rounded-md shadow-sm text-brand-600">
-                  Learning
-                </div>
-                <div class="px-3.5 py-1 bg-darkNavy text-white rounded-md shadow-md">
-                  Impact
-                </div>
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 02: FEATURED WORK -->
-    <section id="work" class="py-20 max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-24">
-      
-      <!-- Section Header with Tag & Carousel Buttons -->
-      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
+    <section id="home" class="hero-section">
+      <div class="content-container hero-grid">
+        
         <div>
-          <div class="flex items-center gap-2 mb-1">
-            <span class="text-xs font-extrabold text-brand-600">02</span>
-            <span class="text-xs font-extrabold text-slate-400 tracking-wider uppercase">FEATURED WORK</span>
-          </div>
-          <div class="flex items-center gap-3">
-            <div class="w-1.5 h-8 bg-brand-500 rounded-full"></div>
-            <h2 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
-              Projects that Create Real Impact
-            </h2>
-          </div>
-          <p class="text-slate-500 text-xs sm:text-sm font-medium mt-1 ml-4.5">
-            A glimpse of my recent eLearning and multimedia projects.
+          <span class="hero-tagline">Turning Complex Ideas Into</span>
+          <h1 class="hero-title">
+            Learning<br>
+            Experiences<br>
+            <span class="blue-text">That Matter</span>
+          </h1>
+
+          <p class="hero-desc">
+            I design and develop simple, engaging and effective eLearning solutions using Storyline 360, multimedia and visual design – to help people learn, perform and grow.
           </p>
+
+          <div class="hero-actions">
+            <a href="#work" class="btn-dark">
+              Explore My Work <span>&rarr;</span>
+            </a>
+            <a href="#contact" class="btn-outline">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+              Download Resume
+            </a>
+          </div>
+
+          <!-- STATS -->
+          <div class="stats-strip">
+            <div class="stat-item">
+              <div class="stat-num">1+</div>
+              <div class="stat-lbl">Years of Experience</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num">100+</div>
+              <div class="stat-lbl">Modules Developed</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num">10+</div>
+              <div class="stat-lbl">Tools & Technologies</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num">&infin;</div>
+              <div class="stat-lbl">Continuous Learning</div>
+            </div>
+          </div>
         </div>
 
-        <!-- Carousel Navigation Buttons -->
-        <div class="flex items-center gap-2 self-end sm:self-auto">
-          <button onclick="switchProjectDemo(-1)" class="w-10 h-10 rounded-full border border-slate-300 bg-white hover:bg-slate-50 text-slate-700 flex items-center justify-center font-bold text-sm shadow-sm transition-all">
-            <i class="fa-solid fa-chevron-left text-xs"></i>
-          </button>
-          <button onclick="switchProjectDemo(1)" class="w-10 h-10 rounded-full border border-slate-300 bg-white hover:bg-slate-50 text-slate-700 flex items-center justify-center font-bold text-sm shadow-sm transition-all">
-            <i class="fa-solid fa-chevron-right text-xs"></i>
-          </button>
+        <!-- HERO VISUAL (COMPOSITE SETUP) -->
+        <div class="hero-visual-pane">
+          <div class="lamp-graphic"></div>
+
+          <div class="script-signature-top">
+            Design<br>
+            Develop<br>
+            Deliver<br>
+            Better Learning.
+          </div>
+
+          <!-- PROFILE PHOTO BOX -->
+          <div class="hero-profile-box">
+            <img src="IMG_20260409_223924.jpg" alt="Chandirakkumar S" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=700&auto=format&fit=crop&q=80';">
+          </div>
+
+          <!-- MUG COMPONENT -->
+          <div class="desk-mug-overlay">
+            <span>KEEP<br>LEARNING<br>KEEP<br>GROWING</span>
+          </div>
+
+          <!-- LAPTOP BACK OVERLAY -->
+          <div class="desk-laptop-overlay">
+            <div class="laptop-screen-text">Ideas<br>to<br>Impact</div>
+          </div>
+
+          <!-- TOPIC STRIPS -->
+          <div class="desk-topic-pills">
+            <div class="topic-strip">eLearning</div>
+            <div class="topic-strip">Visual Design</div>
+            <div class="topic-strip">Multimedia</div>
+            <div class="topic-strip">Lifelong Learning</div>
+          </div>
         </div>
+
       </div>
+    </section>
 
-      <!-- 2-Column Showcase Layout -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-        
-        <!-- Left Large Showcase Card (7 Cols) -->
-        <div class="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-8 border border-borderLight shadow-card hover:shadow-cardHover transition-all flex flex-col justify-between">
+    <!-- SECTION: FEATURED PROJECTS (REAL PROJECTS. REAL IMPACT.) -->
+    <section id="work" class="section-padding">
+      <div class="content-container">
+
+        <div class="section-head-split">
           <div>
-            <span class="text-xs font-extrabold text-brand-600 block mb-1">01</span>
-            <h3 class="text-2xl font-black text-slate-900 leading-tight">Interactive SCORM eLearning</h3>
-            <h4 class="text-base font-bold text-slate-700 mt-1">From Ship to Shore</h4>
-            <p class="text-slate-500 text-xs sm:text-sm mt-2 leading-relaxed">
-              An interactive Storyline 360 module with custom navigation, assessments and SCORM publishing.
+            <span class="section-eyebrow">Featured Projects</span>
+            <h2 class="section-heading-lg">Real Projects.<br>Real Impact.</h2>
+          </div>
+
+          <div style="display: flex; align-items: flex-end; gap: 30px;">
+            <p class="section-head-desc">
+              A glimpse of my recent eLearning and multimedia work. Each project is designed to solve a real learning need with creativity and clarity.
             </p>
-
-            <!-- Tags -->
-            <div class="flex flex-wrap gap-2 mt-4">
-              <span class="px-3 py-1 rounded-full text-xs font-bold bg-brand-50 text-brand-600 border border-brand-100">Storyline 360</span>
-              <span class="px-3 py-1 rounded-full text-xs font-bold bg-brand-50 text-brand-600 border border-brand-100">SCORM</span>
-              <span class="px-3 py-1 rounded-full text-xs font-bold bg-brand-50 text-brand-600 border border-brand-100">Interactive</span>
-              <span class="px-3 py-1 rounded-full text-xs font-bold bg-brand-50 text-brand-600 border border-brand-100">Assessments</span>
+            <div class="carousel-arrows">
+              <button class="carousel-btn" aria-label="Previous">&lsaquo;</button>
+              <button class="carousel-btn" aria-label="Next">&rsaquo;</button>
             </div>
-
-            <!-- 3D Realistic Laptop Mockup Container -->
-            <div class="my-6">
-              <div class="laptop-base relative rounded-t-2xl bg-slate-900 border-2 border-slate-800 p-2 shadow-mockup">
-                <div class="laptop-notch"></div>
-                <div 
-                  onclick="openVideoModal('https://drive.google.com/file/d/1rRtZDmiMiKexJ4jQxXIFJ_b89UR3zWo3/preview', 'From Ship to Shore - Interactive SCORM Module')"
-                  class="relative aspect-[16/9.5] rounded-lg overflow-hidden bg-slate-950 cursor-pointer group"
-                >
-                  <img 
-                    src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80" 
-                    alt="Maritime SCORM eLearning preview" 
-                    class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-300"
-                  >
-                  <!-- Maritime slide UI overlay -->
-                  <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/60 p-4 flex flex-col justify-between">
-                    <div class="flex items-center justify-between text-white text-[11px] font-bold">
-                      <span class="bg-black/50 px-2.5 py-1 rounded backdrop-blur-xs">From Ship to Shore</span>
-                      <span class="bg-black/50 px-2.5 py-1 rounded text-slate-300">Search for a topic... <i class="fa-solid fa-magnifying-glass ml-1"></i></span>
-                    </div>
-
-                    <div>
-                      <span class="text-xs text-sky-400 font-bold uppercase tracking-wider">Module 1</span>
-                      <h5 class="text-lg sm:text-xl font-extrabold text-white leading-tight">Vessel Lifestyles and Industry Overview</h5>
-                    </div>
-
-                    <!-- Play button hover icon -->
-                    <div class="absolute inset-0 flex items-center justify-center">
-                      <div class="w-14 h-14 rounded-full bg-brand-500/95 text-white flex items-center justify-center text-lg shadow-xl group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-play ml-1"></i>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
           </div>
-
-          <!-- Bottom Button -->
-          <div class="pt-2">
-            <button 
-              onclick="openVideoModal('https://drive.google.com/file/d/1rRtZDmiMiKexJ4jQxXIFJ_b89UR3zWo3/preview', 'From Ship to Shore - Interactive SCORM Module')"
-              class="inline-flex items-center gap-2 border border-slate-300 hover:border-slate-900 bg-white hover:bg-slate-900 hover:text-white text-slate-800 font-bold px-5 py-2.5 rounded-xl transition-all text-xs sm:text-sm btn-press"
-            >
-              <span>View Project</span>
-              <i class="fa-solid fa-arrow-right text-xs"></i>
-            </button>
-          </div>
-
         </div>
 
-        <!-- Right Stacked Secondary Cards (5 Cols) -->
-        <div class="lg:col-span-5 flex flex-col gap-6">
+        <!-- 3 PROJECT CARDS GRID -->
+        <div class="projects-3-grid">
           
-          <!-- Secondary Card 1: Multi-language eLearning -->
-          <div 
-            onclick="openVideoModal('https://drive.google.com/file/d/1IIuKoOcBHQ35GzFYcmutqnFGDglw8n3t/preview', 'Multi-language eLearning Course')"
-            class="bg-white rounded-3xl p-6 border border-borderLight shadow-card hover:shadow-cardHover transition-all cursor-pointer group flex flex-col justify-between"
-          >
-            <div class="grid grid-cols-1 sm:grid-cols-12 gap-4 items-center">
-              <div class="sm:col-span-7">
-                <span class="text-xs font-extrabold text-brand-600 block mb-0.5">02 &mdash;</span>
-                <h3 class="text-lg font-black text-slate-900 leading-snug">Multi-language eLearning</h3>
-                <p class="text-slate-500 text-xs mt-1.5 leading-relaxed">
-                  Interactive Storyline course with language switching and multilingual learning support.
-                </p>
-
-                <div class="mt-4">
-                  <div class="w-9 h-9 rounded-full border-2 border-brand-500 text-brand-500 group-hover:bg-brand-500 group-hover:text-white flex items-center justify-center text-xs transition-colors">
-                    <i class="fa-solid fa-arrow-right"></i>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Thumbnail Graphic with Language Menu Preview -->
-              <div class="sm:col-span-5 aspect-[4/3] rounded-2xl overflow-hidden bg-slate-900 border border-slate-200 relative">
-                <img 
-                  src="https://images.unsplash.com/photo-1507537297725-24a1c029d3ca?auto=format&fit=crop&w=600&q=80" 
-                  alt="Multi-language eLearning" 
-                  class="w-full h-full object-cover opacity-85 group-hover:scale-105 transition-transform duration-300"
-                >
-                <!-- Overlaid Mini Language Picker Visual -->
-                <div class="absolute inset-y-0 right-0 w-2/5 bg-slate-950/90 p-2 flex flex-col justify-center gap-1 text-[9px] text-white/90 font-bold border-l border-white/20">
-                  <div class="flex items-center gap-1 text-emerald-400"><span>•</span> English</div>
-                  <div class="flex items-center gap-1 text-slate-300"><span>•</span> हिन्दी</div>
-                  <div class="flex items-center gap-1 text-slate-300"><span>•</span> தமிழ்</div>
-                  <div class="flex items-center gap-1 text-slate-300"><span>•</span> తెలుగు</div>
-                  <div class="flex items-center gap-1 text-slate-300"><span>•</span> বাংলা</div>
-                </div>
-              </div>
+          <!-- CARD 1 -->
+          <div class="project-box">
+            <div class="project-thumb-frame">
+              <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?w=600&auto=format&fit=crop&q=80" alt="Ship to Shore SCORM">
+              <div class="project-play-icon" onclick="openPreviewModal('https://drive.google.com/file/d/1rRtZDmiMiKexJ4jQxXIFJ_b89UR3zWo3/preview')">&#9658;</div>
             </div>
+            <h3>Interactive SCORM eLearning</h3>
+            <p>An interactive Storyline 360 module with custom navigation, assessments and SCORM publishing.</p>
+            <div class="project-pill-list">
+              <span class="project-pill">Storyline 360</span>
+              <span class="project-pill">SCORM</span>
+              <span class="project-pill">Interactive Learning</span>
+            </div>
+            <a href="javascript:void(0)" onclick="openPreviewModal('https://drive.google.com/file/d/1-Jr4AcAYIeU_B9Cimcw1WLswNRgfx0MU/preview')" class="btn-view-proj">
+              View Project &rarr;
+            </a>
           </div>
 
-          <!-- Secondary Card 2: Corporate PowerPoint Design -->
-          <div 
-            onclick="openImageModal('https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1200&q=80', 'Corporate PowerPoint Presentation Design Deck')"
-            class="bg-white rounded-3xl p-6 border border-borderLight shadow-card hover:shadow-cardHover transition-all cursor-pointer group flex flex-col justify-between"
-          >
-            <div class="grid grid-cols-1 sm:grid-cols-12 gap-4 items-center">
-              <div class="sm:col-span-7">
-                <span class="text-xs font-extrabold text-brand-600 block mb-0.5">03 &mdash;</span>
-                <h3 class="text-lg font-black text-slate-900 leading-snug">Corporate PowerPoint Design</h3>
-                <p class="text-slate-500 text-xs mt-1.5 leading-relaxed">
-                  Professional training presentations with modern layouts, infographics and learning content.
-                </p>
-
-                <div class="mt-4">
-                  <div class="w-9 h-9 rounded-full border-2 border-brand-500 text-brand-500 group-hover:bg-brand-500 group-hover:text-white flex items-center justify-center text-xs transition-colors">
-                    <i class="fa-solid fa-arrow-right"></i>
-                  </div>
-                </div>
-              </div>
-
-              <!-- PowerPoint Presentation Deck Grid Thumbnail Preview -->
-              <div class="sm:col-span-5 aspect-[4/3] rounded-2xl overflow-hidden bg-slate-100 border border-slate-200 relative p-1 grid grid-cols-2 gap-1">
-                <div class="bg-blue-100 rounded-md flex items-center justify-center text-[8px] font-bold text-blue-800">Slide 1</div>
-                <div class="bg-indigo-100 rounded-md flex items-center justify-center text-[8px] font-bold text-indigo-800">Slide 2</div>
-                <div class="bg-sky-100 rounded-md flex items-center justify-center text-[8px] font-bold text-sky-800">Charts</div>
-                <div class="bg-amber-100 rounded-md flex items-center justify-center text-[8px] font-bold text-amber-800">Summary</div>
-              </div>
+          <!-- CARD 2 -->
+          <div class="project-box">
+            <div class="project-thumb-frame">
+              <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&auto=format&fit=crop&q=80" alt="Multi-language eLearning">
+              <div class="project-play-icon" onclick="openPreviewModal('https://drive.google.com/file/d/1IIuKoOcBHQ35GzFYcmutqnFGDglw8n3t/preview')">&#9658;</div>
             </div>
+            <h3>Multi-language eLearning</h3>
+            <p>Interactive course with language switching and multilingual learning support.</p>
+            <div class="project-pill-list">
+              <span class="project-pill">Storyline 360</span>
+              <span class="project-pill">Multilingual</span>
+              <span class="project-pill">Localization</span>
+            </div>
+            <a href="javascript:void(0)" onclick="openPreviewModal('https://drive.google.com/file/d/1IIuKoOcBHQ35GzFYcmutqnFGDglw8n3t/preview')" class="btn-view-proj">
+              View Project &rarr;
+            </a>
           </div>
 
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- SECTION 03: TOOLS & SKILLS -->
-    <section id="skills" class="py-20 bg-white border-y border-borderSubtle scroll-mt-24">
-      <div class="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-          
-          <!-- Left Sidebar Heading (4 Cols) -->
-          <div class="lg:col-span-4 space-y-4">
-            <div class="flex items-center gap-2">
-              <span class="text-xs font-extrabold text-brand-600">03</span>
-              <span class="text-xs font-extrabold text-slate-400 tracking-wider uppercase">TOOLS & SKILLS</span>
+          <!-- CARD 3 -->
+          <div class="project-box">
+            <div class="project-thumb-frame">
+              <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&auto=format&fit=crop&q=80" alt="Corporate PowerPoint Design">
+              <div class="project-play-icon" onclick="openPreviewModal('https://drive.google.com/file/d/12KMOnXd8ilEKFB4JqiAr99lX8_8IBSUv/preview')">&#9658;</div>
             </div>
-            
-            <div class="flex items-center gap-3">
-              <div class="w-1.5 h-8 bg-brand-500 rounded-full"></div>
-              <h2 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
-                Tools that<br class="hidden sm:inline">Power My Creativity
-              </h2>
+            <h3>Corporate PowerPoint Design</h3>
+            <p>Professional training presentations with modern layouts, infographics and learning content.</p>
+            <div class="project-pill-list">
+              <span class="project-pill">PowerPoint</span>
+              <span class="project-pill">Visual Design</span>
+              <span class="project-pill">Infographics</span>
             </div>
-
-            <p class="text-slate-500 text-xs sm:text-sm leading-relaxed max-w-sm">
-              A combination of authoring, design, multimedia and LMS tools to build engaging learning solutions.
-            </p>
-
-            <div class="pt-2">
-              <a href="#work" class="inline-flex items-center gap-2 border border-slate-300 hover:border-slate-900 text-slate-800 font-bold px-5 py-2.5 rounded-xl transition-all text-xs sm:text-sm btn-press">
-                <span>View All Skills</span>
-                <i class="fa-solid fa-arrow-right text-xs"></i>
-              </a>
-            </div>
-          </div>
-
-          <!-- Right 4 Categories Columns (8 Cols) -->
-          <div class="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-            
-            <!-- Category 1: Authoring Tools -->
-            <div class="bg-slateSubtle rounded-2xl p-4 border border-slate-200/80 shadow-card flex flex-col items-center text-center justify-between">
-              <span class="text-[10px] font-extrabold text-brand-700 bg-brand-50 px-2.5 py-1 rounded-full border border-brand-100 uppercase tracking-wide mb-4">
-                Authoring Tools
-              </span>
-
-              <div class="flex items-center justify-center gap-2 mb-4">
-                <!-- Storyline 360 -->
-                <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-fuchsia-600 to-pink-500 text-white flex items-center justify-center font-bold text-xs shadow-sm" title="Storyline 360">
-                  sl
-                </div>
-                <!-- Adobe Captivate -->
-                <div class="w-10 h-10 rounded-xl bg-emerald-900 text-emerald-300 flex items-center justify-center font-bold text-xs shadow-sm border border-emerald-700" title="Adobe Captivate">
-                  Cp
-                </div>
-                <!-- SCORM -->
-                <div class="w-10 h-10 rounded-xl bg-indigo-600 text-white flex flex-col items-center justify-center font-black text-[9px] shadow-sm" title="SCORM 1.2">
-                  <i class="fa-solid fa-cube text-[9px]"></i>
-                  <span>SCORM</span>
-                </div>
-              </div>
-
-              <div>
-                <p class="text-xs font-bold text-slate-800">Storyline 360 & SCORM</p>
-                <span class="mt-2 inline-block px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-blue-50 text-brand-600">
-                  Expert
-                </span>
-              </div>
-            </div>
-
-            <!-- Category 2: LMS Platforms -->
-            <div class="bg-slateSubtle rounded-2xl p-4 border border-slate-200/80 shadow-card flex flex-col items-center text-center justify-between">
-              <span class="text-[10px] font-extrabold text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-100 uppercase tracking-wide mb-4">
-                LMS Platforms
-              </span>
-
-              <div class="flex items-center justify-center gap-2 mb-4">
-                <!-- LearnDash -->
-                <div class="w-10 h-10 rounded-xl bg-white border border-slate-200 text-brand-500 flex items-center justify-center font-bold text-base shadow-sm" title="LearnDash">
-                  <i class="fa-solid fa-chart-simple"></i>
-                </div>
-                <!-- QuickLearn -->
-                <div class="w-10 h-10 rounded-xl bg-white border border-slate-200 text-sky-500 flex items-center justify-center font-bold text-base shadow-sm" title="QuickLearn LMS">
-                  <i class="fa-solid fa-graduation-cap"></i>
-                </div>
-              </div>
-
-              <div>
-                <p class="text-xs font-bold text-slate-800">LearnDash & QuickLearn</p>
-                <span class="mt-2 inline-block px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-50 text-emerald-600">
-                  Advanced
-                </span>
-              </div>
-            </div>
-
-            <!-- Category 3: Design & Visual -->
-            <div class="bg-slateSubtle rounded-2xl p-4 border border-slate-200/80 shadow-card flex flex-col items-center text-center justify-between">
-              <span class="text-[10px] font-extrabold text-amber-800 bg-amber-50 px-2.5 py-1 rounded-full border border-amber-100 uppercase tracking-wide mb-4">
-                Design & Visual
-              </span>
-
-              <div class="flex items-center justify-center gap-1.5 mb-4">
-                <!-- PowerPoint -->
-                <div class="w-9 h-9 rounded-lg bg-orange-600 text-white flex items-center justify-center font-black text-xs shadow-sm" title="PowerPoint">
-                  P
-                </div>
-                <!-- Photoshop -->
-                <div class="w-9 h-9 rounded-lg bg-[#001E36] text-[#31A8FF] flex items-center justify-center font-bold text-xs border border-blue-900" title="Photoshop">
-                  Ps
-                </div>
-                <!-- Illustrator -->
-                <div class="w-9 h-9 rounded-lg bg-[#331400] text-[#FF9A00] flex items-center justify-center font-bold text-xs border border-amber-900" title="Illustrator">
-                  Ai
-                </div>
-              </div>
-
-              <div>
-                <p class="text-xs font-bold text-slate-800">PowerPoint & Adobe CC</p>
-                <span class="mt-2 inline-block px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-amber-50 text-amber-700">
-                  Expert
-                </span>
-              </div>
-            </div>
-
-            <!-- Category 4: Video & Motion -->
-            <div class="bg-slateSubtle rounded-2xl p-4 border border-slate-200/80 shadow-card flex flex-col items-center text-center justify-between">
-              <span class="text-[10px] font-extrabold text-purple-800 bg-purple-50 px-2.5 py-1 rounded-full border border-purple-100 uppercase tracking-wide mb-4">
-                Video & Motion
-              </span>
-
-              <div class="flex items-center justify-center gap-2 mb-4">
-                <!-- Premiere Pro -->
-                <div class="w-10 h-10 rounded-xl bg-[#00005B] text-[#9999FF] flex items-center justify-center font-black text-xs border border-indigo-900 shadow-sm" title="Premiere Pro">
-                  Pr
-                </div>
-                <!-- After Effects -->
-                <div class="w-10 h-10 rounded-xl bg-[#00005B] text-[#D291FF] flex items-center justify-center font-black text-xs border border-indigo-900 shadow-sm" title="After Effects">
-                  Ae
-                </div>
-              </div>
-
-              <div>
-                <p class="text-xs font-bold text-slate-800">Premiere & After Effects</p>
-                <span class="mt-2 inline-block px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-purple-50 text-purple-600">
-                  Advanced
-                </span>
-              </div>
-            </div>
-
+            <a href="javascript:void(0)" onclick="openPreviewModal('https://drive.google.com/file/d/12KMOnXd8ilEKFB4JqiAr99lX8_8IBSUv/preview')" class="btn-view-proj">
+              View Project &rarr;
+            </a>
           </div>
 
         </div>
@@ -607,295 +1172,250 @@
       </div>
     </section>
 
-    <!-- SECTION 04: LET'S CONNECT -->
-    <section id="contact" class="py-20 max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-24">
-      
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+    <!-- SECTION: MY TOOLKIT -->
+    <section id="skills" class="section-padding toolkit-section">
+      <div class="content-container">
+
+        <div class="toolkit-split-grid">
+          <div>
+            <span class="section-eyebrow">My Toolkit</span>
+            <h2 class="section-heading-lg" style="font-size: 28px; margin-bottom: 8px;">Tools I Work With</h2>
+            <p style="font-size: 13px; color: var(--text-muted); line-height: 1.5; margin-bottom: 16px;">
+              A combination of authoring, design, multimedia and LMS tools to create engaging learning experiences.
+            </p>
+            <a href="#work" class="btn-view-proj" style="font-weight: 700;">Explore All Skills &rarr;</a>
+          </div>
+
+          <!-- 8 TOOL TILES -->
+          <div class="toolkit-badge-list">
+            
+            <div class="tool-tile">
+              <div class="tool-icon-square bg-sl">sl</div>
+              <div class="tool-name">Storyline 360</div>
+              <span class="tool-pill-lvl">Expert</span>
+            </div>
+
+            <div class="tool-tile">
+              <div class="tool-icon-square bg-cp">Cp</div>
+              <div class="tool-name">Captivate</div>
+              <span class="tool-pill-lvl">Advanced</span>
+            </div>
+
+            <div class="tool-tile">
+              <div class="tool-icon-square bg-pr">Pr</div>
+              <div class="tool-name">Premiere Pro</div>
+              <span class="tool-pill-lvl">Advanced</span>
+            </div>
+
+            <div class="tool-tile">
+              <div class="tool-icon-square bg-ae">Ae</div>
+              <div class="tool-name">After Effects</div>
+              <span class="tool-pill-lvl">Advanced</span>
+            </div>
+
+            <div class="tool-tile">
+              <div class="tool-icon-square bg-ppt">P</div>
+              <div class="tool-name">PowerPoint</div>
+              <span class="tool-pill-lvl">Expert</span>
+            </div>
+
+            <div class="tool-tile">
+              <div class="tool-icon-square bg-ps">Ps</div>
+              <div class="tool-name">Photoshop</div>
+              <span class="tool-pill-lvl">Intermediate</span>
+            </div>
+
+            <div class="tool-tile">
+              <div class="tool-icon-square bg-ai">Ai</div>
+              <div class="tool-name">Illustrator</div>
+              <span class="tool-pill-lvl">Intermediate</span>
+            </div>
+
+            <div class="tool-tile">
+              <div class="tool-icon-square bg-ld">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M4 19h4V9H4v10zm6 0h4V5h-4v14zm6 0h4v-7h-4v7z"/></svg>
+              </div>
+              <div class="tool-name">LearnDash</div>
+              <span class="tool-pill-lvl">Advanced</span>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: MY APPROACH -->
+    <section class="section-padding" style="border-bottom: 1px solid var(--border);">
+      <div class="content-container">
+        <span class="section-eyebrow">My Approach</span>
+        <h2 class="section-heading-lg" style="font-size: 28px; margin-bottom: 30px;">
+          From Understanding<br>to Impact
+        </h2>
+
+        <div class="approach-steps-row">
+          
+          <div class="approach-step-card">
+            <div class="approach-icon-box">&#128221;</div>
+            <div>
+              <div class="approach-step-num">01</div>
+              <div class="approach-step-title">Understand</div>
+              <div class="approach-step-sub">Learning Needs</div>
+            </div>
+          </div>
+
+          <div class="approach-arrow-divider">&rarr;</div>
+
+          <div class="approach-step-card">
+            <div class="approach-icon-box">&#128161;</div>
+            <div>
+              <div class="approach-step-num">02</div>
+              <div class="approach-step-title">Design</div>
+              <div class="approach-step-sub">Engaging Solutions</div>
+            </div>
+          </div>
+
+          <div class="approach-arrow-divider">&rarr;</div>
+
+          <div class="approach-step-card">
+            <div class="approach-icon-box">&#9881;</div>
+            <div>
+              <div class="approach-step-num">03</div>
+              <div class="approach-step-title">Develop</div>
+              <div class="approach-step-sub">With the Right Tools</div>
+            </div>
+          </div>
+
+          <div class="approach-arrow-divider">&rarr;</div>
+
+          <div class="approach-step-card">
+            <div class="approach-icon-box">&#128200;</div>
+            <div>
+              <div class="approach-step-num">04</div>
+              <div class="approach-step-title">Deliver</div>
+              <div class="approach-step-sub">Measurable Impact</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: LET'S CONNECT (DARK SECTION) -->
+    <section id="contact" class="connect-dark-section">
+      <div class="content-container connect-dark-grid">
         
-        <!-- Left Contact Information (7 Cols) -->
-        <div class="lg:col-span-7 space-y-5">
-          <div class="flex items-center gap-2">
-            <span class="text-xs font-extrabold text-brand-600">04</span>
-            <span class="text-xs font-extrabold text-slate-400 tracking-wider uppercase">LET'S CONNECT</span>
-          </div>
-
-          <div class="flex items-center gap-3">
-            <div class="w-1.5 h-8 bg-brand-500 rounded-full"></div>
-            <h2 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
-              Open to Collaborate on<br class="hidden sm:inline">Meaningful Projects
-            </h2>
-          </div>
-
-          <p class="text-slate-500 text-xs sm:text-sm font-medium leading-relaxed max-w-lg">
-            I'm always open to discussing new opportunities in Instructional Design, eLearning development, and multimedia creation.
+        <div>
+          <span class="section-eyebrow" style="color: #60A5FA;">Let's Connect</span>
+          <h2 class="section-heading-lg">
+            Have a project or opportunity in mind?
+          </h2>
+          <p class="connect-desc-dark">
+            I'm always open to discussing Instructional Design, eLearning development, multimedia or new ideas.
           </p>
 
-          <!-- Contact Details Row/Grid -->
-          <div class="space-y-3.5 pt-2">
-            
-            <!-- Email -->
-            <a href="mailto:sv393015@gmail.com" class="flex items-center gap-3.5 group">
-              <div class="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-700 shadow-sm group-hover:border-brand-500 group-hover:text-brand-500 transition-colors">
-                <i class="fa-regular fa-envelope text-sm"></i>
-              </div>
-              <span class="text-sm font-semibold text-slate-800 group-hover:text-brand-600 transition-colors">
-                sv393015@gmail.com
-              </span>
+          <div class="connect-list-rows">
+            <a href="mailto:sv393015@gmail.com" class="connect-list-item">
+              <div class="connect-circle-icon">&#9993;</div>
+              <span>sv393015@gmail.com</span>
             </a>
 
-            <!-- Phone -->
-            <a href="tel:+919353080994" class="flex items-center gap-3.5 group">
-              <div class="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-700 shadow-sm group-hover:border-brand-500 group-hover:text-brand-500 transition-colors">
-                <i class="fa-solid fa-phone text-sm"></i>
-              </div>
-              <span class="text-sm font-semibold text-slate-800 group-hover:text-brand-600 transition-colors">
-                +91 93530 80994
-              </span>
+            <a href="tel:+919353080994" class="connect-list-item">
+              <div class="connect-circle-icon">&#9742;</div>
+              <span>+91 93530 80994</span>
             </a>
 
-            <!-- LinkedIn -->
-            <a href="https://www.linkedin.com/in/chandru-elearning" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3.5 group">
-              <div class="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-700 shadow-sm group-hover:border-brand-500 group-hover:text-brand-500 transition-colors">
-                <i class="fa-brands fa-linkedin-in text-sm"></i>
-              </div>
-              <span class="text-sm font-semibold text-slate-800 group-hover:text-brand-600 transition-colors">
-                linkedin.com/in/chandru-elearning
-              </span>
+            <a href="https://www.linkedin.com/in/chandru-elearning" target="_blank" rel="noopener noreferrer" class="connect-list-item">
+              <div class="connect-circle-icon">in</div>
+              <span>linkedin.com/in/chandru-elearning</span>
             </a>
 
-            <!-- Location -->
-            <div class="flex items-center gap-3.5">
-              <div class="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-700 shadow-sm">
-                <i class="fa-solid fa-location-dot text-sm"></i>
-              </div>
-              <span class="text-sm font-semibold text-slate-800">
-                Bengaluru, Karnataka, India
-              </span>
+            <div class="connect-list-item">
+              <div class="connect-circle-icon">&#128205;</div>
+              <span>Bengaluru, Karnataka, India</span>
             </div>
-
           </div>
 
-          <!-- Bottom Button -->
-          <div class="pt-4">
-            <a href="mailto:sv393015@gmail.com" class="inline-flex items-center gap-2.5 bg-darkNavy hover:bg-slate-800 text-white text-sm font-bold px-7 py-3 rounded-full shadow-md transition-all btn-press">
-              <span>Let's Connect</span>
-              <i class="fa-solid fa-arrow-right text-xs"></i>
-            </a>
-          </div>
-
+          <a href="mailto:sv393015@gmail.com" class="btn-white-talk">
+            Let's Talk <span>&rarr;</span>
+          </a>
         </div>
 
-        <!-- Right Whiteboard Graphic (5 Cols) -->
-        <div class="lg:col-span-5 relative select-none">
-          
-          <div class="wood-frame bg-white rounded-2xl p-6 sm:p-8 min-h-[280px] flex flex-col justify-between shadow-xl relative">
-            
-            <!-- Handwritten Notes on Board -->
-            <div class="font-handwriting text-slate-700 leading-tight text-2xl sm:text-3xl space-y-1">
-              <p class="text-brand-600 font-bold">&ldquo; Ideas</p>
-              <p class="pl-4">Great Learning</p>
-              <p class="pl-8">Real Impact</p>
-              <p class="pl-2">Always a Work</p>
-              <p class="pl-6">in Progress... <span class="text-amber-500 font-mono">☺</span></p>
-            </div>
-
-            <!-- Board Marker Tray at bottom of frame -->
-            <div class="w-16 h-1.5 bg-slate-300 rounded-full self-center mt-4"></div>
+        <!-- RIGHT CURSIVE NOTE -->
+        <div>
+          <div class="connect-cursive-quote">
+            Collaborate<br>
+            Create<br>
+            Make Learning.<br>
+            Better
           </div>
-
-          <!-- Handwritten Slogan in bottom right corner -->
-          <div class="absolute -bottom-7 right-0 text-right">
-            <p class="font-handwriting text-slate-500 text-lg font-bold">
-              Designing a Brighter<br>Learning Tomorrow.
-            </p>
-          </div>
-
         </div>
 
       </div>
-
     </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="content-container footer-inner">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <strong style="color: var(--text-dark); font-size: 14px;">CS</strong>
+          <span>Chandirakkumar S &bull; Instructional Designer</span>
+        </div>
+
+        <nav class="footer-nav-links">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#work">Work</a>
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div style="display: flex; align-items: center; gap: 14px;">
+          <span>&copy; 2026 Chandirakkumar S. All rights reserved.</span>
+          <a href="#home" class="btn-back-top" aria-label="Back to Top">&uarr;</a>
+        </div>
+      </div>
+    </footer>
 
   </main>
+</div>
 
-  <!-- FOOTER -->
-  <footer class="bg-white border-t border-borderSubtle py-6 px-4 sm:px-8">
-    <div class="max-w-[1240px] mx-auto flex flex-col sm:flex-row items-center justify-between text-xs font-semibold text-slate-500 gap-4">
-      
-      <!-- Brand Signature -->
-      <div>
-        <strong class="text-slate-900 font-bold text-sm">Chandirakkumar S</strong> &nbsp;&bull;&nbsp; Instructional Designer
-      </div>
-
-      <!-- Quick Nav Links -->
-      <div class="flex items-center gap-6">
-        <a href="#about" class="hover:text-brand-600 transition-colors">About</a>
-        <a href="#work" class="hover:text-brand-600 transition-colors">Work</a>
-        <a href="#skills" class="hover:text-brand-600 transition-colors">Skills</a>
-        <a href="#contact" class="hover:text-brand-600 transition-colors">Contact</a>
-      </div>
-
-      <!-- Copyright -->
-      <div>
-        &copy; 2026 Chandirakkumar S. All rights reserved.
-      </div>
+<!-- VIDEO PREVIEW MODAL -->
+<div id="previewModal" class="modal-overlay" onclick="handleModalOverlayClick(event)">
+  <div class="modal-box">
+    <div class="modal-header">
+      <span style="font-weight: 700; font-size: 14px;">Interactive Project Demo</span>
+      <button class="modal-close" onclick="closeModalWindow()">&times;</button>
     </div>
-  </footer>
-
-  <!-- LIGHTBOX MEDIA MODAL -->
-  <div id="mediaModal" class="fixed inset-0 z-50 hidden flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
-    <div class="bg-darkNavy rounded-2xl overflow-hidden shadow-2xl max-w-4xl w-full border border-slate-700 flex flex-col">
-      
-      <!-- Modal Top Bar -->
-      <div class="flex items-center justify-between px-5 py-3.5 bg-slate-900 border-b border-slate-800">
-        <div class="flex items-center gap-2.5">
-          <span class="w-2.5 h-2.5 rounded-full bg-brand-500"></span>
-          <h4 id="modalTitle" class="font-bold text-white text-sm truncate">Project Preview</h4>
-        </div>
-        <button onclick="closeMediaModal()" class="w-7 h-7 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-300 flex items-center justify-center text-xs transition-colors">
-          <i class="fa-solid fa-xmark"></i>
-        </button>
-      </div>
-
-      <!-- Modal Body -->
-      <div class="relative bg-black aspect-video flex items-center justify-center">
-        <iframe id="modalIframe" class="w-full h-full border-0 hidden" allow="autoplay; fullscreen"></iframe>
-        <img id="modalImage" class="max-h-full max-w-full object-contain hidden" alt="Project Preview">
-      </div>
-
-      <!-- Modal Footer -->
-      <div class="px-5 py-2.5 bg-slate-900 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400">
-        <span>Click outside or press ESC to dismiss</span>
-        <button onclick="closeMediaModal()" class="px-3 py-1 bg-slate-800 hover:bg-slate-700 text-white rounded-md text-xs font-semibold">
-          Close
-        </button>
-      </div>
+    <div class="modal-video-box">
+      <iframe id="previewIframe" src="" allow="autoplay; fullscreen"></iframe>
     </div>
   </div>
+</div>
 
-  <!-- RESUME MODAL -->
-  <div id="resumeModal" class="fixed inset-0 z-50 hidden flex items-center justify-center bg-black/70 backdrop-blur-sm p-4">
-    <div class="bg-white rounded-2xl p-6 shadow-2xl max-w-md w-full text-center space-y-4">
-      <div class="w-12 h-12 rounded-xl bg-brand-50 text-brand-500 flex items-center justify-center text-xl mx-auto border border-brand-100">
-        <i class="fa-solid fa-file-arrow-down"></i>
-      </div>
-      <div>
-        <h3 class="text-xl font-extrabold text-slate-900">Chandirakkumar S — Resume</h3>
-        <p class="text-slate-500 text-xs mt-0.5">Instructional Designer | eLearning & Multimedia Developer</p>
-      </div>
-      <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-200 text-left text-xs space-y-1.5 text-slate-600">
-        <p><strong>Experience:</strong> 1+ Year in Articulate Storyline 360, LMS & SCORM</p>
-        <p><strong>Location:</strong> Bengaluru, Karnataka, India</p>
-        <p><strong>Contact:</strong> sv393015@gmail.com | +91 93530 80994</p>
-      </div>
-      <div class="flex gap-3 pt-2">
-        <button onclick="triggerResumeDownload()" class="flex-1 bg-brand-500 hover:bg-brand-600 text-white font-bold py-2.5 rounded-xl text-xs sm:text-sm transition-colors shadow-md">
-          <i class="fa-solid fa-download mr-1.5"></i> Download PDF
-        </button>
-        <button onclick="closeResumeModal()" class="px-4 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold rounded-xl text-xs sm:text-sm transition-colors">
-          Close
-        </button>
-      </div>
-    </div>
-  </div>
+<script>
+function openPreviewModal(url) {
+  const modal = document.getElementById('previewModal');
+  const iframe = document.getElementById('previewIframe');
+  iframe.src = url;
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
 
-  <script>
-    const mediaModal = document.getElementById('mediaModal');
-    const modalIframe = document.getElementById('modalIframe');
-    const modalImage = document.getElementById('modalImage');
-    const modalTitle = document.getElementById('modalTitle');
-    const resumeModal = document.getElementById('resumeModal');
+function closeModalWindow() {
+  const modal = document.getElementById('previewModal');
+  const iframe = document.getElementById('previewIframe');
+  iframe.src = '';
+  modal.classList.remove('active');
+  document.body.style.overflow = 'auto';
+}
 
-    const projectDemoList = [
-      {
-        url: 'https://drive.google.com/file/d/1rRtZDmiMiKexJ4jQxXIFJ_b89UR3zWo3/preview',
-        title: '01: From Ship to Shore - SCORM eLearning'
-      },
-      {
-        url: 'https://drive.google.com/file/d/1IIuKoOcBHQ35GzFYcmutqnFGDglw8n3t/preview',
-        title: '02: Multi-language Storyline eLearning'
-      },
-      {
-        url: 'https://drive.google.com/file/d/12KMOnXd8ilEKFB4JqiAr99lX8_8IBSUv/preview',
-        title: '03: Video Editing & Motion Graphics'
-      }
-    ];
-    let currentProjectIdx = 0;
-
-    function openVideoModal(url, title) {
-      modalTitle.innerText = title;
-      modalImage.classList.add('hidden');
-      modalImage.src = '';
-      
-      modalIframe.classList.remove('hidden');
-      modalIframe.src = url;
-
-      mediaModal.classList.remove('hidden');
-      document.body.classList.add('modal-open');
-    }
-
-    function openImageModal(imgSrc, title) {
-      modalTitle.innerText = title;
-      modalIframe.classList.add('hidden');
-      modalIframe.src = '';
-
-      modalImage.classList.remove('hidden');
-      modalImage.src = imgSrc;
-
-      mediaModal.classList.remove('hidden');
-      document.body.classList.add('modal-open');
-    }
-
-    function closeMediaModal() {
-      mediaModal.classList.add('hidden');
-      modalIframe.src = '';
-      modalImage.src = '';
-      document.body.classList.remove('modal-open');
-    }
-
-    function switchProjectDemo(direction) {
-      currentProjectIdx = (currentProjectIdx + direction + projectDemoList.length) % projectDemoList.length;
-      const target = projectDemoList[currentProjectIdx];
-      openVideoModal(target.url, target.title);
-    }
-
-    mediaModal.addEventListener('click', (e) => {
-      if (e.target === mediaModal) closeMediaModal();
-    });
-
-    function downloadResumeModal() {
-      resumeModal.classList.remove('hidden');
-      document.body.classList.add('modal-open');
-    }
-
-    function closeResumeModal() {
-      resumeModal.classList.add('hidden');
-      document.body.classList.remove('modal-open');
-    }
-
-    resumeModal.addEventListener('click', (e) => {
-      if (e.target === resumeModal) closeResumeModal();
-    });
-
-    function triggerResumeDownload() {
-      const resumeText = "Chandirakkumar S - Instructional Designer & eLearning Developer\nEmail: sv393015@gmail.com\nPhone: +91 93530 80994\nLocation: Bengaluru, Karnataka, India\n\nCore Competencies: Articulate Storyline 360, Adobe Premiere Pro, After Effects, LMS Management (LearnDash, QuickLearn), SCORM 1.2, PowerPoint Presentation Design.";
-      const blob = new Blob([resumeText], { type: 'text/plain;charset=utf-8;' });
-      const link = document.createElement("a");
-      link.href = URL.createObjectURL(blob);
-      link.download = "Chandirakkumar_S_Resume.txt";
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      closeResumeModal();
-    }
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        closeMediaModal();
-        closeResumeModal();
-      }
-    });
-  </script>
+function handleModalOverlayClick(e) {
+  if (e.target.id === 'previewModal') {
+    closeModalWindow();
+  }
+}
+</script>
 
 </body>
 </html>
