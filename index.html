@@ -3,13 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chandirakkumar S | Visual Designer & eLearning Developer</title>
+<title>Chandirakkumar S | Visual Designer</title>
 
-<!-- Fonts -->
+<!-- Modern Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<!-- Vector Icons -->
+
+<!-- Devicons & FontAwesome -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
@@ -41,19 +42,20 @@ body {
 }
 a { text-decoration: none; color: inherit; }
 
+/* Centered Layout Wrapper */
 .container {
   width: 100%;
-  max-width: 1240px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 24px;
 }
 
-/* ===== STICKY TOP NAVIGATION ===== */
+/* ===== TOP NAVIGATION ===== */
 .top-nav {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.98);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border-light);
@@ -64,13 +66,8 @@ a { text-decoration: none; color: inherit; }
   align-items: center;
   justify-content: space-between;
 }
-.nav-brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
 .brand-cs {
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 900;
   letter-spacing: -1.5px;
   color: var(--primary-purple);
@@ -114,9 +111,9 @@ a { text-decoration: none; color: inherit; }
 .btn-nav-connect {
   background: var(--dark-btn);
   color: #FFFFFF;
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: 600;
-  padding: 10px 22px;
+  padding: 9px 20px;
   border-radius: 40px;
   display: inline-flex;
   align-items: center;
@@ -128,119 +125,98 @@ a { text-decoration: none; color: inherit; }
   transform: translateY(-1px);
 }
 
-/* ===== ORGANIC SEAMLESS IMAGE BLEND (NO BOXES, NO FRAMES, NO SHADOWS) ===== */
-.organic-blend-photo {
-  position: relative;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  outline: none !important;
-  border-radius: 0 !important;
-}
-
-/* Multi-directional soft mask to dissolve all 4 perimeter edges */
-.organic-blend-photo img {
-  width: 100%;
-  height: auto;
-  max-height: 520px;
-  object-fit: contain;
-  display: block;
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  border-radius: 0 !important;
-  
-  /* Feathering left, right, top, and bottom into the background */
-  -webkit-mask-image: radial-gradient(ellipse 90% 88% at 50% 50%, black 65%, transparent 100%),
-                      linear-gradient(to right, transparent 0%, black 14%, black 86%, transparent 100%),
-                      linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%);
-  -webkit-mask-composite: destination-in;
-  mask-image: radial-gradient(ellipse 90% 88% at 50% 50%, black 65%, transparent 100%),
-              linear-gradient(to right, transparent 0%, black 14%, black 86%, transparent 100%),
-              linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%);
-  mask-composite: intersect;
-  transition: transform 0.3s ease;
-}
-.organic-blend-photo:hover img {
-  transform: scale(1.015);
-}
-
-/* Specialized left-feather for Hero image to dissolve seamlessly next to the text */
-.hero-blend-photo img {
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.4) 6%, black 20%, black 90%, transparent 100%),
-                      linear-gradient(to top, transparent 0%, black 10%, black 90%, transparent 100%);
-  -webkit-mask-composite: destination-in;
-  mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.4) 6%, black 20%, black 90%, transparent 100%),
-              linear-gradient(to top, transparent 0%, black 10%, black 90%, transparent 100%);
-  mask-composite: intersect;
-}
-
-/* Specialized right-feather for Tools image to dissolve into the logo column */
-.tools-blend-photo img {
-  -webkit-mask-image: linear-gradient(to left, transparent 0%, rgba(0,0,0,0.3) 8%, black 22%, black 92%, transparent 100%),
-                      linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
-  -webkit-mask-composite: destination-in;
-  mask-image: linear-gradient(to left, transparent 0%, rgba(0,0,0,0.3) 8%, black 22%, black 92%, transparent 100%),
-              linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
-  mask-composite: intersect;
-}
-
-/* ===== REUSABLE SECTION WRAPPERS ===== */
+/* ===== FIXED TWO-COLUMN SECTION GRID (PREVENTS SQUISHING) ===== */
 .section-block {
   padding: 75px 0;
-  position: relative;
   border-bottom: 1px solid var(--border-light);
+  background: var(--bg-main);
+  position: relative;
 }
 
 .two-col-grid {
   display: grid;
-  grid-template-columns: 1.15fr 1fr;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: 48px;
+  align-items: center;
+}
+
+/* Balanced grid for Tools Section */
+.tools-col-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
   gap: 40px;
   align-items: center;
 }
 
-/* ===== HERO TYPOGRAPHY & PILLARS ===== */
+/* ===== IMAGE CONTAINER & EDGE FEATHERING ===== */
+.soft-fade-image-box {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.soft-fade-image-box img {
+  width: 100%;
+  max-width: 440px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+
+  /* Compound Radial & Linear Edge Dissolve */
+  -webkit-mask-image:
+    radial-gradient(ellipse at 50% 50%, rgba(0,0,0,1) 62%, rgba(0,0,0,0.85) 78%, rgba(0,0,0,0) 99%),
+    linear-gradient(to right, transparent 0%, black 10%, black 86%, transparent 100%),
+    linear-gradient(to bottom, transparent 0%, black 8%, black 92%, transparent 100%);
+  -webkit-mask-composite: destination-in;
+  mask-image:
+    radial-gradient(ellipse at 50% 50%, rgba(0,0,0,1) 62%, rgba(0,0,0,0.85) 78%, rgba(0,0,0,0) 99%),
+    linear-gradient(to right, transparent 0%, black 10%, black 86%, transparent 100%),
+    linear-gradient(to bottom, transparent 0%, black 8%, black 92%, transparent 100%);
+  mask-composite: intersect;
+  filter: drop-shadow(0 15px 30px rgba(15, 23, 42, 0.04));
+}
+
+.tools-soft-fade img {
+  max-width: 480px;
+}
+
+/* ===== HERO TYPOGRAPHY & ELEMENTS ===== */
 .hero-track-eyebrow {
   font-size: 11px;
   font-weight: 800;
-  letter-spacing: 2.5px;
+  letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--text-muted);
-  margin-bottom: 14px;
+  margin-bottom: 12px;
   display: block;
 }
 .hero-heading {
-  font-size: 50px;
-  line-height: 1.12;
+  font-size: 46px;
+  line-height: 1.15;
   font-weight: 900;
   color: var(--text-dark);
-  letter-spacing: -1.5px;
-  margin-bottom: 18px;
+  letter-spacing: -1px;
+  margin-bottom: 16px;
 }
-.hero-heading .purple-accent {
-  color: var(--primary-purple);
-}
+.hero-heading span { color: var(--primary-purple); }
 .hero-desc-text {
-  font-size: 15.5px;
+  font-size: 15px;
   line-height: 1.65;
   color: var(--text-body);
-  max-width: 500px;
-  margin-bottom: 32px;
+  margin-bottom: 26px;
+  max-width: 480px;
 }
 .hero-cta-group {
   display: flex;
   align-items: center;
-  gap: 16px;
-  margin-bottom: 40px;
+  gap: 14px;
+  margin-bottom: 34px;
 }
-.btn-hero-primary {
+.btn-primary-glow {
   background: var(--primary-purple);
   color: #FFFFFF;
-  padding: 13px 26px;
+  padding: 12px 24px;
   border-radius: 8px;
   font-size: 14px;
   font-weight: 700;
@@ -250,15 +226,15 @@ a { text-decoration: none; color: inherit; }
   transition: all 0.2s ease;
   box-shadow: 0 4px 14px rgba(124, 58, 237, 0.3);
 }
-.btn-hero-primary:hover {
+.btn-primary-glow:hover {
   background: var(--primary-purple-dark);
   transform: translateY(-2px);
 }
-.btn-hero-outline {
+.btn-outline-pill {
   background: #FFFFFF;
   color: var(--text-dark);
   border: 1.5px solid var(--border-light);
-  padding: 12px 24px;
+  padding: 11px 22px;
   border-radius: 8px;
   font-size: 14px;
   font-weight: 600;
@@ -267,17 +243,14 @@ a { text-decoration: none; color: inherit; }
   gap: 8px;
   transition: all 0.2s ease;
 }
-.btn-hero-outline:hover {
-  border-color: var(--primary-purple);
-}
+.btn-outline-pill:hover { border-color: var(--primary-purple); }
 
-.hero-pillars-row {
+.hero-pillars-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-  padding-top: 24px;
+  gap: 14px;
+  padding-top: 22px;
   border-top: 1px solid var(--border-light);
-  max-width: 580px;
 }
 .pillar-card {
   display: flex;
@@ -285,12 +258,12 @@ a { text-decoration: none; color: inherit; }
   align-items: flex-start;
   gap: 4px;
 }
-.pillar-icon {
-  font-size: 18px;
+.pillar-card i {
+  font-size: 17px;
   color: var(--primary-purple);
   margin-bottom: 4px;
 }
-.pillar-label {
+.pillar-card span {
   font-size: 12px;
   font-weight: 700;
   color: var(--text-dark);
@@ -315,61 +288,15 @@ a { text-decoration: none; color: inherit; }
   border-left: 4px solid var(--primary-purple);
   padding-left: 14px;
   line-height: 1.15;
-}
-.section-header-split {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  margin-bottom: 36px;
-}
-.view-all-link {
-  font-size: 13.5px;
-  font-weight: 700;
-  color: var(--primary-purple);
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  transition: gap 0.2s ease;
-}
-.view-all-link:hover { gap: 10px; }
-
-/* ===== ABOUT ME SECTION ===== */
-.about-features-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 14px;
-  margin-top: 24px;
-}
-.about-feature-box {
-  background: var(--bg-subtle);
-  border: 1px solid var(--border-light);
-  border-radius: 12px;
-  padding: 14px 16px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  transition: all 0.2s ease;
-}
-.about-feature-box:hover {
-  border-color: var(--primary-purple);
-  background: #FFFFFF;
-  box-shadow: var(--shadow-sm);
-}
-.about-feature-box i {
-  font-size: 18px;
-  color: var(--primary-purple);
-}
-.about-feature-box span {
-  font-size: 12.5px;
-  font-weight: 700;
-  color: var(--text-dark);
+  margin-bottom: 14px;
 }
 
-/* ===== FEATURED PROJECTS ===== */
+/* ===== FEATURED PROJECTS 4-GRID ===== */
 .projects-4-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
+  margin-top: 32px;
 }
 .proj-card {
   background: #FFFFFF;
@@ -394,7 +321,6 @@ a { text-decoration: none; color: inherit; }
   overflow: hidden;
   background: #0F172A;
   margin-bottom: 14px;
-  border: 1px solid var(--border-light);
 }
 .proj-thumb-frame img {
   width: 100%;
@@ -416,26 +342,14 @@ a { text-decoration: none; color: inherit; }
   justify-content: center;
   font-size: 15px;
   cursor: pointer;
-  transition: 0.2s ease;
-  backdrop-filter: blur(4px);
 }
 .proj-card:hover .proj-play-overlay {
   background: var(--primary-purple);
   transform: scale(1.1);
 }
-.proj-badge-cat {
-  font-size: 9.5px;
-  font-weight: 800;
-  letter-spacing: 0.8px;
-  text-transform: uppercase;
-  color: var(--primary-purple);
-  margin-bottom: 4px;
-  display: block;
-}
 .proj-card h3 {
   font-size: 16px;
   font-weight: 800;
-  color: var(--text-dark);
   margin-bottom: 6px;
   line-height: 1.25;
 }
@@ -455,7 +369,7 @@ a { text-decoration: none; color: inherit; }
 .proj-tag-pill {
   font-size: 10.5px;
   font-weight: 700;
-  padding: 4px 9px;
+  padding: 3px 8px;
   border-radius: 20px;
   background: var(--primary-purple-light);
   color: var(--primary-purple);
@@ -468,8 +382,9 @@ a { text-decoration: none; color: inherit; }
   align-items: center;
   gap: 6px;
 }
-/* TOOLS GRID */
-.tools-grid-15 {
+
+/* ===== TOOLS GRID (EXACTLY 14 TOOLS, BALANCED 5-COLUMN) ===== */
+.tools-grid-14 {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 12px;
@@ -489,17 +404,15 @@ a { text-decoration: none; color: inherit; }
   transition: all 0.2s ease;
 }
 .tool-tile-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-3px);
   border-color: var(--primary-purple);
-  box-shadow: var(--shadow-md);
 }
 .tool-logo-box {
-  width: 40px;
-  height: 40px;
+  width: 38px;
+  height: 38px;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
 }
 .tool-logo-box img, .tool-logo-box svg {
   width: 100%;
@@ -510,20 +423,14 @@ a { text-decoration: none; color: inherit; }
   font-size: 11px;
   font-weight: 700;
   color: var(--text-dark);
-  line-height: 1.2;
 }
 
-/* ===== PROCESS STEP CHAIN ===== */
-.process-layout-grid {
-  display: grid;
-  grid-template-columns: 1.4fr 0.6fr;
-  gap: 40px;
-  align-items: center;
-}
+/* ===== PROCESS CHAIN ===== */
 .process-step-chain {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: 26px;
 }
 .process-step-item {
   display: flex;
@@ -531,16 +438,15 @@ a { text-decoration: none; color: inherit; }
   gap: 12px;
 }
 .process-step-circle {
-  width: 46px;
-  height: 46px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   background: var(--primary-purple-light);
   color: var(--primary-purple);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
-  flex-shrink: 0;
+  font-size: 16px;
   border: 1px solid #C7D2FE;
 }
 .process-step-details span {
@@ -553,106 +459,55 @@ a { text-decoration: none; color: inherit; }
   font-size: 13.5px;
   font-weight: 800;
   display: block;
-  color: var(--text-dark);
-}
-.process-step-details small {
-  font-size: 11px;
-  color: var(--text-muted);
-}
-.process-cursive-callout {
-  font-family: 'Caveat', cursive;
-  font-size: 34px;
-  color: #312E81;
-  line-height: 1.15;
-  text-align: right;
 }
 
-/* ===== WHY I DO THIS (PANORAMIC SUNRISE MOUNTAIN BANNER) ===== */
+/* ===== WHY I DO THIS BANNER ===== */
 .banner-inspiration {
-  position: relative;
-  background-color: #0F172A;
-  background-image: 
-    linear-gradient(to right, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.88) 42%, rgba(15, 23, 42, 0.55) 75%, rgba(15, 23, 42, 0.25) 100%),
-    url('background image for why i do this.png');
-  background-position: center right;
-  background-size: cover;
-  background-repeat: no-repeat;
+  background: linear-gradient(rgba(15, 23, 42, 0.82), rgba(15, 23, 42, 0.88)),
+              url('background image for why i do this.png') center/cover no-repeat;
   color: #FFFFFF;
-  padding: 95px 0;
-  border-top: 1px solid var(--border-light);
+  padding: 85px 0;
   border-bottom: 1px solid var(--border-light);
 }
-.banner-content-grid {
+.banner-grid {
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
+  grid-template-columns: 1.2fr 0.8fr;
   gap: 40px;
   align-items: center;
 }
-.banner-eyebrow {
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #A5B4FC;
-  margin-bottom: 10px;
-  display: block;
-}
 .banner-title {
-  font-size: 40px;
+  font-size: 36px;
   font-weight: 900;
   line-height: 1.15;
-  margin-bottom: 16px;
-  color: #FFFFFF;
+  margin-bottom: 14px;
 }
 .banner-desc {
-  font-size: 15px;
+  font-size: 14.5px;
   color: #CBD5E1;
-  max-width: 520px;
-  margin-bottom: 28px;
-  line-height: 1.65;
-}
-.btn-banner-glow {
-  background: var(--primary-purple);
-  color: #FFFFFF;
-  font-size: 14px;
-  font-weight: 700;
-  padding: 13px 28px;
-  border-radius: 8px;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  box-shadow: 0 4px 18px rgba(124, 58, 237, 0.45);
-  transition: all 0.2s ease;
-}
-.btn-banner-glow:hover {
-  background: var(--primary-purple-dark);
-  transform: translateY(-2px);
+  max-width: 480px;
+  margin-bottom: 24px;
 }
 .banner-checklist-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 22px 28px;
-  justify-content: flex-end;
+  gap: 16px;
 }
 .banner-check-item {
   display: flex;
   align-items: center;
-  gap: 12px;
-  font-size: 16px;
+  gap: 10px;
+  font-size: 14.5px;
   font-weight: 700;
   color: #F8FAFC;
 }
-.banner-check-item i {
-  color: #A855F7;
-  font-size: 18px;
-}
+.banner-check-item i { color: var(--primary-purple); }
 
 /* ===== CONTACT SECTION ===== */
 .contact-list-vertical {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  margin: 26px 0;
+  gap: 14px;
+  margin: 24px 0;
 }
 .contact-row-entry {
   display: flex;
@@ -661,98 +516,53 @@ a { text-decoration: none; color: inherit; }
   font-size: 14.5px;
   font-weight: 600;
   color: var(--text-dark);
-  transition: color 0.2s ease;
-}
-.contact-row-entry:hover {
-  color: var(--primary-purple);
 }
 .contact-circle-bubble {
-  width: 38px;
-  height: 38px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   background: var(--primary-purple-light);
   color: var(--primary-purple);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 15px;
+  font-size: 14px;
 }
 
-/* ===== SLEEK FOOTER ===== */
-.footer-wrapper {
+/* ===== FOOTER ===== */
+.site-footer {
   background: #0B0F19;
   color: #94A3B8;
-  padding: 40px 0 20px;
-  position: relative;
+  padding: 36px 0 20px;
 }
 .footer-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-size: 13px;
-  padding-bottom: 24px;
+  padding-bottom: 20px;
   border-bottom: 1px solid #1E293B;
 }
-.footer-brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
 .footer-brand-logo {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 900;
   color: var(--primary-purple);
 }
-.footer-brand span {
-  color: #FFFFFF;
-  font-weight: 600;
+.thankyou-calligraphy {
+  font-family: 'Caveat', cursive;
+  font-size: 32px;
+  text-align: center;
+  color: #C7D2FE;
+  padding: 20px 0 6px;
 }
-.footer-nav {
-  display: flex;
-  gap: 22px;
-  font-weight: 600;
-}
-.footer-nav a:hover { color: #FFFFFF; }
-.footer-social-strip {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  font-size: 16px;
-}
-.footer-social-strip a:hover { color: var(--primary-purple); }
 .footer-bottom-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 20px;
   font-size: 12px;
 }
-.thankyou-calligraphy {
-  font-family: 'Caveat', cursive;
-  font-size: 34px;
-  text-align: center;
-  color: #C7D2FE;
-  padding: 24px 0 10px;
-}
-.btn-back-top-round {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  border: 1px solid #334155;
-  background: #1E293B;
-  color: #FFFFFF;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
-  transition: all 0.2s ease;
-}
-.btn-back-top-round:hover {
-  background: var(--primary-purple);
-  border-color: var(--primary-purple);
-}
 
-/* ===== PREVIEW LIGHTBOX MODAL ===== */
+/* ===== LIGHTBOX MODAL ===== */
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -773,9 +583,9 @@ a { text-decoration: none; color: inherit; }
   overflow: hidden;
 }
 .modal-bar {
-  padding: 14px 20px;
+  padding: 12px 18px;
   background: #1E293B;
-  color: #FFFFFF;
+  color: #FFF;
   display: flex;
   justify-content: space-between;
 }
@@ -792,25 +602,23 @@ a { text-decoration: none; color: inherit; }
 }
 .modal-frame iframe { width: 100%; height: 100%; border: none; }
 
-/* ===== RESPONSIVE BREAKPOINTS ===== */
+/* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
-  .two-col-grid, .process-layout-grid, .banner-content-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
+  .two-col-grid, .tools-col-grid, .banner-grid { 
+    grid-template-columns: 1fr; 
+    gap: 36px; 
   }
   .projects-4-grid { grid-template-columns: repeat(2, 1fr); }
-  .tools-grid-15 { grid-template-columns: repeat(3, 1fr); }
-  .organic-blend-photo img { max-height: 440px; }
+  .tools-grid-14 { grid-template-columns: repeat(3, 1fr); }
 }
 @media (max-width: 768px) {
   .nav-menu { display: none; }
-  .hero-heading { font-size: 38px; }
-  .hero-pillars-row { grid-template-columns: repeat(2, 1fr); }
+  .hero-heading { font-size: 34px; }
+  .hero-pillars-grid { grid-template-columns: repeat(2, 1fr); }
   .projects-4-grid { grid-template-columns: 1fr; }
-  .tools-grid-15 { grid-template-columns: repeat(2, 1fr); }
+  .tools-grid-14 { grid-template-columns: repeat(2, 1fr); }
   .process-step-chain { flex-direction: column; align-items: flex-start; gap: 16px; }
-  .banner-title { font-size: 30px; }
-  .footer-inner, .footer-bottom-bar { flex-direction: column; gap: 16px; text-align: center; }
+  .footer-inner, .footer-bottom-bar { flex-direction: column; gap: 14px; text-align: center; }
 }
 </style>
 </head>
@@ -841,7 +649,7 @@ a { text-decoration: none; color: inherit; }
   </div>
 </header>
 
-<!-- 1. HERO SECTION (image1.png WITH UNIFORM SOFT FEATHERING) -->
+<!-- 1. HERO SECTION (image1.png) -->
 <section id="home" class="section-block" style="background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);">
   <div class="container two-col-grid">
     <div>
@@ -866,14 +674,13 @@ a { text-decoration: none; color: inherit; }
       </div>
     </div>
 
-    <!-- image1.png with soft edge mask -->
     <div class="soft-fade-image-box">
       <img src="image1.png" alt="Chandirakkumar S" onerror="this.onerror=null; this.src='profile image.png';">
     </div>
   </div>
 </section>
 
-<!-- 2. ABOUT ME SECTION (image2.png WITH UNIFORM SOFT FEATHERING) -->
+<!-- 2. ABOUT ME SECTION (image2.png) -->
 <section id="about" class="section-block">
   <div class="container two-col-grid">
     <div>
@@ -882,30 +689,98 @@ a { text-decoration: none; color: inherit; }
       <p style="font-size: 14.5px; color: var(--text-body); margin-bottom: 22px;">
         I'm Chandirakkumar, a Visual Designer with a passion for creating learning experiences that make a real difference. I enjoy blending visual design, user experience, and multimedia technology to help people learn and grow.
       </p>
-      
-      <div class="about-features-row">
-        <div class="about-mini-box"><i class="fa-solid fa-lightbulb"></i><span>Visual Strategy</span></div>
-        <div class="about-mini-box"><i class="fa-solid fa-tv"></i><span>Visual Comm</span></div>
-        <div class="about-mini-box"><i class="fa-solid fa-puzzle-piece"></i><span>Problem Solving</span></div>
-        <div class="about-mini-box"><i class="fa-solid fa-chart-line"></i><span>Continuous Learning</span></div>
-      </div>
-
-      <a href="#contact" style="display:inline-block; margin-top:22px; font-size: 13.5px; font-weight: 700; color: var(--primary-purple);">More About Me &rarr;</a>
+      <a href="#contact" style="font-size: 13.5px; font-weight: 700; color: var(--primary-purple);">More About Me &rarr;</a>
     </div>
 
-    <!-- image2.png with soft edge mask -->
     <div class="soft-fade-image-box">
       <img src="image2.png" alt="About Chandirakkumar S" onerror="this.onerror=null; this.src='profile image.png';">
     </div>
   </div>
 </section>
 
-<!-- FEATURED PROJECTS -->
-<!-- 3. TOOLS & TECHNOLOGIES SECTION (image3.png WITH UNIFORM SOFT FEATHERING) -->
+<!-- 3. FEATURED PROJECTS -->
+<section id="projects" class="section-block">
+  <div class="container">
+    <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+      <div>
+        <span class="section-tag">Featured Projects</span>
+        <h2 class="section-title">Turning Ideas into Learning Experiences</h2>
+      </div>
+      <a href="#projects" style="font-size: 13.5px; font-weight: 700; color: var(--primary-purple);">View All Projects &rarr;</a>
+    </div>
+
+    <div class="projects-4-grid">
+      <!-- 1 -->
+      <div class="proj-card">
+        <div class="proj-thumb-frame">
+          <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?w=600&auto=format&fit=crop&q=80" alt="SCORM Module">
+          <div class="proj-play-overlay" onclick="openModal('https://drive.google.com/file/d/1rRtZDmiMiKexJ4jQxXIFJ_b89UR3zWo3/preview')">&#9658;</div>
+        </div>
+        <span style="font-size: 9.5px; font-weight: 800; color: var(--primary-purple); text-transform: uppercase;">e-Learning</span>
+        <h3>Interactive SCORM eLearning</h3>
+        <p>Interactive Storyline 360 module with custom navigation, assessments, and SCORM publishing.</p>
+        <div class="proj-tag-list">
+          <span class="proj-tag-pill">Storyline 360</span>
+          <span class="proj-tag-pill">SCORM</span>
+        </div>
+        <a href="javascript:void(0)" onclick="openModal('https://drive.google.com/file/d/1-Jr4AcAYIeU_B9Cimcw1WLswNRgfx0MU/preview')" class="btn-view-project">View Project &rarr;</a>
+      </div>
+
+      <!-- 2 -->
+      <div class="proj-card">
+        <div class="proj-thumb-frame">
+          <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&auto=format&fit=crop&q=80" alt="Multi-language">
+          <div class="proj-play-overlay" onclick="openModal('https://drive.google.com/file/d/1IIuKoOcBHQ35GzFYcmutqnFGDglw8n3t/preview')">&#9658;</div>
+        </div>
+        <span style="font-size: 9.5px; font-weight: 800; color: var(--primary-purple); text-transform: uppercase;">e-Learning</span>
+        <h3>Multi-language eLearning</h3>
+        <p>Interactive course with language switching and multilingual learning support.</p>
+        <div class="proj-tag-list">
+          <span class="proj-tag-pill">Storyline 360</span>
+          <span class="proj-tag-pill">Localization</span>
+        </div>
+        <a href="javascript:void(0)" onclick="openModal('https://drive.google.com/file/d/1IIuKoOcBHQ35GzFYcmutqnFGDglw8n3t/preview')" class="btn-view-project">View Project &rarr;</a>
+      </div>
+
+      <!-- 3 -->
+      <div class="proj-card">
+        <div class="proj-thumb-frame">
+          <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&auto=format&fit=crop&q=80" alt="PowerPoint Decks">
+          <div class="proj-play-overlay" onclick="openModal('https://drive.google.com/file/d/12KMOnXd8ilEKFB4JqiAr99lX8_8IBSUv/preview')">&#9658;</div>
+        </div>
+        <span style="font-size: 9.5px; font-weight: 800; color: var(--primary-purple); text-transform: uppercase;">Visual Design</span>
+        <h3>Corporate PowerPoint Design</h3>
+        <p>Professional training presentations with modern layouts, infographics, and content.</p>
+        <div class="proj-tag-list">
+          <span class="proj-tag-pill">PowerPoint</span>
+          <span class="proj-tag-pill">Visuals</span>
+        </div>
+        <a href="javascript:void(0)" onclick="openModal('https://drive.google.com/file/d/12KMOnXd8ilEKFB4JqiAr99lX8_8IBSUv/preview')" class="btn-view-project">View Project &rarr;</a>
+      </div>
+
+      <!-- 4 -->
+      <div class="proj-card">
+        <div class="proj-thumb-frame">
+          <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=600&auto=format&fit=crop&q=80" alt="Video Motion">
+          <div class="proj-play-overlay" onclick="openModal('https://drive.google.com/file/d/1v1ISwjEXjLI4X5jwVbi-a-JX1O14nO5p/preview')">&#9658;</div>
+        </div>
+        <span style="font-size: 9.5px; font-weight: 800; color: var(--primary-purple); text-transform: uppercase;">Video &amp; Motion</span>
+        <h3>Video Editing &amp; Motion Graphics</h3>
+        <p>Cinematic and engaging videos using Premiere Pro and After Effects.</p>
+        <div class="proj-tag-list">
+          <span class="proj-tag-pill">Premiere Pro</span>
+          <span class="proj-tag-pill">After Effects</span>
+        </div>
+        <a href="javascript:void(0)" onclick="openModal('https://drive.google.com/file/d/1v1ISwjEXjLI4X5jwVbi-a-JX1O14nO5p/preview')" class="btn-view-project">View Project &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. TOOLS & TECHNOLOGIES SECTION (image3.png - APPEARS EXACTLY ONCE) -->
 <section id="skills" class="section-block">
-  <div class="container two-col-grid" style="grid-template-columns: 1fr 1.3fr;">
+  <div class="container tools-col-grid">
     
-    <!-- image3.png with soft edge mask -->
     <div class="soft-fade-image-box tools-soft-fade">
       <img src="image3.png" alt="Tools & Technologies Workspace" onerror="this.onerror=null; this.src='profile image.png';">
     </div>
@@ -913,11 +788,12 @@ a { text-decoration: none; color: inherit; }
     <div>
       <span class="section-tag">Tools &amp; Technologies</span>
       <h2 class="section-title">Tools I Work With</h2>
-      <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 20px;">
+      <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 18px;">
         A combination of authoring, design, multimedia, and LMS tools to bring learning ideas to life.
       </p>
 
-      <div class="tools-grid-15">
+      <!-- Exactly 14 Tools, Camtasia Removed -->
+      <div class="tools-grid-14">
         <!-- 1 Storyline -->
         <div class="tool-tile-card">
           <div class="tool-logo-box">
@@ -1054,301 +930,72 @@ a { text-decoration: none; color: inherit; }
   </div>
 </section>
 
-<!-- TOOLS & TECHNOLOGIES: image3.png dissolved organically + 15 Tool Logos -->
-<section id="skills" class="section-block">
-  <div class="container two-col-grid" style="grid-template-columns: 1fr 1.35fr;">
-    
-    <!-- Left Column: image3.png dissolved into background -->
-    <div class="organic-blend-photo tools-blend-photo">
-      <img src="image3.png" alt="Tools & Technologies Workspace" onerror="this.onerror=null; this.src='profile image.png';">
-    </div>
-
-    <!-- Right Column: 15 Verified Software Logos -->
-    <div>
-      <span class="section-tag">Tools &amp; Technologies</span>
-      <h2 class="section-title" style="margin-bottom: 8px;">Tools I Work With</h2>
-      <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 22px;">
-        A combination of authoring, design, multimedia and LMS tools to bring learning ideas to life.
-      </p>
-
-      <div class="tools-grid-15">
-        <!-- 1. Storyline 360 -->
-        <div class="tool-tile-card">
-          <div class="tool-logo-box">
-            <svg viewBox="0 0 100 100">
-              <circle cx="50" cy="50" r="46" fill="#E11D48"/>
-              <text x="50%" y="58%" text-anchor="middle" fill="#FFFFFF" font-family="'Inter', sans-serif" font-weight="800" font-size="34">sl</text>
-            </svg>
-          </div>
-          <span>Storyline 360</span>
-        </div>
-
-        <!-- 2. Adobe Captivate -->
-        <div class="tool-tile-card">
-          <div class="tool-logo-box">
-            <svg viewBox="0 0 100 100">
-              <rect width="92" height="92" x="4" y="4" rx="20" fill="#024E38"/>
-              <text x="50%" y="62%" text-anchor="middle" fill="#34D399" font-family="'Inter', sans-serif" font-weight="900" font-size="44">Cp</text>
-            </svg>
-          </div>
-          <span>Captivate</span>
-        </div>
-
-        <!-- 3. Articulate Rise -->
-        <div class="tool-tile-card">
-          <div class="tool-logo-box">
-            <svg viewBox="0 0 100 100">
-              <rect width="92" height="92" x="4" y="4" rx="20" fill="#0284C7"/>
-              <text x="50%" y="64%" text-anchor="middle" fill="#FFFFFF" font-family="'Inter', sans-serif" font-weight="800" font-size="46">r</text>
-            </svg>
-          </div>
-          <span>Rise</span>
-        </div>
-
-        <!-- 4. Microsoft PowerPoint (Modern Fluent Vector) -->
-        <div class="tool-tile-card">
-          <div class="tool-logo-box">
-            <svg viewBox="0 0 48 48" fill="none">
-              <defs>
-                <linearGradient id="pptBack" x1="16" y1="6" x2="44" y2="34" gradientUnits="userSpaceOnUse">
-                  <stop offset="0%" stop-color="#FF6B38"/>
-                  <stop offset="100%" stop-color="#D83B01"/>
-                </linearGradient>
-                <linearGradient id="pptFront" x1="4" y1="12" x2="28" y2="36" gradientUnits="userSpaceOnUse">
-                  <stop offset="0%" stop-color="#FF8C5A"/>
-                  <stop offset="100%" stop-color="#EA4300"/>
-                </linearGradient>
-              </defs>
-              <rect x="14" y="6" width="28" height="28" rx="5" fill="url(#pptBack)"/>
-              <path d="M28 20a6 6 0 100-12 6 6 0 000 12z" fill="#FFF" fill-opacity="0.3"/>
-              <path d="M28 20V8a6 6 0 016 6h-6z" fill="#FFF" fill-opacity="0.8"/>
-              <rect x="6" y="14" width="20" height="20" rx="4" fill="url(#pptFront)"/>
-              <path d="M13 20h4.2a2.8 2.8 0 010 5.6H15.2V28H13v-8zm2.2 4h1.8a1.2 1.2 0 000-2.4H15.2V24z" fill="#FFFFFF"/>
-            </svg>
-          </div>
-          <span>PowerPoint</span>
-        </div>
-
-        <!-- 5. Microsoft Word (Modern Fluent Vector) -->
-        <div class="tool-tile-card">
-          <div class="tool-logo-box">
-            <svg viewBox="0 0 48 48" fill="none">
-              <defs>
-                <linearGradient id="wrdBack" x1="16" y1="6" x2="44" y2="34" gradientUnits="userSpaceOnUse">
-                  <stop offset="0%" stop-color="#2B7CD3"/>
-                  <stop offset="100%" stop-color="#104A9E"/>
-                </linearGradient>
-                <linearGradient id="wrdFront" x1="4" y1="12" x2="28" y2="36" gradientUnits="userSpaceOnUse">
-                  <stop offset="0%" stop-color="#4B96E6"/>
-                  <stop offset="100%" stop-color="#185ABD"/>
-                </linearGradient>
-              </defs>
-              <rect x="14" y="6" width="28" height="28" rx="5" fill="url(#wrdBack)"/>
-              <rect x="20" y="12" width="16" height="3" rx="1.5" fill="#FFF" fill-opacity="0.7"/>
-              <rect x="20" y="18" width="16" height="3" rx="1.5" fill="#FFF" fill-opacity="0.7"/>
-              <rect x="20" y="24" width="10" height="3" rx="1.5" fill="#FFF" fill-opacity="0.7"/>
-              <rect x="6" y="14" width="20" height="20" rx="4" fill="url(#wrdFront)"/>
-              <path d="M10.5 19h2.2l1.6 5.5 1.5-5.5h2.1l1.5 5.5 1.6-5.5h2.2l-2.6 8.5h-2.1l-1.6-5.4-1.6 5.4h-2.1L10.5 19z" fill="#FFFFFF"/>
-            </svg>
-          </div>
-          <span>Word</span>
-        </div>
-
-        <!-- 6. Microsoft Excel -->
-        <div class="tool-tile-card">
-          <div class="tool-logo-box">
-            <svg viewBox="0 0 100 100">
-              <rect width="88" height="88" x="6" y="6" rx="16" fill="#107C41"/>
-              <path d="M30 28h14l11 18 11-18h14L63 50l18 22H67L55 53l-11 19H30l18-22z" fill="#FFFFFF"/>
-            </svg>
-          </div>
-          <span>Excel</span>
-        </div>
-
-        <!-- 7. Adobe Photoshop -->
-        <div class="tool-tile-card">
-          <div class="tool-logo-box">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/photoshop/photoshop-original.svg" alt="Photoshop Logo">
-          </div>
-          <span>Photoshop</span>
-        </div>
-
-        <!-- 8. Adobe Illustrator -->
-        <div class="tool-tile-card">
-          <div class="tool-logo-box">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/illustrator/illustrator-plain.svg" alt="Illustrator Logo">
-          </div>
-          <span>Illustrator</span>
-        </div>
-
-        <!-- 9. Adobe Premiere Pro -->
-        <div class="tool-tile-card">
-          <div class="tool-logo-box">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/premierepro/premierepro-original.svg" alt="Premiere Pro Logo">
-          </div>
-          <span>Premiere Pro</span>
-        </div>
-
-        <!-- 10. Adobe After Effects -->
-        <div class="tool-tile-card">
-          <div class="tool-logo-box">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/aftereffects/aftereffects-original.svg" alt="After Effects Logo">
-          </div>
-          <span>After Effects</span>
-        </div>
-
-        <!-- 11. LearnDash LMS -->
-        <div class="tool-tile-card">
-          <div class="tool-logo-box">
-            <svg viewBox="0 0 100 100">
-              <rect width="90" height="90" x="5" y="5" rx="20" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="2"/>
-              <rect x="22" y="48" width="14" height="28" rx="4" fill="#3B82F6"/>
-              <rect x="43" y="32" width="14" height="44" rx="4" fill="#6366F1"/>
-              <rect x="64" y="20" width="14" height="56" rx="4" fill="#F59E0B"/>
-            </svg>
-          </div>
-          <span>LearnDash</span>
-        </div>
-
-        <!-- 12. Articulate 360 -->
-        <div class="tool-tile-card">
-          <div class="tool-logo-box">
-            <svg viewBox="0 0 100 100">
-              <circle cx="50" cy="50" r="38" fill="none" stroke="#0284C7" stroke-width="14"/>
-              <circle cx="50" cy="20" r="8" fill="#38BDF8"/>
-            </svg>
-          </div>
-          <span>Articulate 360</span>
-        </div>
-
-        <!-- 13. Camtasia -->
-        <div class="tool-tile-card">
-          <div class="tool-logo-box">
-            <svg viewBox="0 0 100 100">
-              <rect width="88" height="88" x="6" y="6" rx="18" fill="#22C55E"/>
-              <path d="M68 34H36a6 6 0 00-6 6v20a6 6 0 006 6h32" fill="none" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <span>Camtasia</span>
-        </div>
-
-        <!-- 14. Vyond -->
-        <div class="tool-tile-card">
-          <div class="tool-logo-box">
-            <svg viewBox="0 0 100 100">
-              <rect width="88" height="88" x="6" y="6" rx="18" fill="#FFF7ED" stroke="#FED7AA" stroke-width="2"/>
-              <path d="M30 30L50 68L70 30" fill="none" stroke="#EA580C" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <span>Vyond</span>
-        </div>
-
-        <!-- 15. Figma -->
-        <div class="tool-tile-card">
-          <div class="tool-logo-box">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" alt="Figma Logo">
-          </div>
-          <span>Figma</span>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- MY PROCESS SECTION -->
+<!-- 5. MY PROCESS -->
 <section id="process" class="section-block">
   <div class="container">
     <span class="section-tag">My Process</span>
-    <h2 class="section-title" style="margin-bottom: 8px;">From Ideas to Impact</h2>
-    <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 30px;">
+    <h2 class="section-title">From Ideas to Impact</h2>
+    <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 24px;">
       A simple, structured approach to create learning experiences that work.
     </p>
 
-    <div class="process-layout-grid">
-      <div class="process-step-chain">
-        <div class="process-step-item">
-          <div class="process-step-circle"><i class="fa-solid fa-clipboard-list"></i></div>
-          <div class="process-step-details">
-            <span>01</span>
-            <strong>Understand</strong>
-            <small>Learning Needs</small>
-          </div>
-        </div>
-        <div style="color:#CBD5E1; font-size:18px;">&rarr;</div>
-
-        <div class="process-step-item">
-          <div class="process-step-circle"><i class="fa-solid fa-lightbulb"></i></div>
-          <div class="process-step-details">
-            <span>02</span>
-            <strong>Design</strong>
-            <small>Engaging Solutions</small>
-          </div>
-        </div>
-        <div style="color:#CBD5E1; font-size:18px;">&rarr;</div>
-
-        <div class="process-step-item">
-          <div class="process-step-circle"><i class="fa-solid fa-gear"></i></div>
-          <div class="process-step-details">
-            <span>03</span>
-            <strong>Develop</strong>
-            <small>Using the Right Tools</small>
-          </div>
-        </div>
-        <div style="color:#CBD5E1; font-size:18px;">&rarr;</div>
-
-        <div class="process-step-item">
-          <div class="process-step-circle"><i class="fa-solid fa-chart-line"></i></div>
-          <div class="process-step-details">
-            <span>04</span>
-            <strong>Deliver</strong>
-            <small>Measurable Impact</small>
-          </div>
-        </div>
+    <div class="process-step-chain">
+      <div class="process-step-item">
+        <div class="process-step-circle"><i class="fa-solid fa-clipboard-list"></i></div>
+        <div class="process-step-details"><span>01</span><strong>Understand</strong><small>Learning Needs</small></div>
       </div>
+      <div style="color:#CBD5E1; font-size:18px;">&rarr;</div>
 
-      <div class="process-cursive-callout">
-        Simple Ideas.<br>Meaningful<br>Change.
+      <div class="process-step-item">
+        <div class="process-step-circle"><i class="fa-solid fa-lightbulb"></i></div>
+        <div class="process-step-details"><span>02</span><strong>Design</strong><small>Engaging Solutions</small></div>
+      </div>
+      <div style="color:#CBD5E1; font-size:18px;">&rarr;</div>
+
+      <div class="process-step-item">
+        <div class="process-step-circle"><i class="fa-solid fa-gear"></i></div>
+        <div class="process-step-details"><span>03</span><strong>Develop</strong><small>Using Right Tools</small></div>
+      </div>
+      <div style="color:#CBD5E1; font-size:18px;">&rarr;</div>
+
+      <div class="process-step-item">
+        <div class="process-step-circle"><i class="fa-solid fa-chart-line"></i></div>
+        <div class="process-step-details"><span>04</span><strong>Deliver</strong><small>Measurable Impact</small></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- WHY I DO THIS BANNER: Panoramic Sunrise Mountain Scenery -->
+<!-- 6. WHY I DO THIS BANNER -->
 <section class="banner-inspiration">
-  <div class="container banner-content-grid">
+  <div class="container banner-grid">
     <div>
-      <span class="banner-eyebrow">Why I Do This</span>
+      <span style="font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: #A5B4FC; margin-bottom: 8px; display: block;">Why I Do This</span>
       <h2 class="banner-title">Because Learning Changes People.</h2>
       <p class="banner-desc">
-        I believe well-designed learning can build skills, create opportunities and transform lives. That's what keeps me motivated.
+        I believe well-designed learning can build skills, create opportunities, and transform lives. That's what keeps me motivated.
       </p>
 
-      <a href="#contact" class="btn-banner-glow">
-        Let's Create Impact &rarr;
-      </a>
+      <a href="#contact" class="btn-primary-glow">Let's Create Impact &rarr;</a>
     </div>
 
-    <!-- 2x2 checklist sitting directly on the mountain scenery -->
-    <div>
-      <div class="banner-checklist-grid">
-        <div class="banner-check-item"><i class="fa-solid fa-book-open"></i> Learn</div>
-        <div class="banner-check-item"><i class="fa-solid fa-users"></i> Grow</div>
-        <div class="banner-check-item"><i class="fa-solid fa-bullseye"></i> Perform</div>
-        <div class="banner-check-item"><i class="fa-solid fa-chart-line"></i> Succeed</div>
-      </div>
+    <div class="banner-checklist-grid">
+      <div class="banner-check-item"><i class="fa-solid fa-book-open"></i> Learn</div>
+      <div class="banner-check-item"><i class="fa-solid fa-users"></i> Grow</div>
+      <div class="banner-check-item"><i class="fa-solid fa-bullseye"></i> Perform</div>
+      <div class="banner-check-item"><i class="fa-solid fa-chart-line"></i> Succeed</div>
     </div>
   </div>
 </section>
 
-<!-- CONTACT SECTION: image4.png (Dissolved seamlessly beside contact info) -->
+<!-- 7. CONTACT SECTION (image4.png) -->
 <section id="contact" class="section-block">
   <div class="container two-col-grid">
     <div>
       <span class="section-tag">Let's Connect</span>
-      <h2 class="section-title" style="margin-bottom: 12px;">Let's Create Better Learning Together.</h2>
+      <h2 class="section-title">Let's Create Better Learning Together.</h2>
       <p style="font-size: 14.5px; color: var(--text-body);">
-        I'm always open to discussing new opportunities, collaborations or ideas.
+        I'm always open to discussing new opportunities, collaborations, or ideas.
       </p>
 
       <div class="contact-list-vertical">
@@ -1370,11 +1017,10 @@ a { text-decoration: none; color: inherit; }
         </div>
       </div>
 
-      <a href="mailto:sv393015@gmail.com" class="btn-hero-primary">Get in Touch &rarr;</a>
+      <a href="mailto:sv393015@gmail.com" class="btn-primary-glow">Get in Touch &rarr;</a>
     </div>
 
-    <!-- Right Column: image4.png dissolved organically without cards -->
-    <div class="organic-blend-photo">
+    <div class="soft-fade-image-box">
       <img src="image4.png" alt="Let's Connect with Chandirakkumar S" onerror="this.onerror=null; this.src='profile image.png';">
     </div>
   </div>
@@ -1412,10 +1058,11 @@ a { text-decoration: none; color: inherit; }
   </div>
 </footer>
 
+<!-- LIGHTBOX MODAL -->
 <div id="previewModal" class="modal-overlay" onclick="closeModalDirect(event)">
   <div class="modal-box">
     <div class="modal-bar">
-      <span style="font-weight: 700; font-size: 14px;">Project Interactive Demo</span>
+      <span>Project Interactive Demo</span>
       <button onclick="closeModal()">&times;</button>
     </div>
     <div class="modal-frame">
