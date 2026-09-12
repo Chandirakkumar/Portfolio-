@@ -3,36 +3,44 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chandrakumar S | Instructional Designer</title>
+<title>Chandirakkumar S | Instructional Designer</title>
 
+<!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<!-- Devicon & FontAwesome for verified vector logos -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
 :root {
-  --bg: #FFFFFF;
+  --bg-main: #FFFFFF;
   --bg-subtle: #F8FAFC;
-  --border: #E2E8F0;
+  --border-light: #E2E8F0;
   --border-card: #EDF2F7;
-  --text-main: #0F172A;
+  --text-dark: #0F172A;
   --text-body: #334155;
   --text-muted: #64748B;
-  --primary: #2563EB;
-  --primary-hover: #1D4ED8;
-  --primary-light: #EFF6FF;
+  --primary-purple: #6366F1;
+  --primary-purple-dark: #4F46E5;
+  --primary-purple-light: #EEF2FF;
+  --primary-blue: #2563EB;
   --dark-btn: #0F172A;
+  --dark-btn-hover: #1E293B;
   --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.05);
   --shadow-md: 0 12px 28px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 20px 40px rgba(15, 23, 42, 0.12);
 }
 
-* { margin:0; padding:0; box-sizing:border-box; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  background: var(--bg);
-  color: var(--text-main);
+  background: var(--bg-main);
+  color: var(--text-dark);
   line-height: 1.6;
+  overflow-x: hidden;
 }
 a { text-decoration: none; color: inherit; }
 
@@ -42,14 +50,15 @@ a { text-decoration: none; color: inherit; }
   padding: 0 24px;
 }
 
-/* TOP NAV */
+/* ===== STICKY TOP NAVIGATION ===== */
 .top-nav {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-light);
   padding: 16px 0;
 }
 .nav-inner {
@@ -57,48 +66,77 @@ a { text-decoration: none; color: inherit; }
   align-items: center;
   justify-content: space-between;
 }
-.brand {
+.nav-brand {
   display: flex;
   align-items: center;
   gap: 12px;
 }
-.brand-logo {
+.brand-cs {
   font-size: 32px;
   font-weight: 900;
   letter-spacing: -1.5px;
+  color: #4F46E5;
   line-height: 1;
 }
-.brand-text h1 { font-size: 15px; font-weight: 800; line-height: 1.2; }
-.brand-text span { font-size: 11px; font-weight: 500; color: var(--text-muted); }
-.nav-links {
+.brand-info h1 {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--text-dark);
+  line-height: 1.2;
+}
+.brand-info span {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+.nav-menu {
   display: flex;
   align-items: center;
   gap: 28px;
 }
-.nav-links a {
+.nav-link {
   font-size: 14px;
   font-weight: 600;
   color: var(--text-muted);
-  transition: .2s;
+  position: relative;
+  padding: 6px 0;
+  transition: color 0.2s ease;
 }
-.nav-links a.active, .nav-links a:hover { color: var(--text-main); }
-.btn-connect-sm {
+.nav-link:hover, .nav-link.active { color: var(--text-dark); }
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--primary-purple);
+  border-radius: 2px;
+}
+.btn-nav-connect {
   background: var(--dark-btn);
-  color: #FFF;
-  padding: 10px 22px;
-  border-radius: 40px;
+  color: #FFFFFF;
   font-size: 13.5px;
   font-weight: 600;
-  display: flex;
+  padding: 10px 22px;
+  border-radius: 40px;
+  display: inline-flex;
   align-items: center;
   gap: 8px;
+  transition: all 0.2s ease;
+}
+.btn-nav-connect:hover {
+  background: var(--dark-btn-hover);
+  transform: translateY(-1px);
 }
 
-/* HERO SECTION */
-.hero {
-  padding: 40px 0 60px;
-  background: linear-gradient(180deg, #FFF 0%, #F8FAFC 100%);
-  border-bottom: 1px solid var(--border);
+/* ===== HERO SECTION ===== */
+.hero-section {
+  position: relative;
+  padding: 45px 0 65px;
+  background: linear-gradient(180deg, #FFFFFF 0%, #FAFCFF 100%);
+  border-bottom: 1px solid var(--border-light);
+  overflow: hidden;
 }
 .hero-grid {
   display: grid;
@@ -106,7 +144,7 @@ a { text-decoration: none; color: inherit; }
   gap: 40px;
   align-items: center;
 }
-.eyebrow {
+.hero-track-eyebrow {
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 2.5px;
@@ -115,106 +153,133 @@ a { text-decoration: none; color: inherit; }
   margin-bottom: 14px;
   display: block;
 }
-.hero-title {
+.hero-heading {
   font-size: 52px;
-  line-height: 1.1;
+  line-height: 1.12;
   font-weight: 900;
+  color: var(--text-dark);
   letter-spacing: -1.5px;
   margin-bottom: 18px;
 }
-.hero-title span { color: var(--primary); }
-.hero-desc {
+.hero-heading .purple-accent {
+  color: var(--primary-purple);
+}
+.hero-desc-text {
   font-size: 15px;
+  line-height: 1.65;
   color: var(--text-body);
   max-width: 500px;
   margin-bottom: 30px;
 }
-.hero-btns {
+.hero-cta-group {
   display: flex;
+  align-items: center;
   gap: 16px;
   margin-bottom: 40px;
 }
-.btn-blue {
-  background: var(--primary);
-  color: #FFF;
-  padding: 12px 26px;
+.btn-hero-primary {
+  background: var(--primary-purple);
+  color: #FFFFFF;
+  padding: 13px 26px;
   border-radius: 8px;
   font-size: 14px;
   font-weight: 700;
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px rgba(99, 102, 241, 0.3);
 }
-.btn-outline {
-  border: 1.5px solid var(--border);
-  background: #FFF;
-  color: var(--text-main);
-  padding: 11px 22px;
+.btn-hero-primary:hover {
+  background: var(--primary-purple-dark);
+  transform: translateY(-2px);
+}
+.btn-hero-outline {
+  background: #FFFFFF;
+  color: var(--text-dark);
+  border: 1.5px solid var(--border-light);
+  padding: 12px 24px;
   border-radius: 8px;
   font-size: 14px;
   font-weight: 600;
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  transition: all 0.2s ease;
 }
-.hero-pillars {
+.btn-hero-outline:hover {
+  border-color: var(--primary-purple);
+}
+
+/* Hero 4 Pillars */
+.hero-pillars-row {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 16px;
   padding-top: 24px;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--border-light);
 }
-.pillar-item {
+.pillar-card {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 4px;
 }
-.pillar-icon { font-size: 20px; color: var(--primary); }
-.pillar-name { font-size: 12px; font-weight: 700; line-height: 1.25; }
+.pillar-icon {
+  font-size: 18px;
+  color: var(--primary-purple);
+  margin-bottom: 4px;
+}
+.pillar-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1.3;
+}
 
-/* HERO RIGHT VISUAL */
-.hero-visual {
+/* Hero Visual Composition */
+.hero-visual-pane {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  min-height: 480px;
+  min-height: 490px;
 }
-.hero-frame {
-  width: 320px;
-  height: 440px;
-  border-radius: 200px 200px 20px 20px;
-  overflow: hidden;
-  box-shadow: var(--shadow-md);
-  border: 4px solid #FFF;
-  background: #E2E8F0;
+.hero-portrait-frame {
   position: relative;
+  width: 325px;
+  height: 445px;
+  border-radius: 200px 200px 24px 24px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 4px solid #FFFFFF;
+  background: #E2E8F0;
   z-index: 2;
 }
-.hero-frame img {
+.hero-portrait-frame img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: top;
+  object-position: top center;
+  display: block;
 }
-.script-note-hero {
+.script-quote-hero {
   position: absolute;
-  top: 40px;
-  right: -10px;
+  top: 45px;
+  right: -5px;
   font-family: 'Caveat', cursive;
   font-size: 30px;
-  color: #1E3A8A;
-  line-height: 1.1;
+  color: #312E81;
+  line-height: 1.15;
   transform: rotate(-3deg);
   z-index: 3;
 }
-.frame-quote-wall {
+.framed-quote-wall {
   position: absolute;
   top: 25px;
   right: -30px;
-  width: 120px;
-  background: #FFF;
+  width: 125px;
+  background: #FFFFFF;
   border: 3px solid #CBD5E1;
   padding: 10px;
   border-radius: 6px;
@@ -225,16 +290,16 @@ a { text-decoration: none; color: inherit; }
   box-shadow: var(--shadow-sm);
   z-index: 1;
 }
-.desk-mug {
+.desk-mug-element {
   position: absolute;
-  bottom: 12px;
-  left: 20px;
-  z-index: 4;
+  bottom: 14px;
+  left: 15px;
+  z-index: 5;
   width: 65px;
   height: 72px;
   background: #0F172A;
   border-radius: 0 0 16px 16px;
-  color: #FFF;
+  color: #FFFFFF;
   font-size: 8px;
   font-weight: 800;
   display: flex;
@@ -242,8 +307,9 @@ a { text-decoration: none; color: inherit; }
   justify-content: center;
   text-align: center;
   padding: 4px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.25);
 }
-.desk-mug::after {
+.desk-mug-element::after {
   content: '';
   position: absolute;
   right: -12px;
@@ -254,40 +320,43 @@ a { text-decoration: none; color: inherit; }
   border-left: none;
   border-radius: 0 12px 12px 0;
 }
-.desk-laptop {
+.desk-laptop-element {
   position: absolute;
   bottom: 0;
-  right: -20px;
-  z-index: 3;
-  width: 250px;
+  right: -25px;
+  z-index: 4;
+  width: 255px;
   background: #1E293B;
   border: 3px solid #64748B;
   border-radius: 10px 10px 0 0;
   padding: 16px;
   text-align: center;
-  color: #FFF;
+  color: #FFFFFF;
   font-family: 'Caveat', cursive;
   font-size: 24px;
   line-height: 1.15;
 }
 
-/* SECTION TITLES */
-.section { padding: 80px 0; position: relative; }
+/* ===== SECTION COMMON ===== */
+.site-section {
+  padding: 80px 0;
+  position: relative;
+}
 .section-tag {
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--primary);
+  color: var(--primary-purple);
   margin-bottom: 6px;
   display: block;
 }
 .section-title {
   font-size: 32px;
   font-weight: 900;
-  color: var(--text-main);
+  color: var(--text-dark);
   letter-spacing: -0.8px;
-  border-left: 4px solid var(--primary);
+  border-left: 4px solid var(--primary-purple);
   padding-left: 14px;
   line-height: 1.15;
 }
@@ -298,72 +367,89 @@ a { text-decoration: none; color: inherit; }
   margin-bottom: 36px;
 }
 .view-all-link {
-  font-size: 13px;
+  font-size: 13.5px;
   font-weight: 700;
-  color: var(--primary);
+  color: var(--primary-purple);
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  transition: gap 0.2s ease;
 }
+.view-all-link:hover { gap: 10px; }
 
-/* ABOUT CALLOUT CARD */
-.about-card-split {
+/* ===== ABOUT ME SECTION ===== */
+.about-card-banner {
   display: grid;
   grid-template-columns: 1.1fr 1.9fr;
-  gap: 32px;
+  gap: 36px;
   align-items: center;
   background: #F8FAFC;
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-light);
   border-radius: 20px;
-  padding: 36px;
+  padding: 40px;
 }
-.about-callout-grid {
+.about-features-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 16px;
 }
-.callout-box {
-  background: #FFF;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 18px 12px;
+.about-feature-box {
+  background: #FFFFFF;
+  border: 1px solid var(--border-light);
+  border-radius: 14px;
+  padding: 20px 12px;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease;
 }
-.callout-box .icon { font-size: 22px; color: var(--primary); }
-.callout-box span { font-size: 11px; font-weight: 700; color: var(--text-body); }
-.cursive-lead {
+.about-feature-box:hover {
+  transform: translateY(-3px);
+  border-color: var(--primary-purple);
+}
+.about-feature-box i {
+  font-size: 22px;
+  color: var(--primary-purple);
+}
+.about-feature-box span {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1.25;
+}
+.cursive-lead-about {
   font-family: 'Caveat', cursive;
-  font-size: 28px;
-  color: #1E3A8A;
-  line-height: 1.1;
+  font-size: 32px;
+  color: #312E81;
+  line-height: 1.15;
   text-align: center;
 }
 
-/* FEATURED PROJECTS 4-GRID */
-.projects-grid {
+/* ===== FEATURED PROJECTS ===== */
+.projects-4-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
 }
-.project-card {
-  background: #FFF;
-  border: 1px solid var(--border);
+.proj-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-light);
   border-radius: 16px;
   padding: 16px;
   display: flex;
   flex-direction: column;
-  transition: all .2s ease;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.25s ease;
 }
-.project-card:hover {
+.proj-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-md);
   border-color: #CBD5E1;
 }
-.proj-media {
+.proj-thumb-frame {
   position: relative;
   width: 100%;
   aspect-ratio: 16/10;
@@ -371,9 +457,15 @@ a { text-decoration: none; color: inherit; }
   overflow: hidden;
   background: #0F172A;
   margin-bottom: 14px;
+  border: 1px solid var(--border-light);
 }
-.proj-media img { width: 100%; height: 100%; object-fit: cover; }
-.play-overlay {
+.proj-thumb-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.proj-play-overlay {
   position: absolute;
   inset: 0;
   margin: auto;
@@ -381,211 +473,214 @@ a { text-decoration: none; color: inherit; }
   height: 44px;
   border-radius: 50%;
   background: rgba(15, 23, 42, 0.75);
-  color: #FFF;
+  color: #FFFFFF;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 15px;
   cursor: pointer;
+  transition: 0.2s ease;
+  backdrop-filter: blur(4px);
 }
-.proj-cat {
+.proj-card:hover .proj-play-overlay {
+  background: var(--primary-purple);
+  transform: scale(1.1);
+}
+.proj-badge-cat {
   font-size: 9.5px;
   font-weight: 800;
   letter-spacing: 0.8px;
   text-transform: uppercase;
-  color: var(--primary);
+  color: var(--primary-purple);
   margin-bottom: 4px;
+  display: block;
 }
-.project-card h3 {
+.proj-card h3 {
   font-size: 16px;
   font-weight: 800;
+  color: var(--text-dark);
   margin-bottom: 6px;
   line-height: 1.25;
 }
-.project-card p {
+.proj-card p {
   font-size: 12.5px;
   color: var(--text-muted);
   line-height: 1.5;
   margin-bottom: 14px;
   flex-grow: 1;
 }
-.tag-group {
+.proj-tag-list {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
   margin-bottom: 14px;
 }
-.pill {
-  font-size: 10px;
+.proj-tag-pill {
+  font-size: 10.5px;
   font-weight: 700;
-  padding: 3px 8px;
+  padding: 4px 9px;
   border-radius: 20px;
-  background: var(--primary-light);
-  color: var(--primary);
+  background: var(--primary-purple-light);
+  color: var(--primary-purple);
 }
-.card-link {
-  font-size: 12.5px;
+.btn-view-project {
+  font-size: 13px;
   font-weight: 700;
-  color: var(--primary);
+  color: var(--primary-purple);
   display: inline-flex;
   align-items: center;
   gap: 6px;
 }
 
-/* TOOLS & TECHNOLOGIES SPLIT WITH DESK STACK */
-.tools-showcase {
+/* ===== TOOLS & TECHNOLOGIES WITH VERIFIED SVG LOGOS ===== */
+.tools-showcase-grid {
   display: grid;
-  grid-template-columns: 1fr 1.4fr;
+  grid-template-columns: 1fr 1.45fr;
   gap: 40px;
   align-items: center;
 }
-.desk-art-pane {
+.desk-composition-art {
   background: #F8FAFC;
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-light);
   border-radius: 20px;
   padding: 40px 30px;
   text-align: center;
   position: relative;
 }
-.desk-art-pane .cursive-quote {
+.desk-composition-art .cursive-art-quote {
   font-family: 'Caveat', cursive;
   font-size: 34px;
-  color: #1E3A8A;
+  color: #312E81;
   line-height: 1.15;
   margin-bottom: 30px;
 }
-.spine-stack {
+.desk-spines-column {
   display: inline-flex;
   flex-direction: column;
   gap: 4px;
-  width: 140px;
+  width: 145px;
 }
-.spine {
-  background: #FFF;
-  border: 1px solid var(--border);
-  border-left: 4px solid var(--primary);
-  padding: 4px 10px;
+.spine-block {
+  background: #FFFFFF;
+  border: 1px solid var(--border-light);
+  border-left: 4px solid var(--primary-purple);
+  padding: 5px 12px;
   font-size: 11px;
   font-weight: 800;
-  color: var(--text-main);
+  color: var(--text-dark);
   border-radius: 0 4px 4px 0;
   box-shadow: var(--shadow-sm);
+  text-align: left;
 }
 .tools-grid-15 {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 14px;
 }
-.tool-tile {
-  background: #FFF;
-  border: 1.5px solid var(--border);
-  border-radius: 12px;
-  padding: 14px 6px;
+.tool-tile-card {
+  background: #FFFFFF;
+  border: 1.5px solid var(--border-light);
+  border-radius: 14px;
+  padding: 16px 8px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 8px;
+  gap: 10px;
   box-shadow: var(--shadow-sm);
+  transition: all 0.2s ease;
 }
-.tool-tile:hover {
-  transform: translateY(-3px);
-  border-color: #CBD5E1;
+.tool-tile-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary-purple);
+  box-shadow: var(--shadow-md);
 }
-.badge-sq {
-  width: 42px;
-  height: 42px;
-  border-radius: 10px;
+
+/* Verified SVG/Icon Badges */
+.tool-logo-img {
+  width: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 800;
-  font-size: 14px;
-  color: #FFF;
+  flex-shrink: 0;
 }
-.bg-sl { background: #D946EF; border-radius: 50%; }
-.bg-cp { background: #059669; }
-.bg-rise { background: #0EA5E9; }
-.bg-ppt { background: #EA580C; }
-.bg-word { background: #2563EB; }
-.bg-excel { background: #16A34A; }
-.bg-ps { background: #0284C7; }
-.bg-ai { background: #EA580C; }
-.bg-pr { background: #4338CA; }
-.bg-ae { background: #3730A3; }
-.bg-ld { background: #F8FAFC; border: 1.5px solid var(--border); color: var(--primary); }
-.bg-art360 { background: #0284C7; }
-.bg-scorm { background: #6366F1; font-size: 10px; }
-.bg-html { background: #E44D26; }
-.bg-camtasia { background: #22C55E; }
-.tool-tile span {
-  font-size: 11px;
+.tool-logo-img img, .tool-logo-img svg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.tool-tile-card span {
+  font-size: 11.5px;
   font-weight: 700;
   color: var(--text-dark);
+  line-height: 1.2;
 }
 
-/* PROCESS FLOW */
-.process-flex {
+/* ===== MY PROCESS SECTION ===== */
+.process-layout-grid {
   display: grid;
   grid-template-columns: 1.4fr 0.6fr;
   gap: 40px;
   align-items: center;
 }
-.step-chain {
+.process-step-chain {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.step-item {
+.process-step-item {
   display: flex;
   align-items: center;
   gap: 12px;
 }
-.step-circle {
-  width: 44px;
-  height: 44px;
+.process-step-circle {
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
-  background: var(--primary-light);
-  color: var(--primary);
+  background: var(--primary-purple-light);
+  color: var(--primary-purple);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 18px;
   flex-shrink: 0;
+  border: 1px solid #C7D2FE;
 }
-.step-meta span {
+.process-step-details span {
   font-size: 10px;
   font-weight: 800;
   color: var(--text-muted);
   display: block;
 }
-.step-meta strong {
-  font-size: 13px;
+.process-step-details strong {
+  font-size: 13.5px;
   font-weight: 800;
   display: block;
+  color: var(--text-dark);
 }
-.step-meta small {
+.process-step-details small {
   font-size: 11px;
   color: var(--text-muted);
 }
-.process-quote {
+.process-cursive-callout {
   font-family: 'Caveat', cursive;
-  font-size: 32px;
-  color: #1E3A8A;
+  font-size: 34px;
+  color: #312E81;
   line-height: 1.15;
   text-align: right;
 }
 
-/* BANNER: BECAUSE LEARNING CHANGES PEOPLE */
-.quote-photo-banner {
-  background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.95)),
+/* ===== BANNER: WHY I DO THIS ===== */
+.banner-inspiration {
+  background: linear-gradient(rgba(15, 23, 42, 0.88), rgba(15, 23, 42, 0.94)),
               url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1600&auto=format&fit=crop&q=80') center/cover;
-  color: #FFF;
-  padding: 70px 0;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
+  color: #FFFFFF;
+  padding: 75px 0;
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
 }
-.banner-grid {
+.banner-content-grid {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
   gap: 40px;
@@ -598,109 +693,179 @@ a { text-decoration: none; color: inherit; }
   margin-bottom: 14px;
 }
 .banner-desc {
-  font-size: 14px;
+  font-size: 14.5px;
   color: #CBD5E1;
   max-width: 480px;
+  margin-bottom: 24px;
 }
-.banner-checks {
+.banner-checklist-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
+  gap: 18px;
 }
-.check-row {
+.banner-check-item {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 14px;
+  gap: 12px;
+  font-size: 14.5px;
   font-weight: 700;
   color: #F8FAFC;
 }
-.banner-cursive {
-  font-family: 'Caveat', cursive;
-  font-size: 34px;
-  color: #93C5FD;
-  line-height: 1.15;
-  text-align: center;
-  margin-top: 20px;
+.banner-check-item i {
+  color: var(--primary-purple);
+  font-size: 16px;
+}
+.btn-banner-glow {
+  background: var(--primary-purple);
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 12px 26px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.4);
+  transition: all 0.2s ease;
+}
+.btn-banner-glow:hover {
+  background: var(--primary-purple-dark);
+  transform: translateY(-2px);
 }
 
-/* CONTACT SECTION */
-.contact-grid {
+/* ===== CONTACT SECTION ===== */
+.contact-section-grid {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   gap: 40px;
   align-items: center;
 }
-.contact-items-v {
+.contact-list-vertical {
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  margin: 24px 0;
+  gap: 16px;
+  margin: 26px 0;
 }
-.contact-item-row {
+.contact-row-entry {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
   font-size: 14.5px;
   font-weight: 600;
-  color: var(--text-main);
+  color: var(--text-dark);
+  transition: color 0.2s ease;
 }
-.contact-icon-bubble {
+.contact-row-entry:hover {
+  color: var(--primary-purple);
+}
+.contact-circle-bubble {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: var(--primary-light);
-  color: var(--primary);
+  background: var(--primary-purple-light);
+  color: var(--primary-purple);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 15px;
 }
-.framed-contact-desk {
-  background: #FFF;
+.framed-desk-signboard {
+  background: #FFFFFF;
   border: 4px solid #D1B89D;
   border-radius: 12px;
-  padding: 30px;
+  padding: 34px 24px;
   box-shadow: var(--shadow-md);
   text-align: center;
 }
-.framed-contact-desk h3 {
-  font-size: 24px;
+.framed-desk-signboard h3 {
+  font-size: 26px;
   font-weight: 900;
-  margin-bottom: 8px;
+  line-height: 1.25;
+  color: var(--text-dark);
 }
-.framed-contact-desk p {
-  font-size: 13px;
-  color: var(--text-muted);
+.framed-desk-signboard .accent-bar {
+  width: 44px;
+  height: 3px;
+  background: var(--primary-purple);
+  margin: 12px auto;
+  border-radius: 2px;
 }
 
-/* FOOTER */
-.site-footer {
-  border-top: 1px solid var(--border);
-  padding: 24px 0;
-  background: #FFF;
-  font-size: 13px;
-  color: var(--text-muted);
+/* ===== FOOTER WITH WAVE & SIGNATURE ===== */
+.footer-wrapper {
+  background: #0B0F19;
+  color: #94A3B8;
+  padding: 40px 0 20px;
+  position: relative;
 }
 .footer-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  font-size: 13px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #1E293B;
 }
-.footer-links {
+.footer-brand {
   display: flex;
-  gap: 24px;
+  align-items: center;
+  gap: 10px;
+}
+.footer-brand-logo {
+  font-size: 24px;
+  font-weight: 900;
+  color: var(--primary-purple);
+}
+.footer-brand span {
+  color: #FFFFFF;
   font-weight: 600;
 }
-.thankyou-tag {
+.footer-nav {
+  display: flex;
+  gap: 22px;
+  font-weight: 600;
+}
+.footer-nav a:hover { color: #FFFFFF; }
+.footer-social-strip {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 16px;
+}
+.footer-social-strip a:hover { color: var(--primary-purple); }
+.footer-bottom-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 20px;
+  font-size: 12px;
+}
+.thankyou-calligraphy {
   font-family: 'Caveat', cursive;
-  font-size: 32px;
+  font-size: 34px;
   text-align: center;
-  color: #1E3A8A;
-  padding: 30px 0 10px;
+  color: #C7D2FE;
+  padding: 24px 0 10px;
+}
+.btn-back-top-round {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid #334155;
+  background: #1E293B;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+.btn-back-top-round:hover {
+  background: var(--primary-purple);
+  border-color: var(--primary-purple);
 }
 
-/* LIGHTBOX MODAL */
+/* ===== LIGHTBOX MODAL ===== */
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -723,7 +888,7 @@ a { text-decoration: none; color: inherit; }
 .modal-bar {
   padding: 14px 20px;
   background: #1E293B;
-  color: #FFF;
+  color: #FFFFFF;
   display: flex;
   justify-content: space-between;
 }
@@ -740,152 +905,154 @@ a { text-decoration: none; color: inherit; }
 }
 .modal-frame iframe { width: 100%; height: 100%; border: none; }
 
-/* RESPONSIVE */
+/* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
-  .hero-grid, .about-card-split, .tools-showcase, .process-flex, .banner-grid, .contact-grid {
+  .hero-grid, .about-card-banner, .tools-showcase-grid, .process-layout-grid, .banner-content-grid, .contact-section-grid {
     grid-template-columns: 1fr;
   }
-  .projects-grid { grid-template-columns: repeat(2, 1fr); }
+  .projects-4-grid { grid-template-columns: repeat(2, 1fr); }
   .tools-grid-15 { grid-template-columns: repeat(3, 1fr); }
 }
 @media (max-width: 768px) {
-  .nav-links { display: none; }
-  .hero-title { font-size: 38px; }
-  .hero-pillars { grid-template-columns: repeat(2, 1fr); }
-  .projects-grid { grid-template-columns: 1fr; }
+  .nav-menu { display: none; }
+  .hero-heading { font-size: 38px; }
+  .hero-pillars-row { grid-template-columns: repeat(2, 1fr); }
+  .projects-4-grid { grid-template-columns: 1fr; }
   .tools-grid-15 { grid-template-columns: repeat(2, 1fr); }
-  .step-chain { flex-direction: column; align-items: flex-start; gap: 16px; }
-  .footer-inner { flex-direction: column; gap: 16px; }
+  .process-step-chain { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .footer-inner, .footer-bottom-bar { flex-direction: column; gap: 16px; text-align: center; }
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
+<!-- TOP NAVIGATION -->
 <header class="top-nav">
   <div class="container nav-inner">
-    <div class="brand">
-      <div class="brand-logo">CS</div>
-      <div class="brand-text">
+    <a href="#home" class="nav-brand">
+      <div class="brand-cs">CS</div>
+      <div class="brand-info">
         <h1>Chandirakkumar S</h1>
         <span>Instructional Designer</span>
       </div>
-    </div>
+    </a>
 
-    <nav class="nav-links">
-      <a href="#home" class="active">Home</a>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#process">Process</a>
-      <a href="#contact">Contact</a>
+    <nav class="nav-menu">
+      <a href="#home" class="nav-link active">Home</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#skills" class="nav-link">Skills</a>
+      <a href="#process" class="nav-link">Process</a>
+      <a href="#contact" class="nav-link">Contact</a>
     </nav>
 
-    <a href="#contact" class="btn-connect-sm">
+    <a href="#contact" class="btn-nav-connect">
       Let's Connect &rarr;
     </a>
   </div>
 </header>
 
 <!-- HERO SECTION -->
-<section id="home" class="hero">
+<section id="home" class="hero-section">
   <div class="container hero-grid">
     <div>
-      <span class="eyebrow">Learn &bull; Design &bull; Develop &bull; Deliver</span>
-      <h1 class="hero-title">
-        Learning Experiences for <span>Real People.</span>
+      <span class="hero-track-eyebrow">Learn &bull; Design &bull; Develop &bull; Deliver</span>
+      <h1 class="hero-heading">
+        Learning Experiences for <span class="purple-accent">Real People.</span>
       </h1>
-      <p class="hero-desc">
-        I design and develop eLearning, visual, and multimedia learning experiences that inform, engage, and create measurable impact.
+      <p class="hero-desc-text">
+        I design and develop eLearning, visual and multimedia learning experiences that inform, engage and create measurable impact.
       </p>
 
-      <div class="hero-btns">
-        <a href="#projects" class="btn-blue">View My Work &rarr;</a>
-        <a href="#contact" class="btn-outline">Download Resume</a>
+      <div class="hero-cta-group">
+        <a href="#projects" class="btn-hero-primary">View My Work &rarr;</a>
+        <a href="#contact" class="btn-hero-outline">
+          <i class="fa-solid fa-download"></i> Download Resume
+        </a>
       </div>
 
-      <div class="hero-pillars">
-        <div class="pillar-item">
-          <div class="pillar-icon">&#128214;</div>
-          <div class="pillar-name">Engaging<br>Learning</div>
+      <div class="hero-pillars-row">
+        <div class="pillar-card">
+          <div class="pillar-icon"><i class="fa-solid fa-book-open"></i></div>
+          <div class="pillar-label">Engaging<br>Learning</div>
         </div>
-        <div class="pillar-item">
-          <div class="pillar-icon">&#9998;</div>
-          <div class="pillar-name">Practical<br>Design</div>
+        <div class="pillar-card">
+          <div class="pillar-icon"><i class="fa-solid fa-pen-nib"></i></div>
+          <div class="pillar-label">Practical<br>Design</div>
         </div>
-        <div class="pillar-item">
-          <div class="pillar-icon">&#128202;</div>
-          <div class="pillar-name">Measurable<br>Impact</div>
+        <div class="pillar-card">
+          <div class="pillar-icon"><i class="fa-solid fa-chart-line"></i></div>
+          <div class="pillar-label">Measurable<br>Impact</div>
         </div>
-        <div class="pillar-item">
-          <div class="pillar-icon">&#128101;</div>
-          <div class="pillar-name">People<br>Centric</div>
+        <div class="pillar-card">
+          <div class="pillar-icon"><i class="fa-solid fa-users"></i></div>
+          <div class="pillar-label">People<br>Centric</div>
         </div>
       </div>
     </div>
 
-    <!-- HERO RIGHT ART -->
-    <div class="hero-visual">
-      <div class="script-note-hero">
+    <!-- HERO RIGHT VISUAL -->
+    <div class="hero-visual-pane">
+      <div class="script-quote-hero">
         Same<br>Passion.<br>Bigger<br>Impact.
       </div>
 
-      <div class="frame-quote-wall">
-        GOOD LEARNING CREATES BRIGHTER TOMORROWS
+      <div class="framed-quote-wall">
+        GOOD PEOPLE GREAT LEARNING BRIGHTER TOMORROWS
       </div>
 
-      <div class="hero-frame">
+      <div class="hero-portrait-frame">
         <img src="IMG_20260409_223924.jpg" alt="Chandirakkumar S" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=700&auto=format&fit=crop&q=80';">
       </div>
 
-      <div class="desk-mug">
+      <div class="desk-mug-element">
         Better<br>Learning<br>Brighter<br>Tomorrows
       </div>
 
-      <div class="desk-laptop">
+      <div class="desk-laptop-element">
         Ideas<br>Design<br>Develop<br>Deliver
       </div>
     </div>
   </div>
 </section>
 
-<!-- ABOUT SECTION -->
-<section id="about" class="section">
+<!-- ABOUT ME SECTION -->
+<section id="about" class="site-section">
   <div class="container">
-    <div class="about-card-split">
+    <div class="about-card-banner">
       <div>
         <span class="section-tag">About Me</span>
-        <h2 style="font-size: 28px; font-weight: 900; margin-bottom: 12px; line-height: 1.2;">
+        <h2 style="font-size: 28px; font-weight: 900; margin-bottom: 12px; line-height: 1.25;">
           An Instructional Designer Who Loves to Create.
         </h2>
-        <p style="font-size: 14px; color: var(--text-body); margin-bottom: 20px;">
-          I'm Chandirakkumar, an Instructional Designer with a passion for creating learning experiences that make a real difference. I enjoy blending instructional strategy, visual design, and technology to help people learn and grow.
+        <p style="font-size: 14.5px; color: var(--text-body); margin-bottom: 22px;">
+          I'm Chandirakkumar, an Instructional Designer with a passion for creating learning experiences that make a real difference. I enjoy blending instructional strategy, visual design and technology to help people learn and grow.
         </p>
         <a href="#contact" class="view-all-link">More About Me &rarr;</a>
       </div>
 
       <div style="display: flex; flex-direction: column; gap: 20px;">
-        <div class="about-callout-grid">
-          <div class="callout-box">
-            <div class="icon">&#127891;</div>
+        <div class="about-features-grid">
+          <div class="about-feature-box">
+            <i class="fa-solid fa-graduation-cap"></i>
             <span>Learning Design</span>
           </div>
-          <div class="callout-box">
-            <div class="icon">&#127912;</div>
-            <span>Visual Comm</span>
+          <div class="about-feature-box">
+            <i class="fa-solid fa-lightbulb"></i>
+            <span>Visual Communication</span>
           </div>
-          <div class="callout-box">
-            <div class="icon">&#9874;</div>
+          <div class="about-feature-box">
+            <i class="fa-solid fa-puzzle-piece"></i>
             <span>Problem Solving</span>
           </div>
-          <div class="callout-box">
-            <div class="icon">&#128200;</div>
+          <div class="about-feature-box">
+            <i class="fa-solid fa-chart-simple"></i>
             <span>Continuous Learning</span>
           </div>
         </div>
 
-        <div class="cursive-lead">
+        <div class="cursive-lead-about">
           Learning today leads to brighter tomorrows.
         </div>
       </div>
@@ -894,7 +1061,7 @@ a { text-decoration: none; color: inherit; }
 </section>
 
 <!-- FEATURED PROJECTS -->
-<section id="projects" class="section" style="padding-top: 0;">
+<section id="projects" class="site-section" style="padding-top: 0;">
   <div class="container">
     <div class="section-header-split">
       <div>
@@ -904,129 +1071,266 @@ a { text-decoration: none; color: inherit; }
       <a href="#projects" class="view-all-link">View All Projects &rarr;</a>
     </div>
 
-    <div class="projects-grid">
+    <div class="projects-4-grid">
       <!-- PROJECT 1 -->
-      <div class="project-card">
-        <div class="proj-media">
-          <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?w=600&auto=format&fit=crop&q=80" alt="SCORM Module">
-          <div class="play-overlay" onclick="openModal('https://drive.google.com/file/d/1rRtZDmiMiKexJ4jQxXIFJ_b89UR3zWo3/preview')">&#9658;</div>
+      <div class="proj-card">
+        <div class="proj-thumb-frame">
+          <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?w=600&auto=format&fit=crop&q=80" alt="SCORM Maritime Module">
+          <div class="proj-play-overlay" onclick="openModal('https://drive.google.com/file/d/1rRtZDmiMiKexJ4jQxXIFJ_b89UR3zWo3/preview')">&#9658;</div>
         </div>
-        <span class="proj-cat">e-Learning</span>
+        <span class="proj-badge-cat">e-Learning</span>
         <h3>Interactive SCORM eLearning</h3>
-        <p>An interactive Storyline 360 module with custom navigation, assessments, and SCORM publishing.</p>
-        <div class="tag-group">
-          <span class="pill">Storyline 360</span>
-          <span class="pill">SCORM</span>
-          <span class="pill">Interactive</span>
+        <p>An interactive Storyline 360 module with custom navigation, assessments and SCORM publishing.</p>
+        <div class="proj-tag-list">
+          <span class="proj-tag-pill">Storyline 360</span>
+          <span class="proj-tag-pill">SCORM</span>
+          <span class="proj-tag-pill">Interactive</span>
         </div>
-        <a href="javascript:void(0)" onclick="openModal('https://drive.google.com/file/d/1-Jr4AcAYIeU_B9Cimcw1WLswNRgfx0MU/preview')" class="card-link">View Project &rarr;</a>
+        <a href="javascript:void(0)" onclick="openModal('https://drive.google.com/file/d/1-Jr4AcAYIeU_B9Cimcw1WLswNRgfx0MU/preview')" class="btn-view-project">View Project &rarr;</a>
       </div>
 
       <!-- PROJECT 2 -->
-      <div class="project-card">
-        <div class="proj-media">
-          <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&auto=format&fit=crop&q=80" alt="Multi-language">
-          <div class="play-overlay" onclick="openModal('https://drive.google.com/file/d/1IIuKoOcBHQ35GzFYcmutqnFGDglw8n3t/preview')">&#9658;</div>
+      <div class="proj-card">
+        <div class="proj-thumb-frame">
+          <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&auto=format&fit=crop&q=80" alt="Multi-language eLearning">
+          <div class="proj-play-overlay" onclick="openModal('https://drive.google.com/file/d/1IIuKoOcBHQ35GzFYcmutqnFGDglw8n3t/preview')">&#9658;</div>
         </div>
-        <span class="proj-cat">e-Learning</span>
+        <span class="proj-badge-cat">e-Learning</span>
         <h3>Multi-language eLearning</h3>
         <p>Interactive course with language switching and multilingual learning support.</p>
-        <div class="tag-group">
-          <span class="pill">Storyline 360</span>
-          <span class="pill">Multilingual</span>
-          <span class="pill">Localization</span>
+        <div class="proj-tag-list">
+          <span class="proj-tag-pill">Storyline 360</span>
+          <span class="proj-tag-pill">Multilingual</span>
+          <span class="proj-tag-pill">Localization</span>
         </div>
-        <a href="javascript:void(0)" onclick="openModal('https://drive.google.com/file/d/1IIuKoOcBHQ35GzFYcmutqnFGDglw8n3t/preview')" class="card-link">View Project &rarr;</a>
+        <a href="javascript:void(0)" onclick="openModal('https://drive.google.com/file/d/1IIuKoOcBHQ35GzFYcmutqnFGDglw8n3t/preview')" class="btn-view-project">View Project &rarr;</a>
       </div>
 
       <!-- PROJECT 3 -->
-      <div class="project-card">
-        <div class="proj-media">
-          <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&auto=format&fit=crop&q=80" alt="PowerPoint">
-          <div class="play-overlay" onclick="openModal('https://drive.google.com/file/d/12KMOnXd8ilEKFB4JqiAr99lX8_8IBSUv/preview')">&#9658;</div>
+      <div class="proj-card">
+        <div class="proj-thumb-frame">
+          <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&auto=format&fit=crop&q=80" alt="PowerPoint Decks">
+          <div class="proj-play-overlay" onclick="openModal('https://drive.google.com/file/d/12KMOnXd8ilEKFB4JqiAr99lX8_8IBSUv/preview')">&#9658;</div>
         </div>
-        <span class="proj-cat">Visual Design</span>
+        <span class="proj-badge-cat">Visual Design</span>
         <h3>Corporate PowerPoint Design</h3>
-        <p>Professional training presentations with modern layouts, infographics, and learning content.</p>
-        <div class="tag-group">
-          <span class="pill">PowerPoint</span>
-          <span class="pill">Visual Design</span>
-          <span class="pill">Infographics</span>
+        <p>Professional training presentations with modern layouts, infographics and learning content.</p>
+        <div class="proj-tag-list">
+          <span class="proj-tag-pill">PowerPoint</span>
+          <span class="proj-tag-pill">Visual Design</span>
+          <span class="proj-tag-pill">Infographics</span>
         </div>
-        <a href="javascript:void(0)" onclick="openModal('https://drive.google.com/file/d/12KMOnXd8ilEKFB4JqiAr99lX8_8IBSUv/preview')" class="card-link">View Project &rarr;</a>
+        <a href="javascript:void(0)" onclick="openModal('https://drive.google.com/file/d/12KMOnXd8ilEKFB4JqiAr99lX8_8IBSUv/preview')" class="btn-view-project">View Project &rarr;</a>
       </div>
 
       <!-- PROJECT 4 -->
-      <div class="project-card">
-        <div class="proj-media">
-          <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=600&auto=format&fit=crop&q=80" alt="Video Editing">
-          <div class="play-overlay" onclick="openModal('https://drive.google.com/file/d/1v1ISwjEXjLI4X5jwVbi-a-JX1O14nO5p/preview')">&#9658;</div>
+      <div class="proj-card">
+        <div class="proj-thumb-frame">
+          <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=600&auto=format&fit=crop&q=80" alt="Video Editing Motion">
+          <div class="proj-play-overlay" onclick="openModal('https://drive.google.com/file/d/1v1ISwjEXjLI4X5jwVbi-a-JX1O14nO5p/preview')">&#9658;</div>
         </div>
-        <span class="proj-cat">Video & Motion</span>
-        <h3>Video Editing & Motion Graphics</h3>
-        <p>Cinematic and engaging videos using Premiere Pro and After Effects for training and communication.</p>
-        <div class="tag-group">
-          <span class="pill">Premiere Pro</span>
-          <span class="pill">After Effects</span>
-          <span class="pill">Motion</span>
+        <span class="proj-badge-cat">Video &amp; Motion</span>
+        <h3>Video Editing &amp; Motion Graphics</h3>
+        <p>Cinematic and engaging videos using Premiere Pro and After Effects for learning and communication.</p>
+        <div class="proj-tag-list">
+          <span class="proj-tag-pill">Premiere Pro</span>
+          <span class="proj-tag-pill">After Effects</span>
+          <span class="proj-tag-pill">Motion</span>
         </div>
-        <a href="javascript:void(0)" onclick="openModal('https://drive.google.com/file/d/1v1ISwjEXjLI4X5jwVbi-a-JX1O14nO5p/preview')" class="card-link">View Project &rarr;</a>
+        <a href="javascript:void(0)" onclick="openModal('https://drive.google.com/file/d/1v1ISwjEXjLI4X5jwVbi-a-JX1O14nO5p/preview')" class="btn-view-project">View Project &rarr;</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- TOOLS & TECHNOLOGIES -->
-<section id="skills" class="section" style="background: #FFF; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+<!-- TOOLS & TECHNOLOGIES WITH REAL LOGO IMAGES -->
+<section id="skills" class="site-section" style="background: #FFFFFF; border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light);">
   <div class="container">
-    <div class="tools-showcase">
-      <div class="desk-art-pane">
-        <div class="cursive-quote">
-          Small Learning Moments<br>
-          Big Future Impact.
+    <div class="tools-showcase-grid">
+      
+      <!-- LEFT DESK NOTE -->
+      <div class="desk-composition-art">
+        <div class="cursive-art-quote">
+          Right Tools.<br>
+          Better Learning.
         </div>
-        <div class="spine-stack">
-          <div class="spine">Learn</div>
-          <div class="spine">Design</div>
-          <div class="spine">Develop</div>
-          <div class="spine">Grow</div>
-          <div class="spine">Impact</div>
+        <div class="desk-spines-column">
+          <div class="spine-block">Learn</div>
+          <div class="spine-block">Design</div>
+          <div class="spine-block">Develop</div>
+          <div class="spine-block">Grow</div>
+          <div class="spine-block">Impact</div>
         </div>
       </div>
 
+      <!-- RIGHT 15-TOOL REAL LOGO TILES -->
       <div>
-        <span class="section-tag">Tools & Technologies</span>
+        <span class="section-tag">Tools &amp; Technologies</span>
         <h2 class="section-title" style="margin-bottom: 8px;">Tools I Work With</h2>
         <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 24px;">
-          A combination of authoring, design, multimedia, and LMS tools to bring learning ideas to life.
+          A combination of authoring, design, multimedia and LMS tools to bring learning ideas to life.
         </p>
 
         <div class="tools-grid-15">
-          <div class="tool-tile"><div class="badge-sq bg-sl">sl</div><span>Storyline 360</span></div>
-          <div class="tool-tile"><div class="badge-sq bg-cp">Cp</div><span>Captivate</span></div>
-          <div class="tool-tile"><div class="badge-sq bg-rise">r</div><span>Rise</span></div>
-          <div class="tool-tile"><div class="badge-sq bg-ppt">P</div><span>PowerPoint</span></div>
-          <div class="tool-tile"><div class="badge-sq bg-word">W</div><span>Word</span></div>
+          
+          <!-- 1. Storyline 360 -->
+          <div class="tool-tile-card">
+            <div class="tool-logo-img">
+              <svg viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="46" fill="#E11D48"/>
+                <text x="50%" y="58%" text-anchor="middle" fill="#FFFFFF" font-family="'Inter', sans-serif" font-weight="800" font-size="34">sl</text>
+              </svg>
+            </div>
+            <span>Storyline 360</span>
+          </div>
 
-          <div class="tool-tile"><div class="badge-sq bg-excel">X</div><span>Excel</span></div>
-          <div class="tool-tile"><div class="badge-sq bg-ps">Ps</div><span>Photoshop</span></div>
-          <div class="tool-tile"><div class="badge-sq bg-ai">Ai</div><span>Illustrator</span></div>
-          <div class="tool-tile"><div class="badge-sq bg-pr">Pr</div><span>Premiere Pro</span></div>
-          <div class="tool-tile"><div class="badge-sq bg-ae">Ae</div><span>After Effects</span></div>
+          <!-- 2. Adobe Captivate -->
+          <div class="tool-tile-card">
+            <div class="tool-logo-img">
+              <svg viewBox="0 0 100 100">
+                <rect width="92" height="92" x="4" y="4" rx="20" fill="#024E38"/>
+                <text x="50%" y="62%" text-anchor="middle" fill="#34D399" font-family="'Inter', sans-serif" font-weight="900" font-size="44">Cp</text>
+              </svg>
+            </div>
+            <span>Captivate</span>
+          </div>
 
-          <div class="tool-tile"><div class="badge-sq bg-ld">&#128202;</div><span>LearnDash</span></div>
-          <div class="tool-tile"><div class="badge-sq bg-art360">&#9678;</div><span>Articulate 360</span></div>
-          <div class="tool-tile"><div class="badge-sq bg-scorm">SCORM</div><span>SCORM</span></div>
-          <div class="tool-tile"><div class="badge-sq bg-html">HTML5</div><span>HTML5</span></div>
-          <div class="tool-tile"><div class="badge-sq bg-camtasia">C</div><span>Camtasia</span></div>
+          <!-- 3. Articulate Rise -->
+          <div class="tool-tile-card">
+            <div class="tool-logo-img">
+              <svg viewBox="0 0 100 100">
+                <rect width="92" height="92" x="4" y="4" rx="20" fill="#0284C7"/>
+                <text x="50%" y="64%" text-anchor="middle" fill="#FFFFFF" font-family="'Inter', sans-serif" font-weight="800" font-size="46">r</text>
+              </svg>
+            </div>
+            <span>Rise</span>
+          </div>
+
+          <!-- 4. Microsoft PowerPoint -->
+          <div class="tool-tile-card">
+            <div class="tool-logo-img">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/powerpoint/powerpoint-original.svg" alt="Microsoft PowerPoint Logo">
+            </div>
+            <span>PowerPoint</span>
+          </div>
+
+          <!-- 5. Microsoft Word -->
+          <div class="tool-tile-card">
+            <div class="tool-logo-img">
+              <svg viewBox="0 0 100 100">
+                <rect width="88" height="88" x="6" y="6" rx="16" fill="#185ABD"/>
+                <path d="M26 28h11l8 30 8-30h11l8 44H61l-5-28-7 28H41l-7-28-5 28H18z" fill="#FFFFFF"/>
+              </svg>
+            </div>
+            <span>Word</span>
+          </div>
+
+          <!-- 6. Microsoft Excel -->
+          <div class="tool-tile-card">
+            <div class="tool-logo-img">
+              <svg viewBox="0 0 100 100">
+                <rect width="88" height="88" x="6" y="6" rx="16" fill="#107C41"/>
+                <path d="M30 28h14l11 18 11-18h14L63 50l18 22H67L55 53l-11 19H30l18-22z" fill="#FFFFFF"/>
+              </svg>
+            </div>
+            <span>Excel</span>
+          </div>
+
+          <!-- 7. Adobe Photoshop -->
+          <div class="tool-tile-card">
+            <div class="tool-logo-img">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/photoshop/photoshop-original.svg" alt="Adobe Photoshop Logo">
+            </div>
+            <span>Photoshop</span>
+          </div>
+
+          <!-- 8. Adobe Illustrator -->
+          <div class="tool-tile-card">
+            <div class="tool-logo-img">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/illustrator/illustrator-plain.svg" alt="Adobe Illustrator Logo">
+            </div>
+            <span>Illustrator</span>
+          </div>
+
+          <!-- 9. Adobe Premiere Pro -->
+          <div class="tool-tile-card">
+            <div class="tool-logo-img">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/premierepro/premierepro-original.svg" alt="Adobe Premiere Pro Logo">
+            </div>
+            <span>Premiere Pro</span>
+          </div>
+
+          <!-- 10. Adobe After Effects -->
+          <div class="tool-tile-card">
+            <div class="tool-logo-img">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/aftereffects/aftereffects-original.svg" alt="Adobe After Effects Logo">
+            </div>
+            <span>After Effects</span>
+          </div>
+
+          <!-- 11. LearnDash LMS -->
+          <div class="tool-tile-card">
+            <div class="tool-logo-img">
+              <svg viewBox="0 0 100 100">
+                <rect width="90" height="90" x="5" y="5" rx="20" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="2"/>
+                <rect x="22" y="48" width="14" height="28" rx="4" fill="#3B82F6"/>
+                <rect x="43" y="32" width="14" height="44" rx="4" fill="#6366F1"/>
+                <rect x="64" y="20" width="14" height="56" rx="4" fill="#F59E0B"/>
+              </svg>
+            </div>
+            <span>LearnDash</span>
+          </div>
+
+          <!-- 12. Articulate 360 -->
+          <div class="tool-tile-card">
+            <div class="tool-logo-img">
+              <svg viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="38" fill="none" stroke="#0284C7" stroke-width="14"/>
+                <circle cx="50" cy="20" r="8" fill="#38BDF8"/>
+              </svg>
+            </div>
+            <span>Articulate 360</span>
+          </div>
+
+          <!-- 13. Camtasia -->
+          <div class="tool-tile-card">
+            <div class="tool-logo-img">
+              <svg viewBox="0 0 100 100">
+                <rect width="88" height="88" x="6" y="6" rx="18" fill="#22C55E"/>
+                <path d="M68 34H36a6 6 0 00-6 6v20a6 6 0 006 6h32" fill="none" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <span>Camtasia</span>
+          </div>
+
+          <!-- 14. Vyond Animation -->
+          <div class="tool-tile-card">
+            <div class="tool-logo-img">
+              <svg viewBox="0 0 100 100">
+                <rect width="88" height="88" x="6" y="6" rx="18" fill="#FFF7ED" stroke="#FED7AA" stroke-width="2"/>
+                <path d="M30 30L50 68L70 30" fill="none" stroke="#EA580C" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <span>Vyond</span>
+          </div>
+
+          <!-- 15. Figma -->
+          <div class="tool-tile-card">
+            <div class="tool-logo-img">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" alt="Figma Logo">
+            </div>
+            <span>Figma</span>
+          </div>
+
         </div>
       </div>
+
     </div>
   </div>
 </section>
 
 <!-- MY PROCESS -->
-<section id="process" class="section">
+<section id="process" class="site-section">
   <div class="container">
     <span class="section-tag">My Process</span>
     <h2 class="section-title" style="margin-bottom: 8px;">From Ideas to Impact</h2>
@@ -1034,131 +1338,162 @@ a { text-decoration: none; color: inherit; }
       A simple, structured approach to create learning experiences that work.
     </p>
 
-    <div class="process-flex">
-      <div class="step-chain">
-        <div class="step-item">
-          <div class="step-circle">&#128221;</div>
-          <div class="step-meta"><span>01</span><strong>Understand</strong><small>Learning Needs</small></div>
+    <div class="process-layout-grid">
+      <div class="process-step-chain">
+        <div class="process-step-item">
+          <div class="process-step-circle"><i class="fa-solid fa-clipboard-list"></i></div>
+          <div class="process-step-details">
+            <span>01</span>
+            <strong>Understand</strong>
+            <small>Learning Needs</small>
+          </div>
         </div>
         <div style="color:#CBD5E1; font-size:18px;">&rarr;</div>
 
-        <div class="step-item">
-          <div class="step-circle">&#128161;</div>
-          <div class="step-meta"><span>02</span><strong>Design</strong><small>Engaging Solutions</small></div>
+        <div class="process-step-item">
+          <div class="process-step-circle"><i class="fa-solid fa-lightbulb"></i></div>
+          <div class="process-step-details">
+            <span>02</span>
+            <strong>Design</strong>
+            <small>Engaging Solutions</small>
+          </div>
         </div>
         <div style="color:#CBD5E1; font-size:18px;">&rarr;</div>
 
-        <div class="step-item">
-          <div class="step-circle">&#9881;</div>
-          <div class="step-meta"><span>03</span><strong>Develop</strong><small>Using Right Tools</small></div>
+        <div class="process-step-item">
+          <div class="process-step-circle"><i class="fa-solid fa-gear"></i></div>
+          <div class="process-step-details">
+            <span>03</span>
+            <strong>Develop</strong>
+            <small>Using the Right Tools</small>
+          </div>
         </div>
         <div style="color:#CBD5E1; font-size:18px;">&rarr;</div>
 
-        <div class="step-item">
-          <div class="step-circle">&#128200;</div>
-          <div class="step-meta"><span>04</span><strong>Deliver</strong><small>Measurable Impact</small></div>
+        <div class="process-step-item">
+          <div class="process-step-circle"><i class="fa-solid fa-chart-line"></i></div>
+          <div class="process-step-details">
+            <span>04</span>
+            <strong>Deliver</strong>
+            <small>Measurable Impact</small>
+          </div>
         </div>
       </div>
 
-      <div class="process-quote">
+      <div class="process-cursive-callout">
         Simple Ideas.<br>Meaningful<br>Change.
       </div>
     </div>
   </div>
 </section>
 
-<!-- LEARNING CHANGES PEOPLE BANNER -->
-<section class="quote-photo-banner">
-  <div class="container banner-grid">
+<!-- WHY I DO THIS BANNER -->
+<section class="banner-inspiration">
+  <div class="container banner-content-grid">
     <div>
-      <h2 class="banner-title">&ldquo; Because Learning Changes People.</h2>
+      <span style="font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: #A5B4FC; margin-bottom: 8px; display: block;">Why I Do This</span>
+      <h2 class="banner-title">Because Learning Changes People.</h2>
       <p class="banner-desc">
-        I believe well-designed learning can build skills, create opportunities, and transform lives. That's what keeps me motivated.
+        I believe well-designed learning can build skills, create opportunities and transform lives. That's what keeps me motivated.
       </p>
+
+      <a href="#contact" class="btn-banner-glow">
+        Let's Create Impact &rarr;
+      </a>
     </div>
 
     <div>
-      <div class="banner-checks">
-        <div class="check-row">&#128214; Learn</div>
-        <div class="check-row">&#128101; Grow</div>
-        <div class="check-row">&#127919; Perform</div>
-        <div class="check-row">&#128200; Succeed</div>
-      </div>
-      <div class="banner-cursive">
-        Better Learning<br>Brighter Tomorrows.
+      <div class="banner-checklist-grid">
+        <div class="banner-check-item"><i class="fa-solid fa-book-open"></i> Learn</div>
+        <div class="banner-check-item"><i class="fa-solid fa-users"></i> Grow</div>
+        <div class="banner-check-item"><i class="fa-solid fa-bullseye"></i> Perform</div>
+        <div class="banner-check-item"><i class="fa-solid fa-chart-line"></i> Succeed</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CONTACT SECTION -->
-<section id="contact" class="section">
-  <div class="container contact-grid">
+<!-- LET'S CONNECT SECTION -->
+<section id="contact" class="site-section">
+  <div class="container contact-section-grid">
     <div>
       <span class="section-tag">Let's Connect</span>
       <h2 class="section-title" style="margin-bottom: 12px;">Let's Create Better Learning Together.</h2>
-      <p style="font-size: 14px; color: var(--text-body);">
-        I'm always open to discussing new opportunities, collaborations, or ideas.
+      <p style="font-size: 14.5px; color: var(--text-body);">
+        I'm always open to discussing new opportunities, collaborations or ideas.
       </p>
 
-      <div class="contact-items-v">
-        <a href="mailto:sv393015@gmail.com" class="contact-item-row">
-          <div class="contact-icon-bubble">&#9993;</div>
+      <div class="contact-list-vertical">
+        <a href="mailto:sv393015@gmail.com" class="contact-row-entry">
+          <div class="contact-circle-bubble"><i class="fa-solid fa-envelope"></i></div>
           <span>sv393015@gmail.com</span>
         </a>
-        <a href="tel:+919353080994" class="contact-item-row">
-          <div class="contact-icon-bubble">&#9742;</div>
+        <a href="tel:+919353080994" class="contact-row-entry">
+          <div class="contact-circle-bubble"><i class="fa-solid fa-phone"></i></div>
           <span>+91 93530 80994</span>
         </a>
-        <a href="https://www.linkedin.com/in/chandru-elearning" target="_blank" rel="noopener noreferrer" class="contact-item-row">
-          <div class="contact-icon-bubble">in</div>
+        <a href="https://www.linkedin.com/in/chandru-elearning" target="_blank" rel="noopener noreferrer" class="contact-row-entry">
+          <div class="contact-circle-bubble"><i class="fa-brands fa-linkedin-in"></i></div>
           <span>linkedin.com/in/chandru-elearning</span>
         </a>
-        <div class="contact-item-row">
-          <div class="contact-icon-bubble">&#128205;</div>
+        <div class="contact-row-entry">
+          <div class="contact-circle-bubble"><i class="fa-solid fa-location-dot"></i></div>
           <span>Bengaluru, Karnataka, India</span>
         </div>
       </div>
 
-      <a href="mailto:sv393015@gmail.com" class="btn-blue">Get in Touch &rarr;</a>
+      <a href="mailto:sv393015@gmail.com" class="btn-hero-primary">Get in Touch &rarr;</a>
     </div>
 
-    <div class="framed-contact-desk">
+    <div class="framed-desk-signboard">
       <h3>Ideas<br>People<br>Learning<br>Impact</h3>
-      <div style="width: 40px; height: 3px; background: var(--primary); margin: 12px auto;"></div>
-      <p>Building meaningful learning experiences.</p>
+      <div class="accent-bar"></div>
+      <p style="font-size: 13.5px; color: var(--text-muted);">Designing engaging experiences that empower.</p>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer class="site-footer">
-  <div class="container footer-inner">
-    <div style="display: flex; align-items: center; gap: 8px;">
-      <strong style="color: var(--text-main); font-size: 16px;">CS</strong>
-      <span>Chandirakkumar S &bull; Instructional Designer</span>
+<!-- FOOTER WITH CURSIVE THANK YOU -->
+<footer class="footer-wrapper">
+  <div class="container">
+    
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-brand-logo">CS</div>
+        <span>Chandirakkumar S &bull; Instructional Designer</span>
+      </div>
+
+      <nav class="footer-nav">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#process">Process</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="footer-social-strip">
+        <a href="https://www.linkedin.com/in/chandru-elearning" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="mailto:sv393015@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+      </div>
     </div>
 
-    <div class="footer-links">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#process">Process</a>
-      <a href="#contact">Contact</a>
+    <div class="thankyou-calligraphy">Thank you for visiting!</div>
+
+    <div class="footer-bottom-bar">
+      <div>&copy; 2026 Chandirakkumar S. All rights reserved.</div>
+      <a href="#home" class="btn-back-top-round" aria-label="Back to Top">&uarr;</a>
     </div>
 
-    <div>&copy; 2026 Chandirakkumar S. All rights reserved.</div>
   </div>
-
-  <div class="thankyou-tag">Thank you for visiting!</div>
 </footer>
 
 <!-- LIGHTBOX MODAL -->
 <div id="previewModal" class="modal-overlay" onclick="closeModalDirect(event)">
   <div class="modal-box">
     <div class="modal-bar">
-      <span>Project Interactive Demo</span>
+      <span style="font-weight: 700; font-size: 14px;">Project Interactive Demo</span>
       <button onclick="closeModal()">&times;</button>
     </div>
     <div class="modal-frame">
