@@ -1,827 +1,1015 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chandirakkumar | Portfolio</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-<style>
-
-:root {
-  --bg-main: #F8FAFC;         /* Crisp off-white canvas */
-  --bg-surface: #FFFFFF;      /* Clean pure white surfaces */
-  --bg-subtle: #F1F5F9;       /* Light neutral accents */
-  --border-subtle: #E2E8F0;   /* Delicate card borders */
-  --border-strong: #CBD5E1;   /* Hover borders */
-  --text-primary: #0F172A;    /* Deep slate readable text */
-  --text-secondary: #64748B;  /* Balanced gray body text */
-  --primary: #2563EB;         /* Professional royal blue */
-  --primary-hover: #1D4ED8;   
-  --primary-light: #EFF6FF;   
-  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.05), 0 1px 2px rgba(15, 23, 42, 0.04);
-  --shadow-md: 0 10px 25px -5px rgba(15, 23, 42, 0.06), 0 8px 10px -6px rgba(15, 23, 42, 0.03);
-}
-
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-html{
-  scroll-behavior: smooth;
-}
-
-body{
-  font-family:'Inter',sans-serif;
-  background: var(--bg-main);
-  color: var(--text-primary);
-  line-height: 1.6;
-}
-
-/* ===== STICKY TOP NAVBAR ===== */
-
-.top-nav{
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border-subtle);
-  padding: 16px 24px;
-}
-
-.nav-container{
-  max-width: 1150px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo{
-  font-size: 20px;
-  font-weight: 800;
-  color: var(--text-primary);
-  text-decoration: none;
-  letter-spacing: -0.5px;
-}
-
-.nav-links{
-  display: flex;
-  gap: 12px;
-}
-
-.nav-links a{
-  text-decoration: none;
-  color: var(--text-secondary);
-  padding: 8px 16px;
-  border-radius: 10px;
-  font-weight: 600;
-  font-size: 14px;
-  transition: .2s ease;
-}
-
-.nav-links a:hover{
-  color: var(--primary);
-  background: var(--primary-light);
-}
-
-/* ===== MAIN CONTAINER ===== */
-
-.main{
-  width: 100%;
-  max-width: 1150px;
-  margin: 0 auto;
-  padding: 40px 24px 80px;
-}
-
-.section{
-  margin-bottom: 70px;
-  scroll-margin-top: 90px; /* Aligns smoothly under sticky navbar */
-}
-
-/* ===== ABOUT HERO CARD ===== */
-
-.about-card{
-  position:relative;
-  display:flex;
-  align-items:center;
-  gap:40px;
-  background: var(--bg-surface);
-  padding:44px;
-  border-radius:24px;
-  border: 1px solid var(--border-subtle);
-  box-shadow: var(--shadow-md);
-  margin-bottom:60px;
-  overflow:hidden;
-}
-
-.profile-image{
-  position:relative;
-  width:180px;
-  height:180px;
-  border-radius:50%;
-  border:4px solid var(--primary-light);
-  padding:4px;
-  background: var(--bg-surface);
-  box-shadow: 0 0 0 1px var(--border-subtle);
-  flex-shrink:0;
-}
-
-.profile-image img{
-  width:100%;
-  height:100%;
-  border-radius:50%;
-  object-fit:cover;
-}
-
-.profile-dot{
-  position:absolute;
-  bottom:6px;
-  right:6px;
-  width:22px;
-  height:22px;
-  background:#10B981;
-  border:3px solid var(--bg-surface);
-  border-radius:50%;
-  box-shadow:0 0 8px rgba(16, 185, 129, 0.35);
-}
-
-.about-info{
-  flex:1;
-  z-index:2;
-}
-
-.about-info h2{
-  font-size:36px;
-  font-weight:800;
-  margin-bottom:8px;
-  color: var(--text-primary);
-  letter-spacing:-1px;
-}
-
-.about-info h3{
-  font-size:16px;
-  font-weight:600;
-  margin-bottom:14px;
-  color: var(--primary);
-  letter-spacing:0.2px;
-}
-
-.about-text{
-  font-size:15px;
-  line-height:1.75;
-  color: var(--text-secondary);
-  margin-bottom:18px;
-}
-
-.location{
-  font-size:14px;
-  font-weight:600;
-  color: var(--text-primary);
-  display:flex;
-  align-items:center;
-  gap:6px;
-}
-
-.dots{
-  position:absolute;
-  width:90px;
-  height:90px;
-  background-image:radial-gradient(var(--border-strong) 2px, transparent 2px);
-  background-size:16px 16px;
-  opacity:0.6;
-}
-
-.dots-left{
-  top:20px;
-  left:20px;
-}
-
-.dots-right{
-  bottom:20px;
-  right:20px;
-}
-
-/* ===== SECTION HEADERS ===== */
-
-.section-header{
-  margin-bottom:28px;
-  border-left:4px solid var(--primary);
-  padding-left:18px;
-}
-
-.section-header h2{
-  font-size:26px;
-  font-weight:800;
-  color: var(--text-primary);
-  letter-spacing:-0.5px;
-  margin-bottom:4px;
-}
-
-.section-header p{
-  color: var(--text-secondary);
-  font-size:15px;
-}
-
-/* ===== GRIDS & CARDS ===== */
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:24px;
-}
-
-.card{
-  background: var(--bg-surface);
-  padding:26px;
-  border-radius:20px;
-  border:1px solid var(--border-subtle);
-  box-shadow: var(--shadow-sm);
-  transition:.25s ease;
-  min-height:130px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  gap:8px;
-}
-
-.card:hover{
-  transform:translateY(-3px);
-  border-color: var(--border-strong);
-  box-shadow: var(--shadow-md);
-}
-
-.dashboard-grid .card{
-  border-left:4px solid var(--primary);
-}
-
-#projects .card{
-  min-height:430px;
-  justify-content:flex-start;
-  gap:12px;
-}
-
-#projects .card .btn{
-  margin-top:auto;
-  width:100%;
-  text-align:center;
-}
-
-#projects .card img, #projects .card iframe{
-  width:100%;
-  aspect-ratio:16/9;
-  object-fit:cover;
-  border-radius:12px;
-  display:block;
-  margin-bottom:8px;
-  border:1px solid var(--border-subtle);
-  background: var(--bg-subtle);
-}
-
-.card h3{
-  color: var(--text-primary);
-  font-size:18px;
-  font-weight:700;
-}
-
-.card p{
-  color: var(--text-secondary);
-  font-size:14px;
-  line-height:1.6;
-}
-
-/* ===== SKILLS CARDS ===== */
-
-.skills-container{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-  gap:20px;
-}
-
-.skill-card{
-  background: var(--bg-surface);
-  border-radius:18px;
-  padding:28px 20px;
-  text-align:center;
-  border:1px solid var(--border-subtle);
-  box-shadow: var(--shadow-sm);
-  transition:.25s ease;
-  border-top:4px solid var(--primary);
-}
-
-.skill-card:hover{
-  transform:translateY(-4px);
-  box-shadow: var(--shadow-md);
-  border-color: var(--border-strong);
-}
-
-.skill-card img{
-  width:52px;
-  height:52px;
-  object-fit:contain;
-  margin-bottom:14px;
-}
-
-.skill-card h3{
-  font-size:15px;
-  font-weight:700;
-  color: var(--text-primary);
-  margin-bottom:12px;
-}
-
-.level{
-  display:inline-block;
-  padding:5px 14px;
-  border-radius:30px;
-  font-size:11px;
-  font-weight:700;
-  background: var(--primary-light);
-  color: var(--primary);
-  text-transform:uppercase;
-  letter-spacing:0.5px;
-}
-
-/* ===== BUTTONS ===== */
-
-.btn{
-  display:inline-block;
-  padding:12px 20px;
-  background: var(--primary);
-  color:#FFFFFF;
-  text-decoration:none;
-  border-radius:12px;
-  font-weight:600;
-  font-size:14px;
-  transition:.2s ease;
-  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
-}
-
-.btn:hover{
-  background: var(--primary-hover);
-  transform:translateY(-1px);
-  box-shadow: 0 6px 14px rgba(37, 99, 235, 0.3);
-}
-
-/* ===== CONTACT CARDS ===== */
-
-.contact-card{
-  display:grid;
-  grid-template-columns:60px 1fr auto;
-  gap:20px;
-  padding:22px 28px;
-  background: var(--bg-surface);
-  border-radius:18px;
-  margin-bottom:16px;
-  border:1px solid var(--border-subtle);
-  box-shadow: var(--shadow-sm);
-  transition:.2s ease;
-  align-items:center;
-}
-
-.contact-card:hover{
-  transform:translateY(-2px);
-  box-shadow: var(--shadow-md);
-  border-color: var(--border-strong);
-}
-
-.contact-icon{
-  width:60px;
-  height:60px;
-  background: var(--bg-subtle);
-  border-radius:14px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border:1px solid var(--border-subtle);
-}
-
-.contact-icon img{
-  width:28px;
-  height:28px;
-  object-fit:contain;
-}
-
-.contact-details h3{
-  font-size:17px;
-  color: var(--text-primary);
-  font-weight:700;
-  margin-bottom:2px;
-}
-
-.contact-details p{
-  font-size:14px;
-  color: var(--text-secondary);
-}
-
-.contact-btn{
-  background: var(--bg-subtle);
-  color: var(--text-primary);
-  text-decoration:none;
-  padding:10px 20px;
-  border-radius:10px;
-  font-weight:600;
-  font-size:14px;
-  transition:.2s ease;
-  min-width:120px;
-  text-align:center;
-  border:1px solid var(--border-subtle);
-}
-
-.contact-btn:hover{
-  background: var(--primary);
-  color:#FFFFFF;
-  border-color: var(--primary);
-}
-
-.availability{
-  display:flex;
-  align-items:center;
-  background: var(--bg-surface);
-  padding:28px 36px;
-  border-radius:20px;
-  max-width:100%;
-  margin-top:35px;
-  border:1px solid var(--border-subtle);
-  border-left:4px solid #10B981;
-  box-shadow: var(--shadow-sm);
-}
-
-.availability-icon{
-  width:64px;
-  height:64px;
-  background: #ECFDF5;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  margin-right:24px;
-  flex-shrink:0;
-}
-
-.availability-icon img{
-  width:32px;
-  height:32px;
-  object-fit:contain;
-}
-
-.availability h3{
-  font-size:18px;
-  margin-bottom:2px;
-  color: var(--text-primary);
-  font-weight:700;
-}
-
-.availability p{
-  font-size:14px;
-  color: var(--text-secondary);
-}
-
-/* ===== RESPONSIVE ===== */
-
-@media (max-width: 820px) {
-  .nav-links{
-    display: none; /* Keeps top header minimal on small screens */
-  }
-
-  .main{
-    padding: 30px 16px 60px;
-  }
-
-  .grid{
-    grid-template-columns:1fr;
-  }
-
-  .about-card{
-    flex-direction:column;
-    text-align:center;
-    padding:35px 20px;
-    gap:20px;
-  }
-
-  .profile-image{
-    width:150px;
-    height:150px;
-  }
-
-  .about-info h2{
-    font-size:28px;
-  }
-
-  .location{
-    justify-content:center;
-  }
-
-  .dots-left,
-  .dots-right{
-    display:none;
-  }
-
-  .skills-container{
-    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-    gap:16px;
-  }
-
-  .contact-card{
-    grid-template-columns:1fr;
-    text-align:center;
-    justify-items:center;
-    padding:24px 16px;
-    gap:14px;
-  }
-
-  .contact-details{
-    text-align:center;
-  }
-
-  .contact-btn{
-    width:100%;
-    max-width:240px;
-  }
-
-  .availability{
-    flex-direction:column;
-    text-align:center;
-    padding:26px 20px;
-    gap:16px;
-  }
-
-  .availability-icon{
-    margin-right:0;
-  }
-}
-
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chandirakkumar S | Instructional Designer & eLearning Developer</title>
+
+  <!-- Google Fonts: Inter for crisp typography & Caveat for natural handwritten annotations -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@350;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome Icons for high-definition symbols and branding -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            handwriting: ['Caveat', 'cursive'],
+          },
+          colors: {
+            brand: {
+              50: '#EFF6FF',
+              100: '#DBEAFE',
+              200: '#BFDBFE',
+              300: '#93C5FD',
+              400: '#60A5FA',
+              500: '#2563EB',
+              600: '#1D4ED8',
+              700: '#1E40AF',
+              800: '#1E3A8A',
+              900: '#172554',
+            },
+            surface: '#FFFFFF',
+            slateSubtle: '#F8FAFC',
+            charcoal: '#0F172A',
+            bodyMuted: '#64748B',
+            borderSubtle: '#E2E8F0',
+          },
+          boxShadow: {
+            card: '0 4px 20px -2px rgba(15, 23, 42, 0.05), 0 2px 6px -1px rgba(15, 23, 42, 0.03)',
+            cardHover: '0 12px 30px -4px rgba(37, 99, 235, 0.12), 0 6px 14px -2px rgba(15, 23, 42, 0.05)',
+            glow: '0 0 25px rgba(37, 99, 235, 0.25)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom background with atmospheric soft blue glow gradients matching screenshot */
+    body {
+      background-color: #F8FAFC;
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(219, 234, 254, 0.6) 0px, transparent 50%),
+        radial-gradient(at 100% 12%, rgba(224, 242, 254, 0.7) 0px, transparent 48%),
+        radial-gradient(at 85% 88%, rgba(238, 242, 255, 0.6) 0px, transparent 40%),
+        radial-gradient(at 15% 75%, rgba(224, 231, 255, 0.4) 0px, transparent 40%);
+      background-attachment: fixed;
+      font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    }
+
+    /* Subtle dot grid pattern */
+    .bg-dot-pattern {
+      background-image: radial-gradient(#CBD5E1 1.5px, transparent 1.5px);
+      background-size: 18px 18px;
+    }
+
+    /* Pulse animation for available badge */
+    @keyframes pulse-ring {
+      0% { transform: scale(0.95); opacity: 0.8; }
+      50% { transform: scale(1.35); opacity: 0; }
+      100% { transform: scale(0.95); opacity: 0; }
+    }
+    .status-pulse::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: #10B981;
+      animation: pulse-ring 2s infinite ease-in-out;
+    }
+
+    /* Smooth transitions */
+    .btn-press:active {
+      transform: scale(0.98);
+    }
+
+    /* Modal Backdrop Blur */
+    .modal-active {
+      overflow: hidden;
+    }
+  </style>
 </head>
+<body class="text-charcoal antialiased min-h-screen flex flex-col justify-between selection:bg-brand-500 selection:text-white">
 
-<body>
+  <header class="sticky top-0 z-40 bg-white/85 backdrop-blur-md border-b border-borderSubtle transition-all duration-300">
+    <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 h-18 py-3.5 flex items-center justify-between">
+      
+      <!-- Brand Logo / Avatar -->
+      <a href="#about" class="flex items-center gap-3 group">
+        <span class="w-4 h-4 rounded-full bg-brand-500/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+          <span class="w-2 h-2 rounded-full bg-brand-500"></span>
+        </span>
+        <span class="text-xl font-extrabold tracking-tight text-slate-900 group-hover:text-brand-500 transition-colors">
+          Chandirakkumar
+        </span>
+      </a>
 
-<!-- STICKY SMOOTH-SCROLL HEADER -->
-<header class="top-nav">
-  <div class="nav-container">
-    <a href="#about" class="logo">Chandirakkumar</a>
-    <nav class="nav-links">
-      <a href="#about">About</a>
-      <a href="#overview">Overview</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
-    </nav>
+      <!-- Navigation Links -->
+      <nav class="hidden md:flex items-center space-x-1 lg:space-x-3 text-[14.5px] font-semibold text-slate-600">
+        <a href="#about" class="px-4 py-2 rounded-xl hover:text-brand-600 hover:bg-brand-50 transition-colors">About</a>
+        <a href="#overview" class="px-4 py-2 rounded-xl hover:text-brand-600 hover:bg-brand-50 transition-colors">Overview</a>
+        <a href="#projects" class="px-4 py-2 rounded-xl hover:text-brand-600 hover:bg-brand-50 transition-colors">Projects</a>
+        <a href="#skills" class="px-4 py-2 rounded-xl hover:text-brand-600 hover:bg-brand-50 transition-colors">Skills</a>
+        <a href="#contact" class="px-4 py-2 rounded-xl hover:text-brand-600 hover:bg-brand-50 transition-colors">Contact</a>
+      </nav>
+
+      <!-- CTA Button -->
+      <div class="flex items-center gap-3">
+        <a href="#contact" class="inline-flex items-center gap-2 bg-brand-500 hover:bg-brand-600 text-white text-sm font-semibold px-5 py-2.5 rounded-full shadow-md shadow-brand-500/25 hover:shadow-lg hover:shadow-brand-500/35 transition-all duration-200 btn-press">
+          <i class="fa-solid fa-paper-plane text-xs"></i>
+          <span>Let's Connect</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-16 w-full">
+
+    <!-- HERO SECTION -->
+    <section id="about" class="relative pt-6 pb-12 lg:pt-10 lg:pb-16 overflow-hidden">
+      
+      <!-- Decorative faint dot grid top-left -->
+      <div class="absolute -top-4 -left-6 w-36 h-36 bg-dot-pattern opacity-40 pointer-events-none rounded-full"></div>
+      <div class="absolute top-10 left-36 w-16 h-16 rounded-full bg-blue-100/50 blur-xl pointer-events-none"></div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        
+        <!-- Left: Avatar with Ring & Handwritten Arrow Note -->
+        <div class="lg:col-span-4 flex flex-col items-center justify-center relative">
+          <div class="relative w-56 h-56 sm:w-64 sm:h-64 rounded-full p-2.5 bg-white shadow-xl ring-4 ring-blue-100/80 transition-transform duration-300 hover:scale-[1.01]">
+            <img 
+              src="IMG_20260409_223924.jpg" 
+              onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80';"
+              alt="Chandirakkumar S" 
+              class="w-full h-full object-cover rounded-full shadow-inner bg-slate-100"
+            >
+            <!-- Online status green badge -->
+            <div class="absolute bottom-4 right-5 w-6 h-6 bg-emerald-500 border-4 border-white rounded-full shadow-md">
+              <span class="relative flex h-full w-full">
+                <span class="status-pulse absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              </span>
+            </div>
+          </div>
+
+          <!-- Handwritten Slogan: "Turning Learning into Impact" with custom curved arrow SVG -->
+          <div class="relative -mt-3 sm:-mt-1 sm:left-[-35px] text-center lg:text-left flex items-start">
+            <svg class="w-12 h-14 text-slate-700 -rotate-12 transform" viewBox="0 0 50 60" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M 40 10 Q 15 25 22 45" />
+              <path d="M 14 38 L 22 46 L 28 36" />
+            </svg>
+            <span class="font-handwriting text-2xl text-slate-700 font-bold tracking-wide transform -rotate-6 pt-2 block">
+              Turning<br>Learning into<br>Impact
+            </span>
+          </div>
+        </div>
+
+        <!-- Center / Info Content -->
+        <div class="lg:col-span-5 text-center lg:text-left space-y-4">
+          <div>
+            <span class="text-brand-500 font-semibold text-lg sm:text-xl tracking-tight">Hello, I'm</span>
+            <h1 class="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 mt-1">
+              Chandirakkumar S
+            </h1>
+            <p class="text-brand-600 font-semibold text-base sm:text-lg mt-2 leading-snug">
+              Instructional Designer | eLearning & Multimedia Developer | Visual Designer
+            </p>
+          </div>
+
+          <p class="text-slate-600 text-sm sm:text-base leading-relaxed max-w-xl">
+            Instructional Designer with 1+ year of experience in Storyline 360, LMS Management, SCORM publishing, and interactive eLearning development.
+          </p>
+
+          <!-- Badges -->
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-1 pb-2">
+            <!-- Location Badge -->
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200 text-slate-700 text-xs sm:text-sm font-medium shadow-sm">
+              <i class="fa-solid fa-location-dot text-rose-500"></i>
+              <span>Bengaluru, Karnataka, India</span>
+            </div>
+
+            <!-- Opportunities Badge -->
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200 text-slate-700 text-xs sm:text-sm font-medium shadow-sm">
+              <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+              <span>Available for Opportunities</span>
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+            <a href="#projects" class="inline-flex items-center gap-2.5 bg-brand-500 hover:bg-brand-600 text-white font-bold px-6 py-3 rounded-xl shadow-lg shadow-brand-500/25 hover:shadow-brand-500/35 transition-all text-sm sm:text-base btn-press">
+              <i class="fa-solid fa-play text-xs"></i>
+              <span>View My Work</span>
+            </a>
+
+            <button onclick="downloadResumeModal()" class="inline-flex items-center gap-2.5 bg-white hover:bg-slate-50 text-slate-800 border border-slate-300 font-bold px-6 py-3 rounded-xl shadow-sm hover:border-slate-400 transition-all text-sm sm:text-base btn-press">
+              <i class="fa-solid fa-download text-slate-600"></i>
+              <span>Download Resume</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Right Side: Handwritten Callout & Modern Workspace Graphic Aesthetic -->
+        <div class="lg:col-span-3 flex flex-col items-center lg:items-end justify-center relative select-none">
+          <div class="text-right space-y-1 mb-3">
+            <div class="font-handwriting text-3xl sm:text-4xl text-brand-500 font-bold leading-tight -rotate-3">
+              Design<br>
+              <span class="pl-4">Engage</span><br>
+              <span class="pl-8">Educate</span><br>
+              <span class="pl-12 text-brand-600">Empower</span>
+            </div>
+            <!-- Hand drawn accent squiggle -->
+            <svg class="w-28 h-6 text-brand-400 ml-auto -mt-1" viewBox="0 0 100 20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+              <path d="M 5 15 Q 35 2 60 12 T 95 8" />
+            </svg>
+          </div>
+
+          <!-- Minimal modern workspace coffee mug card aesthetic -->
+          <div class="relative w-48 sm:w-56 rounded-2xl p-4 bg-white/70 backdrop-blur-md border border-white/80 shadow-card flex items-center gap-3">
+            <div class="w-12 h-12 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center text-amber-600 text-xl shrink-0">
+              <i class="fa-solid fa-mug-hot"></i>
+            </div>
+            <div class="text-left">
+              <p class="text-[10px] uppercase font-bold tracking-wider text-slate-400">Coffee & Learning</p>
+              <p class="text-xs font-bold text-slate-800 uppercase leading-tight font-mono">Good Ideas Lead To Great Learning</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="overview" class="mb-20 scroll-mt-24">
+      <!-- Section Header -->
+      <div class="mb-8 pl-4 border-l-4 border-brand-500">
+        <h2 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">Dashboard Overview</h2>
+        <p class="text-slate-500 text-sm sm:text-base font-medium mt-0.5">Quick overview of my work and experience.</p>
+      </div>
+
+      <!-- 2-Row / 5-Column Responsive Cards Grid matching image -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+        
+        <!-- Card 1 -->
+        <div class="bg-white rounded-2xl p-4 border border-borderSubtle shadow-card hover:shadow-cardHover hover:border-brand-200 transition-all duration-200 flex flex-col justify-between group">
+          <div class="flex items-start justify-between">
+            <div class="w-10 h-10 rounded-xl bg-blue-50 text-brand-500 flex items-center justify-center text-lg group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-book-open"></i>
+            </div>
+            <i class="fa-solid fa-chevron-right text-xs text-slate-300 group-hover:text-brand-500 group-hover:translate-x-0.5 transition-all"></i>
+          </div>
+          <div class="mt-3">
+            <h3 class="font-bold text-slate-900 text-sm">100+ Modules</h3>
+            <p class="text-slate-500 text-xs mt-1 leading-snug">Interactive eLearning modules developed.</p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-white rounded-2xl p-4 border border-borderSubtle shadow-card hover:shadow-cardHover hover:border-brand-200 transition-all duration-200 flex flex-col justify-between group">
+          <div class="flex items-start justify-between">
+            <div class="w-10 h-10 rounded-xl bg-rose-50 text-rose-500 flex items-center justify-center text-lg group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-bullseye"></i>
+            </div>
+            <i class="fa-solid fa-chevron-right text-xs text-slate-300 group-hover:text-brand-500 group-hover:translate-x-0.5 transition-all"></i>
+          </div>
+          <div class="mt-3">
+            <h3 class="font-bold text-slate-900 text-sm">Instructional Design</h3>
+            <p class="text-slate-500 text-xs mt-1 leading-snug">Scenario-based learning & learner engagement.</p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-white rounded-2xl p-4 border border-borderSubtle shadow-card hover:shadow-cardHover hover:border-brand-200 transition-all duration-200 flex flex-col justify-between group">
+          <div class="flex items-start justify-between">
+            <div class="w-10 h-10 rounded-xl bg-sky-50 text-sky-500 flex items-center justify-center text-lg group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-desktop"></i>
+            </div>
+            <i class="fa-solid fa-chevron-right text-xs text-slate-300 group-hover:text-brand-500 group-hover:translate-x-0.5 transition-all"></i>
+          </div>
+          <div class="mt-3">
+            <h3 class="font-bold text-slate-900 text-sm">Storyline 360</h3>
+            <p class="text-slate-500 text-xs mt-1 leading-snug">Variables, triggers, animations & interactions.</p>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="bg-white rounded-2xl p-4 border border-borderSubtle shadow-card hover:shadow-cardHover hover:border-brand-200 transition-all duration-200 flex flex-col justify-between group">
+          <div class="flex items-start justify-between">
+            <div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center text-lg group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-box-archive"></i>
+            </div>
+            <i class="fa-solid fa-chevron-right text-xs text-slate-300 group-hover:text-brand-500 group-hover:translate-x-0.5 transition-all"></i>
+          </div>
+          <div class="mt-3">
+            <h3 class="font-bold text-slate-900 text-sm">SCORM Publishing</h3>
+            <p class="text-slate-500 text-xs mt-1 leading-snug">SCORM 1.2 packaging & LMS deployment.</p>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="bg-white rounded-2xl p-4 border border-borderSubtle shadow-card hover:shadow-cardHover hover:border-brand-200 transition-all duration-200 flex flex-col justify-between group">
+          <div class="flex items-start justify-between">
+            <div class="w-10 h-10 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center text-lg group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-film"></i>
+            </div>
+            <i class="fa-solid fa-chevron-right text-xs text-slate-300 group-hover:text-brand-500 group-hover:translate-x-0.5 transition-all"></i>
+          </div>
+          <div class="mt-3">
+            <h3 class="font-bold text-slate-900 text-sm">Video Editing</h3>
+            <p class="text-slate-500 text-xs mt-1 leading-snug">Adobe Premiere Pro & After Effects projects.</p>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="bg-white rounded-2xl p-4 border border-borderSubtle shadow-card hover:shadow-cardHover hover:border-brand-200 transition-all duration-200 flex flex-col justify-between group">
+          <div class="flex items-start justify-between">
+            <div class="w-10 h-10 rounded-xl bg-orange-50 text-orange-600 flex items-center justify-center text-lg group-hover:scale-110 transition-transform font-bold">
+              P
+            </div>
+            <i class="fa-solid fa-chevron-right text-xs text-slate-300 group-hover:text-brand-500 group-hover:translate-x-0.5 transition-all"></i>
+          </div>
+          <div class="mt-3">
+            <h3 class="font-bold text-slate-900 text-sm">PowerPoint Design</h3>
+            <p class="text-slate-500 text-xs mt-1 leading-snug">Professional training presentations.</p>
+          </div>
+        </div>
+
+        <!-- Card 7 -->
+        <div class="bg-white rounded-2xl p-4 border border-borderSubtle shadow-card hover:shadow-cardHover hover:border-brand-200 transition-all duration-200 flex flex-col justify-between group">
+          <div class="flex items-start justify-between">
+            <div class="w-10 h-10 rounded-xl bg-sky-50 text-sky-600 flex items-center justify-center text-lg group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <i class="fa-solid fa-chevron-right text-xs text-slate-300 group-hover:text-brand-500 group-hover:translate-x-0.5 transition-all"></i>
+          </div>
+          <div class="mt-3">
+            <h3 class="font-bold text-slate-900 text-sm">LearnDash LMS</h3>
+            <p class="text-slate-500 text-xs mt-1 leading-snug">Course creation, learner management & reporting.</p>
+          </div>
+        </div>
+
+        <!-- Card 8 -->
+        <div class="bg-white rounded-2xl p-4 border border-borderSubtle shadow-card hover:shadow-cardHover hover:border-brand-200 transition-all duration-200 flex flex-col justify-between group">
+          <div class="flex items-start justify-between">
+            <div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center text-lg group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-gear"></i>
+            </div>
+            <i class="fa-solid fa-chevron-right text-xs text-slate-300 group-hover:text-brand-500 group-hover:translate-x-0.5 transition-all"></i>
+          </div>
+          <div class="mt-3">
+            <h3 class="font-bold text-slate-900 text-sm">QuickLearn LMS</h3>
+            <p class="text-slate-500 text-xs mt-1 leading-snug">Course deployment and administration.</p>
+          </div>
+        </div>
+
+        <!-- Card 9 -->
+        <div class="bg-white rounded-2xl p-4 border border-borderSubtle shadow-card hover:shadow-cardHover hover:border-brand-200 transition-all duration-200 flex flex-col justify-between group">
+          <div class="flex items-start justify-between">
+            <div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-500 flex items-center justify-center text-lg group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-file-lines"></i>
+            </div>
+            <i class="fa-solid fa-chevron-right text-xs text-slate-300 group-hover:text-brand-500 group-hover:translate-x-0.5 transition-all"></i>
+          </div>
+          <div class="mt-3">
+            <h3 class="font-bold text-slate-900 text-sm">Assessments</h3>
+            <p class="text-slate-500 text-xs mt-1 leading-snug">Knowledge checks, quizzes & certifications.</p>
+          </div>
+        </div>
+
+        <!-- Card 10 -->
+        <div class="bg-white rounded-2xl p-4 border border-borderSubtle shadow-card hover:shadow-cardHover hover:border-brand-200 transition-all duration-200 flex flex-col justify-between group">
+          <div class="flex items-start justify-between">
+            <div class="w-10 h-10 rounded-xl bg-pink-50 text-pink-500 flex items-center justify-center text-lg group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-rocket"></i>
+            </div>
+            <i class="fa-solid fa-chevron-right text-xs text-slate-300 group-hover:text-brand-500 group-hover:translate-x-0.5 transition-all"></i>
+          </div>
+          <div class="mt-3">
+            <h3 class="font-bold text-slate-900 text-sm">Rapid eLearning</h3>
+            <p class="text-slate-500 text-xs mt-1 leading-snug">End-to-end course development & delivery.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="projects" class="mb-20 scroll-mt-24">
+      
+      <!-- Section Header with View All Button -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
+        <div class="pl-4 border-l-4 border-brand-500">
+          <h2 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">Projects</h2>
+          <p class="text-slate-500 text-sm sm:text-base font-medium mt-0.5">My recent work.</p>
+        </div>
+
+        <a href="#projects" class="inline-flex items-center self-start sm:self-auto gap-2 px-4 py-2 rounded-xl border border-brand-200 text-brand-600 bg-white hover:bg-brand-50 text-sm font-semibold transition-colors shadow-sm">
+          <span>View All Projects</span>
+          <i class="fa-solid fa-arrow-right text-xs"></i>
+        </a>
+      </div>
+
+      <!-- 4 Columns Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Project 1: Interactive SCORM eLearning -->
+        <div class="bg-white rounded-2xl p-4 border border-borderSubtle shadow-card hover:shadow-cardHover transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <!-- Media Preview Container with Play Button Overlay -->
+            <div class="relative w-full aspect-video rounded-xl overflow-hidden bg-slate-900 group cursor-pointer" onclick="openVideoModal('https://drive.google.com/file/d/1rRtZDmiMiKexJ4jQxXIFJ_b89UR3zWo3/preview', 'Interactive SCORM eLearning')">
+              <img 
+                src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=700&q=80" 
+                alt="Interactive SCORM eLearning preview" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 opacity-90"
+              >
+              <div class="absolute inset-0 bg-black/35 flex items-center justify-center">
+                <div class="w-12 h-12 rounded-full bg-black/65 backdrop-blur-sm text-white flex items-center justify-center group-hover:scale-110 group-hover:bg-brand-600 transition-all">
+                  <i class="fa-solid fa-play text-sm ml-0.5"></i>
+                </div>
+              </div>
+              <div class="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-black/60 text-[10px] text-white font-medium">Storyline 360</div>
+            </div>
+
+            <!-- Content -->
+            <div class="mt-4">
+              <h3 class="font-bold text-slate-900 text-base">Interactive SCORM eLearning</h3>
+              <p class="text-slate-500 text-xs mt-1.5 leading-relaxed">
+                Interactive Storyline module with custom navigation, assessments and SCORM publishing.
+              </p>
+            </div>
+          </div>
+
+          <!-- Bottom Button -->
+          <div class="mt-5">
+            <button onclick="openVideoModal('https://drive.google.com/file/d/1rRtZDmiMiKexJ4jQxXIFJ_b89UR3zWo3/preview', 'Interactive SCORM eLearning')" class="w-full inline-flex items-center justify-center gap-2 bg-brand-500 hover:bg-brand-600 text-white text-xs sm:text-sm font-semibold py-2.5 px-4 rounded-xl transition-colors shadow-sm btn-press">
+              <i class="fa-solid fa-play text-xs"></i>
+              <span>Watch Demo</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 2: Multi-language eLearning -->
+        <div class="bg-white rounded-2xl p-4 border border-borderSubtle shadow-card hover:shadow-cardHover transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="relative w-full aspect-video rounded-xl overflow-hidden bg-slate-900 group cursor-pointer" onclick="openVideoModal('https://drive.google.com/file/d/1IIuKoOcBHQ35GzFYcmutqnFGDglw8n3t/preview', 'Multi-language eLearning')">
+              <img 
+                src="https://images.unsplash.com/photo-1507537297725-24a1c029d3ca?auto=format&fit=crop&w=700&q=80" 
+                alt="Multi-language eLearning preview" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 opacity-90"
+              >
+              <div class="absolute inset-0 bg-black/35 flex items-center justify-center">
+                <div class="w-12 h-12 rounded-full bg-black/65 backdrop-blur-sm text-white flex items-center justify-center group-hover:scale-110 group-hover:bg-brand-600 transition-all">
+                  <i class="fa-solid fa-play text-sm ml-0.5"></i>
+                </div>
+              </div>
+              <div class="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-black/60 text-[10px] text-white font-medium">Multilingual</div>
+            </div>
+
+            <div class="mt-4">
+              <h3 class="font-bold text-slate-900 text-base">Multi-language eLearning</h3>
+              <p class="text-slate-500 text-xs mt-1.5 leading-relaxed">
+                Interactive Storyline course with language switching and multilingual learning support.
+              </p>
+            </div>
+          </div>
+
+          <div class="mt-5">
+            <button onclick="openVideoModal('https://drive.google.com/file/d/1IIuKoOcBHQ35GzFYcmutqnFGDglw8n3t/preview', 'Multi-language eLearning')" class="w-full inline-flex items-center justify-center gap-2 bg-brand-500 hover:bg-brand-600 text-white text-xs sm:text-sm font-semibold py-2.5 px-4 rounded-xl transition-colors shadow-sm btn-press">
+              <i class="fa-solid fa-play text-xs"></i>
+              <span>Watch Demo</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 3: Corporate PowerPoint Design -->
+        <div class="bg-white rounded-2xl p-4 border border-borderSubtle shadow-card hover:shadow-cardHover transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="relative w-full aspect-video rounded-xl overflow-hidden bg-slate-100 group border border-slate-200 cursor-pointer" onclick="openImageModal('images/ppt-design-1.png', 'Corporate PowerPoint Design')">
+              <img 
+                src="images/ppt-design-1.png" 
+                onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=700&q=80';"
+                alt="Corporate PowerPoint Design" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              >
+              <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent flex items-end p-2.5 opacity-0 group-hover:opacity-100 transition-opacity">
+                <span class="text-white text-xs font-semibold flex items-center gap-1.5">
+                  <i class="fa-solid fa-expand text-xs"></i> View presentation slides
+                </span>
+              </div>
+              <div class="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-blue-600/90 text-[10px] text-white font-medium">Slide Decks</div>
+            </div>
+
+            <div class="mt-4">
+              <h3 class="font-bold text-slate-900 text-base">Corporate PowerPoint Design</h3>
+              <p class="text-slate-500 text-xs mt-1.5 leading-relaxed">
+                Professional training presentations with modern layouts, infographics and learning content.
+              </p>
+            </div>
+          </div>
+
+          <div class="mt-5">
+            <button onclick="openImageModal('images/ppt-design-1.png', 'Corporate PowerPoint Design')" class="w-full inline-flex items-center justify-center gap-2 bg-brand-500 hover:bg-brand-600 text-white text-xs sm:text-sm font-semibold py-2.5 px-4 rounded-xl transition-colors shadow-sm btn-press">
+              <i class="fa-solid fa-images text-xs"></i>
+              <span>View Samples</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 4: Video Editing & Motion Graphics -->
+        <div class="bg-white rounded-2xl p-4 border border-borderSubtle shadow-card hover:shadow-cardHover transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="relative w-full aspect-video rounded-xl overflow-hidden bg-slate-900 group cursor-pointer" onclick="openVideoModal('https://drive.google.com/file/d/1v1ISwjEXjLI4X5jwVbi-a-JX1O14nO5p/preview', 'Video Editing & Motion Graphics')">
+              <img 
+                src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=700&q=80" 
+                alt="Video Editing & Motion Graphics Preview" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 opacity-90"
+              >
+              <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                <div class="w-12 h-12 rounded-full bg-black/70 backdrop-blur-sm text-white flex items-center justify-center group-hover:scale-110 group-hover:bg-brand-600 transition-all">
+                  <i class="fa-solid fa-play text-sm ml-0.5"></i>
+                </div>
+              </div>
+              <div class="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-rose-600/90 text-[10px] text-white font-medium">VFX / 2D Tracking</div>
+            </div>
+
+            <div class="mt-4">
+              <h3 class="font-bold text-slate-900 text-base">Video Editing & Motion Graphics</h3>
+              <p class="text-slate-500 text-xs mt-1.5 leading-relaxed">
+                Adobe Premiere Pro & After Effects projects with cinematic editing, VFX and motion graphics.
+              </p>
+            </div>
+          </div>
+
+          <div class="mt-5">
+            <button onclick="openVideoModal('https://drive.google.com/file/d/1v1ISwjEXjLI4X5jwVbi-a-JX1O14nO5p/preview', 'Video Editing & Motion Graphics')" class="w-full inline-flex items-center justify-center gap-2 bg-brand-500 hover:bg-brand-600 text-white text-xs sm:text-sm font-semibold py-2.5 px-4 rounded-xl transition-colors shadow-sm btn-press">
+              <i class="fa-solid fa-play text-xs"></i>
+              <span>Watch Video</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="skills" class="mb-20 scroll-mt-24 relative">
+      
+      <!-- Section Header with Handwritten Annotation matching screenshot -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-8 relative">
+        <div class="pl-4 border-l-4 border-brand-500">
+          <h2 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">Technical Skills</h2>
+          <p class="text-slate-500 text-sm sm:text-base font-medium mt-0.5">Tools & Technologies I work with.</p>
+        </div>
+
+        <!-- Handwritten Annotation "Tools That Power My Creativity" with curved arrow -->
+        <div class="flex items-center gap-2 self-end sm:self-auto select-none mt-2 sm:mt-0">
+          <div class="text-right">
+            <span class="font-handwriting text-2xl sm:text-3xl text-slate-700 font-bold tracking-tight block -rotate-3 leading-none">
+              Tools That Power<br>My Creativity
+            </span>
+          </div>
+          <svg class="w-8 h-10 text-slate-700 -rotate-12 transform -mt-2" viewBox="0 0 40 50" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M 5 10 Q 25 15 25 35" />
+            <path d="M 18 30 L 25 37 L 32 30" />
+          </svg>
+        </div>
+      </div>
+
+      <!-- Skills Cards Grid (4 columns on desktop, 2 on tablet, 1 on mobile) matching screenshot layout -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        
+        <!-- Skill 1: Storyline 360 -->
+        <div class="bg-white rounded-2xl p-4 border border-borderSubtle shadow-card hover:shadow-cardHover hover:border-brand-200 transition-all duration-200 flex items-center gap-3.5">
+          <div class="w-12 h-12 rounded-xl bg-[#E11D48]/10 flex items-center justify-center font-bold text-[#E11D48] text-lg shrink-0">
+            sl
+          </div>
+          <div class="flex-1 min-w-0">
+            <h3 class="font-bold text-slate-900 text-sm truncate">Articulate Storyline 360</h3>
+            <span class="inline-block mt-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-50 text-blue-600 uppercase tracking-wider">
+              EXPERT
+            </span>
+          </div>
+        </div>
+
+        <!-- Skill 2: Premiere Pro -->
+        <div class="bg-white rounded-2xl p-4 border border-borderSubtle shadow-card hover:shadow-cardHover hover:border-brand-200 transition-all duration-200 flex items-center gap-3.5">
+          <div class="w-12 h-12 rounded-xl bg-[#00005B] text-[#9999FF] flex items-center justify-center font-extrabold text-lg shrink-0 border border-indigo-900">
+            Pr
+          </div>
+          <div class="flex-1 min-w-0">
+            <h3 class="font-bold text-slate-900 text-sm truncate">Adobe Premiere Pro</h3>
+            <span class="inline-block mt-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-50 text-blue-600 uppercase tracking-wider">
+              ADVANCED
+            </span>
+          </div>
+        </div>
+
+        <!-- Skill 3: After Effects -->
+        <div class="bg-white rounded-2xl p-4 border border-borderSubtle shadow-card hover:shadow-cardHover hover:border-brand-200 transition-all duration-200 flex items-center gap-3.5">
+          <div class="w-12 h-12 rounded-xl bg-[#00005B] text-[#D291FF] flex items-center justify-center font-extrabold text-lg shrink-0 border border-indigo-900">
+            Ae
+          </div>
+          <div class="flex-1 min-w-0">
+            <h3 class="font-bold text-slate-900 text-sm truncate">Adobe After Effects</h3>
+            <span class="inline-block mt-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-50 text-blue-600 uppercase tracking-wider">
+              ADVANCED
+            </span>
+          </div>
+        </div>
+
+        <!-- Skill 4: PowerPoint -->
+        <div class="bg-white rounded-2xl p-4 border border-borderSubtle shadow-card hover:shadow-cardHover hover:border-brand-200 transition-all duration-200 flex items-center gap-3.5">
+          <div class="w-12 h-12 rounded-xl bg-orange-600 text-white flex items-center justify-center font-extrabold text-lg shrink-0">
+            P
+          </div>
+          <div class="flex-1 min-w-0">
+            <h3 class="font-bold text-slate-900 text-sm truncate">Microsoft PowerPoint</h3>
+            <span class="inline-block mt-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-50 text-blue-600 uppercase tracking-wider">
+              EXPERT
+            </span>
+          </div>
+        </div>
+
+        <!-- Skill 5: Adobe Captivate -->
+        <div class="bg-white rounded-2xl p-4 border border-borderSubtle shadow-card hover:shadow-cardHover hover:border-brand-200 transition-all duration-200 flex items-center gap-3.5">
+          <div class="w-12 h-12 rounded-xl bg-[#052e25] text-[#34D399] flex items-center justify-center font-extrabold text-lg shrink-0 border border-emerald-900">
+            Cp
+          </div>
+          <div class="flex-1 min-w-0">
+            <h3 class="font-bold text-slate-900 text-sm truncate">Adobe Captivate</h3>
+            <span class="inline-block mt-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-50 text-blue-600 uppercase tracking-wider">
+              ADVANCED
+            </span>
+          </div>
+        </div>
+
+        <!-- Skill 6: Adobe Illustrator -->
+        <div class="bg-white rounded-2xl p-4 border border-borderSubtle shadow-card hover:shadow-cardHover hover:border-brand-200 transition-all duration-200 flex items-center gap-3.5">
+          <div class="w-12 h-12 rounded-xl bg-[#331400] text-[#FF9A00] flex items-center justify-center font-extrabold text-lg shrink-0 border border-amber-900">
+            Ai
+          </div>
+          <div class="flex-1 min-w-0">
+            <h3 class="font-bold text-slate-900 text-sm truncate">Adobe Illustrator</h3>
+            <span class="inline-block mt-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-50 text-blue-600 uppercase tracking-wider">
+              INTERMEDIATE
+            </span>
+          </div>
+        </div>
+
+        <!-- Skill 7: Adobe Photoshop -->
+        <div class="bg-white rounded-2xl p-4 border border-borderSubtle shadow-card hover:shadow-cardHover hover:border-brand-200 transition-all duration-200 flex items-center gap-3.5">
+          <div class="w-12 h-12 rounded-xl bg-[#001E36] text-[#31A8FF] flex items-center justify-center font-extrabold text-lg shrink-0 border border-blue-900">
+            Ps
+          </div>
+          <div class="flex-1 min-w-0">
+            <h3 class="font-bold text-slate-900 text-sm truncate">Adobe Photoshop</h3>
+            <span class="inline-block mt-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-50 text-blue-600 uppercase tracking-wider">
+              INTERMEDIATE
+            </span>
+          </div>
+        </div>
+
+        <!-- Skill 8: LearnDash LMS -->
+        <div class="bg-white rounded-2xl p-4 border border-borderSubtle shadow-card hover:shadow-cardHover hover:border-brand-200 transition-all duration-200 flex items-center gap-3.5">
+          <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-brand-600 text-xl shrink-0">
+            <i class="fa-solid fa-chart-simple"></i>
+          </div>
+          <div class="flex-1 min-w-0">
+            <h3 class="font-bold text-slate-900 text-sm truncate">LearnDash LMS</h3>
+            <span class="inline-block mt-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-50 text-blue-600 uppercase tracking-wider">
+              ADVANCED
+            </span>
+          </div>
+        </div>
+
+        <!-- Skill 9: QuickLearn LMS -->
+        <div class="bg-white rounded-2xl p-4 border border-borderSubtle shadow-card hover:shadow-cardHover hover:border-brand-200 transition-all duration-200 flex items-center gap-3.5">
+          <div class="w-12 h-12 rounded-xl bg-sky-500 text-white flex flex-col items-center justify-center shrink-0 leading-none">
+            <i class="fa-solid fa-graduation-cap text-xs"></i>
+            <span class="text-[9px] font-black tracking-tighter mt-0.5">LMS</span>
+          </div>
+          <div class="flex-1 min-w-0">
+            <h3 class="font-bold text-slate-900 text-sm truncate">QuickLearn LMS</h3>
+            <span class="inline-block mt-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-50 text-blue-600 uppercase tracking-wider">
+              ADVANCED
+            </span>
+          </div>
+        </div>
+
+        <!-- Skill 10: SCORM 1.2 -->
+        <div class="bg-white rounded-2xl p-4 border border-borderSubtle shadow-card hover:shadow-cardHover hover:border-brand-200 transition-all duration-200 flex items-center gap-3.5">
+          <div class="w-12 h-12 rounded-xl bg-indigo-50 border border-indigo-100 flex flex-col items-center justify-center text-indigo-600 shrink-0">
+            <span class="text-[9px] font-black uppercase tracking-wider">LMS</span>
+            <div class="flex gap-0.5 mt-0.5 text-[7px]">
+              <i class="fa-solid fa-circle"></i>
+              <i class="fa-solid fa-circle"></i>
+              <i class="fa-solid fa-circle"></i>
+            </div>
+          </div>
+          <div class="flex-1 min-w-0">
+            <h3 class="font-bold text-slate-900 text-sm truncate">SCORM 1.2</h3>
+            <span class="inline-block mt-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-50 text-blue-600 uppercase tracking-wider">
+              EXPERT
+            </span>
+          </div>
+        </div>
+
+        <!-- Skill 11: Microsoft Excel -->
+        <div class="bg-white rounded-2xl p-4 border border-borderSubtle shadow-card hover:shadow-cardHover hover:border-brand-200 transition-all duration-200 flex items-center gap-3.5">
+          <div class="w-12 h-12 rounded-xl bg-emerald-700 text-white flex items-center justify-center font-black text-lg shrink-0">
+            X
+          </div>
+          <div class="flex-1 min-w-0">
+            <h3 class="font-bold text-slate-900 text-sm truncate">Microsoft Excel</h3>
+            <span class="inline-block mt-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-50 text-blue-600 uppercase tracking-wider">
+              INTERMEDIATE
+            </span>
+          </div>
+        </div>
+
+        <!-- Skill 12: Microsoft Word -->
+        <div class="bg-white rounded-2xl p-4 border border-borderSubtle shadow-card hover:shadow-cardHover hover:border-brand-200 transition-all duration-200 flex items-center gap-3.5">
+          <div class="w-12 h-12 rounded-xl bg-blue-700 text-white flex items-center justify-center font-black text-lg shrink-0">
+            W
+          </div>
+          <div class="flex-1 min-w-0">
+            <h3 class="font-bold text-slate-900 text-sm truncate">Microsoft Word</h3>
+            <span class="inline-block mt-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-50 text-blue-600 uppercase tracking-wider">
+              ADVANCED
+            </span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="contact" class="mb-14 scroll-mt-24">
+      
+      <!-- Header with Handwritten Annotation -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-8">
+        <div class="pl-4 border-l-4 border-brand-500">
+          <h2 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">Contact</h2>
+          <p class="text-slate-500 text-sm sm:text-base font-medium mt-0.5">
+            Let's connect for Instructional Design, eLearning Development, and Video Editing projects.
+          </p>
+        </div>
+
+        <!-- Handwritten Annotation "Let's Build Something Meaningful Together" with curved arrow -->
+        <div class="flex items-center gap-2 self-end sm:self-auto select-none mt-2 sm:mt-0">
+          <div class="text-right">
+            <span class="font-handwriting text-2xl sm:text-3xl text-slate-700 font-bold tracking-tight block -rotate-3 leading-none">
+              Let's<br>
+              Build Something<br>
+              Meaningful Together
+            </span>
+          </div>
+          <svg class="w-8 h-10 text-slate-700 rotate-6 transform" viewBox="0 0 40 50" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M 10 10 Q 25 20 20 38" />
+            <path d="M 14 32 L 20 40 L 26 33" />
+          </svg>
+        </div>
+      </div>
+
+      <!-- 4 Horizontal Contact Cards Grid matching the screenshot -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        
+        <!-- Contact 1: Email -->
+        <div class="bg-white rounded-2xl p-5 border border-borderSubtle shadow-card hover:shadow-cardHover transition-all duration-200 flex flex-col justify-between">
+          <div class="flex items-start gap-3.5">
+            <div class="w-11 h-11 rounded-xl bg-blue-50 text-brand-600 flex items-center justify-center text-lg shrink-0 border border-blue-100">
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div class="min-w-0">
+              <h3 class="font-bold text-slate-900 text-sm">Email</h3>
+              <p class="text-slate-500 text-xs mt-0.5 truncate select-all" title="sv393015@gmail.com">sv393015@gmail.com</p>
+            </div>
+          </div>
+          <div class="mt-5">
+            <a href="mailto:sv393015@gmail.com" class="w-full inline-flex items-center justify-center gap-2 bg-blue-50 hover:bg-brand-500 text-brand-600 hover:text-white font-semibold text-xs py-2 px-3 rounded-xl transition-colors duration-200">
+              <span>Send Mail</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Contact 2: Phone -->
+        <div class="bg-white rounded-2xl p-5 border border-borderSubtle shadow-card hover:shadow-cardHover transition-all duration-200 flex flex-col justify-between">
+          <div class="flex items-start gap-3.5">
+            <div class="w-11 h-11 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-lg shrink-0 border border-emerald-100">
+              <i class="fa-solid fa-phone"></i>
+            </div>
+            <div class="min-w-0">
+              <h3 class="font-bold text-slate-900 text-sm">Phone</h3>
+              <p class="text-slate-500 text-xs mt-0.5 truncate select-all">+91 93530 80994</p>
+            </div>
+          </div>
+          <div class="mt-5">
+            <a href="tel:+919353080994" class="w-full inline-flex items-center justify-center gap-2 bg-blue-50 hover:bg-brand-500 text-brand-600 hover:text-white font-semibold text-xs py-2 px-3 rounded-xl transition-colors duration-200">
+              <span>Call Me</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Contact 3: LinkedIn -->
+        <div class="bg-white rounded-2xl p-5 border border-borderSubtle shadow-card hover:shadow-cardHover transition-all duration-200 flex flex-col justify-between">
+          <div class="flex items-start gap-3.5">
+            <div class="w-11 h-11 rounded-xl bg-sky-50 text-sky-600 flex items-center justify-center text-lg shrink-0 border border-sky-100">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </div>
+            <div class="min-w-0">
+              <h3 class="font-bold text-slate-900 text-sm">LinkedIn</h3>
+              <p class="text-slate-500 text-xs mt-0.5 truncate" title="linkedin.com/in/chandru-elearning">linkedin.com/in/chandru-elearning</p>
+            </div>
+          </div>
+          <div class="mt-5">
+            <a href="https://www.linkedin.com/in/chandru-elearning" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-2 bg-blue-50 hover:bg-brand-500 text-brand-600 hover:text-white font-semibold text-xs py-2 px-3 rounded-xl transition-colors duration-200">
+              <span>View Profile</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Contact 4: Location -->
+        <div class="bg-white rounded-2xl p-5 border border-borderSubtle shadow-card hover:shadow-cardHover transition-all duration-200 flex flex-col justify-between">
+          <div class="flex items-start gap-3.5">
+            <div class="w-11 h-11 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center text-lg shrink-0 border border-blue-100">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <div class="min-w-0">
+              <h3 class="font-bold text-slate-900 text-sm">Location</h3>
+              <p class="text-slate-500 text-xs mt-0.5 truncate">Bengaluru, Karnataka, India</p>
+            </div>
+          </div>
+          <div class="mt-5">
+            <a href="https://maps.google.com/?q=Bengaluru,Karnataka,India" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-2 bg-blue-50 hover:bg-brand-500 text-brand-600 hover:text-white font-semibold text-xs py-2 px-3 rounded-xl transition-colors duration-200">
+              <span>View on Map</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-[#1D4ED8] text-white py-4 px-4 sm:px-8 border-t border-blue-600 mt-auto">
+    <div class="max-w-[1280px] mx-auto flex flex-col sm:flex-row items-center justify-between text-xs sm:text-sm font-medium gap-2">
+      <p class="text-blue-100">
+        &copy; 2025 Chandirakkumar S. All rights reserved.
+      </p>
+      <p class="flex items-center gap-1.5 text-blue-100">
+        <span>Designed with</span>
+        <i class="fa-solid fa-heart text-rose-300 text-xs"></i>
+        <span>for Learning.</span>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Video / Project Modal -->
+  <div id="mediaModal" class="fixed inset-0 z-50 hidden flex items-center justify-center bg-black/75 backdrop-blur-sm p-4 transition-opacity">
+    <div class="bg-white rounded-2xl overflow-hidden shadow-2xl max-w-4xl w-full flex flex-col max-h-[90vh]">
+      
+      <!-- Modal Header -->
+      <div class="flex items-center justify-between px-6 py-4 border-b border-slate-100">
+        <div class="flex items-center gap-2.5">
+          <span class="w-2.5 h-2.5 rounded-full bg-brand-500"></span>
+          <h4 id="modalTitle" class="font-bold text-slate-900 text-base">Project Preview</h4>
+        </div>
+        <button onclick="closeMediaModal()" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center transition-colors">
+          <i class="fa-solid fa-xmark text-sm"></i>
+        </button>
+      </div>
+
+      <!-- Modal Body (Iframe or Image) -->
+      <div class="relative bg-black flex-1 min-h-[300px] sm:min-h-[480px] flex items-center justify-center">
+        <iframe id="modalIframe" class="w-full h-full min-h-[450px] border-0 hidden" allow="autoplay; fullscreen"></iframe>
+        <img id="modalImage" class="max-h-[500px] w-auto max-w-full object-contain hidden" alt="Project Sample">
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="px-6 py-3 bg-slate-50 border-t border-slate-100 flex items-center justify-between">
+        <span class="text-xs text-slate-500">Press ESC or click outside to close</span>
+        <button onclick="closeMediaModal()" class="px-4 py-1.5 bg-slate-200 hover:bg-slate-300 text-slate-700 font-semibold rounded-lg text-xs transition-colors">
+          Close Preview
+        </button>
+      </div>
+    </div>
   </div>
-</header>
 
-<div class="main">
-
-  <!-- ABOUT HERO SECTION -->
-  <section id="about" class="section">
-    <div class="about-card">
-      <div class="profile-image">
-        <img src="IMG_20260409_223924.jpg" alt="Profile">
-        <div class="profile-dot"></div>
-      </div>
-
-      <div class="about-info">
-        <h2>Chandirakkumar S</h2>
-        <h3>Instructional Designer | eLearning & Multimedia Developer | Visual Designer</h3>
-        <p class="about-text">
-          Instructional Designer with 1+ year of experience in Storyline 360, LMS Management, SCORM publishing, and interactive eLearning development.
-        </p>
-        <p class="location">
-          📍 Bengaluru, Karnataka, India
-        </p>
-      </div>
-
-      <div class="dots dots-left"></div>
-      <div class="dots dots-right"></div>
-    </div>
-  </section>
-
-  <!-- OVERVIEW SECTION -->
-  <section id="overview" class="section">
-    <div class="section-header">
-      <h2>Dashboard Overview</h2>
-      <p>Quick overview of my work and experience.</p>
-    </div>
-
-    <div class="grid dashboard-grid">
-      <div class="card">
-        <h3>📘 100+ Modules</h3>
-        <p>Interactive eLearning modules developed.</p>
-      </div>
-      <div class="card">
-        <h3>🎯 Instructional Design</h3>
-        <p>Scenario-based learning & learner engagement.</p>
-      </div>
-      <div class="card">
-        <h3>💻 Storyline 360</h3>
-        <p>Variables, triggers, animations & interactions.</p>
-      </div>
-      <div class="card">
-        <h3>📦 SCORM Publishing</h3>
-        <p>SCORM 1.2 packaging & LMS deployment.</p>
-      </div>
-      <div class="card">
-        <h3>🎬 Video Editing</h3>
-        <p>Adobe Premiere Pro & After Effects projects.</p>
-      </div>
-      <div class="card">
-        <h3>🎨 PowerPoint Design</h3>
-        <p>Professional training presentations.</p>
-      </div>
-      <div class="card">
-        <h3>⚙ LearnDash LMS</h3>
-        <p>Course creation, learner management & reporting.</p>
-      </div>
-      <div class="card">
-        <h3>☁ QuickLearn LMS</h3>
-        <p>Course deployment and administration.</p>
-      </div>
-      <div class="card">
-        <h3>📝 Assessments</h3>
-        <p>Knowledge checks, quizzes & certifications.</p>
-      </div>
-      <div class="card">
-        <h3>🚀 Rapid eLearning</h3>
-        <p>End-to-end course development & delivery.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROJECTS SECTION -->
-  <section id="projects" class="section">
-    <div class="section-header">
-      <h2>Projects</h2>
-      <p>My recent work.</p>
-    </div>
-
-    <div class="grid">
-      <div class="card">
-        <iframe src="https://drive.google.com/file/d/1rRtZDmiMiKexJ4jQxXIFJ_b89UR3zWo3/preview" width="100%" allow="autoplay"></iframe>
-        <h3>Interactive SCORM eLearning</h3>
-        <p>Interactive Storyline module with custom navigation, assessments and SCORM publishing.</p>
-        <a href="https://drive.google.com/file/d/1-Jr4AcAYIeU_B9Cimcw1WLswNRgfx0MU/view?usp=sharing" target="_blank" class="btn">▶ Watch Demo</a>
-      </div>
-
-      <div class="card">
-        <iframe src="https://drive.google.com/file/d/1IIuKoOcBHQ35GzFYcmutqnFGDglw8n3t/preview" width="100%" allow="autoplay"></iframe>
-        <h3>Multi-language eLearning</h3>
-        <p>Interactive Storyline course with language switching and multilingual learning support.</p>
-        <a href="https://drive.google.com/file/d/1IIuKoOcBHQ35GzFYcmutqnFGDglw8n3t/view?usp=sharing" target="_blank" class="btn">▶ Watch Demo</a>
-      </div>
-
-      <div class="card">
-        <img src="images/ppt-design-1.png" alt="PowerPoint">
-        <h3>Corporate PowerPoint Design</h3>
-        <p>Professional training presentations with modern layouts, infographics and learning content.</p>
-      </div>
-
-      <div class="card">
-        <iframe src="https://drive.google.com/file/d/1v1ISwjEXjLI4X5jwVbi-a-JX1O14nO5p/preview" width="100%" allow="autoplay"></iframe>
-        <h3>Video Editing & Motion Graphics</h3>
-        <p>Adobe Premiere Pro & After Effects projects with cinematic editing, VFX and motion graphics.</p>
-        <a href="https://drive.google.com/file/d/12KMOnXd8ilEKFB4JqiAr99lX8_8IBSUv/view?usp=sharing" target="_blank" class="btn">▶ Watch Video</a>
-      </div>
-    </div> 
-  </section> 
-
-  <!-- SKILLS SECTION -->
-  <section id="skills" class="section">
-    <div class="section-header">
-      <h2>Technical Skills</h2>
-      <p>Tools & Technologies I work with</p>
-    </div>
-
-    <div class="skills-container">
-      <div class="skill-card">
-        <img src="images/storyline.png" alt="Storyline">
-        <h3>Articulate Storyline 360</h3>
-        <span class="level">Expert</span>
-      </div>
-      <div class="skill-card">
-        <img src="images/premiere.png" alt="Premiere Pro">
-        <h3>Adobe Premiere Pro</h3>
-        <span class="level">Advanced</span>
-      </div>
-      <div class="skill-card">
-        <img src="images/aftereffects.png" alt="After Effects">
-        <h3>Adobe After Effects</h3>
-        <span class="level">Advanced</span>
-      </div>
-      <div class="skill-card">
-        <img src="images/powerpoint.png" alt="PowerPoint">
-        <h3>Microsoft PowerPoint</h3>
-        <span class="level">Expert</span>
-      </div>
-      <div class="skill-card">
-        <img src="images/captivate.png" alt="Captivate">
-        <h3>Adobe Captivate</h3>
-        <span class="level">Advanced</span>
-      </div>
-      <div class="skill-card">
-        <img src="images/illustrator.png" alt="Illustrator">
-        <h3>Adobe Illustrator</h3>
-        <span class="level">Intermediate</span>
-      </div>
-      <div class="skill-card">
-        <img src="images/photoshop.png" alt="Photoshop">
-        <h3>Adobe Photoshop</h3>
-        <span class="level">Intermediate</span>
-      </div>
-      <div class="skill-card">
-        <img src="images/learndash.png" alt="LearnDash">
-        <h3>LearnDash LMS</h3>
-        <span class="level">Advanced</span>
-      </div>
-      <div class="skill-card">
-        <img src="images/quicklearn.png" alt="QuickLearn">
-        <h3>QuickLearn LMS</h3>
-        <span class="level">Advanced</span>
-      </div>
-      <div class="skill-card">
-        <img src="images/scorm.png" alt="SCORM">
-        <h3>SCORM 1.2</h3>
-        <span class="level">Expert</span>
-      </div>
-      <div class="skill-card">
-        <img src="images/excel.png" alt="Excel">
-        <h3>Microsoft Excel</h3>
-        <span class="level">Intermediate</span>
-      </div>
-      <div class="skill-card">
-        <img src="images/word.png" alt="Word">
-        <h3>Microsoft Word</h3>
-        <span class="level">Advanced</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT SECTION -->
-  <section id="contact" class="section">
-    <div class="section-header">
-      <h2>Contact</h2>
-      <p>Let's connect for Instructional Design, eLearning Development,<br>and Video Editing projects.</p>
-    </div>
-
-    <div class="contact-card">
-      <div class="contact-icon">
-        <img src="images/email.png" alt="Email Icon">
-      </div>
-      <div class="contact-details">
-        <h3>Email</h3>
-        <p>sv393015@gmail.com</p>
-      </div>
-      <a href="mailto:sv393015@gmail.com" class="contact-btn">Send Mail</a>
-    </div>
-
-    <div class="contact-card">
-      <div class="contact-icon">
-        <img src="images/phone.png" alt="Phone Icon">
-      </div>
-      <div class="contact-details">
-        <h3>Phone</h3>
-        <p>+91 93530 80994</p>
-      </div>
-      <a href="tel:+919353080994" class="contact-btn">Call Me</a>
-    </div>
-
-    <div class="contact-card">
-      <div class="contact-icon">
-        <img src="images/linkedin.png" alt="LinkedIn Icon">
-      </div>
-      <div class="contact-details">
-        <h3>LinkedIn</h3>
-        <p>linkedin.com/in/chandru-elearning</p>
-      </div>
-      <a href="https://www.linkedin.com/in/chandru-elearning" target="_blank" rel="noopener noreferrer" class="contact-btn">View Profile</a>
-    </div>
-
-    <div class="contact-card">
-      <div class="contact-icon">
-        <img src="images/location.png" alt="Location Icon">
-      </div>
-      <div class="contact-details">
-        <h3>Location</h3>
-        <p>Bengaluru, Karnataka, India</p>
-      </div>
-      <a href="https://maps.google.com" target="_blank" class="contact-btn">View on Map</a>
-    </div>
-
-    <div class="availability">
-      <div class="availability-icon">
-        <img src="images/available.png" alt="Available Emblem">
+  <!-- Resume Download Modal / Toast -->
+  <div id="resumeModal" class="fixed inset-0 z-50 hidden flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+    <div class="bg-white rounded-2xl p-6 shadow-2xl max-w-md w-full text-center space-y-4">
+      <div class="w-14 h-14 rounded-2xl bg-brand-50 text-brand-500 flex items-center justify-center text-2xl mx-auto border border-brand-100">
+        <i class="fa-solid fa-file-arrow-down"></i>
       </div>
       <div>
-        <h3>Available for Freelance & Full-time Opportunities</h3>
-        <p>I usually reply within 24 hours.</p>
+        <h3 class="text-xl font-extrabold text-slate-900">Chandirakkumar S — Resume</h3>
+        <p class="text-slate-500 text-xs mt-1">Instructional Designer | eLearning & Multimedia Developer</p>
+      </div>
+      <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 text-left text-xs space-y-1.5 text-slate-600">
+        <p><strong>Experience:</strong> 1+ Year in Storyline 360, LMS & SCORM</p>
+        <p><strong>Location:</strong> Bengaluru, Karnataka, India</p>
+        <p><strong>Contact:</strong> sv393015@gmail.com | +91 93530 80994</p>
+      </div>
+      <div class="flex gap-3 pt-2">
+        <button onclick="triggerResumeDownload()" class="flex-1 bg-brand-500 hover:bg-brand-600 text-white font-bold py-2.5 rounded-xl text-xs sm:text-sm transition-colors shadow-md">
+          <i class="fa-solid fa-download mr-1.5"></i> Download PDF
+        </button>
+        <button onclick="closeResumeModal()" class="px-4 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold rounded-xl text-xs sm:text-sm transition-colors">
+          Close
+        </button>
       </div>
     </div>
-  </section>
+  </div>
 
-</div>
+  <script>
+    // Project Modal Controllers
+    const mediaModal = document.getElementById('mediaModal');
+    const modalIframe = document.getElementById('modalIframe');
+    const modalImage = document.getElementById('modalImage');
+    const modalTitle = document.getElementById('modalTitle');
+    const resumeModal = document.getElementById('resumeModal');
+
+    function openVideoModal(url, title) {
+      modalTitle.innerText = title;
+      modalImage.classList.add('hidden');
+      modalImage.src = '';
+      
+      modalIframe.classList.remove('hidden');
+      modalIframe.src = url;
+
+      mediaModal.classList.remove('hidden');
+      document.body.classList.add('modal-active');
+    }
+
+    function openImageModal(imgSrc, title) {
+      modalTitle.innerText = title;
+      modalIframe.classList.add('hidden');
+      modalIframe.src = '';
+
+      modalImage.classList.remove('hidden');
+      modalImage.src = imgSrc;
+
+      mediaModal.classList.remove('hidden');
+      document.body.classList.add('modal-active');
+    }
+
+    function closeMediaModal() {
+      mediaModal.classList.add('hidden');
+      modalIframe.src = '';
+      modalImage.src = '';
+      document.body.classList.remove('modal-active');
+    }
+
+    // Close on outside click
+    mediaModal.addEventListener('click', (e) => {
+      if (e.target === mediaModal) {
+        closeMediaModal();
+      }
+    });
+
+    // Resume Modal Controllers
+    function downloadResumeModal() {
+      resumeModal.classList.remove('hidden');
+      document.body.classList.add('modal-active');
+    }
+
+    function closeResumeModal() {
+      resumeModal.classList.add('hidden');
+      document.body.classList.remove('modal-active');
+    }
+
+    resumeModal.addEventListener('click', (e) => {
+      if (e.target === resumeModal) {
+        closeResumeModal();
+      }
+    });
+
+    function triggerResumeDownload() {
+      // Creates a downloadable file anchor or opens print prompt
+      const resumeContent = "Chandirakkumar S - Instructional Designer & eLearning Developer\nEmail: sv393015@gmail.com\nPhone: +91 93530 80994\nLocation: Bengaluru, Karnataka, India\n\nSkills: Articulate Storyline 360, Adobe Premiere Pro, After Effects, LMS Management (LearnDash, QuickLearn), SCORM 1.2, PowerPoint Presentation Design.";
+      const blob = new Blob([resumeContent], { type: 'text/plain;charset=utf-8;' });
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = "Chandirakkumar_S_Resume.txt";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      closeResumeModal();
+    }
+
+    // Keyboard ESC listener for modals
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeMediaModal();
+        closeResumeModal();
+      }
+    });
+  </script>
 
 </body>
 </html>
