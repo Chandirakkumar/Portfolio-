@@ -10862,7 +10862,7 @@ a:focus-visible,
 
 /* TOOLS — 15 standalone tools, no category panels */
 /* TOOLS — independent tool cards, no divided category panels */
-.tools-individual-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:30px}.tool-individual{position:relative;min-height:108px;padding:15px;border:1px solid rgba(118,87,255,.11);border-radius:20px;background:rgba(255,255,255,.58);box-shadow:0 12px 30px rgba(22,27,40,.045);display:flex;flex-direction:column;justify-content:center;align-items:flex-start;transition:transform .35s cubic-bezier(.16,1,.3,1),border-color .35s,box-shadow .35s,background .35s;overflow:hidden}.tool-individual::after{content:"";position:absolute;width:80px;height:80px;right:-35px;bottom:-40px;border-radius:50%;background:rgba(118,87,255,.08);filter:blur(5px);transition:transform .45s}.tool-individual:hover{transform:translateY(-7px);border-color:rgba(118,87,255,.30);background:rgba(255,255,255,.86);box-shadow:0 20px 42px rgba(22,27,40,.09)}.tool-individual:hover::after{transform:scale(1.6)}.tool-individual-logo{width:42px;height:42px;border-radius:13px;background:#fff;border:1px solid rgba(15,20,30,.07);display:grid;place-items:center;overflow:hidden;margin-bottom:10px;box-shadow:0 6px 15px rgba(20,24,35,.07)}.tool-individual-logo img{width:27px;height:27px;object-fit:contain}.tool-individual-logo i{color:#7657ff;font-size:15px}.tool-individual-letter{font-size:22px;font-weight:900;color:#ef6c24}.tool-individual strong{font-size:9px;color:#161a25;font-weight:900;line-height:1.2}.tool-individual small{font-size:6.5px;color:#8a92a2;margin-top:4px}.tool-individual.featured{border-color:rgba(118,87,255,.28);background:linear-gradient(145deg,rgba(118,87,255,.08),rgba(255,255,255,.7))}.tools-layout>.reveal{min-width:0}
+.tools-individual-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:30px}.tool-individual{position:relative;isolation:isolate;min-height:108px;padding:15px;border:1px solid rgba(255,255,255,.09);border-radius:20px;background:#171c29;box-shadow:0 12px 30px rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.035);display:flex;flex-direction:column;justify-content:center;align-items:flex-start;transition:transform .35s cubic-bezier(.16,1,.3,1),border-color .35s,box-shadow .35s,background .35s;overflow:hidden}.tool-individual::after{content:"";position:absolute;width:95px;height:95px;right:-45px;bottom:-48px;border-radius:50%;background:rgba(118,87,255,.07);filter:blur(7px);transition:transform .45s ease;pointer-events:none;z-index:-1}.tool-individual:hover{transform:translateY(-7px);border-color:rgba(118,87,255,.48);background:#1b2030;box-shadow:0 20px 42px rgba(0,0,0,.26),0 0 0 1px rgba(118,87,255,.06)}.tool-individual:hover::after{transform:scale(1.5)}.tool-individual-logo{width:42px;height:42px;border-radius:13px;background:#fff;border:1px solid rgba(255,255,255,.65);display:grid;place-items:center;overflow:hidden;margin-bottom:10px;box-shadow:0 6px 15px rgba(0,0,0,.18)}.tool-individual-logo img{width:27px;height:27px;object-fit:contain}.tool-individual-logo i{color:#7657ff;font-size:15px}.tool-individual-letter{font-size:22px;font-weight:900;color:#ef6c24}.tool-individual strong{font-size:9px;color:#f5f6fa;font-weight:900;line-height:1.2}.tool-individual small{font-size:6.5px;color:#8f98ab;margin-top:4px}.tool-individual.featured{border-color:rgba(118,87,255,.40);background:#1b2030;box-shadow:0 14px 34px rgba(0,0,0,.22),inset 0 1px 0 rgba(255,255,255,.04)}.tools-layout>.reveal{min-width:0}
 @media(max-width:1000px){.tools-individual-grid{grid-template-columns:repeat(3,1fr)}.tool-individual{min-height:112px}}
 @media(max-width:760px){.about-visual-art{width:min(410px,94%)}}
 @media(max-width:760px){.about-visual-new{min-height:500px}.card-a{left:12px}.card-b{right:12px}.card-c{left:30px}.tools-individual-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:480px){.about-visual-new{min-height:430px;border-radius:28px}.about-new-stage{width:220px;height:220px}.about-new-core{width:165px;height:165px}.about-new-core strong{font-size:25px}.about-new-card{width:105px;padding:11px}.card-a{top:28%}.card-b{top:47%}.card-c{bottom:16%;left:20px}.about-new-bottom{gap:9px}.tools-individual-grid{gap:9px}.tool-individual{min-height:100px;padding:12px}.tool-individual-logo{width:38px;height:38px}}
@@ -11273,57 +11273,71 @@ a:focus-visible,
             <div class="about-visual-art" role="img" aria-label="Abstract visual design and learning experience composition">
                 <svg viewBox="0 0 420 330" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                     <defs>
-                        <linearGradient id="avg1" x1="0" y1="0" x2="1" y2="1">
-                            <stop offset="0" stop-color="#7657ff"/>
-                            <stop offset="1" stop-color="#4f37d8"/>
-                        </linearGradient>
-                        <linearGradient id="avg2" x1="0" y1="0" x2="1" y2="1">
+                        <linearGradient id="aboutBoard" x1="0" y1="0" x2="1" y2="1">
                             <stop offset="0" stop-color="#ffffff"/>
-                            <stop offset="1" stop-color="#ece9ff"/>
+                            <stop offset="1" stop-color="#eeeaff"/>
                         </linearGradient>
-                        <filter id="avShadow" x="-30%" y="-30%" width="160%" height="180%">
-                            <feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#4c3ab8" flood-opacity=".18"/>
+                        <linearGradient id="aboutAccent" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0" stop-color="#8b73ff"/>
+                            <stop offset="1" stop-color="#5d3de7"/>
+                        </linearGradient>
+                        <linearGradient id="aboutBlue" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0" stop-color="#6ea6ff"/>
+                            <stop offset="1" stop-color="#4b75e8"/>
+                        </linearGradient>
+                        <filter id="aboutShadow" x="-30%" y="-30%" width="160%" height="180%">
+                            <feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#4332a5" flood-opacity=".16"/>
                         </filter>
                     </defs>
 
-                    <circle cx="210" cy="165" r="124" fill="#7657ff" opacity=".055"/>
-                    <circle cx="210" cy="165" r="94" fill="none" stroke="#7657ff" stroke-opacity=".12"/>
-                    <circle cx="210" cy="165" r="67" fill="none" stroke="#7657ff" stroke-opacity=".09" stroke-dasharray="5 8"/>
+                    <!-- visual system rings -->
+                    <circle cx="210" cy="165" r="126" fill="#7657ff" opacity=".035"/>
+                    <circle cx="210" cy="165" r="104" fill="none" stroke="#7657ff" stroke-opacity=".12"/>
+                    <circle cx="210" cy="165" r="76" fill="none" stroke="#7657ff" stroke-opacity=".10" stroke-dasharray="5 9"/>
 
-                    <g transform="rotate(-7 210 165)" filter="url(#avShadow)">
-                        <rect x="86" y="72" width="248" height="174" rx="24" fill="url(#av9)" opacity=".0"/>
-                        <rect x="86" y="72" width="248" height="174" rx="24" fill="url(#av9)" stroke="#ffffff" stroke-opacity=".8"/>
+                    <!-- main creative board -->
+                    <g transform="rotate(-5 210 165)" filter="url(#aboutShadow)">
+                        <rect x="76" y="70" width="268" height="190" rx="26" fill="url(#aboutBoard)" stroke="#ffffff" stroke-width="2"/>
+                        <rect x="76" y="70" width="268" height="35" rx="26" fill="#f8f7ff"/>
+                        <circle cx="99" cy="87" r="4" fill="#7657ff"/>
+                        <circle cx="113" cy="87" r="4" fill="#c8c1ff"/>
+                        <circle cx="127" cy="87" r="4" fill="#dfe2ea"/>
+
+                        <rect x="98" y="122" width="92" height="108" rx="18" fill="url(#aboutAccent)"/>
+                        <circle cx="144" cy="164" r="28" fill="#ffffff" opacity=".13"/>
+                        <path d="M132 168l10-11 8 8 13-17 13 25h-44z" fill="#ffffff" opacity=".94"/>
+                        <circle cx="143" cy="151" r="5" fill="#ffffff"/>
+                        <rect x="111" y="205" width="45" height="6" rx="3" fill="#ffffff" opacity=".35"/>
+
+                        <rect x="207" y="122" width="112" height="13" rx="6.5" fill="#171b27" opacity=".10"/>
+                        <rect x="207" y="145" width="83" height="7" rx="3.5" fill="#7657ff" opacity=".28"/>
+                        <rect x="207" y="160" width="99" height="7" rx="3.5" fill="#171b27" opacity=".08"/>
+                        <rect x="207" y="175" width="72" height="7" rx="3.5" fill="#171b27" opacity=".08"/>
+
+                        <!-- interaction cards -->
+                        <rect x="207" y="197" width="48" height="28" rx="9" fill="#eef0f8"/>
+                        <rect x="263" y="197" width="56" height="28" rx="9" fill="#ebe8ff"/>
+                        <circle cx="223" cy="211" r="6" fill="#6ea6ff" opacity=".9"/>
+                        <path d="M221 211l2 2 4-5" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="279" cy="211" r="6" fill="#7657ff" opacity=".88"/>
+                        <path d="M277 211h4M279 209v4" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/>
                     </g>
 
-                    <g transform="rotate(-7 210 165)" filter="url(#avShadow)">
-                        <rect x="86" y="72" width="248" height="174" rx="24" fill="url(#av9)" opacity="0"/>
-                        <rect x="86" y="72" width="248" height="174" rx="24" fill="url(#avG2)" stroke="#dcd6ff"/>
-                        <rect x="108" y="94" width="112" height="10" rx="5" fill="#171b27" opacity=".12"/>
-                        <rect x="108" y="115" width="176" height="7" rx="3.5" fill="#7657ff" opacity=".16"/>
-                        <rect x="108" y="130" width="154" height="7" rx="3.5" fill="#171b27" opacity=".08"/>
-                        <rect x="108" y="151" width="78" height="58" rx="15" fill="url(#avG1)"/>
-                        <path d="M128 183l15-16 13 12 16-22 16 32h-60z" fill="#fff" opacity=".88"/>
-                        <circle cx="147" cy="165" r="6" fill="#fff"/>
-                        <rect x="202" y="151" width="78" height="10" rx="5" fill="#171b27" opacity=".10"/>
-                        <rect x="202" y="169" width="60" height="7" rx="3.5" fill="#171b27" opacity=".07"/>
-                        <rect x="202" y="184" width="68" height="7" rx="3.5" fill="#171b27" opacity=".07"/>
-                        <rect x="202" y="199" width="48" height="7" rx="3.5" fill="#7657ff" opacity=".22"/>
+                    <!-- floating concept cards -->
+                    <g transform="translate(275 38)">
+                        <rect width="98" height="48" rx="15" fill="#fff" stroke="#e5e1ff"/>
+                        <circle cx="22" cy="24" r="10" fill="#7657ff" opacity=".12"/>
+                        <path d="M17 25l4 4 8-10" fill="none" stroke="#7657ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <text x="39" y="22" font-family="Inter,Arial,sans-serif" font-size="8" font-weight="800" fill="#171b27">LEARNING</text>
+                        <text x="39" y="33" font-family="Inter,Arial,sans-serif" font-size="6.5" fill="#7b8497">made clearer</text>
                     </g>
 
-                    <g transform="translate(270 38)">
-                        <rect width="94" height="46" rx="15" fill="#fff" stroke="#e5e1ff"/>
-                        <circle cx="22" cy="23" r="10" fill="#7657ff" opacity=".12"/>
-                        <path d="M17 24l4 4 7-9" fill="none" stroke="#7657ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        <text x="39" y="21" font-family="Inter,Arial,sans-serif" font-size="8" font-weight="800" fill="#171b27">LEARNING</text>
-                        <text x="39" y="32" font-family="Inter,Arial,sans-serif" font-size="6.5" fill="#7b8497">made clearer</text>
-                    </g>
-
-                    <g transform="translate(45 237)">
-                        <rect width="112" height="49" rx="16" fill="#171b27"/>
-                        <circle cx="24" cy="24.5" r="10" fill="#7657ff"/>
-                        <path d="M20 24h8M24 20v8" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+                    <g transform="translate(40 238)">
+                        <rect width="116" height="50" rx="16" fill="#171b27"/>
+                        <circle cx="24" cy="25" r="10" fill="#7657ff"/>
+                        <path d="M20 25h8M24 21v8" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
                         <text x="42" y="22" font-family="Inter,Arial,sans-serif" font-size="8" font-weight="800" fill="#fff">IDEA → EXPERIENCE</text>
-                        <text x="42" y="33" font-family="Inter,Arial,sans-serif" font-size="6.5" fill="#9ba3b4">visual storytelling</text>
+                        <text x="42" y="34" font-family="Inter,Arial,sans-serif" font-size="6.5" fill="#9ba3b4">visual storytelling</text>
                     </g>
                 </svg>
             </div>
