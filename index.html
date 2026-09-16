@@ -10682,6 +10682,152 @@ a:focus-visible,
 }
 </style>
 
+
+
+/* =========================================================
+   ABOUT V2 — CREATIVE THINKING BOARD
+   Replaces the generic pen/design visual with a more
+   art-directed portfolio composition.
+   ========================================================= */
+
+.about-thinking-board {
+    min-height: 560px;
+    border-radius: 38px;
+    background:
+        radial-gradient(circle at 78% 24%, rgba(118,87,255,.17), transparent 25%),
+        radial-gradient(circle at 18% 82%, rgba(66,133,244,.12), transparent 27%),
+        linear-gradient(145deg, #fbfcff 0%, #eef1f8 100%);
+    box-shadow: 0 30px 90px rgba(13,17,28,.10), inset 0 1px 0 rgba(255,255,255,.95);
+}
+
+.about-board-grid {
+    position:absolute; inset:0; opacity:.32;
+    background-image: linear-gradient(rgba(118,87,255,.07) 1px, transparent 1px), linear-gradient(90deg, rgba(118,87,255,.07) 1px, transparent 1px);
+    background-size: 34px 34px;
+    mask-image: radial-gradient(circle at center, black 18%, transparent 78%);
+    -webkit-mask-image: radial-gradient(circle at center, black 18%, transparent 78%);
+}
+
+.about-board-glow {
+    position:absolute; border-radius:50%; pointer-events:none; filter:blur(2px);
+    background:radial-gradient(circle, rgba(118,87,255,.20), transparent 68%);
+    animation: boardGlow 6s ease-in-out infinite;
+}
+.about-board-glow-one { width:240px; height:240px; top:12%; right:6%; }
+.about-board-glow-two { width:190px; height:190px; bottom:4%; left:3%; animation-delay:1.4s; opacity:.7; }
+@keyframes boardGlow { 0%,100%{transform:scale(.92);opacity:.55} 50%{transform:scale(1.1);opacity:1} }
+
+.about-board-top {
+    position:absolute; top:25px; left:28px; right:28px; z-index:7;
+    display:flex; justify-content:space-between; align-items:center;
+}
+.about-board-kicker { color:var(--premium-purple); font-size:8px; font-weight:900; letter-spacing:2.2px; }
+.about-board-index { color:#8b93a5; font-size:8px; font-weight:900; letter-spacing:1px; }
+
+.about-board-core {
+    position:absolute; left:50%; top:50%; z-index:4; width:250px; height:250px;
+    transform:translate(-50%,-50%); display:grid; place-items:center;
+}
+.about-core-ring { position:absolute; inset:-34px; border:1px solid rgba(118,87,255,.17); border-radius:50%; animation:coreSpin 20s linear infinite; }
+.about-core-ring::before, .about-core-ring::after { content:""; position:absolute; width:7px; height:7px; border-radius:50%; background:var(--premium-purple); box-shadow:0 0 0 7px rgba(118,87,255,.08); }
+.about-core-ring::before { top:12%; left:12%; }
+.about-core-ring::after { right:7%; bottom:18%; background:var(--premium-blue); box-shadow:0 0 0 7px rgba(66,133,244,.08); }
+@keyframes coreSpin { to{transform:rotate(360deg)} }
+.about-core-card { width:220px; min-height:185px; padding:27px; display:flex; flex-direction:column; justify-content:center; border:1px solid rgba(255,255,255,.9); border-radius:28px; background:rgba(255,255,255,.74); backdrop-filter:blur(18px); box-shadow:0 28px 65px rgba(13,17,28,.12); transform:rotate(-4deg); }
+.about-core-mini { color:var(--premium-purple); font-size:7px; font-weight:900; letter-spacing:2px; }
+.about-core-card strong { margin-top:12px; color:#0d111c; font-size:30px; line-height:.98; letter-spacing:-1.5px; }
+.about-core-card em { color:var(--premium-purple); font-style:normal; }
+.about-core-caption { margin-top:14px; color:#788094; font-size:8px; line-height:1.6; }
+
+.about-board-path {
+    position:absolute; z-index:6; display:flex; align-items:center; gap:9px; width:155px; min-height:58px; padding:10px 11px;
+    border:1px solid rgba(255,255,255,.88); border-radius:17px; background:rgba(255,255,255,.72); backdrop-filter:blur(16px);
+    box-shadow:0 18px 45px rgba(13,17,28,.08); animation:boardFloat 5s ease-in-out infinite;
+}
+.about-board-path i { width:27px; height:27px; display:grid; place-items:center; border-radius:9px; color:var(--premium-purple); background:#f0edff; font-size:10px; }
+.about-step-number { align-self:flex-start; color:#a3a9b7; font-size:6px; font-weight:900; letter-spacing:.6px; }
+.about-board-path strong { display:block; color:#171b27; font-size:8px; font-weight:900; }
+.about-board-path span:last-child { display:block; margin-top:3px; color:#7e8798; font-size:7px; }
+.about-board-path-one { top:19%; left:7%; }
+.about-board-path-two { top:42%; right:5%; animation-delay:.8s; }
+.about-board-path-three { bottom:12%; left:10%; animation-delay:1.5s; }
+@keyframes boardFloat { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+
+.about-board-line { position:absolute; z-index:2; height:1px; background:linear-gradient(90deg, rgba(118,87,255,0), rgba(118,87,255,.35), rgba(66,133,244,0)); transform-origin:left center; }
+.about-board-line-one { width:135px; top:35%; left:26%; transform:rotate(17deg); }
+.about-board-line-two { width:145px; top:65%; right:26%; transform:rotate(-20deg); }
+
+.about-board-footer { position:absolute; z-index:7; left:28px; right:28px; bottom:24px; display:flex; flex-wrap:wrap; gap:14px; color:#7a8395; font-size:7px; font-weight:800; letter-spacing:.3px; }
+.about-board-footer i { margin-right:5px; color:var(--premium-purple); font-size:4px; }
+
+/* =========================================================
+   TOOLS V2 — BENTO SKILL MAP
+   Groups the stack by purpose instead of a repetitive grid.
+   ========================================================= */
+
+.tools-bento {
+    display:grid; grid-template-columns:1.25fr .9fr; gap:13px; margin-top:34px;
+}
+.tool-cluster {
+    position:relative; min-height:190px; padding:19px; border:1px solid rgba(255,255,255,.09); border-radius:22px;
+    background:linear-gradient(145deg, rgba(255,255,255,.055), rgba(255,255,255,.025));
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.035); overflow:hidden;
+    transition:transform .35s ease, border-color .35s ease, background .35s ease;
+}
+.tool-cluster::after { content:""; position:absolute; width:130px; height:130px; right:-55px; bottom:-60px; border-radius:50%; background:rgba(118,87,255,.10); filter:blur(5px); pointer-events:none; }
+.tool-cluster:hover { transform:translateY(-5px); border-color:rgba(118,87,255,.32); background:linear-gradient(145deg, rgba(118,87,255,.09), rgba(255,255,255,.03)); }
+.tool-cluster-wide { grid-column:span 2; min-height:155px; }
+.tool-cluster-light { min-height:150px; }
+.tool-cluster-head { display:flex; align-items:center; gap:11px; margin-bottom:17px; }
+.tool-cluster-number { color:rgba(170,156,255,.65); font-size:7px; font-weight:900; letter-spacing:1.2px; }
+.tool-cluster-head strong { display:block; color:#f2f4f8; font-size:10px; font-weight:900; letter-spacing:.1px; }
+.tool-cluster-head span:last-child { display:block; margin-top:4px; color:#7f889a; font-size:7px; line-height:1.4; }
+.tool-chip-row { display:flex; flex-wrap:wrap; gap:8px; }
+.tool-chip-stack { display:grid; gap:8px; }
+.tool-chip { min-height:44px; display:flex; align-items:center; gap:9px; padding:7px 10px; border:1px solid rgba(255,255,255,.08); border-radius:13px; color:#dfe3ec; background:rgba(255,255,255,.035); font-size:7.5px; font-weight:800; transition:transform .25s ease, background .25s ease, border-color .25s ease; }
+.tool-chip:hover { transform:translateX(4px); border-color:rgba(118,87,255,.42); background:rgba(118,87,255,.10); }
+.tool-chip-row .tool-chip { flex:1 1 125px; }
+.tool-chip-row-compact .tool-chip { flex:0 1 145px; }
+.tool-chip-logo, .tool-chip-icon { width:31px; height:31px; flex:0 0 31px; display:grid; place-items:center; border-radius:9px; background:#fff; overflow:hidden; }
+.tool-chip-logo img { width:22px; height:22px; object-fit:contain; }
+.tool-chip-icon { color:var(--premium-purple); background:rgba(118,87,255,.12); font-size:11px; }
+.tool-chip-letter { color:#ef6c24; font-size:16px; font-weight:900; background:#fff; }
+.tool-chip-featured { border-color:rgba(118,87,255,.28); background:rgba(118,87,255,.08); }
+.tool-chip-text { background:rgba(118,87,255,.05); }
+
+@media (max-width: 980px) {
+    .about-thinking-board { min-height:500px; }
+    .about-board-path-one { left:4%; }
+    .about-board-path-two { right:3%; }
+    .about-board-path-three { left:5%; }
+}
+
+@media (max-width: 760px) {
+    .about-thinking-board { min-height:590px; }
+    .about-board-core { top:49%; transform:translate(-50%,-50%) scale(.88); }
+    .about-board-path { width:142px; }
+    .about-board-path-one { top:14%; left:5%; }
+    .about-board-path-two { top:68%; right:5%; }
+    .about-board-path-three { bottom:10%; left:5%; }
+    .about-board-line { display:none; }
+    .about-board-footer { bottom:18px; gap:8px; }
+    .tools-bento { grid-template-columns:1fr; }
+    .tool-cluster-wide { grid-column:span 1; }
+}
+
+@media (max-width: 480px) {
+    .about-thinking-board { min-height:620px; border-radius:28px; }
+    .about-board-top { left:20px; right:20px; }
+    .about-board-core { transform:translate(-50%,-50%) scale(.75); }
+    .about-board-path { width:132px; }
+    .about-board-path-one { top:14%; left:4%; }
+    .about-board-path-two { top:69%; right:4%; }
+    .about-board-path-three { bottom:11%; left:4%; }
+    .about-board-footer { left:20px; right:20px; }
+    .tool-cluster { padding:15px; }
+    .tool-chip-row .tool-chip { flex:1 1 100%; }
+}
+
 </head>
 
 
@@ -11070,65 +11216,60 @@ a:focus-visible,
 <div class="container about-grid">
 
 
-    <div class="about-visual about-visual-premium reveal">
+    <div class="about-visual about-visual-premium about-thinking-board reveal">
 
-        <div class="about-visual-grid" aria-hidden="true"></div>
+        <div class="about-board-grid" aria-hidden="true"></div>
+        <div class="about-board-glow about-board-glow-one" aria-hidden="true"></div>
+        <div class="about-board-glow about-board-glow-two" aria-hidden="true"></div>
 
-        <div class="about-visual-glow" aria-hidden="true"></div>
+        <div class="about-board-top">
+            <span class="about-board-kicker">CREATIVE APPROACH</span>
+            <span class="about-board-index">01 / 04</span>
+        </div>
 
-        <div class="about-visual-content">
-
-            <span class="about-visual-index">
-                01
-            </span>
-
-            <span class="about-visual-kicker">
-                DESIGN PHILOSOPHY
-            </span>
-
-            <h3>
-                Make it
-                <span>clear.</span>
-                Make it
-                <span>memorable.</span>
-            </h3>
-
-            <div class="about-visual-line" aria-hidden="true"></div>
-
-            <div class="about-visual-meta">
-                <span>
-                    <i class="fa-solid fa-circle"></i>
-                    Visual Thinking
-                </span>
-
-                <span>
-                    <i class="fa-solid fa-circle"></i>
-                    Learning Design
-                </span>
-
-                <span>
-                    <i class="fa-solid fa-circle"></i>
-                    Human Focus
-                </span>
+        <div class="about-board-core">
+            <div class="about-core-ring" aria-hidden="true"></div>
+            <div class="about-core-card">
+                <span class="about-core-mini">THE IDEA</span>
+                <strong>Think<br><em>visually.</em></strong>
+                <span class="about-core-caption">Turn complex information into clear experiences.</span>
             </div>
-
         </div>
 
-        <div class="about-orbit about-orbit-one" aria-hidden="true"></div>
-        <div class="about-orbit about-orbit-two" aria-hidden="true"></div>
-
-        <div class="about-floating-card about-floating-card-one">
+        <div class="about-board-path about-board-path-one">
+            <span class="about-step-number">01</span>
             <i class="fa-solid fa-lightbulb"></i>
-            <span>
-                Ideas
-            </span>
+            <div>
+                <strong>Discover</strong>
+                <span>Find the story.</span>
+            </div>
         </div>
 
-        <div class="about-floating-card about-floating-card-two">
-            <i class="fa-solid fa-arrow-right"></i>
-            <span>
-                Experiences
-            </span>
+        <div class="about-board-path about-board-path-two">
+            <span class="about-step-number">02</span>
+            <i class="fa-solid fa-layer-group"></i>
+            <div>
+                <strong>Design</strong>
+                <span>Build the visual flow.</span>
+            </div>
+        </div>
+
+        <div class="about-board-path about-board-path-three">
+            <span class="about-step-number">03</span>
+            <i class="fa-solid fa-bolt"></i>
+            <div>
+                <strong>Engage</strong>
+                <span>Make it memorable.</span>
+            </div>
+        </div>
+
+        <div class="about-board-line about-board-line-one" aria-hidden="true"></div>
+        <div class="about-board-line about-board-line-two" aria-hidden="true"></div>
+
+        <div class="about-board-footer">
+            <span><i class="fa-solid fa-circle"></i> Visual Thinking</span>
+            <span><i class="fa-solid fa-circle"></i> Learning Design</span>
+            <span><i class="fa-solid fa-circle"></i> Human Focus</span>
         </div>
 
     </div>
@@ -11714,287 +11855,69 @@ a:focus-visible,
         </p>
 
 
-        <div class="tools-grid">
+        <div class="tools-bento">
 
-
-            <!-- Storyline -->
-
-            <div class="tool">
-
-                <div class="tool-logo">
-
-                    <img
-                        src="images/storyline.png"
-                        alt="Storyline 360"
-                    >
-
+            <div class="tool-cluster tool-cluster-wide">
+                <div class="tool-cluster-head">
+                    <span class="tool-cluster-number">01</span>
+                    <div>
+                        <strong>Authoring & Learning</strong>
+                        <span>Interactive learning experiences</span>
+                    </div>
                 </div>
-
-                <span class="tool-name">
-                    Storyline 360
-                </span>
-
+                <div class="tool-chip-row">
+                    <div class="tool-chip tool-chip-featured"><span class="tool-chip-logo"><img src="images/storyline.png" alt="Storyline 360"></span><span>Storyline 360</span></div>
+                    <div class="tool-chip"><span class="tool-chip-logo"><img src="images/captivate.png" alt="Adobe Captivate"></span><span>Captivate</span></div>
+                    <div class="tool-chip"><span class="tool-chip-logo"><img src="images/available.png" alt="Articulate 360"></span><span>Articulate 360</span></div>
+                    <div class="tool-chip"><span class="tool-chip-logo"><img src="images/leandash.png" alt="LearnDash"></span><span>LearnDash</span></div>
+                    <div class="tool-chip tool-chip-text"><span class="tool-chip-icon"><i class="fa-solid fa-cloud-arrow-up"></i></span><span>SCORM / LMS</span></div>
+                </div>
             </div>
 
-
-            <!-- Captivate -->
-
-            <div class="tool">
-
-                <div class="tool-logo">
-
-                    <img
-                        src="images/captivate.png"
-                        alt="Adobe Captivate"
-                    >
-
+            <div class="tool-cluster">
+                <div class="tool-cluster-head">
+                    <span class="tool-cluster-number">02</span>
+                    <div>
+                        <strong>Visual Design</strong>
+                        <span>Graphics & interface</span>
+                    </div>
                 </div>
-
-                <span class="tool-name">
-                    Captivate
-                </span>
-
+                <div class="tool-chip-stack">
+                    <div class="tool-chip"><span class="tool-chip-logo"><img src="images/photoshop.png" alt="Adobe Photoshop"></span><span>Photoshop</span></div>
+                    <div class="tool-chip"><span class="tool-chip-logo"><img src="images/illustrator.png" alt="Adobe Illustrator"></span><span>Illustrator</span></div>
+                    <div class="tool-chip"><span class="tool-chip-logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" alt="Figma"></span><span>Figma</span></div>
+                </div>
             </div>
 
-
-            <!-- PowerPoint -->
-
-            <div class="tool">
-
-                <div class="tool-logo">
-
-                    <img
-                        src="images/powerpoint.png"
-                        alt="PowerPoint"
-                    >
-
+            <div class="tool-cluster">
+                <div class="tool-cluster-head">
+                    <span class="tool-cluster-number">03</span>
+                    <div>
+                        <strong>Motion & Media</strong>
+                        <span>Video, animation & storytelling</span>
+                    </div>
                 </div>
-
-                <span class="tool-name">
-                    PowerPoint
-                </span>
-
+                <div class="tool-chip-stack">
+                    <div class="tool-chip"><span class="tool-chip-logo"><img src="images/aftereffects.png" alt="Adobe After Effects"></span><span>After Effects</span></div>
+                    <div class="tool-chip"><span class="tool-chip-logo"><img src="images/premiere.png" alt="Adobe Premiere Pro"></span><span>Premiere Pro</span></div>
+                    <div class="tool-chip"><span class="tool-chip-logo tool-chip-letter">V</span><span>Vyond</span></div>
+                </div>
             </div>
 
-
-            <!-- Word -->
-
-            <div class="tool">
-
-                <div class="tool-logo">
-
-                    <img
-                        src="images/word.png"
-                        alt="Microsoft Word"
-                    >
-
+            <div class="tool-cluster tool-cluster-wide tool-cluster-light">
+                <div class="tool-cluster-head">
+                    <span class="tool-cluster-number">04</span>
+                    <div>
+                        <strong>Productivity & Content</strong>
+                        <span>Build, present and deliver</span>
+                    </div>
                 </div>
-
-                <span class="tool-name">
-                    Word
-                </span>
-
-            </div>
-
-
-            <!-- Excel -->
-
-            <div class="tool">
-
-                <div class="tool-logo">
-
-                    <img
-                        src="images/excel.png"
-                        alt="Microsoft Excel"
-                    >
-
+                <div class="tool-chip-row tool-chip-row-compact">
+                    <div class="tool-chip"><span class="tool-chip-logo"><img src="images/powerpoint.png" alt="PowerPoint"></span><span>PowerPoint</span></div>
+                    <div class="tool-chip"><span class="tool-chip-logo"><img src="images/word.png" alt="Microsoft Word"></span><span>Word</span></div>
+                    <div class="tool-chip"><span class="tool-chip-logo"><img src="images/excel.png" alt="Microsoft Excel"></span><span>Excel</span></div>
                 </div>
-
-                <span class="tool-name">
-                    Excel
-                </span>
-
             </div>
-
-
-            <!-- Photoshop -->
-
-            <div class="tool">
-
-                <div class="tool-logo">
-
-                    <img
-                        src="images/photoshop.png"
-                        alt="Adobe Photoshop"
-                    >
-
-                </div>
-
-                <span class="tool-name">
-                    Photoshop
-                </span>
-
-            </div>
-
-
-            <!-- Illustrator -->
-
-            <div class="tool">
-
-                <div class="tool-logo">
-
-                    <img
-                        src="images/illustrator.png"
-                        alt="Adobe Illustrator"
-                    >
-
-                </div>
-
-                <span class="tool-name">
-                    Illustrator
-                </span>
-
-            </div>
-
-
-            <!-- Premiere -->
-
-            <div class="tool">
-
-                <div class="tool-logo">
-
-                    <img
-                        src="images/premiere.png"
-                        alt="Adobe Premiere Pro"
-                    >
-
-                </div>
-
-                <span class="tool-name">
-                    Premiere Pro
-                </span>
-
-            </div>
-
-
-            <!-- After Effects -->
-
-            <div class="tool">
-
-                <div class="tool-logo">
-
-                    <img
-                        src="images/aftereffects.png"
-                        alt="Adobe After Effects"
-                    >
-
-                </div>
-
-                <span class="tool-name">
-                    After Effects
-                </span>
-
-            </div>
-
-
-            <!-- LearnDash -->
-
-            <div class="tool">
-
-                <div class="tool-logo">
-
-                    <img
-                        src="images/leandash.png"
-                        alt="LearnDash"
-                    >
-
-                </div>
-
-                <span class="tool-name">
-                    LearnDash
-                </span>
-
-            </div>
-
-
-            <!-- Articulate 360 -->
-
-            <div class="tool">
-
-                <div class="tool-logo">
-
-                    <img
-                        src="images/available.png"
-                        alt="Articulate 360"
-                    >
-
-                </div>
-
-                <span class="tool-name">
-                    Articulate 360
-                </span>
-
-            </div>
-
-
-            <!-- Figma -->
-
-            <div class="tool">
-
-                <div class="tool-logo">
-
-                    <img
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg"
-                        alt="Figma"
-                    >
-
-                </div>
-
-                <span class="tool-name">
-                    Figma
-                </span>
-
-            </div>
-
-
-            <!-- Vyond -->
-
-            <div class="tool">
-
-                <div class="tool-logo">
-
-                    <span style="color:#ef6c24;font-size:20px;">
-                        V
-                    </span>
-
-                </div>
-
-                <span class="tool-name">
-                    Vyond
-                </span>
-
-            </div>
-
-
-            <!-- LMS / SCORM -->
-
-            <div class="tool">
-
-                <div class="tool-logo">
-
-                    <i
-                        class="fa-solid fa-cloud-arrow-up"
-                        style="color:#7657ff;font-size:17px;"
-                    ></i>
-
-                </div>
-
-                <span class="tool-name">
-                    SCORM / LMS
-                </span>
-
-            </div>
-
 
         </div>
 
@@ -13755,7 +13678,7 @@ document.addEventListener(
     const toolsSection = $("#skills");
 
     if (toolsSection) {
-        const intro = $(".tools-grid", toolsSection);
+        const intro = $(".tools-bento", toolsSection);
 
         if (intro) {
             const meterWrap = document.createElement("div");
