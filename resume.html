@@ -28,7 +28,7 @@
 html{scroll-behavior:smooth}
 
 body{
-  font-family:Inter,Arial,sans-serif;
+  font-family:Arial,Helvetica,sans-serif;
   background:#e9eaf0;
   color:var(--body);
   line-height:1.45;
@@ -351,6 +351,18 @@ a{color:inherit;text-decoration:none}
   gap:12px;
 }
 
+/* PDF / print safety */
+.section, .job, .project, .skill, .side-box, .edu, .tag-wrap {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.job-title, .company, .skill strong, .skill span, .side-box h3, .side-box p, .edu-title, .edu-place, .project strong, .project p {
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
+}
+
 /* Keep print layout stable */
 @page{
   size:A4;
@@ -374,14 +386,50 @@ a{color:inherit;text-decoration:none}
 }
 
 @media print{
-  body{padding:0;background:#fff}
-  .toolbar{display:none}
+  html, body{
+    width:210mm;
+    height:297mm;
+    margin:0;
+    padding:0;
+    background:#fff;
+  }
+
+  body{
+    font-family:Arial, Helvetica, sans-serif;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+
+  .toolbar{display:none !important}
+
   .resume{
     width:210mm;
-    min-height:297mm;
+    height:297mm;
+    min-height:0;
+    max-width:none;
+    margin:0;
     box-shadow:none;
-    padding:9mm 11mm 8mm;
+    border-radius:0;
+    padding:8.5mm 10.5mm 7mm;
+    overflow:hidden;
   }
+
+  .header{padding-bottom:12px}
+  .main{padding-top:9px;gap:16px}
+  .section{margin-bottom:9px}
+  .section-title{font-size:9px;letter-spacing:.8px;margin-bottom:5px;gap:7px}
+  .section-title::before{width:17px;height:2px}
+  .summary{font-size:9.4px;line-height:1.4}
+  .job{margin-bottom:7px}
+  .bullets li{font-size:9.35px;line-height:1.4;margin-bottom:1px}
+  .skill-list{gap:5px}
+  .skill{padding:6px 8px}
+  .skill span{font-size:9.1px;line-height:1.4}
+  .side-box{padding:8px 9px;margin-bottom:5px}
+  .side-box p,.side-box li{font-size:9px;line-height:1.4}
+  .tag-wrap{gap:4px}
+  .tag{padding:3px 6px;font-size:8.2px}
+  .footer-note{margin-top:5px;padding-top:5px;font-size:8.2px}
 }
 </style>
 </head>
