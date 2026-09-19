@@ -8897,25 +8897,6 @@ body::after {
     to { width: 100%; }
 }
 
-/* ---------- Scroll progress ---------- */
-
-.ux-progress {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 10001;
-    width: 100%;
-    height: 3px;
-    pointer-events: none;
-}
-
-.ux-progress-bar {
-    width: 0;
-    height: 100%;
-    transform-origin: left center;
-    background: linear-gradient(90deg, #7657ff, #9e8cff, #4f8dff);
-    box-shadow: 0 0 18px rgba(118,87,255,.45);
-}
 
 /* ---------- Floating command button ---------- */
 
@@ -10858,16 +10839,12 @@ a:focus-visible,
 /* V3 CLEANUP */
 .nav-links a{font-size:12px}.logo-text strong{font-size:13px}.logo-text span{font-size:9px}
 .hero-title{max-width:760px}.hero-description{max-width:600px}.hero-visual .hero-image{max-width:470px}
-.project-filters{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:28px}
-.project-filter{border:1px solid var(--line);background:#fff;color:var(--muted);padding:9px 14px;border-radius:999px;font:800 10px/1 Inter,sans-serif;cursor:pointer;transition:.25s ease}
-.project-filter:hover,.project-filter.is-active{background:var(--purple);border-color:var(--purple);color:#fff}
 .project-card.is-hidden{display:none}.project-details{display:grid;gap:7px;margin-top:15px;padding-top:13px;border-top:1px solid var(--line)}
 .project-detail{display:grid;grid-template-columns:42px 1fr;gap:8px;font-size:9px;line-height:1.5}.project-detail strong{font-size:8px;text-transform:uppercase;letter-spacing:.8px;color:var(--purple)}.project-detail span{color:var(--muted)}
 .tool-category-heading{grid-column:1/-1;margin-top:18px;color:#a99cff;font-size:9px;font-weight:900;letter-spacing:1.8px}.tool-category-heading:first-child{margin-top:0}
 .process-progress{height:4px;background:#ece9ff;border-radius:999px;overflow:hidden;margin:34px 28px 4px}.process-progress-fill{height:100%;width:0;background:linear-gradient(90deg,var(--purple),#5b9bff);border-radius:999px;transition:width .8s cubic-bezier(.16,1,.3,1)}
 .contact-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}.contact-actions .btn{margin-top:0!important}
-.ux-scroll-progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--purple),#5b9bff);z-index:11000;pointer-events:none}
-@media(max-width:760px){.project-filters{width:100%}.project-filter{font-size:9px;padding:9px 11px}.project-detail{grid-template-columns:1fr}.process-progress{margin:28px 0 4px}.contact-actions{flex-direction:column}.contact-actions .btn{width:100%}}
+@media(max-width:760px){.project-detail{grid-template-columns:1fr}.process-progress{margin:28px 0 4px}.contact-actions{flex-direction:column}.contact-actions .btn{width:100%}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
 </style><style>.hero-image{transform:translate3d(var(--parallax-x,0),var(--parallax-y,0),0)}</style><style id="chandru-v4-premium">
 :root{--ink:#11131a;--muted:#687083;--line:#e8e9ef;--violet:#7657ff;--violet2:#9a86ff;--soft:#f7f7fb;--dark:#11131a}
@@ -10909,9 +10886,7 @@ body{background:#fbfbfd;color:var(--ink)}
 .about-grid{gap:90px!important}.about-copy h3{font-size:22px!important;line-height:1.35!important}.about-copy>p{font-size:17px!important;line-height:1.75!important;color:#697184!important;max-width:590px}.about-point{border-top:1px solid var(--line);padding-top:18px!important}.about-point i{color:var(--violet)!important}
 /* projects */
 #projects{background:#f6f6fa;border-top:1px solid #ececf2;border-bottom:1px solid #ececf2}
-.projects-heading{margin-bottom:42px!important}.project-filters{padding:5px!important;border:1px solid #e2e3ea!important;background:#fff!important;border-radius:999px!important;box-shadow:0 8px 25px rgba(20,20,35,.05)}
-.project-filter{border-radius:999px!important;padding:9px 14px!important;font-size:11px!important;font-weight:750!important}.project-filter.is-active{background:#11131a!important;color:#fff!important;box-shadow:none!important}
-.projects-grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px!important;align-items:stretch}
+.projects-heading{margin-bottom:42px!important}.projects-grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px!important;align-items:stretch}
 .project-card{position:relative!important;background:#fff!important;border:1px solid #e4e5ec!important;border-radius:24px!important;overflow:hidden!important;box-shadow:0 8px 30px rgba(20,20,35,.035)!important;transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease!important}
 .project-card:hover{transform:translateY(-7px)!important;box-shadow:0 24px 55px rgba(20,20,35,.10)!important;border-color:#d9d6ee!important}
 .project-card:first-child{grid-column:span 2;display:grid;grid-template-columns:1.25fr 1fr}.project-card:first-child .project-image{height:100%;min-height:390px}.project-card:first-child .project-info{padding:42px}.project-card:first-child .project-title{font-size:36px!important;letter-spacing:-.04em!important}.project-card:first-child .project-description{font-size:16px!important;max-width:520px}
@@ -10930,7 +10905,7 @@ body{background:#fbfbfd;color:var(--ink)}
 footer{background:#11131a!important;border-top:1px solid #292c35!important}
 /* responsive */
 @media(max-width:900px){.hero{min-height:auto;padding:90px 0 70px}.hero-grid{grid-template-columns:1fr!important}.hero-content{padding-top:0}.hero-visual{max-width:560px;margin:20px auto 0}.proof-inner{grid-template-columns:repeat(2,1fr);padding:24px 0}.proof-kicker{grid-column:span 2}.projects-grid{grid-template-columns:1fr!important}.project-card:first-child{grid-column:auto;display:block}.project-card:first-child .project-image{min-height:300px}.project-card:first-child .project-info{padding:28px}.project-card:first-child .project-title{font-size:30px!important}}
-@media(max-width:600px){.hero-title{font-size:48px!important}.hero-description{font-size:16px!important}.hero-stats{grid-template-columns:repeat(2,1fr);gap:16px}.proof-inner{grid-template-columns:1fr}.proof-kicker{grid-column:auto}.proof-item{border-left:0;border-top:1px solid #2c2f3a;padding:13px 0 0}.section{padding-top:82px!important;padding-bottom:82px!important}.projects-heading{display:block}.project-filters{margin-top:24px;display:flex;overflow:auto;justify-content:flex-start}.project-filter{white-space:nowrap}.project-card:first-child .project-title{font-size:27px!important}.project-info{padding:23px!important}.project-detail{grid-template-columns:60px 1fr}.hero-actions{flex-wrap:wrap}}
+@media(max-width:600px){.hero-title{font-size:48px!important}.hero-description{font-size:16px!important}.hero-stats{grid-template-columns:repeat(2,1fr);gap:16px}.proof-inner{grid-template-columns:1fr}.proof-kicker{grid-column:auto}.proof-item{border-left:0;border-top:1px solid #2c2f3a;padding:13px 0 0}.section{padding-top:82px!important;padding-bottom:82px!important}.projects-heading{display:block}.project-card:first-child .project-title{font-size:27px!important}.project-info{padding:23px!important}.project-detail{grid-template-columns:60px 1fr}.hero-actions{flex-wrap:wrap}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.project-card,.project-image img,.btn{transition:none!important}.project-card:hover,.btn-primary:hover{transform:none!important}}
 </style>
 
@@ -11333,6 +11308,279 @@ body{
 }
 </style>
 
+
+<style id="final-layout-type-fix">
+/* =========================================================
+   FINAL LAYOUT + TYPOGRAPHY PASS
+   - Prevent fixed navigation from covering section starts
+   - Normalize readable type sizes
+   - Align text blocks consistently
+   - Improve project/tool/process/why/contact rhythm
+   ========================================================= */
+
+html { scroll-behavior: smooth; scroll-padding-top: 118px; }
+section[id] { scroll-margin-top: 118px; }
+
+/* The fixed pill navigation is ~80px tall. Give the dark philosophy
+   section enough breathing room so its first line never hides behind it. */
+.why-section {
+    padding-top: 150px !important;
+    padding-bottom: 110px !important;
+}
+
+/* Global readable body copy */
+.hero-description,
+.section-description,
+.project-description,
+.about-description,
+.process-item p,
+.why-description,
+.why-item span,
+.contact-description {
+    font-size: 15px !important;
+    line-height: 1.75 !important;
+}
+
+.hero-description { max-width: 650px !important; }
+.section-description { max-width: 700px !important; }
+
+/* Section labels were previously too tiny */
+.section-label,
+.hero-label,
+.project-category,
+.project-detail strong,
+.contact-card-label,
+.tool-category-heading {
+    font-size: 11px !important;
+    line-height: 1.3 !important;
+    letter-spacing: 1.8px !important;
+}
+
+/* Project cards */
+.project-info {
+    padding: 30px 32px 28px !important;
+}
+.project-category { display: block; margin-bottom: 10px; }
+.project-title {
+    font-size: clamp(25px, 2.2vw, 32px) !important;
+    line-height: 1.12 !important;
+    letter-spacing: -1px !important;
+    margin-top: 0 !important;
+}
+.project-description {
+    max-width: 760px;
+    margin-top: 13px !important;
+}
+.project-details {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 28px !important;
+    margin-top: 24px !important;
+    padding-top: 20px !important;
+    border-top: 1px solid var(--line) !important;
+}
+.project-detail {
+    min-width: 0;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 7px !important;
+}
+.project-detail strong {
+    color: #7d8495 !important;
+    letter-spacing: 1.5px !important;
+}
+.project-detail span {
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+    font-weight: 700 !important;
+    color: var(--ink) !important;
+}
+.project-bottom {
+    align-items: center !important;
+    margin-top: 22px !important;
+}
+.tag {
+    font-size: 10px !important;
+    padding: 7px 11px !important;
+}
+.project-link {
+    font-size: 12px !important;
+    line-height: 1.3 !important;
+}
+
+/* Featured project: keep image and copy visually balanced */
+.project-card:first-child .project-title {
+    font-size: clamp(27px, 2.4vw, 36px) !important;
+}
+.project-card:first-child .project-info {
+    padding: 34px 36px 32px !important;
+}
+
+/* Tools: make every label and description readable and align cards */
+.tools-layout > .reveal { min-width: 0; }
+.tools-individual-grid {
+    align-items: stretch !important;
+    row-gap: 14px !important;
+}
+.tool-category-heading {
+    margin-top: 30px !important;
+    margin-bottom: 2px !important;
+}
+.tool-category-heading:first-child { margin-top: 22px !important; }
+.tool-individual {
+    min-height: 82px !important;
+    padding: 15px 16px !important;
+}
+.tool-individual strong {
+    font-size: 14px !important;
+    line-height: 1.3 !important;
+}
+.tool-individual small {
+    font-size: 11px !important;
+    line-height: 1.4 !important;
+    margin-top: 5px !important;
+}
+
+/* Process: consistent four-column alignment */
+.process-section { padding-top: 115px !important; }
+.process-header {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1.15fr) minmax(280px, .85fr) !important;
+    gap: 70px !important;
+    align-items: end !important;
+    max-width: none !important;
+}
+.process-header .section-description { margin: 0 !important; max-width: 480px !important; }
+.process-grid {
+    margin-top: 68px !important;
+    align-items: start !important;
+}
+.process-item {
+    padding: 15px 30px !important;
+    min-width: 0;
+}
+.process-number {
+    width: 58px !important;
+    height: 58px !important;
+    font-size: 13px !important;
+}
+.process-item h3 {
+    margin-top: 22px !important;
+    font-size: 22px !important;
+    line-height: 1.2 !important;
+}
+.process-item p {
+    max-width: 250px !important;
+    margin-top: 10px !important;
+}
+.process-item::after {
+    top: 30px !important;
+    right: -6px !important;
+    font-size: 20px !important;
+}
+
+/* Why section: clean vertical alignment and readable cards */
+.why-grid {
+    align-items: start !important;
+}
+.why-title {
+    font-size: clamp(48px, 5vw, 72px) !important;
+    line-height: .98 !important;
+}
+.why-description {
+    max-width: 650px !important;
+    margin-top: 24px !important;
+}
+.why-list {
+    gap: 16px !important;
+}
+.why-item {
+    min-height: 150px !important;
+    padding: 25px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+}
+.why-item i {
+    font-size: 18px !important;
+    margin-bottom: 14px !important;
+}
+.why-item strong {
+    font-size: 16px !important;
+    line-height: 1.3 !important;
+}
+.why-item span {
+    margin-top: 7px !important;
+}
+
+/* Contact */
+.contact-description { max-width: 600px !important; }
+.contact-item {
+    font-size: 14px !important;
+}
+.contact-card h3 {
+    font-size: 28px !important;
+    line-height: 1.2 !important;
+}
+.contact-card p {
+    font-size: 14px !important;
+    line-height: 1.65 !important;
+}
+
+/* Footer */
+.footer-brand strong { font-size: 12px !important; }
+.footer-brand span,
+.footer-links a,
+.footer-bottom,
+.thank-you { font-size: 11px !important; }
+
+/* Prevent accidental clipping of text inside all major grids */
+.project-card,
+.project-info,
+.project-detail,
+.process-item,
+.why-item,
+.contact-grid > *,
+.tools-layout > * {
+    min-width: 0;
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+    .process-header {
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
+    }
+    .process-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        row-gap: 42px !important;
+    }
+    .process-item::after { display: none !important; }
+    .why-section { padding-top: 135px !important; }
+}
+
+@media (max-width: 700px) {
+    html { scroll-padding-top: 92px; }
+    section[id] { scroll-margin-top: 92px; }
+    .why-section { padding-top: 118px !important; }
+    .project-info,
+    .project-card:first-child .project-info { padding: 25px 22px !important; }
+    .project-details { grid-template-columns: 1fr !important; gap: 16px !important; }
+    .project-title,
+    .project-card:first-child .project-title { font-size: 25px !important; }
+    .project-description,
+    .section-description,
+    .hero-description,
+    .process-item p,
+    .why-description,
+    .contact-description { font-size: 14px !important; }
+    .process-grid { grid-template-columns: 1fr !important; }
+    .why-list { grid-template-columns: 1fr !important; }
+    .why-title { font-size: 44px !important; }
+}
+</style>
+
 </head>
 <body>
 <!-- ================================================================
@@ -11694,7 +11942,7 @@ body{
 
             </p>
 </div>
-<div aria-label="Project filters" class="project-filters" role="group"><button aria-pressed="true" class="project-filter is-active" data-filter="all" type="button">All</button><button aria-pressed="false" class="project-filter" data-filter="elearning" type="button">eLearning</button><button aria-pressed="false" class="project-filter" data-filter="visual-design" type="button">Visual Design</button><button aria-pressed="false" class="project-filter" data-filter="motion" type="button">Motion</button><button aria-pressed="false" class="project-filter" data-filter="presentation" type="button">Presentation</button></div>
+
 </div>
 <div class="projects-grid">
 <!-- PROJECT 01 -->
@@ -12000,7 +12248,7 @@ body{
 <h2 class="contact-title">Have a <span>learning project?</span></h2>
 <p class="contact-description">Let's turn your content into an experience people actually want to use.</p>
 <div class="contact-list">
-<a class="contact-item" href="mailto:sv393015@gmail.com">
+<a class="contact-item" href="https://mail.google.com/mail/?view=cm&fs=1&to=sv393015@gmail.com" target="_blank" rel="noopener noreferrer">
 <div class="contact-icon">
 <i class="fa-solid fa-envelope"></i>
 </div>
@@ -12034,7 +12282,7 @@ body{
 </div>
 </div>
 
-<div class="contact-actions"><a class="btn btn-primary" href="mailto:sv393015@gmail.com" style="margin-top:30px;">Email Me <i class="fa-solid fa-arrow-right"></i></a><a class="btn btn-outline" href="https://www.linkedin.com/in/chandru-elearning" rel="noopener noreferrer" target="_blank">LinkedIn <i class="fa-brands fa-linkedin-in"></i></a><a class="btn btn-outline" href="#resume">Download Resume <i class="fa-solid fa-download"></i></a></div></div>
+<div class="contact-actions"><a class="btn btn-primary" href="https://mail.google.com/mail/?view=cm&fs=1&to=sv393015@gmail.com" target="_blank" rel="noopener noreferrer" style="margin-top:30px;">Email Me <i class="fa-solid fa-arrow-right"></i></a><a class="btn btn-outline" href="https://www.linkedin.com/in/chandru-elearning" rel="noopener noreferrer" target="_blank">LinkedIn <i class="fa-brands fa-linkedin-in"></i></a><a class="btn btn-outline" href="#resume">Download Resume <i class="fa-solid fa-download"></i></a></div></div>
 <!-- No personal image here -->
 <div class="contact-card reveal">
 <div class="contact-card-content">
@@ -12053,17 +12301,13 @@ body{
 
             </p>
 </div>
-<div class="contact-card-bottom">
+<a class="contact-card-bottom" href="https://mail.google.com/mail/?view=cm&fs=1&to=sv393015@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email Chandirakkumar S">
 <div>
-<span>
-                    EMAIL
-                </span>
-<strong>
-                    sv393015@gmail.com
-                </strong>
+<span>EMAIL</span>
+<strong>sv393015@gmail.com</strong>
 </div>
 <i class="fa-solid fa-arrow-up-right-from-square" style="color:#9d89ff;"></i>
-</div>
+</a>
 </div>
 </div>
 </section>
@@ -12110,7 +12354,7 @@ body{
 <a aria-label="LinkedIn" href="https://www.linkedin.com/in/chandru-elearning" rel="noopener noreferrer" target="_blank">
 <i class="fa-brands fa-linkedin-in"></i>
 </a>
-<a aria-label="Email" href="mailto:sv393015@gmail.com">
+<a aria-label="Email" href="https://mail.google.com/mail/?view=cm&fs=1&to=sv393015@gmail.com" target="_blank" rel="noopener noreferrer">
 <i class="fa-solid fa-envelope"></i>
 </a>
 </div>
@@ -12168,14 +12412,9 @@ const reveals=$$(".reveal");
 if("IntersectionObserver"in window&&!reduced){const io=new IntersectionObserver((entries,obs)=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add("visible");obs.unobserve(e.target)}}),{threshold:.12,rootMargin:"0px 0px -40px"});reveals.forEach(e=>io.observe(e))}else reveals.forEach(e=>e.classList.add("visible"));
 
 /* One scroll controller */
-const bar=document.createElement("div");bar.className="ux-scroll-progress";bar.setAttribute("aria-hidden","true");document.body.appendChild(bar);
 const navbar=$(".navbar"),sections=$$("section[id]");let ticking=false;
-const update=()=>{const max=document.documentElement.scrollHeight-innerHeight;bar.style.width=`${max?scrollY/max*100:0}%`;navbar?.classList.toggle("scrolled",scrollY>30);let current="home";sections.forEach(s=>{if(scrollY+150>=s.offsetTop)current=s.id});$$("a",nav).forEach(a=>a.classList.toggle("active",a.getAttribute("href")===`#${current}`));const fill=$(".process-progress-fill"),p=$("#process");if(fill&&p){const a=p.offsetTop-innerHeight*.72,b=p.offsetTop+p.offsetHeight-innerHeight*.35;fill.style.width=`${Math.min(100,Math.max(0,(scrollY-a)/(b-a)*100))}%`}ticking=false};
+const update=()=>{navbar?.classList.toggle("scrolled",scrollY>30);let current="home";sections.forEach(s=>{if(scrollY+150>=s.offsetTop)current=s.id});$$("a",nav).forEach(a=>a.classList.toggle("active",a.getAttribute("href")===`#${current}`));const fill=$(".process-progress-fill"),p=$("#process");if(fill&&p){const a=p.offsetTop-innerHeight*.72,b=p.offsetTop+p.offsetHeight-innerHeight*.35;fill.style.width=`${Math.min(100,Math.max(0,(scrollY-a)/(b-a)*100))}%`}ticking=false};
 addEventListener("scroll",()=>{if(!ticking){requestAnimationFrame(update);ticking=true}},{passive:true});update();
-
-/* Project filters */
-const filters=$$(".project-filter"),cards=$$(".project-card");
-filters.forEach(btn=>btn.addEventListener("click",()=>{const value=btn.dataset.filter;filters.forEach(b=>{const active=b===btn;b.classList.toggle("is-active",active);b.setAttribute("aria-pressed",String(active))});cards.forEach(c=>{const cats=(c.dataset.category||"").split(/\s+/);c.classList.toggle("is-hidden",value!=="all"&&!cats.includes(value))})}));
 
 /* Modal + focus trap */
 const modal=$("#projectModal"),iframe=$("#modalIframe");let lastFocus=null;
