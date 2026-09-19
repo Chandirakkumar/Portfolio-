@@ -310,9 +310,35 @@ body{
     border:1.8px solid #bfc4cf;
   }
 }
+
+.print-toolbar{
+  position:fixed;
+  top:18px;
+  right:18px;
+  z-index:1000;
+  display:flex;
+  gap:8px;
+}
+.print-btn{
+  border:0;
+  background:var(--purple);
+  color:#fff;
+  padding:10px 16px;
+  border-radius:8px;
+  font:700 13px Arial,Helvetica,sans-serif;
+  cursor:pointer;
+  box-shadow:0 6px 18px rgba(0,0,0,.16);
+}
+.print-btn:hover{background:#5437d1}
+@media print{
+  .print-toolbar{display:none!important;}
+}
 </style>
 </head>
 <body>
+<div class="print-toolbar">
+  <button class="print-btn" type="button" onclick="window.print()">Print / Save as PDF</button>
+</div>
 <main class="resume">
 
   <header class="header">
