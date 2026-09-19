@@ -3,476 +3,287 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Resume of Chandirakkumar S — Visual Designer, Instructional Designer and eLearning Developer.">
-<title>Chandirakkumar S — Resume</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
+<title>Chandirakkumar S - Resume</title>
 <style>
+@page { size: A4; margin: 0; }
+
 :root{
-  --ink:#10131d;
-  --body:#344054;
-  --muted:#667085;
-  --line:#dfe3ea;
-  --soft:#f5f3ff;
-  --purple:#6d4aff;
-  --purple-dark:#5331d8;
-  --white:#fff;
+  --ink:#111827;
+  --body:#374151;
+  --muted:#6b7280;
+  --line:#d9dde5;
+  --purple:#6546e8;
+  --purple-soft:#f5f2ff;
 }
 
 *{box-sizing:border-box;margin:0;padding:0}
-
-html{scroll-behavior:smooth}
-
+html,body{width:210mm;height:297mm}
 body{
-  font-family:Arial,Helvetica,sans-serif;
-  background:#e9eaf0;
+  background:#e8e9ed;
   color:var(--body);
-  line-height:1.45;
-  padding:32px 20px 48px;
+  font-family:Arial,Helvetica,sans-serif;
   -webkit-print-color-adjust:exact;
   print-color-adjust:exact;
 }
 
-a{color:inherit;text-decoration:none}
-
-.toolbar{
-  width:210mm;
-  max-width:100%;
-  margin:0 auto 16px;
-  display:flex;
-  justify-content:flex-end;
-  gap:8px;
-}
-
-.toolbar button{
-  border:0;
-  border-radius:9px;
-  padding:10px 16px;
-  background:var(--ink);
-  color:#fff;
-  font:600 12px/1 Inter,sans-serif;
-  cursor:pointer;
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  box-shadow:0 6px 18px rgba(16,19,29,.12);
-}
-
-.toolbar button:hover{background:var(--purple)}
-
 .resume{
   width:210mm;
-  min-height:297mm;
-  max-width:100%;
+  height:297mm;
   margin:0 auto;
+  padding:10mm 11.5mm 7mm;
   background:#fff;
-  box-shadow:0 20px 50px rgba(16,19,29,.14);
-  padding:10.5mm 12.5mm 9mm;
-  position:relative;
   overflow:hidden;
+  position:relative;
 }
 
-.resume::before{
+.resume:before{
   content:"";
   position:absolute;
   top:0;left:0;right:0;
-  height:5px;
-  background:linear-gradient(90deg,var(--purple),#8b72ff);
+  height:3.5px;
+  background:var(--purple);
 }
 
 .header{
-  display:grid;
-  grid-template-columns:1fr auto;
-  gap:24px;
-  align-items:end;
-  padding-bottom:15px;
+  padding-bottom:7.5mm;
   border-bottom:1px solid var(--line);
 }
 
 .name{
-  font-size:30px;
+  font-size:25px;
   line-height:1;
-  letter-spacing:-1.4px;
   font-weight:800;
+  letter-spacing:-.8px;
   color:var(--ink);
 }
 
 .role{
-  margin-top:8px;
-  color:var(--purple-dark);
-  font-size:12.5px;
-  line-height:1.4;
-  font-weight:800;
-  letter-spacing:.5px;
-  text-transform:uppercase;
-}
-
-.contact{
-  display:grid;
-  grid-template-columns:repeat(2,max-content);
-  justify-content:end;
-  gap:7px 18px;
-  font-size:9.5px;
-  color:var(--muted);
-}
-
-.contact span,.contact a{
-  display:flex;
-  align-items:center;
-  gap:7px;
-  white-space:nowrap;
-}
-
-.contact i{
-  width:12px;
-  text-align:center;
+  margin-top:4px;
+  font-size:10.5px;
+  line-height:1.25;
+  font-weight:700;
   color:var(--purple);
 }
 
+.contact{
+  margin-top:7px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:3px 10px;
+  font-size:8.3px;
+  line-height:1.3;
+  color:var(--muted);
+}
+.contact span:not(:last-child)::after{content:"•";margin-left:10px;color:#b1b5bd}
+
 .main{
   display:grid;
-  grid-template-columns:minmax(0,1.72fr) minmax(0,.82fr);
-  gap:18px;
-  padding-top:11px;
+  grid-template-columns:minmax(0,1.72fr) minmax(0,.92fr);
+  gap:7mm;
+  padding-top:6mm;
 }
 
 .left,.right{min-width:0}
-
-.section{
-  margin-bottom:11px;
-}
-
+.section{margin-bottom:4.5mm}
 .section:last-child{margin-bottom:0}
 
 .section-title{
   display:flex;
   align-items:center;
-  gap:9px;
+  gap:6px;
+  margin-bottom:2.5mm;
   color:var(--ink);
-  font-size:10px;
+  font-size:8.5px;
   line-height:1;
   font-weight:800;
-  letter-spacing:1.25px;
+  letter-spacing:.8px;
   text-transform:uppercase;
-  margin-bottom:6px;
 }
-
-.section-title::before{
+.section-title:before{
   content:"";
-  width:22px;
-  height:3px;
-  border-radius:99px;
+  width:15px;
+  height:2px;
+  border-radius:10px;
   background:var(--purple);
   flex:none;
 }
 
 .summary{
-  font-size:9.7px;
-  line-height:1.48;
+  font-size:9px;
+  line-height:1.43;
   color:var(--body);
 }
 
-.job{
-  position:relative;
-  padding-left:15px;
-  margin-bottom:9px;
-}
-
+.job{margin-bottom:3.8mm}
 .job:last-child{margin-bottom:0}
-
-.job::before{
-  content:"";
-  position:absolute;
-  left:0;
-  top:5px;
-  width:6px;
-  height:6px;
-  border-radius:50%;
-  background:var(--purple);
-}
-
 .job-head{
-  display:grid;
-  grid-template-columns:1fr auto;
-  gap:12px;
+  display:flex;
+  justify-content:space-between;
   align-items:baseline;
+  gap:8px;
 }
-
 .job-title{
-  font-size:11.5px;
+  font-size:10.2px;
+  line-height:1.25;
+  font-weight:800;
+  color:var(--ink);
+}
+.date{
+  flex:none;
+  font-size:8.2px;
+  line-height:1.2;
+  font-weight:700;
+  color:var(--muted);
+  white-space:nowrap;
+}
+.company{
+  margin-top:1.5px;
+  margin-bottom:2.5px;
+  font-size:8.7px;
+  line-height:1.25;
+  font-weight:700;
+  color:var(--purple);
+}
+.bullets{padding-left:13px}
+.bullets li{
+  margin-bottom:1.3px;
+  font-size:8.8px;
+  line-height:1.38;
+  color:var(--body);
+}
+.bullets li::marker{color:var(--purple)}
+
+.project{
+  padding:2.2mm 0;
+  border-top:1px solid var(--line);
+  font-size:8.8px;
+  line-height:1.4;
+}
+.project:first-of-type{border-top:0;padding-top:0}
+.project strong{color:var(--ink);font-weight:800}
+
+.edu{
+  padding:2mm 0;
+  border-top:1px solid var(--line);
+}
+.edu:first-of-type{border-top:0;padding-top:0}
+.edu-title{
+  font-size:9px;
   line-height:1.3;
   font-weight:800;
   color:var(--ink);
 }
-
-.date{
-  font-size:9px;
+.edu-place{
+  margin-top:1px;
+  font-size:8.3px;
+  line-height:1.3;
   color:var(--muted);
+}
+
+.skill-list{display:grid;gap:2.2mm}
+.skill{
+  padding:2.6mm 2.8mm;
+  border:1px solid var(--line);
+  border-radius:7px;
+  background:#fff;
+}
+.skill strong{
+  display:block;
+  margin-bottom:1.5px;
+  font-size:8.7px;
+  line-height:1.25;
+  font-weight:800;
+  color:var(--ink);
+}
+.skill span{
+  font-size:8.2px;
+  line-height:1.35;
+  color:var(--body);
+}
+
+.tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:3px;
+}
+.tag{
+  padding:3.5px 5.5px;
+  border:1px solid #ded8fb;
+  border-radius:999px;
+  background:var(--purple-soft);
+  color:#5035bf;
+  font-size:7.7px;
+  line-height:1;
   font-weight:700;
   white-space:nowrap;
 }
 
-.company{
-  color:var(--purple-dark);
-  font-size:9.8px;
-  font-weight:700;
-  margin:1px 0 3px;
+.focus-list{display:grid;gap:2mm}
+.focus{
+  padding:2.5mm 2.8mm;
+  border-left:2px solid var(--purple);
+  background:#f8f8fa;
 }
-
-.bullets{
-  padding-left:14px;
-}
-
-.bullets li{
-  font-size:9.7px;
-  line-height:1.48;
-  margin-bottom:2px;
-  color:var(--body);
-}
-
-.bullets li::marker{color:var(--purple)}
-
-.skill-list{
-  display:grid;
-  gap:6px;
-}
-
-.skill{
-  padding:7px 9px;
-  border:1px solid var(--line);
-  border-radius:10px;
-  background:#fff;
-}
-
-.skill strong{
+.focus strong{
   display:block;
+  margin-bottom:1px;
+  font-size:8.5px;
+  line-height:1.2;
   color:var(--ink);
-  font-size:9.8px;
-  line-height:1.3;
-  margin-bottom:3px;
 }
-
-.skill span{
-  font-size:9.4px;
-  line-height:1.48;
+.focus span{
+  font-size:8px;
+  line-height:1.32;
   color:var(--body);
 }
 
-.project{
-  padding:6px 0;
+.footer{
+  position:absolute;
+  left:11.5mm;
+  right:11.5mm;
+  bottom:5mm;
+  padding-top:3mm;
   border-top:1px solid var(--line);
-}
-
-.project:first-of-type{border-top:0;padding-top:0}
-
-.project strong{
-  font-size:10px;
-  color:var(--ink);
-}
-
-.project p{
-  display:inline;
-  font-size:9.7px;
-  line-height:1.5;
-}
-
-.side-box{
-  padding:11px 12px;
-  border-radius:11px;
-  background:var(--soft);
-  border:1px solid #e7e1ff;
-  margin-bottom:7px;
-}
-
-.side-box:last-child{margin-bottom:0}
-
-.side-box h3{
-  font-size:9.7px;
-  color:var(--ink);
-  font-weight:800;
-  margin-bottom:7px;
-}
-
-.side-box p,.side-box li{
-  font-size:9.3px;
-  line-height:1.48;
-}
-
-.side-box ul{padding-left:14px}
-
-.edu{
-  padding:6px 0;
-  border-bottom:1px solid var(--line);
-}
-
-.edu:last-child{border-bottom:0}
-
-.edu-title{
-  font-size:10px;
-  line-height:1.35;
-  font-weight:800;
-  color:var(--ink);
-}
-
-.edu-place{
-  font-size:9.2px;
-  color:var(--muted);
-  margin-top:2px;
-}
-
-.tag-wrap{
-  display:flex;
-  flex-wrap:wrap;
-  gap:5px;
-}
-
-.tag{
-  border:1px solid #ddd6ff;
-  background:var(--soft);
-  color:var(--purple-dark);
-  border-radius:999px;
-  padding:4px 7px;
-  font-size:8.5px;
-  font-weight:700;
-}
-
-.footer-note{
-  margin-top:7px;
-  padding-top:6px;
-  border-top:1px solid var(--line);
-  font-size:8.5px;
-  color:var(--muted);
   display:flex;
   justify-content:space-between;
-  gap:12px;
+  gap:10px;
+  font-size:7.6px;
+  line-height:1.2;
+  color:var(--muted);
 }
 
-/* PDF / print safety */
-.section, .job, .project, .skill, .side-box, .edu, .tag-wrap {
-  break-inside: avoid;
-  page-break-inside: avoid;
-}
-
-.job-title, .company, .skill strong, .skill span, .side-box h3, .side-box p, .edu-title, .edu-place, .project strong, .project p {
-  overflow-wrap: normal;
-  word-break: normal;
-  hyphens: none;
-}
-
-/* Keep print layout stable */
-@page{
-  size:A4;
-  margin:0;
-}
-
-@media(max-width:850px){
-  body{padding:15px 8px 30px}
-  .resume{width:100%;min-height:auto;padding:28px 22px}
-  .toolbar{width:100%}
-  .header{grid-template-columns:1fr}
-  .contact{justify-content:start}
-  .main{grid-template-columns:1fr}
-}
-
-@media(max-width:560px){
-  .name{font-size:26px}
-  .contact{grid-template-columns:1fr}
-  .job-head{grid-template-columns:1fr}
-  .date{margin-top:2px}
+@media screen{
+  body{padding:20px 0}
+  .resume{box-shadow:0 15px 40px rgba(0,0,0,.12)}
 }
 
 @media print{
-  html, body{
-    width:210mm;
-    height:297mm;
-    margin:0;
-    padding:0;
-    background:#fff;
-  }
-
-  body{
-    font-family:Arial, Helvetica, sans-serif;
-    -webkit-print-color-adjust:exact;
-    print-color-adjust:exact;
-  }
-
-  .toolbar{display:none !important}
-
-  .resume{
-    width:210mm;
-    height:297mm;
-    min-height:0;
-    max-width:none;
-    margin:0;
-    box-shadow:none;
-    border-radius:0;
-    padding:8.5mm 10.5mm 7mm;
-    overflow:hidden;
-  }
-
-  .header{padding-bottom:12px}
-  .main{padding-top:9px;gap:16px}
-  .section{margin-bottom:9px}
-  .section-title{font-size:9px;letter-spacing:.8px;margin-bottom:5px;gap:7px}
-  .section-title::before{width:17px;height:2px}
-  .summary{font-size:9.4px;line-height:1.4}
-  .job{margin-bottom:7px}
-  .bullets li{font-size:9.35px;line-height:1.4;margin-bottom:1px}
-  .skill-list{gap:5px}
-  .skill{padding:6px 8px}
-  .skill span{font-size:9.1px;line-height:1.4}
-  .side-box{padding:8px 9px;margin-bottom:5px}
-  .side-box p,.side-box li{font-size:9px;line-height:1.4}
-  .tag-wrap{gap:4px}
-  .tag{padding:3px 6px;font-size:8.2px}
-  .footer-note{margin-top:5px;padding-top:5px;font-size:8.2px}
+  html,body{background:#fff}
+  .resume{box-shadow:none}
 }
 </style>
 </head>
-
 <body>
-
-<div class="toolbar">
-  <button type="button" onclick="window.print()">
-    <i class="fa-solid fa-file-arrow-down"></i>
-    Print / Save PDF
-  </button>
-</div>
-
 <main class="resume">
 
   <header class="header">
-    <div>
-      <h1 class="name">Chandirakkumar S</h1>
-      <div class="role">Visual Designer · Instructional Designer · eLearning Developer</div>
-    </div>
-
+    <h1 class="name">Chandirakkumar S</h1>
+    <div class="role">Visual Designer · Instructional Designer · eLearning Developer</div>
     <div class="contact">
-      <span><i class="fa-solid fa-location-dot"></i>Bengaluru, Karnataka, India</span>
-      <a href="tel:+919353080994"><i class="fa-solid fa-phone"></i>+91 93530 80994</a>
-      <a href="mailto:sv393015@gmail.com"><i class="fa-solid fa-envelope"></i>sv393015@gmail.com</a>
-      <a href="https://linkedin.com/in/chandru-elearning" target="_blank" rel="noopener">
-        <i class="fa-brands fa-linkedin"></i>linkedin.com/in/chandru-elearning
-      </a>
-      <a href="https://chandirakkumar.github.io/Portfolio-/" target="_blank" rel="noopener">
-        <i class="fa-solid fa-globe"></i>Portfolio
-      </a>
+      <span>Bengaluru, Karnataka</span>
+      <span>+91 93530 80994</span>
+      <span>sv393015@gmail.com</span>
+      <span>linkedin.com/in/chandru-elearning</span>
+      <span>chandirakkumar.github.io/Portfolio-/</span>
     </div>
   </header>
 
   <div class="main">
-
     <div class="left">
 
       <section class="section">
         <h2 class="section-title">Professional Summary</h2>
-        <p class="summary">
-          Creative and results-oriented Visual Designer &amp; eLearning Developer with expertise in transforming complex concepts into engaging, learner-centric, and visually polished digital experiences. Experienced in presentation design, corporate training collateral, and interactive SCORM-compliant eLearning authoring. Combines an English Literature background with hands-on experience across Articulate 360, Adobe Creative Cloud, and Microsoft 360 to create clear, purposeful learning experiences.
-        </p>
+        <p class="summary">Visual Designer and eLearning Developer focused on creating clear, engaging digital learning experiences. Experienced in Storyline 360, presentation design, multimedia, motion graphics, SCORM development, and visual storytelling. Strong at turning complex information into structured, learner-friendly content.</p>
       </section>
 
       <section class="section">
@@ -483,12 +294,12 @@ a{color:inherit;text-decoration:none}
             <div class="job-title">Visual Designer / Instructional Designer</div>
             <div class="date">2025 – Present</div>
           </div>
-          <div class="company">Agama Educon Pvt Ltd · Bengaluru, India</div>
+          <div class="company">Agama Educon Pvt Ltd · Bengaluru</div>
           <ul class="bullets">
-            <li>Lead end-to-end design and authoring of interactive SCORM-compliant eLearning modules using Articulate Storyline 360 and Rise 360.</li>
-            <li>Design executive-level business presentations and corporate training decks in Microsoft PowerPoint with custom visual systems and infographics.</li>
-            <li>Produce corporate videos, explainer content, motion graphics, and multimedia assets using Adobe Premiere Pro and After Effects.</li>
-            <li>Work with Subject Matter Experts (SMEs) to translate technical documentation into intuitive storyboards, workflows, and learning experiences.</li>
+            <li>Design and develop interactive SCORM eLearning modules using Articulate Storyline 360 and Rise 360.</li>
+            <li>Create corporate presentations, training decks, infographics, and visual learning assets in PowerPoint.</li>
+            <li>Produce video editing, motion graphics, explainer content, and multimedia assets using Premiere Pro and After Effects.</li>
+            <li>Translate SME content and technical documentation into storyboards, workflows, and learner-focused experiences.</li>
           </ul>
         </article>
 
@@ -497,44 +308,29 @@ a{color:inherit;text-decoration:none}
             <div class="job-title">Freelance Visual Designer &amp; Multimedia Developer</div>
             <div class="date">Freelance</div>
           </div>
-          <div class="company">Independent / Remote</div>
+          <div class="company">Independent · Remote</div>
           <ul class="bullets">
-            <li>Designed training presentations, graphic assets, and digital media collateral for clients and educational projects.</li>
-            <li>Produced video editing projects, promotional motion graphics, and eLearning layout assets.</li>
-            <li>Managed requirements, client communication, visual development, and delivery of design solutions.</li>
+            <li>Designed training presentations, digital graphics, eLearning assets, and multimedia content for client projects.</li>
+            <li>Managed requirements, visual development, revisions, and final delivery.</li>
           </ul>
         </article>
       </section>
 
       <section class="section">
         <h2 class="section-title">Selected Projects</h2>
-
-        <div class="project">
-          <strong>Interactive SCORM eLearning Suite — </strong>
-          <p>Custom-navigated Storyline 360 modules with gamified knowledge checks and dynamic variables.</p>
-        </div>
-
-        <div class="project">
-          <strong>Multilingual Localization Course — </strong>
-          <p>Flexible learning interfaces supporting language switching while maintaining assessment tracking.</p>
-        </div>
-
-        <div class="project">
-          <strong>Corporate Training Pitch Decks — </strong>
-          <p>Modern, infographic-heavy PowerPoint decks for business leadership and client onboarding.</p>
-        </div>
+        <div class="project"><strong>Interactive SCORM eLearning — </strong>Storyline 360 modules with custom navigation, variables, and knowledge checks.</div>
+        <div class="project"><strong>Multilingual Learning Course — </strong>Flexible interfaces designed for localized content and assessment tracking.</div>
+        <div class="project"><strong>Corporate Training Decks — </strong>Modern PowerPoint presentations using structured visual systems and infographics.</div>
       </section>
 
       <section class="section">
         <h2 class="section-title">Education &amp; Certification</h2>
-
         <div class="edu">
-          <div class="edu-title">Bachelor of Arts (B.A.) in English Literature</div>
+          <div class="edu-title">B.A. English Literature</div>
           <div class="edu-place">Thiruvalluvar University, Tamil Nadu</div>
         </div>
-
         <div class="edu">
-          <div class="edu-title">Professional Certification in Video Editing &amp; Motion Graphics</div>
+          <div class="edu-title">Video Editing &amp; Motion Graphics Certification</div>
           <div class="edu-place">ZICA Academy</div>
         </div>
       </section>
@@ -542,80 +338,42 @@ a{color:inherit;text-decoration:none}
     </div>
 
     <aside class="right">
-
       <section class="section">
         <h2 class="section-title">Core Skills</h2>
-
         <div class="skill-list">
-          <div class="skill">
-            <strong>eLearning Authoring &amp; LMS</strong>
-            <span>Articulate Storyline 360, Rise 360, Adobe Captivate, Vyond, SCORM 1.2/2004, LearnDash LMS</span>
-          </div>
-
-          <div class="skill">
-            <strong>Visual &amp; Presentation Design</strong>
-            <span>Microsoft PowerPoint, Word, Excel, Adobe Photoshop, Illustrator, Figma, UI/UX</span>
-          </div>
-
-          <div class="skill">
-            <strong>Multimedia &amp; Video</strong>
-            <span>Adobe Premiere Pro, After Effects, video editing, motion graphics, audio synchronization</span>
-          </div>
-
-          <div class="skill">
-            <strong>Instructional Strategy</strong>
-            <span>ADDIE/SAM frameworks, storyboarding, microlearning, localization, multilingual support</span>
-          </div>
+          <div class="skill"><strong>eLearning &amp; LMS</strong><span>Storyline 360, Rise 360, Captivate, Vyond, SCORM 1.2/2004, LearnDash</span></div>
+          <div class="skill"><strong>Visual &amp; Presentation</strong><span>PowerPoint, Photoshop, Illustrator, Figma, UI/UX, infographic design</span></div>
+          <div class="skill"><strong>Multimedia &amp; Video</strong><span>Premiere Pro, After Effects, video editing, motion graphics, audio sync</span></div>
+          <div class="skill"><strong>Instructional Design</strong><span>ADDIE/SAM, storyboarding, microlearning, localization, multilingual support</span></div>
         </div>
       </section>
 
       <section class="section">
         <h2 class="section-title">Tools</h2>
-        <div class="tag-wrap">
-          <span class="tag">Storyline 360</span>
-          <span class="tag">Rise 360</span>
-          <span class="tag">Captivate</span>
-          <span class="tag">Photoshop</span>
-          <span class="tag">Illustrator</span>
-          <span class="tag">PowerPoint</span>
-          <span class="tag">Premiere Pro</span>
-          <span class="tag">After Effects</span>
-          <span class="tag">Vyond</span>
-          <span class="tag">Figma</span>
-          <span class="tag">Excel</span>
-          <span class="tag">Word</span>
+        <div class="tags">
+          <span class="tag">Storyline 360</span><span class="tag">Rise 360</span><span class="tag">Captivate</span>
+          <span class="tag">Photoshop</span><span class="tag">Illustrator</span><span class="tag">PowerPoint</span>
+          <span class="tag">Premiere Pro</span><span class="tag">After Effects</span><span class="tag">Vyond</span>
+          <span class="tag">Figma</span><span class="tag">Excel</span><span class="tag">Word</span>
         </div>
       </section>
 
       <section class="section">
         <h2 class="section-title">Focus Areas</h2>
-
-        <div class="side-box">
-          <h3>Learning Experience</h3>
-          <p>Interactive course design, Storyline development, structured content, and SCORM delivery.</p>
-        </div>
-
-        <div class="side-box">
-          <h3>Visual Storytelling</h3>
-          <p>Visual hierarchy, presentation systems, infographics, motion, and multimedia communication.</p>
-        </div>
-
-        <div class="side-box">
-          <h3>Collaboration</h3>
-          <p>SME collaboration, requirements gathering, storyboarding, review, QA, and delivery.</p>
+        <div class="focus-list">
+          <div class="focus"><strong>Learning Experience</strong><span>Interactive courses, Storyline development, structured content, SCORM delivery.</span></div>
+          <div class="focus"><strong>Visual Storytelling</strong><span>Visual hierarchy, presentations, infographics, motion, multimedia.</span></div>
+          <div class="focus"><strong>Collaboration</strong><span>SME coordination, requirements, storyboarding, review, QA, delivery.</span></div>
         </div>
       </section>
-
     </aside>
-
   </div>
 
-  <footer class="footer-note">
+  <footer class="footer">
     <span>Chandirakkumar S · Visual Designer &amp; eLearning Developer</span>
     <span>Portfolio · LinkedIn · Email</span>
   </footer>
 
 </main>
-
 </body>
 </html>
