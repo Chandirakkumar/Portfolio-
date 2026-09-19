@@ -11683,6 +11683,154 @@ section[id] { scroll-margin-top: 118px; }
 }
 </style>
 
+<style id="process-v9-redesign">
+.process-section{
+  position:relative;
+  overflow:hidden;
+  padding:108px 0 120px;
+  color:#f7f7fb;
+  background:
+    radial-gradient(circle at 82% 12%, rgba(118,87,255,.10), transparent 30%),
+    linear-gradient(180deg,#0f1118 0%,#11131c 100%) !important;
+}
+.process-section .container{position:relative;z-index:2}
+.process-header-redesign{
+  max-width:none !important;
+  display:grid !important;
+  grid-template-columns:minmax(0,1.1fr) minmax(280px,.55fr);
+  align-items:end;
+  gap:80px;
+  margin-bottom:76px;
+}
+.process-heading-block{min-width:0}
+.process-section .section-label{
+  margin-bottom:20px;
+  color:#a894ff;
+  font-size:11px;
+  letter-spacing:2.2px;
+}
+.process-section .section-label::before{width:28px;height:2px;background:#7657ff}
+.process-title{
+  max-width:760px !important;
+  margin:0 !important;
+  color:#fff !important;
+  font-size:clamp(48px,6vw,82px) !important;
+  line-height:.96 !important;
+  letter-spacing:-4px !important;
+}
+.process-title span{color:#7657ff !important}
+.process-description{
+  max-width:430px !important;
+  margin:0 0 5px !important;
+  color:#aeb6c8 !important;
+  font-size:17px !important;
+  line-height:1.65 !important;
+}
+.process-track{
+  position:absolute;
+  left:calc(12.5% + 4px);
+  right:calc(12.5% + 4px);
+  top:340px;
+  height:1px;
+  background:linear-gradient(90deg,rgba(118,87,255,.65),rgba(118,87,255,.18));
+  z-index:0;
+}
+.process-grid-redesign{
+  position:relative !important;
+  z-index:1;
+  display:grid !important;
+  grid-template-columns:repeat(4,minmax(0,1fr)) !important;
+  gap:14px !important;
+  margin-top:0 !important;
+}
+.process-card{
+  min-height:300px;
+  padding:28px 28px 30px !important;
+  border:1px solid rgba(255,255,255,.075);
+  border-radius:24px !important;
+  background:linear-gradient(180deg,rgba(28,31,42,.98),rgba(21,24,33,.98));
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.035);
+  transition:transform .35s ease,border-color .35s ease,background .35s ease;
+}
+.process-card:hover{
+  transform:translateY(-8px) !important;
+  border-color:rgba(118,87,255,.48);
+  background:linear-gradient(180deg,#202333,#181b27);
+}
+.process-top{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  min-height:58px;
+}
+.process-number{
+  width:56px !important;
+  height:56px !important;
+  flex:0 0 56px;
+  display:grid !important;
+  place-items:center;
+  border:2px solid rgba(118,87,255,.38) !important;
+  border-radius:50% !important;
+  color:#fff !important;
+  background:#7657ff !important;
+  box-shadow:0 0 0 6px rgba(118,87,255,.07),0 12px 30px rgba(118,87,255,.16) !important;
+  font-size:13px !important;
+  font-weight:900 !important;
+}
+.process-mini-line{
+  width:100%;
+  height:1px;
+  background:rgba(255,255,255,.13);
+}
+.process-content{margin-top:48px}
+.process-kicker{
+  display:block;
+  margin-bottom:10px;
+  color:#9b89ff;
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:1.8px;
+}
+.process-card h3{
+  margin:0 !important;
+  color:#fff !important;
+  font-size:26px !important;
+  line-height:1.1 !important;
+  letter-spacing:-.7px;
+}
+.process-card p{
+  max-width:none !important;
+  margin:13px 0 0 !important;
+  color:#aeb6c8 !important;
+  font-size:15px !important;
+  line-height:1.65 !important;
+}
+.process-card:last-child .process-top{justify-content:flex-start}
+@media(max-width:900px){
+  .process-section{padding:90px 0 100px}
+  .process-header-redesign{grid-template-columns:1fr;gap:22px;margin-bottom:54px}
+  .process-title{font-size:clamp(44px,8vw,68px) !important}
+  .process-description{max-width:620px !important}
+  .process-track{display:none}
+  .process-grid-redesign{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
+}
+@media(max-width:600px){
+  .process-section{padding:76px 0 82px}
+  .process-header-redesign{margin-bottom:34px}
+  .process-title{font-size:44px !important;letter-spacing:-2.5px !important}
+  .process-description{font-size:15px !important}
+  .process-grid-redesign{grid-template-columns:1fr !important;gap:12px !important}
+  .process-card{min-height:auto;padding:22px !important}
+  .process-content{margin-top:30px}
+  .process-card h3{font-size:23px !important}
+  .process-card p{font-size:14px !important}
+}
+@media(prefers-reduced-motion:reduce){
+  .process-card{transition:none}
+  .process-card:hover{transform:none !important}
+}
+</style>
+
 </head>
 <body>
 <!-- ================================================================
@@ -12246,61 +12394,58 @@ section[id] { scroll-margin-top: 118px; }
 <!-- ======================================================
      PROCESS
      ====================================================== -->
-<section class="section process-section" id="process">
-<div class="container">
-<div class="process-header reveal">
-<span class="section-label">
-            My Process
-        </span>
-<h2 class="section-title">
-
-            From ideas to
-            <span>
-                impact.
-            </span>
-</h2>
-<p class="section-description">
-
-            A simple process that keeps learning goals,
-            visual design, development, and outcomes aligned.
-
-        </p>
-</div>
-<div aria-hidden="true" class="process-progress"><div class="process-progress-fill"></div></div><div class="process-grid">
-<div class="process-item reveal" data-step="1">
-<div class="process-number">
-                01
-            </div>
-<h3>Discover</h3>
-<p>Understand the audience, content, learning need, and desired outcome.</p>
-</div>
-<div class="process-item reveal" data-step="2">
-<div class="process-number">
-                02
-            </div>
-<h3>Shape</h3>
-<p>Shape the content into a clear, engaging learning experience.</p>
-</div>
-<div class="process-item reveal" data-step="3">
-<div class="process-number">
-                03
-            </div>
-<h3>Create</h3>
-<p>Design visuals, develop interactions, and add motion or multimedia.</p>
-</div>
-<div class="process-item reveal" data-step="4">
-<div class="process-number">
-                04
-            </div>
-<h3>Refine</h3>
-<p>Review, test, refine, and polish the final learning experience.</p>
-</div>
-</div>
-</div>
-</section>
 <!-- ======================================================
-     WHY I DO THIS
+     PROCESS — REDESIGNED
      ====================================================== -->
+<section class="section process-section" id="process">
+  <div class="container process-container">
+    <div class="process-header process-header-redesign reveal">
+      <div class="process-heading-block">
+        <span class="section-label">My Process</span>
+        <h2 class="section-title process-title">From ideas to <span>impact.</span></h2>
+      </div>
+      <p class="section-description process-description">A simple four-step approach that keeps learning goals, visual design, development, and outcomes aligned.</p>
+    </div>
+
+    <div class="process-track" aria-hidden="true"></div>
+
+    <div class="process-grid process-grid-redesign">
+      <article class="process-item process-card reveal" data-step="1">
+        <div class="process-top"><span class="process-number">01</span><span class="process-mini-line"></span></div>
+        <div class="process-content">
+          <span class="process-kicker">START</span>
+          <h3>Discover</h3>
+          <p>Understand the audience, content, learning need, and desired outcome.</p>
+        </div>
+      </article>
+      <article class="process-item process-card reveal" data-step="2">
+        <div class="process-top"><span class="process-number">02</span><span class="process-mini-line"></span></div>
+        <div class="process-content">
+          <span class="process-kicker">STRUCTURE</span>
+          <h3>Shape</h3>
+          <p>Turn complex content into a clear, engaging learning flow.</p>
+        </div>
+      </article>
+      <article class="process-item process-card reveal" data-step="3">
+        <div class="process-top"><span class="process-number">03</span><span class="process-mini-line"></span></div>
+        <div class="process-content">
+          <span class="process-kicker">BUILD</span>
+          <h3>Create</h3>
+          <p>Design visuals, develop interactions, and add motion or multimedia.</p>
+        </div>
+      </article>
+      <article class="process-item process-card reveal" data-step="4">
+        <div class="process-top"><span class="process-number">04</span></div>
+        <div class="process-content">
+          <span class="process-kicker">FINISH</span>
+          <h3>Refine</h3>
+          <p>Review, test, refine, and polish the final learning experience.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
 <section class="section why-section">
 <div class="container why-grid">
 <div class="reveal">
