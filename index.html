@@ -11854,6 +11854,53 @@ section[id] { scroll-margin-top: 118px; }
   .process-card p{font-size:15px !important;}
 }
 </style>
+
+<style id="hero-stats-v11">
+/* Hero capability strip — clearer wording, stronger typography and balanced columns */
+.hero-stats{
+  margin-top:40px !important;
+  max-width:760px !important;
+  grid-template-columns:repeat(4,minmax(0,1fr)) !important;
+  gap:0 !important;
+  align-items:start !important;
+}
+.hero-stat{
+  padding:0 22px !important;
+  min-width:0 !important;
+}
+.hero-stat:first-child{padding-left:0 !important;}
+.hero-stat:last-child{padding-right:0 !important;}
+.hero-stat strong{
+  display:block !important;
+  font-size:17px !important;
+  line-height:1.2 !important;
+  letter-spacing:-.02em !important;
+  white-space:nowrap !important;
+}
+.hero-stat span{
+  display:block !important;
+  margin-top:8px !important;
+  font-size:13px !important;
+  line-height:1.45 !important;
+  letter-spacing:.09em !important;
+  text-transform:uppercase !important;
+  font-weight:700 !important;
+  color:#7d8496 !important;
+}
+@media (max-width:900px){
+  .hero-stats{grid-template-columns:repeat(2,minmax(0,1fr)) !important;row-gap:22px !important;}
+  .hero-stat:nth-child(odd){padding-left:0 !important;}
+  .hero-stat:nth-child(even){padding-right:0 !important;}
+}
+@media (max-width:600px){
+  .hero-stats{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:20px 0 !important;}
+  .hero-stat{padding:0 14px !important;}
+  .hero-stat:nth-child(odd){padding-left:0 !important;}
+  .hero-stat:nth-child(even){padding-right:0 !important;}
+  .hero-stat strong{font-size:15px !important;}
+  .hero-stat span{font-size:11px !important;letter-spacing:.07em !important;}
+}
+</style>
 </head>
 <body>
 <!-- ================================================================
@@ -11995,22 +12042,22 @@ section[id] { scroll-margin-top: 118px; }
                 Download Resume
             </a>
 </div>
-<div class="hero-stats">
+<div class="hero-stats" aria-label="Core capabilities">
 <div class="hero-stat">
-<strong>Storyline 360</strong>
+<strong>eLearning</strong>
 <span>Interactive learning</span>
 </div>
 <div class="hero-stat">
 <strong>Visual Design</strong>
-<span>Clear systems</span>
+<span>Clear visual systems</span>
 </div>
 <div class="hero-stat">
 <strong>Motion</strong>
-<span>Visual storytelling</span>
+<span>Motion &amp; multimedia</span>
 </div>
 <div class="hero-stat">
-<strong>Learning</strong>
-<span>First thinking</span>
+<strong>Impact</strong>
+<span>Outcome focused</span>
 </div>
 </div>
 </div>
@@ -12714,5 +12761,62 @@ if(!reduced&&matchMedia("(pointer:fine)").matches){const visual=$(".hero-visual"
 }
 .tools-section .tools-individual-grid {
   width: 100%;
+}
+</style>
+
+<style id="video-size-alignment-fix">
+/* =========================================================
+   PROJECT VIDEO SIZE ALIGNMENT
+   All four project thumbnails use the same card/image size.
+   ========================================================= */
+.projects-grid{
+  grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+  align-items:stretch !important;
+}
+
+.project-card:first-child{
+  grid-column:auto !important;
+  display:block !important;
+}
+
+.project-card:first-child .project-image,
+.project-card:nth-child(2) .project-image,
+.project-card:nth-child(3) .project-image,
+.project-card:nth-child(4) .project-image{
+  width:100% !important;
+  height:auto !important;
+  min-height:0 !important;
+  aspect-ratio:16 / 9 !important;
+}
+
+.project-card:first-child .project-info{
+  padding:28px !important;
+}
+
+.project-card:first-child .project-title{
+  font-size:25px !important;
+  letter-spacing:-.035em !important;
+}
+
+.project-card:first-child .project-description{
+  font-size:16px !important;
+  max-width:none !important;
+}
+
+@media (max-width:900px){
+  .projects-grid{
+    grid-template-columns:1fr !important;
+  }
+  .project-card:first-child{
+    grid-column:auto !important;
+    display:block !important;
+  }
+  .project-card:first-child .project-image,
+  .project-card:nth-child(2) .project-image,
+  .project-card:nth-child(3) .project-image,
+  .project-card:nth-child(4) .project-image{
+    aspect-ratio:16 / 9 !important;
+    min-height:0 !important;
+  }
 }
 </style>
