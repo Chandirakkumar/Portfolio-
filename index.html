@@ -11581,6 +11581,108 @@ section[id] { scroll-margin-top: 118px; }
 }
 </style>
 
+
+<style id="why-contrast-final-fix">
+/* =========================================================
+   WHY I DO THIS — FINAL CONTRAST FIX
+   Dark section + high-contrast typography.
+   ========================================================= */
+.why-section{
+    position:relative !important;
+    overflow:hidden !important;
+    color:#ffffff !important;
+    background:#0d111c !important;
+    background-image:
+        radial-gradient(circle at 78% 35%, rgba(118,87,255,.12), transparent 34%),
+        linear-gradient(110deg,#0d111c 0%,#111522 100%) !important;
+}
+.why-section::before{
+    content:"" !important;
+    position:absolute !important;
+    width:520px !important;
+    height:520px !important;
+    right:-220px !important;
+    top:-180px !important;
+    border-radius:50% !important;
+    background:rgba(118,87,255,.10) !important;
+    filter:blur(40px) !important;
+    pointer-events:none !important;
+}
+.why-section::after{
+    background:linear-gradient(90deg,rgba(8,11,19,.18),transparent 55%,rgba(115,87,255,.06)) !important;
+    pointer-events:none !important;
+}
+.why-grid{position:relative;z-index:4 !important;}
+.why-section .section-label{
+    color:#a797ff !important;
+    font-size:12px !important;
+    font-weight:850 !important;
+    letter-spacing:.16em !important;
+}
+.why-title{
+    color:#ffffff !important;
+    font-size:clamp(48px,5.5vw,78px) !important;
+    line-height:.98 !important;
+    letter-spacing:-.055em !important;
+}
+.why-title span{color:#8d72ff !important;}
+.why-description{
+    color:#b8c0d0 !important;
+    font-size:17px !important;
+    line-height:1.75 !important;
+    max-width:650px !important;
+}
+.why-list{gap:16px !important;}
+.why-item{
+    padding:28px !important;
+    min-height:165px !important;
+    display:flex !important;
+    flex-direction:column !important;
+    justify-content:flex-start !important;
+    background:rgba(255,255,255,.055) !important;
+    border:1px solid rgba(255,255,255,.12) !important;
+    border-radius:20px !important;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.04),0 18px 45px rgba(0,0,0,.12) !important;
+}
+.why-item i{
+    display:block !important;
+    margin-bottom:22px !important;
+    color:#a18cff !important;
+    font-size:21px !important;
+}
+.why-item strong{
+    display:block !important;
+    color:#ffffff !important;
+    font-size:18px !important;
+    line-height:1.3 !important;
+    margin-bottom:7px !important;
+}
+.why-item span{
+    display:block !important;
+    color:#b7bfd0 !important;
+    font-size:14px !important;
+    line-height:1.65 !important;
+    margin-top:0 !important;
+}
+.why-item:hover{
+    background:rgba(118,87,255,.09) !important;
+    border-color:rgba(157,137,255,.42) !important;
+}
+.why-section .btn-primary{
+    margin-top:30px !important;
+}
+@media(max-width:900px){
+    .why-section{padding-top:110px !important;padding-bottom:90px !important;}
+    .why-grid{grid-template-columns:1fr !important;gap:42px !important;}
+}
+@media(max-width:600px){
+    .why-title{font-size:46px !important;}
+    .why-description{font-size:16px !important;}
+    .why-list{grid-template-columns:1fr !important;}
+    .why-item{min-height:145px !important;padding:24px !important;}
+}
+</style>
+
 </head>
 <body>
 <!-- ================================================================
