@@ -17,8 +17,10 @@
 }
 
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{width:210mm;height:297mm}
+html{width:100%;height:100%;}
 body{
+  width:100%;
+  min-height:100vh;
   background:#e8e9ed;
   color:var(--body);
   font-family:Arial,Helvetica,sans-serif;
@@ -30,8 +32,9 @@ body{
   width:210mm;
   height:297mm;
   margin:0 auto;
-  padding:10mm 11.5mm 7mm;
+  padding:11mm 12mm 8mm;
   background:#fff;
+  border:1.8px solid #bfc4cf;
   overflow:hidden;
   position:relative;
 }
@@ -40,17 +43,17 @@ body{
   content:"";
   position:absolute;
   top:0;left:0;right:0;
-  height:3.5px;
+  height:4px;
   background:var(--purple);
 }
 
 .header{
-  padding-bottom:7.5mm;
+  padding-bottom:8.5mm;
   border-bottom:1px solid var(--line);
 }
 
 .name{
-  font-size:25px;
+  font-size:29px;
   line-height:1;
   font-weight:800;
   letter-spacing:-.8px;
@@ -58,19 +61,19 @@ body{
 }
 
 .role{
-  margin-top:4px;
-  font-size:10.5px;
+  margin-top:5px;
+  font-size:12px;
   line-height:1.25;
   font-weight:700;
   color:var(--purple);
 }
 
 .contact{
-  margin-top:7px;
+  margin-top:8px;
   display:flex;
   flex-wrap:wrap;
   gap:3px 10px;
-  font-size:8.3px;
+  font-size:8.9px;
   line-height:1.3;
   color:var(--muted);
 }
@@ -79,21 +82,21 @@ body{
 .main{
   display:grid;
   grid-template-columns:minmax(0,1.72fr) minmax(0,.92fr);
-  gap:7mm;
-  padding-top:6mm;
+  gap:8mm;
+  padding-top:7mm;
 }
 
 .left,.right{min-width:0}
-.section{margin-bottom:4.5mm}
+.section{margin-bottom:5.5mm}
 .section:last-child{margin-bottom:0}
 
 .section-title{
   display:flex;
   align-items:center;
-  gap:6px;
-  margin-bottom:2.5mm;
+  gap:7px;
+  margin-bottom:3mm;
   color:var(--ink);
-  font-size:8.5px;
+  font-size:9.5px;
   line-height:1;
   font-weight:800;
   letter-spacing:.8px;
@@ -101,20 +104,22 @@ body{
 }
 .section-title:before{
   content:"";
-  width:15px;
-  height:2px;
+  width:18px;
+  height:2.5px;
   border-radius:10px;
   background:var(--purple);
   flex:none;
 }
 
 .summary{
-  font-size:9px;
-  line-height:1.43;
+  text-align:justify;
+  text-justify:inter-word;
+  font-size:11.2px;
+  line-height:1.52;
   color:var(--body);
 }
 
-.job{margin-bottom:3.8mm}
+.job{margin-bottom:4.5mm}
 .job:last-child{margin-bottom:0}
 .job-head{
   display:flex;
@@ -123,14 +128,14 @@ body{
   gap:8px;
 }
 .job-title{
-  font-size:10.2px;
+  font-size:11.2px;
   line-height:1.25;
   font-weight:800;
   color:var(--ink);
 }
 .date{
   flex:none;
-  font-size:8.2px;
+  font-size:9px;
   line-height:1.2;
   font-weight:700;
   color:var(--muted);
@@ -138,51 +143,57 @@ body{
 }
 .company{
   margin-top:1.5px;
-  margin-bottom:2.5px;
-  font-size:8.7px;
+  margin-bottom:3px;
+  font-size:9.5px;
   line-height:1.25;
   font-weight:700;
   color:var(--purple);
 }
 .bullets{padding-left:13px}
 .bullets li{
-  margin-bottom:1.3px;
-  font-size:8.8px;
-  line-height:1.38;
+  text-align:justify;
+  text-justify:inter-word;
+  margin-bottom:1.8px;
+  font-size:9.5px;
+  line-height:1.45;
   color:var(--body);
 }
 .bullets li::marker{color:var(--purple)}
 
 .project{
-  padding:2.2mm 0;
+  text-align:justify;
+  text-justify:inter-word;
+  padding:2.8mm 0;
   border-top:1px solid var(--line);
-  font-size:8.8px;
-  line-height:1.4;
+  font-size:9.5px;
+  line-height:1.48;
 }
 .project:first-of-type{border-top:0;padding-top:0}
 .project strong{color:var(--ink);font-weight:800}
 
 .edu{
-  padding:2mm 0;
+  padding:2.5mm 0;
   border-top:1px solid var(--line);
 }
 .edu:first-of-type{border-top:0;padding-top:0}
 .edu-title{
-  font-size:9px;
-  line-height:1.3;
+  font-size:9.8px;
+  line-height:1.35;
   font-weight:800;
   color:var(--ink);
 }
 .edu-place{
+  text-align:justify;
+  text-justify:inter-word;
   margin-top:1px;
-  font-size:8.3px;
+  font-size:8.9px;
   line-height:1.3;
   color:var(--muted);
 }
 
-.skill-list{display:grid;gap:2.2mm}
+.skill-list{display:grid;gap:2.8mm}
 .skill{
-  padding:2.6mm 2.8mm;
+  padding:3.2mm 3mm;
   border:1px solid var(--line);
   border-radius:7px;
   background:#fff;
@@ -190,76 +201,114 @@ body{
 .skill strong{
   display:block;
   margin-bottom:1.5px;
-  font-size:8.7px;
+  font-size:9.5px;
   line-height:1.25;
   font-weight:800;
   color:var(--ink);
 }
 .skill span{
-  font-size:8.2px;
+  display:block;
+  text-align:justify;
+  text-justify:inter-word;
+  font-size:9px;
   line-height:1.35;
   color:var(--body);
 }
 
+.keyword-section{margin-bottom:5mm}
+.keywords{
+  text-align:justify;
+  text-justify:inter-word;
+  font-size:8.8px;
+  line-height:1.45;
+  color:var(--body);
+  padding:2.8mm 3mm;
+  border:1px solid var(--line);
+  border-radius:7px;
+  background:#fafafa;
+}
 .tags{
   display:flex;
   flex-wrap:wrap;
-  gap:3px;
+  gap:4px;
 }
 .tag{
-  padding:3.5px 5.5px;
+  padding:4.5px 6.5px;
   border:1px solid #ded8fb;
   border-radius:999px;
   background:var(--purple-soft);
   color:#5035bf;
-  font-size:7.7px;
+  font-size:8.5px;
   line-height:1;
   font-weight:700;
   white-space:nowrap;
 }
 
-.focus-list{display:grid;gap:2mm}
+.focus-list{display:grid;gap:2.5mm}
 .focus{
-  padding:2.5mm 2.8mm;
+  padding:3mm 3mm;
   border-left:2px solid var(--purple);
   background:#f8f8fa;
 }
 .focus strong{
   display:block;
   margin-bottom:1px;
-  font-size:8.5px;
+  font-size:9.5px;
   line-height:1.2;
   color:var(--ink);
 }
 .focus span{
-  font-size:8px;
+  display:block;
+  text-align:justify;
+  text-justify:inter-word;
+  font-size:8.8px;
   line-height:1.32;
   color:var(--body);
 }
 
 .footer{
   position:absolute;
-  left:11.5mm;
-  right:11.5mm;
-  bottom:5mm;
+  left:12mm;
+  right:12mm;
+  bottom:5.5mm;
   padding-top:3mm;
   border-top:1px solid var(--line);
   display:flex;
   justify-content:space-between;
   gap:10px;
-  font-size:7.6px;
+  font-size:8.2px;
   line-height:1.2;
   color:var(--muted);
 }
 
 @media screen{
-  body{padding:20px 0}
-  .resume{box-shadow:0 15px 40px rgba(0,0,0,.12)}
+  body{
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    padding:28px 20px;
+    overflow-x:auto;
+  }
+  .resume{
+    flex:0 0 210mm;
+    box-shadow:0 15px 40px rgba(0,0,0,.12);
+  }
 }
 
 @media print{
-  html,body{background:#fff}
-  .resume{box-shadow:none}
+  *{break-inside:avoid;page-break-inside:avoid;}
+  html,body{
+    width:210mm;
+    height:297mm;
+    min-height:297mm;
+    background:#fff;
+  }
+  body{padding:0;display:block;}
+  .resume{
+    margin:0;
+    box-shadow:none;
+    border:1.8px solid #bfc4cf;
+  }
 }
 </style>
 </head>
@@ -283,7 +332,7 @@ body{
 
       <section class="section">
         <h2 class="section-title">Professional Summary</h2>
-        <p class="summary">Visual Designer and eLearning Developer focused on creating clear, engaging digital learning experiences. Experienced in Storyline 360, presentation design, multimedia, motion graphics, SCORM development, and visual storytelling. Strong at turning complex information into structured, learner-friendly content.</p>
+        <p class="summary">Visual Designer, Instructional Designer, and eLearning Developer creating engaging digital learning experiences. Experienced in <strong>Articulate Storyline 360, Rise 360, SCORM, LMS, instructional design, visual design, presentation design, multimedia, motion graphics, and visual storytelling</strong>. Skilled in translating complex information into structured, learner-focused learning content.</p>
       </section>
 
       <section class="section">
@@ -296,10 +345,10 @@ body{
           </div>
           <div class="company">Agama Educon Pvt Ltd · Bengaluru</div>
           <ul class="bullets">
-            <li>Design and develop interactive SCORM eLearning modules using Articulate Storyline 360 and Rise 360.</li>
-            <li>Create corporate presentations, training decks, infographics, and visual learning assets in PowerPoint.</li>
-            <li>Produce video editing, motion graphics, explainer content, and multimedia assets using Premiere Pro and After Effects.</li>
-            <li>Translate SME content and technical documentation into storyboards, workflows, and learner-focused experiences.</li>
+            <li>Design and develop interactive <strong>eLearning, SCORM, and LMS-ready modules</strong> using Articulate Storyline 360 and Rise 360.</li>
+            <li>Create <strong>corporate training, presentation design, infographics, and visual learning assets</strong> in PowerPoint.</li>
+            <li>Produce <strong>video editing, motion graphics, explainer videos, and multimedia content</strong> using Premiere Pro and After Effects.</li>
+            <li>Translate SME content and technical documentation into <strong>storyboards, instructional flows, assessments, and learner-focused experiences</strong>.</li>
           </ul>
         </article>
 
@@ -310,8 +359,8 @@ body{
           </div>
           <div class="company">Independent · Remote</div>
           <ul class="bullets">
-            <li>Designed training presentations, digital graphics, eLearning assets, and multimedia content for client projects.</li>
-            <li>Managed requirements, visual development, revisions, and final delivery.</li>
+            <li>Designed <strong>training presentations, digital graphics, eLearning assets, and multimedia content</strong> for client projects.</li>
+            <li>Managed requirements, visual development, revisions, QA, and final delivery.</li>
           </ul>
         </article>
       </section>
@@ -341,10 +390,10 @@ body{
       <section class="section">
         <h2 class="section-title">Core Skills</h2>
         <div class="skill-list">
-          <div class="skill"><strong>eLearning &amp; LMS</strong><span>Storyline 360, Rise 360, Captivate, Vyond, SCORM 1.2/2004, LearnDash</span></div>
-          <div class="skill"><strong>Visual &amp; Presentation</strong><span>PowerPoint, Photoshop, Illustrator, Figma, UI/UX, infographic design</span></div>
+          <div class="skill"><strong>eLearning &amp; LMS</strong><span>Articulate Storyline 360, Rise 360, Adobe Captivate, Vyond, SCORM 1.2/2004, LMS, LearnDash, eLearning development</span></div>
+          <div class="skill"><strong>Visual &amp; Presentation</strong><span>PowerPoint, Photoshop, Illustrator, Figma, UI/UX, presentation design, visual communication, infographic design</span></div>
           <div class="skill"><strong>Multimedia &amp; Video</strong><span>Premiere Pro, After Effects, video editing, motion graphics, audio sync</span></div>
-          <div class="skill"><strong>Instructional Design</strong><span>ADDIE/SAM, storyboarding, microlearning, localization, multilingual support</span></div>
+          <div class="skill"><strong>Instructional Design</strong><span>ADDIE, SAM, storyboarding, learning objectives, assessments, microlearning, localization, multilingual learning</span></div>
         </div>
       </section>
 
@@ -356,6 +405,11 @@ body{
           <span class="tag">Premiere Pro</span><span class="tag">After Effects</span><span class="tag">Vyond</span>
           <span class="tag">Figma</span><span class="tag">Excel</span><span class="tag">Word</span>
         </div>
+      </section>
+
+      <section class="section keyword-section">
+        <h2 class="section-title">Core Keywords</h2>
+        <p class="keywords">Instructional Design · eLearning Development · Articulate Storyline 360 · Rise 360 · SCORM · LMS · ADDIE · SAM · Storyboarding · Microlearning · Assessment Design · Localization · Visual Design · Presentation Design · Multimedia · Motion Graphics · Video Editing · SME Collaboration · QA</p>
       </section>
 
       <section class="section">
